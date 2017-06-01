@@ -2,7 +2,7 @@
 
 This repository contains the samples that demonstrate different usage patterns for the SharePoint Framework extensions.
 
-> Note: The SharePoint Framework is currently in preview and is subject to change. SharePoint Framework extensions are not currently supported for use in production environments.
+> Note: The SharePoint Framework extensions are currently in preview and is subject to change. SharePoint Framework extensions are not currently supported for use in production environments. You can use only client-side web parts in production. 
 
 SharePoint extensions are controls that appear inside a SharePoint page but run locally in the browser. They're the building blocks of pages that appear on a SharePoint site. You can build extensions using modern script development tools and you can deploy your extensions to modern pages in Office 365 tenants. In addition to plain JavaScript projects, you can build extensions alongside common scripting frameworks, such as AngularJS and React. For example, you can use React along with components from [Office UI Fabric React](http://dev.office.com/fabric#/components) to quickly create experiences based on the same components used in Office 365 natively.
 
