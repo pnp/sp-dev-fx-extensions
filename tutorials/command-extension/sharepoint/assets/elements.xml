@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+    <CustomAction 
+        Title="SPFxListViewCommandSet"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="5fc73e12-8085-4a4b-8743-f6d02ffe1240">
+
+    </CustomAction>
+
+</Elements>
