@@ -27,7 +27,7 @@ Version|Date|Comments
 
 ## Features
 This project contains SharePoint Framework extensions that illustrates next features:
-* filed customizer
+* field customizer
 * usage of Office UI Fabric React
 * usage of PnP JS
 * inline editing of list items
