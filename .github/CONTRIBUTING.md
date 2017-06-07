@@ -49,7 +49,7 @@ When you are submitting a new sample, it has to follow up below guidelines
     - Folder should start by identifying JS library used - like "react-", "angular-", "knockout-"
     - Folder should also contain extension type identifier after JS library. Options are "-application-", "-command-" and "-field-"
     - If you are not using any specific JS library, please use "js-" as the prefix for your sample
-    - Do not use words "sample", "code", "extension" or "ext" in the folder or sample name - these are samples for SPFx repository, so it's obvious what they are
+    - Do NOT use words "sample", "code", "customizer", "extension" or "ext" in the folder or sample name - these are samples for SPFx Extensions repository, so it's obvious what they are customizers or extensions
     - If your solution is demonstrating multiple technologies, please use functional terms as the name for the solution folder
 - Do not use period/dot in the folder name of the provided sample
 

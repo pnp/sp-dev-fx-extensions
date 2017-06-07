@@ -4,7 +4,8 @@
     <CustomAction 
         Title="SPFxApplicationCustomizer"
         Location="ClientSideExtension.ApplicationCustomizer"
-        ClientSideComponentId="46606aa6-5dd8-4792-b017-1555ec0a43a4">
+        ClientSideComponentId="46606aa6-5dd8-4792-b017-1555ec0a43a4"
+        ClientSideComponentProperties="{&quot;Header&quot;:&quot;Header area of the page&quot;,&quot;Footer&quot;:&quot;Footer area in the page&quot;}">
 
     </CustomAction>
 
