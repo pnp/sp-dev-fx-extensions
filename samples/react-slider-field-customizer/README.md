@@ -1,7 +1,7 @@
 # React Slider Field Customizer
 
 ## Summary
-The sample illustrates how to use Office UI Fabric React Slider in Field Customizer
+The sample illustrates how to use Office UI Fabric React Slider in Field Customizer with permissions-base inline editing
 
 ![React Slider Field Customizer](./assets/slider.png)
 
@@ -30,7 +30,7 @@ This project contains SharePoint Framework extensions that illustrates next feat
 * field customizer
 * usage of Office UI Fabric React
 * usage of PnP JS
-* inline editing of list items
+* inline editing of list items (Users who have EditListItems permissions can edit value by dragging the slider)
 
 **NOTE:** this customizer should be applied to a column with type Number. For the simplicity author assumes that the values of the column are between 0 and 100.
 To use with Percentage column the code should be modified to multiply `value` by 100
