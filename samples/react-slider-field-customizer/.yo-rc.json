@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.0",
+    "libraryName": "react-slider-field-customizer",
+    "libraryId": "f9c64efd-d88e-4c1c-a976-3de1260a87ab",
+    "environment": "spo"
+  }
+}

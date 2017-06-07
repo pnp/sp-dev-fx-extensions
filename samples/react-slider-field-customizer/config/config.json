@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/slider/SliderFieldCustomizer.js",
+      "manifest": "./src/extensions/slider/SliderFieldCustomizer.manifest.json",
+      "outputPath": "./dist/slider.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "sliderStrings": "extensions/slider/loc/{locale}.js"
+  }
+}
