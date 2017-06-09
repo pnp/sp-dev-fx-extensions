@@ -3,7 +3,7 @@
 ## Summary
 This is reference solution around the ListView Command Set extensions which is built using the SharePoint Framework tutorials available from [dev.office.com/sharepoint](http://dev.office.com/sharepoint). Tutorial also shows how to use Dialogs with the toolbar buttons.
 
-* [Getting started with SharePoint Framework customizers](#)
+* [Getting started with SharePoint Framework Extensions](http://aka.ms/spfx-extensions)
 
 ![picture of the extension in action, if possible](./assets/screenshot.png)
 

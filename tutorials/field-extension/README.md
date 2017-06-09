@@ -1,15 +1,15 @@
-# Custom header and footer presentation using Application Customizer
+# Custom percent value presentation using a field customizer
 
 ## Summary
-This is reference solution around the Application Customizer which is built using the SharePoint Framework tutorials available from [dev.office.com/sharepoint](http://dev.office.com/sharepoint). 
+This is reference solution around the Field Customizer which is built using the SharePoint Framework tutorials available from [dev.office.com/sharepoint](http://dev.office.com/sharepoint). 
 
-* [Getting started with SharePoint Framework customizers](#)
+* [Getting started with SharePoint Framework Extensions](http://aka.ms/spfx-extensions)
 
 ![picture of the extension in action, if possible](./assets/screenshot.png)
 
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-GA-green.svg)
+![drop](https://img.shields.io/badge/version-1.1.1-green.svg)
 
 ## Applies to
 
@@ -47,12 +47,12 @@ Version|Date|Comments
 - Use following query parameter in the SharePoint site to get extension loaded without installing it to app catalog
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"46606aa6-5dd8-4792-b017-1555ec0a43a4":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Header":"Header area of the page","Footer":"Footer area in the page"}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"49ecc6e9-10b5-4bd0-90a5-eae0b8e0cd7c","properties":{"sampleText":"Hello!"}}}
 ```
 Full URL to request would be something like following:
 
 ```
-contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"46606aa6-5dd8-4792-b017-1555ec0a43a4":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Header":"Header area of the page","Footer":"Footer area in the page"}}}
+contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"49ecc6e9-10b5-4bd0-90a5-eae0b8e0cd7c","properties":{"sampleText":"Hello!"}}}
 ```
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/tutorials/app-extension" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/tutorials/field-extension" />
