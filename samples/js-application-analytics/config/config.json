@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/analytics/AnalyticsApplicationCustomizer.js",
+      "manifest": "./src/extensions/analytics/AnalyticsApplicationCustomizer.manifest.json",
+      "outputPath": "./dist/analytics.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "analyticsStrings": "extensions/analytics/loc/{locale}.js"
+  }
+}
