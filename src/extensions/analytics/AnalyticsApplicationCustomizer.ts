@@ -28,39 +28,6 @@ export default class AnalyticsApplicationCustomizer
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
     
-    // document.getElementsByTagName("head")[0].innerHTML=`
-    //   <script async src='https://www.google-analytics.com/analytics.js'></script>` + document.getElementsByTagName("head")[0].innerHTML;
-    let head = document.getElementsByTagName("head")[0];
-    let gaClassic = document.createElement("script");
-    gaClassic.async = true;
-    gaClassic.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    gaClassic.type = 'text/javascript';
-
-    // let done = false;
-    // gaClassic.onload = gaClassic.onreadystatechange = function () {
-    //     if (!done && (!this.readyState
-		// 			|| this.readyState == "loaded"
-		// 			|| this.readyState == "complete")) {
-    //         done = true;
-
-    //         // Continue your code
-    //         callback();
-
-    //         // Handle memory leak in IE
-    //         gaClassic.onload = gaClassic.onreadystatechange = null;
-    //         head.removeChild(gaClassic);
-    //     }
-    // };
-
-    head.appendChild(gaClassic);
-
-    // let ga = document.createElement("script");
-    // ga.innerHTML=
-    //   `window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    //    ga('create', 'UA-55651096-1', 'auto');
-    //    ga('send', 'pageview');`;
-    // head.appendChild(ga);
-
     return Promise.resolve<void>();
   }
 
@@ -70,17 +37,30 @@ export default class AnalyticsApplicationCustomizer
     if (!message) {
       message = '(No properties were provided.)';
     }
-    let head = document.getElementsByTagName("head")[0];
-    let ga = document.createElement("script");
-    ga.innerHTML=
-      `var _gaq = _gaq || [];
-       _gaq.push(['_setAccount', 'UA-100712891-1']);
-       _gaq.push(['_trackPageview']);`;
-    head.appendChild(ga);
 
-    // var _gaq = _gaq || [];
-    // _gaq.push(['_setAccount', 'UA-100712891-1']);
-    // _gaq.push(['_trackPageview']);
+    let html: string = '';
+    html+= `
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-100712891-1', 'auto');
+      ga('send', 'pageview');`;
+    let head: any = document.getElementsByTagName("head")[0] || document.documentElement,
+    script = document.createElement("script");
+    script.type = "text/javascript";
+
+    try {
+        console.log('Append child');
+        script.appendChild(document.createTextNode(html));
+    } 
+    catch (e) {
+        console.log('Append child catch');
+        script.text = html;
+    }
+    head.insertBefore(script, head.firstChild);
+    head.removeChild(script);
 
     Log.info(LOG_SOURCE,`Hello from ${strings.Title}:\n\n${message}`);
   }
