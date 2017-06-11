@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "lejon-client-side-solution",
+    "id": "0dc20c52-bbe6-40ba-bd8b-1307c6a72ceb",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/lejon.sppkg"
+  }
+}

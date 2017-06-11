@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.0",
+    "libraryName": "lejon",
+    "libraryId": "0dc20c52-bbe6-40ba-bd8b-1307c6a72ceb",
+    "environment": "spo"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/graphAppCustom/GraphAppCustomApplicationCustomizer.js",
+      "manifest": "./src/extensions/graphAppCustom/GraphAppCustomApplicationCustomizer.manifest.json",
+      "outputPath": "./dist/graph-app-custom.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "graphAppCustomStrings": "extensions/graphAppCustom/loc/{locale}.js"
+  }
+}
