@@ -47,7 +47,7 @@ When you are submitting a new sample, it has to follow up below guidelines
     - When you update existing samples, please update also README accordingly with information on provided changes and with your author details
 - When you are submitting new sample solution, please name the sample solution folder accordingly
     - Folder should start by identifying JS library used - like "react-", "angular-", "knockout-"
-    - Folder should also contain extension type identifier after JS library. Options are "-application-", "-command-" and "-field-"
+    - Folder should also contain extension type identifier after JS library. Options are "-app-", "-cmd-" and "-field-"
     - If you are not using any specific JS library, please use "js-" as the prefix for your sample
     - Do NOT use words "sample", "code", "customizer", "extension" or "ext" in the folder or sample name - these are samples for SPFx Extensions repository, so it's obvious what they are customizers or extensions
     - If your solution is demonstrating multiple technologies, please use functional terms as the name for the solution folder
@@ -56,8 +56,8 @@ When you are submitting a new sample, it has to follow up below guidelines
 Following are valid examples for the naming of your folder for your sample.
 
 ````
-react-application-megamenu
-knockout-command-duplicate
+react-app-megamenu
+knockout-cmd-duplicate
 js-field-map
 ````
 

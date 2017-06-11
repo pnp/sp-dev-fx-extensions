@@ -66,6 +66,8 @@ export default class GraphAppCustomApplicationCustomizer
           }).then((result: any) => {
             // Set headerstring to the groups display name
             let headerString: string = result.displayName;
+            let emailString: string = result.mail;
+            let descriptionString: string = result.description;
             
             if (!headerString) {
                 headerString = '(Header property was not defined.)';
@@ -74,7 +76,8 @@ export default class GraphAppCustomApplicationCustomizer
                 this._headerPlaceholder.domElement.innerHTML = `
                       <div class="${styles.app}">
                         <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.header}">
-                          <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(headerString)}
+                          <b>${escape(headerString)}</b>&nbsp;<i>(${escape(emailString)})</i>: 
+                          ${escape(descriptionString)}
                         </div>
                       </div>`;
               }
