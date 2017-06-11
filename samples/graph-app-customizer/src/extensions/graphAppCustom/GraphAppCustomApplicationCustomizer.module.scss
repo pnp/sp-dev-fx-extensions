@@ -1,0 +1,21 @@
+.app {
+  .header {
+    height:60px; 
+    text-align:center; 
+    line-height:2.5; 
+    font-weight:bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer {
+    height:40px; 
+    text-align:center; 
+    line-height:2.5; 
+    font-weight:bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
