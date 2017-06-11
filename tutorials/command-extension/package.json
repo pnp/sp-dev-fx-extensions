@@ -7,10 +7,10 @@
   },
   "dependencies": {
     "@microsoft/sp-core-library": "~1.1.0",
-    "@microsoft/sp-webpart-base": "~1.1.0",
+    "@microsoft/sp-webpart-base": "~1.1.1",
     "@types/webpack-env": ">=1.12.1 <1.14.0",
-    "@microsoft/sp-listview-extensibility": "0.1.0",
-    "@microsoft/sp-application-base": "1.1.0",
+    "@microsoft/sp-listview-extensibility": "0.1.1",
+    "@microsoft/sp-application-base": "1.1.1",
     "@microsoft/sp-dialog": "^0.1.0"
   },
   "devDependencies": {
