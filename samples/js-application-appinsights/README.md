@@ -38,7 +38,6 @@ Version|Date|Comments
   - `npm install`
   - `gulp serve`
 
-> Include any additional steps as needed.
 
 ## Features
 This extension injects javascript needed to track pages in Sharepoint Online with Azure Application Insights
