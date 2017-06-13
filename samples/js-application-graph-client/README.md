@@ -56,4 +56,4 @@ npm i -g gulp
 gulp
 ```
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-app-graph-client" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-application-graph-client" />

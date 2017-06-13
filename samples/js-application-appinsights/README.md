@@ -44,4 +44,4 @@ This extension injects javascript needed to track pages in Sharepoint Online wit
 
 Do not forget to change your instrumentation key.
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-application-appinsights" />
