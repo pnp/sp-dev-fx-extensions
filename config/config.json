@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/toggle/ToggleFieldCustomizer.js",
+      "manifest": "./src/extensions/toggle/ToggleFieldCustomizer.manifest.json",
+      "outputPath": "./dist/toggle.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "toggleStrings": "extensions/toggle/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "972be477-1d2a-4656-a83a-63eb02552556",
+  "alias": "ToggleFieldCustomizer",
+  "componentType": "Extension",
+  "extensionType": "FieldCustomizer",
+  "version": "*", // The "*" signifies that the version should be taken from the package.json
+  "manifestVersion": 2,
+  "safeWithCustomScriptDisabled": true
+}
