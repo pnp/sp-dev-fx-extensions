@@ -13,7 +13,7 @@ export default class Toggle extends React.Component<IToggleProps, IToggleState> 
   constructor(props: IToggleProps, state: IToggleState) {
     super(props, state);
 
-    const curVal = props.value;
+    const curVal = props.value === 'Yes' ? true : false;
 
     this.state = {
       value: curVal
@@ -37,7 +37,9 @@ export default class Toggle extends React.Component<IToggleProps, IToggleState> 
         { this.state.value &&
         (
           <ReactToggle
-            value={this.state.value}
+            defaultChecked={ this.state.value }
+            onText='Yes'
+            offText='No'
             onChange={this.onChange.bind(this)}
             disabled={this.props.disabled} />
         )}

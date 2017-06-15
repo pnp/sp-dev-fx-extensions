@@ -66,7 +66,7 @@ export default class ToggleFieldCustomizer
     super.onDisposeCell(event);
   }
 
-  private onToggleValueChanged(value: number, id: string): void {
+  private onToggleValueChanged(value: string, id: string): void {
     if (this._timerId !== -1)
       clearTimeout(this._timerId);
 
