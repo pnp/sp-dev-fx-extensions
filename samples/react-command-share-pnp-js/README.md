@@ -48,12 +48,12 @@ Version|Date|Comments
 - Use following query parameter in the SharePoint site to get extension loaded without installing it to app catalog
 
 ```
-?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"a745d175-f570-4b4f-96c1-024df7188771":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
+?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"06006535-1336-436b-a717-827e28d2ea6e":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 Full URL to request would be something like following:
 
 ```
-contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"a745d175-f570-4b4f-96c1-024df7188771":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
+contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"06006535-1336-436b-a717-827e28d2ea6e":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
 
@@ -62,6 +62,8 @@ This project contains SharePoint Framework extensions that illustrates next feat
 * Command extension
 * usage of Office UI Fabric React
 * usage of PnP JS
+
+> Notice. This sample is designed to be used in debug mode and does not contain automatic packaging setup for the "production" deployment.
 
 ### Building the code
 
@@ -79,4 +81,4 @@ This package produces the following:
 * deploy/* - all resources which should be uploaded to a CDN.
 
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-field-slider" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-share-pnp-js" />
