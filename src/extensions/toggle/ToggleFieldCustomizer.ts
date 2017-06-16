@@ -51,7 +51,7 @@ export default class ToggleFieldCustomizer
     
 
     const toggle: React.ReactElement<{}> =
-      React.createElement(Toggle, { value: value, id: id, disabled: !hasPermissions, onChange: this.onToggleValueChanged.bind(this) } as IToggleProps);
+      React.createElement(Toggle, { checked: value, id: id, disabled: !hasPermissions, onChanged: this.onToggleValueChanged.bind(this) } as IToggleProps);
 
     ReactDOM.render(toggle, event.cellDiv);
 
@@ -66,32 +66,28 @@ export default class ToggleFieldCustomizer
     super.onDisposeCell(event);
   }
 
-  private onToggleValueChanged(value: string, id: string): void {
-    if (this._timerId !== -1)
-      clearTimeout(this._timerId);
+  private onToggleValueChanged(value: boolean, id: string): void {
 
-    this._timerId = setTimeout(() => {
-      let etag: string = undefined;
-      pnp.sp.web.lists.getByTitle(this.context.pageContext.list.title).items.getById(parseInt(id)).get(undefined, {
-        headers: {
-          'Accept': 'application/json;odata=minimalmetadata'
-        }
+    let etag: string = undefined;
+    pnp.sp.web.lists.getByTitle(this.context.pageContext.list.title).items.getById(parseInt(id)).get(undefined, {
+      headers: {
+        'Accept': 'application/json;odata=minimalmetadata'
+      }
+    })
+      .then((item: Item): Promise<any> => {
+        etag = item["odata.etag"];
+        return Promise.resolve((item as any) as any);
       })
-        .then((item: Item): Promise<any> => {
-          etag = item["odata.etag"];
-          return Promise.resolve((item as any) as any);
-        })
-        .then((item: any): Promise<ItemUpdateResult> => {
-          let updateObj: any = {};
-          updateObj[this.context.field.internalName] = value;
-          return pnp.sp.web.lists.getByTitle(this.context.pageContext.list.title)
-            .items.getById(parseInt(id)).update(updateObj, etag);
-        })
-        .then((result: ItemUpdateResult): void => {
-          console.log(`Item with ID: ${id} successfully updated`);
-        }, (error: any): void => {
-          console.log('Loading latest item failed with error: ' + error);
-        });
-    }, 1000);
+      .then((item: any): Promise<ItemUpdateResult> => {
+        let updateObj: any = {};
+        updateObj[this.context.field.internalName] = value;
+        return pnp.sp.web.lists.getByTitle(this.context.pageContext.list.title)
+          .items.getById(parseInt(id)).update(updateObj, etag);
+      })
+      .then((result: ItemUpdateResult): void => {
+        console.log(`Item with ID: ${id} successfully updated`);
+      }, (error: any): void => {
+        console.log('Loading latest item failed with error: ' + error);
+      });
   }
 }

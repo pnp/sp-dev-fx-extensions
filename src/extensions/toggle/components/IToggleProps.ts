@@ -1,6 +1,6 @@
 export interface IToggleProps {
-  value: string;
+  checked: string;
   id: string;
   disabled: boolean;
-  onChange: (value: string, id: string) => void;
+  onChanged: (checked: boolean, id: string) => void;
 }

@@ -13,10 +13,10 @@ export default class Toggle extends React.Component<IToggleProps, IToggleState> 
   constructor(props: IToggleProps, state: IToggleState) {
     super(props, state);
 
-    const curVal = props.value === 'Yes' ? true : false;
+    const curVal = props.checked === 'Yes' ? true : false;
 
     this.state = {
-      value: curVal
+      checked: curVal
     };
   }
 
@@ -34,21 +34,21 @@ export default class Toggle extends React.Component<IToggleProps, IToggleState> 
   public render(): React.ReactElement<{}> {
     return (
       <div className={styles.cell}>
-        { this.state.value &&
+        { this.state.checked &&
         (
           <ReactToggle
-            defaultChecked={ this.state.value }
+            defaultChecked={ this.state.checked }
             onText='Yes'
             offText='No'
-            onChange={this.onChange.bind(this)}
+            onChanged={this.onChanged.bind(this)}
             disabled={this.props.disabled} />
         )}
       </div>
     );
   }
 
-  private onChange(value: string): void {
-    if (this.props.onChange)
-      this.props.onChange(value, this.props.id);
+  private onChanged(checked: boolean): void {
+    if (this.props.onChanged)
+      this.props.onChanged(checked, this.props.id);
   }
 }

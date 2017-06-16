@@ -1,3 +1,3 @@
 export interface IToggleState {
-  value?: boolean;
+  checked?: boolean;
 }
