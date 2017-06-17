@@ -29,7 +29,6 @@ const LOG_SOURCE: string = 'ToggleFieldCustomizer';
 
 export default class ToggleFieldCustomizer
   extends BaseFieldCustomizer<IToggleProperties> {
-  private _timerId: number = -1;
 
   @override
   public onInit(): Promise<void> {
@@ -48,7 +47,6 @@ export default class ToggleFieldCustomizer
     const value: string = event.cellValue;
     const id: string = event.row.getValueByName('ID').toString();
     const hasPermissions: boolean = this.context.pageContext.list.permissions.hasPermission(SPPermission.editListItems);
-    
 
     const toggle: React.ReactElement<{}> =
       React.createElement(Toggle, { checked: value, id: id, disabled: !hasPermissions, onChanged: this.onToggleValueChanged.bind(this) } as IToggleProps);

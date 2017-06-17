@@ -34,15 +34,12 @@ export default class Toggle extends React.Component<IToggleProps, IToggleState> 
   public render(): React.ReactElement<{}> {
     return (
       <div className={styles.cell}>
-        { this.state.checked &&
-        (
-          <ReactToggle
-            defaultChecked={ this.state.checked }
-            onText='Yes'
-            offText='No'
-            onChanged={this.onChanged.bind(this)}
-            disabled={this.props.disabled} />
-        )}
+        <ReactToggle
+          defaultChecked={ this.state.checked }
+          onText='Yes'
+          offText='No'
+          onChanged={this.onChanged.bind(this)}
+          disabled={this.props.disabled} />
       </div>
     );
   }
