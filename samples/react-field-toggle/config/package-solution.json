@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "name": "react-field-toggle-client-side-solution",
+    "id": "b267cbb5-0c89-4348-9fde-86907555a33d",
+    "version": "1.0.0.0",
+    "features": [{
+      "title": "Field Extension - Deployment of custom field.",
+      "description": "Deploys a custom field with ClientSideComponentId association",
+      "id": "123fe847-ced2-3036-b564-8dad5c6c6e83",
+      "version": "1.0.0.0",
+      "assets": {        
+        "elementManifests": [
+          "elements.xml"
+        ]
+      }
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-field-toggle.sppkg"
+  }
+}
