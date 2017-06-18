@@ -45,4 +45,11 @@ This sample illustrates how to levereage the SharePoint Framework Extensions App
 
 Don't forget to insert your Google Analytics tracking code something like that 'UA-100713841-5'
 
+## Debug URL for testing
+Here's a debug URL for testing around this sample. 
+
+```
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e8613642-17ee-4392-a8fd-5c0d6edcdb19":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
+```
+
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-application-analytics" />

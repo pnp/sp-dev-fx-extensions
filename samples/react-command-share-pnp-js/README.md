@@ -47,6 +47,9 @@ Version|Date|Comments
   - `gulp serve --nobrowser`
 - Use following query parameter in the SharePoint site to get extension loaded without installing it to app catalog
 
+## Debug URL for testing
+Here's a debug URL for testing around this sample. 
+
 ```
 ?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"06006535-1336-436b-a717-827e28d2ea6e":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```

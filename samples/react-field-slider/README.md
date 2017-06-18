@@ -50,5 +50,11 @@ This package produces the following:
 * dist/* - the bundled script, along with other resources
 * deploy/* - all resources which should be uploaded to a CDN.
 
+## Debug URL for testing
+Here's a debug URL for testing around this sample. Notice that this sample is designed to be used with **Number** field type. In below debug URL sample we define the field internal name as **Percent**. Slider in this case is designed to show values between 0 and 100.
+
+```
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"f2f6825c-fd37-43f7-a99c-5fe6b39dd7fd","properties":{"sampleText":"Hello!"}}}
+```
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-field-slider" />

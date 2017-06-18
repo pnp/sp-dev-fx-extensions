@@ -1,7 +1,7 @@
 # React Toggle Field Customizer
 
 ## Summary
-In this sample is possible to see how to implement Office UI Fabric React Toggle for the field yes/no through SPFx Extensions Field Customizers to modify in a quick way a list
+In this sample is possible to see how to implement Office UI Fabric React Toggle for the field yes/no through SPFx Extensions Field Customizers to modify in a quick way (inline editing) a list without opening the list item. 
 
 ![Office UI Fabric React Toggle SPFx Field Customizer](./assets/react-field-toggle.gif)
 
@@ -42,5 +42,12 @@ This sample illustrates how to leverage the SharePoint Modern UI and extending t
 
 - Field Customizer
 - Office UI Fabric
+
+## Debug URL for testing
+Here's a debug URL for testing around this sample. Notice that this sample is designed to be used with **Boolean** field type. In below debug URL sample we define the field internal name as **SPFxActive**.
+
+```
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"SPFxActive":{"id":"972be477-1d2a-4656-a83a-63eb02552556","properties":{"sampleText":"Hello!"}}}
+```
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-field-toggle" />

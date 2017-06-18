@@ -35,7 +35,7 @@ Version|Date|Comments
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 
-## Notes
+## Steps for testing
 1. You need a developer tenant https://dev.office.com/devprogram
 2. Create a modern teamsite/group via the SharePoint startpage.
 3. Navigate to the document library.
@@ -43,8 +43,13 @@ Version|Date|Comments
 5. Add following querystring:
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"<Your application ID>":{"location":"ClientSideExtension.ApplicationCustomizer"}}
 
-Full Example url:
-https://tenantname.sharepoint.com/sites/TestGroup/Shared%20documents/Forms/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"6ed4a222-c0c8-441e-ae2e-d2240084deff":{"location":"ClientSideExtension.ApplicationCustomizer"}}
+## Debug URL for testing
+Here's a debug URL for testing around this sample. 
+
+```
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"6ed4a222-c0c8-441e-ae2e-d2240084deff":{"location":"ClientSideExtension.ApplicationCustomizer"}}
+```
+
 
 ### Building the code
 

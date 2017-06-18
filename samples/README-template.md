@@ -54,6 +54,13 @@ This extension illustrates the following concepts:
 - topic 2
 - topic 3
 
+## Debug URL for testing
+Here's a debug URL for testing around this sample. **Updated based on your manifest id for easy testing of the sample**.
+
+```
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"7c5a85c1-8b1e-4370-8198-642908faee60":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
+```
+
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
