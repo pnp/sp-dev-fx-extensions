@@ -84,6 +84,15 @@ export default class GraphAppCustomApplicationCustomizer
           });
         
       }
+      else
+      {
+        this._headerPlaceholder.domElement.innerHTML = `
+                      <div class="${styles.app}">
+                        <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.header}">
+                          <p>Group Id not available. This sample only works on Group sites!</p>
+                        </div>
+                      </div>`;
+      }
      
     }
   }
