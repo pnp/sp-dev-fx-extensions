@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.1",
+    "libraryName": "custom-dialog",
+    "libraryId": "33603eec-2d36-41b8-886b-1bf1fb1586dd",
+    "environment": "spo"
+  }
+}

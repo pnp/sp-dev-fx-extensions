@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/customDialog/CustomDialogCommandSet.js",
+      "manifest": "./src/extensions/customDialog/CustomDialogCommandSet.manifest.json",
+      "outputPath": "./dist/custom-dialog.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "customDialogStrings": "extensions/customDialog/loc/{locale}.js"
+  }
+}

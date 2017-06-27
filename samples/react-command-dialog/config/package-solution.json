@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "custom-dialog-client-side-solution",
+    "id": "33603eec-2d36-41b8-886b-1bf1fb1586dd",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/custom-dialog.sppkg"
+  }
+}
