@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/directions/DirectionsCommandSet.js",
+      "manifest": "./src/extensions/directions/DirectionsCommandSet.manifest.json",
+      "outputPath": "./dist/directions.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "drivingDirectionsStrings": "extensions/directions/loc/{locale}.js"
+  }
+}
