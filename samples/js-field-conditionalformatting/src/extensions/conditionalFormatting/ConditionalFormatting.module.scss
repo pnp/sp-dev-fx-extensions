@@ -1,0 +1,16 @@
+.ConditionalFormatting {
+  &.min {
+    background-color: #a80000;
+    color: #fff;
+  }
+
+  &.mid {
+    background-color: #ffb900;
+    color: #000;
+  }
+
+  &.max {
+    background-color: #107c10;
+    color: #fff;
+  }
+}

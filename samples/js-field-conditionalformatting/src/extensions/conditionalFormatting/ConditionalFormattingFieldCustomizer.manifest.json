@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "dac19deb-462b-49a3-8c19-a0c3c553ddb9",
+  "alias": "ConditionalFormattingFieldCustomizer",
+  "componentType": "Extension",
+  "extensionType": "FieldCustomizer",
+  "version": "*", // The "*" signifies that the version should be taken from the package.json
+  "manifestVersion": 2,
+  "safeWithCustomScriptDisabled": true
+}
