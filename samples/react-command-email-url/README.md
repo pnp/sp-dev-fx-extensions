@@ -72,3 +72,4 @@ This package produces the following:
 * dist/* - the bundled script, along with other resources
 * deploy/* - all resources which should be uploaded to a CDN.
 
+![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-email-url)
