@@ -1,0 +1,23 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/weather/WeatherFieldCustomizer.js",
+      "manifest": "./src/extensions/weather/WeatherFieldCustomizer.manifest.json",
+      "outputPath": "./dist/weather.bundle.js"
+    }
+  ],
+  "externals": {
+    "jquery": {
+      "path": "https://code.jquery.com/jquery-2.1.1.min.js",
+      "globalName": "jQuery"
+    },
+    "simpleWeather": {
+      "path": "https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    }
+  },
+  "localizedResources": {
+    "weatherStrings": "extensions/weather/loc/{locale}.js"
+  }
+}
