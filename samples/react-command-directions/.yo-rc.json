@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.1",
+    "libraryName": "react-command-directions",
+    "libraryId": "38610429-9f77-4bf0-9d0a-25bd04f68aa6",
+    "environment": "spo"
+  }
+}
