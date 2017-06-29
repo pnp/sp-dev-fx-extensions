@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/conditionalFormatting/ConditionalFormattingFieldCustomizer.js",
+      "manifest": "./src/extensions/conditionalFormatting/ConditionalFormattingFieldCustomizer.manifest.json",
+      "outputPath": "./dist/conditional-formatting.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "conditionalFormattingStrings": "extensions/conditionalFormatting/loc/{locale}.js"
+  }
+}

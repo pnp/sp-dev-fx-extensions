@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "js-field-conditionalformatting-client-side-solution",
+    "id": "1c10d2e8-762a-49f0-a673-2980ee2ce151",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/js-field-conditionalformatting.sppkg"
+  }
+}
