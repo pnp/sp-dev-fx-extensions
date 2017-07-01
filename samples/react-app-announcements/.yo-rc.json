@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.1",
+    "libraryName": "react-app-announcements",
+    "libraryId": "59a4b1e7-4dda-4cd9-adbe-b3c3118c021b",
+    "environment": "spo"
+  }
+}
