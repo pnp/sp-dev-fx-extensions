@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.1",
+    "libraryName": "react-command-files-size",
+    "libraryId": "993edf84-1f31-42fa-b385-561ca2a0f766",
+    "environment": "spo"
+  }
+}

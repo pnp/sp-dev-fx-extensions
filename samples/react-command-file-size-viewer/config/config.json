@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/filesSize/FilesSizeCommandSet.js",
+      "manifest": "./src/extensions/filesSize/FilesSizeCommandSet.manifest.json",
+      "outputPath": "./dist/files-size.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "filesSizeStrings": "extensions/filesSize/loc/{locale}.js"
+  }
+}
