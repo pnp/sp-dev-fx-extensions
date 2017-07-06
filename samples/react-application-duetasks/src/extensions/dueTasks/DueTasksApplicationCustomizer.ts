@@ -43,6 +43,10 @@ export default class DueTasksApplicationCustomizer
       let today: Date = new Date();
       today.setHours(0, 0, 0, 0);
 
+      pnp.setup({
+        spfxContext: this.context
+      });
+
       pnp.sp.web.get().then((web: any) => { console.log(web); });
 
       pnp.sp.web.lists.getByTitle(this.properties.tasksListTitle).views.getByTitle('Late Tasks').inBatch(batch).get().then((view: any) => {

@@ -54,5 +54,3 @@ On your SharePoint tenant:
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"771b53cc-ee49-4f06-903e-3ce4eb4bc313":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"tasksListTitle":"Tasks"}}}
 ```
 where ```"tasksListTitle"``` value should contain a title of Tasks list.
-
-**NOTE:** the functionality might not currently work on Modern pages. Related issue: [#522](https://github.com/SharePoint/PnP-JS-Core/issues/522)
