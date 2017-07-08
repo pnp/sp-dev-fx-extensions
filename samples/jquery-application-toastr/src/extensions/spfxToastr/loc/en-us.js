@@ -1,5 +1,5 @@
 define([], function() {
   return {
-    "Title": "SpfxToastrApplicationCustomizer"
+    "Title": "Spfx Toastr (ApplicationCustomizer)"
   }
 });

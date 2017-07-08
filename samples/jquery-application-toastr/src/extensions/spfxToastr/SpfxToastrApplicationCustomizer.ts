@@ -14,8 +14,6 @@ const LOG_SOURCE: string = 'SpfxToastrApplicationCustomizer';
  * You can define an interface to describe it.
  */
 export interface ISpfxToastrApplicationCustomizerProperties {
-  // This is an example; replace with your own property
-  testMessage: string;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
@@ -30,11 +28,6 @@ export default class SpfxToastrApplicationCustomizer
 
   @override
   public onRender(): void {
-    let message: string = this.properties.testMessage;
-    if (!message) {
-      message = '(No properties were provided.)';
-    }
 
-    alert(`Hello from ${strings.Title}:\n\n${message}`);
   }
 }
