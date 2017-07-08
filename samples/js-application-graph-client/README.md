@@ -1,12 +1,13 @@
-##Application Customizer GraphClient from Modern Teamsite
+# Application Customizer GraphClient from Modern Teamsite
 
 ## Summary
 Based on this example: https://dev.office.com/sharepoint/docs/spfx/extensions/get-started/using-page-placeholder-with-extensions
-And some code ispiration from Mikael Svenson (@mikaelsvenson) http://www.techmikael.com/2017/06/accessing-microsoft-graph-resources.html
 
-Simple example to call the Graph via the new GraphHttpClient (No ADAL) for get group title, mail and description. 
+And some code inspiration from Mikael Svenson ([@mikaelsvenson](https://twitter.com/mikaelsvenson)) http://www.techmikael.com/2017/06/accessing-microsoft-graph-resources.html
 
-> Notice that this assumes that you are using "modern" collaboration site (group site) for testing.
+Simple example to call the Graph via the new `GraphHttpClient` (No ADAL) for getting the group title, mail, and description. 
+
+> Notice, this assumes that you are using a "modern" collaboration site (group site) for testing.
 
 ![Screenshot with custom header](./assets/screenshot.png)
 
@@ -38,10 +39,12 @@ Version|Date|Comments
 ## Steps for testing
 1. You need a developer tenant https://dev.office.com/devprogram
 2. Create a modern teamsite/group via the SharePoint startpage.
-3. Navigate to the document library.
-4. In Code project, manifest.json, copy id and paste into step 5 querystring
-5. Add following querystring:
+3. Navigate to a document library on the site.
+4. In the project's manifest.json, copy the id and paste into the step 5 querystring
+5. Add the following querystring:
+```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"<Your application ID>":{"location":"ClientSideExtension.ApplicationCustomizer"}}
+```
 
 ## Debug URL for testing
 Here's a debug URL for testing around this sample. 
