@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/spfxToastr/SpfxToastrApplicationCustomizer.js",
+      "manifest": "./src/extensions/spfxToastr/SpfxToastrApplicationCustomizer.manifest.json",
+      "outputPath": "./dist/spfx-toastr.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "spfxToastrStrings": "extensions/spfxToastr/loc/{locale}.js"
+  }
+}
