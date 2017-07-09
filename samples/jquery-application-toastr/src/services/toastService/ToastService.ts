@@ -14,7 +14,9 @@ export class ToastService {
 			this.ensureToasts(spHttpClient, baseUrl)
 				.then((toasts: IToast[]): void => {
 					resolve(toasts);
-				})
+				}).catch((error: any): void => {
+					reject(error);
+				});
 		});
 	}
 
@@ -59,6 +61,8 @@ export class ToastService {
 						resolve(cachedData.Toasts);
 
 						(window as any).spfxToastrLoadingData = false;
+					}).catch((error: any): void => {
+						reject(error);
 					});
 			}
 		});
@@ -67,6 +71,9 @@ export class ToastService {
 	private static getToastsFromList(spHttpClient: SPHttpClient, baseUrl: string): Promise<IToast[]>{
 		return spHttpClient.get(`${baseUrl}/_api/web/lists/getbytitle('Toast')/items?$select=Id,Title,Severity,Frequency,Enabled,Message`,SPHttpClient.configurations.v1)
 			.then((response: SPHttpClientResponse): Promise<{ value: IToast[] }> => {
+				if(!response.ok) {
+					throw `Unable to get items: ${response.status} (${response.statusText})`;
+				}
 				return response.json();
 			})
 			.then((results: {value: IToast[]}) => {

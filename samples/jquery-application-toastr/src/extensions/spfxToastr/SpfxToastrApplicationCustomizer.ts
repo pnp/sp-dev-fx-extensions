@@ -102,6 +102,8 @@ export default class SpfxToastrApplicationCustomizer
               break;
           }
         }
+      }).catch((error: any): void => {
+        toastr.error(error,'Failed to Load Toasts!');
       });
     });
   }
