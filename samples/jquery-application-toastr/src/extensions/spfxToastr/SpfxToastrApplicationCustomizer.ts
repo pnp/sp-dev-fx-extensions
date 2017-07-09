@@ -12,6 +12,7 @@ import { SPComponentLoader } from '@microsoft/sp-loader';
 import * as $ from 'jquery';
 import * as toastr from 'toastr';
 import styles from './SpfxToastr.module.scss';
+import { IToast, ToastService } from '../../services/toastService';
 
 const LOG_SOURCE: string = 'SpfxToastrApplicationCustomizer';
 
@@ -27,12 +28,16 @@ export interface ISpfxToastrApplicationCustomizerProperties {
 export default class SpfxToastrApplicationCustomizer
   extends BaseApplicationCustomizer<ISpfxToastrApplicationCustomizerProperties> {
 
+  private toastsPromise: Promise<IToast[]>;
+
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
     //Load the Toastr CSS
     SPComponentLoader.loadCss('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css');
+
+    this.toastsPromise = ToastService.getToasts(this.context.spHttpClient, this.context.pageContext.web.absoluteUrl);
 
     return Promise.resolve<void>();
   }
@@ -71,14 +76,34 @@ export default class SpfxToastrApplicationCustomizer
         warning: `${styles.warning} ${styles.fabricIcon} ms-Icon--Warning`,
         error: `${styles.error} ${styles.fabricIcon} ms-Icon--Error`,
         success: `${styles.success} ${styles.fabricIcon} ms-Icon--Completed`
-      }
+      };
 
       //Test Toast!
-      toastr.info('Toast is great!', 'Sample Toast');
+      /*toastr.info('Toast is great!', 'Sample Toast');
       toastr.warning('Oh no!', 'Some Warning');
       toastr.success('You did great, kid.', "Success Message");
-      toastr.error('You make so sad', 'FAILURE');
-    });
+      toastr.error('You make so sad and this message just goes on and on and on and on it is just so super long!', 'FAILURE');
+      */
 
+      this.toastsPromise.then((toasts: IToast[]) => {
+        for (let t of toasts){
+          switch (t.Severity){
+            case 'Warning':
+              toastr.warning(t.Message,t.Title);
+              break;
+            case 'Error':
+              toastr.error(t.Message,t.Title);
+              break;
+            case 'Success':
+              toastr.success(t.Message,t.Title);
+              break;
+            default:
+              toastr.info(t.Message,t.Title);
+              break;
+          }
+        }
+      });
+    });
   }
+
 }
