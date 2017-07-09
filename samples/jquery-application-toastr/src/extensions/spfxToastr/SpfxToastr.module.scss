@@ -1,0 +1,39 @@
+.topRight {
+	top: 62px;
+	right: 12px;
+}
+
+.topLeft {
+	top: 62px;
+	left: 12px;
+}
+
+.spfxToastr {
+
+	.fabricIcon:before {
+		position: fixed;
+		font-family: FabricMDL2Icons;
+		font-style: normal;
+		font-weight: 400;
+		speak: none;
+		font-size: 28px;
+		margin: 4px 0 0 -36px;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	.info {
+		background-color: #0078d7;
+	}
+
+	.warning {
+		background-color: #ff8c00;
+	}
+
+	.error {
+		background-color: #a80000;
+	}
+
+	.success {
+		background-color: #107c10;
+	}
+}
