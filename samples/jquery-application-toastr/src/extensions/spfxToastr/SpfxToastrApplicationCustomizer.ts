@@ -47,11 +47,11 @@ export default class SpfxToastrApplicationCustomizer
     
     $(document).ready(() => {
 
-      //***************
+      //***********************
       //Toastr Options
-      //***************
+      //***********************
 
-      //Determines where the toast shows up.
+      // Determines where the toast shows up.
       //  styles.topRight and styles.topLeft take into account the SuiteBar
       //  There are also the native toast-bottom-right and toast-bottom-left
       toastr.options.positionClass = `${styles.topRight} ${styles.spfxToastr}`;
@@ -62,13 +62,13 @@ export default class SpfxToastrApplicationCustomizer
       toastr.options.tapToDismiss = true; //Allows messages to go away on click
       toastr.options.closeButton = true; //Shows a close button to let end users know to click to close
 
-      //A combination of Office UI-Fabric classes and custom classes are used
-      // to ensure the notifications don't look too out of place
-      //We use a custom styles.fabricIcon style to imitage the ms-Icon class
-      // the ms-Icon class has extra properties that mess up our toast
-      //We are unable to use the ms-bgColor styles since the Toast CSS loads
-      // later and takes precedence, so we use our own color classes
-      // For more background on this issue, see this article: https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/office-ui-fabric-integration
+      // A combination of Office UI-Fabric classes and custom classes are used
+      //  to ensure the notifications don't look too out of place
+      // We use a custom styles.fabricIcon style to imitage the ms-Icon class
+      //  the ms-Icon class has extra properties that mess up our toast
+      // We are unable to use the ms-bgColor styles since the Toast CSS loads
+      //  later and takes precedence, so we use our own color classes
+      //  For more background on this issue, see this article: https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/office-ui-fabric-integration
       toastr.options.titleClass = 'ms-font-m ms-fontWeight-semibold';
       toastr.options.messageClass = 'ms-font-s';
       toastr.options.iconClasses = {
@@ -85,20 +85,36 @@ export default class SpfxToastrApplicationCustomizer
       toastr.error('You make so sad and this message just goes on and on and on and on it is just so super long!', 'FAILURE');
       */
 
+
+      //***********************
+      //Toast Display
+      //***********************
+
       this.toastsPromise.then((toasts: IToast[]) => {
         for (let t of toasts){
+
+          // Setup callbacks to track dismisal status
+          let overrides: ToastrOptions = {
+            onclick: () => {
+              ToastService.acknowledgeToast(t.Id);
+            },
+            onCloseClick: () => {
+              ToastService.acknowledgeToast(t.Id);
+            }
+          };
+
           switch (t.Severity){
             case 'Warning':
-              toastr.warning(t.Message,t.Title);
+              toastr.warning(t.Message, t.Title, overrides);
               break;
             case 'Error':
-              toastr.error(t.Message,t.Title);
+              toastr.error(t.Message, t.Title, overrides);
               break;
             case 'Success':
-              toastr.success(t.Message,t.Title);
+              toastr.success(t.Message, t.Title, overrides);
               break;
             default:
-              toastr.info(t.Message,t.Title);
+              toastr.info(t.Message, t.Title, overrides);
               break;
           }
         }
