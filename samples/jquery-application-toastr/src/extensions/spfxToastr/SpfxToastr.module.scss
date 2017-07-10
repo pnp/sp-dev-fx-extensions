@@ -1,3 +1,5 @@
+//These 2 classes are outside the main namespace because they are top level
+// classes for the toasts
 .topRight {
 	top: 62px;
 	right: 12px;
@@ -10,6 +12,8 @@
 
 .spfxToastr {
 
+	//Imitates much of the ms-Icon class from Office UI-Fabric but
+	// is designed to display without the <i>
 	.fabricIcon:before {
 		position: fixed;
 		font-family: FabricMDL2Icons;
@@ -22,18 +26,18 @@
 	}
 
 	.info {
-		background-color: #0078d7;
+		background-color: #0078d7; //blue
 	}
 
 	.warning {
-		background-color: #ff8c00;
+		background-color: #ff8c00; //orangeLighter
 	}
 
 	.error {
-		background-color: #a80000;
+		background-color: #a80000; //redDark
 	}
 
 	.success {
-		background-color: #107c10;
+		background-color: #107c10; //green
 	}
 }

@@ -1,8 +1,6 @@
 import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
-import {
-  BaseApplicationCustomizer
-} from '@microsoft/sp-application-base';
+import { BaseApplicationCustomizer } from '@microsoft/sp-application-base';
 
 import * as strings from 'spfxToastrStrings';
 
@@ -12,7 +10,7 @@ import { SPComponentLoader } from '@microsoft/sp-loader';
 import * as $ from 'jquery';
 import * as toastr from 'toastr';
 import styles from './SpfxToastr.module.scss';
-import { IToast, ToastService } from '../../services/toastService';
+import { IToast, ToastService } from '../../services/toastService'; //loaded from the toastService barrel
 
 const LOG_SOURCE: string = 'SpfxToastrApplicationCustomizer';
 
@@ -22,6 +20,7 @@ const LOG_SOURCE: string = 'SpfxToastrApplicationCustomizer';
  * You can define an interface to describe it.
  */
 export interface ISpfxToastrApplicationCustomizerProperties {
+  //Nope
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
@@ -37,6 +36,7 @@ export default class SpfxToastrApplicationCustomizer
     //Load the Toastr CSS
     SPComponentLoader.loadCss('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css');
 
+    //Go ahead and request the toasts, but we can't use them until jQuery and Toastr are ready
     this.toastsPromise = ToastService.getToasts(this.context.spHttpClient, this.context.pageContext.web.absoluteUrl);
 
     return Promise.resolve<void>();
@@ -45,15 +45,16 @@ export default class SpfxToastrApplicationCustomizer
   @override
   public onRender(): void {
     
+    //jQuery document ready
     $(document).ready(() => {
 
       //***********************
       //Toastr Options
       //***********************
 
-      // Determines where the toast shows up.
-      //  styles.topRight and styles.topLeft take into account the SuiteBar
-      //  There are also the native toast-bottom-right and toast-bottom-left
+      //Determines where the toast shows up.
+      // styles.topRight and styles.topLeft take into account the SuiteBar
+      // there are also the native toast-bottom-right and toast-bottom-left
       toastr.options.positionClass = `${styles.topRight} ${styles.spfxToastr}`;
       toastr.options.preventDuplicates = true;
       toastr.options.newestOnTop = false; //Ensures the first toast we send is on top
@@ -62,13 +63,13 @@ export default class SpfxToastrApplicationCustomizer
       toastr.options.tapToDismiss = true; //Allows messages to go away on click
       toastr.options.closeButton = true; //Shows a close button to let end users know to click to close
 
-      // A combination of Office UI-Fabric classes and custom classes are used
-      //  to ensure the notifications don't look too out of place
-      // We use a custom styles.fabricIcon style to imitage the ms-Icon class
-      //  the ms-Icon class has extra properties that mess up our toast
-      // We are unable to use the ms-bgColor styles since the Toast CSS loads
-      //  later and takes precedence, so we use our own color classes
-      //  For more background on this issue, see this article: https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/office-ui-fabric-integration
+      //A combination of Office UI-Fabric classes and custom classes are used
+      // to ensure the notifications don't look too out of place
+      //We use a custom styles.fabricIcon style to imitage the ms-Icon class
+      // the ms-Icon class has extra properties that mess up our toast
+      //We are unable to use the ms-bgColor styles since the Toast CSS loads
+      // later and takes precedence, so we use our own color classes
+      // For more background on this issue, see this article: https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/office-ui-fabric-integration
       toastr.options.titleClass = 'ms-font-m ms-fontWeight-semibold';
       toastr.options.messageClass = 'ms-font-s';
       toastr.options.iconClasses = {
@@ -78,13 +79,6 @@ export default class SpfxToastrApplicationCustomizer
         success: `${styles.success} ${styles.fabricIcon} ms-Icon--Completed`
       };
 
-      //Test Toast!
-      /*toastr.info('Toast is great!', 'Sample Toast');
-      toastr.warning('Oh no!', 'Some Warning');
-      toastr.success('You did great, kid.', "Success Message");
-      toastr.error('You make so sad and this message just goes on and on and on and on it is just so super long!', 'FAILURE');
-      */
-
 
       //***********************
       //Toast Display
@@ -92,8 +86,7 @@ export default class SpfxToastrApplicationCustomizer
 
       this.toastsPromise.then((toasts: IToast[]) => {
         for (let t of toasts){
-
-          // Setup callbacks to track dismisal status
+          //Setup callbacks to track dismisal status
           let overrides: ToastrOptions = {
             onclick: () => {
               ToastService.acknowledgeToast(t.Id);
@@ -119,7 +112,9 @@ export default class SpfxToastrApplicationCustomizer
           }
         }
       }).catch((error: any): void => {
-        toastr.error(error,'Failed to Load Toasts!');
+        //Generic error handler for any issues that occurred throughout
+        // the promise chain. Display it in a toast!
+        toastr.error(error, strings.FailedToLoad);
       });
     });
   }
