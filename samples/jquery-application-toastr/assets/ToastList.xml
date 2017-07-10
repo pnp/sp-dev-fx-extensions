@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.15.1705.0, Culture=neutral, PublicKeyToken=3751622786b357c2" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-4B1BA36A60304C4B87AE6B75D21A338F">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-4B1BA36A60304C4B87AE6B75D21A338F" Version="1" BaseSiteTemplate="GROUP#0">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Toast" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Toast" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{E2B47E67-0F81-4592-AEAF-0A08FD5C34B6}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/sites/Muppets/Lists/Toast/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="StartDate" />
+                  <FieldRef Name="Title" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Severity" />
+                <FieldRef Name="Frequency" />
+                <FieldRef Name="StartDate" />
+                <FieldRef Name="EndDate" />
+                <FieldRef Name="Enabled" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Choice" DisplayName="Severity" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" ID="{ed5b516d-701c-4f82-98ab-4c5ebb8ce9da}" SourceID="{{listid:Toast}}" StaticName="Severity" Name="Severity" ColName="nvarchar4" RowOrdinal="0" Version="1">
+              <Default>Info</Default>
+              <CHOICES>
+                <CHOICE>Info</CHOICE>
+                <CHOICE>Warning</CHOICE>
+                <CHOICE>Error</CHOICE>
+                <CHOICE>Success</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field Type="Text" DisplayName="Message" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{a531339c-8127-4ade-ae98-ae67c4947e09}" SourceID="{{listid:Toast}}" StaticName="Message" Name="Message" ColName="nvarchar3" RowOrdinal="0" Version="1" />
+            <Field Type="DateTime" DisplayName="Start Date" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateTime" FriendlyDisplayFormat="Disabled" ID="{a7debb64-4aae-4a1c-8984-87279bec057d}" SourceID="{{listid:Toast}}" StaticName="StartDate" Name="StartDate" ColName="datetime1" RowOrdinal="0" Version="2" CustomFormatter="" CalType="0">
+              <Default>[today]</Default>
+            </Field>
+            <Field Type="DateTime" DisplayName="End Date" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateTime" FriendlyDisplayFormat="Disabled" ID="{dbc2e526-9222-4c31-8f36-6ab24b55ba29}" SourceID="{{listid:Toast}}" StaticName="EndDate" Name="EndDate" ColName="datetime2" RowOrdinal="0" Version="2" CustomFormatter="" CalType="0">
+              <DefaultFormula>=Today+7</DefaultFormula>
+            </Field>
+            <Field Type="Choice" DisplayName="Frequency" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" ID="{fb398503-0307-4d0a-9e8c-ca3f84530aad}" SourceID="{{listid:Toast}}" StaticName="Frequency" Name="Frequency" ColName="nvarchar5" RowOrdinal="0" Version="1">
+              <Default>Once</Default>
+              <CHOICES>
+                <CHOICE>Once</CHOICE>
+                <CHOICE>Once Per Day</CHOICE>
+                <CHOICE>Always</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field DisplayName="Enabled" Title="Enabled" Type="Boolean" ID="{edbbe183-47fa-4201-b1da-6c3629a59210}" SourceID="{{listid:Toast}}" StaticName="Enabled" Name="Enabled" ColName="bit1" RowOrdinal="0" Version="2" CustomFormatter="" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE">
+              <Default>1</Default>
+            </Field>
+          </pnp:Fields>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
