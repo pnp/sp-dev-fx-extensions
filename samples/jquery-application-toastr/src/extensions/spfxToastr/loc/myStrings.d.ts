@@ -1,5 +1,6 @@
 declare interface ISpfxToastrStrings {
   Title: string;
+  FailedToLoad: string;
 }
 
 declare module 'spfxToastrStrings' {
