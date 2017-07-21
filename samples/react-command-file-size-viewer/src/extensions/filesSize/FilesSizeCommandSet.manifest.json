@@ -1,0 +1,18 @@
+{
+  "$schema": "../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "5f509a36-9998-4a5f-a5f4-b7d02d4f90b4",
+  "alias": "FilesSizeCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+  "version": "*", // The "*" signifies that the version should be taken from the package.json
+  "manifestVersion": 2,
+  "safeWithCustomScriptDisabled": true,
+
+  "commands": {
+    "FilesSize": {
+      "title": "File Size Viewer",
+      "iconImageUrl": "icons/request.png"
+    }
+  }
+}
