@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.1",
+    "libraryName": "jquery-application-toastr",
+    "libraryId": "461c7ee8-3ab9-47ee-b52d-44c77087d9e8",
+    "environment": "spo"
+  }
+}
