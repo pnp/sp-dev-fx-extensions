@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "react-app-announcements-client-side-solution",
+    "id": "59a4b1e7-4dda-4cd9-adbe-b3c3118c021b",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/react-app-announcements.sppkg"
+  }
+}

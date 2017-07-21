@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/announcements/AnnouncementsApplicationCustomizer.js",
+      "manifest": "./src/extensions/announcements/AnnouncementsApplicationCustomizer.manifest.json",
+      "outputPath": "./dist/announcements.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "announcementsStrings": "extensions/announcements/loc/{locale}.js"
+  }
+}
