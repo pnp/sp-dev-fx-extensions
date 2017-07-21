@@ -3,7 +3,7 @@
 ## Summary
 Sample SharePoint Framework application customizer extension that shows toast notifications configured from a SharePoint list. Demonstrates jQuery module loading, barrel configuration, promise chaining, and localStorage caching.
 
-![Toasts shown on a Communication Site](./assets/spfxToastr-Preview.png)
+![Toasts shown on a Communication Site](./assets/spfxToaster-Preview.PNG)
 
 ## Used SharePoint Framework Version 
 ![1.1.1](https://img.shields.io/badge/version-1.1.1-orange.svg)
