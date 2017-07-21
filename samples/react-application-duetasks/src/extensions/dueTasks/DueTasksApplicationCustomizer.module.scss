@@ -1,0 +1,21 @@
+$themeDark: "[theme:themeDark, default: ##aa0568]";
+$primaryBackground: "[theme:primaryBackground, default: #fff]";
+
+.app {
+    .header {
+        height:50px; 
+        text-align:center; 
+        line-height:2.5; 
+        font-weight:bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $themeDark;
+        color: $primaryBackground;
+
+        a {
+            color: $primaryBackground;
+            text-decoration: underline;
+        }
+    }
+}

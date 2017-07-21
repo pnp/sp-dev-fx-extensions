@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/dueTasks/DueTasksApplicationCustomizer.js",
+      "manifest": "./src/extensions/dueTasks/DueTasksApplicationCustomizer.manifest.json",
+      "outputPath": "./dist/due-tasks.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "dueTasksStrings": "extensions/dueTasks/loc/{locale}.js"
+  }
+}
