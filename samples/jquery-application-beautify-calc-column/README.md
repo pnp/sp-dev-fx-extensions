@@ -3,10 +3,18 @@ Microsoft has started blocking execution of custom markup in calculated fields i
 
 [Reference](https://support.microsoft.com/en-us/help/4032106/handling-html-markup-in-sharepoint-calculated-fields)
 
-This SPFx extension beautifies the HTML markups used in the calculated column if the tag is configured with class name "beautifyCalcMarkup".
+This SPFx extension renders the markup based formulas used in the calculated column as HTML when the outer/parent HTML tag is configured with a class name "beautifyCalcMarkup".
 
-## Sample Formulas
-![jquery-application-beautify-calc-column](./assets/Snip20170706_15.png)
+## Use Cases  
+1) SharePoint Calculated columns or fields used to create clickable links, these links can also be configured to open in a new tab.  
+2) SharePoint Calculated columns or fields used to display Key Performance Indicator icons based on column values (Example : Priority)
+3) SharePoint Calculated columns or fields used to display color coded text based on column values(Example : Task Status)
+
+![jquery-application-beautify-calc-column](./assets/Snip20170721_7.png)
+![jquery-application-beautify-calc-column](./assets/Snip20170721_10.png)
+
+![jquery-application-beautify-calc-column](./assets/Snip20170721_8.png)
+![jquery-application-beautify-calc-column](./assets/Snip20170721_5.png)
 
 ## Used SharePoint Framework Version 
 SPFx Extensions Dev Preview
