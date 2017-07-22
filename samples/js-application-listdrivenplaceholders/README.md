@@ -51,17 +51,23 @@ Version|Date|Comments
     - Select cog -> Site contents (if not redirected) and refresh the page periodically until the app is no longer grayed out, and shows as installed
     - Navigate to the new ‘SPFx Placeholders’ list
       - Create an entry with title 'PageHeader', and add your desired content
-      - Create an entry with title 'PageFooter' and add your desired content
+      - Create an entry with title 'PageFooter', and add your desired content
   - Debug the solution to view the placeholder content dynamically injected
     - In the command line, run:
     - `gulp serve --nobrowser`
-    - Browse to your test site and add the below debug script url to a list view within your site
+    - Browse to your test site and add the below debug script url to a list view within your site (use a list view url to ensure all placeholders show up, as the current preview functionality will not correctly show placeholders on all pages)
 
 ## Debug URL for testing
-Here's a debug URL for testing around this sample. **Updated based on your manifest id for easy testing of the sample**.
+Here's a debug URL for testing around this sample.
 
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"b58ca197-a89a-47a9-b283-7c1df361eaf3":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
+```
+
+Here's an example of what your URL will look like.
+
+```
+https://yourtenant.sharepoint.com/yourlist/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={%22b58ca197-a89a-47a9-b283-7c1df361eaf3%22:{%22location%22:%22ClientSideExtension.ApplicationCustomizer%22,%22properties%22:{}}}
 ```
 
 ## Features
