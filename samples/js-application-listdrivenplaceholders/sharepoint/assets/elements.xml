@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+ 
+    <Field ID="{32decb18-2917-4565-8458-58e917e2ba8a}"
+        Type="Note"
+        DisplayName="Content"
+        RichText="TRUE"
+        RichTextMode="FullHtml" 
+        Name="SPFxContent">
+    </Field>
+ 
+    <ContentType ID="0x01004d231c0a7ac2475ebce218d74ad6d47b"
+        Name="SPFx Placeholder"
+        Group="SPFx Content Types"
+        Description="Manage placeholders extension content">
+        <FieldRefs>
+            <FieldRef ID="{32decb18-2917-4565-8458-58e917e2ba8a}" />
+        </FieldRefs>
+    </ContentType>
+ 
+    <ListInstance
+        CustomSchema="schema.xml"
+        FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+        Title="SPFx Placeholders"
+        Description="SPFx Placeholders"
+        TemplateType="100"
+        Url="Lists/SPFxPlaceholders">
+    </ListInstance>
+ 
+</Elements>

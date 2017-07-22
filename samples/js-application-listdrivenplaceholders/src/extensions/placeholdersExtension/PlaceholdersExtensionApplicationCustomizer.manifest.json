@@ -1,0 +1,10 @@
+{
+"$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/client-side-extension-manifest.schema.json",
+  "id": "b58ca197-a89a-47a9-b283-7c1df361eaf3",
+  "alias": "PlaceholdersExtension",
+  "componentType": "Extension",
+  "extensionType": "ApplicationCustomizer",
+  "version": "*", // The "*" signifies that the version should be taken from the package.json
+  "manifestVersion": 2,
+  "safeWithCustomScriptDisabled": true
+}

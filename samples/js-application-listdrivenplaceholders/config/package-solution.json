@@ -1,0 +1,24 @@
+{
+  "solution": {
+    "name": "placeholders-extension-client-side-solution",
+    "id": "db857a74-fbd9-4a0f-92a4-8a8ed24bc2e2",
+    "version": "1.0.0.0",
+    "features": [{
+      "title": "Placeholders Extension",
+      "description": "Placeholders Extension",
+      "id": "7d3631fb-aeb8-4fe4-9d5e-eede52446c9d",
+      "version": "1.0.0.0",
+      "assets": {        
+        "elementManifests": [
+          "elements.xml"
+        ],
+        "elementFiles":[
+          "schema.xml"
+        ]
+      }
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/placeholders-extension.sppkg"
+  }
+}
