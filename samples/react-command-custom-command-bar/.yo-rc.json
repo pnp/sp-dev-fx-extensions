@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.1",
+    "libraryName": "react-command-custom-command-bar",
+    "libraryId": "a399cbe2-1bf2-4131-b620-018b2f4230d4",
+    "environment": "spo"
+  }
+}
