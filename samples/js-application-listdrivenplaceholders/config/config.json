@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/placeholdersExtension/PlaceholdersExtensionApplicationCustomizer.js",
+      "manifest": "./src/extensions/placeholdersExtension/PlaceholdersExtensionApplicationCustomizer.manifest.json",
+      "outputPath": "./dist/placeholders-extension.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "placeholdersExtensionStrings": "extensions/placeholdersExtension/loc/{locale}.js"
+  }
+}
