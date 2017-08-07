@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/customCommandBar/CustomCommandBarCommandSet.js",
+      "manifest": "./src/extensions/customCommandBar/CustomCommandBarCommandSet.manifest.json",
+      "outputPath": "./dist/custom-command-bar.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "customCommandBarStrings": "extensions/customCommandBar/loc/{locale}.js"
+  }
+}

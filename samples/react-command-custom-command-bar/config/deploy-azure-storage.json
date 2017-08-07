@@ -1,0 +1,6 @@
+{
+  "workingDir": "./temp/deploy/",
+  "account": "<!-- STORAGE ACCOUNT NAME -->",
+  "container": "react-command-custom-command-bar",
+  "accessKey": "<!-- ACCESS KEY -->"
+}
