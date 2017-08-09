@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/siteBreadcrumb/SiteBreadcrumbApplicationCustomizer.js",
+      "manifest": "./src/extensions/siteBreadcrumb/SiteBreadcrumbApplicationCustomizer.manifest.json",
+      "outputPath": "./dist/site-breadcrumb.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "siteBreadcrumbStrings": "extensions/siteBreadcrumb/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "workingDir": "./temp/deploy/",
+  "account": "<!-- STORAGE ACCOUNT NAME -->",
+  "container": "site-breadcrumb-extension",
+  "accessKey": "<!-- ACCESS KEY -->"
+}

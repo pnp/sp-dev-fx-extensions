@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "name": "site-breadcrumb-extension-client-side-solution",
+    "id": "4d6b2847-ccab-4778-9b3a-0e9ea58d88a9",
+    "version": "1.0.0.0",
+    "features": [{
+      "title": "SharePoint Framework Breadcrumb Extension",
+      "description": "Deploys the Breadcrumb custom action to the site",
+      "id": "52d8511d-f447-4b3b-b087-d82b861861a1",
+      "version": "1.0.0.0",
+      "assets": {
+        "elementManifests": [
+          "elements.xml"
+        ]
+      }
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/site-breadcrumb-extension.sppkg"
+  }
+}
