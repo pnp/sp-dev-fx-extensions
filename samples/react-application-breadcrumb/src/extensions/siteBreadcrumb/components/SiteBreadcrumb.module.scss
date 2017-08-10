@@ -1,0 +1,27 @@
+.breadcrumb {
+  >div {
+    padding-left: 7px;
+  }
+  div[role="navigation"] {
+    margin-top: 0;
+  }
+  .breadcrumbLinks {
+    ol {
+      li {
+        a {
+          color: #fff;
+          font-size: 14px;
+          padding: 4px 8px 8px 8px;
+          &:hover {
+            background-color: #fff;
+          }
+        }
+        i {
+          color: #fff;
+          font-size: 10px;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
