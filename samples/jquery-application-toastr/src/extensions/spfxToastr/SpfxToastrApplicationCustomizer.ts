@@ -1,6 +1,8 @@
 import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
-import { BaseApplicationCustomizer } from '@microsoft/sp-application-base';
+import {
+  BaseApplicationCustomizer
+} from '@microsoft/sp-application-base';
 
 import * as strings from 'spfxToastrStrings';
 
@@ -10,7 +12,9 @@ import { SPComponentLoader } from '@microsoft/sp-loader';
 import * as $ from 'jquery';
 import * as toastr from 'toastr';
 import styles from './SpfxToastr.module.scss';
-import { IToast, ToastService } from '../../services/toastService'; //loaded from the toastService barrel
+//import { IToast, ToastService } from '../../services/toastService'; //loaded from the toastService barrel
+import { IToast } from '../../services/toastService/IToast';
+import { ToastService } from '../../services/toastService/ToastService';
 
 const LOG_SOURCE: string = 'SpfxToastrApplicationCustomizer';
 
