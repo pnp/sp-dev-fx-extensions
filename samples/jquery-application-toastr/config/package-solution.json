@@ -3,6 +3,7 @@
     "name": "jquery-application-toastr-client-side-solution",
     "id": "461c7ee8-3ab9-47ee-b52d-44c77087d9e8",
     "version": "1.0.0.0",
+    "skipFeatureDeployment": true,
     "iconPath": "AppIcon.png"
   },
   "paths": {
