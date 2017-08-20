@@ -12,7 +12,7 @@ import { SPComponentLoader } from '@microsoft/sp-loader';
 import * as $ from 'jquery';
 import * as toastr from 'toastr';
 import styles from './SpfxToastr.module.scss';
-//import { IToast, ToastService } from '../../services/toastService'; //loaded from the toastService barrel
+//import { IToast, ToastService } from '../../services/toastService'; //loaded from the toastService barrel - temporarily disabled due to issue with WebPack
 import { IToast } from '../../services/toastService/IToast';
 import { ToastService } from '../../services/toastService/ToastService';
 
