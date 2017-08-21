@@ -1,3 +1,8 @@
+$ms-orangeLighter:              "[theme:orangeLighter, default:#ff8c00]";
+$ms-redDark:                    "[theme:redDark, default:#a80000]";
+$ms-green:                      "[theme:green, default:#107c10]";
+$ms-blue:                       "[theme:blue, default:#0078d7]";
+
 //These 2 classes are outside the main namespace because they are top level
 // classes for the toasts
 .topRight {
@@ -26,18 +31,18 @@
 	}
 
 	.info {
-		background-color: #0078d7; //blue
+		background-color: $ms-blue;
 	}
 
 	.warning {
-		background-color: #ff8c00; //orangeLighter
+		background-color: $ms-orangeLighter;
 	}
 
 	.error {
-		background-color: #a80000; //redDark
+		background-color: $ms-redDark;
 	}
 
 	.success {
-		background-color: #107c10; //green
+		background-color: $ms-green;
 	}
 }

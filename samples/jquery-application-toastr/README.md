@@ -3,10 +3,10 @@
 ## Summary
 Sample SharePoint Framework application customizer extension that shows toast notifications configured from a SharePoint list. Demonstrates jQuery module loading, barrel configuration, promise chaining, and localStorage caching.
 
-![Toasts shown on a Communication Site](./assets/spfxToaster-Preview.PNG)
+![Toasts shown on a Communication Site](./assets/spfxToastr-Preview.PNG)
 
 ## Used SharePoint Framework Version 
-![1.1.1](https://img.shields.io/badge/version-1.1.1-orange.svg)
+![1.1.3](https://img.shields.io/badge/version-1.1.3-orange.svg)
 
 ## Applies to
 
@@ -29,6 +29,7 @@ jquery-application-toastr | Chris Kent ([thechriskent.com](https://thechriskent.
 Version|Date|Comments
 -------|----|--------
 1.0|July 9, 2017|Initial release
+1.1|August 20, 2017|Updated to use latest framework
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -63,6 +64,7 @@ This extension illustrates the following concepts:
 - Adapting **Office UI Fabric styles**
 - Caching data using **localStorage**
 - Promise chaining with Exception bubbling
+- Theme syntax for applying official colors to custom CSS classes
 - Optionally, **PnP Remote Provisioning** PowerShell list deployment _(see below)_
 
 ## Debug URL for testing

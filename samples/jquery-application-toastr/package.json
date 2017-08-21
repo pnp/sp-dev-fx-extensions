@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.1.0",
-    "@microsoft/sp-module-interfaces": "~1.1.0",
+    "@microsoft/sp-module-interfaces": "~1.1.1",
     "@microsoft/sp-webpart-workbench": "~1.1.0",
     "gulp": "~3.9.1",
     "@types/chai": ">=3.4.34 <3.6.0",
