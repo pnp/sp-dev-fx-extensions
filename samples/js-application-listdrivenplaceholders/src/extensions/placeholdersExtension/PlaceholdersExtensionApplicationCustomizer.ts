@@ -1,10 +1,22 @@
 import { override } from '@microsoft/decorators';
 import { BaseApplicationCustomizer, Placeholder } from '@microsoft/sp-application-base';
 import { PlaceholderItems, IPlaceholderItem } from './PlaceholderItems';
+import * as pnp from 'sp-pnp-js';
  
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class PlaceholdersExtensionApplicationCustomizer
   extends BaseApplicationCustomizer<any> {
+    
+  @override
+  public onInit(): Promise<void> {
+    
+    //Configure PnP JS Core
+    pnp.setup({
+      spfxContext: this.context
+    });
+
+    return Promise.resolve<void>();
+  }
  
   @override
   public onRender(): void {
