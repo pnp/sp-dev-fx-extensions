@@ -6,14 +6,14 @@ This sub folders contains client-side projects includes the extensions detailed 
 
 | Solution  | Getting Started Walkthrough | Video
 | ------------- | ------------- | ------------- |
-| app-extension  | [Build your first extension](https://dev.office.com/sharepoint/docs/spfx/extensions/get-started/build-a-hello-world-extension) - Application Customizer  | Video coming soon  |
-| field-extension  | [Building simple field customizer](https://dev.office.com/sharepoint/docs/spfx/extensions/get-started/building-simple-field-customizer)  | Video coming soon  |
-| command-extension  | [Build simple ListView Command Set with Dialog API](https://dev.office.com/sharepoint/docs/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api)  | Video coming soon  |
+| app-extension  | [Build your first extension](https://dev.office.com/sharepoint/docs/spfx/extensions/get-started/build-a-hello-world-extension) - Application Customizer  | [Video](https://www.youtube.com/watch?v=0BeS0HukW24&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV)  |
+| field-extension  | [Building simple field customizer](https://dev.office.com/sharepoint/docs/spfx/extensions/get-started/building-simple-field-customizer)  | [Video](https://www.youtube.com/watch?v=fijOzUmlXrY&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV) |
+| command-extension  | [Build simple ListView Command Set with Dialog API](https://dev.office.com/sharepoint/docs/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api)  | [Video](https://www.youtube.com/watch?v=iW0LQQqAY0Y&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV)  |
 
 You can also other SharePoint Framework related videos from [SharePoint PnP YouTube Channel](https://aka.ms/SPPnP-Videos).
 
 ## Used SharePoint Framework Version
-![GA](https://img.shields.io/badge/version-GA-green.svg)
+![GA](https://img.shields.io/badge/version-1.2-green.svg)
 
 ## Applies to
 
