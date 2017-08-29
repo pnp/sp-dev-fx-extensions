@@ -1,9 +1,9 @@
-declare interface ISpfxCloneStrings {
+declare interface ISpfxCloneCommandSetStrings {
   Command1: string;
   Command2: string;
 }
 
-declare module 'spfxCloneStrings' {
-  const strings: ISpfxCloneStrings;
+declare module 'SpfxCloneCommandSetStrings' {
+  const strings: ISpfxCloneCommandSetStrings;
   export = strings;
 }

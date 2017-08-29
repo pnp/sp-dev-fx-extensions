@@ -1,7 +1,7 @@
 {
-  "$schema": "../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+  "$schema": "https://dev.office.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
 
-  "id": "d2b98569-65e0-4e75-b7b9-5e3964cd8e5f",
+  "id": "bf6645bd-42e4-4a30-aad7-6ff12d61fa1f",
   "alias": "SpfxCloneCommandSet",
   "componentType": "Extension",
   "extensionType": "ListViewCommandSet",
@@ -15,10 +15,11 @@
   // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
   "requiresCustomScript": false,
 
-  "commands": {
+  "items": {
     "spfxClone": {
-      "title": "Clone",
-      "iconImageUrl": "icons/request.png"
+      "title": { "default": "Clone" },
+      "iconImageUrl": "icons/cancel.png",
+      "type": "command"
     }
   }
 }

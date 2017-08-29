@@ -1,7 +1,8 @@
 {
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "js-command-clone-client-side-solution",
-    "id": "f1506103-545d-4ec5-abdc-b9cce96df092",
+    "id": "ede39249-4139-4af6-8fe0-1d480bd1f6c6",
     "version": "1.0.0.0",
     "skipFeatureDeployment": true
   },
