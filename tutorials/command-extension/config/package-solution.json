@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "command-extension-client-side-solution",
+    "id": "a733ab89-321f-4671-8c34-af63e6b56579",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false,
+    "features": [{
+      "title": "ListView Command Set - Deployment of custom action.",
+      "description": "Deploys a custom action with ClientSideComponentId association",
+      "id": "456da147-ced2-3036-b564-8dad5c1c2e35",
+      "version": "1.0.0.0",
+      "assets": {
+        "elementManifests": [
+          "elements.xml"
+        ]
+      }
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/command-extension.sppkg"
+  }
+}

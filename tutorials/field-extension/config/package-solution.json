@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "field-extension-client-side-solution",
+    "id": "98ffa0fc-6d64-4d74-88e1-213bf086bb0b",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false,
+    "features": [{
+      "title": "Field Extension - Deployment of custom field.",
+      "description": "Deploys a custom field with ClientSideComponentId association",
+      "id": "123fe847-ced2-3036-b564-8dad5c6c6e83",
+      "version": "1.0.0.0",
+      "assets": {
+        "elementManifests": [
+          "elements.xml"
+        ]
+      }
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/field-extension.sppkg"
+  }
+}

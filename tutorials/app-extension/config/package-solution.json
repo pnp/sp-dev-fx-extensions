@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "app-extension-client-side-solution",
+    "id": "eaf2fbc5-3952-406e-8dc5-f0715fe24c43",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false,
+    "features": [{
+      "title": "Application Extension - Deployment of custom action.",
+      "description": "Deploys a custom action with ClientSideComponentId association",
+      "id": "456da147-ced2-3036-b564-8dad5c1c2e34",
+      "version": "1.0.0.0",
+      "assets": {
+        "elementManifests": [
+          "elements.xml"
+        ]
+      }
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/app-extension.sppkg"
+  }
+}

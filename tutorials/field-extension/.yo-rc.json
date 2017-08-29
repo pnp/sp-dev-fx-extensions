@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.2.0-pr.3",
+    "libraryName": "field-extension",
+    "libraryId": "98ffa0fc-6d64-4d74-88e1-213bf086bb0b",
+    "environment": "spo"
+  }
+}
