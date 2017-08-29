@@ -1,13 +1,18 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/extensions/dueTasks/DueTasksApplicationCustomizer.js",
-      "manifest": "./src/extensions/dueTasks/DueTasksApplicationCustomizer.manifest.json",
-      "outputPath": "./dist/due-tasks.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "due-tasks-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/dueTasks/DueTasksApplicationCustomizer.js",
+          "manifest": "./src/extensions/dueTasks/DueTasksApplicationCustomizer.manifest.json"
+        }
+      ]
     }
-  ],
-  "externals": {},
+  },
   "localizedResources": {
-    "dueTasksStrings": "extensions/dueTasks/loc/{locale}.js"
-  }
+    "dueTasksStrings": "lib/extensions/dueTasks/loc/{locale}.js"
+  },
+  "externals": {}
 }
