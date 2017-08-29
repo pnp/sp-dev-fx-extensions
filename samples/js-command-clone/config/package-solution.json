@@ -1,0 +1,11 @@
+{
+  "solution": {
+    "name": "js-command-clone-client-side-solution",
+    "id": "f1506103-545d-4ec5-abdc-b9cce96df092",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/js-command-clone.sppkg"
+  }
+}

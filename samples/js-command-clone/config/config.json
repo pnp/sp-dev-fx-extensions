@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/spfxClone/SpfxCloneCommandSet.js",
+      "manifest": "./src/extensions/spfxClone/SpfxCloneCommandSet.manifest.json",
+      "outputPath": "./dist/spfx-clone.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "spfxCloneStrings": "extensions/spfxClone/loc/{locale}.js"
+  }
+}
