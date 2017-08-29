@@ -1,13 +1,18 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/extensions/customCommandBar/CustomCommandBarCommandSet.js",
-      "manifest": "./src/extensions/customCommandBar/CustomCommandBarCommandSet.manifest.json",
-      "outputPath": "./dist/custom-command-bar.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "custom-command-bar-bundle": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/customCommandBar/CustomCommandBarCommandSet.js",
+          "manifest": "./src/extensions/customCommandBar/CustomCommandBarCommandSet.manifest.json"
+        }
+      ]
     }
-  ],
-  "externals": {},
+  },
   "localizedResources": {
-    "customCommandBarStrings": "extensions/customCommandBar/loc/{locale}.js"
-  }
+    "customCommandBarStrings": "lib/extensions/customCommandBar/loc/{locale}.js"
+  },
+  "externals": {}
 }

@@ -6,7 +6,7 @@ The sample illustrates how to display custom Command Bar when Command Set Button
 ![React Slider Field Customizer](./assets/command-bar.png)
 
 ## Used SharePoint Framework Version 
-SPFx Extensions Dev Preview
+SPFx Extensions RC0
 
 ## Applies to
 
@@ -21,6 +21,7 @@ react-command-custom-command-bar | Alex Terentiev ([Sharepointalist Inc.](http:/
 Version|Date|Comments
 -------|----|--------
 1.0|July 25, 2017|Initial release
+1.1|August 29, 2017|Update to RC0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**

@@ -2,7 +2,8 @@ import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
 import {
   BaseListViewCommandSet,
-  IListViewCommandSetRefreshEventParameters,
+  Command,
+  IListViewCommandSetListViewUpdatedParameters,
   IListViewCommandSetExecuteEventParameters
 } from '@microsoft/sp-listview-extensibility';
 
@@ -35,8 +36,11 @@ export default class CustomCommandBarCommandSet
   }
 
   @override
-  public onRefreshCommand(event: IListViewCommandSetRefreshEventParameters): void {
-    event.visible = true; // assume true by default
+  public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void  {
+    const command: Command | undefined = this.tryGetCommand('COMMAND_1');
+    if (command) {
+      command.visible = true;
+    }
   }
 
   @override
