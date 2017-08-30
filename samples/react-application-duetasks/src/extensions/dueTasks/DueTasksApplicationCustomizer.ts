@@ -2,7 +2,8 @@ import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
 import {
   BaseApplicationCustomizer,
-  Placeholder
+  PlaceholderContent,
+  PlaceholderName
 } from '@microsoft/sp-application-base';
 import pnp from 'sp-pnp-js';
 import { escape } from '@microsoft/sp-lodash-subset'; 
@@ -28,7 +29,7 @@ export default class DueTasksApplicationCustomizer
 
   private _dueTasks: any;
   private _viewUrl: string;
-  private _headerPlaceholder: Placeholder;
+  private _topPlaceholder: PlaceholderContent;
 
   @override
   public onInit(): Promise<void> {
@@ -60,27 +61,30 @@ export default class DueTasksApplicationCustomizer
         this._dueTasks = items;
       });
 
-      batch.execute().then(() => { resolve(); });
+      batch.execute().then(() => { 
+        this._renderPlaceholder();
+        resolve(); 
+      });
     });
   }
 
   @override
-  public onRender(): void {
+  public _renderPlaceholder(): void {
 
     if (!this._dueTasks || !this._dueTasks.length)
       return;
 
-    // Handling the header placeholder
-    if (!this._headerPlaceholder) {
-      this._headerPlaceholder = this.context.placeholders.tryAttach(
-        'PageHeader',
+    // Handling the top placeholder
+    if (!this._topPlaceholder) {
+      this._topPlaceholder = this.context.placeholderProvider.tryCreateContent(
+        PlaceholderName.Top,
         {
           onDispose: this._onDispose
         });
     }
 
-        if (this._headerPlaceholder.domElement) {
-          this._headerPlaceholder.domElement.innerHTML = `
+        if (this._topPlaceholder.domElement) {
+          this._topPlaceholder.domElement.innerHTML = `
                 <div class="${styles.app}">
                   <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.header}">
                     <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(strings.Message)}&nbsp;
