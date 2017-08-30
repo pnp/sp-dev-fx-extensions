@@ -45,7 +45,7 @@ export default class SliderFieldCustomizer
     // Use this method to perform your custom cell rendering.  The CellFormatter is a utility
     // that you can use to convert the cellValue to a text string.
     const value: string = event.cellValue;
-    const id: string = event.row.getValueByName('ID').toString();
+    const id: string = event.listItem.getValueByName('ID').toString();
     const hasPermissions: boolean = this.context.pageContext.list.permissions.hasPermission(SPPermission.editListItems);
 
 
