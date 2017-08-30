@@ -1,4 +1,5 @@
 export interface IListField {
-	"InternalName": string;
-	"TypeAsString": string;
+	InternalName: string;
+	TypeAsString: string;
+	IsDependentLookup?: boolean;
 }

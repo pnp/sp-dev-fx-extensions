@@ -69,6 +69,8 @@ export default class SpfxCloneCommandSet
               switch (field.TypeAsString) {
                 case 'User':
                 case 'UserMulti':
+                case 'Lookup':
+                case 'LookupMulti':
                   fieldNames.push(field.InternalName + '/Id');
                   expansions.push(field.InternalName);
                   break;
@@ -93,9 +95,11 @@ export default class SpfxCloneCommandSet
                   listSchema.Fields.forEach((field: IListField) => {
                     switch (field.TypeAsString) {
                       case 'User':
+                      case 'Lookup':
                         item[field.InternalName + 'Id'] = result[field.InternalName]['Id'];
                         break;
                       case 'UserMulti':
+                      case 'LookupMulti':
                         item[field.InternalName + 'Id'] = {
                           results: new Array<Number>()
                         };
@@ -106,7 +110,7 @@ export default class SpfxCloneCommandSet
                       case "MultiChoice":
                         item[field.InternalName] = {
                           results: result[field.InternalName]
-                        }
+                        };
                         break;
                       default:
                         item[field.InternalName] = result[field.InternalName];
@@ -165,7 +169,7 @@ export default class SpfxCloneCommandSet
 			if(this._listSchema) {
         resolve(this._listSchema);
       } else {
-        pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).fields.select('InternalName','TypeAsString').getAs<IListField[]>()
+        pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).fields.select('InternalName','TypeAsString','IsDependentLookup').getAs<IListField[]>()
           .then((results: IListField[]) => {
             //Setup the list schema
             this._listSchema = {
@@ -175,7 +179,7 @@ export default class SpfxCloneCommandSet
 
             //Filter out all the extra fields we don't want to clone
             for(let field of results) {
-              if(this._fieldTypesToIgnore.indexOf(field.TypeAsString) == -1 && this._fieldsToIgnore.indexOf(field.InternalName) == -1) {
+              if(this._fieldTypesToIgnore.indexOf(field.TypeAsString) == -1 && this._fieldsToIgnore.indexOf(field.InternalName) == -1 && !field.IsDependentLookup) {
                 this._listSchema.Fields.push({
                   InternalName: field.InternalName,
                   TypeAsString: field.TypeAsString
