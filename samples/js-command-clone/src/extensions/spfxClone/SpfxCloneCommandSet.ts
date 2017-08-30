@@ -103,9 +103,12 @@ export default class SpfxCloneCommandSet
                         item[field.InternalName + 'Id'] = {
                           results: new Array<Number>()
                         };
-                        result[field.InternalName].forEach((person: any) => {
-                          item[field.InternalName + 'Id'].results.push(person['Id']);
+                        result[field.InternalName].forEach((prop: any) => {
+                          item[field.InternalName + 'Id'].results.push(prop['Id']);
                         });
+                        break;
+                      case "TaxonomyFieldTypeMulti":
+                        //This doesn't need to be included, since the hidden Note field will take care of these
                         break;
                       case "MultiChoice":
                         item[field.InternalName] = {
