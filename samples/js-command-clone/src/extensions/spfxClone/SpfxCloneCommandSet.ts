@@ -103,6 +103,11 @@ export default class SpfxCloneCommandSet
                           item[field.InternalName + 'Id'].results.push(person['Id']);
                         });
                         break;
+                      case "MultiChoice":
+                        item[field.InternalName] = {
+                          results: result[field.InternalName]
+                        }
+                        break;
                       default:
                         item[field.InternalName] = result[field.InternalName];
                     }
