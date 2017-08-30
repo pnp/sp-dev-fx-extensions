@@ -8,7 +8,6 @@ import {
 } from '@microsoft/sp-listview-extensibility';
 
 import { SPPermission } from "@microsoft/sp-page-context";
-import { IListSchema } from './IListSchema';
 import { IListField } from './IListField';
 import pnp from "sp-pnp-js";
 
@@ -23,9 +22,9 @@ const LOG_SOURCE: string = 'SpfxCloneCommandSet';
 export default class SpfxCloneCommandSet
   extends BaseListViewCommandSet<ISpfxCloneCommandSetProperties> {
 
-  private _listSchema: IListSchema;
+  private _listFields: Array<IListField>;
   private _fieldTypesToIgnore: Array<string>;
-  private  _fieldsToIgnore: Array<string>;
+  private _fieldsToIgnore: Array<string>;
 
   @override
   public onInit(): Promise<void> {
@@ -56,8 +55,8 @@ export default class SpfxCloneCommandSet
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
     switch (event.commandId) {
       case 'spfxClone':
-        this.ensureListSchema()
-          .then((listSchema: IListSchema): void => {
+        this.ensureListSchema() //Go get the field information
+          .then((listFields: Array<IListField>): void => {
 
             // We'll request all the selected items in a single batch
             let itemBatch: any = pnp.sp.createBatch();
@@ -65,7 +64,7 @@ export default class SpfxCloneCommandSet
             //Get an array of the internal field names for the select along with any necessary expand fields
             let fieldNames: Array<string> = new Array<string>();
             let expansions: Array<string> = new Array<string>();
-            listSchema.Fields.forEach((field: IListField) => {
+            listFields.forEach((field: IListField) => {
               switch (field.TypeAsString) {
                 case 'User':
                 case 'UserMulti':
@@ -79,9 +78,10 @@ export default class SpfxCloneCommandSet
               }
             });
 
+            //This will be our cleansed items to clone array
             let items: Array<any> = new Array<any>();
 
-            //Batch up each item
+            //Batch up each item for retrieval
             for (let row of event.selectedRows) {
 
               //grab the item ID
@@ -90,16 +90,19 @@ export default class SpfxCloneCommandSet
               //Add the item to the batch
               pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(itemId).select(...fieldNames).expand(...expansions).inBatch(itemBatch).getAs<Array<any>>()
                 .then((result: any) => {
-                  //Copy just the fields we care about
+                  //Copy just the fields we care about and provide some adjustments for certain field types
                   let item: any = {};
-                  listSchema.Fields.forEach((field: IListField) => {
+                  listFields.forEach((field: IListField) => {
                     switch (field.TypeAsString) {
                       case 'User':
                       case 'Lookup':
+                        //These items need to be the underlying Id and their names have to have Id appended to them
                         item[field.InternalName + 'Id'] = result[field.InternalName]['Id'];
                         break;
                       case 'UserMulti':
                       case 'LookupMulti':
+                        //These items need to be an array of the underlying Ids and the array has to be called results
+                        // their names also have to have Id appended to them
                         item[field.InternalName + 'Id'] = {
                           results: new Array<Number>()
                         };
@@ -108,14 +111,17 @@ export default class SpfxCloneCommandSet
                         });
                         break;
                       case "TaxonomyFieldTypeMulti":
-                        //This doesn't need to be included, since the hidden Note field will take care of these
+                        //These doesn't need to be included, since the hidden Note field will take care of these
+                        // in fact, including these will cause problems
                         break;
                       case "MultiChoice":
+                        //These need to be in an array of the selected choices and the array has to be called results
                         item[field.InternalName] = {
                           results: result[field.InternalName]
                         };
                         break;
                       default:
+                        //Everything else is just a one for one match
                         item[field.InternalName] = result[field.InternalName];
                     }
                   });
@@ -123,17 +129,18 @@ export default class SpfxCloneCommandSet
                 })
                 .catch((error: any): void => {
                   Log.error(LOG_SOURCE, error);
-                  console.log(error);
+                  this.safeLog(error);
                 });
             }
 
             //Execute the batch
             itemBatch.execute()
               .then(() => {
-                console.log(items);
                 
                 //We'll create all the new items in a single batch
                 let cloneBatch: any = pnp.sp.createBatch();
+
+                //Process each item
                 items.forEach((item: any) => {
                   pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.inBatch(cloneBatch).add(item)
                     .catch((error: any): void => {
@@ -144,11 +151,11 @@ export default class SpfxCloneCommandSet
 
                 cloneBatch.execute()
                   .then(() => {
-                    //location.reload(); //Reloads the entire page since there isn't currently a way to just reload the list view
+                    location.reload(); //Reloads the entire page since there isn't currently a way to just reload the list view
                   })
                   .catch((error: any): void => {
                     Log.error(LOG_SOURCE, error);
-                    console.log(error);
+                    this.safeLog(error);
                   });
                   
               })
@@ -167,29 +174,37 @@ export default class SpfxCloneCommandSet
     }
   }
 
-  private ensureListSchema(): Promise<IListSchema> {
-    return new Promise<IListSchema>((resolve: (listSchema: IListSchema) => void, reject: (error: any) => void): void => {
-			if(this._listSchema) {
-        resolve(this._listSchema);
+  /** Retrieves all the fields for the list */
+  private ensureListSchema(): Promise<Array<IListField>> {
+    return new Promise<Array<IListField>>((resolve: (listFields: Array<IListField>) => void, reject: (error: any) => void): void => {
+      
+      if(this._listFields) {
+        //Looks like we already got it, so just return that
+        resolve(this._listFields);
+
       } else {
+        //Go get all the fields for the list
         pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).fields.select('InternalName','TypeAsString','IsDependentLookup').getAs<IListField[]>()
           .then((results: IListField[]) => {
-            //Setup the list schema
-            this._listSchema = {
-              Title: this.context.pageContext.list.title,
-              Fields: []
-            };
+
+            //Setup the list fields
+            this._listFields = new Array<IListField>();
 
             //Filter out all the extra fields we don't want to clone
+            // This includes any field of a type we don't want (such as computed)
+            // This also includes several internal fields that won't make sense to clone (such as the creation date)
+            // Finally, no dependent lookup columns (projected fields)
             for(let field of results) {
               if(this._fieldTypesToIgnore.indexOf(field.TypeAsString) == -1 && this._fieldsToIgnore.indexOf(field.InternalName) == -1 && !field.IsDependentLookup) {
-                this._listSchema.Fields.push({
+
+                this._listFields.push({
                   InternalName: field.InternalName,
                   TypeAsString: field.TypeAsString
                 });
+
               }
             }
-            resolve(this._listSchema);
+            resolve(this._listFields);
           })
           .catch((error: any): void => {
             reject(error);
@@ -198,6 +213,7 @@ export default class SpfxCloneCommandSet
 		});
   }
 
+  /** Builds the fieldTypes and fields to ignore arrays */
   private buildExclusions(): void {
     this._fieldTypesToIgnore = new Array<string>(
       strings.typeCounter,
@@ -260,6 +276,7 @@ export default class SpfxCloneCommandSet
     );
   }
 
+  /** Logs messages to the console if the console is available */
   private safeLog(message: any): void {
     if(window.console && window.console.log){
       window.console.log(message);
