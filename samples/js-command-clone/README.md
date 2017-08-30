@@ -1,36 +1,35 @@
-# title of the sample
+# SPFx Clone ListView Command Set
 
 ## Summary
-Short summary on functionality and used technologies.
+Sample SharePoint Framework listview command set extension that allows users to clone one or more list items. Demonstrates conditional visibility, PnP JS Core requests, PnP JS Core Batching, and field specific formats for rest operations.
 
-[picture of the extension in action, if possible]
+![Cloning of list items](./assets/spfxClone-Animation.gif)
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-GA-green.svg)
+![1.2.0](https://img.shields.io/badge/version-1.2.0-orange.svg)
 
 ## Applies to
 
-* [SharePoint Framework](https://dev.office.com/sharepoint)
-* [Office 365 tenant](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)
+* [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
+* [Office 365 Developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
+* [PnP JavaScript Core](https://github.com/SharePoint/PnP-JS-Core)
 
-> Update accordingly as needed.
 
 ## Prerequisites
  
-> Any special pre-requisites?
+* [An Office 365 Developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-folder name | Author details
+js-command-clone | Chris Kent ([thechriskent.com](https://thechriskent.com), [@thechriskent](https://twitter.com/thechriskent))
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|August 10, 2018|Update comment
-1.0|June 29, 2018|Initial release
+1.0|August 30, 2017|Initial release
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -40,27 +39,55 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
-- in the command line run:
+- In the command line navigate to **samples/js-command-clone** and run:
   - `npm install`
-  - `gulp serve`
-
-> Include any additional steps as needed.
+  - `gulp serve --nobrowser`
+- Adapt the listview command set debug query string from the one below
+- In a web browser
+  - Navigate to a modern list view on a classic site
+  - Add the previously copied debug querystring to the URL
+  - Choose **Load Debug Scripts** when prompted
+  - Select 1 or more items and choose clone from either the command bar or the context menu
+  - Behold the marvels of science
 
 ## Features
-Description of the extension with possible additional details than in short summary.
+SPFx Clone utilizes PnP JS Core to quickly copy multiple list items.
+
 This extension illustrates the following concepts:
 
-- topic 1
-- topic 2
-- topic 3
+- Loading **PnP JS Core** from a CDN
+- Conditionally showing commands based on the **number of selected rows**
+- Conditionally showing commands based on the **user's permission level**
+- Requesting **List Field** information
+- **Batching Get requests** for list items
+- **Field selection** and **Expanded fields** using PnP JS Core
+- Adding multiple items in a single **Batch**
+- Field specific formats for REST operations including
+  - Person
+  - Multi Persons
+  - Lookups
+  - Multi Lookups
+  - Multi Choice
+  - Projected Fields
+  - Taxonomy Fields
+  - Multi Taxonomy Fields
+  - And all other standard fields
+
 
 ## Debug URL for testing
-Here's a debug URL for testing around this sample. **Updated based on your manifest id for easy testing of the sample**.
+Here's a debug querystring for testing this sample:
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"7c5a85c1-8b1e-4370-8198-642908faee60":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"bf6645bd-42e4-4a30-aad7-6ff12d61fa1f":{"location":"ClientSideExtension.ListViewCommandSet"}}
 ```
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+Your URL will look similar to the following (replace with your domain and site address):
+```
+https://yourtenant.sharepoint.com/sites/yoursite/Lists/yourlist/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"bf6645bd-42e4-4a30-aad7-6ff12d61fa1f":{"location":"ClientSideExtension.ListViewCommandSet"}}
+```
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
+## Let's Get Cloning!
+
+![Dolly n Dolly](./assets/spfxClone-Preview.png)
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-command-clone" />
