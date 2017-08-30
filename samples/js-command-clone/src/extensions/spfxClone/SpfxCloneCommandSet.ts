@@ -68,6 +68,7 @@ export default class SpfxCloneCommandSet
             listSchema.Fields.forEach((field: IListField) => {
               switch (field.TypeAsString) {
                 case 'User':
+                case 'UserMulti':
                   fieldNames.push(field.InternalName + '/Id');
                   expansions.push(field.InternalName);
                   break;
@@ -89,16 +90,23 @@ export default class SpfxCloneCommandSet
                 .then((result: any) => {
                   //Copy just the fields we care about
                   let item: any = {};
-                  for(let fieldName of fieldNames){
-                    if(fieldName.indexOf('/') === -1){
-                      item[fieldName] = result[fieldName];
-                    } else {
-                      //Account for expanded field names
-                      let propName: string = fieldName.split('/')[0];
-                      let subpropName: string = fieldName.split('/')[1]
-                      item[propName + subpropName] = result[propName][subpropName];
+                  listSchema.Fields.forEach((field: IListField) => {
+                    switch (field.TypeAsString) {
+                      case 'User':
+                        item[field.InternalName + 'Id'] = result[field.InternalName]['Id'];
+                        break;
+                      case 'UserMulti':
+                        item[field.InternalName + 'Id'] = {
+                          results: new Array<Number>()
+                        };
+                        result[field.InternalName].forEach((person: any) => {
+                          item[field.InternalName + 'Id'].results.push(person['Id']);
+                        });
+                        break;
+                      default:
+                        item[field.InternalName] = result[field.InternalName];
                     }
-                  }
+                  });
                   items.push(item);
                 })
                 .catch((error: any): void => {
