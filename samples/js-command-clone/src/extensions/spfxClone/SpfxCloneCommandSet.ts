@@ -62,9 +62,18 @@ export default class SpfxCloneCommandSet
             // We'll request all the selected items in a single batch
             let itemBatch: any = pnp.sp.createBatch();
 
-            //Get an array of the internal field names for the select
-            let fieldNames: Array<string> = listSchema.Fields.map((field: IListField): string => {
-              return field.InternalName;
+            //Get an array of the internal field names for the select along with any necessary expand fields
+            let fieldNames: Array<string> = new Array<string>();
+            let expansions: Array<string> = new Array<string>();
+            listSchema.Fields.forEach((field: IListField) => {
+              switch (field.TypeAsString) {
+                case 'User':
+                  fieldNames.push(field.InternalName + '/Id');
+                  expansions.push(field.InternalName);
+                  break;
+                default:
+                  fieldNames.push(field.InternalName);
+              }
             });
 
             let items: Array<any> = new Array<any>();
@@ -76,25 +85,32 @@ export default class SpfxCloneCommandSet
               let itemId: number = row.getValueByName('ID');
 
               //Add the item to the batch
-              pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(itemId).select(...fieldNames).inBatch(itemBatch).getAs<Array<any>>()
+              pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(itemId).select(...fieldNames).expand(...expansions).inBatch(itemBatch).getAs<Array<any>>()
                 .then((result: any) => {
                   //Copy just the fields we care about
                   let item: any = {};
                   for(let fieldName of fieldNames){
-                    item[fieldName] = result[fieldName];
+                    if(fieldName.indexOf('/') === -1){
+                      item[fieldName] = result[fieldName];
+                    } else {
+                      //Account for expanded field names
+                      let propName: string = fieldName.split('/')[0];
+                      let subpropName: string = fieldName.split('/')[1]
+                      item[propName + subpropName] = result[propName][subpropName];
+                    }
                   }
                   items.push(item);
                 })
                 .catch((error: any): void => {
                   Log.error(LOG_SOURCE, error);
-                  this.safeLog(error);
+                  console.log(error);
                 });
             }
 
             //Execute the batch
             itemBatch.execute()
               .then(() => {
-                this.safeLog(items);
+                console.log(items);
                 
                 //We'll create all the new items in a single batch
                 let cloneBatch: any = pnp.sp.createBatch();
@@ -108,13 +124,13 @@ export default class SpfxCloneCommandSet
 
                 cloneBatch.execute()
                   .then(() => {
-                    this.safeLog('Cloned!');
-                    
+                    //location.reload(); //Reloads the entire page since there isn't currently a way to just reload the list view
                   })
                   .catch((error: any): void => {
                     Log.error(LOG_SOURCE, error);
-                    this.safeLog(error);
+                    console.log(error);
                   });
+                  
               })
               .catch((error: any): void => {
                 Log.error(LOG_SOURCE, error);
