@@ -3,11 +3,12 @@ import * as ReactDom from 'react-dom';
 import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
 import {
-  BaseApplicationCustomizer
+  BaseApplicationCustomizer,
+  PlaceholderContent,
+  PlaceholderName
 } from '@microsoft/sp-application-base';
 
 import * as strings from 'siteBreadcrumbStrings';
-import Placeholder from "@microsoft/sp-application-base/lib/extensibility/Placeholder";
 import SiteBreadcrumb from './components/SiteBreadcrumb';
 import { ISiteBreadcrumbProps } from './components/ISiteBreadcrumb';
 
@@ -23,24 +24,28 @@ export interface ISiteBreadcrumbApplicationCustomizerProperties {
   testMessage: string;
 }
 
-const HeaderPlaceholderName = "PageHeader";
-
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class SiteBreadcrumbApplicationCustomizer
   extends BaseApplicationCustomizer<ISiteBreadcrumbApplicationCustomizerProperties> {
-  private _headerPlaceholder: Placeholder;
+  private _headerPlaceholder: PlaceholderContent;
 
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+
+    // Added to handle possible changes on the existence of placeholders
+    this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
+
+    // Call render method for generating the needed html elements
+    this._renderPlaceHolders();
+
     return Promise.resolve<void>();
   }
 
-  @override
-  public onRender(): void {
+  private _renderPlaceHolders(): void {
     // Check if the header placeholder is already set and if the header placeholder is available
-    if (!this._headerPlaceholder && this.context.placeholders.placeholderNames.indexOf(HeaderPlaceholderName) !== -1) {
-      this._headerPlaceholder = this.context.placeholders.tryAttach(HeaderPlaceholderName, {
+    if (!this._headerPlaceholder && this.context.placeholderProvider.placeholderNames.indexOf(PlaceholderName.Top) !== -1) {
+      this._headerPlaceholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top, {
         onDispose: this._onDispose
       });
 

@@ -23,6 +23,7 @@ React-application-breadcrumb | Elio Struyf (MVP, U2U, [@eliostruyf](https://twit
 
 Version|Date|Comments
 -------|----|--------
+1.1|August 31, 2017|Updates for v1.2.0
 1.0|August 9, 2017|Initial release
 
 ## Disclaimer
