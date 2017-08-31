@@ -6,7 +6,7 @@ This sample shows how to create a breadcrumb element and append it to your site 
 ![Breadcrumb sample](./assets/breadcrumb-sample.png)
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-1.1-green.svg)
+![drop](https://img.shields.io/badge/version-1.2.0-green.svg)
 
 ## Applies to
 
