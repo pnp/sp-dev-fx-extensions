@@ -1,0 +1,20 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "spfx-clone-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/spfxClone/SpfxCloneCommandSet.js",
+          "manifest": "./src/extensions/spfxClone/SpfxCloneCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    "sp-pnp-js": "https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.8/pnp.min.js"
+  },
+  "localizedResources": {
+    "SpfxCloneCommandSetStrings": "lib/extensions/spfxClone/loc/{locale}.js"
+  }
+}
