@@ -1,0 +1,11 @@
+{
+  "solution": {
+    "name": "js-field-taskpriority-client-side-solution",
+    "id": "dd946080-411b-4c3d-8584-d8192992b5fe",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/js-field-taskpriority.sppkg"
+  }
+}

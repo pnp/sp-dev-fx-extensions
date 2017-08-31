@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/taskPriority/TaskPriorityFieldCustomizer.js",
+      "manifest": "./src/extensions/taskPriority/TaskPriorityFieldCustomizer.manifest.json",
+      "outputPath": "./dist/task-priority.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "taskPriorityStrings": "extensions/taskPriority/loc/{locale}.js"
+  }
+}
