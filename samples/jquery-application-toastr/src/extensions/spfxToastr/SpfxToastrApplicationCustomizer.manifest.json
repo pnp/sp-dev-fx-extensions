@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/client-side-extension-manifest.schema.json",
+  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
   "id": "a861c815-e425-416d-9520-04bcdf557e27",
   "alias": "SpfxToastrApplicationCustomizer",

@@ -4,7 +4,7 @@ import {
   BaseApplicationCustomizer
 } from '@microsoft/sp-application-base';
 
-import * as strings from 'spfxToastrStrings';
+import * as strings from 'SpfxToastrApplicationCustomizerStrings';
 
 //Needed to reference external CSS files
 import { SPComponentLoader } from '@microsoft/sp-loader';
@@ -36,19 +36,14 @@ export default class SpfxToastrApplicationCustomizer
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
-
+    
     //Load the Toastr CSS
     SPComponentLoader.loadCss('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css');
 
     //Go ahead and request the toasts, but we can't use them until jQuery and Toastr are ready
     this.toastsPromise = ToastService.getToasts(this.context.spHttpClient, this.context.pageContext.web.absoluteUrl);
 
-    return Promise.resolve<void>();
-  }
-
-  @override
-  public onRender(): void {
-    
+   
     //jQuery document ready
     $(document).ready(() => {
 
@@ -121,6 +116,8 @@ export default class SpfxToastrApplicationCustomizer
         toastr.error(error, strings.FailedToLoad);
       });
     });
+    
+    return Promise.resolve<void>();
   }
 
 }

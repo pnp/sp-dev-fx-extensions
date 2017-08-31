@@ -1,9 +1,9 @@
-declare interface ISpfxToastrStrings {
+declare interface ISpfxToastrApplicationCustomizerStrings {
   Title: string;
   FailedToLoad: string;
 }
 
-declare module 'spfxToastrStrings' {
-  const strings: ISpfxToastrStrings;
+declare module 'SpfxToastrApplicationCustomizerStrings' {
+  const strings: ISpfxToastrApplicationCustomizerStrings;
   export = strings;
 }
