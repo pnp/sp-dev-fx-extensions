@@ -6,7 +6,7 @@ This solution deploys a list that allows end users to manage content that will a
 <img src='./assets/placeholders.jpg' alt='Working Sample' />
 
 ## Used SharePoint Framework Version 
-SPFx Extensions Dev Preview
+![1.1.1](https://img.shields.io/badge/version-1.1.1-orange.svg)
 
 ## Applies to
 
@@ -43,9 +43,9 @@ Version|Date|Comments
   - Deploy the package to create the SharePoint list
     - `gulp bundle`
     - `gulp package-solution`
-    - Visit your developer tenant's app catalog, and upload the SPPKG package located in the sharepoint/solution folder into you "Apps for SharePoint" library
+    - Visit your developer tenant's app catalog, and upload the SPPKG package located in the sharepoint/solution folder into your "Apps for SharePoint" library
     - When prompted if you trust the solution, click "Deploy"
-    - Create a new Modern Team Site by selecting the SharePoint app from the app launcher, and click ‘Create site’
+    - Create a new Modern Team Site by selecting the SharePoint app from the app launcher, and then click ‘Create site’
     - Navigate to your new site and select cog -> Add an App
     - Click 'placeholders-extension-client-side-solution' below in the ‘Apps you can add’ section
     - Select cog -> Site contents (if not redirected) and refresh the page periodically until the app is no longer grayed out, and shows as installed
@@ -55,7 +55,7 @@ Version|Date|Comments
   - Debug the solution to view the placeholder content dynamically injected
     - In the command line, run:
     - `gulp serve --nobrowser`
-    - Browse to your test site and add the below debug script url to a list view within your site (use a list view url to ensure all placeholders show up, as the current preview functionality will not correctly show placeholders on all pages)
+    - Browse to your test site and add the below debug script url to a list view within your site (use a list view url to ensure all placeholders show up, as the current preview functionality will not correctly show all placeholders on all pages)
 
 ## Debug URL for testing
 Here's a debug URL for testing around this sample.
