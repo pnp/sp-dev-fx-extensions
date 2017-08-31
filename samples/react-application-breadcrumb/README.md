@@ -6,7 +6,7 @@ This sample shows how to create a breadcrumb element and append it to your site 
 ![Breadcrumb sample](./assets/breadcrumb-sample.png)
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-1.1-green.svg)
+![drop](https://img.shields.io/badge/version-1.2.0-green.svg)
 
 ## Applies to
 
@@ -23,6 +23,7 @@ React-application-breadcrumb | Elio Struyf (MVP, U2U, [@eliostruyf](https://twit
 
 Version|Date|Comments
 -------|----|--------
+1.1|August 31, 2017|Updates for v1.2.0
 1.0|August 9, 2017|Initial release
 
 ## Disclaimer
