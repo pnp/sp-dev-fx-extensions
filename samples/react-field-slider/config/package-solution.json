@@ -1,8 +1,10 @@
 {
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "react-slider-field-customizer-client-side-solution",
     "id": "f9c64efd-d88e-4c1c-a976-3de1260a87ab",
-    "version": "1.0.0.0"
+    "version": "1.1.0.0",
+    "skipFeatureDeployment": false
   },
   "paths": {
     "zippedPackage": "solution/react-slider-field-customizer.sppkg"

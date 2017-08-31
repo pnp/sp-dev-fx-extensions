@@ -6,7 +6,7 @@ The sample illustrates how to use Office UI Fabric React Slider in Field Customi
 ![React Slider Field Customizer](./assets/slider.png)
 
 ## Used SharePoint Framework Version 
-SPFx Extensions Dev Preview
+SPFx Extensions RC0
 
 ## Applies to
 
@@ -21,6 +21,7 @@ react-slider-field-customizer | Alex Terentiev ([Sharepointalist Inc.](http://ww
 Version|Date|Comments
 -------|----|--------
 1.0|June 6, 2017|Initial release
+1.1|August 30, 2017|Update to RC0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
