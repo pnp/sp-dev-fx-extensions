@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.2.0",
+    "libraryName": "dialog-cmd",
+    "libraryId": "b99e6a61-c0c6-4984-b2e1-aea997917d73",
+    "environment": "spo"
+  }
+}

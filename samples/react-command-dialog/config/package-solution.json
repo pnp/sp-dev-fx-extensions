@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "dialog-cmd-client-side-solution",
+    "id": "b99e6a61-c0c6-4984-b2e1-aea997917d73",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/dialog-cmd.sppkg"
+  }
+}
