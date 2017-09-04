@@ -23,6 +23,7 @@
     "@microsoft/sp-webpart-workbench": "~1.2.0",
     "@types/chai": ">=3.4.34 <3.6.0",
     "@types/jquery": "^2.0.48",
+    "@types/jqueryui": "^1.11.36",
     "@types/mocha": ">=2.2.33 <2.6.0",
     "gulp": "~3.9.1"
   }

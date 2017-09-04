@@ -6,6 +6,7 @@ import {
 } from '@microsoft/sp-listview-extensibility';
 
 import * as $ from 'jquery';
+import "jqueryui";
 
 import * as strings from 'SpfxItemOrderFieldCustomizerStrings';
 import styles from './SpfxItemOrderFieldCustomizer.module.scss';
@@ -24,11 +25,16 @@ const LOG_SOURCE: string = 'SpfxItemOrderFieldCustomizer';
 export default class SpfxItemOrderFieldCustomizer
   extends BaseFieldCustomizer<ISpfxItemOrderFieldCustomizerProperties> {
 
+  private _timeoutId: number;
+  private _timeoutDuration: Number = 100;
+
   @override
   public onInit(): Promise<void> {
     // Add your custom initialization to this method.  The framework will wait
     // for the returned promise to resolve before firing any BaseFieldCustomizer events.
     Log.info(LOG_SOURCE, 'Activated SpfxItemOrderFieldCustomizer with properties:');
+
+    this._timeoutId = setTimeout(this.listReady,this._timeoutDuration);
 
     return Promise.resolve<void>();
   }
@@ -36,11 +42,20 @@ export default class SpfxItemOrderFieldCustomizer
   @override
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
     // Use this method to perform your custom cell rendering.
-    const text: string = `['${event.fieldValue}']`;
 
-    event.domElement.innerText = text;
+    clearTimeout(this._timeoutId);
+    this._timeoutId = setTimeout(this.listReady,this._timeoutDuration);
 
-    event.domElement.classList.add(styles.cell);
+    //Leave it unchanged
+    event.domElement.innerText = event.fieldValue;
+  }
+
+  public listReady(): void {
+    console.log('List is ready?');
+    //jQuery document ready
+    $(document).ready(() => {
+      $('.ms-List-page').sortable();
+    });
   }
 
   @override

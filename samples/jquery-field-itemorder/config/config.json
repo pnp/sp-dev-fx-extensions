@@ -12,10 +12,13 @@
     }
   },
   "externals": {
-    "jquery": "https://code.jquery.com/jquery-2.2.4.min.js",
-    "jquery-ui": {
+    "jquery": {
+      "path": "https://code.jquery.com/jquery-2.2.4.min.js",
+      "globalName": "jQuery"
+    },
+    "jqueryui": {
       "path": "https://code.jquery.com/ui/1.12.1/jquery-ui.js",
-      "globalName": "jquery",
+      "globalName": "jQuery",
       "globalDependencies": [
         "jquery"
       ]
