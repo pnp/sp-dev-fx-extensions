@@ -9,6 +9,7 @@ import * as $ from 'jquery';
 import "jqueryui";
 import { IOrderedRow } from './IOrderedRow';
 import { IChangedRow } from './IChangedRow';
+import pnp from "sp-pnp-js";
 
 const TIMEOUTDURATION_INIT: number = 100;
 const LISTPAGECONTAINER: string = '.ms-List-page';
@@ -50,7 +51,12 @@ export default class SpfxItemOrderFieldCustomizer
     //Initialize the row map
     this._rowMap = new Array<IOrderedRow>();
 
-    return Promise.resolve<void>();
+    //Provide PnP JS-Core with the proper context (needed in SPFx Components)
+    return super.onInit().then(_ => {
+      pnp.setup({
+        spfxContext: this.context
+      });
+    });
   }
 
   @override
@@ -68,8 +74,8 @@ export default class SpfxItemOrderFieldCustomizer
 
     //Track the Ids and Order values of each row (so that they can be referenced later)
     this._rowMap.push({
-      Id: event.listItem.getValueByName('Id'),
-      Order: event.listItem.getValueByName('Order.')
+      Id: event.listItem.getValueByName('ID'),
+      Order: event.listItem.getValueByName('Order')
     });
 
     //Reset timeout (only needed since there isn't an onCellsRendered event)
@@ -110,13 +116,9 @@ export default class SpfxItemOrderFieldCustomizer
     //Grab the current row order
     let newOrder: Array<number> = SpfxItemOrderFieldCustomizer.getRowOrder();
 
-    console.log('original order:');
-    console.log(this._rowOrder);
-    console.log('new order:');
-    console.log(newOrder);
-
     if(SpfxItemOrderFieldCustomizer.hasChanged(this._rowOrder, newOrder)) {
 
+      //Save the changes to the list
       this.saveChanges();
 
     } else {
@@ -130,29 +132,47 @@ export default class SpfxItemOrderFieldCustomizer
 
   public saveChanges(): void {
 
-    console.log('Saving!');
-
     //Grab the current row order
     let newOrder: Array<number> = SpfxItemOrderFieldCustomizer.getRowOrder();
 
     //Find the changed rows
     let dirtyRows: Array<IChangedRow> = SpfxItemOrderFieldCustomizer.changedRows(this._rowOrder, newOrder);
 
+    let itemBatch: any = pnp.sp.createBatch();
+
     dirtyRows.forEach((row: IChangedRow) => {
+
+      //Add a loading indicator to the row to provide status to the user
       SpfxItemOrderFieldCustomizer.showLoading(row.listIndex);
+
+      //Swaps the Order value for the changed rows using the values first stored in the _rowMap
+      pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(this._rowMap[row.listIndex].Id).inBatch(itemBatch).update({
+        Order: this._rowMap[row.position].Order
+      });
+
     });
 
-    //set timeout for saving (to allow multiple changes before saving) - maybe 500-1000 ms?
-    //Compare to see if anything actually changed
-    //  disable sorting
-    //If changed, identify the changed items (maybe an array stored in the class, rather than the column)
-    //swap the order values for the original order values in those positions
-    //save the order as the new order
-    //  show a loading icon in the reorder field
-    //  add the changed items to a batch update (pnp)
-    //  on then:
-    //     reenable sorting
-    //     show the movement icon again in reorder
+    //Execute the batch
+    itemBatch.execute()
+      .then(() => {
+
+        //Remove the loading indicators
+        SpfxItemOrderFieldCustomizer.hideLoading();
+
+        //Reset the internal row order tracking
+        this._rowOrder = newOrder;
+        
+        //Turn reordering back on
+        $(LISTPAGECONTAINER).sortable('enable');
+
+      })
+      .catch((error: any): void => {
+        Log.error(LOG_SOURCE, error);
+        if(console && console.log) {
+          console.log(error);
+        }
+      });
+
   }
 
 
