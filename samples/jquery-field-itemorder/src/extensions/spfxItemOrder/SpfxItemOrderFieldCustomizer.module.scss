@@ -1,3 +1,5 @@
+$ms-themePrimary: "[theme:themePrimary, default:#333333]";
+
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
     from { -webkit-transform: rotate(0deg); }
@@ -39,5 +41,6 @@
 
   .reorderField {
     cursor: pointer;
+    color: $ms-themePrimary;
   }
 }
