@@ -25,6 +25,7 @@
     "@types/jquery": "^2.0.48",
     "@types/jqueryui": "^1.11.36",
     "@types/mocha": ">=2.2.33 <2.6.0",
-    "gulp": "~3.9.1"
+    "gulp": "~3.9.1",
+    "sp-pnp-js": "^2.0.8"
   }
 }
