@@ -36,4 +36,8 @@
   .spinning {
     @include animation('spin 1000ms linear infinite');
   }
+
+  .reorderField {
+    cursor: pointer;
+  }
 }

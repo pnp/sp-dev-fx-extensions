@@ -1,4 +1,4 @@
 export interface IOrderedRow {
-	Id: Number;
-	Order: Number;
+	Id: number;
+	Order: number;
 }
