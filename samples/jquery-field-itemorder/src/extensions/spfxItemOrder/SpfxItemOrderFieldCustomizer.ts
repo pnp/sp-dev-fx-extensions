@@ -9,6 +9,7 @@ import * as $ from 'jquery';
 import "jqueryui";
 import { IOrderedRow } from './IOrderedRow';
 import { IChangedRow } from './IChangedRow';
+import { ISpfxItemOrderFieldCustomizerProperties } from './ISpfxItemOrderFieldCustomizerProperties';
 import { SPPermission } from "@microsoft/sp-page-context";
 import pnp from "sp-pnp-js";
 
@@ -22,16 +23,6 @@ const LISTROWCONTAINER: string = '.ms-List-cell';
 const INDICATORICONCLASS: string = 'ms-Icon--Pin';
 const LOADINGICONCLASS: string = 'ms-Icon--Refresh';
 const DISABLEDICONCLASS: string = 'ms-Icon--Unpin';
-
-/**
- * If your field customizer uses the ClientSideComponentProperties JSON input,
- * it will be deserialized into the BaseExtension.properties object.
- * You can define an interface to describe it.
- */
-export interface ISpfxItemOrderFieldCustomizerProperties {
-  //Nope
-}
-
 const LOG_SOURCE: string = 'SpfxItemOrderFieldCustomizer';
 
 export default class SpfxItemOrderFieldCustomizer
@@ -40,13 +31,16 @@ export default class SpfxItemOrderFieldCustomizer
   private _timeoutId_Init: number;
   private _rowOrder: Array<number>;
   private _rowMap: Array<IOrderedRow>;
+  private _orderField: string;
 
 
   @override
   public onInit(): Promise<void> {
-    // Add your custom initialization to this method.  The framework will wait
-    // for the returned promise to resolve before firing any BaseFieldCustomizer events.
-    Log.info(LOG_SOURCE, 'Activated SpfxItemOrderFieldCustomizer with properties:');
+
+    //By default, the internal Order column is used, but
+    // a different (number) column can be specified through the
+    // ClientSideComponentProperties instead
+    this._orderField = this.properties.OrderField || 'Order';
 
     //Initialize the row map
     this._rowMap = new Array<IOrderedRow>();
@@ -77,7 +71,7 @@ export default class SpfxItemOrderFieldCustomizer
       //Track the Ids and Order values of each row (so that they can be referenced later)
       this._rowMap.push({
         Id: event.listItem.getValueByName('ID'),
-        Order: event.listItem.getValueByName('Order')
+        Order: event.listItem.getValueByName(this._orderField)
       });
   
       //Reset timeout (only needed since there isn't an official onCellsRendered event)
@@ -156,9 +150,9 @@ export default class SpfxItemOrderFieldCustomizer
       SpfxItemOrderFieldCustomizer.showLoading(row.listIndex);
 
       //Swaps the Order value for the changed rows using the values first stored in the _rowMap
-      pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(this._rowMap[row.listIndex].Id).inBatch(itemBatch).update({
-        Order: this._rowMap[row.position].Order
-      });
+      let props: any = {};
+      props[this._orderField] = this._rowMap[row.position].Order
+      pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(this._rowMap[row.listIndex].Id).inBatch(itemBatch).update(props);
 
     });
 
