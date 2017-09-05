@@ -4,7 +4,8 @@
     "name": "jquery-field-itemorder-client-side-solution",
     "id": "a9a05d70-3918-4f7c-b7f2-5371aae299ce",
     "version": "1.0.0.0",
-    "skipFeatureDeployment": true
+    "skipFeatureDeployment": true,
+    "iconPath": "AppIcon.png"
   },
   "paths": {
     "zippedPackage": "solution/jquery-field-itemorder.sppkg"

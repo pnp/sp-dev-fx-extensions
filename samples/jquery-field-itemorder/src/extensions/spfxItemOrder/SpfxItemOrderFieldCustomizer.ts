@@ -151,7 +151,7 @@ export default class SpfxItemOrderFieldCustomizer
 
       //Swaps the Order value for the changed rows using the values first stored in the _rowMap
       let props: any = {};
-      props[this._orderField] = this._rowMap[row.position].Order
+      props[this._orderField] = this._rowMap[row.position].Order;
       pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(this._rowMap[row.listIndex].Id).inBatch(itemBatch).update(props);
 
     });
