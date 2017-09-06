@@ -1,13 +1,18 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/extensions/placeholdersExtension/PlaceholdersExtensionApplicationCustomizer.js",
-      "manifest": "./src/extensions/placeholdersExtension/PlaceholdersExtensionApplicationCustomizer.manifest.json",
-      "outputPath": "./dist/placeholders-extension.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "placeholders-extension-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/placeholdersExtension/PlaceholdersExtensionApplicationCustomizer.js",
+          "manifest": "./src/extensions/placeholdersExtension/PlaceholdersExtensionApplicationCustomizer.manifest.json"
+        }
+      ]
     }
-  ],
+  },
   "externals": {},
   "localizedResources": {
-    "placeholdersExtensionStrings": "extensions/placeholdersExtension/loc/{locale}.js"
+    "PlaceholdersExtensionApplicationCustomizerStrings": "lib/extensions/placeholdersExtension/loc/{locale}.js"
   }
 }

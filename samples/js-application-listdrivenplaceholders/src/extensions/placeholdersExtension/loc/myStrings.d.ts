@@ -1,8 +1,8 @@
-declare interface IPlaceholdersExtensionStrings {
+declare interface IPlaceholdersExtensionApplicationCustomizerStrings {
   Title: string;
 }
 
-declare module 'placeholdersExtensionStrings' {
-  const strings: IPlaceholdersExtensionStrings;
+declare module 'PlaceholdersExtensionApplicationCustomizerStrings' {
+  const strings: IPlaceholdersExtensionApplicationCustomizerStrings;
   export = strings;
 }
