@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "spfx-item-order-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/spfxItemOrder/SpfxItemOrderFieldCustomizer.js",
+          "manifest": "./src/extensions/spfxItemOrder/SpfxItemOrderFieldCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    "jquery": {
+      "path": "https://code.jquery.com/jquery-2.2.4.min.js",
+      "globalName": "jQuery"
+    },
+    "jqueryui": {
+      "path": "https://code.jquery.com/ui/1.12.1/jquery-ui.js",
+      "globalName": "jQuery",
+      "globalDependencies": [
+        "jquery"
+      ]
+    },
+    "sp-pnp-js": "https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.8/pnp.min.js"
+  },
+  "localizedResources": {
+    "SpfxItemOrderFieldCustomizerStrings": "lib/extensions/spfxItemOrder/loc/{locale}.js"
+  }
+}
