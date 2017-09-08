@@ -1,8 +1,10 @@
 {
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "placeholders-extension-client-side-solution",
-    "id": "db857a74-fbd9-4a0f-92a4-8a8ed24bc2e2",
+    "id": "dda0cf42-f547-4624-bf06-8762eb3e5e57",
     "version": "1.0.0.0",
+    "skipFeatureDeployment": false,
     "features": [{
       "title": "Placeholders Extension",
       "description": "Placeholders Extension",

@@ -6,7 +6,7 @@ This solution deploys a list that allows end users to manage content that will a
 <img src='./assets/placeholders.jpg' alt='Working Sample' />
 
 ## Used SharePoint Framework Version 
-![1.1.1](https://img.shields.io/badge/version-1.1.1-orange.svg)
+![1.2.0](https://img.shields.io/badge/version-1.2.0-orange.svg)
 
 ## Applies to
 
@@ -29,6 +29,7 @@ js-application-listdrivenplaceholders | [Matt Jimison](https://mattjimison.com/)
 Version|Date|Comments
 -------|----|--------
 1.0|July 22, 2017|Initial release
+2.0|Sept 05, 2017|Release Candidate update
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -40,18 +41,23 @@ Version|Date|Comments
 - Clone this repository
 - In the command line, navigate to **samples/js-application-listdrivenplaceholders** and run:
   - `npm install`
-  - Deploy the package to create the SharePoint list
-    - `gulp bundle`
-    - `gulp package-solution`
-    - Visit your developer tenant's app catalog, and upload the SPPKG package located in the sharepoint/solution folder into your "Apps for SharePoint" library
-    - When prompted if you trust the solution, click "Deploy"
-    - Create a new Modern Team Site by selecting the SharePoint app from the app launcher, and then click ‘Create site’
-    - Navigate to your new site and select cog -> Add an App
-    - Click 'placeholders-extension-client-side-solution' below in the ‘Apps you can add’ section
-    - Select cog -> Site contents (if not redirected) and refresh the page periodically until the app is no longer grayed out, and shows as installed
-    - Navigate to the new ‘SPFx Placeholders’ list
-      - Create an entry with title 'PageHeader', and add your desired content
-      - Create an entry with title 'PageFooter', and add your desired content
+  - Create the SharePoint list via 1 of 2 options 
+    - (1) Deploy the package to create the SharePoint list
+      - `gulp bundle`
+      - `gulp package-solution`
+      - Visit your developer tenant's app catalog, and upload the SPPKG package located in the sharepoint/solution folder into your "Apps for SharePoint" library
+      - When prompted if you trust the solution, click "Deploy"
+      - Create a new Modern Team Site by selecting the SharePoint app from the app launcher, and then click ‘Create site’
+      - Navigate to your new site and select cog -> Add an App
+      - Click 'placeholders-extension-client-side-solution' below in the ‘Apps you can add’ section
+      - Select cog -> Site contents (if not redirected) and refresh the page periodically until the app is no longer grayed out, and shows as installed
+    - (2) Create a new list manually
+      - Create a new custom list with the name 'SPFxPlaceholders'
+      - Change the title of the list to 'SPFx Placeholders'
+      - Add a new column to the list with the title 'SPFxContent' and of type 'Multiple lines of text' and the additional column settings of 'Enhanced rich text'
+  - Navigate to the new ‘SPFx Placeholders’ list
+      - Create an entry with title 'Top', and add your desired content
+      - Create an entry with title 'Bottom', and add your desired content
   - Debug the solution to view the placeholder content dynamically injected
     - In the command line, run:
     - `gulp serve --nobrowser`
