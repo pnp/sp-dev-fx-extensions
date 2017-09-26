@@ -1,10 +1,31 @@
 {
   "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
   "port": 4321,
-  "initialPage": "https://localhost:5432/workbench",
   "https": true,
-  "api": {
-    "port": 5432,
-    "entryPath": "node_modules/@microsoft/sp-webpart-workbench/lib/api/"
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "bf6645bd-42e4-4a30-aad7-6ff12d61fa1f": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    },
+    "spfxClone": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "bf6645bd-42e4-4a30-aad7-6ff12d61fa1f": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    }
   }
 }

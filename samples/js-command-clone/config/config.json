@@ -12,7 +12,7 @@
     }
   },
   "externals": {
-    "sp-pnp-js": "https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.8/pnp.min.js"
+    "sp-pnp-js": "https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/3.0.1/pnp.min.js"
   },
   "localizedResources": {
     "SpfxCloneCommandSetStrings": "lib/extensions/spfxClone/loc/{locale}.js"
