@@ -35,15 +35,15 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
+- Update the `pageUrl` properties in the **config/serve.json** file
+  - The `pageUrl` should be a list view in your tenant
+  - This property is only used during development in conjunction with the `gulp serve` command
 - In the command line navigate to **samples/js-command-clone** and run:
   - `npm install`
-  - `gulp serve --nobrowser`
-- Adapt the listview command set debug query string from the one below
-- In a web browser
-  - Navigate to a modern list view on a classic site
-  - Add the previously copied debug querystring to the URL
+  - `gulp serve`
+- In the web browser:
   - Choose **Load Debug Scripts** when prompted
-  - Select 1 or more items and choose clone from either the command bar or the context menu
+  - Select 1 or more items and choose **clone** from either the command bar or the context menu
   - Behold the marvels of science
 
 ## Features
