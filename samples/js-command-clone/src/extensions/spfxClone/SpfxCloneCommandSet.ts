@@ -53,7 +53,7 @@ export default class SpfxCloneCommandSet
 
   @override
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
-    switch (event.commandId) {
+    switch (event.itemId) {
       case 'spfxClone':
         this.ensureListSchema() //Go get the field information
           .then((listFields: Array<IListField>): void => {
