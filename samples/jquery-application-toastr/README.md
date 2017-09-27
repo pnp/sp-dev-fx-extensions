@@ -6,17 +6,12 @@ Sample SharePoint Framework application customizer extension that shows toast no
 ![Toasts shown on a Communication Site](./assets/spfxToastr-Preview.PNG)
 
 ## Used SharePoint Framework Version 
-![1.2.0](https://img.shields.io/badge/version-1.2.0-orange.svg)
+![1.3.0](https://img.shields.io/badge/version-1.3.0-green.svg)
 
 ## Applies to
 
 * [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
-* [Office 365 Developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 * [Toastr](http://codeseven.github.io/toastr/)
-
-## Prerequisites
- 
-* [An Office 365 Developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 
 ## Solution
 
@@ -31,6 +26,7 @@ Version|Date|Comments
 1.0|July 9, 2017|Initial release
 1.1|August 20, 2017|Updated to use framework 1.1.3
 1.2|August 30, 2017|Updated to SPFx Release Candidate 1.2.0
+1.3|September 27, 2017|Updated for SPFx GA 1.3.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -40,15 +36,15 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
+- Update the `pageUrl` properties in the **config/serve.json** file
+  - The `pageUrl` should be a modern page
+  - This property is only used during development in conjunction with the `gulp serve` command
 - In the command line navigate to **samples/ jquery-application-toastr** and run:
   - `npm install`
-  - `gulp serve --nobrowser`
-- Adapt the application customizer debug query string from the one below
+  - `gulp serve`
 - In a web browser
-  - Navigate to a modern site, or a modern view on a classic site
   - Follow one of the steps below for **List Deployment**
     - Add some sample list items _(Be sure at least 1 item has a StartDate prior to now and an EndDate later than now)_
-  - Add the previously copied debug querystring to the URL
   - Choose **Load Debug Scripts** when prompted
   - Stand in awe of the glory of Toast
 
