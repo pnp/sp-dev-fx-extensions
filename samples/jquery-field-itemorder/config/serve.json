@@ -1,10 +1,25 @@
 {
   "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
   "port": 4321,
-  "initialPage": "https://localhost:5432/workbench",
   "https": true,
-  "api": {
-    "port": 5432,
-    "entryPath": "node_modules/@microsoft/sp-webpart-workbench/lib/api/"
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/Extensions/Lists/Links/AllItems.aspx",
+      "fieldCustomizers": {
+        "InternalFieldName": {
+          "id": "e6bdc269-2080-47b8-b096-e7bf2a9263a9",
+          "properties": {}
+        }
+      }
+    },
+    "spfxItemOrder": {
+      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/Extensions/Lists/Links/AllItems.aspx",
+      "fieldCustomizers": {
+        "InternalFieldName": {
+          "id": "e6bdc269-2080-47b8-b096-e7bf2a9263a9",
+          "properties": {}
+        }
+      }
+    }
   }
 }
