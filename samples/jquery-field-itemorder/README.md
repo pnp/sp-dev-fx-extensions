@@ -6,18 +6,13 @@ Sample SharePoint Framework field customizer extension that enables reordering o
 ![Reordering of List Items](./assets/spfxItemOrder-Animation.gif)
 
 ## Used SharePoint Framework Version 
-![1.2.0](https://img.shields.io/badge/version-1.2.0-orange.svg)
+![1.3.0](https://img.shields.io/badge/version-1.3.0-green.svg)
 
 ## Applies to
 
 * [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
-* [Office 365 Developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 * [jQuery](http://jquery.com/)
 * [jQuery UI](http://jqueryui.com/)
-
-## Prerequisites
- 
-* [An Office 365 Developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 
 ## Solution
 
@@ -30,6 +25,7 @@ jquery-field-itemorder | Chris Kent ([thechriskent.com](https://thechriskent.com
 Version|Date|Comments
 -------|----|--------
 1.0|September 5, 2017|Initial release
+1.1|September 28, 2017|Updated for SPFx Extensions GA 1.3.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -39,15 +35,16 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
+- Update the `pageUrl` properties in the **config/serve.json** file
+   - The `pageUrl` should be a list view in your tenant
+   - This property is only used during development in conjunction with the `gulp serve` command
 - In the command line navigate to **samples/jquery-field-itemorder** and run:
   - `npm install`
-  - `gulp serve --nobrowser`
-- Adapt the field customizer debug query string from one of the below options
+  - `gulp serve`
+    - if you want to use the custom field then use the customField serveConfiguration using this command: `gulp serve --config customField`
 - In a web browser
-  - Navigate to a modern list view on a classic site
   - Optionally, follow the steps below for a **Placeholder Field** (or choose some other field)
   - Ensure your list/view is orderable using the one of the options under **Making Your List Orderable**
-  - Add the previously copied debug querystring to the URL
   - Choose **Load Debug Scripts** when prompted
   - Reorder your items and feel the power flow through you
 
@@ -63,6 +60,7 @@ This extension illustrates the following concepts:
 - Applying **CSS Animations** in SCSS
 - Taking advantage of the under utilized `Order` field
 - Configuration through properties
+- Multiple **serveConfigurations**
 - Conditionally altering behavior & display based on the **user's permission level**
 - Theme syntax for applying official colors to custom CSS classes
 - Optionally, **PnP PowerShell** for view adjustment _(see below)_
