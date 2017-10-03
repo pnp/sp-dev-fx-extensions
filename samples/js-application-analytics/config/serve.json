@@ -1,9 +1,24 @@
 {
   "port": 4321,
-  "initialPage": "https://localhost:5432/workbench",
   "https": true,
-  "api": {
-    "port": 5432,
-    "entryPath": "node_modules/@microsoft/sp-webpart-workbench/lib/api/"
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://giuleon.sharepoint.com/sites/demo/SitePages/Home.aspx",
+      "customActions": {
+        "68871fea-d31c-4fe1-812c-4fdf81a0a7b8": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {}
+        }
+      }
+    },
+    "spfxAnalytics": {
+      "pageUrl": "https://giuleon.sharepoint.com/sites/demo/SitePages/Home.aspx",
+      "customActions": {
+        "68871fea-d31c-4fe1-812c-4fdf81a0a7b8": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {}
+        }
+      }
+    }
   }
 }
