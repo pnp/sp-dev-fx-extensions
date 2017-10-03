@@ -6,18 +6,13 @@ Sample SharePoint Framework listview command set extension that allows users to 
 ![Cloning of list items](./assets/spfxClone-Animation.gif)
 
 ## Used SharePoint Framework Version 
-![1.2.0](https://img.shields.io/badge/version-1.2.0-orange.svg)
+![1.3.0](https://img.shields.io/badge/version-1.3.0-green.svg)
 
 ## Applies to
 
 * [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
-* [Office 365 Developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 * [PnP JavaScript Core](https://github.com/SharePoint/PnP-JS-Core)
 
-
-## Prerequisites
- 
-* [An Office 365 Developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 
 ## Solution
 
@@ -30,6 +25,7 @@ js-command-clone | Chris Kent ([thechriskent.com](https://thechriskent.com), [@t
 Version|Date|Comments
 -------|----|--------
 1.0|August 30, 2017|Initial release
+1.1|September 26, 2017|Updated for SPFx Extensions GA 1.3.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -39,15 +35,15 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
+- Update the `pageUrl` properties in the **config/serve.json** file
+  - The `pageUrl` should be a list view in your tenant
+  - This property is only used during development in conjunction with the `gulp serve` command
 - In the command line navigate to **samples/js-command-clone** and run:
   - `npm install`
-  - `gulp serve --nobrowser`
-- Adapt the listview command set debug query string from the one below
-- In a web browser
-  - Navigate to a modern list view on a classic site
-  - Add the previously copied debug querystring to the URL
+  - `gulp serve`
+- In the web browser:
   - Choose **Load Debug Scripts** when prompted
-  - Select 1 or more items and choose clone from either the command bar or the context menu
+  - Select 1 or more items and choose **clone** from either the command bar or the context menu
   - Behold the marvels of science
 
 ## Features
