@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "tenant-schedule-doc-meeting-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/tenantScheduleDocMeeting/TenantScheduleDocMeetingCommandSet.js",
+          "manifest": "./src/extensions/tenantScheduleDocMeeting/TenantScheduleDocMeetingCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TenantScheduleDocMeetingCommandSetStrings": "lib/extensions/tenantScheduleDocMeeting/loc/{locale}.js"
+  }
+}

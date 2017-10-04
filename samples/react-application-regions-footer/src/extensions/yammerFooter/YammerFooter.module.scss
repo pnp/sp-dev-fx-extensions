@@ -1,0 +1,32 @@
+.app {
+    .bottom, a, a:visited, a:hover {
+      height:40px;
+      width: 70%;
+      text-align:center;
+      line-height:2.5;
+      font-weight:bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .commandBar {
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .footerGrid {
+      width: 100%;
+    }
+
+    .footerGridRowContent {
+      font-weight: bold;
+      color: darkred;
+    }
+  }

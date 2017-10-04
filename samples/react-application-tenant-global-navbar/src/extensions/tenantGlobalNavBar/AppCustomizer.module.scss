@@ -1,0 +1,32 @@
+.app {
+    .top {
+      height:40px;
+      text-align:left;
+      line-height:2.5;
+      font-weight:bold;
+      display: flex;
+      align-items: left;
+      justify-content: left;
+    }
+  
+    .bottom, a, a:visited, a:hover {
+      height:40px;
+      text-align:center;
+      line-height:2.5;
+      font-weight:bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .commandBar {
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }

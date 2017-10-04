@@ -1,0 +1,28 @@
+.pickerRoot {
+    
+        .pickerSuggestedItem {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    
+        .pickerSuggestedItemIcon, .pickerSelectedItemIcon {
+            padding-right: 5px;
+        }
+    
+        .pickerSuggestedItemText {
+            text-overflow: ellipsis;
+        }
+    
+        .pickerSelectedItem {
+            vertical-align: top;
+        }
+    
+        .pickerSelectedItemText {
+            text-overflow: ellipsis;
+            vertical-align: top;
+        }
+    
+        .pickerSelectedItemClose {
+            vertical-align: top;
+        }
+    }

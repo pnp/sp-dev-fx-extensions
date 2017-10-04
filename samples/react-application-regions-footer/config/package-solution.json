@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-yammer-footer-client-side-solution",
+    "id": "418c4aa8-0c70-4513-bb51-74042d1d4dea",
+    "version": "1.0.14.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-yammer-footer.sppkg"
+  }
+}

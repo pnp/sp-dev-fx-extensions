@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-schedule-doc-meeting-client-side-solution",
+    "id": "cb628866-7271-488c-9930-b98781f69a39",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-schedule-doc-meeting.sppkg"
+  }
+}

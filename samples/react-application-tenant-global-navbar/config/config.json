@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "tenant-global-nav-bar-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/tenantGlobalNavBar/TenantGlobalNavBarApplicationCustomizer.js",
+          "manifest": "./src/extensions/tenantGlobalNavBar/TenantGlobalNavBarApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TenantGlobalNavBarApplicationCustomizerStrings": "lib/extensions/tenantGlobalNavBar/loc/{locale}.js"
+  }
+}

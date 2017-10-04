@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-tenant-global-navbar-client-side-solution",
+    "id": "4556ccdc-b9eb-48d3-b2f4-2b33a8ef25ea",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-tenant-global-navbar.sppkg"
+  }
+}
