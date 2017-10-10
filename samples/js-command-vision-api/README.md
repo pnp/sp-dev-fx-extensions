@@ -67,3 +67,5 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * using Vision API to get the image Tags
 * how to get the download url of the selected file
 * using async / await for the async calls
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-command-vision-api" />
