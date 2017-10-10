@@ -1,8 +1,8 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
 
-  "id": "f422d14d-4835-43ce-8d66-27aaa79a5a2d",
-  "alias": "TenantScheduleDocMeetingCommandSet",
+  "id": "95483216-5d5f-404c-bf25-563e44cdd935",
+  "alias": "DiscussNowCommandSet",
   "componentType": "Extension",
   "extensionType": "ListViewCommandSet",
 
@@ -16,9 +16,9 @@
   "requiresCustomScript": false,
 
   "items": {
-    "SCHEDULE_MEETING": {
+    "DISCUSS_NOW": {
       "title": { "default": "Discuss Now" },
-      "iconImageUrl": "https://publiccdn.sharepointonline.com/piasysdev.sharepoint.com/sites/CDN/CDNFiles/calendar.png",
+      "iconImageUrl": "https://contosodemosg.sharepoint.com/sites/SPFXCDN/SPFXFiles/spfx-discuss-now/Calendar.png",
       "type": "command"
     }
   }

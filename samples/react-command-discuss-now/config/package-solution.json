@@ -1,12 +1,23 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "spfx-schedule-doc-meeting-client-side-solution",
-    "id": "cb628866-7271-488c-9930-b98781f69a39",
-    "version": "1.0.0.0",
-    "skipFeatureDeployment": true
+    "name": "spfx-discuss-now-client-side-solution",
+    "id": "8c4b07e1-50e7-4024-80d7-e78f4e0648dc",
+    "version": "1.0.2.0",
+    "skipFeatureDeployment": false,
+    "features": [{
+      "title": "DiscussNowCommandSet",
+      "description": "Custom action for Discuss Now Command Set",
+      "id": "98e44d40-c891-4cf6-8e75-690c802bd227",
+      "version": "1.0.0.0",
+      "assets": {        
+        "elementManifests": [
+          "elements.xml"
+        ]
+      }
+    }]
   },
   "paths": {
-    "zippedPackage": "solution/spfx-schedule-doc-meeting.sppkg"
+    "zippedPackage": "solution/spfx-discuss-now.sppkg"
   }
 }
