@@ -67,7 +67,7 @@ In order to deploy the sample solution in a real environment, or at least in ord
 
 ## Features
 
-This project contains sample SharePoint Framework application customizer extension built using React and Office UI Fabric React. The application customizer renders a top navbar and a footer navbar, with hyerarchical navigation nodes that are read from the taxonomy based managed navigation.
+This project contains sample SharePoint Framework application customizer extension built using React and Office UI Fabric React. The application customizer renders a top navbar and a footer navbar, with hierarchical navigation nodes that are read from the taxonomy based managed navigation.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
