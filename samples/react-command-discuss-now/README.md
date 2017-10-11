@@ -19,7 +19,7 @@ Sample SharePoint Framework command set showing how to create a new meeting to d
 
 Solution|Author(s)
 --------|---------
-react-command-discuss-now|Paolo Pialorsi (MCM, MVP, [PiaSys.com](https://piasys.com), @PaoloPia)
+react-command-discuss-now|Paolo Pialorsi (MCM, MVP, [PiaSys.com](https://piasys.com), [@PaoloPia](https://twitter.com/PaoloPia))
 
 ## Version history
 
@@ -35,7 +35,7 @@ Version|Date|Comments
 
 ## Prerequisites
 
-* Office 365 Developer tenant with a modern site collection and a list of announcements
+* Office 365 Developer tenant with a modern site collection and a document library
 
 ## Minimal Path to Awesome
 
@@ -57,11 +57,12 @@ In order to deploy the sample solution in a real environment, or at least in ord
 * bundle and package the solution by executing the following commands in the command line:
   * `gulp bundle --ship`
   * `gulp package-solution --ship`
-* upload the content of the ./temp/deploy subfolder of the solution folder into the target hosting environment
-* add to the "Apps for SharePoint" library of the AppCatalog in your tenant the spfx-discuss-now.spppkg file that you will find under the ./sharepoint/solution subfolder of the solution folder
+* upload the content of the ./temp/deploy subfolder of the sample root folder into the target hosting environment
+* add to the "Apps for SharePoint" library of the AppCatalog in your tenant the spfx-discuss-now.spppkg file that you will find under the ./sharepoint/solution subfolder of the sample root folder
 * add the spfx-discuss-now app to any target site where you want to use the extension
 
-The sample solution will use the SharePoint Feature Framework to automatically provision the command set extension to all the document libraries (List Type 101) of the target site. If you want to manually bind the extension to any other custom library, please refer to the PowerShell script [DiscussNowProvisionCommandSet.ps1](./DiscussNowProvisionCommandSet.ps1), which is available in the root folder of the solution.
+The sample solution will use the SharePoint Feature Framework to automatically provision the command set extension to all the document libraries (List Type 101) of the target site. If you want to manually bind the extension to any other custom library, please refer to the PowerShell script [DiscussNowProvisionCommandSet.ps1](./DiscussNowProvisionCommandSet.ps1), which is available in the root folder of this sample. Please, notice that the PowerShell script provides a sample code excerpt to bind the command set to all the document libraries of the target site using PnP PowerShell, as well 
+a sample about how to bind the command set with a specific target library. It is up to you to choose the right option for your scenario.
 
 ## Features
 
@@ -72,7 +73,7 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * using Office UI Fabric React to build SharePoint Framework command set that seamlessly integrate with SharePoint
 * using React to build SharePoint Framework command set
 * logging information to console using a custom SharePoint Framework log handler
-* creating new objects (event in a calendar) using the Microsoft Graph and the graphHttpClient from the SharePoint Framework context
+* creating new objects (event in a calendar) using the Microsoft Graph and the _graphHttpClient_ from the SharePoint Framework _context_
 * using the SPFx Dialog Framework
 
 ![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-discuss-now)
