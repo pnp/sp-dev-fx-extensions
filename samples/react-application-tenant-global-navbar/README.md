@@ -1,10 +1,10 @@
-# Discuss Now Command Set
+# Tenant Global NavBar Application Customizer
 
 ## Summary
 
-Sample SharePoint Framework command set showing how to create a new meeting to discuss about a document selected in the current list view of a document library.
+Sample SharePoint Framework application customizer showing how to create a tenant global NavBar and Footer NavBar for modern sites, reading menu items from the Term Store.
 
-![The Discuss Now Command Set in action](./assets/Discuss-Now-Command-Set.png)
+![The Tenant Global NavBar Application Customizer in action](./assets/Tenant-Global-NavBar.png)
 
 ## Used SharePoint Framework Version
 
@@ -19,7 +19,7 @@ Sample SharePoint Framework command set showing how to create a new meeting to d
 
 Solution|Author(s)
 --------|---------
-react-command-discuss-now|Paolo Pialorsi (MCM, MVP, [PiaSys.com](https://piasys.com), [@PaoloPia](https://twitter.com/PaoloPia))
+react-application-tenant-global-navbar|Paolo Pialorsi (MCM, MVP, [PiaSys.com](https://piasys.com), [@PaoloPia](https://twitter.com/PaoloPia))
 
 ## Version history
 
@@ -43,11 +43,15 @@ Version|Date|Comments
 * in the command line run
   * `npm i`
   * `gulp serve --nobrowser`
-* open a document library in a modern site
-* append the following query string parameters to the AllItems.aspx view page URL
+* open a modern site
+* go to the "Term Store Management" page of the site settings and create a new Term Group, or at least a new Term Set for the top NavBar and/or a new Term Set for the bottom NavBar.
+  * Call the Term Sets with whatever name you like (for example, you can call the top NavBar Term Set "TenantGlobalNavBar" and the bottom NavBar Term Set "TenantGlobalFooterBar")
+  * Configure the Term Sets for site managed navigation
+  * Configure the navigation settings accordingly to your needs
+* append the following query string parameters to the home page URL
 
 ```text
-?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"95483216-5d5f-404c-bf25-563e44cdd935":{"location":"ClientSideExtension.ListViewCommandSet"}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"b1efedb9-b371-4f5c-a90f-3742d1842cf3":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"TopMenuTermSet":"TenantGlobalNavBar","BottomMenuTermSet":"TenantGlobalFooterBar"}}}
 ```
 
 ## Deployment
@@ -59,21 +63,17 @@ In order to deploy the sample solution in a real environment, or at least in ord
   * `gulp package-solution --ship`
 * upload the content of the ./temp/deploy subfolder of the sample root folder into the target hosting environment
 * add to the "Apps for SharePoint" library of the AppCatalog in your tenant the spfx-discuss-now.spppkg file that you will find under the ./sharepoint/solution subfolder of the sample root folder
-* add the spfx-discuss-now app to any target site where you want to use the extension
-
-The sample solution will use the SharePoint Feature Framework to automatically provision the command set extension to all the document libraries (List Type 101) of the target site. If you want to manually bind the extension to any other custom library, please refer to the PowerShell script [DiscussNowProvisionCommandSet.ps1](./DiscussNowProvisionCommandSet.ps1), which is available in the root folder of this sample. Please, notice that the PowerShell script provides a sample code excerpt to bind the command set to all the document libraries of the target site using PnP PowerShell, as well 
-a sample about how to bind the command set with a specific target library. It is up to you to choose the right option for your scenario.
+* the sample is tenant-wide available, so you don't need to install it to every single target site, you simply need to bind the application customizer to the target site. In order to do that, you can use the PowerShell script [TenantGlobalNavBarProvisionCustomizer.ps1](./TenantGlobalNavBarProvisionCustomizer.ps1)
 
 ## Features
 
-This project contains sample SharePoint Framework command set extension built using React and Office UI Fabric React. The command set allows to create a new meeting in the Group's agenda of the Modern Site to discuss about the currently selected document in a document library. By default the command set invites all the Group's members.
+This project contains sample SharePoint Framework application customizer extension built using React and Office UI Fabric React. The application customizer renders a top navbar and a footer navbar, with hyerarchical navigation nodes that are read from the taxonomy based managed navigation.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
-* using Office UI Fabric React to build SharePoint Framework command set that seamlessly integrate with SharePoint
-* using React to build SharePoint Framework command set
+* using Office UI Fabric React to build SharePoint Framework application customizers that seamlessly integrate with SharePoint
+* using React to build SharePoint Framework application customizers
 * logging information to console using a custom SharePoint Framework log handler
-* creating new objects (event in a calendar) using the Microsoft Graph and the _graphHttpClient_ from the SharePoint Framework _context_
-* using the SPFx Dialog Framework
+* consuming the SharePoint Online taxonomy service using REST requests against the _client.svc/ProcessQuery_ service of CSOM
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-discuss-now)
+![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-tenant-global-navbar)
