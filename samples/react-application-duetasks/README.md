@@ -6,7 +6,7 @@ The sample illustrates how to display a warning message that current user has ov
 ![React Slider Field Customizer](./assets/app-customizer.png)
 
 ## Used SharePoint Framework Version 
-SPFx Extensions RC0
+SPFx Extensions GA (1.3.0)
 
 ## Applies to
 
@@ -22,6 +22,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|July 5, 2017|Initial release
 1.1|August 29, 2017|Update to RC0
+1.2|October 10, 2017|$schema properties in config files, Feature Framework
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
