@@ -60,7 +60,7 @@ Version|Date|Comments
 
   ![The Regions in the Term Store](./assets/Regions-Footer-Taxonomy-Custom-Properties.png)
 
-* append the following query string parameters to the AllItems.aspx view page URL
+* append the following query string parameters to the home page URL
 
 ```text
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"67fd1d01-84e8-4fbf-85bd-4b80768c6080":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"SourceTermSetName":"Regions"}}}
@@ -85,18 +85,18 @@ which implies a container region.
 ![The Regions in the Term Store](./assets/Regions-Footer-Config.png)
 
 It is interesting to notice that the application customizer monitors the status of the page, and when the page is in Edit mode, it renders an editing/configuration UI, while if the page is in Display mode, it renders the footer.
-So far, the monitor of the page status is provided by using a setTimeout function and monitoring the query string of the page (if it contains the mode=edit parameter, we are in Edit mode). In the future this capability will be native in SPFx, so far this a "trick" for the sake of making the demo fully functional.
+So far, the monitor of the page status is provided by using a _setTimeout_ function and monitoring the query string of the page (if it contains the _mode=edit_ parameter, we are in Edit mode). In the future this capability will be native in SPFx, so far this a "trick" for the sake of making the demo fully functional.
 
-Moreover, the footer right now, for the sake of demo purposes, stores the selected country in the session local storage of the browser, at the site collection level. Thus, whenever you start the application customizer in a new browsing session, you will have to configure the target country. You can update this demo behavior storing the currently selected country in local repository for the site, or overriding the properties of the application customizer.
+Moreover, the footer right now - for the sake of demo purposes - stores the selected country in the session local storage of the browser, at the site collection level. Thus, whenever you start the application customizer in a new browsing session, you will have to configure the target country. You can update this demo behavior storing the currently selected country in a local repository for the site, or overriding the properties of the application customizer.
 
-Lastly, the application customizer renders in pages only, and not in lists and libraries. This result is achieved by monitoring the property _this.context.pageContext.listItem_ . If the _listItem_ property is NULL, it means we are in a page, and the footer will be visible, otherwise we are in a list or library view, and the footer will not be visible.
+Lastly, the application customizer renders in pages only, and not in lists and libraries. This result is achieved by monitoring the property _this.context.pageContext.listItem_ . If the _listItem_ property is _NULL_, it means we are in a page, and the footer will be visible, otherwise we are in a list or library view, and the footer will not be visible.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
-* using Office UI Fabric React to build SharePoint Framework command set that seamlessly integrate with SharePoint
-* using React to build SharePoint Framework command set
+* using Office UI Fabric React to build SharePoint Framework application customizers that seamlessly integrate with SharePoint
+* using React to build SharePoint Framework application customizers
 * logging information to console using a custom SharePoint Framework log handler
 * using the SPFx Dialog Framework
-* consuming the SharePoint Online taxonomy service using base REST requests against the _client.svc/ProcessQuery_ service of CSOM
+* consuming the SharePoint Online taxonomy service using REST requests against the _client.svc/ProcessQuery_ service of CSOM
 
 ![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-regions-footer)
