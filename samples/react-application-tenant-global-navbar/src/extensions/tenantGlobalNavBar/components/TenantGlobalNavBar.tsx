@@ -24,6 +24,7 @@ export default class TenantGlobalNavBar extends React.Component<ITenantGlobalNav
         key: menuItem.identity,
         name: menuItem.name,
         itemType: itemType,
+        iconProps:{ iconName: (menuItem.localCustomProperties.iconName != undefined ? menuItem.localCustomProperties.iconName : null)},
         href: menuItem.terms.length == 0 ?
             (menuItem.localCustomProperties["_Sys_Nav_SimpleLinkUrl"] != undefined ?
                 menuItem.localCustomProperties["_Sys_Nav_SimpleLinkUrl"]
