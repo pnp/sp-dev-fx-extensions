@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.3.2",
+    "libraryName": "js-command-item-permissions",
+    "libraryId": "f34e702d-1843-4e28-9431-2cd00beeb9d7",
+    "environment": "spo"
+  }
+}
