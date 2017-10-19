@@ -15,12 +15,14 @@ import TenantGlobalNavBar from './components/TenantGlobalNavBar';
 import { ITenantGlobalNavBarProps } from './components/ITenantGlobalNavBarProps';
 import TenantGlobalFooterBar from './components/TenantGlobalFooterBar';
 import { ITenantGlobalFooterBarProps } from './components/ITenantGlobalFooterBarProps';
-import * as SPTermStore from '../../components/SPTermStoreService'; 
+import * as SPTermStore from './services/SPTermStoreService'; 
+import pnp from "sp-pnp-js";
 
 import styles from './AppCustomizer.module.scss';
 import * as strings from 'TenantGlobalNavBarApplicationCustomizerStrings';
 
 const LOG_SOURCE: string = 'TenantGlobalNavBarApplicationCustomizer';
+const NAV_TERMS_KEY: string = 'global-navigation-terms';
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
@@ -48,6 +50,13 @@ export default class TenantGlobalNavBarApplicationCustomizer
     // Added to handle possible changes on the existence of placeholders
     // this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
 
+    // Configure caching
+    pnp.setup({
+      defaultCachingStore: "session", 
+      defaultCachingTimeoutSeconds: 900, //15min
+      globalCacheDisable: false // true to disable caching in case of debugging/testing
+    });
+
     // Retrieve the menu items from taxonomy
     let termStoreService: SPTermStore.SPTermStoreService = new SPTermStore.SPTermStoreService({
       spHttpClient: this.context.spHttpClient,
@@ -55,7 +64,14 @@ export default class TenantGlobalNavBarApplicationCustomizer
     });
 
     if (this.properties.TopMenuTermSet != null) {
-      this._topMenuItems = await termStoreService.getTermsFromTermSetAsync(this.properties.TopMenuTermSet);
+      let cachedTerms = pnp.storage.session.get(NAV_TERMS_KEY);
+      if(cachedTerms != null){
+        this._topMenuItems = cachedTerms;
+      }
+      else {
+        this._topMenuItems = await termStoreService.getTermsFromTermSetAsync(this.properties.TopMenuTermSet);
+        pnp.storage.session.put(NAV_TERMS_KEY,this._topMenuItems);
+      }
     }
     if (this.properties.BottomMenuTermSet != null) {
       this._bottomMenuItems = await termStoreService.getTermsFromTermSetAsync(this.properties.BottomMenuTermSet);

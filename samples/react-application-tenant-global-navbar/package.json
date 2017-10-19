@@ -11,11 +11,12 @@
     "test": "gulp test"
   },
   "dependencies": {
+    "@microsoft/sp-application-base": "1.2.0",
     "@microsoft/sp-core-library": "~1.2.0",
+    "@microsoft/sp-listview-extensibility": "1.2.0",
     "@microsoft/sp-webpart-base": "~1.2.0",
     "@types/webpack-env": ">=1.12.1 <1.14.0",
-    "@microsoft/sp-listview-extensibility": "1.2.0",
-    "@microsoft/sp-application-base": "1.2.0"
+    "sp-pnp-js": "^3.0.1"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.2.0",
