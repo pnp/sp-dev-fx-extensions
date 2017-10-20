@@ -1,7 +1,5 @@
 import { override } from '@microsoft/decorators';
-import {
-    BaseApplicationCustomizer
-} from '@microsoft/sp-application-base';
+import { BaseApplicationCustomizer } from '@microsoft/sp-application-base';
 import { Dialog } from '@microsoft/sp-dialog';
 import { Site } from 'sp-pnp-js';
 
@@ -36,7 +34,7 @@ export default class RunOnceApplicationCustomizer
 
     private async removeCustomizer() {
         // Remove custom action from current sute
-        let site = new Site(this.context.pageContext.site.absoluteUrl);        
+        let site = new Site(this.context.pageContext.site.absoluteUrl);
         let customActions = await site.userCustomActions.get(); // if installed as web scope, change this line
         for (let i = 0; i < customActions.length; i++) {
             var instance = customActions[i];
