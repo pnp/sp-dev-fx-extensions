@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Run Once Application Customizer Sample",
+    "id": "55d575cf-20d3-4417-9aaa-68403fa6be61",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/js-application-run-once.sppkg"
+  }
+}

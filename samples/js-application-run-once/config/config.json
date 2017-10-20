@@ -1,0 +1,16 @@
+{
+    "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+    "version": "2.0",
+    "bundles": {
+        "logo-customizer-application-customizer": {
+            "components": [
+                {
+                    "entrypoint": "./lib/extensions/runOnceCustomizer/RunOnceApplicationCustomizer.js",
+                    "manifest": "./src/extensions/runOnceCustomizer/RunOnceApplicationCustomizer.manifest.json"
+                }
+            ]
+        }
+    },
+    "externals": {},
+    "localizedResources": {}
+}
