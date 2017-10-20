@@ -1,8 +1,0 @@
-{
-  "@microsoft/generator-sharepoint": {
-    "version": "1.1.1",
-    "libraryName": "jquery-application-beautify-calc-column",
-    "libraryId": "3e1eec2a-a780-4c95-9a07-dde98123624f",
-    "environment": "spo"
-  }
-}
