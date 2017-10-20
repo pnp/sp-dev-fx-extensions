@@ -1,5 +1,5 @@
 {
-  "$schema": "../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
   "id": "771b53cc-ee49-4f06-903e-3ce4eb4bc313",
   "alias": "DueTasksApplicationCustomizer",
@@ -7,5 +7,5 @@
   "extensionType": "ApplicationCustomizer",
   "version": "*", // The "*" signifies that the version should be taken from the package.json
   "manifestVersion": 2,
-  "safeWithCustomScriptDisabled": true
+  "requiresCustomScript": false
 }

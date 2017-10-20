@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="OverdueTasks"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="771b53cc-ee49-4f06-903e-3ce4eb4bc313"
+        ClientSideComponentProperties="{&quot;tasksListTitle&quot;:&quot;Tasks&quot;}">
+    </CustomAction>
+</Elements>
