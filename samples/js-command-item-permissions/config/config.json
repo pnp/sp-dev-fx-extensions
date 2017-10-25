@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "item-permissions-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/itemPermissions/ItemPermissionsCommandSet.js",
+          "manifest": "./src/extensions/itemPermissions/ItemPermissionsCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ItemPermissionsCommandSetStrings": "lib/extensions/itemPermissions/loc/{locale}.js"
+  }
+}
