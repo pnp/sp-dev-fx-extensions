@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "react-mega-menu-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/reactMegaMenu/ReactMegaMenuApplicationCustomizer.js",
+          "manifest": "./src/extensions/reactMegaMenu/ReactMegaMenuApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReactMegaMenuApplicationCustomizerStrings": "lib/extensions/reactMegaMenu/loc/{locale}.js"
+  }
+}
