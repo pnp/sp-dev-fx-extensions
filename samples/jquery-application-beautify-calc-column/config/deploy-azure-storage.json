@@ -1,6 +1,0 @@
-{
-  "workingDir": "./temp/deploy/",
-  "account": "<!-- STORAGE ACCOUNT NAME -->",
-  "container": "jquery-application-beautify-calc-column",
-  "accessKey": "<!-- ACCESS KEY -->"
-}
