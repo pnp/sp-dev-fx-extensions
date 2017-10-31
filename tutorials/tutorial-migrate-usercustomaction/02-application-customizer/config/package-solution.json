@@ -1,0 +1,24 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-react-custom-footer-client-side-solution",
+    "id": "911728a5-7bde-4453-97b2-2eba59277ed3",
+    "version": "1.0.1.0",
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "f16a2612-3163-46ad-9664-3d3daac68cff",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-react-custom-footer.sppkg"
+  }
+}

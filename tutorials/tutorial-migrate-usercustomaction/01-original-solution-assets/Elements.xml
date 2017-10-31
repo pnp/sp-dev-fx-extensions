@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="jQueryCDN"
+                Title="jQueryCDN"
+                Description="Loads jQuery from the public CDN"
+                ScriptSrc="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                Location="ScriptLink"
+                Sequence="100" />
+  <CustomAction Id="spoCustomBar"
+                Title="spoCustomBar"
+                Description="Loads a script to rendere a custom footer"
+                Location="ScriptLink"
+                ScriptSrc="~SiteCollection/SiteAssets/SPOCustomUI.js"
+                Sequence="200" />
+</Elements>
