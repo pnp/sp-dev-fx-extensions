@@ -2,7 +2,7 @@
 
 Sample "modern" ECB menu solution migrated from SharePoint Feature Framework to the SharePoint Framework Extensions.
 
-![The "modern" ECB menu item in action](../images/spfx-ecb-extension-output.png)
+![The "modern" ECB menu item in action](./images/spfx-ecb-extension-output.png)
 
 Sub folders represent the different stages of the migration process. Each folder contains the complete solution that you can run in browser. More information about the solution is available at [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/migrate-from-ecb-to-spfx-extensions](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/migrate-from-ecb-to-spfx-extensions).
 

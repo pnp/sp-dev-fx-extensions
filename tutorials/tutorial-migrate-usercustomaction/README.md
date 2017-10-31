@@ -2,7 +2,7 @@
 
 Sample "modern" custom footer solution migrated from a jQuery/JavaScript user CustomAction to the SharePoint Framework Extensions.
 
-![The "modern" custom footer in action](../images/spfx-react-custom-footer-output.png)
+![The "modern" custom footer in action](./images/spfx-react-custom-footer-output.png)
 
 Sub folders represent the different stages of the migration process. Each folder contains the complete solution that you can run in browser. More information about the solution is available at [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/migrate-from-usercustomactions-to-spfx-extensions](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/migrate-from-usercustomactions-to-spfx-extensions).
 
