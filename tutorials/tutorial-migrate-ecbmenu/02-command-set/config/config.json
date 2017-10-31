@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "custom-ecb-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/customEcb/CustomEcbCommandSet.js",
+          "manifest": "./src/extensions/customEcb/CustomEcbCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CustomEcbCommandSetStrings": "lib/extensions/customEcb/loc/{locale}.js"
+  }
+}

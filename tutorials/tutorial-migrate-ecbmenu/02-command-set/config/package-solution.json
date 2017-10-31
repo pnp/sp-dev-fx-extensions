@@ -1,0 +1,24 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-ecb-extension-client-side-solution",
+    "id": "b8ff6fdf-16e9-4434-9fdb-eac6c5f948ee",
+    "version": "1.0.2.0",
+    "features": [
+      {
+        "title": "Custom ECB Menu Item.",
+        "description": "Deploys a custom ECB menu item sample extension",
+        "id": "f30a744c-6f30-4ccc-a428-125a290b5233",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-ecb-extension.sppkg"
+  }
+}
