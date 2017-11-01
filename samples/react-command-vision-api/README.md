@@ -7,7 +7,7 @@ Custom Command Set that gets metadata information from MS Cognitive Services Vis
 
 ## Used SharePoint Framework Version
 
-![SPFx v1.3.0](https://img.shields.io/badge/SPFx-1.3.0-green.svg)
+![SPFx v1.3.4](https://img.shields.io/badge/SPFx-1.3.4-green.svg)
 
 ## Applies to
 
@@ -18,13 +18,14 @@ Custom Command Set that gets metadata information from MS Cognitive Services Vis
 
 Solution|Author(s)
 --------|---------
-js-command-vision-api|Luis Mañez (MVP, [ClearPeople](http://www.clearpeople.com), @luismanez)
+react-command-vision-api|Luis Mañez (MVP, [ClearPeople](http://www.clearpeople.com), @luismanez)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0.0|September 30, 2017|Initial release
+2.0.0|November 11, 2017|Image model and React component
 
 ## Disclaimer
 
