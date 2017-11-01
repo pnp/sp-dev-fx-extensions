@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-extension-react-webhooks-notification-client-side-solution",
+    "id": "7d58bb4d-d053-4ae0-8fb8-9ff8c390fe46",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-extension-react-webhooks-notification.sppkg"
+  }
+}
