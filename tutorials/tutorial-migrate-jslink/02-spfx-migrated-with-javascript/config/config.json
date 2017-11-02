@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "custom-color-field-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/customColorField/CustomColorFieldFieldCustomizer.js",
+          "manifest": "./src/extensions/customColorField/CustomColorFieldFieldCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CustomColorFieldFieldCustomizerStrings": "lib/extensions/customColorField/loc/{locale}.js"
+  }
+}
