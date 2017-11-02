@@ -47,9 +47,9 @@ export interface Face {
 export interface Color {
     dominantColorForeground: string;
     dominantColorBackground: string;
-    dominantColors: string[];
+    dominantColors?: string[];
     accentColor: string;
-    isBWImg: boolean;
+    isBWImg?: boolean;
 }
 
 export interface ImageType {

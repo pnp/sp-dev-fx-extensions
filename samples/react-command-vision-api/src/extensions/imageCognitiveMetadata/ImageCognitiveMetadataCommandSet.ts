@@ -65,7 +65,7 @@ export default class ImageCognitiveMetadataCommandSet extends BaseListViewComman
 
         const imageInfoUrl = event.selectedRows[0].getValueByName('.spItemUrl') + '&$select=@content.downloadUrl';
 
-        this._getTagsForImage(imageInfoUrl)
+        this._visionApiAnalyse(imageInfoUrl)
           .then((image: ICognitiveServicesImage) => {
             //console.log(image);            
             //Dialog.alert(tags.map(tag => { return tag.name; }).join(', '));
@@ -100,13 +100,12 @@ export default class ImageCognitiveMetadataCommandSet extends BaseListViewComman
     return imageDownloadUrl;
   }  
 
-  private async _getTagsForImage(imageInfoUrl: string): Promise<ICognitiveServicesImage> {
+  private async _visionApiAnalyse(imageInfoUrl: string): Promise<ICognitiveServicesImage> {
     const downloadUrl: string = await this._getDownloadUrl(imageInfoUrl);
     const httpOptions: IHttpClientOptions = this._prepareHttpOptionsForVisionApi(downloadUrl);
     
     const cognitiveResponse: HttpClientResponse = await this.context.httpClient.post(this.cognitiveServicesVisionUrl, HttpClient.configurations.v1, httpOptions);
     const cognitiveResponseJSON: any = await cognitiveResponse.json();
-    //const tags: any = cognitiveResponseJSON.tags;
     
     return this._toCognitiveServicesImage(cognitiveResponseJSON);
   }
@@ -129,10 +128,17 @@ export default class ImageCognitiveMetadataCommandSet extends BaseListViewComman
       })
     };
 
+    const color: Color = {
+      dominantColorForeground: json.color.dominantColorForeground,
+      dominantColorBackground: json.color.dominantColorBackground,
+      accentColor: json.color.accentColor
+    };
+
     const image: ICognitiveServicesImage = {
       requestId: json.requestId,
       metadata: metadata,
-      description: description
+      description: description,
+      color: color
     };
 
     return image;
