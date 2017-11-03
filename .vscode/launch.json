@@ -25,7 +25,7 @@
       "name": "Hosted workbench",
       "type": "chrome",
       "request": "launch",
-      "url": "https://enter-your-SharePoint-site/_layouts/workbench.aspx",
+      "url": "https://giuleon.sharepoint.com/sites/demo/Lists/FieldCustomizer/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={'c0c009bd-5299-4c13-9826-9068022ce804':{'location':'ClientSideExtension.ApplicationCustomizer','properties':{'Top':'Top area of the page'}}}",
       "webRoot": "${workspaceRoot}",
       "sourceMaps": true,
       "sourceMapPathOverrides": {
