@@ -1,4 +1,4 @@
-# SPFx React Mega Menu Application Customizer Extension #
+# React Mega Menu Application Customizer Extension #
 
 ## Summary
 
@@ -105,5 +105,5 @@ This Web Part illustrates the following concepts on top of the SharePoint Framew
 - Passing SPFx extension properties to React components.
 - Unit tests including spies, mocks and faking class methods and properties with stubs.
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/spfx-react-mega-menu" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-mega-menu" />
 
