@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.20.1711.0, Culture=neutral, PublicKeyToken=null" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-36FE72735FED4A42ACB24E675E37C975">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-36FE72735FED4A42ACB24E675E37C975" Version="1" BaseSiteTemplate="STS#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Custom List with Colors" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Custom List with Colors" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Custom List with Colors/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Custom List with Colors/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Custom List with Colors/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=44" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{BD0B2D34-7227-4A06-A288-922E021D23A1}" DefaultView="TRUE" MobileView="TRUE" Type="HTML" DisplayName="All Items" Url="/sites/SPFeatureFramework/Lists/Custom List with Colors/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Color" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>~site/SiteAssets/customColorRendering.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="Color" FillInChoice="FALSE" Title="Color" Type="Choice" ID="{a3f662a3-0df2-4712-aa9e-49576e6cb53a}" SourceID="{{listid:Custom List with Colors}}" StaticName="Color" Name="Color" ColName="nvarchar4" RowOrdinal="0" Version="1">
+              <CHOICES>
+                <CHOICE>Red</CHOICE>
+                <CHOICE>Green</CHOICE>
+                <CHOICE>Blue</CHOICE>
+                <CHOICE>Yellow</CHOICE>
+              </CHOICES>
+            </Field>
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="3a6b296c-3f50-445c-a13f-9c679ea9dda3" Name="ComplianceAssetId" DisplayName="Compliance Asset Id" />
+            <pnp:FieldRef ID="ccc1037f-f65e-434a-868e-8c98af31fe29" Name="_ComplianceFlags" DisplayName="Label setting" />
+            <pnp:FieldRef ID="d4b6480a-4bed-4094-9a52-30181ea38f1d" Name="_ComplianceTag" DisplayName="Labels" />
+            <pnp:FieldRef ID="92be610e-ddbb-49f4-b3b1-5c2bc768df8f" Name="_ComplianceTagWrittenTime" DisplayName="Label Applied" />
+            <pnp:FieldRef ID="418d7676-2d6f-42cf-a16a-e43d2971252a" Name="_ComplianceTagUserId" DisplayName="Label applied by" />
+            <pnp:FieldRef ID="8382d247-72a9-44b1-9794-7b177edc89f3" Name="_IsRecord" DisplayName="Item is a Record" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>      
+      <pnp:Files>
+        <pnp:File Src="customColorRendering.js" Folder="SiteAssets" Overwrite="true" TargetFileName="customColorRendering.js" />
+      </pnp:Files>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

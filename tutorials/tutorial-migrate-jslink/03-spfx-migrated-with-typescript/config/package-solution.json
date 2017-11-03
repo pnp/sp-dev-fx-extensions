@@ -1,0 +1,24 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-custom-field-extension-client-side-solution",
+    "id": "ab0fbbf8-01ba-4633-8498-46cfd5652619",
+    "version": "1.0.2.0",
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "090dc976-878d-44fe-8f8e-ac603d094aa1",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-custom-field-extension.sppkg"
+  }
+}
