@@ -22,13 +22,8 @@ const LOG_SOURCE: string = 'WebhooksToastNotificationsApplicationCustomizer';
  * You can define an interface to describe it.
  */
 export interface IWebhooksToastNotificationsApplicationCustomizerProperties {
-  Top: string;
-  Url: string;
+  WebhooksSocketServer: string;
 }
-
-/*
-  https://giuleon.sharepoint.com/sites/demo/Lists/FieldCustomizer/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"c0c009bd-5299-4c13-9826-9068022ce804":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Top":"Top area of the page"}}}
-*/
 
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class WebhooksToastNotificationsApplicationCustomizer
@@ -41,19 +36,14 @@ export default class WebhooksToastNotificationsApplicationCustomizer
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-    // let message: string = this.properties.testMessage;
-    // if (!message) {
-    //   message = '(No properties were provided.)';
-    // }
-
-    // Dialog.alert(`Hello from ${strings.Title}:\n\n${message}`);
+    // Added to handle possible changes on the existence of placeholders
+    this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
     this._lastQueryDate = moment();
-    this._connectSocket("https://webhooksbroadcaster.azurewebsites.net");
+    this._connectSocket(this.properties.WebhooksSocketServer);
     return Promise.resolve();
   }
 
   private _renderPlaceHolders(): void {
-
     console.log('WebhooksToastNotificationsApplicationCustomizer._renderPlaceHolders()');
     console.log('Available placeholders: ',
       this.context.placeholderProvider.placeholderNames.map(name => PlaceholderName[name]).join(', '));
@@ -70,35 +60,31 @@ export default class WebhooksToastNotificationsApplicationCustomizer
         console.error('The expected placeholder (Top) was not found.');
         return;
       }
+    }
+  }
 
-      if (this.properties) {
-        let topString: string = this.properties.Top;
-        let topUrl: string = this.properties.Url;
-        if (!topString) {
-          topString = '(Top property was not defined.)';
-        }
+  private _createNotification(title: string, link: string): void {
+    if (this._topPlaceholder.domElement) {
+      this._topPlaceholder.domElement.innerHTML = `
+                    <div class="${styles.app}">
+                      <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.top}">
+                        <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i>
+                        ${escape(title)}
+                        </br>
+                        <a href="${link}">Click here for more detail</a>
+                      </div>
+                    </div>`;
+    }
+  }
 
-        if (this._topPlaceholder.domElement) {
-          this._topPlaceholder.domElement.innerHTML = `
-                        <div class="${styles.app}">
-                          <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.top}">
-                            <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i>
-                            ${escape(topString)}
-                            </br>
-                            <a href="${topUrl}">Click here for more detail</a>
-                          </div>
-                        </div>`;
-        }
-      }
+  private _deleteNotification(): void {
+    if (this._topPlaceholder.domElement) {
+      this._topPlaceholder.domElement.innerHTML = '';
     }
   }
 
   private _onDispose(): void {
     console.log('[HelloWorldApplicationCustomizer._onDispose] Disposed custom top and bottom placeholders.');
-  }
-
-  private _removePlaceHolders(): void {
-    this._topPlaceholder.dispose();
   }
 
   private async _connectSocket(socketServerUrl: string) {
@@ -115,21 +101,18 @@ export default class WebhooksToastNotificationsApplicationCustomizer
           web.lists.getById(changes[0].ListId).items.getById(changes[0].ItemId).get().then((item: any) => {
             console.log(item);
             this._lastQueryDate = moment();
-            this.properties.Top = item.Title;
-            this.properties.Url = item.SPFxThumbnail.Url;
-            // Added to handle possible changes on the existence of placeholders
-            this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
-            // Call render method for generating the needed html elements
-            this._renderPlaceHolders();
-            
+
+            // Create the notification panel
+            this._createNotification(item.Title, item.SPFxThumbnail.Url);
+
             // After x seconds the place holder is removed from the DOM
             let that = this;
             setTimeout(
-              function(){ 
-                that._removePlaceHolders(); 
+              function () {
+                // Delete the notification panel
+                that._deleteNotification();
               }, 10000);
           });
-
         }
       });
     });
