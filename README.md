@@ -67,9 +67,10 @@ In order to deploy the sample solution in a real environment, or at least in ord
 * bundle and package the solution by executing the following commands in the command line:
   * `gulp bundle --ship`
   * `gulp package-solution --ship`
-* deploy the bundle and the package manually or by launching the following script, read my blog posts to go deepen and eventually configuring also the continuous integration and deployment  
-  * (http://www.delucagiuliano.com/automated-deployment-of-your-sharepoint-framework-solution-to-office-365-cdn)[http://www.delucagiuliano.com/automated-deployment-of-your-sharepoint-framework-solution-to-office-365-cdn]
-  * (http://www.delucagiuliano.com/continuous-integration-and-deployment-for-your-sharepoint-framework-solutions)[http://www.delucagiuliano.com/continuous-integration-and-deployment-for-your-sharepoint-framework-solutions]:
+* deploy the bundle and the package manually or by launching the following script, read my blog posts to go deepen and eventually configuring also the continuous integration and deployment
+  > [http://www.delucagiuliano.com/automated-deployment-of-your-sharepoint-framework-solution-to-office-365-cdn](http://www.delucagiuliano.com/automated-deployment-of-your-sharepoint-framework-solution-to-office-365-cdn)
+
+  > [http://www.delucagiuliano.com/continuous-integration-and-deployment-for-your-sharepoint-framework-solutions](http://www.delucagiuliano.com/continuous-integration-and-deployment-for-your-sharepoint-framework-solutions):
   * **DeploySPFxToO365CDN.ps1** (Adding the bundle to Office 365 CDN)
   * **DeploySPFxToAppCatalog.ps1** (Upload and deploy of the sppkg into the App Catalog)
 * the sample is tenant-wide available, so you don't need to install it to every single target site, you simply need to bind the application customizer to the target site. In order to do that, you can use the PowerShell script [ProvisionCustomizer.ps1](./ProvisionCustomizer.ps1)
