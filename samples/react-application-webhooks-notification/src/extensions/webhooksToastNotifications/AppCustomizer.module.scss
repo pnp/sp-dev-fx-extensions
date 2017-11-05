@@ -1,0 +1,46 @@
+// Defining the variables
+$ms-orangeLighter:              "[theme:orangeLighter, default:#ff8c00]";
+$ms-redDark:                    "[theme:redDark, default:#a80000]";
+$ms-green:                      "[theme:green, default:#107c10]";
+$ms-blue:                       "[theme:blue, default:#0078d7]";
+$ms-tealLight:                  "[theme:tealLight, default:#00B294]";
+
+.app {
+    .top {
+      background-color: $ms-tealLight;
+      height: 100px;
+      text-align: center;
+      line-height: 2.5;
+      font-weight: bold;
+      //   display: flex;
+      align-items: center;
+      justify-content: center;
+
+      display: block;      
+      width: 300px;
+      z-index: 999999;
+      top: 62px;
+      right: 12px;
+      position: fixed;
+      /* unvisited link */
+      a:link {
+        color: $ms-redDark;
+      }
+
+      /* visited link */
+      a:visited {
+        color: $ms-orangeLighter;
+      }
+
+      /* mouse over link */
+      a:hover {
+        color: hotpink;
+      }
+
+      /* selected link */
+      a:active {
+        color: $ms-blue;
+      }
+    }
+  }
+
