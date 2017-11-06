@@ -68,7 +68,7 @@ SPOCustomUI.init(function () {
 
     var currentScriptUrl;
 
-    var currentScript = document.querySelectorAll("script[src*='SPOCustomUI']");
+    var currentScript = document.querySelectorAll("script[src*='spocustomui']");
     if (currentScript.length > 0) {
         currentScriptUrl = currentScript[0].src;
     }
