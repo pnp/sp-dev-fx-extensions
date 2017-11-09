@@ -6,7 +6,7 @@ import { ITenantGlobalFooterBarState } from './ITenantGlobalFooterBarState';
 import { CommandBar } from 'office-ui-fabric-react/lib/CommandBar';
 import { IContextualMenuItem, ContextualMenuItemType } from 'office-ui-fabric-react/lib/ContextualMenu';
 
-import * as SPTermStore from '../../../components/SPTermStoreService'; 
+import * as SPTermStore from './../services/SPTermStoreService'; 
 
 export default class TenantGlobalFooterBar extends React.Component<ITenantGlobalFooterBarProps, ITenantGlobalFooterBarState> {
 

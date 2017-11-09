@@ -1,0 +1,24 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "js-command-item-permissions-client-side-solution",
+    "id": "f34e702d-1843-4e28-9431-2cd00beeb9d7",
+    "version": "1.0.0.0",
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "a3c6c41d-6a4f-4572-b953-d4a5b9428872",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/js-command-item-permissions.sppkg"
+  }
+}

@@ -6,12 +6,11 @@ In this sample is possible to see how to implement Office UI Fabric React Toggle
 ![Office UI Fabric React Toggle SPFx Field Customizer](./assets/react-field-toggle.gif)
 
 ## Used SharePoint Framework Version 
-SPFx Extensions Dev Preview
+![1.3.0](https://img.shields.io/badge/version-1.3.0-green.svg)
 
 ## Applies to
 
 * [SharePoint Framework](https://dev.office.com/sharepoint)
-* [Office 365 tenant](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)
 
 ## Solution
 
@@ -24,6 +23,7 @@ react-field-toggle | Giuliano De Luca ([@giuleon](https://twitter.com/giuleon) ,
 Version|Date|Comments
 -------|----|--------
 1.0|June 17, 2017|Initial release
+1.1|Otocber 04, 2017|Updated to GA 1.3.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -33,7 +33,10 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
-- in the command line run:
+Update the `pageUrl` properties in the **config/serve.json** file
+  - The `pageUrl` should be a list view in your tenant
+  - This property is only used during development in conjunction with the `gulp serve` command
+- In the command line navigate to **samples/react-field-toggle** and run:
   - `npm install`
   - `gulp serve`
 

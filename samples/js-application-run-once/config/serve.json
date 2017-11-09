@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "205392f2-f511-49b0-a698-a976a8f8028a": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "property": "Test message"
+          }
+        }
+      }
+    },
+    "logoCustomizer": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "205392f2-f511-49b0-a698-a976a8f8028a": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "property": "Test message"
+          }
+        }
+      }
+    }
+  }
+}
