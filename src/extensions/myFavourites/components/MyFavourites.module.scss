@@ -3,27 +3,25 @@ $themePrimary: '[theme:themePrimary, default:#0078d7]';
 $themeSecondary: '[theme:themeSecondary, default:#2488d8]';
 $themeTertiary: "[theme:themeTertiary, default:#69afe5]";
 $themeLight: "[theme:themeLight, default:#b3d6f2]";
+$themeAccent: "[theme:themeAccent, default:inherit]";
+$themeDark: "[theme:themeDark, default:#005a9e]";
 
-.msListBasicExampleitemCell {
+.ccitemCell {
     min-height: 54px;
     padding: 10px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid $themeDark;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex
+    display: flex;
+    outline: transparent;
+    position: relative;
 }
-.msListBasicExampleitemCell::-moz-focus-inner {
+.ccitemCell::-moz-focus-inner {
     border: 0
 }
-.msListBasicExampleitemCell {
-    outline: transparent
-}
-.msListBasicExampleitemCell {
-    position: relative
-}
-.msFabric.is-focusVisible .msListBasicExampleitemCell:focus:after {
+.msFabric.is-focusVisible .ccitemCell:focus:after {
     content: '';
     position: absolute;
     top: 0;
@@ -31,70 +29,61 @@ $themeLight: "[theme:themeLight, default:#b3d6f2]";
     bottom: 0;
     left: 0;
     pointer-events: none;
-    border: 1px solid #000000
+    border: 1px solid $themeDark;
 }
-.msListBasicExampleitemCell:hover {
+.ccitemCell:hover {
     background: $themeLight;
 }
-.msListBasicExampleitemImage {
-    -ms-flex-negative: 0;
-    flex-shrink: 0
-}
-.msListBasicExampleitemContent {
+.ccitemContent {
     overflow: hidden;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1
 }
-html[dir='ltr'] .ms-ListBasicExampleitemContent {
-    margin-left: 10px
-}
-html[dir='rtl'] .msListBasicExampleitemContent {
+html[dir='rtl'] .ccitemContent {
     margin-right: 10px
 }
-.msListBasicExampleitemName {
-    font-size: 21px;
-    font-weight: 100;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
-}
-.msListBasicExampleitemIndex {
-    font-size: 12px;
-    color: #a6a6a6;
-    margin-bottom: 10px
-}
-.msListBasicExamplechevron {
+.ccChevron {
     -ms-flex-item-align: center;
     align-self: center;
-    color: #a6a6a6;
     font-size: 17px;
     -ms-flex-negative: 0;
     flex-shrink: 0;
     float: right;
     width: 20px;
 }
-html[dir='ltr'] .msListBasicExamplechevron {
+html[dir='ltr'] .ccChevron {
     margin-left: 10px
 }
-html[dir='rtl'] .msListBasicExamplechevron {
+html[dir='rtl'] .ccChevron {
     margin-right: 10px
 }
-
-.msListBasicExampleitemDesc{
-    margin: 0
+.ccitemName {
+    font-size: 21px;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
 }
-
+.ccitemDesc{
+    margin: 0;
+    color: $themeSecondary;
+}
 .ccButton{
     margin-top: 10px;
     margin-right: 10px;
     background-color: $themePrimary;
 }
-
-.ccButton:hover{
+.ccButton:hover, .ccGridButton:hover{
     background-color: $themeSecondary;
 }
-
 .ccFavLink{
     color:$themePrimary;
+}
+.ccGrid{
+    background: $themeLight;
+}
+.ccGridButton{
+    margin-right: 10px;
+    background-color: $themePrimary;
 }

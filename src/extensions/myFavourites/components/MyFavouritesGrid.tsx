@@ -5,7 +5,8 @@ import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
 import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib/Dialog';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
-import { List } from 'office-ui-fabric-react/lib/List';
+import { MessageBar, MessageBarType } from 'office-ui-fabric-react/lib/MessageBar';
+import { List } from "office-ui-fabric-react/lib/List";
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { IMyFavouritesProps } from "./IMyFavouritesProps";
 import { IMyFavouritesState } from "./IMyFavouritesState";
@@ -25,61 +26,43 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
         this.state = {
             showPanel: false,
             showDialog: false,
+            dialogTitle: "",
             myFavouriteItems: [],
             itemInContext: {
                 Id: 0,
-                Title: " ",
-                Description: " ",
+                Title: "",
+                Description: "",
             },
             isEdit: false,
-            status: <Spinner size={SpinnerSize.large} label='Loading...' />,
+            status: <Spinner size={SpinnerSize.large} label="Loading..." />,
             disableButtons: false
         };
 
         let serviceScope: ServiceScope;
-        serviceScope = this.props.serviceScope
+        serviceScope = this.props.serviceScope;
 
         this._MyFavouritesServiceInstance = serviceScope.consume(MyFavouriteService.serviceKey);
         this._getMyFavourites.bind(this);
     }
 
-    public async deleteFavourite(favouriteItemId: number) {
-        let result: boolean = await this._MyFavouritesServiceInstance.deleteFavourite(favouriteItemId);
-        if (result) {
-            this._getMyFavourites();
-        }
-    }
-
-    public editFavourite(favouriteItem: IMyFavouriteItem) {
-        console.log(favouriteItem);
-        let status: JSX.Element = <span></span>;
-        this.setState({ ...this.state, showPanel: false, itemInContext: favouriteItem, isEdit: true, showDialog: true, status });
-    }
-
-    private async _getMyFavourites(): Promise<void> {
-        let status: JSX.Element = <Spinner size={SpinnerSize.large} label='Loading...' />;
-        this.setState({ ...this.state, status });
-
-        const myFavouriteItems: IMyFavouriteItem[] = await this._MyFavouritesServiceInstance.getMyFavourites(true);
-
-        status = <span></span>;
-        this.setState({ ...this.state, myFavouriteItems, status });
-    }
-
     public render(): React.ReactElement<IMyFavouritesProps> {
         return (
-            <div>
-                <DefaultButton data-id="menuButton"
+            <div className={styles.ccGrid}>
+                <PrimaryButton data-id="menuButton"
                     title="Show My Favourites"
                     text="Show My Favourites"
                     ariaLabel="Show My Favourites"
+                    iconProps={{ iconName: "View" }}
+                    className={styles.ccGridButton}
                     onClick={this._showMenu.bind(this)}
                 />
-                <DefaultButton data-id="menuButton"
+                <PrimaryButton data-id="menuButton"
                     title="Add this page to My Favourites"
                     text="Add to My Favourites"
                     ariaLabel="Add to My Favourites"
-                    onClick={this._initAdd.bind(this)}
+                    iconProps={{ iconName: "Add" }}
+                    className={styles.ccGridButton}
+                    onClick={this._showDialog.bind(this)}
                 />
 
                 <Panel isOpen={this.state.showPanel}
@@ -92,7 +75,7 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
                             {this.state.status}
                         </div>
                         <FocusZone direction={ FocusZoneDirection.vertical }>
-                            <List 
+                            <List
                                 items = { this.state.myFavouriteItems }
                                 onRenderCell={ this._onRenderCell.bind(this) }
                             />
@@ -105,45 +88,94 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
                     onDismiss={this._hideDialog}
                     dialogContentProps={{
                         type: DialogType.largeHeader,
-                        title: 'Add to my favourites'
+                        title: this.state.dialogTitle
                     }}
                     modalProps={{
-                        titleAriaId: 'myLabelId',
-                        subtitleAriaId: 'mySubTextId',
+                        titleAriaId: "myFavDialog",
+                        subtitleAriaId: "myFavDialog",
                         isBlocking: false,
-                        containerClassName: 'ms-dialogMainOverride'
+                        containerClassName: "ms-dialogMainOverride"
                     }}
                 >
                     <div>
                         {this.state.status}
                     </div>
-                    <TextField label='Title' onChanged={this._getTitle.bind(this)} value={this.state.itemInContext.Title} />
-                    <TextField label='Description' multiline rows={4} onChanged={this._getDescription.bind(this)} value={this.state.itemInContext.Description} />
-
-                    {null /** You can also include null values as the result of conditionals */}
+                    <TextField label="Title"
+                               onChanged={this._setTitle.bind(this)}
+                               value={this.state.itemInContext.Title} />
+                    <TextField label="Description"
+                                multiline rows={4}
+                                onChanged={this._setDescription.bind(this)}
+                                value={this.state.itemInContext.Description} />
                     <DialogFooter>
-                        <PrimaryButton onClick={this._saveItem.bind(this)} disabled={this.state.disableButtons} text='Save' />
-                        <DefaultButton onClick={this._hideDialog.bind(this)} disabled={this.state.disableButtons} text='Cancel' />
+                        <PrimaryButton onClick={this._saveItem.bind(this)}
+                                       disabled={this.state.disableButtons}
+                                       text="Save" iconProps={{ iconName: "Save" }}
+                                       className={styles.ccGridButton}/>
+                        <DefaultButton onClick={this._hideDialog.bind(this)}
+                                       disabled={this.state.disableButtons}
+                                       text="Cancel"
+                                       iconProps={{ iconName: "Cancel" }} />
                     </DialogFooter>
                 </Dialog>
             </div>
         );
     }
 
-    private _initAdd() {
-        this.setState(
-            {
-                itemInContext: {
-                    Id: 0,
-                    Title: " ",
-                    Description: " ",
-                },
-                isEdit: false
-            }
-        );
-        this._showDialog();
+    //#region CRUD
+    public async deleteFavourite(favouriteItemId: number): Promise<void> {
+        let result: boolean = await this._MyFavouritesServiceInstance.deleteFavourite(favouriteItemId);
+        if (result) {
+            this._getMyFavourites();
+        }
     }
 
+    public editFavourite(favouriteItem: IMyFavouriteItem): void {
+        console.log(favouriteItem);
+        let status: JSX.Element = <span></span>;
+        let dialogTitle: string = "Edit favourite";
+        this.setState({ ...this.state, showPanel: false, itemInContext: favouriteItem, isEdit: true, showDialog: true, dialogTitle, status });
+    }
+
+    private async _getMyFavourites(): Promise<void> {
+        let status: JSX.Element = <Spinner size={SpinnerSize.large} label='Loading...' />;
+        this.setState({ ...this.state, status });
+
+        const myFavouriteItems: IMyFavouriteItem[] = await this._MyFavouritesServiceInstance.getMyFavourites(true);
+
+        status = <span></span>;
+        this.setState({ ...this.state, myFavouriteItems, status });
+    }
+
+    private async _saveItem(): Promise<void> {
+        let status: JSX.Element = <Spinner size={SpinnerSize.large} label='Loading...' />;
+        let disableButtons: boolean = true;
+        this.setState({ ...this.state, status, disableButtons });
+        let itemToSave: IMyFavouriteItem = {
+            Title: this.state.itemInContext.Title,
+            Description: this.state.itemInContext.Description
+        };
+        let itemToEdit: IMyFavouriteItem = { ...itemToSave, Id: this.state.itemInContext.Id };
+        let result: boolean = this.state.isEdit ? await this._MyFavouritesServiceInstance.updateFavourite(itemToEdit) : await this._MyFavouritesServiceInstance.saveFavourite(itemToSave);
+        if (result) {
+            status = <MessageBar
+                        messageBarType={ MessageBarType.success }
+                        isMultiline={ false }>
+                        Done!
+                    </MessageBar>;
+        } else {
+            status = <MessageBar
+                        messageBarType={ MessageBarType.error }
+                        isMultiline={ false }>
+                        There was an error!
+                    </MessageBar>;
+        }
+        disableButtons = false;
+        this.setState({ ...this.state, status, disableButtons });
+    }
+    //#endregion
+
+    //#region Render related
     private _showMenu(): void {
         this._getMyFavourites();
         this.setState({ showPanel: true });
@@ -154,61 +186,43 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
     }
 
     private _showDialog(): void {
+        let itemInContext: IMyFavouriteItem = {
+            Id: 0,
+            Title: "",
+            Description: "",
+        };
+        let isEdit: boolean = false;
         let status: JSX.Element = <span></span>;
-        this.setState({ ...this.state, showDialog: true, status });
+        let dialogTitle: string = "Add to my favourites";
+        this.setState({ ...this.state, itemInContext, isEdit, showDialog: true, dialogTitle, status });
     }
 
     private _hideDialog(): void {
         this.setState({ showDialog: false });
     }
 
-    private async _saveItem(): Promise<void> {
-        let status: JSX.Element = <Spinner size={SpinnerSize.large} label='Loading...' />;
-        let disableButtons: boolean = true;
-        this.setState({ ...this.state, status, disableButtons });
-
-        let itemToSave: IMyFavouriteItem = {
-            Title: this.state.itemInContext.Title,
-            Description: this.state.itemInContext.Description
-        }
-
-        console.log(itemToSave);
-
-        let itemToEdit: IMyFavouriteItem = { ...itemToSave, Id: this.state.itemInContext.Id };
-
-        let result: boolean = this.state.isEdit ? await this._MyFavouritesServiceInstance.updateFavourite(itemToEdit) : await this._MyFavouritesServiceInstance.saveFavourite(itemToSave);
-        console.log(result);
-
-        if (result) {
-            status = <span>Done!</span>;
-        }
-        else {
-            status = <span>There was an error!</span>;
-        }
-        disableButtons = false;
-        this.setState({ ...this.state, status, disableButtons });
-    }
-
-    private _getTitle(value: string): void {
-        let itemInContext: IMyFavouriteItem = this.state.itemInContext;
-        itemInContext.Title = value;
-        this.setState({ ...this.state, itemInContext });
-    }
-
-    private _getDescription(value: string): void {
-        let itemInContext: IMyFavouriteItem = this.state.itemInContext;
-        itemInContext.Description = value;
-        this.setState({ ...this.state, itemInContext });
-    }
-
     private _onRenderCell(myFavouriteItem: IMyFavouriteItem, index: number | undefined): JSX.Element{
         return (
-            <div className={styles.msListBasicExampleitemCell} data-is-focusable={ true }>
+            <div className={styles.ccitemCell} data-is-focusable={ true }>
                  <MyFavoutiteDisplayItem
                     displayItem={myFavouriteItem}
                     deleteFavourite={this.deleteFavourite.bind(this)}
                     editFavoutite={this.editFavourite.bind(this)} />
             </div>
-        )
+        );
     }
+    //#endregion
+
+    private _setTitle(value: string): void {
+        let itemInContext: IMyFavouriteItem = this.state.itemInContext;
+        itemInContext.Title = value;
+        this.setState({ ...this.state, itemInContext });
+    }
+
+    private _setDescription(value: string): void {
+        let itemInContext: IMyFavouriteItem = this.state.itemInContext;
+        itemInContext.Description = value;
+        this.setState({ ...this.state, itemInContext });
+    }
+
 }

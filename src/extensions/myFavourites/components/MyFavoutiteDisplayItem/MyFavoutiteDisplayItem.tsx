@@ -18,12 +18,12 @@ export default class MyFavoutiteDisplayItem extends React.Component<IMyFavoutite
 
     public render(): React.ReactElement<IMyFavoutiteDisplayItemProps> {
         return (
-            <div className={styles.msListBasicExampleitemContent}>
-                <div className={styles.msListBasicExampleitemName}>
+            <div className={styles.ccitemContent}>
+                <div className={styles.ccitemName}>
                     <Link className={`ms-font-l ${styles.ccFavLink}`} href={this.props.displayItem.ItemUrl}>{this.props.displayItem.Title}</Link>
                 </div>
-                <div className={styles.msListBasicExampleitemDesc}>{this.props.displayItem.Description}</div>
-                <div className={styles.msListBasicExampleitemDesc}>
+                <div className={styles.ccitemDesc}>{this.props.displayItem.Description}</div>
+                <div className={styles.ccitemDesc}>
                     <PrimaryButton
                         data-automation-id='btnEdit'
                         iconProps={{ iconName: 'Edit' }}
@@ -40,7 +40,7 @@ export default class MyFavoutiteDisplayItem extends React.Component<IMyFavoutite
                         onClick={this._deleteFavourite.bind(this)}
                         className={styles.ccButton}
                     />
-                    <div className={styles.msListBasicExamplechevron}>
+                    <div className={styles.ccChevron}>
                         {this.state.status}
                     </div>
                 </div>
@@ -53,7 +53,10 @@ export default class MyFavoutiteDisplayItem extends React.Component<IMyFavoutite
         let status: JSX.Element = <Spinner size={SpinnerSize.small} />;
         let disableButtons: boolean = true;
         this.setState({ ...this.state, status, disableButtons });
-        this.props.deleteFavourite(this.props.displayItem.Id);
+        await this.props.deleteFavourite(this.props.displayItem.Id);
+        status = <span></span>;
+        disableButtons = false;
+        this.setState({ ...this.state, status, disableButtons });
     }
 
     private _editFavourite(): void {
