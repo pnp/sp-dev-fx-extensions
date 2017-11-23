@@ -17,8 +17,12 @@ export default class MyFavoutiteDisplayItem extends React.Component<IMyFavoutite
     }
 
     public render(): React.ReactElement<IMyFavoutiteDisplayItemProps> {
+        let firstLetter: string = this.props.displayItem.Title.charAt(0).toUpperCase();
         return (
-            <div className={styles.ccitemContent}>
+            <div className={`${styles.ccitemContent}`}>
+                <div className={`ms-font-su ${styles.ccInitials}`}>
+                    {firstLetter}
+                </div>
                 <div className={styles.ccitemName}>
                     <Link className={`ms-font-l ${styles.ccFavLink}`} href={this.props.displayItem.ItemUrl}>{this.props.displayItem.Title}</Link>
                 </div>

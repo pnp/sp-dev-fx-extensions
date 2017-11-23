@@ -87,3 +87,20 @@ html[dir='rtl'] .ccChevron {
     margin-right: 10px;
     background-color: $themePrimary;
 }
+
+.ccInitials{
+    width: 60px;
+    float: left;
+    height: 60px;
+    margin: 10px;
+    text-align: center;
+    background-color: $themeTertiary;
+    color: $themeDark;
+}
+
+.ccPanelHeader{
+    background-color: $themeTertiary;
+    color: $themeDark;
+    text-align: center;
+    font-weight: bold;
+}

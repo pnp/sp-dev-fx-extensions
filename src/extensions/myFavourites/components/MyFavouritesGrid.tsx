@@ -20,7 +20,7 @@ import styles from "./MyFavourites.module.scss";
 export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps, IMyFavouritesState> {
     private _self = this;
     private _MyFavouritesServiceInstance: IMyFavoutitesService;
-
+    private _MyFavouriteItems: IMyFavouriteItem[] =[];
     constructor(props: IMyFavouritesProps) {
         super(props);
         this.state = {
@@ -69,8 +69,13 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
                     type={PanelType.medium}
                     onDismiss={this._hideMenu.bind(this)}
                     headerText="My Favourites"
+                    headerClassName={`ms-font-xl ${styles.ccPanelHeader}`}
+                    isLightDismiss={ true }
                 >
                     <div data-id="menuPanel">
+                    <TextField placeholder="Filter favourites..."
+                               iconProps={ { iconName: "Filter" } }
+                               onBeforeChange={ this._onFilterChanged.bind(this) } />
                         <div>
                             {this.state.status}
                         </div>
@@ -142,7 +147,7 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
         this.setState({ ...this.state, status });
 
         const myFavouriteItems: IMyFavouriteItem[] = await this._MyFavouritesServiceInstance.getMyFavourites(true);
-
+        this._MyFavouriteItems = myFavouriteItems;
         status = <span></span>;
         this.setState({ ...this.state, myFavouriteItems, status });
     }
@@ -201,9 +206,10 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
         this.setState({ showDialog: false });
     }
 
-    private _onRenderCell(myFavouriteItem: IMyFavouriteItem, index: number | undefined): JSX.Element{
+    private _onRenderCell(myFavouriteItem: IMyFavouriteItem, index: number | undefined): JSX.Element {
+        let animationClass: string = `ms-slideDownIn20`;
         return (
-            <div className={styles.ccitemCell} data-is-focusable={ true }>
+            <div className={`${animationClass} ${styles.ccitemCell}`} data-is-focusable={ true }>
                  <MyFavoutiteDisplayItem
                     displayItem={myFavouriteItem}
                     deleteFavourite={this.deleteFavourite.bind(this)}
@@ -211,6 +217,16 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
             </div>
         );
     }
+
+    private _onFilterChanged(text: string): void {
+        let items: IMyFavouriteItem[] = this._MyFavouriteItems;
+        this.setState({
+            myFavouriteItems: text ?
+            items.filter(item => item.Title.toLowerCase().indexOf(text.toLowerCase()) >= 0) :
+            items
+        });
+    }
+
     //#endregion
 
     private _setTitle(value: string): void {
