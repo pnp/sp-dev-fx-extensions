@@ -1,6 +1,6 @@
-import { IMyFavouriteItem } from "../../interfaces/IMyFavouriteItem";
+import { IMyFavouriteItem } from "../../../interfaces/IMyFavouriteItem";
 
-export interface IMyFavouritesState {
+export interface IMyFavouritesTopBarState {
     showPanel: boolean;
     showDialog: boolean;
     dialogTitle: string;

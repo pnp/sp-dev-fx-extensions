@@ -19,37 +19,39 @@ export default class MyFavoutiteDisplayItem extends React.Component<IMyFavoutite
     public render(): React.ReactElement<IMyFavoutiteDisplayItemProps> {
         let firstLetter: string = this.props.displayItem.Title.charAt(0).toUpperCase();
         return (
-            <div className={`${styles.ccitemContent}`}>
-                <div className={`ms-font-su ${styles.ccInitials}`}>
-                    {firstLetter}
-                </div>
-                <div className={styles.ccitemName}>
-                    <Link className={`ms-font-l ${styles.ccFavLink}`} href={this.props.displayItem.ItemUrl}>{this.props.displayItem.Title}</Link>
-                </div>
-                <div className={styles.ccitemDesc}>{this.props.displayItem.Description}</div>
-                <div className={styles.ccitemDesc}>
-                    <PrimaryButton
-                        data-automation-id='btnEdit'
-                        iconProps={{ iconName: 'Edit' }}
-                        text='Edit'
-                        disabled={this.state.disableButtons}
-                        onClick={this._editFavourite.bind(this)}
-                        className={styles.ccButton}
-                    />
-                    <PrimaryButton
-                        data-automation-id='btnDel'
-                        iconProps={{ iconName: 'ErrorBadge' }}
-                        text='Delete'
-                        disabled={this.state.disableButtons}
-                        onClick={this._deleteFavourite.bind(this)}
-                        className={styles.ccButton}
-                    />
-                    <div className={styles.ccChevron}>
-                        {this.state.status}
+                <div className={`${styles.ccitemContent}`}>
+                    <Link href={this.props.displayItem.ItemUrl} className={styles.ccRow}>
+                        <div className={`ms-font-su ${styles.ccInitials}`}>
+                            {firstLetter}
+                        </div>
+                        <div className={styles.ccitemName}>
+                            <span className={`ms-font-l`}>{this.props.displayItem.Title}</span>
+                        </div>
+                        <div className={styles.ccitemDesc}>{this.props.displayItem.Description}</div>
+                    </Link>
+                    <div className={styles.ccitemDesc}>
+                        <PrimaryButton
+                            data-automation-id='btnEdit'
+                            iconProps={{ iconName: 'Edit' }}
+                            text='Edit'
+                            disabled={this.state.disableButtons}
+                            onClick={this._editFavourite.bind(this)}
+                            className={styles.ccButton}
+                        />
+                        <PrimaryButton
+                            data-automation-id='btnDel'
+                            iconProps={{ iconName: 'ErrorBadge' }}
+                            text='Delete'
+                            disabled={this.state.disableButtons}
+                            onClick={this._deleteFavourite.bind(this)}
+                            className={styles.ccButton}
+                        />
+                        <div className={styles.ccStatus}>
+                            {this.state.status}
+                        </div>
                     </div>
                 </div>
-            </div>
-        )
+        );
     }
 
     private async _deleteFavourite(): Promise<void> {

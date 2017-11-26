@@ -10,8 +10,8 @@ import {
 import { Dialog } from '@microsoft/sp-dialog';
 
 import * as strings from 'MyFavouritesApplicationCustomizerStrings';
-import { IMyFavouritesProps } from "./components/IMyFavouritesProps";
-import MyFavouritesGrid from "./components/MyFavouritesGrid";
+import { IMyFavouritesTopBarProps } from "./components/MyFavouritesTopBar/IMyFavouritesTopBarProps";
+import MyFavouritesTopBar from "./components/MyFavouritesTopBar/MyFavouritesTopBar";
 
 const LOG_SOURCE: string = 'MyFavouritesApplicationCustomizer';
 
@@ -20,10 +20,7 @@ const LOG_SOURCE: string = 'MyFavouritesApplicationCustomizer';
  * it will be deserialized into the BaseExtension.properties object.
  * You can define an interface to describe it.
  */
-export interface IMyFavouritesApplicationCustomizerProperties {
-  // This is an example; replace with your own property
-  testMessage: string;
-}
+export interface IMyFavouritesApplicationCustomizerProperties {}
 
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class MyFavouritesApplicationCustomizer
@@ -35,8 +32,8 @@ export default class MyFavouritesApplicationCustomizer
     placeholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
 
     // init the react mega menu component.
-    const element: React.ReactElement<IMyFavouritesProps> = React.createElement(
-      MyFavouritesGrid,
+    const element: React.ReactElement<IMyFavouritesTopBarProps> = React.createElement(
+      MyFavouritesTopBar,
       {
         serviceScope: this.context.serviceScope
       }

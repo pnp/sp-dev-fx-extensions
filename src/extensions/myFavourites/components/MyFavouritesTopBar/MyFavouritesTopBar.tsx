@@ -8,20 +8,20 @@ import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 import { MessageBar, MessageBarType } from 'office-ui-fabric-react/lib/MessageBar';
 import { List } from "office-ui-fabric-react/lib/List";
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
-import { IMyFavouritesProps } from "./IMyFavouritesProps";
-import { IMyFavouritesState } from "./IMyFavouritesState";
+import { IMyFavouritesTopBarProps } from "./IMyFavouritesTopBarProps";
+import { IMyFavouritesTopBarState } from "./IMyFavouritesTopBarState";
 import { ServiceScope } from "@microsoft/sp-core-library";
-import { IMyFavoutitesService } from "../../services/IMyFavouritesService";
-import { MyFavouriteService } from "../../services/MyFavouriteService";
-import { IMyFavouriteItem } from "../../interfaces/IMyFavouriteItem";
-import MyFavoutiteDisplayItem from "./MyFavoutiteDisplayItem/MyFavoutiteDisplayItem";
-import styles from "./MyFavourites.module.scss";
+import { IMyFavoutitesService } from "../../../services/IMyFavouritesService";
+import { MyFavouriteService } from "../../../services/MyFavouriteService";
+import { IMyFavouriteItem } from "../../../interfaces/IMyFavouriteItem";
+import MyFavoutiteDisplayItem from "../MyFavoutiteDisplayItem/MyFavoutiteDisplayItem";
+import styles from "../MyFavourites.module.scss";
 
-export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps, IMyFavouritesState> {
+export default class MyFavouritesTopBar extends React.Component<IMyFavouritesTopBarProps, IMyFavouritesTopBarState> {
     private _self = this;
     private _MyFavouritesServiceInstance: IMyFavoutitesService;
     private _MyFavouriteItems: IMyFavouriteItem[] =[];
-    constructor(props: IMyFavouritesProps) {
+    constructor(props: IMyFavouritesTopBarProps) {
         super(props);
         this.state = {
             showPanel: false,
@@ -45,15 +45,15 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
         this._getMyFavourites.bind(this);
     }
 
-    public render(): React.ReactElement<IMyFavouritesProps> {
+    public render(): React.ReactElement<IMyFavouritesTopBarProps> {
         return (
-            <div className={styles.ccGrid}>
+            <div className={styles.ccTopBar}>
                 <PrimaryButton data-id="menuButton"
                     title="Show My Favourites"
                     text="Show My Favourites"
                     ariaLabel="Show My Favourites"
                     iconProps={{ iconName: "View" }}
-                    className={styles.ccGridButton}
+                    className={styles.ccTopBarButton}
                     onClick={this._showMenu.bind(this)}
                 />
                 <PrimaryButton data-id="menuButton"
@@ -61,7 +61,7 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
                     text="Add to My Favourites"
                     ariaLabel="Add to My Favourites"
                     iconProps={{ iconName: "Add" }}
-                    className={styles.ccGridButton}
+                    className={styles.ccTopBarButton}
                     onClick={this._showDialog.bind(this)}
                 />
 
@@ -116,7 +116,7 @@ export default class MyFavouritesGrid extends React.Component<IMyFavouritesProps
                         <PrimaryButton onClick={this._saveItem.bind(this)}
                                        disabled={this.state.disableButtons}
                                        text="Save" iconProps={{ iconName: "Save" }}
-                                       className={styles.ccGridButton}/>
+                                       className={styles.ccDialogButton}/>
                         <DefaultButton onClick={this._hideDialog.bind(this)}
                                        disabled={this.state.disableButtons}
                                        text="Cancel"

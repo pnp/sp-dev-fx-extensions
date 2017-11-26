@@ -5,13 +5,22 @@ $themeTertiary: "[theme:themeTertiary, default:#69afe5]";
 $themeLight: "[theme:themeLight, default:#b3d6f2]";
 $themeAccent: "[theme:themeAccent, default:inherit]";
 $themeDark: "[theme:themeDark, default:#005a9e]";
+$themeDarkAlt: "[theme:themeDarkAlt, default:#106ebe]";
+$themeDarker: "[theme:themeDarker, default:#004578]";
 
+.ccPanelHeader{
+    background-color: $themeTertiary;
+    color: $themeDark;
+    text-align: center;
+    font-weight: bold;
+}
 .ccitemCell {
     min-height: 54px;
     padding: 10px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    border-bottom: 1px solid $themeDark;
+    border-bottom: 1px solid;
+    border-bottom-color: $themeDark;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -29,9 +38,16 @@ $themeDark: "[theme:themeDark, default:#005a9e]";
     bottom: 0;
     left: 0;
     pointer-events: none;
-    border: 1px solid $themeDark;
+    border: 1px solid;
+    border-bottom-color: $themeDark;
 }
 .ccitemCell:hover {
+    background: $themeLight;
+}
+.ccRow{
+    width:100%;
+}
+.ccTopBar{
     background: $themeLight;
 }
 .ccitemContent {
@@ -43,51 +59,6 @@ $themeDark: "[theme:themeDark, default:#005a9e]";
 html[dir='rtl'] .ccitemContent {
     margin-right: 10px
 }
-.ccChevron {
-    -ms-flex-item-align: center;
-    align-self: center;
-    font-size: 17px;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    float: right;
-    width: 20px;
-}
-html[dir='ltr'] .ccChevron {
-    margin-left: 10px
-}
-html[dir='rtl'] .ccChevron {
-    margin-right: 10px
-}
-.ccitemName {
-    font-size: 21px;
-    font-weight: 100;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
-}
-.ccitemDesc{
-    margin: 0;
-    color: $themeSecondary;
-}
-.ccButton{
-    margin-top: 10px;
-    margin-right: 10px;
-    background-color: $themePrimary;
-}
-.ccButton:hover, .ccGridButton:hover{
-    background-color: $themeSecondary;
-}
-.ccFavLink{
-    color:$themePrimary;
-}
-.ccGrid{
-    background: $themeLight;
-}
-.ccGridButton{
-    margin-right: 10px;
-    background-color: $themePrimary;
-}
-
 .ccInitials{
     width: 60px;
     float: left;
@@ -97,10 +68,42 @@ html[dir='rtl'] .ccChevron {
     background-color: $themeTertiary;
     color: $themeDark;
 }
-
-.ccPanelHeader{
-    background-color: $themeTertiary;
-    color: $themeDark;
-    text-align: center;
-    font-weight: bold;
+.ccitemName {
+    font-size: 21px;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    color:$themePrimary;
+    text-overflow: ellipsis
+}
+.ccitemDesc{
+    margin: 0;
+    color: $themeSecondary;
+}
+.ccStatus {
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 17px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    float: right;
+    width: 20px;
+}
+html[dir='ltr'] .ccStatus {
+    margin-left: 10px
+}
+html[dir='rtl'] .ccStatus {
+    margin-right: 10px
+}
+.ccButton{
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: $themePrimary;
+}
+.ccButton:hover, .ccTopBarButton:hover, .ccDialogButton:hover{
+    background-color: $themeSecondary;
+}
+.ccTopBarButton, .ccDialogButton{
+    margin-right: 10px;
+    background-color: $themePrimary;
 }
