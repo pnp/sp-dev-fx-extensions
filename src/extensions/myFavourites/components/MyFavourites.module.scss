@@ -99,6 +99,7 @@ html[dir='rtl'] .ccStatus {
     margin-top: 10px;
     margin-right: 10px;
     background-color: $themePrimary;
+    color: $themeLight;
 }
 .ccButton:hover, .ccTopBarButton:hover, .ccDialogButton:hover{
     background-color: $themeSecondary;
@@ -106,4 +107,5 @@ html[dir='rtl'] .ccStatus {
 .ccTopBarButton, .ccDialogButton{
     margin-right: 10px;
     background-color: $themePrimary;
+    color: $themeLight;
 }
