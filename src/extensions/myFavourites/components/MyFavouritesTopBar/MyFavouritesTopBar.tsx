@@ -64,7 +64,6 @@ export default class MyFavouritesTopBar extends React.Component<IMyFavouritesTop
                     className={styles.ccTopBarButton}
                     onClick={this._showDialog.bind(this)}
                 />
-
                 <Panel isOpen={this.state.showPanel}
                     type={PanelType.medium}
                     onDismiss={this._hideMenu.bind(this)}
@@ -87,7 +86,6 @@ export default class MyFavouritesTopBar extends React.Component<IMyFavouritesTop
                         </FocusZone>
                     </div>
                 </Panel>
-
                 <Dialog
                     hidden={!this.state.showDialog}
                     onDismiss={this._hideDialog}
@@ -113,7 +111,7 @@ export default class MyFavouritesTopBar extends React.Component<IMyFavouritesTop
                                 onChanged={this._setDescription.bind(this)}
                                 value={this.state.itemInContext.Description} />
                     <DialogFooter>
-                        <PrimaryButton onClick={this._saveItem.bind(this)}
+                        <PrimaryButton onClick={this._saveMyFavourite.bind(this)}
                                        disabled={this.state.disableButtons}
                                        text="Save" iconProps={{ iconName: "Save" }}
                                        className={styles.ccDialogButton}/>
@@ -152,7 +150,7 @@ export default class MyFavouritesTopBar extends React.Component<IMyFavouritesTop
         this.setState({ ...this.state, myFavouriteItems, status });
     }
 
-    private async _saveItem(): Promise<void> {
+    private async _saveMyFavourite(): Promise<void> {
         let status: JSX.Element = <Spinner size={SpinnerSize.large} label='Loading...' />;
         let disableButtons: boolean = true;
         this.setState({ ...this.state, status, disableButtons });

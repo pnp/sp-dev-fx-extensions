@@ -11,7 +11,8 @@ const FAVOURITES_LIST_NAME: string = "Favourites";
 
 export class MyFavouriteService implements IMyFavoutitesService {
 
-    public static readonly serviceKey: ServiceKey<IMyFavoutitesService> = ServiceKey.create<IMyFavoutitesService>('cc:IMyFavoutiteService', MyFavouriteService);
+    public static readonly serviceKey: ServiceKey<IMyFavoutitesService> =
+        ServiceKey.create<IMyFavoutitesService>('cc:IMyFavoutiteService', MyFavouriteService);
     private _spHttpClient: SPHttpClient;
     private _pageContext: PageContext;
     private _currentWebUrl: string;
@@ -23,26 +24,23 @@ export class MyFavouriteService implements IMyFavoutitesService {
             this._pageContext = serviceScope.consume(PageContext.serviceKey);
             this._currentWebUrl = this._pageContext.web.absoluteUrl;
             this._sessionStorageKey += this._currentWebUrl;
-
             pnp.setup({
                 sp: {
                     baseUrl: this._currentWebUrl
                 }
-            })
-        })
+            });
+        });
     }
 
 
     public async getMyFavourites(tryFromCache: boolean): Promise<IMyFavouriteItem[]> {
         let myFavourites: IMyFavouriteItem[] = [];
-       
-        if(tryFromCache){
+        if(tryFromCache) {
             myFavourites = this._fetchFromSessionStorge();
-            if(myFavourites.length){
+            if(myFavourites.length) {
                 return myFavourites;
             }
         }
-        
         myFavourites = await this._fetchFromSPList();
         let favInCache: string = JSON.stringify(myFavourites);
         window.sessionStorage.setItem(this._sessionStorageKey, favInCache);
@@ -58,9 +56,9 @@ export class MyFavouriteService implements IMyFavoutitesService {
             let addedItem: IMyFavouriteItem = result.data;
             console.log(addedItem);
             await this.getMyFavourites(false);
-            return true
+            return true;
         }, (error: any): boolean => {
-            return false
+            return false;
         });
     }
 
@@ -82,9 +80,9 @@ export class MyFavouriteService implements IMyFavoutitesService {
         }).then(async (result: ItemUpdateResult): Promise<boolean> => {
             console.log(result);
             await this.getMyFavourites(false);
-            return true
+            return true;
         }, (error: any): boolean => {
-            return false
+            return false;
         });
     }
 
@@ -104,7 +102,7 @@ export class MyFavouriteService implements IMyFavoutitesService {
     }
 
     private async _fetchFromSPList(): Promise<IMyFavouriteItem[]> {
-        const currentUserId = await this._getUserId();
+        const currentUserId: number = await this._getUserId();
         return pnp.sp.web.lists.getByTitle(FAVOURITES_LIST_NAME)
             .items
             .select(
@@ -119,7 +117,7 @@ export class MyFavouriteService implements IMyFavoutitesService {
                 Log.info(LOG_SOURCE, "Fetched favourites from list");
                 return myFavourites;
             })
-            .catch((error) =>{
+            .catch((error) => {
                 Log.error(LOG_SOURCE, error);
                 return [];
             });
