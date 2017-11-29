@@ -22,7 +22,7 @@ react-application-myfavourites | Anoop T ([@anooptells](https://twitter.com/anoo
 
 Version|Date|Comments
 -------|----|--------
-1.0|December 1, 2017|Initial release
+1.0|November 29, 2017|Initial release
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -74,7 +74,7 @@ This solution expects the site to contain a **Favourites** list. Here are 2 opti
 
 ### Option 1: Use the Included PnP Provisioning Template
 
-A PnP Remote Provisioning template has been provided ([ToastList.xml](./assets/FavouritesList.xml)) along with a PowerShell script to apply the template to your site ([ApplyTemplate.ps1](./assets/ApplyTemplate.ps1)). This is by far the easiest way to get a list on a site for quick testing but requires some minor setup. Here's how to do it:
+A PnP Remote Provisioning template has been provided ([FavouritesList.xml](./assets/FavouritesList.xml)) along with a PowerShell script to apply the template to your site ([ApplyTemplate.ps1](./assets/ApplyTemplate.ps1)). This is by far the easiest way to get a list on a site for quick testing but requires some minor setup. Here's how to do it:
 
 #### Prerequisites
 
