@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://anoopkatti.sharepoint.com/sites/communicationsite/SitePages/Home.aspx",
+      "pageUrl": "https://yourtenant.sharepoint.com/sites/yoursite/SitePages/Home.aspx",
       "customActions": {
         "5c715e3b-fb6f-43d7-a8a7-52bb5db34e50": {
           "location": "ClientSideExtension.ApplicationCustomizer"
