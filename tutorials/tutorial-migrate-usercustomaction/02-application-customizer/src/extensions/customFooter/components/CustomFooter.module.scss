@@ -1,0 +1,26 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.customFooter {
+  .container {
+    @include ms-fontColor-white;
+    background-color: $ms-color-neutralLight;
+  }
+
+  .grid {
+    @include ms-Grid;
+  }
+
+  .row {
+    @include ms-Grid-row;
+    @include ms-fontColor-white;
+  }
+
+  .column {
+    @include ms-Grid-col;
+    @include ms-sm2;
+    @include ms-md2;
+    @include ms-lg2;
+    @include ms-fontColor-white;
+  }
+
+}
