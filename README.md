@@ -35,17 +35,16 @@ Version|Date|Comments
 - Update the `pageUrl` properties in the **config/serve.json** file
   - The `pageUrl` should be a modern page
   - This property is only used during development in conjunction with the `gulp serve` command
-- In the command line navigate to **samples/ jquery-application-toastr** and run:
+- In the command line navigate to **samples/ react-application-myfavourites** and run:
   - `npm install`
   - `gulp serve`
 - In a web browser
   - Follow one of the steps below for **List Deployment**
     - Add some sample list items _(Be sure at least 1 item has a StartDate prior to now and an EndDate later than now)_
   - Choose **Load Debug Scripts** when prompted
-  - Stand in awe of the glory of Toast
+  - Hope that you will see the buttons at the top!
 
 ## Features
-SPFx Toastr utilizes Toastr to demonstrate how to display beautiful notifications in a familiar and intuitive manner.
 
 This extension illustrates the following concepts:
 
@@ -88,7 +87,7 @@ Using a PowerShell console (you can even use the powershell terminal included in
 .\ApplyTemplate.ps1 https://yourtenant.sharepoint.com/sites/yoursite FavouritesList.xml
 ```
 
-You'll be prompted for your credentials and then the list will be created. The only thing included in the template is the Toast list. You may receive a warning about the site template not matching but this can be safely ignored since the custom list definition is supported everywhere.
+You'll be prompted for your credentials and then the list will be created. The only thing included in the template is the Favourites list. You may receive a warning about the site template not matching but this can be safely ignored since the custom list definition is supported everywhere.
 
 > Read More Here: [Introducing the PnP Provisioning Engine](https://github.com/SharePoint/PnP-Guidance/blob/551b9f6a66cf94058ba5497e310d519647afb20c/articles/Introducing-the-PnP-Provisioning-Engine.md)
 
