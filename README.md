@@ -70,7 +70,7 @@ https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFil
 
 ## List Deployment
 
-This solution expects the site to contain a **Favourites** list. Here are 2 options to ensure this list exists:
+This solution expects the site to contain a **Favourites** list. This list will hold all the favourites and hence everyone will have write permissions on this list. Here are 2 options to ensure this list exists:
 
 ### Option 1: Use the Included PnP Provisioning Template
 

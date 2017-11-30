@@ -2,7 +2,7 @@
 <pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema">
 	<pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.20.1711.0, Culture=neutral, PublicKeyToken=3751622786b357c2" />
 	<pnp:Templates ID="CONTAINER-TEMPLATE-4874FB34C0394938BF4B62E54CC7F5B9">
-		<pnp:ProvisioningTemplate ID="TEMPLATE-4874FB34C0394938BF4B62E54CC7F5B9" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+		<pnp:ProvisioningTemplate ID="TEMPLATE-4874FB34C0394938BF4B62E54CC7F5B9" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
 			<pnp:Lists>
 				<pnp:ListInstance Title="Favourites" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Favourties" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Favourties/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Favourties/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Favourties/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=44" ValidationFormula="" ValidationMessage="">
                     <pnp:ContentTypeBindings>
@@ -37,7 +37,15 @@
                         <pnp:FieldRef ID="418d7676-2d6f-42cf-a16a-e43d2971252a" Name="_ComplianceTagUserId" DisplayName="Label applied by" />
                         <pnp:FieldRef ID="8382d247-72a9-44b1-9794-7b177edc89f3" Name="_IsRecord" DisplayName="Item is a Record" />
                     </pnp:FieldRefs>
-                </pnp:ListInstance>
+                    <pnp:Security>
+                        <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+                        <pnp:RoleAssignment Principal="{associatedownergroup}" RoleDefinition="Full Control" />
+                        <pnp:RoleAssignment Principal="{associatedvisitorgroup}" RoleDefinition="Read" />
+                        <pnp:RoleAssignment Principal="{associatedmembergroup}" RoleDefinition="Edit" />
+                        <pnp:RoleAssignment Principal="c:0(.s|true" RoleDefinition="Full Control" />
+                        </pnp:BreakRoleInheritance>
+                    </pnp:Security>
+                    </pnp:ListInstance>
 			</pnp:Lists>
 		</pnp:ProvisioningTemplate>
 	</pnp:Templates>
