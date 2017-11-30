@@ -16,7 +16,8 @@
     "@microsoft/sp-core-library": "~1.3.4",
     "@microsoft/sp-dialog": "~1.3.4",
     "@types/webpack-env": ">=1.12.1 <1.14.0",
-    "alasql": "^0.4.3"
+    "alasql": "^0.4.3",
+    "sp-pnp-js": "^3.0.2"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.3.4",
