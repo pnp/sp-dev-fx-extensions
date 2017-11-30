@@ -1,37 +1,31 @@
 import { IMyFavoutitesService } from "./IMyFavouritesService";
-import { ServiceKey, ServiceScope } from '@microsoft/sp-core-library';
-import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
-import { PageContext } from '@microsoft/sp-page-context';
+import { ApplicationCustomizerContext } from "@microsoft/sp-application-base";
+import { IMyFavouritesTopBarProps } from "../myFavourites/components/MyFavouritesTopBar/IMyFavouritesTopBarProps";
 import pnp, { List, ItemAddResult, ItemUpdateResult } from "sp-pnp-js";
 import { IMyFavouriteItem } from "../interfaces/IMyFavouriteItem";
 import { Log } from "@microsoft/sp-core-library";
+import { SPHttpClient, SPHttpClientResponse, ISPHttpClientOptions } from '@microsoft/sp-http';
 
 const LOG_SOURCE: string = "CC_MyFavourites_ApplicationCustomizer";
 const FAVOURITES_LIST_NAME: string = "Favourites";
 
-export class MyFavouriteService implements IMyFavoutitesService {
-
-    public static readonly serviceKey: ServiceKey<IMyFavoutitesService> =
-        ServiceKey.create<IMyFavoutitesService>('cc:IMyFavoutiteService', MyFavouriteService);
-    private _spHttpClient: SPHttpClient;
-    private _pageContext: PageContext;
+export class MyFavouritesService implements IMyFavoutitesService {
+    private _context: ApplicationCustomizerContext;
+    private _props: IMyFavouritesTopBarProps;
     private _currentWebUrl: string;
     private _sessionStorageKey: string = "MyFavourites_";
 
-    constructor(serviceScope: ServiceScope) {
-        serviceScope.whenFinished(() => {
-            this._spHttpClient = serviceScope.consume(SPHttpClient.serviceKey);
-            this._pageContext = serviceScope.consume(PageContext.serviceKey);
-            this._currentWebUrl = this._pageContext.web.absoluteUrl;
-            this._sessionStorageKey += this._currentWebUrl;
-            pnp.setup({
-                sp: {
-                    baseUrl: this._currentWebUrl
-                }
-            });
+    constructor(_props: IMyFavouritesTopBarProps) {
+        this._props = _props;
+        this._context = _props.context;
+        this._currentWebUrl = this._context.pageContext.web.absoluteUrl;
+        this._sessionStorageKey += this._currentWebUrl;
+        pnp.setup({
+            sp: {
+                baseUrl: this._currentWebUrl
+            }
         });
     }
-
 
     public async getMyFavourites(tryFromCache: boolean): Promise<IMyFavouriteItem[]> {
         let myFavourites: IMyFavouriteItem[] = [];
@@ -124,7 +118,7 @@ export class MyFavouriteService implements IMyFavoutitesService {
     }
 
     private _getUserId(): Promise<number> {
-        return pnp.sp.site.rootWeb.ensureUser(this._pageContext.user.email).then(result => {
+        return pnp.sp.site.rootWeb.ensureUser(this._context.pageContext.user.email).then(result => {
             return result.data.Id;
         });
     }

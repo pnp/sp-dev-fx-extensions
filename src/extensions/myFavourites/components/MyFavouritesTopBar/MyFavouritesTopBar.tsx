@@ -10,16 +10,14 @@ import { List } from "office-ui-fabric-react/lib/List";
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { IMyFavouritesTopBarProps } from "./IMyFavouritesTopBarProps";
 import { IMyFavouritesTopBarState } from "./IMyFavouritesTopBarState";
-import { ServiceScope } from "@microsoft/sp-core-library";
-import { IMyFavoutitesService } from "../../../services/IMyFavouritesService";
-import { MyFavouriteService } from "../../../services/MyFavouriteService";
+import { MyFavouritesService } from "../../../services/MyFavouritesService";
 import { IMyFavouriteItem } from "../../../interfaces/IMyFavouriteItem";
 import MyFavoutiteDisplayItem from "../MyFavoutiteDisplayItem/MyFavoutiteDisplayItem";
 import styles from "../MyFavourites.module.scss";
 
 export default class MyFavouritesTopBar extends React.Component<IMyFavouritesTopBarProps, IMyFavouritesTopBarState> {
     private _self = this;
-    private _MyFavouritesServiceInstance: IMyFavoutitesService;
+    private _MyFavouritesServiceInstance: MyFavouritesService;
     private _MyFavouriteItems: IMyFavouriteItem[] =[];
     constructor(props: IMyFavouritesTopBarProps) {
         super(props);
@@ -38,10 +36,7 @@ export default class MyFavouritesTopBar extends React.Component<IMyFavouritesTop
             disableButtons: false
         };
 
-        let serviceScope: ServiceScope;
-        serviceScope = this.props.serviceScope;
-
-        this._MyFavouritesServiceInstance = serviceScope.consume(MyFavouriteService.serviceKey);
+        this._MyFavouritesServiceInstance = new MyFavouritesService(this.props);
         this._getMyFavourites.bind(this);
     }
 

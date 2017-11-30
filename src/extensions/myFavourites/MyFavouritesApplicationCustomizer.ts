@@ -35,7 +35,7 @@ export default class MyFavouritesApplicationCustomizer
     const element: React.ReactElement<IMyFavouritesTopBarProps> = React.createElement(
       MyFavouritesTopBar,
       {
-        serviceScope: this.context.serviceScope
+        context: this.context
       }
     );
 
