@@ -40,9 +40,7 @@
                     <pnp:Security>
                         <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
                         <pnp:RoleAssignment Principal="{associatedownergroup}" RoleDefinition="Full Control" />
-                        <pnp:RoleAssignment Principal="{associatedvisitorgroup}" RoleDefinition="Read" />
-                        <pnp:RoleAssignment Principal="{associatedmembergroup}" RoleDefinition="Edit" />
-                        <pnp:RoleAssignment Principal="c:0(.s|true" RoleDefinition="Full Control" />
+                        <pnp:RoleAssignment Principal="c:0(.s|true" RoleDefinition="Contribute" />
                         </pnp:BreakRoleInheritance>
                     </pnp:Security>
                     </pnp:ListInstance>
