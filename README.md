@@ -3,6 +3,8 @@
 ## Summary
 Sample SharePoint Framework application customizer extension that shows favourite links using office ui fabric panel. Fabric UI React components used include - panel, dialog, list and spinner.
 
+> Inspired from ([react-mega-menu](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-mega-menu)) by  Velin Georgiev ([@VelinGeorgiev](https://twitter.com/velingeorgiev))
+
 ![My Favourites](./assets/spfx-myfavourites.gif)
 
 ## Used SharePoint Framework Version 
@@ -80,6 +82,8 @@ A PnP Remote Provisioning template has been provided ([FavouritesList.xml](./ass
 You'll need the [SharePoint PnP PowerShell Cmdlets for SharePoint Online](https://github.com/SharePoint/PnP-PowerShell). It's a very quick install and if you don't have it already, go get it! You'll end up using it for far more than just this sample.
 
 #### Running the PowerShell Script
+
+> Thank you Chris Kent ([thechriskent.com](https://thechriskent.com), [@thechriskent](https://twitter.com/thechriskent))
 
 Using a PowerShell console (you can even use the powershell terminal included in Visual Studio Code), navigate to the assets folder in this sample. Run the script like this:
 
