@@ -8,4 +8,12 @@ More information about the solution is available at [https://docs.microsoft.com/
 
 [More information](../README.md)
 
+This folder contains following assets
+
+* Contoso_CustomFooter.wsp - Sandbox solution which can be used deploy assets to SharePoint site
+* Contoso_CustomFooter.zip - Source code used to create sandbox solution
+* Elements.xml - elements.xml file used to deploy assets to SiteAssets folder
+* spocustomui.css - CSS file used by the solution
+* spocustomui.js - JavaScript file associated as UserCustomAction to site scope
+
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/tutorial-migrate-usercustomaction/01" />
