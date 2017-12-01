@@ -6,7 +6,7 @@ Sample SharePoint Framework application customizer extension that shows favourit
 ![My Favourites](./assets/spfx-myfavourites.gif)
 
 ## Used SharePoint Framework Version 
-![1.3.0](https://img.shields.io/badge/version-1.3.0-green.svg)
+![1.3.4](https://img.shields.io/badge/version-1.3.4-green.svg)
 
 ## Applies to
 
@@ -87,7 +87,12 @@ Using a PowerShell console (you can even use the powershell terminal included in
 .\ApplyTemplate.ps1 https://yourtenant.sharepoint.com/sites/yoursite FavouritesList.xml
 ```
 
-You'll be prompted for your credentials and then the list will be created. The only thing included in the template is the Favourites list. You may receive a warning about the site template not matching but this can be safely ignored since the custom list definition is supported everywhere.
+You'll be prompted for your credentials and then the list will be created. You may receive a warning about the site template not matching but this can be safely ignored since the custom list definition is supported everywhere.
+
+Things included in the template are
+- The Favourites list
+- Updating the security of the Favourites list so that users will have access to items only they create
+- Adding "Created By (Author)" as an indexed column
 
 > Read More Here: [Introducing the PnP Provisioning Engine](https://github.com/SharePoint/PnP-Guidance/blob/551b9f6a66cf94058ba5497e310d519647afb20c/articles/Introducing-the-PnP-Provisioning-Engine.md)
 
@@ -105,6 +110,12 @@ Title | Text | Yes |
 Description | Multiple lines of text | No |
 ItemUrl | Multiple lines of text | No | Can be changed to Url (but needs code change)
 
+4. Under advanced settings of the list, set 
+- Read access to "Read items that were created by the user" and 
+- Write access to "Create items and edit items that were created by the user"
+
+5. Add "Created By" to the indexed columns (can be found under list settings)
+
 ## Improvements
 
-- The code in this sample stores data in a list. Instead of this, the data can stored as a json array in a user profile property. Or, if there is any other way to store data that can be added too.
+- The code in this sample stores data in a list. Instead of this, the data can stored as a json array in a user profile property. Vardhaman has wrriten a nice blog on [editing user profile properties](http://www.vrdmn.com/2016/08/first-spfx-webpart-getset-single-value.html) Or, if there is any other way to store data that can be added too.

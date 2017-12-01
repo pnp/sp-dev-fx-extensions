@@ -4,7 +4,9 @@ import { IMyFavouritesTopBarProps } from "../myFavourites/components/MyFavourite
 import pnp, { List, ItemAddResult, ItemUpdateResult } from "sp-pnp-js";
 import { IMyFavouriteItem } from "../interfaces/IMyFavouriteItem";
 import { Log } from "@microsoft/sp-core-library";
-import { SPHttpClient, SPHttpClientResponse, ISPHttpClientOptions } from '@microsoft/sp-http';
+import { SPHttpClient, SPHttpClientResponse, ISPHttpClientOptions, ISPHttpClientConfiguration, ODataVersion } from '@microsoft/sp-http';
+import SPHttpClientConfiguration from "@microsoft/sp-http/lib/spHttpClient/SPHttpClientConfiguration";
+import HttpClientConfiguration from "@microsoft/sp-http/lib/httpClient/HttpClientConfiguration";
 
 const LOG_SOURCE: string = "CC_MyFavourites_ApplicationCustomizer";
 const FAVOURITES_LIST_NAME: string = "Favourites";

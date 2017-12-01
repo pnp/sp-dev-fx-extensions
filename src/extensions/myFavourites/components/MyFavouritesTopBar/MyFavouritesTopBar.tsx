@@ -74,10 +74,17 @@ export default class MyFavouritesTopBar extends React.Component<IMyFavouritesTop
                             {this.state.status}
                         </div>
                         <FocusZone direction={ FocusZoneDirection.vertical }>
+                        { this.state.myFavouriteItems.length > 0 ? 
                             <List
                                 items = { this.state.myFavouriteItems }
                                 onRenderCell={ this._onRenderCell.bind(this) }
-                            />
+                            /> :
+                            <MessageBar
+                                messageBarType={ MessageBarType.warning }
+                                isMultiline={ false }>
+                                You do not have any favourites.
+                            </MessageBar>
+                        }
                         </FocusZone>
                     </div>
                 </Panel>

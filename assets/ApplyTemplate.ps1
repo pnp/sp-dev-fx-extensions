@@ -28,6 +28,17 @@ try
 
     Apply-PnPProvisioningTemplate -Path $FilePath
 
+    $favList = Get-PnPList -Identity "Lists/Favourites" -Includes ReadSecurity, WriteSecurity
+    $favList.ReadSecurity = 2
+    $favList.WriteSecurity = 2
+    
+    $authorField = $favList.Fields.GetByInternalNameOrTitle("Author")
+    $authorField.Indexed = $true
+    $authorField.Update()
+    
+    $favList.Update()
+    $favList.Context.ExecuteQuery()
+
     Disconnect-PnPOnline
 
 }

@@ -4,13 +4,13 @@
 	<pnp:Templates ID="CONTAINER-TEMPLATE-4874FB34C0394938BF4B62E54CC7F5B9">
 		<pnp:ProvisioningTemplate ID="TEMPLATE-4874FB34C0394938BF4B62E54CC7F5B9" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
 			<pnp:Lists>
-				<pnp:ListInstance Title="Favourites" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Favourties" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Favourties/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Favourties/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Favourties/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=44" ValidationFormula="" ValidationMessage="">
+				<pnp:ListInstance Title="Favourites" Description="" DocumentTemplate="" OnQuickLaunch="false" TemplateType="100" Url="Lists/Favourites" Hidden="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Favourites/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Favourites/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Favourites/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=44" ValidationFormula="" ValidationMessage="">
                     <pnp:ContentTypeBindings>
                         <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
                         <pnp:ContentTypeBinding ContentTypeID="0x0120" />
                     </pnp:ContentTypeBindings>
                     <pnp:Views>
-                        <View Name="{5FB425C3-4BA3-4BB1-8D91-B420A9AA7C80}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/sites/Communicationsite/Lists/Favourties/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
+                        <View Name="{5FB425C3-4BA3-4BB1-8D91-B420A9AA7C80}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/sites/Communicationsite/Lists/Favourites/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
                         <Query>
                             <OrderBy>
                             <FieldRef Name="ID" />
