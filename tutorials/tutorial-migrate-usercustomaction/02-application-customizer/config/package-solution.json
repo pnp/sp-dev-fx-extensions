@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-react-custom-footer-client-side-solution",
     "id": "911728a5-7bde-4453-97b2-2eba59277ed3",
-    "version": "1.0.1.0",
+    "version": "1.0.2.0",
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",

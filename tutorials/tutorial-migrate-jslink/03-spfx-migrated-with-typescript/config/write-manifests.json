@@ -1,4 +1,4 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx-build/write-manifests.schema.json",
-  "cdnBasePath": "https://publiccdn.sharepointonline.com/piasysdev.sharepoint.com/sites/CDN/cdn/customcolorfield"
+  "cdnBasePath": "<!-- PATH TO CDN -->"
 }
