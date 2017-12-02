@@ -35,11 +35,11 @@ export default class RunOnceApplicationCustomizer
     private async removeCustomizer() {
         // Remove custom action from current sute
         let site = new Site(this.context.pageContext.site.absoluteUrl);
-        let customActions = await site.userCustomActions.get(); // if installed as web scope, change this line
+        let customActions = await site.userCustomActions.get(); // if installed as web scope, change this line to get the user customactions from the appropriate web
         for (let i = 0; i < customActions.length; i++) {
             var instance = customActions[i];
             if (instance.ClientSideComponentId === this.componentId) {
-                await site.userCustomActions.getById(instance.Id).delete();
+                await site.userCustomActions.getById(instance.Id).delete(); // if insatalled at the web scope, change this line to delete customaction from appropriate web as well
                 console.log("Extension removed");
                 // reload the page once done if needed
                 window.location.href = window.location.href;
