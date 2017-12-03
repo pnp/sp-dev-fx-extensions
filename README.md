@@ -42,7 +42,6 @@ Version|Date|Comments
   - `gulp serve`
 - In a web browser
   - Follow one of the steps below for **List Deployment**
-    - Add some sample list items _(Be sure at least 1 item has a StartDate prior to now and an EndDate later than now)_
   - Choose **Load Debug Scripts** when prompted
   - Hope that you will see the buttons at the top!
 
