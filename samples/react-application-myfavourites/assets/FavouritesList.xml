@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema">
+	<pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.20.1711.0, Culture=neutral, PublicKeyToken=3751622786b357c2" />
+	<pnp:Templates ID="CONTAINER-TEMPLATE-4874FB34C0394938BF4B62E54CC7F5B9">
+		<pnp:ProvisioningTemplate ID="TEMPLATE-4874FB34C0394938BF4B62E54CC7F5B9" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+			<pnp:Lists>
+				<pnp:ListInstance Title="Favourites" Description="" DocumentTemplate="" OnQuickLaunch="false" TemplateType="100" Url="Lists/Favourites" Hidden="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Favourites/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Favourites/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Favourites/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=44" ValidationFormula="" ValidationMessage="">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+                        <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views>
+                        <View Name="{5FB425C3-4BA3-4BB1-8D91-B420A9AA7C80}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/sites/Communicationsite/Lists/Favourites/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
+                        <Query>
+                            <OrderBy>
+                            <FieldRef Name="ID" />
+                            </OrderBy>
+                        </Query>
+                        <ViewFields>
+                            <FieldRef Name="LinkTitle" />
+                            <FieldRef Name="Description" />
+                            <FieldRef Name="ItemUrl" />
+                        </ViewFields>
+                        <RowLimit Paged="TRUE">30</RowLimit>
+                        <JSLink>clienttemplates.js</JSLink>
+                        </View>
+                    </pnp:Views>
+                    <pnp:Fields>
+                        <Field ID="{3a6b296c-3f50-445c-a13f-9c679ea9dda3}" Hidden="FALSE" ReadOnly="TRUE" Required="FALSE" Type="Text" Name="ComplianceAssetId" ShowInFileDlg="FALSE" DisplayName="Compliance Asset Id" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="ComplianceAssetId" FromBaseType="TRUE" ColName="nvarchar3" />
+                        <Field AppendOnly="FALSE" DisplayName="Description" IsolateStyles="FALSE" NumLines="6" RichText="FALSE" RichTextMode="Compatible" Title="Description" Type="Note" ID="{1adddef6-a094-4c57-85d2-e05d1843835d}" SourceID="{{listid:Favourites}}" StaticName="Description" Name="Description" ColName="ntext2" RowOrdinal="0" />
+                        <Field Type="Note" DisplayName="ItemUrl" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" RichTextMode="Compatible" IsolateStyles="FALSE" Sortable="FALSE" ID="{2f268fa6-5fb2-4e64-a65d-2094a2335385}" SourceID="{{listid:Favourites}}" StaticName="ItemUrl" Name="ItemUrl" ColName="ntext3" RowOrdinal="0" CustomFormatter="" RestrictedMode="TRUE" AppendOnly="FALSE" Version="1" />
+                    </pnp:Fields>
+                    <pnp:FieldRefs>
+                        <pnp:FieldRef ID="ccc1037f-f65e-434a-868e-8c98af31fe29" Name="_ComplianceFlags" DisplayName="Label setting" />
+                        <pnp:FieldRef ID="d4b6480a-4bed-4094-9a52-30181ea38f1d" Name="_ComplianceTag" DisplayName="Labels" />
+                        <pnp:FieldRef ID="92be610e-ddbb-49f4-b3b1-5c2bc768df8f" Name="_ComplianceTagWrittenTime" DisplayName="Label Applied" />
+                        <pnp:FieldRef ID="418d7676-2d6f-42cf-a16a-e43d2971252a" Name="_ComplianceTagUserId" DisplayName="Label applied by" />
+                        <pnp:FieldRef ID="8382d247-72a9-44b1-9794-7b177edc89f3" Name="_IsRecord" DisplayName="Item is a Record" />
+                    </pnp:FieldRefs>
+                    <pnp:Security>
+                        <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+                        <pnp:RoleAssignment Principal="{associatedownergroup}" RoleDefinition="Full Control" />
+                        <pnp:RoleAssignment Principal="c:0(.s|true" RoleDefinition="Contribute" />
+                        </pnp:BreakRoleInheritance>
+                    </pnp:Security>
+                    </pnp:ListInstance>
+			</pnp:Lists>
+		</pnp:ProvisioningTemplate>
+	</pnp:Templates>
+</pnp:Provisioning>
