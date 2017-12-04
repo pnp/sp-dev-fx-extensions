@@ -31,7 +31,7 @@ export default class MyFavouritesApplicationCustomizer
     let placeholder: PlaceholderContent;
     placeholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
 
-    // init the react mega menu component.
+    // init the react top bar component.
     const element: React.ReactElement<IMyFavouritesTopBarProps> = React.createElement(
       MyFavouritesTopBar,
       {
