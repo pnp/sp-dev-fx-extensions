@@ -71,8 +71,7 @@ export class MyFavouritesService implements IMyFavoutitesService {
     public async updateFavourite(favouriteItem: IMyFavouriteItem): Promise<boolean> {
         return pnp.sp.web.lists.getByTitle(FAVOURITES_LIST_NAME).items.getById(favouriteItem.Id).update({
             'Title': favouriteItem.Title,
-            'Description': favouriteItem.Description,
-            'ItemUrl': window.location.href
+            'Description': favouriteItem.Description
         }).then(async (result: ItemUpdateResult): Promise<boolean> => {
             console.log(result);
             await this.getMyFavourites(false);
