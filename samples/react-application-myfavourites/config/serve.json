@@ -1,0 +1,15 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://yourtenant.sharepoint.com/sites/yoursite/SitePages/Home.aspx",
+      "customActions": {
+        "5c715e3b-fb6f-43d7-a8a7-52bb5db34e50": {
+          "location": "ClientSideExtension.ApplicationCustomizer"
+        }
+      }
+    }
+  }
+}

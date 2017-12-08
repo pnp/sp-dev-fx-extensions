@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="CustomFooter"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="82242bbb-f951-4c71-a978-80eb8f35e4c1">
+    </CustomAction>
+</Elements>

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "my-favourites-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/myFavourites/MyFavouritesApplicationCustomizer.js",
+          "manifest": "./src/extensions/myFavourites/MyFavouritesApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MyFavouritesApplicationCustomizerStrings": "lib/extensions/myFavourites/loc/{locale}.js"
+  }
+}

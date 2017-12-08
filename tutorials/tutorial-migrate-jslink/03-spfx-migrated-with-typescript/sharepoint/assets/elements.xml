@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <Field ID="{40475661-efaf-447a-a220-c992b20ec1c3}"
+            Name="SPFxColor"
+            DisplayName="Color"
+            Title="Color"
+            Type="Choice"
+            Required="FALSE"
+            Group="SPFx Columns"
+            ClientSideComponentId="c3070978-d85e-4298-8758-70b5b5933076">
+    </Field>
+</Elements>
