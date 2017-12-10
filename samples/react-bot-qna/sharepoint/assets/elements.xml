@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="BotQnA"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="7291ed19-13e0-40a6-a10c-6b51ecfa61a8"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

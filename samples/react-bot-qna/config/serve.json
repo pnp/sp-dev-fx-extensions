@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://collaborationcorner.sharepoint.com/teams/PnPIntranet/",
+      "customActions": {
+        "7291ed19-13e0-40a6-a10c-6b51ecfa61a8": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "botQnA": {
+      "pageUrl": "https://collaborationcorner.sharepoint.com/teams/PnPIntranet/SitePages/Home.aspx",
+      "customActions": {
+        "7291ed19-13e0-40a6-a10c-6b51ecfa61a8": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}

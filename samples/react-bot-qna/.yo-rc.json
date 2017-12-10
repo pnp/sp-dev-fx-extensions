@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.3.4",
+    "libraryName": "react-bot-qna",
+    "libraryId": "b070a80a-bbc3-4a2d-aaeb-956b46f200c2",
+    "environment": "spo"
+  }
+}

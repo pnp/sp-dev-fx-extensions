@@ -1,0 +1,24 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "react-bot-qna-client-side-solution",
+    "id": "b070a80a-bbc3-4a2d-aaeb-956b46f200c2",
+    "version": "1.0.0.0",
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "0a045620-4bb5-41f5-b574-6b9b123a9cc4",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-bot-qna.sppkg"
+  }
+}
