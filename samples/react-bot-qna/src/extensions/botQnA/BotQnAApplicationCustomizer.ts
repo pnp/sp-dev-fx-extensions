@@ -38,9 +38,6 @@ export default class BotQnAApplicationCustomizer
     }
 
     this._renderPlaceHolders();
-
-    //Dialog.alert(`Hello from ${strings.Title}:\n\n${message}`);
-
     return Promise.resolve();
   }
 

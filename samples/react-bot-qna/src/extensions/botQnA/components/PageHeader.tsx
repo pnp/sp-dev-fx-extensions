@@ -1,7 +1,9 @@
 import * as React from "react";
 import IPageHeaderProps from "./IPageHeaderProps";
 import { ActionButton }  from "office-ui-fabric-react/lib/Button";
-import { Panel }  from "office-ui-fabric-react/lib/Panel";
+import { Panel } from "office-ui-fabric-react/lib/Panel";
+import { Spinner, SpinnerSize} from "office-ui-fabric-react/lib/spinner";
+import { Overlay } from "office-ui-fabric-react/lib/overlay";
 import * as ReactDOM from 'react-dom';
 import { Chat, DirectLine } from 'botframework-webchat';
 import IPageHeaderState from "./IPageHeaderState";
@@ -9,6 +11,7 @@ require("botframework-webchat/botchat.css");
 import { UserAgentApplication } from "msal";
 import { Logger, LogLevel } from "sp-pnp-js";
 import { Text } from "@microsoft/sp-core-library";
+import styles from "./PageHeader.module.scss";
 
 // Global settings
 // TODO: Read theses values fro nthe global tenant properties
@@ -43,6 +46,7 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
 
         this.state = { 
             showPanel: false,
+            isBotInitializing: false,
         };
 
         // Bot connection used as back channel
@@ -71,7 +75,7 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
 
             // Show the panel only if the event has been well received
             this.setState({
-                showPanel: true,
+                isBotInitializing :false
             });
         });
     }
@@ -80,6 +84,12 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
      * Function that will login the user
      */
     private async _login()  {
+
+        this.setState({
+            isBotInitializing :true,
+            showPanel: true,
+        });
+
         // Login the user
         if (this.clientApplication.getUser()) {
             const token = await this._getAccessToken();
@@ -116,36 +126,42 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
         // Be careful, the user Id is mandatory to be able to use the bot state service (i.e privateConversationData)
         return (
             <div>
-                <ActionButton onClick= { this._login } icon="Robot" label="Chat with a bot">                    
+                <ActionButton onClick= { this._login } icon="Robot">     
+                    Engage with a bot               
                 </ActionButton>
                 <Panel
                     isOpen={ this.state.showPanel }
                     isLightDismiss={ true }
                     onDismiss={ () => this.setState({ showPanel: false }) }
                 >
-                <Chat 
-                    botConnection={ this._botConnection }
-                    bot={
-                    {
-                        id: "7833069a-0013-44a3-b9e0-ed0ef67c1830",
-                        name: "sp-bot-qna",
+                    { this.state.isBotInitializing ? 
+                        <Overlay className={ styles.overlayList }>
+                            <Spinner size={ SpinnerSize.large }/>
+                        </Overlay> : null
                     }
-                    }
-                    user={
+                    <Chat 
+                        botConnection={ this._botConnection }
+                        bot={
                         {
-                            // IMPORTANT (2 of 2): USE THE SAME USER ID FOR BOT STATE TO BE ABLE TO GET USER SPECIFIC DATA IN THE BOT STATE
-                            id: this.props.context.pageContext.user.email,
-                            name: this.props.context.pageContext.user.displayName,
+                            id: "7833069a-0013-44a3-b9e0-ed0ef67c1830",
+                            name: "sp-bot-qna",
                         }
-                    }
+                        }
+                        user={
+                            {
+                                // IMPORTANT (2 of 2): USE THE SAME USER ID FOR BOT STATE TO BE ABLE TO GET USER SPECIFIC DATA IN THE BOT STATE
+                                id: this.props.context.pageContext.user.email,
+                                name: this.props.context.pageContext.user.displayName,
+                            }
+                        }
 
-                    locale={ this.props.context.pageContext.cultureInfo.currentCultureName }
-                    formatOptions={
-                        {
-                            showHeader: false,
-                        }  
-                    } 
-                    sendTyping= { true }/>
+                        locale={ this.props.context.pageContext.cultureInfo.currentCultureName }
+                        formatOptions={
+                            {
+                                showHeader: false,
+                            }  
+                        } 
+                        sendTyping= { true }/>
                 </Panel>
             </div>
         );
