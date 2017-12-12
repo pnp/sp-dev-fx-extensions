@@ -1,14 +1,15 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "react-bot-qna-client-side-solution",
-    "id": "b070a80a-bbc3-4a2d-aaeb-956b46f200c2",
+    "name": "PnP - Graph Bot",
+    "id": "f300ad34-03b1-4e32-9e9b-6a89b054987d",
     "version": "1.0.0.0",
+    "includeClientSideAssets": true,
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
-        "id": "0a045620-4bb5-41f5-b574-6b9b123a9cc4",
+        "id": "07ebae29-c297-4d2e-b201-5b0a9e2b95e8",
         "version": "1.0.0.0",
         "assets": {
           "elementManifests": [
@@ -19,6 +20,6 @@
     ]
   },
   "paths": {
-    "zippedPackage": "solution/react-bot-qna.sppkg"
+    "zippedPackage": "solution/pnp-graph-bot.sppkg"
   }
 }

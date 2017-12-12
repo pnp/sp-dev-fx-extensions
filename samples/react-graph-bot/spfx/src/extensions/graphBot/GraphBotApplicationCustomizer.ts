@@ -4,27 +4,27 @@ import {
   BaseApplicationCustomizer, PlaceholderContent, PlaceholderName
 } from '@microsoft/sp-application-base';
 import { Dialog } from '@microsoft/sp-dialog';
-import * as strings from 'BotQnAApplicationCustomizerStrings';
 import PageHeader from "./components/PageHeader";
 import IPageHeaderProps from "./components/IPageHeaderProps";
+import * as strings from 'GraphBotApplicationCustomizerStrings';
+import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as React from "react";
 
-const LOG_SOURCE: string = 'BotQnAApplicationCustomizer';
+const LOG_SOURCE: string = 'GraphBotApplicationCustomizer';
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
  * it will be deserialized into the BaseExtension.properties object.
  * You can define an interface to describe it.
  */
-export interface IBotQnAApplicationCustomizerProperties {
+export interface IGraphBotApplicationCustomizerProperties {
   // This is an example; replace with your own property
   testMessage: string;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
-export default class BotQnAApplicationCustomizer
-  extends BaseApplicationCustomizer<IBotQnAApplicationCustomizerProperties> {
+export default class GraphBotApplicationCustomizer
+  extends BaseApplicationCustomizer<IGraphBotApplicationCustomizerProperties> {
 
   private _topPlaceHolder: PlaceholderContent;
 
@@ -38,6 +38,7 @@ export default class BotQnAApplicationCustomizer
     }
 
     this._renderPlaceHolders();
+
     return Promise.resolve();
   }
 

@@ -1,8 +1,8 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
-  "id": "7291ed19-13e0-40a6-a10c-6b51ecfa61a8",
-  "alias": "BotQnAApplicationCustomizer",
+  "id": "fbb38806-54e4-4ddd-a413-e7a1611fcb08",
+  "alias": "GraphBotApplicationCustomizer",
   "componentType": "Extension",
   "extensionType": "ApplicationCustomizer",
 

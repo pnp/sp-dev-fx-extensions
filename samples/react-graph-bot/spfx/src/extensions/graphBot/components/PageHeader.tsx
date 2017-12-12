@@ -14,7 +14,7 @@ import { Text } from "@microsoft/sp-core-library";
 import styles from "./PageHeader.module.scss";
 
 // Global settings
-// TODO: Read theses values fro nthe global tenant properties
+// TODO: Read theses values from the global tenant properties
 // + Bot Direct Line secret
 // + Bot ID
 const msalconfig = {
@@ -126,7 +126,7 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
         // Be careful, the user Id is mandatory to be able to use the bot state service (i.e privateConversationData)
         return (
             <div>
-                <ActionButton onClick= { this._login } icon="Robot">     
+                <ActionButton onClick= { this._login } iconProps={ { iconName: "Robot" } }>     
                     Engage with a bot               
                 </ActionButton>
                 <Panel
