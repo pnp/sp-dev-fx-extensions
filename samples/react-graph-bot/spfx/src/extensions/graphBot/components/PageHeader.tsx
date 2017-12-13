@@ -9,9 +9,10 @@ import { Chat, DirectLine } from 'botframework-webchat';
 import IPageHeaderState from "./IPageHeaderState";
 require("botframework-webchat/botchat.css");
 import { UserAgentApplication } from "msal";
-import { Logger, LogLevel } from "sp-pnp-js";
+import pnp, { Logger, LogLevel } from "sp-pnp-js";
 import { Text } from "@microsoft/sp-core-library";
 import styles from "./PageHeader.module.scss";
+import { SPHttpClient } from "@microsoft/sp-http";
 
 // Global settings
 // TODO: Read theses values from the global tenant properties
@@ -22,7 +23,29 @@ const msalconfig = {
     authorityUrl: 'https://login.microsoftonline.com/321e2764-3302-41bf-87fd-5f669647b076'
 };
 
-const scopes = ["User.Read", "Mail.Read"];
+const scopes = ["User.ReadBasic.All","User.Read", "Mail.Read"];
+
+export interface IGraphBotSettings {
+    /**
+     * The Azure Active Directory client identifier
+     */
+    ClientId: string;
+
+    /**
+     * The Office 365 tenant id
+     */
+    TenantId: string;
+
+    /**
+     * The bot application id
+     */
+    BotId: string
+
+    /**
+     * The secret key for the bot "Direct Line" channel
+     */
+    DirectLineSecret: string;
+}
 
 class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
 
@@ -95,7 +118,10 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
             const token = await this._getAccessToken();
             this._initBotWithAccessToken(token);
         } else {
-            const token = await this.clientApplication.loginPopup(scopes);
+            // Be careful here, the loginPopup actuall returns an id_token, not an access_token
+            // You can validate the JWT token by your self if you want
+            await this.clientApplication.loginPopup(scopes);
+            const token = await this._getAccessToken();
             this._initBotWithAccessToken(token);
         }
     }
@@ -106,7 +132,7 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
     private async _getAccessToken() {
 
         try {
-            // Try to get a token silently, if the user is arleady signed in
+            // Try to get a token silently, if the user is already signed in
             const token = await this.clientApplication.acquireTokenSilent(scopes);
             return token;
 
@@ -165,6 +191,29 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
                 </Panel>
             </div>
         );
+    }
+    
+    public async componentDidMount() {
+        
+        // Get settings from tenant properties
+      /*  const url = Text.format("{0}/_api/web/GetStorageEntity('{1}')", this.props.context.pageContext.site.absoluteUrl, GraphBotStorageEntityKey);
+
+        try {
+            const response = await this.props.context.spHttpClient.get(url, SPHttpClient.configurations.v1);
+            
+            const data = await response.json()
+                
+            if (response.ok) {
+                let toto = data;
+            } else {
+                // Expected response for errors
+                const errorDetails = data["ExceptionMessage"];
+                throw(errorDetails);
+            }
+
+        } catch (error) {
+            Logger.write(Text.format("[PageHeader_componentDidMount]: Error: {0}", error));
+        }*/
     }
 }
 

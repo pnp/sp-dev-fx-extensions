@@ -32,8 +32,10 @@ server.post('/api/messages', connector.listen());
 // var bot = new builder.UniversalBot(connector);
 
 var inMemoryStorage = new builder.MemoryBotStorage();
-var bot = new builder.UniversalBot(connector)
-                    .set('storage', inMemoryStorage); // Register in-memory storage 
+var bot = new builder.UniversalBot(connector);
+
+// Register in-memory storage
+bot.set('storage', inMemoryStorage); 
 
 bot.on("event", function (event) {
 
@@ -61,70 +63,74 @@ var luisAppId = "7bd9789f-c786-4e4b-8d83-32e29c1c84c2";
 var luisAPIKey = "e26d277b6c8b4d02b549d5088045e3c3";
 var luisAPIHostName = process.env.LuisAPIHostName || 'westus.api.cognitive.microsoft.com';
 
-const LuisModelUrl = 'https://' + luisAPIHostName + '/luis/v1/application?id=' + luisAppId + '&subscription-key=' + luisAPIKey;
+let LuisModelUrl = 'https://' + luisAPIHostName + '/luis/v1/application?id=' + luisAppId + '&subscription-key=' + luisAPIKey;
+
+LuisModelUrl = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/7bd9789f-c786-4e4b-8d83-32e29c1c84c2?subscription-key=e26d277b6c8b4d02b549d5088045e3c3&staging=true&verbose=true&timezoneOffset=0&q="
+
+var getUserAccessTokenFromState =  (session, args, next) => {
+    
+        // Get user access token if there is one
+        var botStorageContext = {
+            conversationId: session.message.address.conversation.id,
+            userId: session.message.address.user.id,
+            persistUserData: true,
+            persistConversationData: true,
+        }
+    
+        inMemoryStorage.getData(botStorageContext, function(e, data) {
+
+            session.privateConversationData['accessToken'] = data.privateConversationData.accessToken;
+            next();
+        });
+    }
 
 // Main dialog with LUIS
 var recognizer = new builder.LuisRecognizer(LuisModelUrl);
 var intents = new builder.IntentDialog({ recognizers: [recognizer] })
-/*
-.matches('<yourIntent>')... See details at http://docs.botframework.com/builder/node/guides/understanding-natural-language/
-*/
+
 .onDefault((session) => {
-    
-
-    var botStorageContext = {
-        conversationId: session.message.address.conversation.id,
-        userId: session.message.address.user.id,
-        // address: session.message.address,
-        persistUserData: true,
-        persistConversationData: true,
-    }
-
-    inMemoryStorage.getData(botStorageContext, function(e, data) {
-        session.send('Sorry, I did not understand \'%s\'.', data.privateConversationData.accessToken);
-
-        searchForExpertise("toto", data.privateConversationData.accessToken).then((res) => {
-            
-                if (res.error) {
-                    session.send("Error: %s", res.error.message.value);
-                } else {
-                    session.send(res);
-                }
+    session.send('Sorry, I did not understand \'%s\'.', session.message.text);
+})
+.matches('GetMyName',
+    [   getUserAccessTokenFromState, 
+        (session, args, next) => {
+        
+        searchForExpertise(session.privateConversationData['accessToken']).then((res) => {
+            session.send('Your name is \'%s\'.', res.displayName);
         });
-    });
-});
+
+}]);
 
 bot.dialog('/', intents);    
 
 //=========================================================
 // SharePoint utilities
 //=========================================================
-var searchForExpertise = (query, accessToken) => {
+var searchForExpertise = (accessToken) => {
     
-        var p = new Promise((resolve, reject) => {
+    var p = new Promise((resolve, reject) => {
 
-            var endpointUrl = "https://graph.microsoft.com/v1.0/me"
-    
-            // Node fetch is the server version of whatwg-fetch
-            var fetch = require('node-fetch');
-    
-            fetch(endpointUrl, {
-                method: 'GET',
-                headers: {
-                    // The APIs require an OAuth access token in the Authorization header, formatted like this: 'Authorization: Bearer <token>'. 
-                    "Authorization" :  "Bearer " + accessToken,
-                    // Needed to get the results as JSON instead of Atom XML (default behavior)
-                    "Accept" : "application/json;odata=verbose"
-                }           
-            }).then(function(res) {
-                return res.json();
-            }).then(function(json) {
-                resolve(json);
-            }).catch(function(err) {
-                reject(err);
-            });
+        var endpointUrl = "https://graph.microsoft.com/v1.0/me"
+
+        // Node fetch is the server version of whatwg-fetch
+        var fetch = require('node-fetch');
+
+        fetch(endpointUrl, {
+            method: 'GET',
+            headers: {
+                // The APIs require an OAuth access token in the Authorization header, formatted like this: 'Authorization: Bearer <token>'. 
+                "Authorization" :  "Bearer " + accessToken,
+                // Needed to get the results as JSON instead of Atom XML (default behavior)
+                "Accept" : "application/json;odata.metadata=full"
+            }           
+        }).then(function(res) {
+            return res.json();
+        }).then(function(json) {
+            resolve(json);
+        }).catch(function(err) {
+            reject(err);
         });
-    
-        return p;
-    }
+    });
 
+    return p;
+}
