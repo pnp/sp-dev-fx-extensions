@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.0",
+    "libraryName": "js-command-lock-item",
+    "libraryId": "f63c616d-aa4d-4bf3-a20a-3d6f230d421a",
+    "environment": "spo"
+  }
+}
