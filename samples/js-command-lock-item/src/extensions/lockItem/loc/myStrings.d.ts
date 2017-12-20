@@ -3,6 +3,8 @@ declare interface ILockItemCommandSetStrings {
   LockDocument: string;
   UniquePermissionsWarning: string;
   ErrorLocking: string;
+  SuccessLocking: string;
+  SuccessUnlocking: string;
 }
 
 declare module 'LockItemCommandSetStrings' {

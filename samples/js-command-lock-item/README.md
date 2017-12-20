@@ -1,29 +1,50 @@
-## js-command-lock-item
+# Lock Item Command Set Customizer
 
-This is where you include your WebPart documentation.
+## Summary
+The sample illustrates the ability to lock/unlock selected item/document for the current user.
+The lock is implemented as item's unique permissions set to Full Control for current user only.
+The lock is available only for items that inherit permissions from the parent. Items with unique permissions can't be locked as we can't unlock them correctly later on.
+All other permissions are deleted.
+The Command is available only for users who have "Manage Permissions" permissions for the list/document library.
 
-### Building the code
+![Item Permissions Command Set](./assets/lock-item.png)
+
+## Used SharePoint Framework Version 
+1.4
+
+## Applies to
+
+* [SharePoint Framework](http://dev.office.com/sharepoint/docs/spfx/sharepoint-framework-overview)
+
+Solution|Author(s)
+--------|---------
+js-command-lock-item | Alex Terentiev ([Sharepointalist Inc.](http://www.sharepointalist.com), [AJIXuMuK](https://github.com/AJIXuMuK))
+
+## Version history
+
+Version|Date|Comments
+-------|----|--------
+1.0|December 20, 2017|Initial release
+
+## Disclaimer
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+## Features
+This project contains SharePoint Framework extension that illustrates next features:
+* command set customizer
+* current user permissions check
+* sp-pnp-js usage
+* spHttpClient usage
+* work with list item/document permissions (break role inheritance, reset role inheritance, add role assignment)
+
+## Building and debugging the code
 
 ```bash
 git clone the repo
 npm i
 npm i -g gulp
-gulp
+gulp serve --nobrowser
 ```
-
-This package produces the following:
-
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
-
-### Build options
-
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
 
 On your SharePoint tenant:
 
