@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "lock-item-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/lockItem/LockItemCommandSet.js",
+          "manifest": "./src/extensions/lockItem/LockItemCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "LockItemCommandSetStrings": "lib/extensions/lockItem/loc/{locale}.js"
+  }
+}
