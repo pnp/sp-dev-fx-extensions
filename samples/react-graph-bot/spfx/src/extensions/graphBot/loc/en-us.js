@@ -1,5 +1,5 @@
 define([], function() {
   return {
-    "Title": "GraphBotApplicationCustomizer"
+    "GraphBotButtonLabel": "Chat with a bot"
   }
 });

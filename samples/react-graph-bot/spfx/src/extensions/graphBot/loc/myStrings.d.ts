@@ -1,5 +1,5 @@
 declare interface IGraphBotApplicationCustomizerStrings {
-  Title: string;
+  GraphBotButtonLabel: string;
 }
 
 declare module 'GraphBotApplicationCustomizerStrings' {

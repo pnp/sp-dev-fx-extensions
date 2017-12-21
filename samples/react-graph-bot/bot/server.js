@@ -42,7 +42,6 @@ bot.on("event", function (event) {
     var botStorageContext = {
         userId: event.address.user.id,
         conversationId: event.address.conversation.id,
-        // address: event.address,
         persistUserData: true,
         persistConversationData: true,
     }     
@@ -52,6 +51,7 @@ bot.on("event", function (event) {
         privateConversationData: { 
             accessToken: event.value 
         }}, function(err) {
+            // Log here
             var msg = new builder.Message().address(event.address);
             msg.data.text = "Hi, how are you?";
             bot.send(msg); 
@@ -104,7 +104,7 @@ var intents = new builder.IntentDialog({ recognizers: [recognizer] })
 bot.dialog('/', intents);    
 
 //=========================================================
-// SharePoint utilities
+// Microsoft Graph queries
 //=========================================================
 var searchForExpertise = (accessToken) => {
     
