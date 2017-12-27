@@ -48,7 +48,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
         };     
 
         // Enable sp-pnp-js session storage wrapper
-        pnp.storage.session.enabled = true;
+        pnp.storage.local.enabled = true;
     }
 
     public render() {
@@ -99,6 +99,9 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
     
     public async componentDidMount() {
         
+        // Delete expired local storage items (conversation id, etc.)
+        pnp.storage.local.deleteExpired();
+
         // Read the bot settings from the tenant property bag
         const settings = await this._getGraphBotSettings(this.props);
 
@@ -153,7 +156,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
         });
 
         // Get the conversation id if there is one. Otherwise, a new one will be created
-        const conversationId = pnp.storage.session.get(this.CONVERSATION_ID_KEY);
+        const conversationId = pnp.storage.local.get(this.CONVERSATION_ID_KEY);
 
         // Initialize the bot connection direct line
         this._botConnection = new DirectLine({
@@ -169,7 +172,11 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
                 case ConnectionStatus.Online :
                     if (!conversationId) {
                         // Store the current conversation id in the browser session storage
-                        pnp.storage.session.put(this.CONVERSATION_ID_KEY, this._botConnection["conversationId"]);
+                        // with 15 minutes expiration
+                        pnp.storage.local.put(
+                            this.CONVERSATION_ID_KEY, this._botConnection["conversationId"], 
+                            pnp.util.dateAdd(new Date(), "minute", 15)
+                        );
                     }
 
                     break;
