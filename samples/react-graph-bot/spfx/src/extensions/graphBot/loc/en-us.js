@@ -1,6 +1,6 @@
 define([], function() {
   return {
-    "GraphBotButtonLabel": "Chat with a bot",
+    "GraphBotButtonLabel": "My intranet assistant",
     "GraphBotInitializationMessage": "Please wait during the conversation setup."
   }
 });

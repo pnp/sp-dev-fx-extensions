@@ -115,6 +115,26 @@ const intents = new builder.IntentDialog({ recognizers: [recognizer] })
             console.log(error.message);
         });
     }
+)
+/* LUIS Intent: "GetMyManager" */
+.matches('GetMyManager',
+    (session, args, next) => {        
+        getMyManager(session.privateConversationData.accessToken).then((manager) => {
+                
+            let message;
+
+            if (!manager) {
+                message = "You don't have any manager. It looks like you're the boss."
+            } else {
+                message = `Your manager is ${manager}.`;
+            }
+            
+            session.send(message);
+
+        }).catch(error => {
+            console.log(error.message);
+        });
+    }
 );
 /* LUIS Intent: <put_your_intents_here`> 
 .matches('<your_intent>',
@@ -159,6 +179,44 @@ const getMyGroups = (accessToken) => {
         }).then((json) => {
             const groups = json.value.filter((group) => { return group["@odata.type"] === "#microsoft.graph.group"});
             resolve(groups);
+        }).catch((error) => {
+            reject(error);
+        });
+    });
+
+    return p;
+}
+
+/**
+ * Get the current user manager in the organization 
+ */
+const getMyManager = (accessToken) => {
+
+    const p = new Promise((resolve, reject) => {
+
+        const endpointUrl = "https://graph.microsoft.com/v1.0/me/manager";
+        
+        fetch(endpointUrl, {
+            method: 'GET',
+            headers: {
+                // The APIs require an OAuth access token in the Authorization header, formatted like this: 'Authorization: Bearer <token>'. 
+                "Authorization" :  "Bearer " + accessToken,
+                // Needed to get the results as JSON instead of Atom XML (default behavior)
+                "Accept" : "application/json;odata.metadata=full"
+            }           
+        }).then((response) => {
+            if (!response.ok) {
+
+                if (response.status === 404) {
+                    // No manager
+                    resolve(null);
+                } else {
+                    throw Error(response.statusText);
+                }                
+            } 
+            return response.json();
+        }).then((json) => {
+            resolve(json.displayName);
         }).catch((error) => {
             reject(error);
         });

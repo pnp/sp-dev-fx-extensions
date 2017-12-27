@@ -17,18 +17,19 @@ import IGraphBotSettings from "./IGraphBotSettings";
 import * as strings from "GraphBotApplicationCustomizerStrings";
 import { ActivityOrID } from "botframework-webchat/built/Chat";
 
-// Add your scopes according the graph query you want to perfrom
-// Use the Microsoft Graph explorer/documentation to see needed permissions by queries (https://developer.microsoft.com/en-us/graph/graph-explorer)
-const scopes = ["Directory.Read.All"];
+// Add your scopes according the graph queries you want to perfrom
+// Use the Microsoft Graph explorer/documentation to see required permissions by queries 
+// (https://developer.microsoft.com/en-us/graph/graph-explorer)
+const scopes = ["Directory.Read.All","User.Read"];
 
 class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
 
     private _botConnection: DirectLine;
-    private clientApplication: UserAgentApplication;
+    private _clientApplication: UserAgentApplication;
     private _botId: string;
     private _directLineSecret: string;
 
-    // Tenant property bag keys 
+    // Local storage keys
     private readonly ENTITYKEY_CLIENTID = "PnPGraphBot_ClientId";
     private readonly ENTITYKEY_BOTID =  "PnPGraphBot_BotId";
     private readonly ENTITYKEY_DIRECTLINESECRET = "PnPGraphBot_BotDirectLineSecret";
@@ -55,8 +56,8 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
 
         // Be careful, the user Id is mandatory to be able to use the bot state service (i.e privateConversationData)
         return (
-            <div>
-                <ActionButton onClick= { this._login } iconProps={ { iconName: "Robot" } }>     
+            <div className={ styles.banner }>
+                <ActionButton onClick= { this._login } checked={ true } iconProps={ { iconName: "Robot", className: styles.banner__chatButtonIcon } } className={ styles.banner__chatButton}>     
                     { strings.GraphBotButtonLabel }              
                 </ActionButton>
                 <Panel
@@ -102,13 +103,13 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
         // Delete expired local storage items (conversation id, etc.)
         pnp.storage.local.deleteExpired();
 
-        // Read the bot settings from the tenant property bag
+        // Read the bot settings from the tenant property bag or local storage if available
         const settings = await this._getGraphBotSettings(this.props);
 
         // Initiliaze the MSAL User Agent Application
         this._initMsalUserAgentApplication(settings.ClientId, settings.TenantId);
 
-        // No need to store these informations in state because they are never updated after that
+        // Note: no need to store these informations in state because they are never updated after that
         this._botId = settings.BotId;
         this._directLineSecret = settings.DirectLineSecret;
     }
@@ -119,12 +120,12 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
      */
     private _sendAccessTokenToBot(token: string): void {
 
-        // Using the backchannel to pass the auth token retrieved from OAuth2 Implicit flow
+        // Using the backchannel to pass the auth token retrieved from OAuth2 implicit grant flow
         this._botConnection.postActivity({ 
             type: "event", 
             value: {
                 accessToken: token,
-                userDisplayName: this.props.context.pageContext.user.displayName
+                userDisplayName: this.props.context.pageContext.user.displayName // For the welcome message
             },
             from: { 
                 // IMPORTANT (1 of 2): USE THE SAME USER ID FOR BOT STATE TO BE ABLE TO GET USER SPECIFIC DATA IN THE BOT STATE
@@ -134,7 +135,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
         })
         .subscribe(
             id => {
-                // Show the panel only if the event has been well received by the bot
+                // Show the panel only if the event has been well received by the bot (RxJs format)
                 this.setState({
                     isBotInitializing :false
                 });
@@ -161,7 +162,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
         // Initialize the bot connection direct line
         this._botConnection = new DirectLine({
             secret: this._directLineSecret,
-            webSocket: false, // Needed to be able to retreive history
+            webSocket: false, // Needed to be able to retrieve history
             conversationId: conversationId ? conversationId : null,
         });
 
@@ -184,36 +185,38 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
         });
 
         // Login the user
-        if (this.clientApplication.getUser()) {
+        if (this._clientApplication.getUser()) {
             const token = await this._getAccessToken();
 
             // The acces token is sent every time to the bot because we don't want to store it directly in the bot state per user and handle expiration/refresh behavior
             // This responsibility is delegated to the Web Part itself since it handles the OAuth2 flow.
+            // If the token expired, a new one will be generated by reprompting the user
             this._sendAccessTokenToBot(token);
+
         } else {
 
             // Be careful here, the loginPopup actuall returns an id_token, not an access_token
             // You can validate the JWT token by your own if you want (not mandatory)
-            const idToken = await this.clientApplication.loginPopup(scopes);
+            const idToken = await this._clientApplication.loginPopup(scopes);
             const accessToken = await this._getAccessToken();
             this._sendAccessTokenToBot(accessToken);
         }
     }
 
     /**
-     * Retrieve a valid accessToken
+     * Retrieve a valid accessToken for the current user
      */
     private async _getAccessToken() {
 
         try {
             // Try to get a token silently, if the user is already signed in
-            const token = await this.clientApplication.acquireTokenSilent(scopes);
+            const token = await this._clientApplication.acquireTokenSilent(scopes);
             return token;
 
         } catch (error) {
 
             try {
-                const token =  await this.clientApplication.acquireTokenPopup(scopes);
+                const token =  await this._clientApplication.acquireTokenPopup(scopes);
                 return token;
             } catch (error) {
                 Logger.write(Text.format("[GraphBot_getAccessToken]: Error: {0}", error));
@@ -222,36 +225,39 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
     }
 
     /**
-     * Read the bot settings in the tenant property bag
+     * Read the bot settings in the tenant property bag or local storage
      * @param props the component properties
      */
     private async _getGraphBotSettings(props: IGraphBotProps): Promise<IGraphBotSettings> {
     
+        // Read these values from the local storage first
         let clientId = pnp.storage.local.get(this.ENTITYKEY_CLIENTID);
         let botId = pnp.storage.local.get(this.ENTITYKEY_BOTID);
         let directLineSecret = pnp.storage.local.get(this.ENTITYKEY_DIRECTLINESECRET);
         let tenantId = pnp.storage.local.get(this.ENTITYKEY_TENANTID);
 
+        const expiration = pnp.util.dateAdd(new Date(), "day", 1);
+
         try {
 
             if (!clientId) {
                 clientId = await props.tenantDataProvider.getTenantPropertyValue(this.ENTITYKEY_CLIENTID);
-                pnp.storage.local.put(this.ENTITYKEY_CLIENTID, clientId);
+                pnp.storage.local.put(this.ENTITYKEY_CLIENTID, clientId, expiration);
             }
 
             if (!botId) {
                 botId = await props.tenantDataProvider.getTenantPropertyValue(this.ENTITYKEY_BOTID);
-                pnp.storage.local.put(this.ENTITYKEY_BOTID, botId);
+                pnp.storage.local.put(this.ENTITYKEY_BOTID, botId, expiration);
             }
 
             if (!directLineSecret) {
                 directLineSecret = await props.tenantDataProvider.getTenantPropertyValue(this.ENTITYKEY_DIRECTLINESECRET);;
-                pnp.storage.local.put(this.ENTITYKEY_DIRECTLINESECRET, directLineSecret);
+                pnp.storage.local.put(this.ENTITYKEY_DIRECTLINESECRET, directLineSecret, expiration);
             }
 
             if (!tenantId) {
                 tenantId = await props.tenantDataProvider.getTenantPropertyValue(this.ENTITYKEY_TENANTID);
-                pnp.storage.local.put(this.ENTITYKEY_TENANTID, tenantId);
+                pnp.storage.local.put(this.ENTITYKEY_TENANTID, tenantId, expiration);
             }
             
             return {
@@ -262,7 +268,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
             } as IGraphBotSettings;
 
         } catch (error) {
-            Logger.write(Text.format("[PageHeader_getGraphBotSettings]: Error: {0}", error));
+            Logger.write(Text.format("[GraphBot_getGraphBotSettings]: Error: {0}", error));
         }
     }
 
@@ -273,12 +279,11 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
      */
     private _initMsalUserAgentApplication(clientId: string, tenantId: string) {
 
-        // Initialize the user agent application for MSAL
-        if (!this.clientApplication) {
+        if (!this._clientApplication) {
 
             const authorityUrl = Text.format("https://login.microsoftonline.com/{0}", tenantId);
 
-            this.clientApplication = new UserAgentApplication(clientId, authorityUrl, null, {
+            this._clientApplication = new UserAgentApplication(clientId, authorityUrl, null, {
                 // This URL should be the same as the AAD app registered in registration portal
                 // This is this parameter allowing to get the login popup to close
                 redirectUri: this.props.context.pageContext.site.absoluteUrl,
