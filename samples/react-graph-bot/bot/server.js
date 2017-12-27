@@ -1,18 +1,19 @@
 /*-----------------------------------------------------------------------------
-A simple echo bot for the Microsoft Bot Framework. 
+react-grapb-bot
+This sample shows how to handle graph queries with an access tokem retrieved from a SharePoint site.
 -----------------------------------------------------------------------------*/
-
-var restify = require('restify');
-var builder = require('botbuilder');
+const restify = require('restify');
+const builder = require('botbuilder');
+const fetch = require('node-fetch');
 
 // Setup Restify Server
-var server = restify.createServer();
+const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
   
 // Create chat connector for communicating with the Bot Framework Service
-var connector = new builder.ChatConnector({
+const connector = new builder.ChatConnector({
     appId: process.env.MicrosoftAppId,
     appPassword: process.env.MicrosoftAppPassword,
     stateEndpoint: process.env.BotStateEndpoint,
@@ -22,99 +23,126 @@ var connector = new builder.ChatConnector({
 // Listen for messages from users 
 server.post('/api/messages', connector.listen());
 
-/*----------------------------------------------------------------------------------------
-* Bot Storage: This is a great spot to register the private state storage for your bot. 
-* We provide adapters for Azure Table, CosmosDb, SQL Azure, or you can implement your own!
-* For samples and documentation, see: https://github.com/Microsoft/BotBuilder-Azure
-* ---------------------------------------------------------------------------------------- */
+// Create an "in memory" bot storage. 
+// In production scenario, Microsoft provides adapters for Azure Table, CosmosDb, SQL Azure, or you can implement your own!
+// For samples and documentation, see: https://github.com/Microsoft/BotBuilder-Azure
+const botStorage = new builder.MemoryBotStorage();
+const bot = new builder.UniversalBot(connector);
 
-// Create your bot with a function to receive messages from the user
-// var bot = new builder.UniversalBot(connector);
+// Register in-memory storage for the bot
+bot.set('storage', botStorage); 
 
-var inMemoryStorage = new builder.MemoryBotStorage();
-var bot = new builder.UniversalBot(connector);
+//=========================================================
+// Bot events
+//=========================================================
+bot.on("event", (event) => {
 
-// Register in-memory storage
-bot.set('storage', inMemoryStorage); 
+    switch (event.name) {
 
-bot.on("event", function (event) {
+        // Event when an access token has been received for an user
+        case "userAuthenticated": 
 
-    var botStorageContext = {
-        userId: event.address.user.id,
-        conversationId: event.address.conversation.id,
-        persistUserData: true,
-        persistConversationData: true,
-    }     
+            if (event.value) {
 
-    // Save user data in the in memory storage
-    inMemoryStorage.saveData(botStorageContext, { 
-        privateConversationData: { 
-            accessToken: event.value 
-        }}, function(err) {
-            // Log here
-            var msg = new builder.Message().address(event.address);
-            msg.data.text = "Hi, how are you?";
-            bot.send(msg); 
-    });
+                // Save user data in the in bot storage to be able to retrieve it later via the session object
+                const botStorageContext = {
+                    userId: event.address.user.id,
+                    conversationId: event.address.conversation.id,
+                    persistUserData: true,
+                    persistConversationData: true,
+                }     
+                
+                // Send welcome message on first bot connection
+                botStorage.getData(botStorageContext, (error, data) => {
+                    if (!data.privateConversationData) {
+                        // We display a welcome message if this is the first conversation
+                        const msg = new builder.Message().address(event.address);
+                        msg.data.text = `Hi ${event.value.userDisplayName}, what can I do your you?`;
+                        bot.send(msg); 
+                    }
+                });
+  
+                botStorage.saveData(botStorageContext, { 
+                    privateConversationData: { 
+                        accessToken: event.value.accessToken,
+                        userDisplayName: event.value.userDisplayName,
+                    }}, (error) => {
+                });       
+            }
+
+            break;
+        
+        default: 
+            break;
+    }
 });
 
-// Make sure you add code to validate these fields
-var luisAppId = "7bd9789f-c786-4e4b-8d83-32e29c1c84c2";
-var luisAPIKey = "e26d277b6c8b4d02b549d5088045e3c3";
-var luisAPIHostName = process.env.LuisAPIHostName || 'westus.api.cognitive.microsoft.com';
+//=========================================================
+// LUIS settings
+//=========================================================
+// In development, set these fields in the node.js environement first (ex: in the lauch.json file in Visual Studio Code)
+// In production, set these fields in the Web App settings
+const luisAppId = process.env.LuisAppId;
+const luisAPIKey = process.env.LuisAPIKey;
+const luisAPIHostName = process.env.LuisAPIHostName || 'westus.api.cognitive.microsoft.com';
+const LuisModelUrl = 'https://' + luisAPIHostName + '/luis/v2.0/apps/' + luisAppId + '?subscription-key=' + luisAPIKey;
 
-let LuisModelUrl = 'https://' + luisAPIHostName + '/luis/v1/application?id=' + luisAppId + '&subscription-key=' + luisAPIKey;
-
-LuisModelUrl = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/7bd9789f-c786-4e4b-8d83-32e29c1c84c2?subscription-key=e26d277b6c8b4d02b549d5088045e3c3&staging=true&verbose=true&timezoneOffset=0&q="
-
-var getUserAccessTokenFromState =  (session, args, next) => {
-    
-        // Get user access token if there is one
-        var botStorageContext = {
-            conversationId: session.message.address.conversation.id,
-            userId: session.message.address.user.id,
-            persistUserData: true,
-            persistConversationData: true,
-        }
-    
-        inMemoryStorage.getData(botStorageContext, function(e, data) {
-
-            session.privateConversationData['accessToken'] = data.privateConversationData.accessToken;
-            next();
-        });
-    }
-
-// Main dialog with LUIS
-var recognizer = new builder.LuisRecognizer(LuisModelUrl);
-var intents = new builder.IntentDialog({ recognizers: [recognizer] })
-
+//=========================================================
+// Bot dialogs
+//=========================================================
+const recognizer = new builder.LuisRecognizer(LuisModelUrl);
+const intents = new builder.IntentDialog({ recognizers: [recognizer] })
 .onDefault((session) => {
     session.send('Sorry, I did not understand \'%s\'.', session.message.text);
 })
-.matches('GetMyName',
-    [   getUserAccessTokenFromState, 
+/* LUIS Intent: "GetMyGroups" */
+.matches('GetMyGroups',
+    (session, args, next) => {        
+        getMyGroups(session.privateConversationData.accessToken).then((groups) => {
+                
+            // Create adaptive cards
+            let cards = [];
+            groups.map((group => {
+                 cards.push(new builder.ThumbnailCard(session).title(group.displayName));
+            }));
+
+            const reply = new builder.Message(session)
+            .attachmentLayout(builder.AttachmentLayout.list)
+            .attachments(cards);
+
+            session.send(reply);
+        }).catch(error => {
+            console.log(error.message);
+        });
+    }
+);
+/* LUIS Intent: <put_your_intents_here`> 
+.matches('<your_intent>',
+    [   getUserAccessTokenFromStorage, 
         (session, args, next) => {
         
-        searchForExpertise(session.privateConversationData['accessToken']).then((res) => {
-            session.send('Your name is \'%s\'.', res.displayName);
+           <your_graph_query_using_access_token>
         });
-
 }]);
+*/
 
-bot.dialog('/', intents);    
+// Bot dialog entry point
+bot.dialog('/', intents); 
 
 //=========================================================
-// Microsoft Graph queries
+// Microsoft Graph queries (examples)
 //=========================================================
-var searchForExpertise = (accessToken) => {
+
+/**
+ * Get user groups (example).
+ * In real case scenario, you would map your intents to corresponding graph queries here
+ */
+const getMyGroups = (accessToken) => {
     
-    var p = new Promise((resolve, reject) => {
+    const p = new Promise((resolve, reject) => {
 
-        var endpointUrl = "https://graph.microsoft.com/v1.0/me"
-
-        // Node fetch is the server version of whatwg-fetch
-        var fetch = require('node-fetch');
-
+        const endpointUrl = "https://graph.microsoft.com/v1.0/me/memberOf";
+        
         fetch(endpointUrl, {
             method: 'GET',
             headers: {
@@ -123,12 +151,16 @@ var searchForExpertise = (accessToken) => {
                 // Needed to get the results as JSON instead of Atom XML (default behavior)
                 "Accept" : "application/json;odata.metadata=full"
             }           
-        }).then(function(res) {
-            return res.json();
-        }).then(function(json) {
-            resolve(json);
-        }).catch(function(err) {
-            reject(err);
+        }).then((response) => {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            } 
+            return response.json();
+        }).then((json) => {
+            const groups = json.value.filter((group) => { return group["@odata.type"] === "#microsoft.graph.group"});
+            resolve(groups);
+        }).catch((error) => {
+            reject(error);
         });
     });
 
