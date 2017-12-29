@@ -5,7 +5,7 @@
 This sample demonstrates how to integrate a bot within a SharePoint Online portal supporting authentication to access Azure AD protected APIs like Microsoft graph resources. Behind the scenes, this sample implements the OAuth2 implicit grant flow using the MSAL JavaScript library. 
 
 ### When to use this pattern? ###
-This sample is suitable when you want to create a bot using Web Chat channel **only**, for instance to integrate a bot assistant in your SharePoint intranet portal. 
+This sample is suitable when you want to create a bot using the web chat channel **only**, for instance to integrate a bot assistant in your SharePoint intranet portal. 
 However, if you need to access protected APIs in your bot but also want mutliple channels (like, Microsoft Teams, Skype, etc.), you might use the OAuth2 authorization grant flow implementation for Node.js instead. You can refer to this sample [https://github.com/FranckyC/SharePointBot](https://github.com/FranckyC/SharePointBot) to get started.
 
 <p align="center">
@@ -134,7 +134,7 @@ The SharePoint extension does not store any settings directly in the code. They 
   | Direct Line Secret        | The bot Direct Line channel secret. You can get this value in the *"Channels"* option from the bot Azure resource.
   | Tenant Id                 | The Office 365 tenant id. You can get this value in the [Azure AD portal](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b).
  
-- Execute the script targeting your Office 365 tenant.
+- Execute the script targeting your Office 365 tenant. Make sure the latest [PnP Cmdlets](https://github.com/SharePoint/PnP-PowerShell/releases) are installed on your machine.
 
 ## Debug your bot locally ##
 

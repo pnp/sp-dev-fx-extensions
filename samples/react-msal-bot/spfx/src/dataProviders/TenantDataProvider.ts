@@ -22,7 +22,7 @@ class TenantDataProvider implements ITenantDataProvider {
 
         try {
             const response = await this._context.spHttpClient.get(url, SPHttpClient.configurations.v1);            
-            const data = await response.json()
+            const data = await response.json();
                 
             if (response.ok) {
                 return data.Value;

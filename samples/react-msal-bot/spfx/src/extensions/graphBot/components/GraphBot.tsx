@@ -251,7 +251,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
             }
 
             if (!directLineSecret) {
-                directLineSecret = await props.tenantDataProvider.getTenantPropertyValue(this.ENTITYKEY_DIRECTLINESECRET);;
+                directLineSecret = await props.tenantDataProvider.getTenantPropertyValue(this.ENTITYKEY_DIRECTLINESECRET);
                 pnp.storage.local.put(this.ENTITYKEY_DIRECTLINESECRET, directLineSecret, expiration);
             }
 

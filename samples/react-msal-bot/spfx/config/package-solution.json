@@ -1,7 +1,7 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "PnP - Graph Bot",
+    "name": "PnP - MSAL Graph Bot",
     "id": "f300ad34-03b1-4e32-9e9b-6a89b054987d",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
@@ -20,6 +20,6 @@
     ]
   },
   "paths": {
-    "zippedPackage": "solution/pnp-graph-bot.sppkg"
+    "zippedPackage": "solution/pnp-msal-graph-bot.sppkg"
   }
 }

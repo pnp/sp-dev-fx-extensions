@@ -1,6 +1,8 @@
 /*-----------------------------------------------------------------------------
-react-grapb-bot
-This sample shows how to handle graph queries with an access tokem retrieved from a SharePoint site.
+Name: react-msal-bot
+Author: Franck Cornu (MVP Office Development at aequos) - Twitter @FranckCornu
+Date: January 8, 2018
+Description: This sample shows how to handle Microsoft graph queries with an access token retrieved from a SharePoint site via the backchannel
 -----------------------------------------------------------------------------*/
 const restify = require('restify');
 const builder = require('botbuilder');
@@ -99,8 +101,7 @@ const intents = new builder.IntentDialog({ recognizers: [recognizer] })
 .matches('GetMyGroups',
     (session, args, next) => {        
         getMyGroups(session.privateConversationData.accessToken).then((groups) => {
-                
-            // Create adaptive cards
+ 
             let cards = [];
             groups.map((group => {
                  cards.push(new builder.ThumbnailCard(session).title(group.displayName));

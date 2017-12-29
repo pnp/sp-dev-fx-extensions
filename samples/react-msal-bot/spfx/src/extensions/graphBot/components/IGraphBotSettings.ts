@@ -12,7 +12,7 @@
     /**
      * The bot application id
      */
-    BotId: string
+    BotId: string;
 
     /**
      * The secret key for the bot "Direct Line" channel
