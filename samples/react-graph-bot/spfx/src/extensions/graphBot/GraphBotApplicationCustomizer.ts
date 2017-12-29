@@ -55,7 +55,7 @@ export default class GraphBotApplicationCustomizer
 
       // The extension should not assume that the expected placeholder is available.
       if (!this._topPlaceHolder) {
-        console.error('The expected placeholder (PageHeader) was not found.');
+        console.error('The expected placeholder was not found.');
         return;
       }
 
@@ -65,7 +65,6 @@ export default class GraphBotApplicationCustomizer
           {
             context: this.context,
             tenantDataProvider: this._tenantDataProvider,
-
           } as IGraphBotProps
         );
 

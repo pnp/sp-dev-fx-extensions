@@ -18,7 +18,7 @@
     "@microsoft/sp-application-base": "~1.4.0",
     "botframework-webchat": "0.9.1",
     "msal": "^0.1.3",
-    "sp-pnp-js": "^3.0.2"
+    "sp-pnp-js": "^3.0.3"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.4.0",

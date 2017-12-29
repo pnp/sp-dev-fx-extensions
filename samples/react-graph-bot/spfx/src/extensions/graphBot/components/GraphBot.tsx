@@ -80,7 +80,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
                             }
                             user={
                                 {
-                                    // IMPORTANT (2 of 2): USE THE SAME USER ID FOR BOT STATE TO BE ABLE TO GET USER SPECIFIC DATA IN THE BOT STATE
+                                    // IMPORTANT (2 of 2): USE THE SAME USER ID FOR BOT STATE TO BE ABLE TO GET USER SPECIFIC DATA
                                     id: this.props.context.pageContext.user.email,
                                     name: this.props.context.pageContext.user.displayName,
                                 }
@@ -128,7 +128,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
                 userDisplayName: this.props.context.pageContext.user.displayName // For the welcome message
             },
             from: { 
-                // IMPORTANT (1 of 2): USE THE SAME USER ID FOR BOT STATE TO BE ABLE TO GET USER SPECIFIC DATA IN THE BOT STATE
+                // IMPORTANT (1 of 2): USE THE SAME USER ID FOR BOT STATE TO BE ABLE TO GET USER SPECIFIC DATA
                 id: this.props.context.pageContext.user.email 
             }, 
             name: "userAuthenticated" // Custom name to identify this event in the bot
@@ -285,7 +285,7 @@ class GraphBot extends React.Component<IGraphBotProps, IGraphBotState> {
 
             this._clientApplication = new UserAgentApplication(clientId, authorityUrl, null, {
                 // This URL should be the same as the AAD app registered in registration portal
-                // This is this parameter allowing to get the login popup to close
+                // This is this parameter getting login popup window to close
                 redirectUri: this.props.context.pageContext.site.absoluteUrl,
             });
         }
