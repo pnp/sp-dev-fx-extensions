@@ -3,13 +3,14 @@
   "solution": {
     "name": "react-application-duetasks-client-side-solution",
     "id": "97716530-8b48-415e-8ffd-e7af8d591407",
-    "version": "1.2.0.0",
+    "version": "1.4.0.0",
+    "includeClientSideAssets": true,
     "features": [
       {
         "title": "Overdue Tasks Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "611de3f7-b513-4906-aff5-4c1b397489ee",
-        "version": "1.2.0.0",
+        "version": "1.4.0.0",
         "assets": {
           "elementManifests": [
             "elements.xml"
