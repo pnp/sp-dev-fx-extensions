@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="GraphBot"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="fbb38806-54e4-4ddd-a413-e7a1611fcb08"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

@@ -1,0 +1,76 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "pnp-graph-bot",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "GetMyGroups"
+    },
+    {
+      "name": "GetMyManager"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "groups",
+      "intent": "GetMyGroups",
+      "entities": []
+    },
+    {
+      "text": "get my manager",
+      "intent": "GetMyManager",
+      "entities": []
+    },
+    {
+      "text": "who is my manager",
+      "intent": "GetMyManager",
+      "entities": []
+    },
+    {
+      "text": "manage",
+      "intent": "GetMyManager",
+      "entities": []
+    },
+    {
+      "text": "manager",
+      "intent": "GetMyManager",
+      "entities": []
+    },
+    {
+      "text": "my boss",
+      "intent": "GetMyManager",
+      "entities": []
+    },
+    {
+      "text": "what are my groups",
+      "intent": "GetMyGroups",
+      "entities": []
+    },
+    {
+      "text": "my groups",
+      "intent": "GetMyGroups",
+      "entities": []
+    },
+    {
+      "text": "get my groups",
+      "intent": "GetMyGroups",
+      "entities": []
+    },
+    {
+      "text": "show me groups i belong to",
+      "intent": "GetMyGroups",
+      "entities": []
+    }
+  ]
+}
