@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <Field ID="{1199e876-8633-4003-ab04-996ed1f5dae9}"
+            Name="SPFxSentimentIcon"
+            DisplayName="Sentiment Icon"
+            Type="Number"
+            Min="0"
+            Required="FALSE"
+            Group="SPFx Columns"
+            ClientSideComponentId="49407339-ef31-4775-b341-6479f2d8e25d">
+    </Field>
+</Elements>

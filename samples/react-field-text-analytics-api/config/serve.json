@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://inheritscloud.sharepoint.com/sites/ModernTeamSite/Lists/TextAnalyticsDemo/AllItems.aspx",
+      "fieldCustomizers": {
+        "SPFxSentimentIcon": {
+          "id": "49407339-ef31-4775-b341-6479f2d8e25d",
+          "properties": {
+            "textAnalyticsApiKey": "",
+            "fieldToAnalyse": "Title"
+          }
+        }
+      }
+    },
+    "sentimentAnalytics": {
+      "pageUrl": "https://inheritscloud.sharepoint.com/sites/ModernTeamSite/Lists/TextAnalyticsDemo/AllItems.aspx",
+      "fieldCustomizers": {
+        "SPFxSentimentIcon": {
+          "id": "49407339-ef31-4775-b341-6479f2d8e25d",
+          "properties": {
+            "textAnalyticsApiKey": "",
+            "fieldToAnalyse": "Title"
+          }
+        }
+      }
+    }
+  }
+}
