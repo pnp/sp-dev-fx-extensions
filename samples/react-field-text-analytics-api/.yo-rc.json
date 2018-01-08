@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.0",
+    "libraryName": "react-field-text-analytics-api",
+    "libraryId": "6f60f165-adb6-4e9c-96b3-6ca0f37c3c5e",
+    "environment": "spo"
+  }
+}
