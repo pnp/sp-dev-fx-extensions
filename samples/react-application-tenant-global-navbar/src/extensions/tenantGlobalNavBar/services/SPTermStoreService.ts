@@ -10,8 +10,8 @@ export interface ISPTermStoreServiceConfiguration {
   spHttpClient: SPHttpClient;
   siteAbsoluteUrl: string;
 }
-  
-  
+
+
 /**
  * @interface
  * Generic Term Object (abstract interface)
@@ -50,7 +50,7 @@ export class SPTermStoreService {
    * @function
    * Gets the collection of term stores in the current SharePoint env
    */
-  public async getTermsFromTermSetAsync(termSetName: string): Promise<ISPTermObject[]> {
+  public async getTermsFromTermSetAsync(termSetName: string, termSetLocal: Number): Promise<ISPTermObject[]> {
     if (Environment.type === EnvironmentType.SharePoint ||
         Environment.type === EnvironmentType.ClassicSharePoint) {
 
@@ -68,7 +68,7 @@ export class SPTermStoreService {
 
       //Build the Client Service Request
       let clientServiceUrl = this.siteAbsoluteUrl + '/_vti_bin/client.svc/ProcessQuery';
-      let data = '<Request AddExpandoFieldTypeSuffix="true" SchemaVersion="15.0.0.0" LibraryVersion="16.0.0.0" ApplicationName="JavaScript Client" xmlns="http://schemas.microsoft.com/sharepoint/clientquery/2009"><Actions><ObjectPath Id="2" ObjectPathId="1" /><ObjectIdentityQuery Id="3" ObjectPathId="1" /><ObjectPath Id="5" ObjectPathId="4" /><ObjectIdentityQuery Id="6" ObjectPathId="4" /><ObjectPath Id="8" ObjectPathId="7" /><Query Id="9" ObjectPathId="7"><Query SelectAllProperties="false"><Properties /></Query><ChildItemQuery SelectAllProperties="false"><Properties><Property Name="Terms" SelectAll="true"><Query SelectAllProperties="false"><Properties /></Query></Property></Properties></ChildItemQuery></Query></Actions><ObjectPaths><StaticMethod Id="1" Name="GetTaxonomySession" TypeId="{981cbc68-9edc-4f8d-872f-71146fcbb84f}" /><Method Id="4" ParentId="1" Name="GetDefaultSiteCollectionTermStore" /><Method Id="7" ParentId="4" Name="GetTermSetsByName"><Parameters><Parameter Type="String">' + termSetName + '</Parameter><Parameter Type="Int32">1033</Parameter></Parameters></Method></ObjectPaths></Request>';
+      let data = '<Request AddExpandoFieldTypeSuffix="true" SchemaVersion="15.0.0.0" LibraryVersion="16.0.0.0" ApplicationName="JavaScript Client" xmlns="http://schemas.microsoft.com/sharepoint/clientquery/2009"><Actions><ObjectPath Id="2" ObjectPathId="1" /><ObjectIdentityQuery Id="3" ObjectPathId="1" /><ObjectPath Id="5" ObjectPathId="4" /><ObjectIdentityQuery Id="6" ObjectPathId="4" /><ObjectPath Id="8" ObjectPathId="7" /><Query Id="9" ObjectPathId="7"><Query SelectAllProperties="false"><Properties /></Query><ChildItemQuery SelectAllProperties="false"><Properties><Property Name="Terms" SelectAll="true"><Query SelectAllProperties="false"><Properties /></Query></Property></Properties></ChildItemQuery></Query></Actions><ObjectPaths><StaticMethod Id="1" Name="GetTaxonomySession" TypeId="{981cbc68-9edc-4f8d-872f-71146fcbb84f}" /><Method Id="4" ParentId="1" Name="GetDefaultSiteCollectionTermStore" /><Method Id="7" ParentId="4" Name="GetTermSetsByName"><Parameters><Parameter Type="String">' + termSetName + '</Parameter><Parameter Type="Int32">' + termSetLocal + '</Parameter></Parameters></Method></ObjectPaths></Request>';
       httpPostOptions = {
         headers: {
           'accept': 'application/json',
@@ -153,7 +153,7 @@ export class SPTermStoreService {
         let termsCollection = termsCollections[0];
 
         let childItems = termsCollection['_Child_Items_'];
-        
+
         return(await Promise.all<ISPTermObject>(childItems.map(async (t: any) : Promise<ISPTermObject> => {
           return await this.projectTermAsync(t);
         })));
@@ -173,17 +173,17 @@ export class SPTermStoreService {
    */
   private async projectTermAsync(term: any) : Promise<ISPTermObject> {
 
-    return({ 
+    return({
       identity: term['_ObjectIdentity_'] !== undefined ? term['_ObjectIdentity_'] : "",
       isAvailableForTagging: term['IsAvailableForTagging'] !== undefined ? term['IsAvailableForTagging'] : false,
-      guid: term['Id'] !== undefined ? this.cleanGuid(term['Id']) : "", 
+      guid: term['Id'] !== undefined ? this.cleanGuid(term['Id']) : "",
       name: term['Name'] !== undefined ? term['Name'] : "",
       customSortOrder: term['CustomSortOrder'] !== undefined ? term['CustomSortOrder'] : "",
       terms: await this.getChildTermsAsync(term),
       localCustomProperties: term['LocalCustomProperties'] !== undefined ? term['LocalCustomProperties'] : null,
     });
   }
-    
+
   /**
    * @function
    * Clean the Guid from the Web Service response
