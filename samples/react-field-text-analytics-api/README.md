@@ -41,7 +41,7 @@ Version|Date|Comments
 * register a Cognitive Services Vision API in your Azure subscription
 * create a List and add a Field called "SPFxSentimentIcon" (type: Number)
 * clone repo
-* update serve.json pointing to your List URL and Text Analytics API Key
+* update serve.json pointing to your List URL, Text Analytics API Key and Field name to analyse
 * run _gulp serve --configuration=sentimentAnalytics_
 
 ## Features
@@ -52,3 +52,13 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 
 * using Text Analytics API to get the sentiment score from a given Text
 * using async / await for the async calls
+
+## Well-Known issues
+
+Depending on the number of items in the list, you could get a _429 Too Many Request_ response when calling the API.
+
+## Interesting links
+
+* [How to detect sentiment in Text Analytics](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis)
+* [How to detect language  in Text Analytics](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-language-detection)
+* [Testing Text API website](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7)

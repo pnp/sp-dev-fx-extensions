@@ -19,11 +19,11 @@ export interface ISentimentAnalyticsState {
 
 const LOG_SOURCE: string = 'SentimentAnalytics';
 
-export default class SentimentAnalytics 
+export default class SentimentAnalytics
   extends React.Component<ISentimentAnalyticsProps, ISentimentAnalyticsState> {
-  
-  private cognitiveServicesTextUrl: string = `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment`;
-  
+
+  private cognitiveServicesTextUrl: string = `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/`;
+
   constructor(props: ISentimentAnalyticsProps, state: ISentimentAnalyticsState) {
     super(props, state);
 
@@ -38,7 +38,7 @@ export default class SentimentAnalytics
 
     const documentId = Guid.newGuid().toString();
 
-    this._getSentiment(this.props.text, 'en', documentId)
+    this._getSentiment(this.props.text, documentId)
       .then(score => {
         this.setState({ score: score });
       })
@@ -57,42 +57,65 @@ export default class SentimentAnalytics
     return (
       <div className={styles.cell}>
         <SentimentIcon score={this.state.score} />
-      </div>  
+      </div>
     );
   }
 
-  private async _getSentiment(text: string, language: string, id: string): Promise<number> {
+  private async _autodetectLanguage(text: string, id: string): Promise<string> {
 
     if (this.props.textAnalyticsApiKey !== '') {
-      const httpOptions: IHttpClientOptions = this._prepareHttpOptionsForTextApi(text, language, id);
-      const cognitiveResponse: HttpClientResponse = await this.props.httpClient.post(this.cognitiveServicesTextUrl, HttpClient.configurations.v1, httpOptions);
+      const httpOptions: IHttpClientOptions = this._prepareHttpOptionsForTextApi(text, id);
+      const cognitiveResponse: HttpClientResponse = await this.props.httpClient.post(`${this.cognitiveServicesTextUrl}/languages`, HttpClient.configurations.v1, httpOptions);
       const cognitiveResponseJSON: any = await cognitiveResponse.json();
-  
-      const score = cognitiveResponseJSON.documents[0].score;
-  
-      console.log(score);
-          
-      return score;
-    }    
 
-    return -1;
+      console.log(cognitiveResponseJSON);
+
+      const language = cognitiveResponseJSON.documents[0].detectedLanguages[0].iso6391Name; //getting First language detected (i.e: "en")      
+
+      return language;
+    }
+
+    return null;
   }
 
-  private _prepareHttpOptionsForTextApi(text: string, language: string, id: string): IHttpClientOptions {
-    const body: string = JSON.stringify({
+  private async _getSentiment(text: string, id: string): Promise<number> {
+
+    if (this.props.textAnalyticsApiKey == '') return -1;
+
+    const language: string = await this._autodetectLanguage(text, id);
+
+    if (language == null) return -1;
+
+    const httpOptions: IHttpClientOptions = this._prepareHttpOptionsForTextApi(text, id, language);
+    const cognitiveResponse: HttpClientResponse = await this.props.httpClient.post(`${this.cognitiveServicesTextUrl}/sentiment`, HttpClient.configurations.v1, httpOptions);
+    const cognitiveResponseJSON: any = await cognitiveResponse.json();
+
+    const score = cognitiveResponseJSON.documents[0].score;
+
+    console.log(score);
+
+    return score;
+
+  }
+
+  private _prepareHttpOptionsForTextApi(text: string, id: string, language:string = null): IHttpClientOptions {
+    const body: any = {
       "documents": [
         {
-          "language": language,
           "id": id,
           "text": text
         }
       ]
-    });
+    };
 
-    const httpOptions: IHttpClientOptions = {          
-      body: body,
+    if (language) {
+      body.language = language;
+    }
+
+    const httpOptions: IHttpClientOptions = {
+      body: JSON.stringify(body),
       headers: this._prepareHeadersForTextApi()
-    }; 
+    };
 
     return httpOptions;
   }
@@ -104,5 +127,5 @@ export default class SentimentAnalytics
     requestHeaders.append('Ocp-Apim-Subscription-Key', this.props.textAnalyticsApiKey);
 
     return requestHeaders;
-  } 
+  }
 }

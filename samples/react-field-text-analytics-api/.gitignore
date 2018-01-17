@@ -1,5 +1,6 @@
 # api key
 .apikey
+.donotcommit.md
 
 # Logs
 logs
