@@ -1,7 +1,7 @@
 # Spfx Field Customiser sample using Text Analytics API
 
 ## Summary
-This sample shows how to use the Text Analytics API (Cognitive Services) to render a sentiment icon based on the text of a field in the List
+This sample shows how to use the Text Analytics API (Cognitive Services) to render a sentiment icon based on the text of a field in the List. The language is also auto-detected using the API, so it works with text based in any language supported by the API.
 
 ![Field Customiser using Text Analytics API](./assets/react-field-text-analytics-api.png)
 
@@ -25,6 +25,7 @@ react-field-text-analytics-api|Luis Mañez (MVP, [ClearPeople](http://www.clearp
 Version|Date|Comments
 -------|----|--------
 1.0.0|January 7, 2018|Initial release
+2.0.0|January 18, 2018|Language auto-detection added
 
 ## Disclaimer
 
@@ -41,7 +42,7 @@ Version|Date|Comments
 * register a Cognitive Services Vision API in your Azure subscription
 * create a List and add a Field called "SPFxSentimentIcon" (type: Number)
 * clone repo
-* update serve.json pointing to your List URL, Text Analytics API Key and Field name to analyse
+* update serve.json pointing to your List URL, Text Analytics API Key, and Field name to analyse
 * run _gulp serve --configuration=sentimentAnalytics_
 
 ## Features
