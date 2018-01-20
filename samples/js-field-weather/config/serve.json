@@ -1,9 +1,29 @@
 {
+  "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
   "port": 4321,
-  "initialPage": "https://localhost:5432/workbench",
   "https": true,
-  "api": {
-    "port": 5432,
-    "entryPath": "node_modules/@microsoft/sp-webpart-workbench/lib/api/"
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/Extensions/Lists/Weather/AllItems.aspx",
+      "fieldCustomizers": {
+        "InternalFieldName": {
+          "id": "b754b644-6821-4ce7-94b4-e374e7b657e0",
+          "properties": {
+            "unit": "c"
+          }
+        }
+      }
+    },
+    "weatherF": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "fieldCustomizers": {
+        "InternalFieldName": {
+          "id": "b754b644-6821-4ce7-94b4-e374e7b657e0",
+          "properties": {
+            "unit": "f"
+          }
+        }
+      }
+    }
   }
 }

@@ -1,8 +1,8 @@
-declare interface IWeatherStrings {
+declare interface IWeatherFieldCustomizerStrings {
   Title: string;
 }
 
-declare module 'weatherStrings' {
-  const strings: IWeatherStrings;
+declare module 'WeatherFieldCustomizerStrings' {
+  const strings: IWeatherFieldCustomizerStrings;
   export = strings;
 }
