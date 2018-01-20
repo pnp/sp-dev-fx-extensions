@@ -4,24 +4,24 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://[TENANT].sharepoint.com/sites/[YOUR_SITE]/Lists/TextAnalyticsDemo/AllItems.aspx",
+      "pageUrl": "https://[TENANT].sharepoint.com/sites/ModernTeamSite/Lists/TextAnalyticsDemo/AllItems.aspx",
       "fieldCustomizers": {
         "SPFxSentimentIcon": {
           "id": "49407339-ef31-4775-b341-6479f2d8e25d",
           "properties": {
-            "textAnalyticsApiKey": "",
+            "textAnalyticsApiKey": "[TEXT_API_KEY]",
             "fieldToAnalyse": "Title"
           }
         }
       }
     },
     "sentimentAnalytics": {
-      "pageUrl": "https://[TENANT].sharepoint.com/sites/[YOUR_SITE]/Lists/TextAnalyticsDemo/AllItems.aspx",
+      "pageUrl": "https://[TENANT].sharepoint.com/sites/ModernTeamSite/Lists/TextAnalyticsDemo/AllItems.aspx",
       "fieldCustomizers": {
         "SPFxSentimentIcon": {
           "id": "49407339-ef31-4775-b341-6479f2d8e25d",
           "properties": {
-            "textAnalyticsApiKey": "",
+            "textAnalyticsApiKey": "[TEXT_API_KEY]",
             "fieldToAnalyse": "Title"
           }
         }
