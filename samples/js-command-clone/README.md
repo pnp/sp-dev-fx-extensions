@@ -6,7 +6,7 @@ Sample SharePoint Framework listview command set extension that allows users to 
 ![Cloning of list items](./assets/spfxClone-Animation.gif)
 
 ## Used SharePoint Framework Version 
-![1.3.0](https://img.shields.io/badge/version-1.3.0-green.svg)
+![1.4.0](https://img.shields.io/badge/version-1.3.0-green.svg)
 
 ## Applies to
 
@@ -26,6 +26,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|August 30, 2017|Initial release
 1.1|September 26, 2017|Updated for SPFx Extensions GA 1.3.0
+1.2|January 20, 2018|Updated for SPFx 1.4.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
