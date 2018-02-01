@@ -9,13 +9,13 @@ import {
   PlaceholderName
 } from '@microsoft/sp-application-base';
 
-import { escape } from '@microsoft/sp-lodash-subset'; 
+import { escape } from '@microsoft/sp-lodash-subset';
 
 import TenantGlobalNavBar from './components/TenantGlobalNavBar';
 import { ITenantGlobalNavBarProps } from './components/ITenantGlobalNavBarProps';
 import TenantGlobalFooterBar from './components/TenantGlobalFooterBar';
 import { ITenantGlobalFooterBarProps } from './components/ITenantGlobalFooterBarProps';
-import * as SPTermStore from './services/SPTermStoreService'; 
+import * as SPTermStore from './services/SPTermStoreService';
 import pnp from "sp-pnp-js";
 
 import styles from './AppCustomizer.module.scss';
@@ -42,7 +42,7 @@ export default class TenantGlobalNavBarApplicationCustomizer
   private _bottomPlaceholder: PlaceholderContent | undefined;
   private _topMenuItems: SPTermStore.ISPTermObject[];
   private _bottomMenuItems: SPTermStore.ISPTermObject[];
-  
+
   @override
   public async onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
@@ -52,7 +52,7 @@ export default class TenantGlobalNavBarApplicationCustomizer
 
     // Configure caching
     pnp.setup({
-      defaultCachingStore: "session", 
+      defaultCachingStore: "session",
       defaultCachingTimeoutSeconds: 900, //15min
       globalCacheDisable: false // true to disable caching in case of debugging/testing
     });
@@ -69,12 +69,12 @@ export default class TenantGlobalNavBarApplicationCustomizer
         this._topMenuItems = cachedTerms;
       }
       else {
-        this._topMenuItems = await termStoreService.getTermsFromTermSetAsync(this.properties.TopMenuTermSet);
+        this._topMenuItems = await termStoreService.getTermsFromTermSetAsync(this.properties.TopMenuTermSet, this.context.pageContext.web.language);
         pnp.storage.session.put(NAV_TERMS_KEY,this._topMenuItems);
       }
     }
     if (this.properties.BottomMenuTermSet != null) {
-      this._bottomMenuItems = await termStoreService.getTermsFromTermSetAsync(this.properties.BottomMenuTermSet);
+      this._bottomMenuItems = await termStoreService.getTermsFromTermSetAsync(this.properties.BottomMenuTermSet, this.context.pageContext.web.language);
     }
 
     // Call render method for generating the needed html elements
@@ -84,7 +84,7 @@ export default class TenantGlobalNavBarApplicationCustomizer
   }
 
   private _renderPlaceHolders(): void {
-    
+
     console.log('Available placeholders: ',
       this.context.placeholderProvider.placeholderNames.map(name => PlaceholderName[name]).join(', '));
 
@@ -108,7 +108,7 @@ export default class TenantGlobalNavBarApplicationCustomizer
             menuItems: this._topMenuItems,
           }
         );
-    
+
         ReactDom.render(element, this._topPlaceholder.domElement);
       }
     }
@@ -133,7 +133,7 @@ export default class TenantGlobalNavBarApplicationCustomizer
             menuItems: this._bottomMenuItems,
           }
         );
-    
+
         ReactDom.render(element, this._bottomPlaceholder.domElement);
       }
     }
