@@ -6,7 +6,7 @@ import {
   PlaceholderName
 } from '@microsoft/sp-application-base';
 import pnp from 'sp-pnp-js';
-import { escape } from '@microsoft/sp-lodash-subset'; 
+import { escape } from '@microsoft/sp-lodash-subset';
 
 import * as strings from 'dueTasksStrings';
 import styles from './DueTasksApplicationCustomizer.module.scss';
@@ -35,12 +35,12 @@ export default class DueTasksApplicationCustomizer
   public onInit(): Promise<void> {
     //Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
     return new Promise<void>((resolve) => {
-      if (!this.properties.tasksListTitle) { 
+      if (!this.properties.tasksListTitle) {
         resolve();
         return;
       }
-      
-      let batch: any  = pnp.sp.createBatch();
+
+      let batch: any = pnp.sp.createBatch();
       let today: Date = new Date();
       today.setHours(0, 0, 0, 0);
 
@@ -56,14 +56,14 @@ export default class DueTasksApplicationCustomizer
 
       pnp.sp.web.lists.getByTitle(this.properties.tasksListTitle)
         .items.expand('AssignedTo/Id').select('Title, AssignedTo, AssignedTo/Id, DueDate')
-        .filter(`AssignedTo/Id eq ${this.context.pageContext.legacyPageContext.userId} and DueDate lt datetime'${today.toISOString()}'`)
+        .filter(`AssignedTo/Id eq ${this.context.pageContext.legacyPageContext.userId} and DueDate lt datetime'${today.toISOString()}' and (PercentComplete eq '' or PercentComplete eq '100%')`)
         .get().then((items: any) => {
-        this._dueTasks = items;
-      });
+          this._dueTasks = items;
+        });
 
-      batch.execute().then(() => { 
+      batch.execute().then(() => {
         this._renderPlaceholder();
-        resolve(); 
+        resolve();
       });
     });
   }
@@ -83,15 +83,15 @@ export default class DueTasksApplicationCustomizer
         });
     }
 
-        if (this._topPlaceholder.domElement) {
-          this._topPlaceholder.domElement.innerHTML = `
+    if (this._topPlaceholder && this._topPlaceholder.domElement) {
+      this._topPlaceholder.domElement.innerHTML = `
                 <div class="${styles.app}">
                   <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.header}">
                     <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(strings.Message)}&nbsp;
                     <a href="${this._viewUrl}" target="_blank">${escape(strings.GoToList)}</a>
                   </div>
                 </div>`;
-        }
+    }
   }
 
   private _onDispose() {
