@@ -1,5 +1,5 @@
 define([], function() {
   return {
-    "Title": "Weather"
+    "Title": "WeatherFieldCustomizer"
   }
 });

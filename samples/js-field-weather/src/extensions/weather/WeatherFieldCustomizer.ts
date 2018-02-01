@@ -5,40 +5,46 @@ import {
   IFieldCustomizerCellEventParameters
 } from '@microsoft/sp-listview-extensibility';
 
-import styles from './Weather.module.scss';
+import * as strings from 'WeatherFieldCustomizerStrings';
+import styles from './WeatherFieldCustomizer.module.scss';
 
 import * as $ from 'jquery';
 import 'simpleWeather';
 
-export interface IWeatherProperties {
+/**
+ * If your field customizer uses the ClientSideComponentProperties JSON input,
+ * it will be deserialized into the BaseExtension.properties object.
+ * You can define an interface to describe it.
+ */
+export interface IWeatherFieldCustomizerProperties {
   unit?: string;
 }
 
 const LOG_SOURCE: string = 'WeatherFieldCustomizer';
 
 export default class WeatherFieldCustomizer
-  extends BaseFieldCustomizer<IWeatherProperties> {
+  extends BaseFieldCustomizer<IWeatherFieldCustomizerProperties> {
 
   @override
   public onInit(): Promise<void> {
-    return Promise.resolve<void>();
+    return Promise.resolve();
   }
 
   @override
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
-    if (!event.cellValue) {
+    if(!event.fieldValue) {
       return;
     }
 
-    event.cellDiv.parentElement.classList.add(styles.weather);
+    event.domElement.parentElement.classList.add(styles.weather);
 
     ($ as any).simpleWeather({
-      location: event.cellValue,
+      location: event.fieldValue,
       woeid: '',
       unit: this.properties.unit || 'c',
       success: (weather: any): void => {
-        event.cellDiv.innerHTML =
-          `${event.cellValue} <i class="icon${weather.code}"></i> ${weather.temp}&deg;${weather.units.temp}`;
+        event.domElement.innerHTML =
+          `${event.fieldValue} <i class="icon${weather.code}"></i> ${weather.temp}&deg;${weather.units.temp}`;
       },
       error: (error: any): void => {
         Log.error(LOG_SOURCE, error);

@@ -8,12 +8,12 @@ Sample SharePoint Framework field customizer showing weather conditions for the 
 
 ## Used SharePoint Framework Version
 
-![SPFx v1.1.1](https://img.shields.io/badge/SPFx-1.1.1-green.svg)
+![SPFx v1.4](https://img.shields.io/badge/SPFx-1.4-green.svg)
 
 ## Applies to
 
-* [SharePoint Framework Extensions Developer Preview](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
-* [Office 365 developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
+* [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
+* [Office 365](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 
 ## Solution
 
@@ -26,6 +26,7 @@ js-field-weather|Waldek Mastykarz (MVP, [Rencore](https://rencore.com), @waldekm
 Version|Date|Comments
 -------|----|--------
 1.0.0|June 29, 2017|Initial release
+1.1.0|January 20, 2018|Updated to 1.4
 
 ## Disclaimer
 
@@ -33,16 +34,12 @@ Version|Date|Comments
 
 ---
 
-## Prerequisites
-
-* Office 365 Developer tenant with a classic site collection and a list of locations
-
 ## Minimal Path to Awesome
 
 * clone this repo
 * in the command line run
   * `npm i`
-  * `gulp serve-info --nobrowser`
+  * `gulp serve --nobrowser`
 * copy the field customizer debug query string parameters from the console output
 * change the name of the field to the field that you use to store location name
 * in the web browser

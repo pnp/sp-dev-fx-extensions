@@ -1,11 +1,16 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/extensions/weather/WeatherFieldCustomizer.js",
-      "manifest": "./src/extensions/weather/WeatherFieldCustomizer.manifest.json",
-      "outputPath": "./dist/weather.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "weather-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/weather/WeatherFieldCustomizer.js",
+          "manifest": "./src/extensions/weather/WeatherFieldCustomizer.manifest.json"
+        }
+      ]
     }
-  ],
+  },
   "externals": {
     "jquery": {
       "path": "https://code.jquery.com/jquery-2.1.1.min.js",
@@ -18,6 +23,6 @@
     }
   },
   "localizedResources": {
-    "weatherStrings": "extensions/weather/loc/{locale}.js"
+    "WeatherFieldCustomizerStrings": "lib/extensions/weather/loc/{locale}.js"
   }
 }

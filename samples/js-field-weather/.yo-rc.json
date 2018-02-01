@@ -1,6 +1,6 @@
 {
   "@microsoft/generator-sharepoint": {
-    "version": "1.1.1",
+    "version": "1.4.0",
     "libraryName": "js-field-weather",
     "libraryId": "888f38db-8d70-41da-b933-00dc7106ffa9",
     "environment": "spo"

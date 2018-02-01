@@ -1,8 +1,11 @@
 {
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "js-field-weather-client-side-solution",
     "id": "888f38db-8d70-41da-b933-00dc7106ffa9",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
   },
   "paths": {
     "zippedPackage": "solution/js-field-weather.sppkg"
