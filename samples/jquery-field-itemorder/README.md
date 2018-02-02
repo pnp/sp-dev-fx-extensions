@@ -6,7 +6,7 @@ Sample SharePoint Framework field customizer extension that enables reordering o
 ![Reordering of List Items](./assets/spfxItemOrder-Animation.gif)
 
 ## Used SharePoint Framework Version 
-![1.3.0](https://img.shields.io/badge/version-1.3.0-green.svg)
+![1.4.0](https://img.shields.io/badge/version-1.4.0-green.svg)
 
 ## Applies to
 
@@ -26,6 +26,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|September 5, 2017|Initial release
 1.1|September 28, 2017|Updated for SPFx Extensions GA 1.3.0
+1.4|February 2, 2018|Updated for SPFx 1.4.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -161,5 +162,9 @@ This will ensure that you've got a field that won't show up on your new/edit for
 Edit list permissions are required to be able to reorder the list items. Here's what it looks like for those that don't have at least that permission level:
 
 ![Reordering Denied!](./assets/spfxItemOrder-NoPermissions.png)
+
+## Known issues
+- UI Fabric Icons are not currently displaying in SPFx Extensions: 
+  - [Issue 1279](https://github.com/SharePoint/sp-dev-docs/issues/1279) - Solution has been found, but fix has not yet been implemented
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/jquery-field-itemorder" />
