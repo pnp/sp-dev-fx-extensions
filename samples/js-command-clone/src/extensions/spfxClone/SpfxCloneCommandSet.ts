@@ -9,7 +9,7 @@ import {
 
 import { SPPermission } from "@microsoft/sp-page-context";
 import { IListField } from './IListField';
-import pnp from "sp-pnp-js";
+import { sp } from "@pnp/sp";
 
 import * as strings from 'SpfxCloneCommandSetStrings';
 
@@ -34,7 +34,7 @@ export default class SpfxCloneCommandSet
 
     //Provide PnP JS-Core with the proper context (needed in SPFx Components)
     return super.onInit().then(_ => {
-      pnp.setup({
+      sp.setup({
         spfxContext: this.context
       });
     });
@@ -59,7 +59,7 @@ export default class SpfxCloneCommandSet
           .then((listFields: Array<IListField>): void => {
 
             // We'll request all the selected items in a single batch
-            let itemBatch: any = pnp.sp.createBatch();
+            let itemBatch: any = sp.createBatch();
 
             //Get an array of the internal field names for the select along with any necessary expand fields
             let fieldNames: Array<string> = new Array<string>();
@@ -88,7 +88,7 @@ export default class SpfxCloneCommandSet
               let itemId: number = row.getValueByName('ID');
 
               //Add the item to the batch
-              pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(itemId).select(...fieldNames).expand(...expansions).inBatch(itemBatch).getAs<Array<any>>()
+              sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(itemId).select(...fieldNames).expand(...expansions).inBatch(itemBatch).get<Array<any>>()
                 .then((result: any) => {
                   //Copy just the fields we care about and provide some adjustments for certain field types
                   let item: any = {};
@@ -138,11 +138,11 @@ export default class SpfxCloneCommandSet
               .then(() => {
                 
                 //We'll create all the new items in a single batch
-                let cloneBatch: any = pnp.sp.createBatch();
+                let cloneBatch: any = sp.createBatch();
 
                 //Process each item
                 items.forEach((item: any) => {
-                  pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.inBatch(cloneBatch).add(item)
+                  sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.inBatch(cloneBatch).add(item)
                     .catch((error: any): void => {
                       Log.error(LOG_SOURCE, error);
                       this.safeLog(error);
@@ -184,7 +184,7 @@ export default class SpfxCloneCommandSet
 
       } else {
         //Go get all the fields for the list
-        pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).fields.select('InternalName','TypeAsString','IsDependentLookup').getAs<IListField[]>()
+        sp.web.lists.getById(this.context.pageContext.list.id.toString()).fields.select('InternalName','TypeAsString','IsDependentLookup').get<IListField[]>()
           .then((results: IListField[]) => {
 
             //Setup the list fields

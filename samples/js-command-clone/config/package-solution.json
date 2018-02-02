@@ -1,14 +1,14 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "js-command-clone-client-side-solution",
+    "name": "Item Clone",
     "id": "ede39249-4139-4af6-8fe0-1d480bd1f6c6",
-    "version": "1.0.0.0",
+    "version": "1.4.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "iconPath": "AppIcon.png"
   },
   "paths": {
-    "zippedPackage": "solution/js-command-clone.sppkg"
+    "zippedPackage": "solution/clone.sppkg"
   }
 }
