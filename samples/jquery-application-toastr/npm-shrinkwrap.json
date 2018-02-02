@@ -3,166 +3,166 @@
   "version": "0.0.1",
   "dependencies": {
     "@microsoft/decorators": {
-      "version": "1.3.0",
-      "from": "@microsoft/decorators@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/decorators/-/decorators-1.3.0.tgz"
+      "version": "1.4.0",
+      "from": "@microsoft/decorators@>=1.4.0 <1.5.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/decorators/-/decorators-1.4.0.tgz"
     },
     "@microsoft/load-themed-styles": {
-      "version": "1.7.4",
-      "from": "@microsoft/load-themed-styles@1.7.4",
-      "resolved": "https://registry.npmjs.org/@microsoft/load-themed-styles/-/load-themed-styles-1.7.4.tgz"
+      "version": "1.7.9",
+      "from": "@microsoft/load-themed-styles@1.7.9",
+      "resolved": "https://registry.npmjs.org/@microsoft/load-themed-styles/-/load-themed-styles-1.7.9.tgz"
     },
     "@microsoft/office-ui-fabric-react-bundle": {
-      "version": "1.3.0",
-      "from": "@microsoft/office-ui-fabric-react-bundle@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/office-ui-fabric-react-bundle/-/office-ui-fabric-react-bundle-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/office-ui-fabric-react-bundle@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/office-ui-fabric-react-bundle/-/office-ui-fabric-react-bundle-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-application-base": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-application-base@1.3.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-application-base/-/sp-application-base-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-application-base@>=1.4.0 <1.5.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-application-base/-/sp-application-base-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-component-base": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-component-base@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-component-base/-/sp-component-base-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-component-base@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-component-base/-/sp-component-base-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-core-library": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-core-library@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-core-library/-/sp-core-library-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-core-library@>=1.4.0 <1.5.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-core-library/-/sp-core-library-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-dialog": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-dialog@1.3.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-dialog/-/sp-dialog-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-dialog@>=1.4.0 <1.5.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-dialog/-/sp-dialog-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-extension-base": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-extension-base@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-extension-base/-/sp-extension-base-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-extension-base@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-extension-base/-/sp-extension-base-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-http": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-http@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-http/-/sp-http-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-http@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-http/-/sp-http-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-loader": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-loader@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-loader/-/sp-loader-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-loader@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-loader/-/sp-loader-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-lodash-subset": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-lodash-subset@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-lodash-subset/-/sp-lodash-subset-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-lodash-subset@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-lodash-subset/-/sp-lodash-subset-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-module-interfaces": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-module-interfaces@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-module-interfaces/-/sp-module-interfaces-1.3.0.tgz"
+      "version": "1.4.0",
+      "from": "@microsoft/sp-module-interfaces@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-module-interfaces/-/sp-module-interfaces-1.4.0.tgz"
     },
     "@microsoft/sp-odata-types": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-odata-types@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-odata-types/-/sp-odata-types-1.3.0.tgz"
+      "version": "1.4.0",
+      "from": "@microsoft/sp-odata-types@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-odata-types/-/sp-odata-types-1.4.0.tgz"
     },
     "@microsoft/sp-page-context": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-page-context@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-page-context/-/sp-page-context-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-page-context@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-page-context/-/sp-page-context-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-polyfills": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-polyfills@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-polyfills/-/sp-polyfills-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-polyfills@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-polyfills/-/sp-polyfills-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
     "@microsoft/sp-webpart-base": {
-      "version": "1.3.0",
-      "from": "@microsoft/sp-webpart-base@>=1.3.0 <1.4.0",
-      "resolved": "https://registry.npmjs.org/@microsoft/sp-webpart-base/-/sp-webpart-base-1.3.0.tgz",
+      "version": "1.4.0",
+      "from": "@microsoft/sp-webpart-base@1.4.0",
+      "resolved": "https://registry.npmjs.org/@microsoft/sp-webpart-base/-/sp-webpart-base-1.4.0.tgz",
       "dependencies": {
         "@types/webpack-env": {
-          "version": "1.13.0",
-          "from": "@types/webpack-env@1.13.0",
-          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+          "version": "1.13.1",
+          "from": "@types/webpack-env@1.13.1",
+          "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
         }
       }
     },
@@ -172,24 +172,19 @@
       "resolved": "https://registry.npmjs.org/@types/adal/-/adal-1.0.27.tgz"
     },
     "@types/angular": {
-      "version": "1.6.32",
+      "version": "1.6.42",
       "from": "@types/angular@*",
-      "resolved": "https://registry.npmjs.org/@types/angular/-/angular-1.6.32.tgz"
-    },
-    "@types/es6-collections": {
-      "version": "0.5.29",
-      "from": "@types/es6-collections@0.5.29",
-      "resolved": "https://registry.npmjs.org/@types/es6-collections/-/es6-collections-0.5.29.tgz"
+      "resolved": "https://registry.npmjs.org/@types/angular/-/angular-1.6.42.tgz"
     },
     "@types/es6-promise": {
-      "version": "0.0.32",
-      "from": "@types/es6-promise@0.0.32",
-      "resolved": "https://registry.npmjs.org/@types/es6-promise/-/es6-promise-0.0.32.tgz"
+      "version": "0.0.33",
+      "from": "@types/es6-promise@0.0.33",
+      "resolved": "https://registry.npmjs.org/@types/es6-promise/-/es6-promise-0.0.33.tgz"
     },
     "@types/lodash": {
-      "version": "4.14.52",
-      "from": "@types/lodash@4.14.52",
-      "resolved": "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.52.tgz"
+      "version": "4.14.74",
+      "from": "@types/lodash@4.14.74",
+      "resolved": "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.74.tgz"
     },
     "@types/node": {
       "version": "6.0.64",
@@ -197,14 +192,14 @@
       "resolved": "https://registry.npmjs.org/@types/node/-/node-6.0.64.tgz"
     },
     "@types/react": {
-      "version": "15.0.38",
-      "from": "@types/react@15.0.38",
-      "resolved": "https://registry.npmjs.org/@types/react/-/react-15.0.38.tgz"
+      "version": "15.6.6",
+      "from": "@types/react@15.6.6",
+      "resolved": "https://registry.npmjs.org/@types/react/-/react-15.6.6.tgz"
     },
     "@types/react-dom": {
-      "version": "0.14.18",
-      "from": "@types/react-dom@0.14.18",
-      "resolved": "https://registry.npmjs.org/@types/react-dom/-/react-dom-0.14.18.tgz"
+      "version": "15.5.6",
+      "from": "@types/react-dom@15.5.6",
+      "resolved": "https://registry.npmjs.org/@types/react-dom/-/react-dom-15.5.6.tgz"
     },
     "@types/requirejs": {
       "version": "2.1.29",
@@ -216,25 +211,54 @@
       "from": "@types/scrollreveal@0.0.2",
       "resolved": "https://registry.npmjs.org/@types/scrollreveal/-/scrollreveal-0.0.2.tgz"
     },
+    "@types/sinon": {
+      "version": "1.16.34",
+      "from": "@types/sinon@1.16.34",
+      "resolved": "https://registry.npmjs.org/@types/sinon/-/sinon-1.16.34.tgz"
+    },
     "@types/webpack-env": {
-      "version": "1.13.1",
+      "version": "1.13.5",
       "from": "@types/webpack-env@>=1.12.1 <1.14.0",
-      "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.1.tgz"
+      "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.5.tgz"
     },
     "@types/z-schema": {
       "version": "3.16.31",
       "from": "@types/z-schema@3.16.31",
       "resolved": "https://registry.npmjs.org/@types/z-schema/-/z-schema-3.16.31.tgz"
     },
+    "@uifabric/icons": {
+      "version": "5.2.0",
+      "from": "@uifabric/icons@5.2.0",
+      "resolved": "https://registry.npmjs.org/@uifabric/icons/-/icons-5.2.0.tgz"
+    },
+    "@uifabric/merge-styles": {
+      "version": "5.11.0",
+      "from": "@uifabric/merge-styles@>=5.11.0 <6.0.0",
+      "resolved": "https://registry.npmjs.org/@uifabric/merge-styles/-/merge-styles-5.11.0.tgz"
+    },
     "@uifabric/styling": {
-      "version": "0.24.2",
-      "from": "@uifabric/styling@>=0.22.1 <1.0.0",
-      "resolved": "https://registry.npmjs.org/@uifabric/styling/-/styling-0.24.2.tgz"
+      "version": "5.17.0",
+      "from": "@uifabric/styling@>=5.3.0 <6.0.0",
+      "resolved": "https://registry.npmjs.org/@uifabric/styling/-/styling-5.17.0.tgz",
+      "dependencies": {
+        "@microsoft/load-themed-styles": {
+          "version": "1.7.28",
+          "from": "@microsoft/load-themed-styles@>=1.7.13 <2.0.0",
+          "resolved": "https://registry.npmjs.org/@microsoft/load-themed-styles/-/load-themed-styles-1.7.28.tgz"
+        }
+      }
     },
     "@uifabric/utilities": {
-      "version": "4.16.0",
-      "from": "@uifabric/utilities@>=4.13.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/@uifabric/utilities/-/utilities-4.16.0.tgz"
+      "version": "5.9.0",
+      "from": "@uifabric/utilities@>=5.7.1 <6.0.0",
+      "resolved": "https://registry.npmjs.org/@uifabric/utilities/-/utilities-5.9.0.tgz",
+      "dependencies": {
+        "@microsoft/load-themed-styles": {
+          "version": "1.7.28",
+          "from": "@microsoft/load-themed-styles@>=1.7.13 <2.0.0",
+          "resolved": "https://registry.npmjs.org/@microsoft/load-themed-styles/-/load-themed-styles-1.7.28.tgz"
+        }
+      }
     },
     "adal-angular": {
       "version": "1.0.15",
@@ -246,25 +270,20 @@
       "from": "asap@>=2.0.3 <2.1.0",
       "resolved": "https://registry.npmjs.org/asap/-/asap-2.0.6.tgz"
     },
-    "bowser": {
-      "version": "1.7.3",
-      "from": "bowser@>=1.7.3 <2.0.0",
-      "resolved": "https://registry.npmjs.org/bowser/-/bowser-1.7.3.tgz"
-    },
     "commander": {
-      "version": "2.11.0",
+      "version": "2.13.0",
       "from": "commander@>=2.7.1 <3.0.0",
-      "resolved": "https://registry.npmjs.org/commander/-/commander-2.11.0.tgz"
+      "resolved": "https://registry.npmjs.org/commander/-/commander-2.13.0.tgz"
     },
     "core-js": {
       "version": "1.2.7",
       "from": "core-js@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/core-js/-/core-js-1.2.7.tgz"
     },
-    "css-in-js-utils": {
-      "version": "2.0.0",
-      "from": "css-in-js-utils@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/css-in-js-utils/-/css-in-js-utils-2.0.0.tgz"
+    "create-react-class": {
+      "version": "15.6.3",
+      "from": "create-react-class@>=15.6.0 <16.0.0",
+      "resolved": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.6.3.tgz"
     },
     "encoding": {
       "version": "0.1.12",
@@ -286,25 +305,10 @@
       "from": "fbjs@>=0.8.16 <0.9.0",
       "resolved": "https://registry.npmjs.org/fbjs/-/fbjs-0.8.16.tgz"
     },
-    "glamor": {
-      "version": "2.20.40",
-      "from": "glamor@>=2.20.40 <3.0.0",
-      "resolved": "https://registry.npmjs.org/glamor/-/glamor-2.20.40.tgz"
-    },
-    "hyphenate-style-name": {
-      "version": "1.0.2",
-      "from": "hyphenate-style-name@>=1.0.2 <2.0.0",
-      "resolved": "https://registry.npmjs.org/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz"
-    },
     "iconv-lite": {
       "version": "0.4.19",
       "from": "iconv-lite@>=0.4.13 <0.5.0",
       "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.19.tgz"
-    },
-    "inline-style-prefixer": {
-      "version": "3.0.8",
-      "from": "inline-style-prefixer@>=3.0.6 <4.0.0",
-      "resolved": "https://registry.npmjs.org/inline-style-prefixer/-/inline-style-prefixer-3.0.8.tgz"
     },
     "is-stream": {
       "version": "1.1.0",
@@ -320,11 +324,6 @@
       "version": "3.0.2",
       "from": "js-tokens@>=3.0.0 <4.0.0",
       "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-3.0.2.tgz"
-    },
-    "lodash": {
-      "version": "4.15.0",
-      "from": "lodash@>=4.15.0 <4.16.0",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.15.0.tgz"
     },
     "lodash.get": {
       "version": "4.4.2",
@@ -357,9 +356,9 @@
       "resolved": "https://registry.npmjs.org/office-ui-fabric/-/office-ui-fabric-2.6.1.tgz"
     },
     "office-ui-fabric-react": {
-      "version": "4.40.2-hotfix.1",
-      "from": "office-ui-fabric-react@4.40.2-hotfix.1",
-      "resolved": "https://registry.npmjs.org/office-ui-fabric-react/-/office-ui-fabric-react-4.40.2-hotfix.1.tgz"
+      "version": "5.21.0",
+      "from": "office-ui-fabric-react@5.21.0",
+      "resolved": "https://registry.npmjs.org/office-ui-fabric-react/-/office-ui-fabric-react-5.21.0.tgz"
     },
     "promise": {
       "version": "7.3.1",
@@ -372,24 +371,19 @@
       "resolved": "https://registry.npmjs.org/prop-types/-/prop-types-15.6.0.tgz"
     },
     "react": {
-      "version": "15.4.2",
-      "from": "react@15.4.2",
-      "resolved": "https://registry.npmjs.org/react/-/react-15.4.2.tgz"
+      "version": "15.6.2",
+      "from": "react@15.6.2",
+      "resolved": "https://registry.npmjs.org/react/-/react-15.6.2.tgz"
     },
     "react-dom": {
-      "version": "15.4.2",
-      "from": "react-dom@15.4.2",
-      "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-15.4.2.tgz"
+      "version": "15.6.2",
+      "from": "react-dom@15.6.2",
+      "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-15.6.2.tgz"
     },
     "requirejs": {
       "version": "2.1.20",
       "from": "requirejs@2.1.20",
       "resolved": "https://registry.npmjs.org/requirejs/-/requirejs-2.1.20.tgz"
-    },
-    "rtl-css-js": {
-      "version": "1.4.3",
-      "from": "rtl-css-js@>=1.1.3 <2.0.0",
-      "resolved": "https://registry.npmjs.org/rtl-css-js/-/rtl-css-js-1.4.3.tgz"
     },
     "scrollreveal": {
       "version": "3.3.6",
@@ -401,25 +395,20 @@
       "from": "setimmediate@>=1.0.5 <2.0.0",
       "resolved": "https://registry.npmjs.org/setimmediate/-/setimmediate-1.0.5.tgz"
     },
-    "through": {
-      "version": "2.3.8",
-      "from": "through@>=2.3.8 <3.0.0",
-      "resolved": "https://registry.npmjs.org/through/-/through-2.3.8.tgz"
-    },
     "tr46": {
       "version": "0.0.3",
       "from": "tr46@>=0.0.3 <0.1.0",
       "resolved": "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz"
     },
     "tslib": {
-      "version": "1.7.1",
-      "from": "tslib@>=1.7.1 <2.0.0",
-      "resolved": "https://registry.npmjs.org/tslib/-/tslib-1.7.1.tgz"
+      "version": "1.8.1",
+      "from": "tslib@>=1.8.0 <1.9.0",
+      "resolved": "https://registry.npmjs.org/tslib/-/tslib-1.8.1.tgz"
     },
     "ua-parser-js": {
-      "version": "0.7.14",
+      "version": "0.7.17",
       "from": "ua-parser-js@>=0.7.9 <0.8.0",
-      "resolved": "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.14.tgz"
+      "resolved": "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.17.tgz"
     },
     "validator": {
       "version": "8.2.0",

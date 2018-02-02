@@ -6,7 +6,7 @@ Sample SharePoint Framework application customizer extension that shows toast no
 ![Toasts shown on a Communication Site](./assets/spfxToastr-Preview.PNG)
 
 ## Used SharePoint Framework Version 
-![1.3.0](https://img.shields.io/badge/version-1.3.0-green.svg)
+![1.4.0](https://img.shields.io/badge/version-1.4.0-green.svg)
 
 ## Applies to
 
@@ -27,6 +27,7 @@ Version|Date|Comments
 1.1|August 20, 2017|Updated to use framework 1.1.3
 1.2|August 30, 2017|Updated to SPFx Release Candidate 1.2.0
 1.3|September 27, 2017|Updated for SPFx GA 1.3.0
+1.4|February 1, 2018|Updated to SPFx 1.4.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
