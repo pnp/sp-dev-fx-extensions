@@ -31,6 +31,17 @@
           }
         }
       }
+    },
+    "text": {
+      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/Extensions/Lists/Links/AllItems.aspx",
+      "fieldCustomizers": {
+        "Reorder": {
+          "id": "e6bdc269-2080-47b8-b096-e7bf2a9263a9",
+          "properties": {
+            "ShowIcons": false
+          }
+        }
+      }
     }
   }
 }

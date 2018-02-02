@@ -1,5 +1,7 @@
 define([], function() {
   return {
-    "Title": "SpfxItemOrderFieldCustomizer"
+    Title: 'SpfxItemOrderFieldCustomizer',
+    ReorderTooltip: 'Reorder',
+    NoPermissionsTooltip: 'Insufficient Permissions'
   }
 });

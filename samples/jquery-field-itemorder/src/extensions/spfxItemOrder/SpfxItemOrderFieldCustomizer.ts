@@ -23,6 +23,9 @@ const LISTROWCONTAINER: string = '.ms-List-cell';
 const INDICATORICONCLASS: string = 'ms-Icon--Pin';
 const LOADINGICONCLASS: string = 'ms-Icon--Refresh';
 const DISABLEDICONCLASS: string = 'ms-Icon--Unpin';
+const INDICATORTEXTVALUE: string = '≡';
+const LOADINGTEXTVALUE: string = '֍';
+const DISABLEDTEXTVALUE: string = 'Ø';
 const LOG_SOURCE: string = 'SpfxItemOrderFieldCustomizer';
 
 export default class SpfxItemOrderFieldCustomizer
@@ -32,6 +35,7 @@ export default class SpfxItemOrderFieldCustomizer
   private _rowOrder: Array<number>;
   private _rowMap: Array<IOrderedRow>;
   private _orderField: string;
+  private _useIcons: boolean;
 
 
   @override
@@ -41,6 +45,10 @@ export default class SpfxItemOrderFieldCustomizer
     // a different (number) column can be specified through the
     // ClientSideComponentProperties instead
     this._orderField = this.properties.OrderField || 'Order';
+  
+    this._useIcons = this.properties.ShowIcons != undefined ? this.properties.ShowIcons : true;
+
+    console.log("Useicons: " + this._useIcons);
 
     //Initialize the row map
     this._rowMap = new Array<IOrderedRow>();
@@ -66,7 +74,11 @@ export default class SpfxItemOrderFieldCustomizer
     event.domElement.classList.add(`${styles.SpfxItemOrder}`); //add our base CSS class
 
     if(this.context.pageContext.list.permissions.hasPermission(SPPermission.editListItems)) {
-      event.domElement.innerHTML = `<i class="ms-Icon ${INDICATORICONCLASS} ${styles.reorderField}" aria-hidden="true"></i>`;
+      if(this._useIcons) {
+        event.domElement.innerHTML = `<i class="ms-Icon ${INDICATORICONCLASS} ${styles.reorderField}" aria-hidden="true" title="${strings.ReorderTooltip}"></i>`;
+      } else {
+        event.domElement.innerHTML = `<span class="${styles.reorderField}" title="${strings.ReorderTooltip}">${INDICATORTEXTVALUE}</span>`;
+      }
       
       //Track the Ids and Order values of each row (so that they can be referenced later)
       this._rowMap.push({
@@ -77,7 +89,11 @@ export default class SpfxItemOrderFieldCustomizer
       //Reset timeout (only needed since there isn't an official onCellsRendered event)
       this._timeoutId_Init = setTimeout(this.onCellsRendered.bind(this), TIMEOUTDURATION_INIT);
     } else {
-      event.domElement.innerHTML = `<i class="ms-Icon ${DISABLEDICONCLASS}" aria-hidden="true" title="Insufficient Permissions!"></i>`;
+      if(this._useIcons) {
+        event.domElement.innerHTML = `<i class="ms-Icon ${DISABLEDICONCLASS}" aria-hidden="true" title="${strings.NoPermissionsTooltip}"></i>`;
+      } else {
+        event.domElement.innerHTML = `<span aria-hidden="true" title="${strings.NoPermissionsTooltip}">${DISABLEDTEXTVALUE}</span>`;
+      }
     }
     
   }
@@ -147,7 +163,7 @@ export default class SpfxItemOrderFieldCustomizer
     dirtyRows.forEach((row: IChangedRow) => {
 
       //Add a loading indicator to the row to provide status to the user
-      SpfxItemOrderFieldCustomizer.showLoading(row.listIndex);
+      SpfxItemOrderFieldCustomizer.showLoading(row.listIndex, this._useIcons);
 
       //Swaps the Order value for the changed rows using the values first stored in the _rowMap
       let props: any = {};
@@ -161,7 +177,7 @@ export default class SpfxItemOrderFieldCustomizer
       .then(() => {
 
         //Remove the loading indicators
-        SpfxItemOrderFieldCustomizer.hideLoading();
+        SpfxItemOrderFieldCustomizer.hideLoading(this._useIcons);
 
         //Reset the internal row order tracking so we can track new changes
         this._rowOrder = newOrder;
@@ -233,26 +249,41 @@ export default class SpfxItemOrderFieldCustomizer
   }
 
   /** Shows the loading indicator for the specific row */
-  public static showLoading(listIndex: number): void {
+  public static showLoading(listIndex: number, useIcons: boolean): void {
 
     //jQuery selector finds the row with the matching list-index value
     // then finds our field within its descendents
-    $(LISTROWCONTAINER + `[data-list-index=${listIndex}] .${styles.reorderField}`)
-      .removeClass(INDICATORICONCLASS)
-      .addClass(LOADINGICONCLASS)
-      .addClass(styles.spinning);
-
+    if(useIcons) {
+      $(LISTROWCONTAINER + `[data-list-index=${listIndex}] .${styles.reorderField}`)
+        .removeClass(INDICATORICONCLASS)
+        .addClass(LOADINGICONCLASS)
+        .addClass('isSpinning')
+        .addClass(styles.spinning);
+    } else {
+      $(LISTROWCONTAINER + `[data-list-index=${listIndex}] .${styles.reorderField}`)
+        .text(LOADINGTEXTVALUE)
+        .addClass('isSpinning')
+        .addClass(styles.spinning);
+    }
   }
 
   /** Returns all loading indicators back to the original icon */
-  public static hideLoading(): void {
+  public static hideLoading(useIcons: boolean): void {
 
     //jQuery selector just finds all of our fields that are
     // currently showing the loading indicator 
-    $(`.${styles.reorderField}.${LOADINGICONCLASS}`)
-      .removeClass(LOADINGICONCLASS)
-      .removeClass(styles.spinning)
-      .addClass(INDICATORICONCLASS);
+    if(useIcons) {
+      $(`.${styles.reorderField}.isSpinning`)
+        .removeClass('isSpinning')
+        .removeClass(LOADINGICONCLASS)
+        .removeClass(styles.spinning)
+        .addClass(INDICATORICONCLASS);
+    } else {
+      $(`.${styles.reorderField}.isSpinning`)
+        .removeClass('isSpinning')
+        .removeClass(styles.spinning)
+        .text(INDICATORTEXTVALUE);
+    }
 
   }
 }

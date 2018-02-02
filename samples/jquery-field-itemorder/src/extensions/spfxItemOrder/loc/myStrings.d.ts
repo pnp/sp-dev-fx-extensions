@@ -1,5 +1,7 @@
 declare interface ISpfxItemOrderFieldCustomizerStrings {
   Title: string;
+  ReorderTooltip: string;
+  NoPermissionsTooltip: string;
 }
 
 declare module 'SpfxItemOrderFieldCustomizerStrings' {

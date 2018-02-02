@@ -5,7 +5,7 @@ Sample SharePoint Framework field customizer extension that enables reordering o
 
 ![Reordering of List Items](./assets/spfxItemOrder-Animation.gif)
 
-## Used SharePoint Framework Version 
+## Used SharePoint Framework version 
 ![1.4.0](https://img.shields.io/badge/version-1.4.0-green.svg)
 
 ## Applies to
@@ -34,7 +34,7 @@ Version|Date|Comments
 
 ---
 
-## Minimal Path to Awesome
+## Minimal path to awesome
 
 - Clone this repository
 - Update the `pageUrl` properties in the **config/serve.json** file
@@ -43,7 +43,10 @@ Version|Date|Comments
 - In the command line navigate to **samples/jquery-field-itemorder** and run:
   - `npm install`
   - `gulp serve`
-    - if you want to use the custom field then use the customField serveConfiguration using this command: `gulp serve --config customField`
+    - if you want to use the custom field then use the customField serveConfiguration using this command:
+      - `gulp serve --config customField`
+    - if you want to disable icon indicators the use the text serveConfiguration using this command:
+      - `gulp serve --config text`
 - In a web browser
   - Optionally, follow the steps below for a **Placeholder Field** (or choose some other field)
   - Ensure your list/view is orderable using the one of the options under **Making Your List Orderable**
@@ -83,7 +86,7 @@ Your URL will look similar to the following (replace with your domain and site a
 https://yourtenant.sharepoint.com/sites/yoursite/lists/yourlist/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Reorder":{"id":"e6bdc269-2080-47b8-b096-e7bf2a9263a9","properties":{}}}
 ```
 
-### Custom Order Field
+### Custom order field
 
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Reorder":{"id":"e6bdc269-2080-47b8-b096-e7bf2a9263a9","properties":{"OrderField":"CustomOrder"}}}
@@ -96,14 +99,27 @@ Your URL will look similar to the following (replace with your domain and site a
 https://yourtenant.sharepoint.com/sites/yoursite/lists/yourlist/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Reorder":{"id":"e6bdc269-2080-47b8-b096-e7bf2a9263a9","properties":{"OrderField":"CustomOrder"}}}
 ```
 
-## Making Your List Orderable
+### Use text indicators
+
+```
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Reorder":{"id":"e6bdc269-2080-47b8-b096-e7bf2a9263a9","properties":{"ShowIcons":false}}}
+```
+* Uses text indicators rather than the UI Fabric icons
+* Defaults to true (so only specify when you want to disable the icons)
+
+Your URL will look similar to the following (replace with your domain and site address):
+```
+https://yourtenant.sharepoint.com/sites/yoursite/lists/yourlist/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Reorder":{"id":"e6bdc269-2080-47b8-b096-e7bf2a9263a9","properties":{"ShowIcons":false}}}
+```
+
+## Making your list orderable
 
 In order to enable reordering, you'll need one of the following to be true:
 * Your list is already orderable
 * The view has been adjusted to use the internal `Order` field
 * You've provided your own custom ordering field.
 
-### Using an Orderable List
+### Using an orderable list
 
 Some lists are orderable by default. For instance, a **Links** list is marked as orderable and in the classic view a Reorder List Items button is displayed in the ribbon. By default, the views also use the _"Allow users to order items in this view"_ option as seen here on the view edit screen:
 
@@ -111,7 +127,7 @@ Some lists are orderable by default. For instance, a **Links** list is marked as
 
 If your view has this option and it's set to _Yes_, then you're good to go! Otherwise, you'll need to pick one of the other 2 options below.
 
-### Adjusting Your View to Use the Order Field
+### Adjusting your view to use the Order field
 
 Every list has the internal `Order` field but it is hidden by default and so it isn't available in the view editor. To sort your view by this field you can adjust the Query XML of the view using SharePoint Designer. An even easier option, however, is to use the included PowerShell script [ConvertView.ps1](,/assets/ConvertView.ps1) located in the assets folder.
 
@@ -119,7 +135,7 @@ Every list has the internal `Order` field but it is hidden by default and so it 
 
 You'll need the [SharePoint PnP PowerShell Cmdlets for SharePoint Online](https://github.com/SharePoint/PnP-PowerShell). It's a very quick install and if you don't have it already, go get it! You'll end up using it for far more than just this sample.
 
-#### Running the PowerShell Script
+#### Running the PowerShell script
 
 Using a PowerShell console (you can even use the powershell terminal included in Visual Studio Code), navigate to the assets folder in this sample. Run the script like this:
 
@@ -129,20 +145,20 @@ Using a PowerShell console (you can even use the powershell terminal included in
 
 You'll be prompted for your credentials and then the original view will be removed and a duplicate will be added with the exception that it is now sorted by the internal `Order` field. Since this view can no longer be edited in the view editor (without running this script again), it's best to go ahead and get everything but the sort configured the way you want it.
 
-#### Benefits of Using the OOTB Order Field
+#### Benefits of using the OOTB Order field
 
 Using the OOTB `Order` field is the preferred option for the following reasons:
 * It's already there! _(No additional fields required)_
 * It auto increments as you add new items _(end users don't have to care)_
 * This field customizer uses it by default _(this can be overridden - see below)_
 
-### Custom Ordering Field
+### Custom ordering field
 
 Finally, if you'd rather use a custom field for ordering you absolutely can. You'll just need to add an additional number column. Then in the **ClientSideComponentProperties** specify the `OrderField` property with the internal name of your column (see the Debug URLs above for an example).
 
 > Note - This solution expects that your ordering column does not have duplicate values. It won't break anything, but the order won't be changed either.
 
-## Placeholder Field
+## Placeholder field
 
 This field customizer will work with any existing field. However, it will take over the display with an icon and won't show the original values. So, your best bet is to add an empty field like the following:
 
@@ -158,7 +174,7 @@ This will ensure that you've got a field that won't show up on your new/edit for
 
 ![Reordering a List View](./assets/spfxItemOrder-Preview.png)
 
-## View with Inadequate Permissions
+## View with inadequate permissions
 
 Edit list permissions are required to be able to reorder the list items. Here's what it looks like for those that don't have at least that permission level:
 
@@ -167,5 +183,6 @@ Edit list permissions are required to be able to reorder the list items. Here's 
 ## Known issues
 - UI Fabric Icons are not currently displaying in SPFx Extensions: 
   - [Issue 1279](https://github.com/SharePoint/sp-dev-docs/issues/1279) - Solution has been found, but fix has not yet been implemented
+  - This issue can be avoided by providing the `ShowIcons` property and setting it to false (see the _Use text indicators_ section above)
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/jquery-field-itemorder" />
