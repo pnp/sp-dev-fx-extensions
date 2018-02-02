@@ -180,6 +180,46 @@ Edit list permissions are required to be able to reorder the list items. Here's 
 
 ![Reordering Denied!](./assets/spfxItemOrder-NoPermissions.png)
 
+## Deploying to your tenant
+- In the command line navigate to **samples/jquery-field-itemorder** and run:
+  - `gulp bundle --ship`
+  - `gulp package-solution --ship`
+- Open the **samples/jquery-field-itemorder/sharepoint** folder
+  - Drag the **field-itemorder.sppkg** onto the **Apps for SharePoint** library of your app catalog
+  - Check the box for tenant wide deployment and click **Deploy**:
+  ![Deploy to Catalog](./assets/DeployToCatalog.png)
+- You'll need to add the Custom Action to your site(s) using one of the methods below.
+
+### Adding the Field Customizer to your site
+
+Even if you selected tenant wide deployment for the package, the extension will have to be associated to a field.
+
+### Use the included PnP provisioning template
+
+A PnP Remote Provisioning template has been provided ([ItemOrderField.xml](./assets/ItemOrderField.xml)) along with a PowerShell script to apply the template to your site ([ApplyTemplate.ps1](./assets/ApplyTemplate.ps1)). This is a straightforward way to get the extension on a site but requires some minor setup.
+
+> You can also use this template as part of a [Site Design](https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/site-design-pnp-provisioning).
+
+Additionally, another template ([ItemOrderField_text.xml](./assets/ItemOrderField_text.xml)) is available to show how to set the custom properties (in this case, the ShowIcons property).
+
+These templates will create a new calculated placeholder field. However, if you provide the details and ID of an existing field you can just add the `ClientSideComponentId` and `ClientSideComponentProperties` to modify the existing field.
+
+#### Prerequisites
+
+You'll need the [SharePoint PnP PowerShell Cmdlets for SharePoint Online](https://github.com/SharePoint/PnP-PowerShell). It's a very quick install and if you don't have it already, go get it! You'll end up using it for far more than just this sample.
+
+#### Running the PowerShell script
+
+Using a PowerShell console (you can even use the powershell terminal included in Visual Studio Code), navigate to the assets folder in this sample. Run the script like this:
+
+```PowerShell
+.\ApplyTemplate.ps1 https://yourtenant.sharepoint.com/sites/yoursite ItemOrderField.xml
+```
+
+You'll be prompted for your credentials and then the field will be added. You'll need to add the field to a list (if it wasn't already), to see the extension in action.
+
+> Read More Here: [Introducing the PnP Provisioning Engine](https://github.com/SharePoint/PnP-Guidance/blob/551b9f6a66cf94058ba5497e310d519647afb20c/articles/Introducing-the-PnP-Provisioning-Engine.md)
+
 ## Known issues
 - UI Fabric Icons are not currently displaying in SPFx Extensions: 
   - [Issue 1279](https://github.com/SharePoint/sp-dev-docs/issues/1279) - Solution has been found, but fix has not yet been implemented
