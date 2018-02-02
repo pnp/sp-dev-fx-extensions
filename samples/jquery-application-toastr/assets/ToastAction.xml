@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.22.1801.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-BB0DC7725D454082B940C6435B414790">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-BB0DC7725D454082B940C6435B414790" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+      <pnp:CustomActions>
+        <pnp:SiteCustomActions>
+          <pnp:CustomAction Name="{2e5829db-79d3-4385-89f0-3258207a8aba}" Location="ClientSideExtension.ApplicationCustomizer" Title="Toastr Notifications" Sequence="0" Rights="" RegistrationType="None" ClientSideComponentId="a861c815-e425-416d-9520-04bcdf557e27" ClientSideComponentProperties="" />
+        </pnp:SiteCustomActions>
+      </pnp:CustomActions>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
