@@ -3,7 +3,7 @@
   "solution": {
     "name": "Item Clone",
     "id": "ede39249-4139-4af6-8fe0-1d480bd1f6c6",
-    "version": "1.4.0.0",
+    "version": "1.4.1.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "iconPath": "AppIcon.png"
