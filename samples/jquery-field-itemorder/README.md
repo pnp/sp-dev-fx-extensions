@@ -1,7 +1,7 @@
 # SPFx Item Order
 
 ## Summary
-Sample SharePoint Framework field customizer extension that enables reordering of list items through intuitive drag and drop directly in your list view. Demonstrates the use of jQuery and jQuery UI, custom property JSON, and PnP JS Core Batching.
+Sample SharePoint Framework field customizer extension that enables reordering of list items through intuitive drag and drop directly in your list view. Demonstrates the use of jQuery and jQuery UI, custom property JSON, and PnPJS Batching.
 
 ![Reordering of List Items](./assets/spfxItemOrder-Animation.gif)
 
@@ -13,6 +13,7 @@ Sample SharePoint Framework field customizer extension that enables reordering o
 * [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
 * [jQuery](http://jquery.com/)
 * [jQuery UI](http://jqueryui.com/)
+* [PnPJS](https://pnp.github.io/pnp/)
 
 ## Solution
 
@@ -55,7 +56,7 @@ SPFx Item Order allows you to quickly reorder your list items through intuitive 
 This extension illustrates the following concepts:
 
 - Loading **jQuery** and **jQuery UI** from a CDN
-- Loading **PnP JS Core** from a CDN
+- Using **PnPJS**
 - Using **jQuery UI** in a Field Customizer
 - Updating multiple items in a single **Batch**
 - Applying **CSS Animations** in SCSS

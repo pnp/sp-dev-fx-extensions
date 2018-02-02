@@ -11,7 +11,7 @@ import { IOrderedRow } from './IOrderedRow';
 import { IChangedRow } from './IChangedRow';
 import { ISpfxItemOrderFieldCustomizerProperties } from './ISpfxItemOrderFieldCustomizerProperties';
 import { SPPermission } from "@microsoft/sp-page-context";
-import pnp from "sp-pnp-js";
+import { sp } from "@pnp/sp";
 
 import * as strings from 'SpfxItemOrderFieldCustomizerStrings';
 import styles from './SpfxItemOrderFieldCustomizer.module.scss';
@@ -47,7 +47,7 @@ export default class SpfxItemOrderFieldCustomizer
 
     //Provide PnP JS-Core with the proper context (needed in SPFx Components)
     return super.onInit().then(_ => {
-      pnp.setup({
+      sp.setup({
         spfxContext: this.context
       });
     });
@@ -142,7 +142,7 @@ export default class SpfxItemOrderFieldCustomizer
     let dirtyRows: Array<IChangedRow> = SpfxItemOrderFieldCustomizer.changedRows(this._rowOrder, newOrder);
 
     //Setup a batch so that we can minimize the update calls needed
-    let itemBatch: any = pnp.sp.createBatch();
+    let itemBatch: any = sp.createBatch();
 
     dirtyRows.forEach((row: IChangedRow) => {
 
@@ -152,7 +152,7 @@ export default class SpfxItemOrderFieldCustomizer
       //Swaps the Order value for the changed rows using the values first stored in the _rowMap
       let props: any = {};
       props[this._orderField] = this._rowMap[row.position].Order;
-      pnp.sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(this._rowMap[row.listIndex].Id).inBatch(itemBatch).update(props);
+      sp.web.lists.getById(this.context.pageContext.list.id.toString()).items.getById(this._rowMap[row.listIndex].Id).inBatch(itemBatch).update(props);
 
     });
 
