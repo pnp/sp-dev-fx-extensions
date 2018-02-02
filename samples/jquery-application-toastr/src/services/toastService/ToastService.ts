@@ -1,5 +1,7 @@
-import { IToast } from './IToast';
+import Guid from '@microsoft/sp-core-library/lib/Guid';
 import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
+
+import { IToast } from './IToast';
 
 interface IToastStatus {
 	Id: number;
@@ -14,7 +16,7 @@ interface IToastCache {
 
 /** Returns items from the Toast list and caches the results */
 export class ToastService {
-	private static readonly storageKey: string = 'spfxToastr'; //Key used for localStorage
+	private static readonly storageKeyBase: string = 'spfxToastr'; //Key used for localStorage
 	private static readonly getFromListAlways: boolean = false; //Useful for testing
 
 
@@ -23,9 +25,9 @@ export class ToastService {
 	//***********************
 
 	/** Retrieves toasts that should be displayed for the given user*/
-	public static getToasts(spHttpClient: SPHttpClient, baseUrl: string): Promise<IToast[]> {
+	public static getToasts(spHttpClient: SPHttpClient, baseUrl: string, webId: Guid): Promise<IToast[]> {
 		return new Promise<IToast[]>((resolve: (toasts: IToast[]) => void, reject: (error: any) => void): void => {
-			this.ensureToasts(spHttpClient, baseUrl)
+			this.ensureToasts(spHttpClient, baseUrl, webId)
 				.then((toasts: IToast[]): void => {
 					resolve(toasts);
 				}).catch((error: any): void => {
@@ -37,8 +39,8 @@ export class ToastService {
 	/** Stores the date/time a toast was acknowledged, used to control what shows on the next refresh 
 	 * @param {number} id - The list ID of the toast to acknowledge
 	*/
-	public static acknowledgeToast(id: number): void {
-		let cachedData: IToastCache = ToastService.retrieveCache();
+	public static acknowledgeToast(id: number, webId: Guid): void {
+		let cachedData: IToastCache = ToastService.retrieveCache(webId);
 
 		// Check if the status already exists, and if so update it
 		//  otherwise, add a new status for the id
@@ -51,7 +53,7 @@ export class ToastService {
 				Ack: new Date()
 			});
 		}
-		ToastService.storeCache(cachedData);
+		ToastService.storeCache(cachedData, webId);
 	}
 
 	
@@ -59,12 +61,16 @@ export class ToastService {
 	//localStorage Management
 	//***********************
 
+	private static webStorageKey(webId: Guid): string {
+		return `${ToastService.storageKeyBase}_${webId}`;
+	}
+
 	/** Rehydrates spfxToastr data from localStorage (or creates a new empty set) */
-	private static retrieveCache(): IToastCache {
+	private static retrieveCache(webId: Guid): IToastCache {
 		//Pull data from localStorage if available and we previously cached it
-		let cachedData: IToastCache = localStorage ? JSON.parse(localStorage.getItem(ToastService.storageKey)) : undefined;
+		let cachedData: IToastCache = localStorage ? JSON.parse(localStorage.getItem(this.webStorageKey(webId))) : undefined;
 		if (cachedData) {
-			cachedData.Loaded = new Date(cachedData.Loaded); //Rehydrate date from JSON (serializes to string)
+			cachedData.Loaded = new Date(cachedData.Loaded.valueOf()); //Rehydrate date from JSON (serializes to string)
 		} else {
 			//Initialize a new, empty object
 			cachedData = {
@@ -76,10 +82,10 @@ export class ToastService {
 	}
 
 	/** Serializes spfxToastr data into localStorage */
-	private static storeCache(cachedData: IToastCache): void {
+	private static storeCache(cachedData: IToastCache, webId: Guid): void {
 		//Cache the data in localStorage when possible
 		if (localStorage) {
-			localStorage.setItem(ToastService.storageKey, JSON.stringify(cachedData));
+			localStorage.setItem(this.webStorageKey(webId), JSON.stringify(cachedData));
 		}
 	}
 
@@ -89,10 +95,10 @@ export class ToastService {
 	//***********************
 
 	/** Retrieves toasts from either the cache or the list depending on the cache's freshness */
-	private static ensureToasts(spHttpClient: SPHttpClient, baseUrl: string): Promise<IToast[]> {
+	private static ensureToasts(spHttpClient: SPHttpClient, baseUrl: string, webId: Guid): Promise<IToast[]> {
 		return new Promise<IToast[]>((resolve: (toasts: IToast[]) => void, reject: (error: any) => void): void => {
 			
-			let cachedData: IToastCache = ToastService.retrieveCache();
+			let cachedData: IToastCache = ToastService.retrieveCache(webId);
 
 			if(cachedData.Loaded) {
 				//True Cache found, check if it is stale
@@ -110,7 +116,7 @@ export class ToastService {
 			if ((window as any).spfxToastrLoadingData) {
 				//Toasts are already being loaded! Briefly wait and try again
 				window.setTimeout((): void => {
-					ToastService.ensureToasts(spHttpClient, baseUrl)
+					ToastService.ensureToasts(spHttpClient, baseUrl, webId)
 						.then((toasts: IToast[]): void => {
 							resolve(toasts);
 						});
@@ -129,7 +135,7 @@ export class ToastService {
 						cachedData = ToastService.processCache(cachedData);
 
 						//Update the cache
-						ToastService.storeCache(cachedData);
+						ToastService.storeCache(cachedData, webId);
 
 						//Clear the loading flag
 						(window as any).spfxToastrLoadingData = false;
@@ -225,7 +231,7 @@ export class ToastService {
 
 			let tsIndex: number = ToastService.indexOfToastStatusById(toast.Id, cachedData.ToastStatuses);
 			if (tsIndex >= 0) {
-				let lastShown: Date = new Date(cachedData.ToastStatuses[tsIndex].Ack); //Likely needs to be rehyrdated from JSON
+				let lastShown: Date = new Date(cachedData.ToastStatuses[tsIndex].Ack.valueOf()); //Likely needs to be rehyrdated from JSON
 				switch (toast.Frequency) {
 					case 'Once':
 						//Already shown

@@ -41,7 +41,7 @@ export default class SpfxToastrApplicationCustomizer
     SPComponentLoader.loadCss('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css');
 
     //Go ahead and request the toasts, but we can't use them until jQuery and Toastr are ready
-    this.toastsPromise = ToastService.getToasts(this.context.spHttpClient, this.context.pageContext.web.absoluteUrl);
+    this.toastsPromise = ToastService.getToasts(this.context.spHttpClient, this.context.pageContext.web.absoluteUrl, this.context.pageContext.web.id);
 
    
     //jQuery document ready
@@ -88,10 +88,10 @@ export default class SpfxToastrApplicationCustomizer
           //Setup callbacks to track dismisal status
           let overrides: ToastrOptions = {
             onclick: () => {
-              ToastService.acknowledgeToast(t.Id);
+              ToastService.acknowledgeToast(t.Id, this.context.pageContext.web.id);
             },
             onCloseClick: () => {
-              ToastService.acknowledgeToast(t.Id);
+              ToastService.acknowledgeToast(t.Id, this.context.pageContext.web.id);
             }
           };
 
