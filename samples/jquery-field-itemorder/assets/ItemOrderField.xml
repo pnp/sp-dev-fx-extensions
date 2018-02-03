@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.22.1801.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-BDD78414A745420B86F61130B70E054D">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-BDD78414A745420B86F61130B70E054D" Version="1" BaseSiteTemplate="STS#0" Scope="RootSite">
+      <pnp:SiteFields>
+        <Field Type="Calculated" DisplayName="Reorder" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" ResultType="Text" ReadOnly="TRUE" Group="Custom Columns" ID="{4b9bd1d4-5b61-4f00-9b50-543366377e35}" SourceID="{d1fed537-5309-4a04-8f5e-1a7eff77e904}" StaticName="Reorder" Name="Reorder" ClientSideComponentId="e6bdc269-2080-47b8-b096-e7bf2a9263a9" ClientSideComponentProperties="">
+          <Formula>=""</Formula>
+        </Field>
+      </pnp:SiteFields>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

@@ -43,4 +43,10 @@ $ms-themePrimary: "[theme:themePrimary, default:#333333]";
     cursor: pointer;
     color: $ms-themePrimary;
   }
+  span.reorderField {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    width: 18px;
+  }
 }

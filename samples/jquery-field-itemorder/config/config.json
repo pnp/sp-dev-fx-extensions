@@ -22,8 +22,7 @@
       "globalDependencies": [
         "jquery"
       ]
-    },
-    "sp-pnp-js": "https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/3.0.1/pnp.min.js"
+    }
   },
   "localizedResources": {
     "SpfxItemOrderFieldCustomizerStrings": "lib/extensions/spfxItemOrder/loc/{locale}.js"
