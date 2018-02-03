@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.22.1801.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-5123686D56004295AEC54E70952D4186">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-5123686D56004295AEC54E70952D4186" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+      <pnp:CustomActions>
+        <pnp:WebCustomActions>
+          <pnp:CustomAction Name="Item Clone" Location="ClientSideExtension.ListViewCommandSet" Title="Item Clone" Sequence="0" Rights="" RegistrationId="100" RegistrationType="List" ClientSideComponentId="bf6645bd-42e4-4a30-aad7-6ff12d61fa1f" ClientSideComponentProperties="" />
+        </pnp:WebCustomActions>
+      </pnp:CustomActions>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

@@ -11,9 +11,7 @@
       ]
     }
   },
-  "externals": {
-    "sp-pnp-js": "https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/3.0.4/pnp.min.js"
-  },
+  "externals": {},
   "localizedResources": {
     "SpfxCloneCommandSetStrings": "lib/extensions/spfxClone/loc/{locale}.js"
   }
