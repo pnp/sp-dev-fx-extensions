@@ -1,13 +1,14 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "jquery-application-toastr-client-side-solution",
+    "name": "Toastr Notifications",
     "id": "461c7ee8-3ab9-47ee-b52d-44c77087d9e8",
-    "version": "1.0.0.0",
+    "version": "1.4.0.0",
+    "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "iconPath": "AppIcon.png"
   },
   "paths": {
-    "zippedPackage": "solution/jquery-application-toastr.sppkg"
+    "zippedPackage": "solution/toastr.sppkg"
   }
 }
