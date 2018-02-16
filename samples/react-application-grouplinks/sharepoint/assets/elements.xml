@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="GroupDirectLinks"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="76b03e75-7b8a-426a-86f0-c71ef1e6f38d"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
