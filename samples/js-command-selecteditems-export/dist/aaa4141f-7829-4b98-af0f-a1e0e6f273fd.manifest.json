@@ -1,0 +1,45 @@
+{
+  "id": "aaa4141f-7829-4b98-af0f-a1e0e6f273fd",
+  "alias": "ExportItemsCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "items": {
+    "EXCELEXPORTITEMS_1": {
+      "title": {
+        "default": "Export"
+      },
+      "iconImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_Excel_2013_logo.svg",
+      "type": "command"
+    }
+  },
+  "loaderConfig": {
+    "entryModuleId": "export-items-command-set",
+    "internalModuleBaseUrls": [
+      "https://localhost:4321/"
+    ],
+    "scriptResources": {
+      "export-items-command-set": {
+        "type": "path",
+        "path": "dist/export-items-command-set.js"
+      },
+      "@microsoft/decorators": {
+        "type": "component",
+        "version": "1.4.1",
+        "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
+      },
+      "@microsoft/sp-listview-extensibility": {
+        "type": "component",
+        "version": "1.4.1",
+        "id": "d37b65ee-c7d8-4570-bc74-2b294ff3b380"
+      },
+      "@microsoft/sp-http": {
+        "type": "component",
+        "version": "1.4.1",
+        "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
+      }
+    }
+  }
+}
