@@ -1,4 +1,4 @@
-# SPFx Export Seclected Items to Excel -  ListView Command Set
+# SPFx Export Selected Items to Excel -  ListView Command Set
 
 ## Summary
 
