@@ -4,6 +4,8 @@
 
 Exports selected items to excel spreadsheet in xlsx format, with the columns from the current modern list view.
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=NInVJqAmbns" target="_blank"><img src="./assets/excel-export-preview.png" alt="export selected items" /></a>
+
 ## Used SharePoint Framework version
 
 ![1.4.1](https://img.shields.io/badge/version-1.4.1-green.svg)
@@ -63,13 +65,13 @@ This extension illustrates the following concepts:
 Here's a debug querystring for testing this sample:
 
 ```html
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"a861c815-e425-416d-9520-04bcdf557e27":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
+?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"aaa4141f-7829-4b98-af0f-a1e0e6f273fd":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
 Your URL will look similar to the following (replace with your domain and site address):
 
 ```html
-https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"a861c815-e425-416d-9520-04bcdf557e27":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
+https://yourtenant.sharepoint.com/sites/yoursite?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"aaa4141f-7829-4b98-af0f-a1e0e6f273fd":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
 ## Known issues
