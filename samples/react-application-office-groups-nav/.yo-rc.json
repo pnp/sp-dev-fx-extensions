@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.1",
+    "libraryName": "office-groups-nav",
+    "libraryId": "6c51f3ec-5735-40d2-857c-4a4773b83e6c",
+    "environment": "spo"
+  }
+}
