@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.1",
+    "libraryName": "react-application-qna-chat",
+    "libraryId": "96c6cbe3-d7c4-4156-96f1-25ac572cd657",
+    "environment": "spo"
+  }
+}

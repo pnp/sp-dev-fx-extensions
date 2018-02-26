@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "qn-a-chat-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/qnAChat/QnAChatApplicationCustomizer.js",
+          "manifest": "./src/extensions/qnAChat/QnAChatApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "QnAChatApplicationCustomizerStrings": "lib/extensions/qnAChat/loc/{locale}.js"
+  }
+}
