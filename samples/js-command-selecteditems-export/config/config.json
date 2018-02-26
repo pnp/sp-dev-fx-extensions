@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "export-items-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/exportItems/ExportItemsCommandSet.js",
+          "manifest": "./src/extensions/exportItems/ExportItemsCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ExportItemsCommandSetStrings": "lib/extensions/exportItems/loc/{locale}.js"
+  }
+}

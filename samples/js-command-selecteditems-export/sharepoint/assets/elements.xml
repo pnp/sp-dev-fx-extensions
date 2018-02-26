@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction 
+        Title="SPFx-CmdEx-ExportItems"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="aaa4141f-7829-4b98-af0f-a1e0e6f273fd"
+        ClientSideComponentProperties="">
+    </CustomAction>
+</Elements>
