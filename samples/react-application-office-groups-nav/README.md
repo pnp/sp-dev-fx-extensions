@@ -51,7 +51,7 @@ This project contains SharePoint Framework Application Customizer extension that
 git clone the repo
 npm i
 npm i -g gulp
-gulp server --nobrowser
+gulp serve --nobrowser
 ```
 
 On your SharePoint tenant:
