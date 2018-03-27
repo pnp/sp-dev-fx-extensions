@@ -13,8 +13,6 @@ import { Guid } from "@microsoft/sp-core-library";
 
 export default class GroupDirectLinks extends React.Component<IGroupDirectLinksProps, IGroupDirectLinksState> {
 
-    private _menuButtonElement: HTMLElement | null;
-
     constructor(props: IGroupDirectLinksProps) {
         super(props);
 
@@ -36,6 +34,20 @@ export default class GroupDirectLinks extends React.Component<IGroupDirectLinksP
             return <p>...</p>;
         }
 
+        let yammerButton = null;
+        if (this.state.groupDirectLinksInfo.yammerUrl) {
+            yammerButton =  <ActionButton
+                iconProps={{ iconName: 'YammerLogo' }}
+                href={this.state.groupDirectLinksInfo.yammerUrl}>Yammer</ActionButton>;
+        } 
+
+        let teamsButton = null;
+        if (this.state.groupDirectLinksInfo.teamsUrl) {
+            teamsButton =  <ActionButton
+                iconProps={{ iconName: 'TeamsLogo' }}
+                href={this.state.groupDirectLinksInfo.teamsUrl}>Teams</ActionButton>; 
+        } 
+
         return (
             <div className={styles.usefulLinks}>
                 <div className={styles.itemsContainer}>
@@ -51,7 +63,8 @@ export default class GroupDirectLinks extends React.Component<IGroupDirectLinksP
                 </ActionButton>
                     <ActionButton
                         iconProps={{ iconName: 'Inbox' }}
-                        href={this.state.groupDirectLinksInfo.inboxUrl} >
+                        href={this.state.groupDirectLinksInfo.inboxUrl} 
+                        disabled={this.state.groupDirectLinksInfo.inboxUrl == undefined} >
                         Inbox
                 </ActionButton>
                     <ActionButton
@@ -64,6 +77,8 @@ export default class GroupDirectLinks extends React.Component<IGroupDirectLinksP
                         href={this.state.groupDirectLinksInfo.peopleUrl} >
                         People
                 </ActionButton>  
+                {yammerButton}
+                {teamsButton}
                 </div>         
             </div>
         );
@@ -72,7 +87,7 @@ export default class GroupDirectLinks extends React.Component<IGroupDirectLinksP
     private async _getGroupDirectLinksInfo(): Promise<IGroupDirectLinksInfo> {
         const groupId: Guid = this.props.context.pageContext.site.group.id;
         const siteCollectionUrl = this.props.context.pageContext.web.absoluteUrl;
-        const restQuery = `${siteCollectionUrl}/_api/SP.Directory.DirectorySession/Group('${groupId}')`;
+        const restQuery = `${siteCollectionUrl}/_api/SP.Directory.DirectorySession/Group('${groupId}')?$select=PrincipalName,Id,DisplayName,Alias,Description,InboxUrl,CalendarUrl,DocumentsUrl,SiteUrl,EditGroupUrl,PictureUrl,PeopleUrl,NotebookUrl,Mail,IsPublic,CreationTime,Classification,yammerResources,teamsResources,allowToAddGuests,isDynamic`;
         const httpClientOptions: ISPHttpClientOptions = {};
         const response: SPHttpClientResponse = await this.props.context.spHttpClient.fetch(restQuery, SPHttpClient.configurations.v1, httpClientOptions);
         const responseJson: any = await response.json();
@@ -87,6 +102,16 @@ export default class GroupDirectLinks extends React.Component<IGroupDirectLinksP
             notebookUrl: responseJson.notebookUrl,
             peopleUrl: responseJson.peopleUrl
         };
+
+        if (responseJson.yammerResources && responseJson.yammerResources.length > 0) {
+            data.yammerUrl = responseJson.yammerResources[0].Value;
+        }
+
+        if (responseJson.teamsResources && responseJson.teamsResources.length > 0) {
+            data.teamsUrl = responseJson.teamsResources[0].Value;
+        }
+
+        console.log("GroupDirectLinksApplicationCustomizer", data);
 
         return data;
     }
