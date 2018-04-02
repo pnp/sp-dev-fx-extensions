@@ -19,7 +19,7 @@ Figure 1 shows how it looks on a classic publishing site. A simple navigation me
 
 The menu and footer look the same in a modern team site, as shown in Figure 2. It also works on modern list pages in classic Publishing sites, making the experience less jarring when users browse between modern and classic pages. This could also be used in hybrid environments, as the classic solution should work the same on premises as online (though you will probably need a separate set of files to avoid cross-site scripting issues.)
 
-![Modern full screen](./Images/ModernFullHeaderFooter.png "Modern full screen")
+![Modern full screen](./images/ModernFullHeaderFooter.png "Modern full screen")
 <br /><small style="font-style: italic">Figure 2</small>
 
 When the screen becomes narrow, the top menu switches to a hamburger style menu that pushes the screen down with a hierarchy of options. Figure 3 shows this on the classic publishing page, which is clearly not responsive.
