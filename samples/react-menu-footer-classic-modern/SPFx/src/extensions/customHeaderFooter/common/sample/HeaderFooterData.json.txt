@@ -1,0 +1,75 @@
+{
+	"headerLinks": [
+		{
+			"name": "Home",
+			"url": "/sites/pubsite",
+			"children": []
+		},
+		{
+			"name": "Companies",
+			"url": "#",
+			"children": [
+				{
+					"name": "Contoso",
+					"url": "https://www.bing.com/search?q=contoso"
+				},
+				{
+					"name": "Fabrikam",
+					"url": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms694611(v=vs.100).aspx"
+				},
+				{
+					"name": "Litware",
+					"url": "https://www.bing.com/search?q=litware"
+				},
+				{
+					"name": "Microsoft",
+					"url": "https://www.microsoft.com"
+				},
+				{
+					"name": "Trey Research",
+					"url": "https://www.bing.com/search?q=trey research"
+				}
+			]
+		},
+		{
+			"name": "Office Dev",
+			"url": "#",
+			"children": [
+				{
+					"name": "Office Developer Home",
+					"url": "https://developer.microsoft.com/en-us/office"
+				},
+				{
+					"name": "SharePoint Framework",
+					"url": "https://github.com/SharePoint/sp-dev-docs/wiki"
+				},
+				{
+					"name": "PnP PowerShell",
+					"url": "https://github.com/SharePoint/PnP-PowerShell/blob/master/Documentation/readme.md"
+				},
+				{
+					"name": "Toolchain",
+					"url": "http://julieturner.net/2018/01/conquer-your-dev-toolchain-in-classic-sharepoint-part-1/"
+				}
+			]
+		}
+	],
+	"footerLinks": [
+		{
+			"name": "Office Developer Home",
+			"url": "https://developer.microsoft.com/en-us/office"
+		},
+		{
+			"name": "SharePoint Framework",
+			"url": "https://github.com/SharePoint/sp-dev-docs/wiki"
+		},
+		{
+			"name": "PnP PowerShell",
+			"url": "https://github.com/SharePoint/PnP-PowerShell/blob/master/Documentation/readme.md"
+		},
+		{
+			"name": "Toolchain",
+			"url": "http://julieturner.net/2018/01/conquer-your-dev-toolchain-in-classic-sharepoint-part-1/"
+		}
+	]
+}

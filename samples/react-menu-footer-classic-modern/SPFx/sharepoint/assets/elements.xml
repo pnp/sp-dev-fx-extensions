@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="CustomHeaderFooter"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="485e8b06-95bb-4a8c-b5b2-5ca0f1c28c8c"
+        ClientSideComponentProperties="{&quot;Top&quot;:&quot;Hello header!&quot;,&quot;Bottom&quot;:&quot;Hello footer!&quot;}">
+    </CustomAction>
+</Elements>
