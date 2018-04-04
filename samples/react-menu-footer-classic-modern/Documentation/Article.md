@@ -36,15 +36,11 @@ The menu and footer content are stored in a simple JSON file in SharePoint. Whil
 
 > NOTE: This sample uses features (fetch and ES6 Promises) which are not available in Internet Explorer. If you want to use it in IE, you need to add polyfills for these features. As it happens, these are the same as the ones needed by PnP JS Core; [their documentation does a good job of explaining](https://github.com/SharePoint/PnP-JS-Core/wiki/Getting-Started:-Install-&-Use#polyfill).
 
-# Where to get it
-
-Full source code and build/installation instructions are available in the [FutureProofHeadings repo on Github](https://github.com/BobGerman/FutureProofHeadings). 
-
 # Approach
 
 My friend and colleague [Julie Turner](https://twitter.com/jfj1997) recently published a series of articles called [Conquer your dev toolchain in ‘Classic’ SharePoint](http://julieturner.net/2018/01/conquer-your-dev-toolchain-in-classic-sharepoint-part-1/). She shows how to use SharePoint Framework style tooling such as typescript and webpack on classic sites. This was the starting point for the project, and I recommend anyone who hasn't got this working to go through these articles. This was key to having common code between the classic solution and SharePoint Framework.
 
-From there, the approach was to push as much logic as possible into common code (in the "common" directory in both Classic and Modern folders). A quick run of [Beyond Compare](http://scootersoftware.com/) confirms they are identical.
+From there, the approach was to push as much logic as possible into common code (in the "common" directory in both Classic and Modern folders). A quick run of [Beyond Compare](http://scootersoftware.com/) confirms they are identical. (The common files could be shared if the projects were structured differently, but I chose to stay consistent with the established SPFx folder structure.)
 
 ![Classic full screen](./images/BeyondCompare180311.png "Classic full screen")
 <br /><small style="font-style: italic">Figure 5</small>
@@ -144,7 +140,7 @@ Add-PnPJavaScriptLink -Name HeaderFooter -Url "https://<tenant>.sharepoint.com/s
 
 ```
 
-Detailed build and installation instructions are in the [readme file on Github](https://github.com/BobGerman/FutureProofHeadings/blob/master/README.md).
+Detailed build and installation instructions are in the [installation document on Github](./Install.md).
 
 
 ## User Interface
