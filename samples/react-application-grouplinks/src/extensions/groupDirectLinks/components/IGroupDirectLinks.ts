@@ -17,4 +17,6 @@ export interface IGroupDirectLinksInfo {
   isPublic?: boolean;
   notebookUrl?: string;
   peopleUrl?: string;
+  yammerUrl?: string;
+  teamsUrl?: string;
 }
