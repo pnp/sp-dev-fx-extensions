@@ -1,0 +1,6 @@
+{
+    "projectname":"Classic",
+    "srcFiles": ["./build/*.html","./build/*.js", "./build/*.css", "./build/*.map"],
+    "siteCollURL": "https://<tenant>.sharepoint.com/sites/scripts",
+    "destFolder": "/scripts"
+}
