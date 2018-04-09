@@ -62,7 +62,7 @@ In order to deploy the sample solution in a real environment, or at least in ord
   * `gulp bundle --ship`
   * `gulp package-solution --ship`
 * upload the content of the ./temp/deploy subfolder of the sample root folder into the target hosting environment
-* add to the "Apps for SharePoint" library of the AppCatalog in your tenant the spfx-discuss-now.spppkg file that you will find under the ./sharepoint/solution subfolder of the sample root folder
+* add to the "Apps for SharePoint" library of the AppCatalog in your tenant the spfx-tenant-global-navbar.sppkg file that you will find under the ./sharepoint/solution subfolder of the sample root folder
 * the sample is tenant-wide available, so you don't need to install it to every single target site, you simply need to bind the application customizer to the target site. In order to do that, you can use the PowerShell script [TenantGlobalNavBarProvisionCustomizer.ps1](./TenantGlobalNavBarProvisionCustomizer.ps1)
 
 ## Features
