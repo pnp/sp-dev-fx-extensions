@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://inheritscloud.sharepoint.com/sites/MarketingHubSite",
+      "pageUrl": "https://YOUR_TENANT.sharepoint.com/sites/MarketingHubSite",
       "customActions": {
         "3733ef6c-14dd-46c2-9a7c-a865f965920c": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -15,7 +15,7 @@
       }
     },
     "sitesInHubsiteSwitcher": {
-      "pageUrl": "https://inheritscloud.sharepoint.com/sites/MarketingHubSite",
+      "pageUrl": "https://YOUR_TENANT.sharepoint.com/sites/MarketingHubSite",
       "customActions": {
         "3733ef6c-14dd-46c2-9a7c-a865f965920c": {
           "location": "ClientSideExtension.ApplicationCustomizer",

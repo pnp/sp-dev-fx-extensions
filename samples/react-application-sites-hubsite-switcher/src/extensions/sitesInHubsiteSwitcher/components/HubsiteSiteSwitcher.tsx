@@ -56,9 +56,9 @@ export default class HubsiteSiteSwitcher extends React.Component<IHubsiteSiteSwi
         const response: HttpClientResponse = await this.props.context.httpClient.fetch(restQuery, SPHttpClient.configurations.v1, httpClientOptions);
         const responseJson: any = await response.json();
 
-        console.log(responseJson);
+        //console.log(responseJson);
 
-        return responseJson.Items.map((item: any) => {
+        const sitesInHubSite: ISiteInfo[] = responseJson.Items.map((item: any) => {
             const site: ISiteInfo = {
                 acronym: item.Acronym,
                 bannerImageUrl: item.BannerImageUrl,
@@ -76,10 +76,14 @@ export default class HubsiteSiteSwitcher extends React.Component<IHubsiteSiteSwi
 
             return site;
         });
+
+        return sitesInHubSite.filter(site => {
+            return !Guid.parse(site.siteId).equals(this.props.context.pageContext.site.id);
+        });
     }
 
     public onChangeSelect = (item: IDropdownOption): void => {
-        console.log(item);
+        document.location.href = item.key.toString();
     }
 
     public componentDidMount(): void {
