@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="SitesInHubsiteSwitcher"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="3733ef6c-14dd-46c2-9a7c-a865f965920c"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

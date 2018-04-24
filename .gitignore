@@ -66,3 +66,4 @@ obj
 samples/react-application-grouplinks/src/restQueries/group.http
 samples/react-application-grouplinks/src/restQueries/teamsGroup.http
 samples/react-application-grouplinks/src/restQueries/yammerGroup.http
+samples/react-application-sites-hubsite-switcher/samplehubapidata.json
