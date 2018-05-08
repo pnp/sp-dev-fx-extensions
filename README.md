@@ -9,6 +9,10 @@ __Note__: This code is provided as a sample only. Keep in mind that Microsoft ma
 
 When you need to make minor cosmetic changes to modern pages (e.g.:  match your corporate branding guidelines) and cannot use placeholders,you can create a custom CSS and inject on every modern page.
 
+In this example, we deploy the CSS in a shared location; this allows us to change the CSS file at any time without re-deploying or re-configuring the application customizer.
+
+You can deploy the application customizer with different settings to point to different CSS files.
+
 
 ## Used SharePoint Framework Version
 
@@ -61,6 +65,15 @@ Version|Date|Comments
 
 * update _serve.json_ pointing to your site collection home page change the `cssurl` property with the URL to your custom CSS.
 * run _gulp serve_
+
+## Deployment to Production
+
+* located the `elements.xml` file, in the `sharepoint` > `assets` folder
+* change the `ClientSideComponentProperties` to point to your custom CSS URL.
+* run _gulp bundle --ship_
+* run _gulp package-solution --ship_
+* upload the `react-application-injectcss.sppkg` from the `sharepoint` folder to your App catalog.
+* when prompted to deploy to all sites, choose the option that suits your needs.
 
 ## Features
 
