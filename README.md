@@ -3,7 +3,7 @@
 ## Summary
 This sample shows how to inject a custom Cascading Style Sheet (CSS) on modern pages.
 
-![Sample super ugly CSS](./assets/sampleresults.png)
+![Sample super ugly CSS to illustrate custom CSS injection](./assets/sampleresults.png)
 
 __Note__: This code is provided as a sample only. Keep in mind that Microsoft may change page elements and styles at any time, rendering your custom CSS useless. It is preferrable to use well-known HTML element placeholders.
 
