@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "search-extension-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/searchExtension/SearchExtensionApplicationCustomizer.js",
+          "manifest": "./src/extensions/searchExtension/SearchExtensionApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SearchExtensionApplicationCustomizerStrings": "lib/extensions/searchExtension/loc/{locale}.js"
+  }
+}
