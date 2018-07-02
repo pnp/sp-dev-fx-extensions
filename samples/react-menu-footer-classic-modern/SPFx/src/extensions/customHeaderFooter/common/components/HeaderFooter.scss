@@ -1,0 +1,222 @@
+  /* TopNav Spacing */
+  $topMenuLinkHeight: 30px;
+  $subMenuLinkHeight: 20px;
+  $showMenuLinkHeight: 30px;
+  $mobileBreakpoint: 480px;
+
+  /* Fonts and Colors */
+  $font-family: "Segoe UI Web (West European)",Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+
+  $topMenuBackground: #f4f4f4;
+  $topMenuLinkBackground: #757575;
+  $topMenuLinkColor: white;
+  $topMenuLinkHoverBackground: #0078D7;
+  $topMenuLinkHoverColor: #2f3036;
+
+  $subMenuLinkBackground: #f4f4f4;
+  $subMenuLinkColor: black;
+  $subMenuLinkHoverBackground: #0078D7;
+  $subMenuLinkHoverColor: white;
+
+  $showMenuLinkBackground: #757575;
+  $showMenuLinkColor: white;
+
+  $bottomMenuBackground: #0078D7;
+  $bottomMenuColor: white;
+  $bottomMenuTopBorder: black;
+
+
+/**************************************************************************************
+ * Top navigation
+ * Thanks to blogger Tony Thomas for the css-only menu mojo:
+ * https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css
+ **************************************************************************************/
+.topNav {
+
+    display: flex;
+    padding-left: 20px;
+    background-color: $topMenuBackground;
+
+    /*Strip the ul of padding and list styling*/
+    ul {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+    }
+
+    /*Create a horizontal list with spacing*/
+    li {
+        float: left;
+        margin-right: 1px;
+    }
+
+    /*Style for menu links*/
+    li a {
+        display:block;
+        min-width:140px;
+        height: $topMenuLinkHeight;
+        text-align: center;
+        line-height: $topMenuLinkHeight;
+        font-family: $font-family;
+        color: $topMenuLinkColor;
+        background: $topMenuLinkBackground;
+        text-decoration: none;
+    }
+
+    /*Hover state for top level links*/
+    li:hover a {
+        background: $topMenuLinkHoverBackground;
+    }
+
+    /*Style for dropdown menu*/
+    li:hover ul {
+        position: absolute;
+        z-index: 50;
+    }
+
+    /*Style for dropdown links*/
+    li:hover ul a {
+        background: $subMenuLinkBackground;
+        color: $subMenuLinkColor;
+        height: $subMenuLinkHeight;
+        line-height: $subMenuLinkHeight;
+    }
+
+    /*Hover state for dropdown links*/
+    li:hover ul a:hover {
+        background: $subMenuLinkHoverBackground;
+        color: $subMenuLinkHoverColor;
+    }
+
+    /*Hide dropdown links until they are needed*/
+    li ul {
+        display: none;
+    }
+
+    /*Make dropdown links vertical*/
+    li ul li {
+        display: block;
+        float: none;
+    }
+
+    /*Prevent text wrapping*/
+    li ul li a {
+        width: auto;
+        min-width: 100px;
+        padding: 0 20px;
+    }
+
+    /*Display the dropdown on hover*/
+    ul li a:hover + .hidden, .hidden:hover {
+        display: block;
+    }
+
+    /*Style 'show menu' label button and hide it by default*/
+    .show-menu {
+        font-family: font-family;
+        text-decoration: none;
+        color: $showMenuLinkColor;
+        background: $topMenuBackground;
+        height: $showMenuLinkHeight;
+        display: none;
+        margin-bottom: 1px;
+        div .hamburger {
+            div {
+                width: 20px;
+                height: 2px;
+                background-color: $showMenuLinkColor;
+                margin: 3px auto;
+            }
+            background-color: $topMenuLinkBackground;
+            height: $showMenuLinkHeight - 6;
+            width: 30px; 
+            margin: 0 auto;
+            padding-top: $showMenuLinkHeight / 2 - 9;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+    }
+
+    /*Hide checkbox*/
+    input[type=checkbox]{
+        display: none;
+    }
+
+    /*Show menu when invisible checkbox is checked*/
+    input[type=checkbox]:checked ~ ul {
+        display: block;
+    }
+
+    /*Responsive Styles*/
+    @media screen and (max-width : $mobileBreakpoint){
+        display: block;
+        padding-left: 0;
+
+        /*Make dropdown links appear inline*/
+        ul {
+            position: static;
+            display: none;
+        }
+        /*Create vertical spacing*/
+        li {
+            margin-bottom: 1px;
+        }
+        /*Make dropdown menu push the page down*/
+        li:hover ul {
+            position: relative;
+            z-index: 0;
+        }
+        /*Make all menu links full width*/
+        ul li, li a {
+            width: 100%;
+        }
+        /*Display 'show menu' link*/
+        .show-menu {
+            display:block;
+        }
+    }
+ }
+
+/**************************************************************************************
+ * Bottom navigation
+ **************************************************************************************/
+
+ .bottomNav {
+    background-color: $bottomMenuBackground;
+    color: $bottomMenuColor;
+    font-family: $font-family;
+    border-top: 1px;
+    border-top-style: solid;
+    border-top-color: $bottomMenuTopBorder;
+    padding: 5px 20px;
+
+  /*Strip the ul of padding*/
+  ul {
+      margin:0;
+      padding:0;
+  }
+
+  /*Create a horizontal list with spacing*/
+  li {
+      display: inline-block;
+      margin-right: 10px;
+  }
+
+  /*Add a bullet in front of every link except the first*/
+  li:before {
+      content: '\2022\00a0\00a0';
+  }
+  li:first-child:before {
+      content: '';
+  }
+
+  /*Style the links*/
+  li a {
+      color: $bottomMenuColor;
+      text-decoration: none;
+  }
+  li a:hover {
+      text-decoration: underline;
+  }
+
+}

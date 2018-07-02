@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.1",
+    "libraryName": "react-application-sites-hubsite-switcher",
+    "libraryId": "15e2e3fe-dc6a-4aab-80a3-9967e0b65fab",
+    "environment": "spo"
+  }
+}
