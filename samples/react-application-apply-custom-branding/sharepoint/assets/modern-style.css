@@ -1,0 +1,22 @@
+.ms-compositeHeader {
+    padding: 0px !important;
+}
+
+.ms-compositeHeader-horizontalNav {
+    padding-bottom: 5px;
+	padding-left: 10px;
+	box-shadow: 0 0.25em 0.25em 0.125em grey;
+    background-color: #FFA500;
+}
+
+.ms-compositeHeader-mainLayout {
+	padding: 20px 32px 24px;
+}
+
+.ms-HorizontalNavItems {
+    background: #FFA500;
+}
+
+.ms-HorizontalNavItem-link, .ms-HorizontalNavItem-link:hover, a.ms-HorizontalNavItem-link, a.ms-HorizontalNavItem-link:hover , a.ms-HorizontalNavItem-link:visited {
+    color: white;
+}

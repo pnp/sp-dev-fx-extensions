@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "custom-branding-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/customBranding/CustomBrandingApplicationCustomizer.js",
+          "manifest": "./src/extensions/customBranding/CustomBrandingApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CustomBrandingApplicationCustomizerStrings": "lib/extensions/customBranding/loc/{locale}.js"
+  }
+}
