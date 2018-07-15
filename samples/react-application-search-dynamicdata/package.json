@@ -1,0 +1,44 @@
+{
+  "name": "react-application-search-dynamicdata",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "build": "gulp bundle",
+    "clean": "gulp clean",
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "@microsoft/sp-core-library": "1.5.0-plusbeta",
+    "@microsoft/sp-office-ui-fabric-core": "1.5.0-plusbeta",
+    "@microsoft/decorators": "1.5.0-plusbeta",
+    "@types/webpack-env": "1.13.1",
+    "@types/es6-promise": "0.0.33",
+    "@pnp/common": "^1.1.0",
+    "@pnp/logging": "^1.1.0",
+    "@pnp/odata": "^1.1.0",
+    "@pnp/sp": "^1.1.0",
+    "@microsoft/sp-dialog": "1.5.0-plusbeta",
+    "@microsoft/sp-application-base": "1.5.0-plusbeta",
+    "@types/react": "15.6.6",
+    "@types/react-dom": "0.14.18",
+    "@types/react-addons-test-utils": "0.14.15",
+    "@types/react-addons-update": "0.14.14",
+    "flux": "3.1.2",
+    "react": "15.6.2",
+    "react-dom": "15.6.2",
+    "moment": "^2.21.0"
+  },
+  "devDependencies": {
+    "@microsoft/sp-build-web": "1.5.0-plusbeta",
+    "@microsoft/sp-module-interfaces": "1.5.0-plusbeta",
+    "@microsoft/sp-webpart-workbench": "1.5.0-plusbeta",
+    "gulp": "~3.9.1",
+    "@types/chai": "3.4.34",
+    "@types/mocha": "2.2.38",
+    "@types/flux": "3.0.1",
+    "ajv": "~5.2.2"
+  }
+}
