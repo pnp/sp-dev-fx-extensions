@@ -2,6 +2,6 @@
   "$schema": "https://dev.office.com/json-schemas/spfx-build/deploy-azure-storage.schema.json",
   "workingDir": "./temp/deploy/",
   "account": "<!-- STORAGE ACCOUNT NAME -->",
-  "container": "spfx-discuss-now",
+  "container": "react-command-discuss-now",
   "accessKey": "<!-- ACCESS KEY -->"
 }

@@ -1,4 +1,4 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx-build/write-manifests.schema.json",
-  "cdnBasePath": "https://publiccdn.sharepointonline.com/contosodemosg.sharepoint.com/sites/SPFXCDN/SPFXFiles/spfx-discuss-now"
+  "cdnBasePath": "<!-- PATH TO CDN -->"
 }

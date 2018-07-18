@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-
-    <CustomAction 
-        Title="DiscussNowCommandSet"
-        RegistrationId="101"
+    <CustomAction
+        Title="DiscussNow"
+        RegistrationId="100"
         RegistrationType="List"
-        Location="ClientSideExtension.ListViewCommandSet"
-        ClientSideComponentId="95483216-5d5f-404c-bf25-563e44cdd935">
-
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="86859ba2-d3cb-4363-aa39-8a9a6f04ab70"
+        ClientSideComponentProperties="{&quot;sampleTextOne&quot;:&quot;One item is selected in the list.&quot;, &quot;sampleTextTwo&quot;:&quot;This command is always visible.&quot;}">
     </CustomAction>
-
 </Elements>

@@ -17,8 +17,8 @@ import {
 
 import { DateTimePicker } from './DateTimePicker';
 import { ExtensionContext } from '@microsoft/sp-extension-base';
-import { GraphHttpClient, GraphHttpClientResponse, IGraphHttpClientOptions } from '@microsoft/sp-http';
 import { Dialog } from '@microsoft/sp-dialog';
+import { MSGraphClient } from '@microsoft/sp-client-preview';
 
 import styles from './ScheduleMeetingDialog.module.scss';
 import * as strings from 'DiscussNowCommandSetStrings';
@@ -163,21 +163,22 @@ export default class ScheduleMeetingDialog extends BaseDialog {
         isBlocking: false
       };
     }
-  
+
     @autobind
-    private _submit(subject: string, dateTime: Date, duration: number): void {
+    private async _submit(subject: string, dateTime: Date, duration: number): Promise<void> {
 
       // *******************************************
-      // Schedule the meeting with Microsoft Graph
+      // schedule the meeting with Microsoft Graph
       // *******************************************
 
+      let response: any = null;
       const startDateTimeISO: string = dateTime.toISOString();
 
-      // Calculate the end date time
+      // calculate the end date time
       let addMinutes: number = 0;
       let addHours: number = 0;
-      
-      switch (duration){
+
+      switch (duration) {
         case 30:
           addMinutes = 30;
           break;
@@ -198,47 +199,41 @@ export default class ScheduleMeetingDialog extends BaseDialog {
       let endDateTime: Date = new Date(startDateTimeISO);
       endDateTime.setHours(dateTime.getHours() + addHours);
       endDateTime.setMinutes(dateTime.getMinutes() + addMinutes);
-      
+
       const endDateTimeISO: string = endDateTime.toISOString();
-      
+
       const groupId: string = this.context.pageContext.legacyPageContext.groupId;
 
-      const newMeetingRequestOptions: IGraphHttpClientOptions = {
-        body: `{
-                "body": {
-                  "content":"Let's discuss about this document: ${this.filePath}",
-                  "contentType":"Text"
-                },
-                "subject": "${subject}",
-                "start": {
-                  "dateTime":"${startDateTimeISO}",
-                  "timeZone":"UTC"
-                },
-                "end": {
-                  "dateTime":"${endDateTimeISO}",
-                  "timeZone":"UTC"
-                }
-              }`
-      };
-
-      let meetingCreated: boolean = false;
-
-      this.context.graphHttpClient.post(`v1.0/groups/${groupId}/calendar/events`, GraphHttpClient.configurations.v1, newMeetingRequestOptions)
-        .then((response: GraphHttpClientResponse) => {
-          if (response.ok) {
-            meetingCreated = true;
-            return(response.json());
-          } else {
-            console.warn(response.statusText);
+      if (groupId) {
+        const newMeetingRequest: any = {
+          body: {
+            content: "Let's discuss about this document: ${this.filePath}",
+            contentType: "Text"
+          },
+          subject: subject,
+          start: {
+            dateTime: startDateTimeISO,
+            timeZone: "UTC"
+          },
+          end: {
+            dateTime: endDateTimeISO,
+            timeZone: "UTC"
           }
-        })
-        .then((result: any) => {
-          if (meetingCreated) {
-            Dialog.alert(`Meeting "${result.subject}" has been successfully created.`);
-          } else {
-            Dialog.alert(`Failed to create meeting "${result.subject}"!`);
-          }
-        });
+        };
+
+        const graphClient: MSGraphClient = this.context.serviceScope.consume(MSGraphClient.serviceKey);
+
+        response = await graphClient
+          .api(`groups/${groupId}/calendar/events`)
+          .version("v1.0")
+          .post(newMeetingRequest);
+      }
+
+      if (response && response.id) {
+        Dialog.alert(`Meeting "${subject}" has been successfully created.`);
+      } else {
+        Dialog.alert(`Failed to create meeting "${subject}"!`);
+      }
 
       this.close();
     }

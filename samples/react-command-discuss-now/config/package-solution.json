@@ -1,23 +1,31 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "spfx-discuss-now-client-side-solution",
-    "id": "8c4b07e1-50e7-4024-80d7-e78f4e0648dc",
-    "version": "1.0.2.0",
-    "skipFeatureDeployment": false,
-    "features": [{
-      "title": "DiscussNowCommandSet",
-      "description": "Custom action for Discuss Now Command Set",
-      "id": "98e44d40-c891-4cf6-8e75-690c802bd227",
-      "version": "1.0.0.0",
-      "assets": {        
-        "elementManifests": [
-          "elements.xml"
-        ]
+    "name": "react-command-discuss-now-client-side-solution",
+    "id": "b37832e8-0196-400a-904d-857dbf94b432",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "6423e32b-16d2-4d52-9a31-b5aab2642a66",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
       }
-    }]
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Group.ReadWrite.All"
+      }
+    ]
   },
   "paths": {
-    "zippedPackage": "solution/spfx-discuss-now.sppkg"
+    "zippedPackage": "solution/react-command-discuss-now.sppkg"
   }
 }

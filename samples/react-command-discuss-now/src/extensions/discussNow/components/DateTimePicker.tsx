@@ -99,14 +99,14 @@ export class DateTimePicker extends React.Component<IDateTimePickerProps, IDateT
      */
     constructor(props: IDateTimePickerProps) {
         super(props);
-        
+
         this.state = {
-            date: (this.props.initialDateTime != null) ? new Date(this.props.initialDateTime) : null,
-            hours: (this.props.initialDateTime != null) ? new Date(this.props.initialDateTime).getHours() : 0,
-            minutes: (this.props.initialDateTime != null) ? new Date(this.props.initialDateTime).getMinutes() : 0,
-            seconds: (this.props.initialDateTime != null) ? new Date(this.props.initialDateTime).getSeconds() : 0,
-        };
-    }
+          date: (this.props.initialDateTime != null) ? this.props.initialDateTime : null,
+          hours: (this.props.initialDateTime != null) ? this.props.initialDateTime.getHours() : 0,
+          minutes: (this.props.initialDateTime != null) ? this.props.initialDateTime.getMinutes() : 0,
+          seconds: (this.props.initialDateTime != null) ? this.props.initialDateTime.getSeconds() : 0,
+      };
+  }
 
   public render(): React.ReactElement<IDateTimePickerProps> {
     return (

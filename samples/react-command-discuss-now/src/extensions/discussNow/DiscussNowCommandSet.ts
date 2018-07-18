@@ -46,20 +46,20 @@ export default class DiscussNowCommandSet
     //   }
     // }
 
-    // Show the command just in case a single item is selected
+    // show the command just in case a single item is selected
     const scheduleMeetingCommand: Command | undefined = this.tryGetCommand('DISCUSS_NOW');
-    scheduleMeetingCommand.visible = event.selectedRows.length == 1; 
+    scheduleMeetingCommand.visible = event.selectedRows.length === 1;
   }
 
   @override
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
-    switch (event.commandId) {
+    switch (event.itemId) {
       case 'DISCUSS_NOW':
 
         const id: number = event.selectedRows[0].getValueByName("ID");
         const fileName: string = event.selectedRows[0].getValueByName("FileLeafRef");
         const filePath: string = event.selectedRows[0].getValueByName("ServerRedirectedEmbedUrl");
-        
+
         const dialog: ScheduleMeetingDialog = new ScheduleMeetingDialog();
         dialog.fileName = fileName;
         dialog.filePath = filePath;
