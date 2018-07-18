@@ -1,0 +1,26 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-cmdex-export-items",
+    "id": "d5db7e37-fee9-42ac-913a-90be49774483",
+    "version": "1.0.0.0",
+    "features": [
+      {
+        "title": "SPFx Export Items - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "eb9b934b-03cb-489f-884f-b73b5fc1b06a",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ],
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-cmdex-export-items.sppkg"
+  }
+}

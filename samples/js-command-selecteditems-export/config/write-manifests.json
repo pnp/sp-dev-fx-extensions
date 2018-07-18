@@ -1,0 +1,4 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/write-manifests.schema.json",
+  "cdnBasePath": "https://sadacloud.sharepoint.com/sites/Demo-Comm01/SiteAssets/cmdex"
+}

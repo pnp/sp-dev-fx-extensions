@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://YOUR_TENANT.sharepoint.com/sites/modernteamsite",
+      "customActions": {
+        "76b03e75-7b8a-426a-86f0-c71ef1e6f38d": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "groupDirectLinks": {
+      "pageUrl": "https://YOUR_TENANT.sharepoint.com/sites/modernteamsite",
+      "customActions": {
+        "76b03e75-7b8a-426a-86f0-c71ef1e6f38d": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}

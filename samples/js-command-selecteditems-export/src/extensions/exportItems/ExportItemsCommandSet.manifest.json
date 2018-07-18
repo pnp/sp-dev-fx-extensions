@@ -1,0 +1,17 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+  "id": "aaa4141f-7829-4b98-af0f-a1e0e6f273fd",
+  "alias": "ExportItemsCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "items": {
+    "EXCELEXPORTITEMS_1": {
+      "title": { "default": "Export" },
+      "iconImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_Excel_2013_logo.svg",
+      "type": "command"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.1",
+    "libraryName": "react-application-grouplinks",
+    "libraryId": "6fddf1dc-5191-411c-ac6c-32f1580f4ba3",
+    "environment": "spo"
+  }
+}

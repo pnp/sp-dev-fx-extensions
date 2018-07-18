@@ -1,0 +1,16 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Build generated files
+build
+
+# OSX
+.DS_Store
+
+# Styles Generated Code
+*.scss.ts
