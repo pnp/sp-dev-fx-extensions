@@ -40,23 +40,24 @@ class ItemHistoryDialogContent extends React.Component<IItemHistoryDialogContent
         if (index < this.props.versions.length - 1) {
             switch (columnType) {
                 case "User":
-
+                case "Lookup":
                     if (this.props.versions[index][column.fieldName]["LookupId"] !== this.props.versions[index + 1][column.fieldName]["LookupId"]) {
                         return true;
                     }
                     return false;
+               
                 case "UserMulti":
+                case "LookupMulti":
                     debugger;
                     if (this.props.versions[index][column.fieldName].length !== this.props.versions[index + 1][column.fieldName].length) {
                         return true;
                     }
                     for (let x: number = 0; x < this.props.versions[index][column.fieldName].length; x++) {
-                        if (this.props.versions[index][column.fieldName][x].Id !== this.props.versions[index + 1][column.fieldName][x].Id) {
+                        if (this.props.versions[index][column.fieldName][x].LookupId !== this.props.versions[index + 1][column.fieldName][x].LookupId) {
                             return true;
                         }
                     }
                     return false;
-
 
                 default:
                     if (this.props.versions[index][column.fieldName] !== this.props.versions[index + 1][column.fieldName]) {
@@ -85,7 +86,7 @@ class ItemHistoryDialogContent extends React.Component<IItemHistoryDialogContent
             <div>{col["LookupValue"]}</div>
         );
 
-        return <div>{lookupValues}</div>
+        return <div>{lookupValues}</div>;
     }
 
     @autobind
@@ -103,6 +104,18 @@ class ItemHistoryDialogContent extends React.Component<IItemHistoryDialogContent
     @autobind
     public onRenderUserMulti(item?: any, index?: number, column?: IColumn): any {
         return (<div style={this.getStyle(item, index, column, "UserMulti")}>
+            {this.JoinLookupValues(item[column.fieldName])}
+        </div>);
+    }
+    @autobind
+    public onRenderLookup(item?: any, index?: number, column?: IColumn): any {
+        return (<div style={this.getStyle(item, index, column, "Lookup")}>
+            {item[column.fieldName]["LookupValue"]}
+        </div>);
+    }
+    @autobind
+    public onRenderLookupMulti(item?: any, index?: number, column?: IColumn): any {
+        return (<div style={this.getStyle(item, index, column, "LookupMulti")}>
             {this.JoinLookupValues(item[column.fieldName])}
         </div>);
     }
@@ -166,7 +179,35 @@ class ItemHistoryDialogContent extends React.Component<IItemHistoryDialogContent
                             minWidth: 100,
                             onRender: this.onRenderUserMulti
                         };
+                    case "Lookup":
+                        return {
+                            name: columnDef["Title"],
+                            isResizable: true,
+                            key: cname,
+                            fieldName: cname,
+                            minWidth: 100,
+                            onRender: this.onRenderLookup
+                        };
+                    case "LookupMulti":
+                        return {
+                            name: columnDef["Title"],
+                            isResizable: true,
+                            key: cname,
+                            fieldName: cname,
+                            minWidth: 100,
+                            onRender: this.onRenderLookupMulti
+                        };
+                    case "Counter":
+                        return {
+                            name: columnDef["Title"],
+                            isResizable: true,
+                            key: cname,
+                            fieldName: cname,
+                            minWidth: 50,
+                            onRender: this.onRenderText
+                        };
                     default:
+                        console.warn(`Column Type of '${columnDef["TypeAsString"]}' is not setup. Defaulting to text`);
                         return {
                             name: columnDef["Title"],
                             isResizable: true,
@@ -285,4 +326,4 @@ export default class ItemHistoryDialog extends BaseDialog {
         };
     }
 
-}
+};
