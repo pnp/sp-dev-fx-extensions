@@ -9,18 +9,16 @@
         "fbb38806-54e4-4ddd-a413-e7a1611fcb08": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
           }
         }
       }
     },
     "graphBot": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://collaborationcorner.sharepoint.com/teams/SharePointMSALBot",
       "customActions": {
         "fbb38806-54e4-4ddd-a413-e7a1611fcb08": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
           }
         }
       }

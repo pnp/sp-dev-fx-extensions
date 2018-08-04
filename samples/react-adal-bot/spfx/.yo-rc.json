@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.0",
+    "libraryName": "graph-bot",
+    "libraryId": "f300ad34-03b1-4e32-9e9b-6a89b054987d",
+    "environment": "spo"
+  }
+}

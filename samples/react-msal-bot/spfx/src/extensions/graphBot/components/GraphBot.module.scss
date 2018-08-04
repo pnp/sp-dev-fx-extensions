@@ -6,7 +6,7 @@
 }
 
 .banner {
-    background-color: "[theme: themePrimary]";
+    background-color: "[theme: themePrimary, default: #0078d7]";
     text-align: left;
 
     &__chatButton, &__chatButton:hover {

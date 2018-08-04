@@ -1,0 +1,28 @@
+{
+  "name": "react-adal-bot",
+  "version": "1.1.0",
+  "description": "Sample Bot for SharePoint Online using ADAL",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FranckyC/SharePointBot.git"
+  },
+  "keywords": [
+    "OAuth2",
+    "SharePoint",
+    "Bot",
+    "ADAL"
+  ],
+  "author": "Franck Cornu - @FranckCornu (aequos)",
+  "license": "MIT",
+  "dependencies": {
+    "adal-node": "0.1.28",
+    "botbuilder": "3.15.0",
+    "node-fetch": "^1.6.3",
+    "restify": "7.2.1",
+    "es6-promise": "4.2.4"
+  }
+}
