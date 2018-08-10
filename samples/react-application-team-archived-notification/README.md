@@ -73,8 +73,8 @@ Here's a debug URL for testing around this sample.
   - gulp package-solution --ship
 - Drag react-application-archived-notification.sppkg onto the App for SharePoint library to tenant's app catalog.
 - Check tenant wide deployment option
-[Deployment](./assets/deploy.png)
+![Deployment](./assets/deploy.png)
 - Navigate to SharePoint admin center preview (https://innofrontier-admin.sharepoint.com/_layouts/15/online/AdminHome.aspx#/webApiPermissionManagement)  and approve Microsoft Graph permissions (Group.Read.All).
-- Bind application customizer to target site with PowerShell script example. ![ProvisionTeamArchivedNotication.ps1](./ProvisionTeamArchivedNotification.ps1). 
+- Bind application customizer to target site with PowerShell script example. [ProvisionTeamArchivedNotication.ps1](./ProvisionTeamArchivedNotification.ps1). 
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
