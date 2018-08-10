@@ -1,0 +1,10 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.5.1",
+    "libraryName": "react-application-archived-notifier",
+    "libraryId": "1ef726ed-7091-4132-a1f3-97889c6af2fe",
+    "environment": "spo",
+    "packageManager": "npm",
+    "isCreatingSolution": true
+  }
+}
