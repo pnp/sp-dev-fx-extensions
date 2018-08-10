@@ -3,7 +3,7 @@
 ## Summary
 This sample demonstrates how to read is current Team connected to a site set archived. 
 
-[picture of the extension in action, if possible](./assets/screenshot.png)
+![picture of the extension in action, if possible](./assets/screenshot.png)
 
 ## Used SharePoint Framework Version 
 ![1.5.1](https://img.shields.io/badge/version-GA-green.svg)
