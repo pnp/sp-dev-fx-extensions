@@ -1,4 +1,4 @@
-# React Menu Foooter Classic Modern
+# React Menu Footer Classic Modern
 
 ## Summary
 This is a sample showing how to create custom headers and footers that work on classic pages using JavaScript injection, and on modern pages using a SharePoint Framework Application Customizer extension. 
