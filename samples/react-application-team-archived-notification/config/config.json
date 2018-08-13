@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "application-extension-team-archived-notification-application-cus": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/applicationExtensionSiteArchivedNotification/ApplicationExtensionSiteArchivedNotificationApplicationCustomizer.js",
+          "manifest": "./src/extensions/applicationExtensionSiteArchivedNotification/ApplicationExtensionSiteArchivedNotificationApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ApplicationExtensionSiteArchivedNotificationApplicationCustomizerStrings": "lib/extensions/applicationExtensionSiteArchivedNotification/loc/{locale}.js"
+  }
+}
