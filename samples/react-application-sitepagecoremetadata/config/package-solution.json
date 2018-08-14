@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "site-page-metadata-extension-client-side-solution",
+    "id": "83814ad9-6921-401e-b582-aad413bca1ea",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/site-page-metadata-extension.sppkg"
+  }
+}

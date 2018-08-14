@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "site-page-metadata-footer-customizer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/sitePageMetadataFooterCustomizer/SitePageMetadataFooterCustomizerApplicationCustomizer.js",
+          "manifest": "./src/extensions/sitePageMetadataFooterCustomizer/SitePageMetadataFooterCustomizerApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SitePageMetadataFooterCustomizerApplicationCustomizerStrings": "lib/extensions/sitePageMetadataFooterCustomizer/loc/{locale}.js"
+  }
+}
