@@ -2,7 +2,7 @@
 import { ApplicationCustomizerContext } from "@microsoft/sp-application-base";
 import { SPHttpClient } from "@microsoft/sp-http";
 import { Text } from "@microsoft/sp-core-library";
-import { Logger, LogLevel } from "sp-pnp-js";
+import { Logger } from "@pnp/logging";
 
 class TenantDataProvider implements ITenantDataProvider {
 
