@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "react-application-events-dynamicdata-client-side-solution",
+    "id": "f694dde4-d04d-4b17-a4e8-dae80046f17e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/react-application-events-dynamicdata.sppkg"
+  }
+}

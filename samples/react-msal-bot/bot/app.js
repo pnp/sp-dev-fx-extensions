@@ -1,7 +1,7 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 Name: react-msal-bot
-Author: Franck Cornu (MVP Office Development at aequos) - Twitter @FranckCornu
-Date: January 8, 2018
+Author: Franck Cornu (aequos) - Twitter @FranckCornu
+Date: August 4th, 2018
 Description: This sample shows how to handle Microsoft graph queries with an access token retrieved from a SharePoint site via the backchannel
 -----------------------------------------------------------------------------*/
 const restify = require('restify');
@@ -93,7 +93,7 @@ const LuisModelUrl = 'https://' + luisAPIHostName + '/luis/v2.0/apps/' + luisApp
 // Bot dialogs
 //=========================================================
 const recognizer = new builder.LuisRecognizer(LuisModelUrl);
-const intents = new builder.IntentDialog({ recognizers: [recognizer] })
+const intents = new builder.IntentDialog({ recognizers: [recognizer], recognizeMode: builder.RecognizeMode.onBegin, intentThreshold: 0.8 })
 .onDefault((session) => {
     session.send('Sorry, I did not understand \'%s\'.', session.message.text);
 })

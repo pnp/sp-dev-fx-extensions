@@ -9,7 +9,7 @@ $Comment = "PnP - Graph Bot (MSAL)"
 Connect-PnPOnline -Url $SiteCollectionUrl -UseWebLogin
 
 # Set the environment settings in the tenant property bag
-Set-PnPStorageEntity -Key "PnPGraphBot_ClientId" -Value $ClientId -Comment $Comment -Description "Azure AD App ID"
-Set-PnPStorageEntity -Key "PnPGraphBot_BotId" -Value $BotId -Comment $Comment -Description "Bot ID"
-Set-PnPStorageEntity -Key "PnPGraphBot_BotDirectLineSecret" -Value $BotDirectLineSecret -Comment $Comment -Description "Bot Direct Line Secret"
-Set-PnPStorageEntity -Key "PnPGraphBot_TenantId" -Value $TenantId -Comment $Comment -Description "Office 365 Tenant ID"
+Set-PnPStorageEntity -Key "PnP_MSAL_GraphBot_ClientId" -Value $ClientId -Comment $Comment -Description "Azure AD App ID"
+Set-PnPStorageEntity -Key "PnP_MSAL_GraphBot_BotId" -Value $BotId -Comment $Comment -Description "Bot ID"
+Set-PnPStorageEntity -Key "PnP_MSAL_GraphBot_BotDirectLineSecret" -Value $BotDirectLineSecret -Comment $Comment -Description "Bot Direct Line Secret"
+Set-PnPStorageEntity -Key "PnP_MSAL_GraphBot_TenantId" -Value $TenantId -Comment $Comment -Description "Office 365 Tenant ID"

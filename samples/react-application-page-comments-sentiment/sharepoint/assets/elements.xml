@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="PageSentiment"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="13f4f154-b4a6-4cf8-b1a1-2bcfa6f245ac"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

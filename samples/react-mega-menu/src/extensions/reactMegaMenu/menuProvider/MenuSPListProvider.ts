@@ -1,6 +1,6 @@
 import { IMenuProvider, MenuCategory } from "./index";
 import { Log } from "@microsoft/sp-core-library";
-import { Web, ListEnsureResult, Item } from "sp-pnp-js";
+import { Web, ListEnsureResult, Item } from "@pnp/sp";
 import { MenuItem } from "./MenuItem";
 
 const LOG_SOURCE: string = "ReactMegaMenuApplicationCustomizer_MenuSPListProvider";

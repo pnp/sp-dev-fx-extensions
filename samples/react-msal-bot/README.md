@@ -13,7 +13,7 @@ However, if you need to access protected APIs in your bot but also want mutliple
 </p>
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/drop-1.4.0-green.svg)
+![drop](https://img.shields.io/badge/drop-1.5.1-green.svg)
 
 ## Applies to
 
@@ -24,13 +24,14 @@ However, if you need to access protected APIs in your bot but also want mutliple
 
 Solution|Author(s)
 --------|---------
-react-bot-msal | Franck Cornu (MVP Office Development at aequos) - Twitter @FranckCornu
+react-bot-msal | Franck Cornu (aequos) - Twitter @FranckCornu
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0 | January 8, 2018 | Initial release
+1.1 | August 4th, 2018 | Updated bot logic + bug fixes
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -85,7 +86,7 @@ To access the Microsoft Graph API, you will need to register a new app in the Az
 
 - In the bot template, select a basic **Node.js** bot.
 - In the bot *"Build"* setting, open the online code editor:
-  - Replace the **app.js** code by the one of this sample contained in the **server.js** file.
+  - Replace the **app.js** code by the one of this sample contained in the **app.js** file.
   - Same thing for the **package.json** file.
 <p align="center">
   <img width="30%" src="./images/online_editor.png"/>
@@ -141,7 +142,6 @@ The SharePoint extension does not store any settings directly in the code. They 
 ### Debug the SPFx extension ###
 
 To debug the SPFx code, you will need to package (`gulp bundle` and `gulp package-solution`) and deploy the application in your Office 365 environment first and then host your code locally (by running `gulp serve --nobrowser`). 
-
 
 You could also debug using the SharePoint hosted workbench but, in this scenario, you would update the redirect URL of your Azure AD App pointing to the workbench.aspx page in your SharePoin site.
 

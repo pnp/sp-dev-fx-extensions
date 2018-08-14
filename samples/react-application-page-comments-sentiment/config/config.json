@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "page-sentiment-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/pageSentiment/PageSentimentApplicationCustomizer.js",
+          "manifest": "./src/extensions/pageSentiment/PageSentimentApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PageSentimentApplicationCustomizerStrings": "lib/extensions/pageSentiment/loc/{locale}.js"
+  }
+}

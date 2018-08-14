@@ -95,7 +95,6 @@ export default class SentimentAnalytics
     console.log(score);
 
     return score;
-
   }
 
   private _prepareHttpOptionsForTextApi(text: string, id: string, language:string = null): IHttpClientOptions {
