@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "search-extension-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/searchExtension/SearchExtensionApplicationCustomizer.js",
+          "manifest": "./src/extensions/searchExtension/SearchExtensionApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "search-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/searchWebPart/SearchWebPartWebPart.js",
+          "manifest": "./src/webparts/searchWebPart/SearchWebPartWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SearchExtensionApplicationCustomizerStrings": "lib/extensions/searchExtension/loc/{locale}.js",
+    "SearchWebPartWebPartStrings": "lib/webparts/searchWebPart/loc/{locale}.js"
+ 
+  }
+}
