@@ -73,6 +73,7 @@ react-mega-menu | Velin Georgiev ([@VelinGeorgiev](https://twitter.com/velingeor
 Version|Date|Comments
 -------|----|--------
 0.0.1|October 24, 2017 | Initial commit
+0.1.0|August 3, 2018  | Updated to SPFx 1.5.1 and @pnp 5.6.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**

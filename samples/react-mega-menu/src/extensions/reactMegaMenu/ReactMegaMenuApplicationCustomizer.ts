@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import { Log } from "@microsoft/sp-core-library";
+import { Logger } from "@pnp/logging";
 import { override } from "@microsoft/decorators";
 import {
   BaseApplicationCustomizer,
@@ -12,7 +12,6 @@ import * as strings from "ReactMegaMenuApplicationCustomizerStrings";
 
 import MegaMenuComponent from "./components/MegaMenuComponent";
 import { IMegaMenuProps } from "./components/IMegaMenuProps";
-import Placeholder from "@microsoft/sp-application-base/lib/extensibility/Placeholder";
 import { IMenuProvider, MenuSPListProvider, MenuFakeProvider } from "./menuProvider/index";
 
 /**
