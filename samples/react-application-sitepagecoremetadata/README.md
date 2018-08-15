@@ -25,7 +25,7 @@ Please refer to the Features and Notes in the bottom section of the page for mor
 
 Solution|Author(s)
 --------|---------
-react-application-sitepagecoremetadata|Vipul Kelkar [@vipulkelkar](https://twitter.com/VipulKelkar))
+react-application-sitepagecoremetadata|Vipul Kelkar ([@vipulkelkar](https://twitter.com/VipulKelkar))
 
 ## Version history
 
@@ -62,17 +62,17 @@ Version|Date|Comments
 
 To deploy the extension to the tenant : 
 
-* publish the solution on any hosting environment or CDN and update the _cdnBasePath_ property in the write-manifests.json file with the base URL of your hosting environment
-* bundle and package the solution by executing the following commands in the command line:
+* Update the _cdnBasePath_ property in the write-manifests.json file with the base URL of your hosting location
+* Bundle and package the solution by executing the following commands in the command line:
   * `gulp bundle --ship`
   * `gulp package-solution --ship`
-* upload the content of the ./temp/deploy subfolder of the sample root folder into the target hosting environment
-* add to the "Apps for SharePoint" library of the AppCatalog in your tenant the site-page-metadata-extension.sppkg file that you will find under the ./sharepoint/solution subfolder of the sample root folder
-* the sample is tenant-wide available, so you don't need to install it to every single target site, you simply need to bind the application customizer to the target site. In order to do that, you can use the PowerShell script [Install-SitePageMetadataExtension.ps1](./Install-SitePageMetadataExtension.ps1)
+* Upload the content of the ./temp/deploy subfolder of the sample root folder into the target hosting environment
+* Add to the "Apps for SharePoint" library of the AppCatalog in your tenant the "site-page-metadata-extension.sppkg" file that you will find under the ./sharepoint/solution subfolder of the sample root folder
+* The sample is tenant-wide available, so you don't need to install it to every single target site, you simply need to bind the application customizer to the target site. In order to do that, you can use the PowerShell script [Install-SitePageMetadataExtension.ps1](./Install-SitePageMetadataExtension.ps1) by modifying the Site collection URL and the Component ID as desired.
 
 ## Features
 
-This project contains sample SharePoint Framework application customizer extension built using React and Office UI Fabric React. The application customizer renders the core metadata of the site page in the footer of the page.
+This application customizer extension is built using React and Office UI Fabric React. The application customizer renders the core metadata of the site page in the footer of the page.
 
 Notes : 
 
