@@ -1,4 +1,4 @@
-# SPFx Application Customizer for archived notifiier
+# SPFx Application Customizer for displaying notification if a team is set as archived
 
 ## Summary
 This sample demonstrates how to check is current team linked to team site set as archived from Microsoft Graph API. If team is archived, notification is diplayed to end-user on header placeholder. 
@@ -6,7 +6,7 @@ This sample demonstrates how to check is current team linked to team site set as
 ![picture of the extension in action, if possible](./assets/screenshot.png)
 
 ## Used SharePoint Framework Version 
-![1.5.1](https://img.shields.io/badge/version-GA-green.svg)
+![1.6.0](https://img.shields.io/badge/version-GA-green.svg)
 
 ## Applies to
 
@@ -31,6 +31,7 @@ react-application-archived-notifier | Matti Paukkonen
 Version|Date|Comments
 -------|----|--------
 1.0|July 8, 2018|Initial release
+1.1|September 6, 2018|Updated SPfx 1.6.0 support and tenant wide deployment
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
