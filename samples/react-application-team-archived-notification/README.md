@@ -11,9 +11,9 @@ This sample demonstrates how to check is current team linked to team site set as
 ## Applies to
 
 * [SharePoint Framework](https://dev.office.com/sharepoint)
+* [Microsoft Graph](https://developer.microsoft.com/en-us/graph)
 
 
-> Update accordingly as needed.
 
 ## Prerequisites
  
@@ -57,8 +57,12 @@ Description of the extension with possible additional details than in short summ
 
 This extension illustrates the following concepts:
 
-- Consuming Microsoft Graph to get archived status of a Team.
-- using React to display notification bar on header
+- Consuming Microsoft Graph to get archived status of a Team
+- Using React to display notification bar on header
+- Deploying extension automatically with tenant wide deployment to all group-connected modern team sites (GROUP#0)
+
+You can disable automatic deployment by commenting out features section on package-solution.json or disabling extension on Tenant Wide Extension list on App Catalog.
+![Tenant Wide Extension list](./assets/tenantwide.png)
 
 
 ## Debug URL for testing
@@ -76,6 +80,6 @@ Here's a debug URL for testing around this sample.
 - Check tenant wide deployment option
 ![Deployment](./assets/deploy.png)
 - Navigate to SharePoint admin center preview (https://innofrontier-admin.sharepoint.com/_layouts/15/online/AdminHome.aspx#/webApiPermissionManagement)  and approve Microsoft Graph permissions (Group.Read.All).
-- Bind application customizer to target site with PowerShell script example. [ProvisionTeamArchivedNotication.ps1](./ProvisionTeamArchivedNotification.ps1). 
+- Extension is deployed automatically on all group-connected modern team sites (WebTemplate GROUP#0).
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
