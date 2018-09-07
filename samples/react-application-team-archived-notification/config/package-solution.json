@@ -24,6 +24,10 @@
       {
         "resource": "Microsoft Graph",
         "scope": "Group.Read.All"
+      },
+      {
+        "resource": "Windows Azure Active Directory",
+        "scope": "User.Read"
       }
     ]
 },
