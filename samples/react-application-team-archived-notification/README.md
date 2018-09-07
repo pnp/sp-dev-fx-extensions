@@ -1,4 +1,4 @@
-# SPFx Application Customizer for archived notifiier
+# SPFx Application Customizer for displaying notification if a team is set as archived
 
 ## Summary
 This sample demonstrates how to check is current team linked to team site set as archived from Microsoft Graph API. If team is archived, notification is diplayed to end-user on header placeholder. 
@@ -6,14 +6,14 @@ This sample demonstrates how to check is current team linked to team site set as
 ![picture of the extension in action, if possible](./assets/screenshot.png)
 
 ## Used SharePoint Framework Version 
-![1.5.1](https://img.shields.io/badge/version-GA-green.svg)
+![1.6.0](https://img.shields.io/badge/version-GA-green.svg)
 
 ## Applies to
 
 * [SharePoint Framework](https://dev.office.com/sharepoint)
+* [Microsoft Graph](https://developer.microsoft.com/en-us/graph)
 
 
-> Update accordingly as needed.
 
 ## Prerequisites
  
@@ -31,6 +31,7 @@ react-application-archived-notifier | Matti Paukkonen
 Version|Date|Comments
 -------|----|--------
 1.0|July 8, 2018|Initial release
+1.1|September 6, 2018|Updated SPfx 1.6.0 support and tenant wide deployment
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -56,8 +57,12 @@ Description of the extension with possible additional details than in short summ
 
 This extension illustrates the following concepts:
 
-- Consuming Microsoft Graph to get archived status of a Team.
-- using React to display notification bar on header
+- Consuming Microsoft Graph to get archived status of a Team
+- Using React to display notification bar on header
+- Deploying extension automatically with tenant wide deployment to all group-connected modern team sites (GROUP#0)
+
+You can disable automatic deployment by commenting out features section on package-solution.json or disabling extension on Tenant Wide Extension list on App Catalog.
+![Tenant Wide Extension list](./assets/tenantwide.png)
 
 
 ## Debug URL for testing
@@ -75,6 +80,6 @@ Here's a debug URL for testing around this sample.
 - Check tenant wide deployment option
 ![Deployment](./assets/deploy.png)
 - Navigate to SharePoint admin center preview (https://innofrontier-admin.sharepoint.com/_layouts/15/online/AdminHome.aspx#/webApiPermissionManagement)  and approve Microsoft Graph permissions (Group.Read.All).
-- Bind application customizer to target site with PowerShell script example. [ProvisionTeamArchivedNotication.ps1](./ProvisionTeamArchivedNotification.ps1). 
+- Extension is deployed automatically on all group-connected modern team sites (WebTemplate GROUP#0).
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
