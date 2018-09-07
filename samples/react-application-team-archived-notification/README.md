@@ -62,7 +62,7 @@ This extension illustrates the following concepts:
 - Deploying extension automatically with tenant wide deployment to all group-connected modern team sites (GROUP#0)
 
 You can disable automatic deployment by commenting out features section on package-solution.json or disabling extension on Tenant Wide Extension list on App Catalog.
-![Tenant Wide Extension list](./assets/tenantwide.png)
+![Tenant Wide Extension list](./assets/tenantwide.PNG)
 
 
 ## Debug URL for testing
