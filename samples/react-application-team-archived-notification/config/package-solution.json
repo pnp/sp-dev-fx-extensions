@@ -3,16 +3,34 @@
   "solution": {
     "name": "team-archived-notification-client-side-solution",
     "id": "1ef726ed-7091-4132-a1f3-97889c6af2fe",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
+    "features": [
+     {
+       "title": "Team Archived Notification Custom Action Deployment",
+       "description": "Deploys a custom action with ClientSideComponentId association",
+       "id": "0671865d-ec17-476c-bd2a-064f4cd47e1e",
+       "version": "1.0.0.0",
+       "assets": {
+         "elementManifests": [
+           "elements.xml",
+           "clientsideinstance.xml"
+         ]
+       }
+     }
+   ],
     "webApiPermissionRequests": [
       {
         "resource": "Microsoft Graph",
         "scope": "Group.Read.All"
+      },
+      {
+        "resource": "Windows Azure Active Directory",
+        "scope": "User.Read"
       }
     ]
-  },
+},
   "paths": {
     "zippedPackage": "solution/react-application-archived-notification.sppkg"
   }
