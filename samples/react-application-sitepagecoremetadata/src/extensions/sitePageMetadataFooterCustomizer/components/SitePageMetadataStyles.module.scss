@@ -1,0 +1,35 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.divMetadataCustomizerContainer{
+    @include ms-Grid-row;
+}
+
+.divEmptyLeftSection{
+    @include ms-Grid-col;
+    @include ms-sm12;
+    @include ms-lg4;
+}
+
+.divMetadataCustomizerColumn{
+    @include ms-Grid-col;
+    @include ms-sm12;
+    @include ms-lg2;
+
+    padding-bottom: 15px;
+}
+
+.divMetadataPropertyLabel{
+    font-weight: bold;
+    background-color:#424CD5;
+    color:white;
+    text-align: center;
+}
+.divMetadataPropertyValue{
+    font-weight: 800;
+    text-align: center;
+}
+
+// Hide any class that starts with feedback
+div[class^="feedback_"]{
+    display: none !important;
+}
