@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "react-cmd-share-pn-p-js-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/reactCmdSharePnPJs/ReactCmdSharePnPJsCommandSet.js",
+          "manifest": "./src/extensions/reactCmdSharePnPJs/ReactCmdSharePnPJsCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReactCmdSharePnPJsCommandSetStrings": "lib/extensions/reactCmdSharePnPJs/loc/{locale}.js"
+  }
+}
