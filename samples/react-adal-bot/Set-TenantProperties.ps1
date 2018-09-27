@@ -8,4 +8,4 @@ Connect-PnPOnline -Url $SiteCollectionUrl -UseWebLogin
 
 # Set the environment settings in the tenant property bag
 Set-PnPStorageEntity -Key "PnP_ADAL_GraphBot_BotId" -Value $BotId -Comment $Comment -Description "Bot ID"
-Set-PnPStorageEntity -Key "PnP_ADAL_GraphBot_BotDirectLineSecret" -Value $BotDirectLineSecret -Comment $Comment -Description "Bot Direct Line Secret"omment $Comment -Description "Bot Direct Line Secret"
+Set-PnPStorageEntity -Key "PnP_ADAL_GraphBot_BotDirectLineSecret" -Value $BotDirectLineSecret -Comment $Comment -Description "Bot Direct Line Secret"
