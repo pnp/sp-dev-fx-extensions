@@ -1,8 +1,0 @@
-{
-  "@microsoft/generator-sharepoint": {
-    "version": "1.1.1",
-    "libraryName": "react-command-share-pnp-js",
-    "libraryId": "8afe9815-10bd-4183-8fba-e87d1c757249",
-    "environment": "spo"
-  }
-}
