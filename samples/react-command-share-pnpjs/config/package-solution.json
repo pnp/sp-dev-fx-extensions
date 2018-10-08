@@ -1,28 +1,27 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "react-mega-menu-client-side-solution",
-    "id": "466eb049-ab57-4a5d-ae51-0a8221cdb984",
-    "version": "0.1.0",
+    "name": "react-command-share-pnpjs-client-side-solution",
+    "id": "9dfa44d5-9a1b-4a88-b023-b99a2c7ec264",
+    "version": "1.0.0.0",
     "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
-        "id": "0582bd9b-5570-4698-8ac8-a2aee2801bad",
-        "version": "0.1.0",
+        "id": "402aa8e2-0b69-4db9-b9c0-a933399a289e",
+        "version": "1.0.0.0",
         "assets": {
           "elementManifests": [
-            "elements.xml"
-          ],
-          "elementFiles":[
-            "listSchema.xml"
+            "elements.xml",
+            "clientsideinstance.xml"
           ]
         }
       }
     ]
   },
   "paths": {
-    "zippedPackage": "solution/react-mega-menu.sppkg"
+    "zippedPackage": "solution/react-command-share-pnpjs.sppkg"
   }
 }
