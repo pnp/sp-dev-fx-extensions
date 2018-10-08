@@ -49,7 +49,7 @@ export default class DialogDemoCommandSet
 
   @override
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
-    switch (event.commandId) {
+    switch (event.itemId) {
       case 'COMMAND_1':
         const dialog: ColorPickerDialog = new ColorPickerDialog();
         dialog.message = 'Pick a color:';
