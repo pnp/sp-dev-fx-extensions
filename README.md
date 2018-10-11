@@ -38,7 +38,7 @@ Version|Date|Comments
   - This property is only used during development in conjunction with the `gulp serve` command
 - In the command line navigate to the js-command-copy-classic-link folder and run:
   - `npm install`
-  - `gulp serve --config=copyClassicLinkToastr`
+  - `gulp serve --config=copyClassicLinkToastr` or `gulp serve --config=copyClassicLinkSwal`
 
 ## Features
 

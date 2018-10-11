@@ -15,7 +15,7 @@
       }
     },
     "copyClassicLinkToastr": {
-      "pageUrl": "https://yourtenant.sharepoint.com/sites/publishing/Test Doc Lib 2/Forms/AllItems.aspx",
+      "pageUrl": "https://yourtenant.sharepoint.com/sites/yoursite/yourlib/Forms/AllItems.aspx",
       "customActions": {
         "57ecbfd1-fb14-4bc8-b4d6-fa2701ba532f": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -26,7 +26,7 @@
       }
     },
     "copyClassicLinkSwal": {
-      "pageUrl": "https://yourtenant.sharepoint.com/sites/publishing/Test Doc Lib 2/Forms/AllItems.aspx",
+      "pageUrl": "https://yourtenant.sharepoint.com/sites/yoursite/yourlib/Forms/AllItems.aspx",
       "customActions": {
         "57ecbfd1-fb14-4bc8-b4d6-fa2701ba532f": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
