@@ -36,7 +36,7 @@ Version|Date|Comments
 - Update the `pageUrl` properties in the **config/serve.json** file
   - The `pageUrl` should be a modern page
   - This property is only used during development in conjunction with the `gulp serve` command
-- In the command line navigate to **samples/ react-application-myfavourites** and run:
+- In the command line navigate to the js-command-copy-classic-link folder and run:
   - `npm install`
   - `gulp serve`
 - In a web browser
