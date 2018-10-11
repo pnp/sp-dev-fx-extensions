@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="CopyClassicLink"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ListTemplateId="101"
+        Properties="{&quot;showToastr&quot;:&quot;no&quot;}"
+        ComponentId="57ecbfd1-fb14-4bc8-b4d6-fa2701ba532f" />
+</Elements>

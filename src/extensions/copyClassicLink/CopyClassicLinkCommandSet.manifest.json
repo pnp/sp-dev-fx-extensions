@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+  "id": "57ecbfd1-fb14-4bc8-b4d6-fa2701ba532f",
+  "alias": "CopyClassicLinkCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "items": {
+    "COPY_CLASSIC_LINK": {
+      "title": {
+        "default": "Copy classic link"
+      },
+      "iconImageUrl": "data:image/png;base64,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",
+      "type": "command"
+    }
+  }
+}
