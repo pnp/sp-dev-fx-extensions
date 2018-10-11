@@ -38,11 +38,7 @@ Version|Date|Comments
   - This property is only used during development in conjunction with the `gulp serve` command
 - In the command line navigate to the js-command-copy-classic-link folder and run:
   - `npm install`
-  - `gulp serve`
-- In a web browser
-  - Follow one of the steps below for **List Deployment**
-  - Choose **Load Debug Scripts** when prompted
-  - Hope that you will see the buttons at the top!
+  - `gulp serve --config=copyClassicLinkToastr`
 
 ## Features
 
