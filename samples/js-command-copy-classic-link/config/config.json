@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "copy-classic-link-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/copyClassicLink/CopyClassicLinkCommandSet.js",
+          "manifest": "./src/extensions/copyClassicLink/CopyClassicLinkCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CopyClassicLinkCommandSetStrings": "lib/extensions/copyClassicLink/loc/{locale}.js"
+  }
+}
