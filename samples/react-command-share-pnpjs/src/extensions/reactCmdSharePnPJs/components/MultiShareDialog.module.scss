@@ -1,0 +1,9 @@
+.multiShareDialog {
+    .multiShareDialogContent {
+        max-width: 416px;
+        
+        :global(.ms-Grid-row) {
+            margin: 10px -8px;
+        }
+    }
+}

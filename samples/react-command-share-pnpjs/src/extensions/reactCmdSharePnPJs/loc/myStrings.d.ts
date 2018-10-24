@@ -7,6 +7,8 @@ declare interface IReactCmdSharePnPJsCommandSetStrings {
   MultiShareDialogReadRole: string;
   MultiShareDialogEditRole: string;
 
+  MultiShareDialogExternalUser: string;
+  MultiShareDialogExternalUsers: string;
   MultiShareDialogAddMessageHere: string;
   MultiShareDialogSendEmail: string;
   MultiShareDialogShare: string;
@@ -15,6 +17,7 @@ declare interface IReactCmdSharePnPJsCommandSetStrings {
   MultiShareDialogLoading: string;
   MultiShareDialogSearch: string;
   MultiShareDialogSharingSuccess: string;
+  MultiShareDialogSharingSuccessWith: string;
   MultiShareDialogSharingError: string;
   MultiShareDialogSharingErrorMsgs: string;
 

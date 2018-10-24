@@ -6,6 +6,8 @@ define([], function() {
       "MultiShareDialogSelectShareType": "Välj delningsnivå",
       "MultiShareDialogReadRole": "Läsa",
       "MultiShareDialogEditRole": "Redigera",
+      "MultiShareDialogExternalUser": " är utanför organisationen",
+      "MultiShareDialogExternalUsers": " är utanför organisationen",
       "MultiShareDialogAddMessageHere": "Lägg till ett meddelande här",
       "MultiShareDialogSendEmail": "Skicka ett email",
       "MultiShareDialogShare": "Dela",
@@ -14,6 +16,7 @@ define([], function() {
       "MultiShareDialogLoading": "Laddar",
       "MultiShareDialogSearch": "Sök",
       "MultiShareDialogSharingSuccess": "Lyckades dela filerna: ",
+      "MultiShareDialogSharingSuccessWith": " med: ",
       "MultiShareDialogSharingError": "Misslyckades dela filerna: ",
       "MultiShareDialogSharingErrorMsgs": " Felmeddelanden: "
     }

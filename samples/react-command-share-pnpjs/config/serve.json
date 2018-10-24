@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://agrendev.sharepoint.com/sites/test3/PNPDemo/Forms/AllItems.aspx",
       "customActions": {
         "a0eacac3-5984-4d85-ab63-c7b245c8e2f5": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -14,7 +14,7 @@
       }
     },
     "reactCmdSharePnPJs": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://agrendev.sharepoint.com/sites/test3/PNPDemo/Forms/AllItems.aspx?",
       "customActions": {
         "a0eacac3-5984-4d85-ab63-c7b245c8e2f5": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
