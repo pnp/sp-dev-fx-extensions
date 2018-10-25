@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://agrendev.sharepoint.com/sites/test3/Lists/Testar/AllItems.aspx",
+      "fieldCustomizers": {
+        "Percent": {
+          "id": "62a15882-603f-4dfd-8580-4decc98033a7",
+          "properties": {
+            "sampleText": "Value"
+          }
+        }
+      }
+    },
+    "userPermission": {
+      "pageUrl": "https://agrendev.sharepoint.com/sites/test3/Lists/Testar/AllItems.aspx",
+      "fieldCustomizers": {
+        "Percent": {
+          "id": "62a15882-603f-4dfd-8580-4decc98033a7",
+          "properties": {
+            "sampleText": "Value"
+          }
+        }
+      }
+    }
+  }
+}

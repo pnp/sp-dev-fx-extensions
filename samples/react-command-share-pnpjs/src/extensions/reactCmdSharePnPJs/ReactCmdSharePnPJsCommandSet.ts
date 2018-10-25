@@ -4,11 +4,9 @@ import {
   BaseListViewCommandSet,
   Command,
   IListViewCommandSetListViewUpdatedParameters,
-  IListViewCommandSetExecuteEventParameters
+  IListViewCommandSetExecuteEventParameters,
+  RowAccessor
 } from '@microsoft/sp-listview-extensibility';
-
-import MultiShareDialog from './components/MultiShareDialog';
-
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
@@ -17,7 +15,6 @@ import MultiShareDialog from './components/MultiShareDialog';
  */
 export interface IReactCmdSharePnPJsCommandSetProperties {
   // This is an example; replace with your own properties
-
 }
 
 const LOG_SOURCE: string = 'ReactCmdSharePnPJsCommandSet';
@@ -40,12 +37,25 @@ export default class ReactCmdSharePnPJsCommandSet extends BaseListViewCommandSet
   }
 
   @override
-  public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
-    const rows = event.selectedRows;
+  public async onExecute(event: IListViewCommandSetExecuteEventParameters): Promise<void> {
+    switch (event.itemId) {
+      case 'SHARE':
 
-    // Create the dialog, inject the selected files and open dialog.
-    const dialog: MultiShareDialog = new MultiShareDialog();
-    dialog.listItems = rows;
-    dialog.show();
+        const rows: ReadonlyArray<RowAccessor> = event.selectedRows;
+        const component = await import(
+          /* webpackMode: "lazy" */
+          /* webpackChunkName: 'multisharedialog-component' */
+          './components/MultiShareDialog'
+        );
+        
+        // Setup and show dialog
+        const dialog = new component.MultiShareDialog;
+        dialog.listItems = rows;
+        dialog.show();
+
+        break;
+      default:
+        throw new Error('Unknown command');
+    }
   }
 }

@@ -23,7 +23,7 @@ SPFx 1.6
 
 * [SharePoint Framework](http://dev.office.com/sharepoint/docs/spfx/sharepoint-framework-overview)
 * [Office 365 tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
-* [PNP JS Core](https://github.com/pnp/pnpjs)
+* [PNP JS ](https://github.com/pnp/pnpjs)
 
 
 Solution|Author(s)
@@ -61,7 +61,6 @@ Full URL to request would be something like following (Remember to open a modern
 ```
 contoso.sharepoint.com/Lists/Orders/AllItems.aspx?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"a0eacac3-5984-4d85-ab63-c7b245c8e2f5":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
-
 
 ## Features
 This project contains SharePoint Framework extensions that illustrates features:

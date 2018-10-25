@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <Field ID="{b33490c5-d5d9-414d-b644-7eb7f179e99b}"
+            Name="SPFxUserPermission"
+            DisplayName="User Permission"
+            Type="Text"
+            Required="FALSE"
+            Group="SPFx Columns"
+            ClientSideComponentId="62a15882-603f-4dfd-8580-4decc98033a7">
+    </Field>
+</Elements>
