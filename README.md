@@ -2,6 +2,9 @@
 
 Sample SPFx list view command set extension that converts the selected document to PDF using Microsoft Graph.
 > Inspired from the [YouTube Video](https://www.youtube.com/watch?v=syEYHYYUps8) by Paolo Pialorsi ([@PaoloPia](https://twitter.com/PaoloPia)) and from the [answer in Stack Overflow](https://stackoverflow.com/questions/51493302/whats-the-easiest-way-to-fetch-a-sharepoint-file-by-a-path-from-the-microsoft-g) by Vadim Gremyachev ([@vgrem](https://twitter.com/vgrem))
+
+![Convert To PDF](./demo/convert-to-pdf.gif)
+
 This project contains two separate project folders:
 
 * [ConvertToPDFRequest](./ConvertToPDFRequest) - contain the Azure Function written in C#
