@@ -48,7 +48,7 @@ This will install all the required nuget packages to run the Azure function
 * Create an application registration in Azure AD and provide **Read files in all site collections** application permission under the Microsoft Graph API.
 * Grant admin consent.
 * Create a secret for it and save it somewhere safe. Also copy the application id.
-* Navigate to <<sitecollection>>/_layouts/15/appinv.aspx
+* Navigate to https://yoursitecollectiion/_layouts/15/appinv.aspx
 * Search for the application created earlier with it's id
 * Add the following in the permissions XML box
 ```xml
@@ -82,7 +82,7 @@ Navigate to the local.settings.json file and add the following
 
 Open the Azure function project [ConvertToPDFRequest](./ConvertToPDFRequest) in Visual Studio and press F5.
 
-### Run Vimeo Web Part
+### Run the SPFx webpart Web Part
 
 - Clone this repository
 - Update the `pageUrl` properties in the **config/serve.json** file
