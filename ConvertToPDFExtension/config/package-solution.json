@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-extension-convert-to-pdf-client-side-solution",
     "id": "b6c9382d-60c2-4f20-b1d9-d078dd8a45e3",
-    "version": "2.0.0.1",
+    "version": "2.2.0.4",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "features": [

@@ -6,7 +6,8 @@ import {
   IListViewCommandSetListViewUpdatedParameters,
   IListViewCommandSetExecuteEventParameters
 } from '@microsoft/sp-listview-extensibility';
-
+import swal from 'sweetalert2';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 
 export interface IConvertToPdfCommandSetProperties {
   confirmButtonColor: string;
@@ -27,8 +28,7 @@ export default class ConvertToPdfCommandSet extends BaseListViewCommandSet<IConv
   public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
     const convertToPdfCommand: Command = this.tryGetCommand('CONVERT_TO_PDF');
     if (convertToPdfCommand) {
-      // This command should be hidden unless exactly one row is selected.
-      convertToPdfCommand.visible = event.selectedRows.length === 1;
+      convertToPdfCommand.visible = event.selectedRows.length >= 1;
     }
   }
 
@@ -36,28 +36,75 @@ export default class ConvertToPdfCommandSet extends BaseListViewCommandSet<IConv
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
     switch (event.itemId) {
       case 'CONVERT_TO_PDF':
-        //Dialog.alert(`${this.properties.sampleTextOne}`);
+
         let siteUrl: string = this.context.pageContext.web.absoluteUrl;
-        let itemName: string = event.selectedRows[0].getValueByName('FileLeafRef');
         let listName: string = `${this.context.pageContext.list.serverRelativeUrl}`.split("/").pop();
-        let fullItemUrl: string = `${siteUrl}/${listName}/${itemName}`;
-        let fileExtension: string = itemName.split('.').pop();
-        this.startConversion(fullItemUrl, siteUrl, listName, fileExtension);
+
+        if (event.selectedRows.length === 1) {
+          let itemName: string = event.selectedRows[0].getValueByName('FileLeafRef');
+          let fileExtension: string = itemName.split('.').pop();
+          if (ALLOWED_EXTENSIONS.indexOf(fileExtension) > -1) {
+            this.startConversion(itemName, siteUrl, listName, false);
+          }
+          else {
+            this.cannotConvert(fileExtension);
+          }
+        }
+        else {
+          let itemNames: string[] = [];
+          let cannotConvert: boolean = false;
+          let fileExtensionNotAllowed: string = "";
+          for (let row of event.selectedRows) {
+            let itemName: string = row.getValueByName('FileLeafRef');
+            itemNames.push(itemName);
+            let fullItemUrl: string = `${siteUrl}/${listName}/${itemName}`;
+            let fileExtension: string = itemName.split('.').pop();
+            if (ALLOWED_EXTENSIONS.indexOf(fileExtension) < 0) {
+              cannotConvert = true;
+              fileExtensionNotAllowed = fileExtension;
+              break;
+            }
+          }
+          if (cannotConvert == false) {
+            let itemNamesString: string = itemNames.join(";");
+            this.startConversion(itemNamesString, siteUrl, listName, true);
+          }
+          else {
+            this.cannotConvert(fileExtensionNotAllowed);
+          }
+        }
         break;
       default:
         throw new Error('Unknown command');
     }
   }
 
+  private cannotConvert(fileExtension: string) {
+    swal({
+      title: 'Cannot convert.',
+      text: `Cannot convert document of type ${fileExtension} to PDF.`,
+      type: 'info',
+      confirmButtonColor: this.properties.confirmButtonColor
+    })
+  }
 
-  private async startConversion(itemUrl: string, siteUrl: string, listName: string, fileExtension: string) {
-    let swal: any = await import(
-      /* webpackChunkName: 'sweetalert2' */
-      'sweetalert2'
-    )
+  private showSucessAndReload(messageToShow: string) {
+    swal({
+      title: 'All done.',
+      text: messageToShow,
+      type: 'success',
+      confirmButtonColor: this.properties.confirmButtonColor
+    }).then(() => {
+      location.reload();
+    });
+  }
 
-    if (ALLOWED_EXTENSIONS.indexOf(fileExtension) > -1) {
-      let azureFunctionUrl: string = `http://localhost:7071/api/ConvertDocumentToPDF?itemUrl=${itemUrl}&siteUrl=${siteUrl}&libraryName=${listName}`;
+
+  private async startConversion(itemNames: string, siteUrl: string, listName: string, multiple: boolean) {
+    SPComponentLoader.loadCss('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css');
+    let azureFunctionUrl: string = `http://localhost:7071/api/ConvertDocumentToPDF?itemNames=${itemNames}&siteUrl=${siteUrl}&libraryName=${listName}`;
+
+    if (!multiple) {
 
       swal({
         title: 'Enter the new document name',
@@ -66,7 +113,8 @@ export default class ConvertToPdfCommandSet extends BaseListViewCommandSet<IConv
           autocapitalize: 'off'
         },
         showCancelButton: true,
-        confirmButtonText: 'Convert',
+        confirmButtonText: '<i class="fa fa-check"></i> Convert',
+        cancelButtonText: '<i class="fa fa-times"></i> Cancel',
         confirmButtonColor: this.properties.confirmButtonColor,
         showLoaderOnConfirm: true,
         inputValidator: (value) => {
@@ -90,27 +138,42 @@ export default class ConvertToPdfCommandSet extends BaseListViewCommandSet<IConv
         allowOutsideClick: () => !swal.isLoading()
       }).then((result) => {
         if (result.value) {
-          swal({
-            title: 'All done.',
-            text: 'The document has now been converted to PDF.',
-            type: 'success',
-            confirmButtonColor: this.properties.confirmButtonColor
-          }).then(() => {
-            location.reload();
-          });
+          this.showSucessAndReload("The document has now been converted to PDF.");
         }
       })
     }
     else {
+
       swal({
-        title: 'Cannot convert.',
-        text: `Cannot convert document of type ${fileExtension} to PDF.`,
-        type: 'info',
-        confirmButtonColor: this.properties.confirmButtonColor
+        title: 'Are you sure?',
+        text: "All the selected documents will be converted to PDF.",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: '<i class="fa fa-check"></i> Convert',
+        cancelButtonText: '<i class="fa fa-times"></i> Cancel',
+        confirmButtonColor: this.properties.confirmButtonColor,
+        showLoaderOnConfirm: true,
+        preConfirm: () => {
+          return fetch(azureFunctionUrl)
+            .then(response => {
+
+              if (!response.ok) {
+                throw new Error(response.statusText)
+              }
+              return response.json()
+            })
+            .catch(error => {
+              swal.showValidationMessage(
+                `Request failed: ${error}`
+              )
+            })
+        }
+      }).then((result) => {
+        if (result.value) {
+          this.showSucessAndReload("The documents have now been converted to PDF.");
+        }
       })
     }
-
-
   }
 
 }

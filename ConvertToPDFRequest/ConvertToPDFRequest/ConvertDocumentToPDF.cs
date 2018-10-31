@@ -22,9 +22,9 @@ namespace ConvertToPDFRequest
             log.Info("C# HTTP trigger function processed a request.");
 
             // parse query parameters
-            string itemUrl = req.GetQueryNameValuePairs()
-                .FirstOrDefault(q => string.Compare(q.Key, "itemUrl", true) == 0)
-                .Value;
+            string itemNames = req.GetQueryNameValuePairs()
+               .FirstOrDefault(q => string.Compare(q.Key, "itemNames", true) == 0)
+               .Value;
 
             string siteUrl = req.GetQueryNameValuePairs()
                .FirstOrDefault(q => string.Compare(q.Key, "siteUrl", true) == 0)
@@ -42,24 +42,39 @@ namespace ConvertToPDFRequest
 
             try
             {
-                //Get the encoded URL - https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/shares_get#encoding-sharing-urls
-                string base64Value = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(itemUrl));
-                string encodedUrl = "u!" + base64Value.TrimEnd('=').Replace('/', '_').Replace('+', '-');
-
-                GraphServiceClient client = GetClient(log);
-
-                List<Option> options = new List<Option>();
-                options.Add(new QueryOption("format", "pdf"));
-
-                //Get the stream
-                Stream pdfStream = client.Shares[encodedUrl].DriveItem.Content.Request(options).GetAsync().Result;
-
-                using (ClientContext clientContext = AuthenticationHelper.GetSPAuthContext(siteUrl))
+                List<string> itemNamesList = itemNames.Split(';').ToList();
+                foreach (var item in itemNamesList)
                 {
-                    Microsoft.SharePoint.Client.List library = clientContext.Web.Lists.GetByTitle(libraryName);
-                    //Use code from PnP team to upload the file using stream
-                    library.RootFolder.UploadFile($"{newDocumentName}.pdf", pdfStream, true);
+                    log.Info($"Processing {item}");
+
+                    string itemUrl = $"{siteUrl}/{libraryName}/{item}";
+                    if (String.IsNullOrEmpty(newDocumentName))
+                    {
+                        newDocumentName = item.Substring(0, item.IndexOf("."));
+                    }
+
+                    string base64Value = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(itemUrl));
+                    string encodedUrl = "u!" + base64Value.TrimEnd('=').Replace('/', '_').Replace('+', '-');
+
+                    GraphServiceClient client = GetClient(log);
+
+                    List<Option> options = new List<Option>();
+                    options.Add(new QueryOption("format", "pdf"));
+
+                    //Get the stream
+                    Stream pdfStream = client.Shares[encodedUrl].DriveItem.Content.Request(options).GetAsync().Result;
+
+                    using (ClientContext clientContext = AuthenticationHelper.GetSPAuthContext(siteUrl))
+                    {
+                        Microsoft.SharePoint.Client.List library = clientContext.Web.Lists.GetByTitle(libraryName);
+
+                        log.Info($"Uploading {newDocumentName}.pdf");
+                        //Use code from PnP team to upload the file using stream
+                        library.RootFolder.UploadFile($"{newDocumentName}.pdf", pdfStream, true);
+                        newDocumentName = "";
+                    }
                 }
+
             }
             catch (Exception ex)
             {
