@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "57ecbfd1-fb14-4bc8-b4d6-fa2701ba532f": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "showToastr": "no"
+          }
+        }
+      }
+    },
+    "copyClassicLinkToastr": {
+      "pageUrl": "https://yourtenant.sharepoint.com/sites/yoursite/yourlib/Forms/AllItems.aspx",
+      "customActions": {
+        "57ecbfd1-fb14-4bc8-b4d6-fa2701ba532f": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "showToastr": "yes"
+          }
+        }
+      }
+    },
+    "copyClassicLinkSwal": {
+      "pageUrl": "https://yourtenant.sharepoint.com/sites/yoursite/yourlib/Forms/AllItems.aspx",
+      "customActions": {
+        "57ecbfd1-fb14-4bc8-b4d6-fa2701ba532f": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "showToastr": "no"
+          }
+        }
+      }
+    }
+  }
+}
