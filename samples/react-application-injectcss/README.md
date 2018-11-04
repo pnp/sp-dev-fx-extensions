@@ -16,7 +16,7 @@ You can deploy the application customizer with different settings to point to di
 
 ## Used SharePoint Framework Version
 
-![SPFx v1.4.1](https://img.shields.io/badge/SPFx-1.4.1-green.svg)
+![SPFx v1.6](https://img.shields.io/badge/SPFx-1.6-green.svg)
 
 ## Applies to
 
@@ -34,6 +34,7 @@ react-application-injectcss|Hugo Bernier ([Tahoe Ninjas](http://tahoeninjas.blog
 Version|Date|Comments
 -------|----|--------
 1.0.0|07 May, 2018|Initial release
+1.1.0|18 October, 2018|Updated to SPFx 1.6
 
 ## Disclaimer
 
@@ -60,25 +61,27 @@ Version|Date|Comments
     border-radius: 50%;
 }
 ```
-* upload the CSS file to a shared location on your SharePoint tenant. For example, in the `Styles Library` of the root site collection.
-* get the URL to your custom CSS. For example: `/Style%20Library/custom.css`
+* Upload the CSS file to a shared location on your SharePoint tenant. For example, in the `Styles Library` of the root site collection.
+* Get the URL to your custom CSS. For example: `/Style%20Library/custom.css`
 
-* update _serve.json_ pointing to your site collection home page change the `cssurl` property with the URL to your custom CSS.
-* run _gulp serve_
+* Update _serve.json_ pointing to your site collection home page change the `cssurl` property with the URL to your custom CSS.
+* Run _gulp serve_
 
 ## Deployment to Production
 
-* located the `elements.xml` file, in the `sharepoint` > `assets` folder
-* change the `ClientSideComponentProperties` to point to your custom CSS URL.
-* run _gulp bundle --ship_
-* run _gulp package-solution --ship_
-* upload the `react-application-injectcss.sppkg` from the `sharepoint` folder to your App catalog.
-* when prompted to deploy to all sites, choose the option that suits your needs.
+* Locate the `elements.xml` file, in the `sharepoint` > `assets` folder
+* Change the `ClientSideComponentProperties` to point to your custom CSS URL.
+* Run _gulp bundle --ship_
+* Run _gulp package-solution --ship_
+* Upload the `react-application-injectcss.sppkg` from the `sharepoint` folder to your App catalog.
+* When prompted to deploy to all sites, choose the option that suits your needs.
 
 ## Features
 
-Sample SharePoint Framework application customiser injecting a custom CSS in the HTML header.
+Sample SharePoint Framework Application Customiser which injects a custom CSS in the HTML header.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
 * HTML manipulation
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />

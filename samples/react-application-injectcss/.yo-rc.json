@@ -1,8 +1,12 @@
 {
   "@microsoft/generator-sharepoint": {
-    "version": "1.4.1",
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.6.0",
     "libraryName": "react-application-injectcss",
     "libraryId": "b2322574-549b-4510-99d8-1351d9457a97",
-    "environment": "spo"
+    "packageManager": "npm",
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
   }
 }
