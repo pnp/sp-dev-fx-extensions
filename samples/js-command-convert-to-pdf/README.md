@@ -5,6 +5,8 @@ Sample SPFx list view command set extension that converts the selected documents
 
 ![Convert To PDF](./demo/convert-docs-to-pdf.gif)
 
+More details on this in detail can be found in [my blog post](https://medium.com/@anoopt/spfx-extension-convert-to-pdf-16d4135bda92)
+
 This project contains two separate project folders:
 
 * [ConvertToPDFRequest](./ConvertToPDFRequest) - contain the Azure Function written in C#
