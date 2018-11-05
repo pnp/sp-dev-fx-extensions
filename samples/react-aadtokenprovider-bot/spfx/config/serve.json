@@ -1,0 +1,27 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "fbb38806-54e4-4ddd-a413-e7a1611fcb08": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+          }
+        }
+      }
+    },
+    "graphBot": {
+      "pageUrl": "https://collaborationcorner.sharepoint.com/teams/SharePointAADTokenProvider",
+      "customActions": {
+        "fbb38806-54e4-4ddd-a413-e7a1611fcb08": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+          }
+        }
+      }
+    }
+  }
+}
