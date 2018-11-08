@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "5aacbfec-2af5-4f4c-9e14-f0d8e11fd2de": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "confirmButtonColor": "#000000"
+          }
+        }
+      }
+    },
+    "convertToPdf": {
+      "pageUrl": "https://yourtenant.sharepoint.com/sites/yoursite/yourlib/Forms/AllItems.aspx",
+      "customActions": {
+        "5aacbfec-2af5-4f4c-9e14-f0d8e11fd2de": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "confirmButtonColor": "#000000"
+          }
+        }
+      }
+    }
+  }
+}
