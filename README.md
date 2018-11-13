@@ -5,7 +5,7 @@ Sample SharePoint Framework list view command set extension that emails the curr
 
 Example use case - say if a list has a nice list view formatting applied and external user cannot be given access to it then this extension can be used to send the formatted view as an image to the external user.
 
-![Mail Currrent View as Image](./demo/Mail this view)
+![Mail Currrent View as Image](./demo/Mail this view.gif)
 
 ## Used SharePoint Framework Version 
 ![1.6](https://img.shields.io/badge/version-1.6-green.svg)
