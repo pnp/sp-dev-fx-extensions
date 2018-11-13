@@ -1,0 +1,12 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.6.0",
+    "libraryName": "spfx-mail-view-as-image",
+    "libraryId": "46cf8e65-d4ae-4b32-ad1b-d027a5fd1e5e",
+    "packageManager": "npm",
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}

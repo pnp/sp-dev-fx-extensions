@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="MailViewAsImage"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="7259f167-9c45-4829-be24-34ef6b0c896b"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>

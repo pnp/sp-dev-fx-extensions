@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "7259f167-9c45-4829-be24-34ef6b0c896b": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {}
+        }
+      }
+    },
+    "mailViewAsImage": {
+      "pageUrl": "https://yourtenat.sharepoint.com/sites/yourside/Lists/yourlist/formattedview.aspx",
+      "customActions": {
+        "7259f167-9c45-4829-be24-34ef6b0c896b": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {}
+        }
+      }
+    }
+  }
+}
