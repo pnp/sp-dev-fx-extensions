@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+  "id": "7259f167-9c45-4829-be24-34ef6b0c896b",
+  "alias": "MailViewAsImageCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "items": {
+    "MAIL_VIEW_AS_IMAGE": {
+      "title": {
+        "default": "Mail this view"
+      },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAMCAYAAABvEu28AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH4gsNDTENotYRuQAAAAd0RVh0QXV0aG9yAKmuzEgAAAAMdEVYdERlc2NyaXB0aW9uABMJISMAAAAKdEVYdENvcHlyaWdodACsD8w6AAAADnRFWHRDcmVhdGlvbiB0aW1lADX3DwkAAAAJdEVYdFNvZnR3YXJlAF1w/zoAAAALdEVYdERpc2NsYWltZXIAt8C0jwAAAAh0RVh0V2FybmluZwDAG+aHAAAAB3RFWHRTb3VyY2UA9f+D6wAAAAh0RVh0Q29tbWVudAD2zJa/AAAABnRFWHRUaXRsZQCo7tInAAABCElEQVQoka3TMUvDQBjG8X/SFAuxDpa2YKCbQmeFgh38Eg4t7nUKDkJmwa0dCm79Bu1WP4JDKQ6lS6dgFzEBcZC0V8hNdQhGOW2NkGc6jvd+98J7pwkh1qQQA0C+znj3gn8f1q0TSuWdL8jIghzdsXocJSSKaDWHwkU93tGEEGu5XJDJ78HbBK/f3gJGwH6jSbkIq6XEzEcd6QDh+BrXucUPDrHsAUfde8xaXQE6FLpTqnYTMxgyd055GS/iCiNe+T3ETQ/34JLd1hWWPYDGBO/BJXcWdSCehsw7baT/DEDm21UGalTw/JhQAX7LT0gFcxUINwOf0f+sSIAkgxImGn8KD1JL64t8ADt+ancinky7AAAAAElFTkSuQmCC",
+      "type": "command"
+    }
+  }
+}

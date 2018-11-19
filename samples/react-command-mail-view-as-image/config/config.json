@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "mail-view-as-image-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/mailViewAsImage/MailViewAsImageCommandSet.js",
+          "manifest": "./src/extensions/mailViewAsImage/MailViewAsImageCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MailViewAsImageCommandSetStrings": "lib/extensions/mailViewAsImage/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}
