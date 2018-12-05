@@ -56,3 +56,8 @@ Your URL will look similar to the following (replace with your domain and site a
 ```
 https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e33e08f3-5c41-4e0b-9221-7131144f9d74":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"festivalName":"Christmas"}}}
 ```
+
+## Credits / Code used from
+
+- [Christmas](https://codepen.io/tobyj/pen/QjvEex)
+- [Diwali](https://codepen.io/sidthesloth92/pen/gGZRpz)
