@@ -1,0 +1,23 @@
+.SettingsPanel{
+    font-size: 15px;
+    .itemCell{
+        min-height: 50px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #eaeaea;
+    }
+    .itemCellEven{
+        background-color:#eaeaea;
+    }
+    .cellIcons{
+        padding-top: 10px;
+        float: right;
+    }
+    .itemTitle{
+        padding:14px;
+        float:left;
+    }
+    .createTemplateButton{
+        height: 40px;
+        margin-bottom: 10px;
+    }
+}
