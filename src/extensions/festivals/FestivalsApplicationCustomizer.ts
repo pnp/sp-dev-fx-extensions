@@ -9,6 +9,7 @@ import {
 import * as strings from 'FestivalsApplicationCustomizerStrings';
 import Lights from "./components/Lights";
 import Diwali from "./components/Diwali";
+import SantaWalking from "./components/SantaWalking";
 
 const LOG_SOURCE: string = 'FestivalsApplicationCustomizer';
 
@@ -36,7 +37,7 @@ export default class FestivalsApplicationCustomizer
     let element = null;
 
     switch (festivalName) {
-      case "Christmas":
+      case "Christmas1":
         element = React.createElement(
           Lights
         );
@@ -44,6 +45,11 @@ export default class FestivalsApplicationCustomizer
       case "Diwali":
         element = React.createElement(
           Diwali
+        );
+        break;
+      case "Christmas2":
+        element = React.createElement(
+          SantaWalking
         );
         break;
       default:

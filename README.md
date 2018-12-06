@@ -37,7 +37,7 @@ Version|Date|Comments
   - This property is only used during development in conjunction with the `gulp serve` command
 - In the command line navigate to the js-command-copy-classic-link folder and run:
   - `npm install`
-  - `gulp serve --config=Christmas` or `gulp serve --config=Diwali` (when it's Diwali :) )
+  - `gulp serve --config=Christmas1` or `gulp serve --config=Christmas2` or `gulp serve --config=Diwali` (when it's Diwali :) )
 
 ## Features
 
@@ -49,7 +49,7 @@ This extension illustrates the following concepts:
 Here's a debug querystring for testing this sample:
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e33e08f3-5c41-4e0b-9221-7131144f9d74":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"festivalName":"Christmas"}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e33e08f3-5c41-4e0b-9221-7131144f9d74":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"festivalName":"Christmas1"}}}
 ```
 
 Your URL will look similar to the following (replace with your domain and site address):
@@ -59,5 +59,6 @@ https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFil
 
 ## Credits / Code used from
 
-- [Christmas](https://codepen.io/tobyj/pen/QjvEex)
+- [Christmas 1](https://codepen.io/tobyj/pen/QjvEex)
+- [Christmas 2](https://codepen.io/rolchau/pen/OaYXpJ)
 - [Diwali](https://codepen.io/sidthesloth92/pen/gGZRpz)

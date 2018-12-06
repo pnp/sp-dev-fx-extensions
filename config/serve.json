@@ -25,13 +25,24 @@
         }
       }
     },
-    "Christmas": {
+    "Christmas1": {
       "pageUrl": "https://yourtenantname.sharepoint.com/sites/yoursite/SitePages/Home.aspx",
       "customActions": {
         "e33e08f3-5c41-4e0b-9221-7131144f9d74": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "festivalName": "Christmas"
+            "festivalName": "Christmas1"
+          }
+        }
+      }
+    },
+    "Christmas2": {
+      "pageUrl": "https://yourtenantname.sharepoint.com/sites/yoursite/SitePages/Home.aspx",
+      "customActions": {
+        "e33e08f3-5c41-4e0b-9221-7131144f9d74": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "festivalName": "Christmas2"
           }
         }
       }

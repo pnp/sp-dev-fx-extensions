@@ -1,3 +1,5 @@
+/*Christmas start*/
+
 $globe-width:   12px;
 $globe-height:  28px;
 $globe-spacing: 40px;
@@ -97,6 +99,9 @@ $light-off-opacity: 0.4;
     box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,0.2);}
 }
 
+/*Christmas end*/
+
+/*Diwali start*/
 
 @function pi() {
 	@return 3.14159265359;
@@ -318,3 +323,270 @@ $bombrocket-box-shadow-to: ();
     }
   }
 }
+
+/*Diwali end*/
+
+/*Santa waling start*/
+
+:root {
+    --skyColor: rgba(220,220,220,.3);
+    --groundColor: white;
+  }
+  
+  $pixel-size: 5px;
+  $santa-colors: (
+    0: 'nada-zero-zilch',
+    1: #f33131, 
+    2: #d61111,
+    3: #c8cfdb,
+    4: #edbc83,
+    5: #000000,
+    6: #a63a16,
+    7: #cc4b20,
+    8: #7e2f15,
+    9: #fdeaea,
+    g: #8a9cb3,
+    b: #ee8914,
+  );
+  
+  $santa-dots-1: 
+    (0 0 0 0 1 1 0 0 0 0 0 0)
+    (0 0 0 1 1 1 1 0 0 0 0 0)
+    (0 0 1 1 1 1 1 0 0 0 0 0)
+    (0 0 1 3 3 3 3 0 0 0 0 0)
+    (0 0 3 9 4 9 4 0 5 0 0 0)
+    (0 0 0 5 4 5 4 7 2 7 0 0)
+    (0 0 1 3 3 3 3 1 2 6 7 0)
+    (0 2 1 3 g g 3 1 2 2 6 6)
+    (0 2 1 3 3 3 3 1 1 2 6 6)
+    (0 2 1 3 3 3 3 1 1 2 6 6)
+    (0 2 1 2 3 3 2 1 1 8 6 8)
+    (2 0 1 1 2 9 1 1 1 8 8 0)
+    (5 0 1 1 1 9 1 1 2 0 0 0)
+    (0 0 0 2 1 9 1 2 2 0 0 0)
+    (0 0 0 5 5 b 5 5 5 0 0 0)
+    (0 0 0 1 1 1 2 1 1 0 0 0)
+    (0 0 0 1 0 0 0 1 0 0 0 0)
+    (0 0 0 1 0 0 0 1 0 0 0 0)
+    (0 0 0 0 1 0 1 0 0 0 0 0)
+    (0 0 0 0 1 0 1 0 0 0 0 0)
+    (0 0 0 0 5 0 5 0 0 0 0 0)
+    (0 0 0 0 0 0 0 0 0 0 0 0)
+    (0 0 0 0 1 1 0 0 0 0 0 0)
+    (0 0 0 1 1 1 1 0 0 0 0 0)
+    (0 0 1 1 1 1 1 0 0 0 0 0)
+    (0 0 1 3 3 3 3 0 0 0 0 0)
+    (0 0 3 9 4 9 4 0 5 0 0 0)
+    (0 0 0 5 4 5 4 7 2 7 0 0)
+    (0 0 1 3 3 3 3 1 2 6 7 0)
+    (0 2 1 3 g g 3 1 2 2 6 6)
+    (0 2 1 3 3 3 3 1 1 2 6 6)
+    (0 2 1 3 3 3 3 1 1 2 6 6)
+    (0 2 1 2 3 3 2 1 1 8 6 8)
+    (0 5 1 1 2 9 1 1 1 8 8 0)
+    (0 0 1 1 1 9 1 1 2 0 0 0)
+    (0 0 0 2 1 9 1 2 2 0 0 0)
+    (0 0 0 5 5 b 5 5 5 0 0 0)
+    (0 0 0 1 1 1 2 1 1 0 0 0)
+    (0 0 0 1 0 0 0 1 0 0 0 0)
+    (0 0 0 1 0 0 1 0 0 0 0 0)
+    (0 0 0 0 5 0 1 0 0 0 0 0)
+    (0 0 0 0 0 0 0 5 0 0 0 0)
+    (0 0 0 0 1 1 0 0 0 0 0 0)
+    (0 0 0 1 1 1 1 0 0 0 0 0)
+    (0 0 1 1 1 1 1 0 0 0 0 0)
+    (0 0 1 3 3 3 3 0 0 0 0 0)
+    (0 0 3 9 4 9 4 0 5 0 0 0)
+    (0 0 0 5 4 5 4 7 2 7 0 0)
+    (0 0 1 3 3 3 3 1 2 6 7 0)
+    (0 0 1 3 g g 3 1 2 2 6 6)
+    (0 0 1 3 3 3 3 1 1 2 6 6)
+    (0 0 1 3 3 3 3 1 1 2 6 6)
+    (0 0 1 2 3 3 2 1 1 8 6 8)
+    (0 0 1 1 2 9 1 1 1 8 8 0)
+    (0 0 1 1 1 9 1 1 2 0 0 0)
+    (0 0 0 2 1 9 1 2 2 0 0 0)
+    (0 0 0 5 5 b 5 5 5 0 0 0)
+    (0 0 0 1 1 1 2 1 1 0 0 0)
+    (0 0 0 1 0 0 0 0 1 0 0 0)
+    (0 0 1 0 0 0 0 0 1 0 0 0)
+    (0 0 1 0 0 0 0 0 1 0 0 0)
+    (0 0 0 5 0 0 0 0 1 0 0 0)
+    (0 0 0 0 0 0 0 0 0 5 0 0)
+    (0 0 0 0 0 0 0 0 0 0 0 0)
+    (0 0 0 0 1 1 0 0 0 0 0 0)
+    (0 0 0 1 1 1 1 0 0 0 0 0)
+    (0 0 1 1 1 1 1 0 0 0 0 0)
+    (0 0 1 3 3 3 3 0 0 0 0 0)
+    (0 0 3 9 4 9 4 0 5 0 0 0)
+    (0 0 0 5 4 5 4 7 2 7 0 0)
+    (0 0 1 3 3 3 3 1 2 6 7 0)
+    (0 0 1 3 g g 3 1 2 2 6 6)
+    (0 0 1 3 3 3 3 1 1 2 6 6)
+    (0 0 1 3 3 3 3 1 1 2 6 6)
+    (0 0 1 2 3 3 2 1 1 8 6 8)
+    (0 0 1 1 2 9 1 1 1 8 8 0)
+    (0 0 1 1 1 9 1 1 2 0 0 0)
+    (0 0 0 2 1 9 1 2 2 0 0 0)
+    (0 0 0 5 5 b 5 5 5 0 0 0)
+    (0 0 0 1 1 1 2 1 1 0 0 0)
+    (0 0 0 1 0 0 0 0 1 0 0 0)
+    (0 0 1 0 0 0 0 0 1 0 0 0)
+    (0 0 1 0 0 0 0 0 0 1 5 0)
+    (0 0 5 0 0 0 0 0 0 0 0 0)
+    (0 0 0 0 0 0 0 0 0 0 0 0)
+    (0 0 0 0 1 1 0 0 0 0 0 0)
+    (0 0 0 1 1 1 1 0 0 0 0 0)
+    (0 0 1 1 1 1 1 0 0 0 0 0)
+    (0 0 1 3 3 3 3 0 0 0 0 0)
+    (0 0 3 9 4 9 4 0 5 0 0 0)
+    (0 0 0 5 4 5 4 7 2 7 0 0)
+    (0 0 1 3 3 3 3 1 2 6 7 0)
+    (0 0 1 3 g g 3 1 2 2 6 6)
+    (0 0 1 3 3 3 3 1 1 2 6 6)
+    (0 0 1 3 3 3 3 1 1 2 6 6)
+    (0 0 1 2 3 3 2 1 1 8 6 8)
+    (0 0 1 1 2 9 1 1 1 8 8 0)
+    (0 0 1 1 1 9 1 1 2 0 0 0)
+    (0 0 0 2 1 9 1 2 2 0 0 0)
+    (0 0 0 5 5 b 5 5 5 0 0 0)
+    (0 0 0 1 1 1 2 1 1 0 0 0)
+    (0 0 0 1 0 0 0 0 1 0 0 0)
+    (0 0 1 0 0 0 0 0 1 0 0 0)
+    (0 0 1 0 0 0 0 0 1 0 0 0)
+    (0 0 5 0 0 0 0 0 0 5 0 0);
+  
+  // Pixelize function kindly borrowed from https://una.im/sass-pixel-art/
+  // Modified slightly
+  @function pixelize($matrix, $size: 10px) {
+    $l: length($matrix); 
+    $shadows: ''; 
+    $i: $l; 
+  
+    @for $i from 1 through $l {
+      $row: nth($matrix, $i); 
+      @for $j from 1 through length($row){
+          $item: nth($row, $j); 
+        
+          @if $item != 0 {
+            $shadows:  $shadows + ($j*$size) + ' ' + ($i*$size) + ' ' + map-get($santa-colors, $item) + ',';
+          }
+      }
+    }
+    // Remove last comma
+    $shadows: str-slice($shadows, 0, -2);
+    @return unquote($shadows);
+  }
+
+  .clouds{
+    background: transparent;
+  }
+  
+  .santa {
+    width: $pixel-size * 12; // 12...is the magic number...or its the tile width size :) 
+    height: $pixel-size * 21;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 200px - $pixel-size * 21;
+    will-change: transform;
+    z-index: 100;
+    &::after {
+      content: "";
+      width: $pixel-size;
+      height: $pixel-size;
+      box-shadow: pixelize($santa-dots-1, $pixel-size);
+      position: absolute;
+      top: -$pixel-size;
+      left: 0;
+      animation: santa-run 450ms steps(5) infinite;
+    }
+  }
+  
+  @keyframes santa-run {
+    100% {
+      transform: translateY($pixel-size * -21 * 5);
+    }
+  }
+  
+  .ground {
+    height: 19%;
+    min-height: 200px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    overflow: hidden;
+  }
+  
+  .tree {
+    position: absolute;
+    height: 124px;
+    width: 80px;
+    background-color: red;
+    left: -10%;
+    bottom: calc(100% - 200px);
+    will-change: transform;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAB8BAMAAAAMUSrTAAAAJFBMVEUAAACPrLkZSGI2RE1ikKVLang9Tlg9SE89YXJHV2BLeI0TOE2dAaMhAAAAAXRSTlMAQObYZgAAAV1JREFUeAFioBcQpLZCpRGpEFAunRUxDsRAGMYgLEOhKYhCUxAFURCFoRByq67KVJ7j0d5/4vvz7YVx6H8BxDzEJJSjD0MnZ6FNw4WfAW0aBjEJ4Z70QbgoyGEYOQrNw2chBHMOLgq6TcOchPBq6BiDgaqo9JqCNHiwMn0MojxCEEPQ4BUhOQ/dJqAcK/RLxwQ0+mp4zn0PAfhaQcHIvIYG7IqGUfrvhN1Bw27H1UYxcsMuIHdXfEPNkC0voFpyYm8YkhewY6wmTXkkYXeQ1erApV6v1w3cgs2iGgbf6AJCMEpQklp3BYGtzYIsTeoSfhyjOs1fQWy5c+YqzdCeQ7Szfc5MOQYJewjlDGbBA0lJFuwRxFo7MwHrKNhpnu5a+T1UnqIKMk3MXR3wNTxWOld31l7AT+dr+LMhZ2EE6z+ELI7DGoXxE6BNw0ybhZnbqgZhNoTZHPT0pi3xEP4ASfft/l2dK30AAAAASUVORK5CYII=') no-repeat 0 0;
+    image-rendering: pixelated;
+    animation: move-tree 120s infinite linear;
+    z-index: 1;
+    
+    &large {
+      height: 150px;
+      width: 110px;    
+      background-size: 100% 100%;
+    }
+    
+    &:nth-child(3) {
+      left: -40vw;
+    }
+  
+    &:nth-child(4) {
+      left: -60vw;
+    }
+  
+    &:nth-child(4) {
+      left: -70vw;
+    }
+    &:nth-child(5) {
+      left: -120vw;
+    }
+  }
+  
+  .treebackground {
+    width: 200%;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    image-rendering: pixelated;
+    will-change: transform;
+    animation: move-background 50s infinite linear;
+  }
+  
+  @keyframes move-background {
+    100% {
+      transform: translateX(50%);
+    }
+  }
+  
+  @keyframes move-tree {
+    100% {
+      transform: translateX(200vw);
+    }
+  }
+  
+  .caption {
+    font-size: 4rem;
+    padding: 3rem 1rem 0rem;
+    text-align: center;
+  }
+  .caption--small{
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  
+/*Santa walking end*/
