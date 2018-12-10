@@ -1,6 +1,6 @@
 {
   "name": "react-mega-menu",
-  "version": "0.0.3",
+  "version": "0.1.2",
   "private": true,
   "engines": {
     "node": ">=0.10.0"
