@@ -6,7 +6,7 @@ This sample demonstrates how to check is current team linked to team site set as
 ![picture of the extension in action, if possible](./assets/screenshot.png)
 
 ## Used SharePoint Framework Version 
-![1.6.0](https://img.shields.io/badge/version-GA-green.svg)
+![1.7.1](https://img.shields.io/badge/version-GA-green.svg)
 
 ## Applies to
 
@@ -32,6 +32,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|July 8, 2018|Initial release
 1.1|September 6, 2018|Updated SPfx 1.6.0 support and tenant wide deployment
+1.2|January 2, 2019|Updated SPFx 1.7.1 support, Teams Graph API v1.0 endpoint and handling of MSGraphClient.
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
