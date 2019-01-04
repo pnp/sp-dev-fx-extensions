@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="JustALink"
+        RegistrationId="101"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="7f6fdb10-39dc-402a-a99f-0ba942b19614"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>
