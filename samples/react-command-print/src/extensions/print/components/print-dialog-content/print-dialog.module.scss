@@ -1,0 +1,93 @@
+.PrintDialogContent { 
+    padding: 1px;
+    width: 800px;
+
+    .clear {
+        clear: both;
+    }
+
+    .printIcons{
+        text-align: right;
+    }
+
+    .templateContent{
+        margin-top: 10px;
+        border: 1px solid #eeeeee;
+    }
+    .loadingMargin{
+        margin-top: 10px;
+    }
+    .templateSection{
+        width: 100%;
+        margin: 5px;
+        height: 35px;
+    }
+    .templateSection span{        
+        padding: 8px;
+        display: block;
+    }
+    .templateTable {
+        margin: 5px;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    .templateTable td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    
+    .templateTable tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .nameColumn{
+        width:30%;
+    }
+
+    .valueColumn{
+        width:70%;
+    }
+}
+@media print{
+    .templateContent{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .templateSection{
+        width: 100%;
+        margin: 5px;
+        height: 35px;
+    }
+    .templateSection span{        
+        padding: 8px;
+        display: block;
+    }
+    .templateTable {
+        margin: 5px;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    .templateTable td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    
+    .templateTable tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .nameColumn{
+        width:30%;
+    }
+
+    .valueColumn{
+        width:70%;
+    }
+}

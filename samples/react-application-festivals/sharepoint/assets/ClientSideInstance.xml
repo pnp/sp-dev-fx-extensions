@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="Festivals"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="e33e08f3-5c41-4e0b-9221-7131144f9d74"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

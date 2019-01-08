@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "print-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/print/PrintCommandSet.js",
+          "manifest": "./src/extensions/print/PrintCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PrintCommandSetStrings": "lib/extensions/print/loc/{locale}.js"
+  }
+}
