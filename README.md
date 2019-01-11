@@ -6,7 +6,7 @@ Sample SharePoint Framework (SPFx) solution which gives the end-user the ability
 
 ![Image of the Prototype](https://jonasbjerke.files.wordpress.com/2019/01/copydirectlink.png?w=450)
 
-## Used SharePoint Framework Version
+## SharePoint Framework version
 
 ![SPFx v1.7.1](https://img.shields.io/badge/SPFx-1.7.1-green.svg)
 
@@ -14,6 +14,7 @@ Sample SharePoint Framework (SPFx) solution which gives the end-user the ability
 
 * [SharePoint Framework Extensions Developer](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
 * [Office 365 developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
+* Office 365 tenant on a site collection with the modern user interface
 
 ## Solution
 
