@@ -60,4 +60,6 @@ The solution is built with:
 * CSS animations on the CheckMark icon
 * Copy to clipboard functionality using JavaScript
 
+For a more detailed walkthrough, please visit this [blogpost](https://jonasbjerke.wordpress.com/2019/01/06/extending-sharepoint-let-users-get-a-regular-link-to-a-document-or-folder/).
+
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
