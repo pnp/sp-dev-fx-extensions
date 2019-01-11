@@ -59,3 +59,5 @@ The solution is built with:
 * Additional Office UI Fabric Components, such as Icon, TextField, Button and Callout to ensure a consistent UX
 * CSS animations on the CheckMark icon
 * Copy to clipboard functionality using JavaScript
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
