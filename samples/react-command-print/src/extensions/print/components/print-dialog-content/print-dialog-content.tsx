@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactElementToString from 'react-element-to-string';
 import { initializeIcons } from '@uifabric/icons';
 import ReactToPrint from "react-to-print";
 import styles from './print-dialog.module.scss';
@@ -11,7 +10,7 @@ import IPrintDialogContentProps from './print-dialog-content-props';
 import IPrintDialogContentState from './print-dialog-content-state';
 import PrintTemplateContent from '../print-dialog-template-content/print-template-content';
 import SettingsPanel from '../settings-panel/settings-panel';
-import ListHelper from '../../util/list-helper';
+// import ListHelper from '../../util/list-helper';
 import ReactHtmlParser from 'react-html-parser';
 import {
     Dropdown
@@ -23,6 +22,7 @@ import ITemplateItem from '../../models/template-item';
 import { style } from 'typestyle';
 import printStyles from '../print-dialog-template-content/print-template-content.module.scss';
 import { sp, EmailProperties } from '@pnp/sp';
+import reactElementToJSXString from 'react-element-to-jsx-string';
 
 const _items: any[] = [];
 export default class PrintDialogContent extends React.Component<IPrintDialogContentProps, IPrintDialogContentState> {
@@ -54,27 +54,23 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
             isSiteAdmin: false
         };
         this.listService = new ListService();
-        this._onTemplateAdded = this._onTemplateAdded.bind(this);
-        this._onTemplateUpdated = this._onTemplateUpdated.bind(this);
-        this._onTemplateRemoved = this._onTemplateRemoved.bind(this);
-        this.getItemContent = this.getItemContent.bind(this);
-        this._makeEmailBody = this._makeEmailBody.bind(this);
-        this._sendAsEmail = this._sendAsEmail.bind(this);
         // Initialize icons
         initializeIcons();
     }
 
     public componentDidMount() {
 
-        // Validate and create Print Settings list
-        this.initializeSettings();
-
+        // Validate and create Print Settings list --> added list definition to elements.xml for adding Print List Settings
+        // this.initializeSettings();
+        // Get templates
+        this.getTemplates();
         // Get select item values
         this.getItemContent();
     }
 
     public render(): JSX.Element {
         const templates = this.state.templates;
+        const options = templates.length>0 ? templates.map(t => ({ key: t.Id, text: t.Title })) : [];
         return <div className={styles.PrintDialogContent}>
             <DialogContent
                 title={`Print ${this.props.title}`}
@@ -90,7 +86,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
                         <div className="ms-Grid-col ms-sm8 ms-md8 ms-lg8">
                             <Dropdown
                                 placeHolder="Select your template..."
-                                options={this.state.templates.map(t => ({ key: t.Id, text: t.Title }))}
+                                options={options}
                                 onChanged={this._onDropDownChanged}
                             />
                         </div>
@@ -99,7 +95,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
                                 trigger={() => <IconButton iconProps={{ iconName: 'Print' }} title="Print" ariaLabel="Print" />}
                                 content={() => this.componentRef}
                             />
-                            <span hidden={true}>
+                            <span hidden={false}>
                                 <IconButton iconProps={{ iconName: 'Mail' }} title="Mail" ariaLabel="Mail" onClick={this._sendAsEmail} />
                                 <IconButton iconProps={{ iconName: 'PDF' }} title="PDF" ariaLabel="PDF" />
                                 <IconButton iconProps={{ iconName: 'ExcelLogo' }} title="Export to excel" ariaLabel="ExcelLogo" />
@@ -125,13 +121,14 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     /**
      * This function will be implemented for the next version
      */
-    private _sendAsEmail() {
+    private _sendAsEmail = () => {
 
         if (this.state.printTemplate) {
-            const Body = ReactElementToString(this._makeEmailBody());
+            const Body = reactElementToJSXString(this._makeEmailBody());
+            console.log("hello");
             console.log(Body);
             const email: EmailProperties = {
-                To: ["ramin.ahmadi@live.com"],
+                To: ["ramin@raminahmadi.onmicrosoft.com"],
                 Body,
                 Subject: "Test"
             };
@@ -143,7 +140,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     /**
      * This function will be implemented for the next version
      */
-    private _makeEmailBody(): any {
+    private _makeEmailBody = (): any => {
         return <div className={printStyles.Print}>
             {this.state.printTemplate &&
                 <div className={printStyles.Print}>
@@ -167,7 +164,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     /**
      * This function will concat the added templated to the templates list
      */
-    private _onTemplateAdded(template: ITemplateItem) {
+    private _onTemplateAdded = (template: ITemplateItem) => {
         this.setState(prevState => (
             {
                 templates: prevState.templates.concat(template)
@@ -189,7 +186,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     /**
      * This function updates the templates list when a template updated
      */
-    private _onTemplateUpdated(index: number, template: ITemplateItem) {
+    private _onTemplateUpdated = (index: number, template: ITemplateItem) => {
         const newTemplatesList = [...this.state.templates];
         newTemplatesList[index] = { ...template };
         this.setState({
@@ -205,7 +202,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     /**
      * This function loads the template and render it
      */
-    private loadTemplate(template: any) {
+    private loadTemplate = (template: any) => {
 
         // Display loading indicator
         this.setState({
@@ -234,8 +231,9 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
                     }
                     // Adding the section to the content with customized background and font color
                     const { BackgroundColor, FontColor } = item;
-                    const className = style({ backgroundColor: BackgroundColor, color: FontColor });
-                    content.push(<div className={`${styles.templateSection} ${className}`}><span>{item.Title}</span></div>);
+                    const sectionStyles = { backgroundColor: BackgroundColor, color: FontColor };
+                    const className = style(sectionStyles);
+                    content.push(<div className={`${styles.templateSection} ${className}`} style={sectionStyles}><span>{item.Title}</span></div>);
 
                     // Reset the table array for upcoming fields
                     table = [];
@@ -281,7 +279,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     /**
      * Make table of fields including Field Name and Field Value
      */
-    private _makeFieldsTable(table: any): JSX.Element {
+    private _makeFieldsTable = (table: any): JSX.Element => {
         return <table className={styles.templateTable}>
             {
                 table.map(el => <tr>
@@ -299,7 +297,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     /**
      * Remove the template from the templates list
      */
-    private async _onTemplateRemoved(id: number, template: ITemplateItem) {
+    private _onTemplateRemoved = async (id: number, template: ITemplateItem) => {
         const removedItem = await this.listService.removeTempate(id);
         if (removedItem)
             this.setState(prevState => ({
@@ -315,7 +313,8 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     }
 
     // Check if Print Settings list exists, otherwise create it
-    private async initializeSettings() {
+    /*
+    private initializeSettings = async () => {
         const listHelper = new ListHelper(this.props.webUrl);
 
         listHelper.ValidatePrintSettingsList().then(_ => {
@@ -327,9 +326,12 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
             this.getTemplates();
         });
     }
-
+    */
     // Get all available templates for this list
-    private async getTemplates() {
+    private getTemplates = async () => {
+        this.setState({
+            hideLoading: false
+        });
         const templates = await this.listService.GetTemplatesByListId(this.props.listId);
         this.setState({
             templates,
@@ -338,7 +340,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     }
 
     // Gets all fields name and value for selected item, also checks if current user is able to open settings panel
-    private async getItemContent() {
+    private getItemContent = async () => {
         const { listId, itemId } = this.props;
         const itemContent = await this.listService.GetItemById(listId, itemId);
         const isSiteAdmin = await this.listService.IsCurrentUserSiteAdmin();

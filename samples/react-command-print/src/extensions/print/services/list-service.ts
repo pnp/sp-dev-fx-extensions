@@ -13,6 +13,9 @@ export default class ListService {
         this.buildExclusions();
     }
 
+     /**
+     * Check if the current user is a site admin
+     */
     public async IsCurrentUserSiteAdmin(): Promise<boolean>{
         return sp.web.currentUser.get().then(user=>{
             return user.IsSiteAdmin;
@@ -39,7 +42,7 @@ export default class ListService {
      * GetTemplatesByListId
      */
     public async GetTemplatesByListId(listId: string): Promise<any[]> {
-        return sp.web.lists.getByTitle('PrintSettings').items.filter(`ListId eq '${listId}'`).select('Id', 'Title', 'Header', 'Footer', 'Columns', 'ListId', 'HeaderAdvancedMode', 'FooterAdvancedMode','SkipBlankColumns').get().then(items => {
+        return sp.web.lists.getByTitle('Print Settings List').items.filter(`ListId eq '${listId}'`).select('Id', 'Title', 'Header', 'Footer', 'Columns', 'ListId', 'HeaderAdvancedMode', 'FooterAdvancedMode','SkipBlankColumns').get().then(items => {
             return items;
         }).catch(error => {
             Log.error(LOG_SOURCE, error);
@@ -77,23 +80,32 @@ export default class ListService {
         });
     }
 
+     /**
+     * Add a template to Print Settings List
+     */
     public async AddTemplate(template: any): Promise<any> {
-        return sp.web.lists.getByTitle('PrintSettings').items.add(template).then(({ data }) => data).catch(error => {
+        return sp.web.lists.getByTitle('Print Settings List').items.add(template).then(({ data }) => data).catch(error => {
             Log.error(LOG_SOURCE, error);
             return error.message;
         });
     }
 
+     /**
+     * Update an existing template
+     */
     public async UpdateTemplate(id: number, template: any): Promise<boolean> {
 
-        return sp.web.lists.getByTitle('PrintSettings').items.getById(id).update(template).then(e => true).catch(error => {
+        return sp.web.lists.getByTitle('Print Settings List').items.getById(id).update(template).then(e => true).catch(error => {
             Log.error(LOG_SOURCE, error);
             return error.message;
         });
     }
 
+     /**
+     * Remove a template
+     */
     public async removeTempate(id: number): Promise<boolean> {
-        return sp.web.lists.getByTitle('PrintSettings').items.getById(id).delete().then(e => true).catch(error => {
+        return sp.web.lists.getByTitle('Print Settings List').items.getById(id).delete().then(e => true).catch(error => {
             Log.error(LOG_SOURCE, error);
             return error.message;
         });

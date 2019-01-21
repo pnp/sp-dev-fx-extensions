@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -8,7 +9,6 @@
     "declaration": true,
     "sourceMap": true,
     "experimentalDecorators": true,
-    "skipLibCheck": true,
     "outDir": "lib",
     "typeRoots": [
       "./node_modules/@types",

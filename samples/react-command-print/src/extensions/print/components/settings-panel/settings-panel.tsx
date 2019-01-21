@@ -37,16 +37,6 @@ export default class SettingsPanel extends React.Component<ISettingsPanelProps, 
             showTemplatePanel: false
         };
         this.state = this._defaultState;
-        this._onRenderCell = this._onRenderCell.bind(this);
-        this._removeTempate = this._removeTempate.bind(this);
-        this._editTemplate = this._editTemplate.bind(this);
-        this._addNewTemplate = this._addNewTemplate.bind(this);
-        this._onTemplateChanged = this._onTemplateChanged.bind(this);
-        this._onTemplateUpdated = this._onTemplateUpdated.bind(this);
-
-        this._onTemplateSaved = this._onTemplateSaved.bind(this);
-        this._showDeleteDialog = this._showDeleteDialog.bind(this);
-        this._closeDeleteDialog = this._closeDeleteDialog.bind(this);
     }
 
     public render() {
@@ -100,7 +90,7 @@ export default class SettingsPanel extends React.Component<ISettingsPanelProps, 
             </div>
         );
     }
-    
+
     private _showDeleteDialog = (item: any): void => {
         this.setState({
             showDeleteDialog: false,
@@ -113,7 +103,7 @@ export default class SettingsPanel extends React.Component<ISettingsPanelProps, 
         this.setState({ showDeleteDialog: true });
     }
 
-    private async _onTemplateSaved() {
+    private _onTemplateSaved = async () => {
         if (!this.state.activateTemplateId) {
             let templateItem = await this.listService.AddTemplate({
                 ...this.state.activeTemplate,
@@ -139,25 +129,25 @@ export default class SettingsPanel extends React.Component<ISettingsPanelProps, 
         };
     }
 
-    private _onTemplateUpdated() {
+    private _onTemplateUpdated = () => {
         this.props.onTemplateUpdated(this.state.activateTemplateIndex, this.state.activeTemplate);
         this.setState({
             showTemplatePanel: false
         });
     }
 
-    private async _removeTempate() {
+    private _removeTempate = async () => {
         this.props.onTemplateRemoved(this.state.activateTemplateId, this.state.activeTemplate);
         this._closeDeleteDialog();
     }
 
-    private _onTemplateChanged(activeTemplate: ITemplateItem) {
+    private _onTemplateChanged = (activeTemplate: ITemplateItem) => {
         this.setState({
             activeTemplate
         });
     }
 
-    private _addNewTemplate() {
+    private _addNewTemplate = () => {
         this.setState({
             showTemplatePanel: true,
             activeTemplate: this._defaultState.activeTemplate,
@@ -165,7 +155,7 @@ export default class SettingsPanel extends React.Component<ISettingsPanelProps, 
         });
     }
 
-    private _editTemplate(item: any, index: number) {
+    private _editTemplate = (item: any, index: number) => {
         this.setState({
             activeTemplate: {
                 ...item,
@@ -177,7 +167,7 @@ export default class SettingsPanel extends React.Component<ISettingsPanelProps, 
         });
     }
 
-    private _onRenderCell(item: any, index: number): JSX.Element {
+    private _onRenderCell = (item: any, index: number): JSX.Element => {
         return (
             <div className={styles.SettingsPanel} data-is-focusable={true}>
                 <div className={`${styles.itemCell} ${index % 2 === 0 && styles.itemCellEven}`} >
