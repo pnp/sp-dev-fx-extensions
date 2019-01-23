@@ -1,0 +1,128 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+    "hideSelection": true,
+    "hideListHeader": true,
+    "debugMode": true,
+    "rowFormatter": {
+      "elmType": "div",
+      "style": {
+        "display": "flex",
+        "flex-wrap": "wrap",
+        "align-items": "stretch",
+        "padding": "8px",
+        "margin-bottom": "16px",
+        "max-width": "555px",
+        "border-radius": "8px",
+        "box-shadow": "4px 4px 8px darkgrey"
+      },
+      "attributes": {
+        "class": "ms-bgColor-neutralLighter"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "flex-grow": "1",
+            "display": "flex",
+            "flex-wrap": "wrap",
+            "align-items": "stretch",
+            "max-width": "355px"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "flex": "none"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "width": "100px",
+                    "height": "100px",
+                    "overflow": "hidden",
+                    "border-radius": "50%",
+                    "margin-right": "8px"
+                  },
+                  "children": [
+                    {
+                      "elmType": "img",
+                      "attributes": {
+                        "src": "='https://avatars.io/twitter/' + [$TwitterHandle]"
+                      },
+                      "style": {
+                        "position": "relative",
+                        "top": "50%",
+                        "left": "50%",
+                        "width": "100%",
+                        "height": "auto",
+                        "margin-left": "-50%",
+                        "margin-top": "-50%"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "flex-grow": "1",
+                "display": "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "align-items": "stretch",
+                "max-width": "255px"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "flex-grow": "1"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "txtContent": "[$Title]",
+                      "style": {
+                        "display": "block"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-l ms-fontWeight-semibold ms-fontColor-neutralPrimary"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "[$CodeName]",
+                      "style": {
+                        "display": "=if([$CodeName] == '', 'none', 'block')"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-m ms-fontWeight-regular ms-fontColor-neutralSecondary"
+                      }
+                    },
+                    {
+                      "elmType": "a",
+                      "txtContent": "='Email ' + [$CodeName]",
+                      "style": {
+                        "display": "=if([$CodeName] == '', 'none', 'block')",
+                        "background-color": "#772d96",
+                        "text-align": "center",
+                        "color": "white",
+                        "padding": "10px 10px",
+                        "margin-top": "7px"
+                      },
+                      "attributes": {
+                        "class": "ms-fontSize-m ms-fontWeight-regular ms-fontColor-neutralSecondary pnpButtonHoverStyle",
+                        "href": "='mailto:' + [$Email] + '?subject=Dear ' + [$CodeName] + '&body=Dear Warrior Horse Whisperer,%0D%0A%0D%0AYour Warrior Horses are very great.%0D%0A%0D%0AOne hundred thousand pesos to come to Santa Poco.%0D%0A%0D%0APut on show. Stop The infamous El Guapo.'"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
