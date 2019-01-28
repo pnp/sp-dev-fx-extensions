@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "make-single-part-app-page-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/makeSinglePartAppPage/MakeSinglePartAppPageCommandSet.js",
+          "manifest": "./src/extensions/makeSinglePartAppPage/MakeSinglePartAppPageCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MakeSinglePartAppPageCommandSetStrings": "lib/extensions/makeSinglePartAppPage/loc/{locale}.js"
+  }
+}
