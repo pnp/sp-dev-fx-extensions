@@ -76,8 +76,11 @@ export default class MakeSinglePartAppPageCommandSet extends BaseListViewCommand
 
 
     const response: SPHttpClientResponse = await this.context.spHttpClient.post(endpoint, SPHttpClient.configurations.v1, opt);
-    const responseJson: any = await response.json();
 
-    console.log(responseJson);
+    if (response.status === 204) {
+      console.log("Layout updated successfully");
+    } else {
+      throw new Error(`Error updating Layout: ${response.statusText}`);
+    }
   }
 }
