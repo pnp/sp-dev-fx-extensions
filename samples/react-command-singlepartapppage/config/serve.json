@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://[TENANT].sharepoint.com/sites/[SITE]/SitePages/Forms/ByAuthor.aspx",
+      "customActions": {
+        "f376321d-95fe-4796-bf5d-ca4b8f64529d": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+          }
+        }
+      }
+    }
+  }
+}
