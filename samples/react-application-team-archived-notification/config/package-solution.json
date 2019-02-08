@@ -3,7 +3,7 @@
   "solution": {
     "name": "team-archived-notification-client-side-solution",
     "id": "1ef726ed-7091-4132-a1f3-97889c6af2fe",
-    "version": "1.1.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "features": [

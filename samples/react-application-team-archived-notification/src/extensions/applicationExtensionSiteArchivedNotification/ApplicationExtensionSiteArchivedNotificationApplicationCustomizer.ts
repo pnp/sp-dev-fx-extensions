@@ -6,7 +6,7 @@ import {
   BaseApplicationCustomizer, PlaceholderContent, PlaceholderName
 } from '@microsoft/sp-application-base';
 import * as strings from 'ApplicationExtensionSiteArchivedNotificationApplicationCustomizerStrings';
-import { MSGraphClient} from "@microsoft/sp-client-preview";
+import { MSGraphClient } from "@microsoft/sp-http";
 import { sp } from "@pnp/sp";
 import SiteArchivedMessageBar from "./components/SiteArchivedMessageBar";
 import { ISiteArchivedMessageBarProps } from './components/SiteArchivedMessageBar';
@@ -51,8 +51,8 @@ export default class ApplicationExtensionSiteArchivedNotificationApplicationCust
 
   private _renderPlaceHolders(id: string): void {
 
-    const graphClient: MSGraphClient = this.context.serviceScope.consume(MSGraphClient.serviceKey);
-    
+   
+   
     if(!this._headerPlaceholder && this.context.placeholderProvider.placeholderNames.indexOf(PlaceholderName.Top) !== -1)
     {
       this._headerPlaceholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top, {onDispose: this._onDispose});
@@ -63,8 +63,8 @@ export default class ApplicationExtensionSiteArchivedNotificationApplicationCust
     }
     if(this._headerPlaceholder.domElement)
     {
-        
-        graphClient.api("teams/"+id).version("beta").get((error, response: any, rawResponse?: any) => {
+      this.context.msGraphClientFactory.getClient().then((graphClient: MSGraphClient): void => {  
+        graphClient.api("teams/"+id).get((error, response: any, rawResponse?: any) => {
           console.log(response);
           if(response != null && response.isArchived != null)
           {
@@ -76,14 +76,11 @@ export default class ApplicationExtensionSiteArchivedNotificationApplicationCust
         }
           
         });
+      });
 
     }
   }
 
-  public  restoreSite(): void
-  {
-    console.log("Test");
-  }
 
   private _onDispose(): void
   {
