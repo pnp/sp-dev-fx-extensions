@@ -24,8 +24,7 @@
     "react-element-to-string": "^1.0.2",
     "react-html-parser": "^2.0.2",
     "react-quill": "^1.4.0-beta.5",
-    "typestyle": "^2.0.1",
-    "react-to-print": "2.0.0-alpha-4"
+    "typestyle": "^2.0.1"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "1.7.0",
@@ -35,6 +34,7 @@
     "@types/chai": "3.4.34",
     "@types/mocha": "2.2.38",
     "ajv": "~5.2.2",
-    "gulp": "~3.9.1"
+    "gulp": "~3.9.1",
+    "react-to-print": "^2.0.0-alpha-4"
   }
 }
