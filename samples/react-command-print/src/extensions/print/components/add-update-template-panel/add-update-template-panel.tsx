@@ -22,7 +22,7 @@ import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 
 let _draggedItem: any = null;
 let _draggedIndex = -1;
-
+let _draggedType: string = "Fields";
 export default class AddUpdateTemplate extends React.Component<AddUpdateTemplatePanelProps, AddUpdateTemplatePanelState> {
     private listService: ListService;
     private _fieldSelection: Selection;
@@ -92,18 +92,6 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
 
         this._fieldSelection = new Selection();
         this._itemSelection = new Selection();
-        this._renderItemColumn = this._renderItemColumn.bind(this);
-        this._onRemoveItem = this._onRemoveItem.bind(this);
-        this._closeColorPicker = this._closeColorPicker.bind(this);
-        this._onColorChange = this._onColorChange.bind(this);
-        this._onColorSelected = this._onColorSelected.bind(this);
-        this._openColorPicker = this._openColorPicker.bind(this);
-        this._footerAdvancedToggleChange = this._footerAdvancedToggleChange.bind(this);
-        this._headerAdvancedToggleChange = this._headerAdvancedToggleChange.bind(this);
-        this._headerEditorChange = this._headerEditorChange.bind(this);
-        this._footerEditorChange = this._footerEditorChange.bind(this);
-        this._skipBlankColumnsToggleChange = this._skipBlankColumnsToggleChange.bind(this);
-        this._saveTemplate = this._saveTemplate.bind(this);
     }
 
     public async componentDidMount() {
@@ -130,7 +118,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                     onRenderFooterContent={this._onRenderFooterContent}
                 >
                     <div className={`${styles.AddUpdateTemplate} ms-Grid}`}>
-                        <TextField value={Title} label="Name" errorMessage={this.state.titleErrorMessage} onChanged={(name) => {this.props.onTemplateChanged({ ...this.props.template, Title: name });this.setState({titleErrorMessage:''});}} />
+                        <TextField value={Title} label="Name" errorMessage={this.state.titleErrorMessage} onChanged={(name) => { this.props.onTemplateChanged({ ...this.props.template, Title: name }); this.setState({ titleErrorMessage: '' }); }} />
                         <Label>Columns (Drag fields from the left table to the right one)</Label>
                         <div className="ms-Grid-row">
                             <div className={`ms-Grid-col ms-sm6 ms-md6 ms-lg6`}>
@@ -188,7 +176,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                         <Label>Add section</Label>
                         <div className="ms-Grid-row">
                             <div className="ms-Grid-col ms-sm10 ms-md10 ms-lg10">
-                                <TextField errorMessage={this.state.sectionErrorMessage} onChanged={(value) => this.setState({ section: { ...this.state.section, Title: value, Id: value },sectionErrorMessage: '' })} value={this.state.section.Title} />
+                                <TextField errorMessage={this.state.sectionErrorMessage} onChanged={(value) => this.setState({ section: { ...this.state.section, Title: value, Id: value }, sectionErrorMessage: '' })} value={this.state.section.Title} />
 
                             </div>
                             <div className="ms-Grid-col ms-sm1 ms-md2 ms-lg2">
@@ -202,12 +190,12 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                             defaultChecked={HeaderAdvancedMode}
                             label="Header"
                             onText="Advanced mode"
-                            offText="Simple mode"
+                            offText="Simple mode"                            
                             onChanged={this._headerAdvancedToggleChange}
                         />
                         <div className={styles.editorContainer}>
                             <div hidden={HeaderAdvancedMode}>
-                                <ReactQuill modules={modules} formats={formats} className={styles.quillEditor} value={HeaderAdvancedMode?'':Header} onChange={this._headerEditorChange} />
+                                <ReactQuill modules={modules} formats={formats} className={styles.quillEditor} value={HeaderAdvancedMode ? '' : Header} onChange={this._headerEditorChange} />
                             </div>
                             <div hidden={!HeaderAdvancedMode}>
                                 <TextField multiline rows={11} placeholder="Put your HTML code here..." value={Header} onChanged={(value) => this.props.onTemplateChanged({ ...this.props.template, Header: value })} />
@@ -223,7 +211,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                         <div className={styles.editorContainer}>
 
                             <div hidden={FooterAdvancedMode}>
-                                <ReactQuill modules={modules} formats={formats} className={styles.quillEditor} value={FooterAdvancedMode?'':Footer} onChange={this._footerEditorChange} />
+                                <ReactQuill modules={modules} formats={formats} className={styles.quillEditor} value={FooterAdvancedMode ? '' : Footer} onChange={this._footerEditorChange} />
                             </div>
                             <div hidden={!FooterAdvancedMode}>
                                 <TextField multiline rows={11} value={Footer} onChanged={(value) => this.props.onTemplateChanged({ ...this.props.template, Footer: value })} placeholder="Put your HTML code here..." />
@@ -269,49 +257,49 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
         );
     }
 
-    private _skipBlankColumnsToggleChange(value){
-        this.props.onTemplateChanged({ ...this.props.template, SkipBlankColumns:value });
+    private _skipBlankColumnsToggleChange = (value) => {
+        this.props.onTemplateChanged({ ...this.props.template, SkipBlankColumns: value });
     }
 
-    private _headerEditorChange(value){
-        this.props.onTemplateChanged({ ...this.props.template, Header:value });
+    private _headerEditorChange = (value) => {
+        this.props.onTemplateChanged({ ...this.props.template, Header: value });
     }
 
-    private _footerEditorChange(value){
-        this.props.onTemplateChanged({ ...this.props.template, Footer:value });
+    private _footerEditorChange = (value) => {
+        this.props.onTemplateChanged({ ...this.props.template, Footer: value });
     }
 
-    private _headerAdvancedToggleChange(checked: boolean) {
+    private _headerAdvancedToggleChange = (checked: boolean) => {
         this.props.onTemplateChanged({
             ...this.props.template,
             HeaderAdvancedMode: checked
         });
     }
 
-    private _footerAdvancedToggleChange(checked: boolean) {
+    private _footerAdvancedToggleChange = (checked: boolean) => {
         this.props.onTemplateChanged({
             ...this.props.template,
             FooterAdvancedMode: checked
         });
     }
 
-    private _openColorPicker(isFontColorPicker: boolean) {
+    private _openColorPicker = (isFontColorPicker: boolean) => {
         this.setState({
             showColorPicker: true,
             isFontColorPicker
         });
     }
-    private _onColorChange(color: string): void {
+    private _onColorChange = (color: string): void => {
         this._selectedColor = color;
     }
 
-    private _closeColorPicker() {
+    private _closeColorPicker = () => {
         this.setState({
             showColorPicker: false
         });
     }
 
-    private _onColorSelected() {
+    private _onColorSelected = () => {
         const fontColorChanged = this.state.isFontColorPicker;
         this.setState({
             showColorPicker: false,
@@ -325,12 +313,12 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
 
     private _addSection = () => {
 
-        if(this.state.section.Title.length<1){
+        if (this.state.section.Title.length < 1) {
             this.setState({
                 sectionErrorMessage: 'Please enter a name for your section'
             });
         }
-        else{
+        else {
             this.setState({
                 section: this._defautState.section,
                 sectionErrorMessage: ''
@@ -342,7 +330,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                 }
             );
         }
-        
+
 
     }
 
@@ -360,13 +348,13 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
         );
     }
 
-    private _saveTemplate(){
-        if(this.props.template.Title.length<1)
+    private _saveTemplate = () => {
+        if (this.props.template.Title.length < 1)
             this.setState({
-                titleErrorMessage:'Please enter a name for your template'
+                titleErrorMessage: 'Please enter a name for your template'
             });
         else
-        this.props.onTemplateSaved();
+            this.props.onTemplateSaved();
     }
 
     private _renderRow = (props: IDetailsRowProps, defaultRender?: any) => {
@@ -378,7 +366,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
         return <DetailsRow {...props} />;
     }
 
-    private _renderItemColumn(item: any, index: number, column: IColumn) {
+    private _renderItemColumn = (item: any, index: number, column: IColumn) => {
         const fieldContent = item[column.fieldName || ''];
         switch (column.key) {
             case 'manage':
@@ -407,7 +395,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
         this.setState({ columns: newColumns });
     }
 
-    private _getColumnReorderOptions(): IColumnReorderOptions {
+    private _getColumnReorderOptions = (): IColumnReorderOptions => {
         return {
             frozenColumnCountFromStart: parseInt(this.state.frozenColumnCountFromStart, 10),
             frozenColumnCountFromEnd: parseInt(this.state.frozenColumnCountFromEnd, 10),
@@ -415,7 +403,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
         };
     }
 
-    private _getFieldsDragEvents(): IDragDropEvents {
+    private _getFieldsDragEvents = (): IDragDropEvents => {
         return {
             canDrop: () => {
                 return false;
@@ -432,15 +420,17 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
             onDragStart: (item?: any, itemIndex?: number, selectedItems?: any[], event?: MouseEvent) => {
                 _draggedItem = item;
                 _draggedIndex = itemIndex!;
+                _draggedType = "Fields";
             },
             onDragEnd: (item?: any, event?: DragEvent) => {
                 _draggedItem = null;
                 _draggedIndex = -1;
+
             }
         };
     }
 
-    private _getDragDropEvents(): IDragDropEvents {
+    private _getDragDropEvents = (): IDragDropEvents => {
         return {
             canDrop: () => {
                 return true;
@@ -462,17 +452,19 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
             onDragStart: (item?: any, itemIndex?: number, selectedItems?: any[], event?: MouseEvent) => {
                 _draggedItem = item;
                 _draggedIndex = itemIndex!;
+                _draggedType = "Items";
             },
             onDragEnd: (item?: any, event?: DragEvent) => {
 
                 _draggedItem = null;
                 _draggedIndex = -1;
+
             }
         };
     }
 
-    private _insertBeforeItem(item: any): void {
-        const draggedItems = this._fieldSelection.isIndexSelected(_draggedIndex) ? this._fieldSelection.getSelection() : [_draggedItem];
+    private _insertBeforeItem = (item: any): void => {
+        const draggedItems = _draggedType === "Fields" ? this._fieldSelection.isIndexSelected(_draggedIndex) ? this._fieldSelection.getSelection() : [_draggedItem] : this._itemSelection.isIndexSelected(_draggedIndex) ? this._itemSelection.getSelection() : [_draggedItem];
 
         const items: any[] = this.props.template.Columns.filter((i: number) => draggedItems.indexOf(i) === -1);
         let insertIndex = items.indexOf(item);

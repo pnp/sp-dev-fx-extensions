@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="Print"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ListTemplateId="100"
+        Properties="{&quot;sampleTextOne&quot;:&quot;One item is selected in the list.&quot;, &quot;sampleTextTwo&quot;:&quot;This command is always visible.&quot;}"
+        ComponentId="83a96197-2c0f-4966-8532-de37b0624ef0" />
+</Elements>

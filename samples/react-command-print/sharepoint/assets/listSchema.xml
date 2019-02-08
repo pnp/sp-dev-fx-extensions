@@ -1,0 +1,40 @@
+<List xmlns:ows="Microsoft SharePoint" Title="Print Settings" Name="ListSchema" Direction="$Resources:Direction;" Url="Lists/PrintSettings" BaseType="0" EnableContentTypes="TRUE" FolderCreation="FALSE" VersioningEnabled="false" EnableMinorVersions="FALSE" DisableAttachments="FALSE" xmlns="http://schemas.microsoft.com/sharepoint/" RootWebOnly="FALSE">
+	<MetaData>
+		<Fields>
+			<Field ID="{ed07a40f-b96c-4689-b46d-3c8ad0af9b15}" DisplayName="ListId" Type="Text" Required="FALSE" StaticName="ListId" Name="ListId" />
+			<Field ID="{016fff13-57bb-4d6c-bd35-f01426a9e43d}" DisplayName="Header" Type="Note" Required="FALSE" StaticName="Header" Name="Header" NumLines="6" IsolateStyles="FALSE" RestrictedMode="TRUE" AppendOnly="FALSE" UnlimitedLengthInDocumentLibrary="FALSE" RichText="FALSE" RichTextMode="Compatible" />
+			<Field ID="{bd6f6989-b486-4d3c-b20f-5e431d5249f6}" DisplayName="Footer" Type="Note" Required="FALSE" StaticName="Footer" Name="Footer" RichText="FALSE" RichTextMode="Compatible" />
+			<Field ID="{316425d2-44a7-4cb7-87e0-3a3ff55fa1d6}" DisplayName="Columns" Type="Note" Required="FALSE" StaticName="Columns" Name="Columns" RichText="FALSE" RichTextMode="Compatible" />
+			<Field ID="{a999d168-33ac-4a0f-b1d8-aa67b08bee1e}" DisplayName="HeaderAdvancedMode" Type="Boolean" Required="FALSE" StaticName="HeaderAdvancedMode" Name="HeaderAdvancedMode" />
+			<Field ID="{261e04c3-e8bb-4361-963f-e6c60bf7f311}" DisplayName="FooterAdvancedMode" Type="Boolean" Required="FALSE" StaticName="FooterAdvancedMode" Name="FooterAdvancedMode" />
+			<Field ID="{5eb64d7a-53b3-4a0b-8989-46c0a62c2e4e}" DisplayName="SkipBlankColumns" Type="Boolean" Required="FALSE" StaticName="SkipBlankColumns" Name="SkipBlankColumns" />
+		</Fields>
+		<Views>
+			<View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">			
+				<RowLimit Paged="TRUE">
+					30
+				</RowLimit>
+				<Toolbar Type="Standard" />
+				<ViewFields>
+					<!-- Name is the InternalName -->
+					<FieldRef Name="LinkTitle">
+					</FieldRef>
+					<FieldRef Name="ListId">
+					</FieldRef>
+					<FieldRef Name="SkipBlankColumns">
+					</FieldRef>
+				</ViewFields>
+				<Query>
+					<OrderBy>
+						<FieldRef Name="ID" />
+					</OrderBy>
+				</Query>
+			</View>
+		</Views>
+		<Forms>
+			<Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+		</Forms>
+	</MetaData>
+</List>

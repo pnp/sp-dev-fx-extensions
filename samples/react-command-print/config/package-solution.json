@@ -17,6 +17,9 @@
           "elementManifests": [
             "elements.xml",
             "clientsideinstance.xml"
+          ],
+          "elementFiles": [
+            "listSchema.xml"
           ]
         }
       }
