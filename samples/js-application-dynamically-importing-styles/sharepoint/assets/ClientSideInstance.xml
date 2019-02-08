@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="DynamicallyImportingStylesExt"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="72afcb1a-ccd7-44e6-b4b0-30ca395bb614"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

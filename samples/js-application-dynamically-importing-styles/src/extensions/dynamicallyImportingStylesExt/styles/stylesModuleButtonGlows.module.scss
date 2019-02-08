@@ -1,0 +1,41 @@
+/*
+All classnames used OUTSIDE of ":global{}" will be hashed.
+Classnames will be appended with a unique hash value (generated at transpile time), creating a unique classname. For example '.siteHeader' can become '.siteHeader_55wd77fw'.
+*/
+
+.siteHeader {
+  visibility: visible;
+}
+
+.siteBody {
+  visibility: visible;
+}
+
+.sectionHeader {
+  visibility: visible;
+}
+
+.sectionBody {
+  visibility: visible;
+}
+
+ /* Button Glow Styles and Transitions */
+ $shadowColor: rgba(0, 0, 0, 1.0);
+
+ // All classnames used within ":global{}" will be preserved as-is and will not be hashed.
+ :global {
+   .pnpButtonHoverStyle {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+  }
+  .pnpButtonHoverStyle:hover, .pnpButtonHoverStyle:focus, .pnpButtonHoverStyle:active {
+    box-shadow: 0 0 27px $shadowColor;
+  }
+ }
