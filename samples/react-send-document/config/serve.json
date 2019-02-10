@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://serdarketenci.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "07836d91-b9e4-4d89-907d-a05c6b6adb6e": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+          }
+        }
+      }
+    },
+    "sendDocument": {
+      "pageUrl": "https://serdarketenci.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "07836d91-b9e4-4d89-907d-a05c6b6adb6e": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+          }
+        }
+      }
+    }
+  }
+}
