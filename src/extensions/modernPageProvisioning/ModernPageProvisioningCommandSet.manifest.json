@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+
+  "id": "ada4bf2b-a6c1-4074-a273-9d220c815e11",
+  "alias": "ModernPageProvisioningCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "items": {
+    "COMMAND_1": {
+      "title": { "default": "New Modern Page T1" },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA5CAYAAABuxJj8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMjHxIGmVAAACJElEQVRoQ+2ZMWvbQBiG9cNEiWkxgaBCIdAhEDQ4UygdvGjpUggdiwcPgWTM4ClbwEO2gDxo0lQ0e/ZfeHvyh6IkfsvRu7Ni+5PgGfT4E/LL6TvupAiASqjUAJUaoFIDVGqASg1QqQEqNUClnSnSOEYcJ8jmxhg3TevzGImICNN0fR7HqamujzmyRGpSEdE8S6RGRIR5huTVNS/vGRYq7agNvkSZ58jzAtXKGOOWZX2eoxARYVmuz/O8NNX1sUJVSE0pIlpVhdSIiLCqUKyv+Y2L4RBDw+Wt1IaGyveneaLapyM0VNq5x9VohNFojOuFMbTGhyfMJhNMDLMnY2iNH1Ta2ezxfYNKO2pHfNvsbI9vzuphucXlbs7qantcbfBts7M9vm12Nngz+XzFz0djaI0PzeTZLm9DQ6UdtT3eLDBu8PDHGFrzlgWux/WiJzRXZjm1Psg9/w2V26HdlobFbQtLpR2XJWsb/Pj07ag5cPYZg+6Du/T4xosIv8PzpQWVdvxG/Ms32YB48eMcw+6Du3AQPe6ySWmDH32UDYgXnwb40H3wID1Oav6D9+lxtcFd6IPvc3CXTUrf4/sc3GWT0vd4P+Je9D3eafBmVj9FNnv9iuj5C2hRQVazzTVt8LNfco0Xd99x0n3whs1RfP7mnWTmV3FCWxuWPviL/2WHSg1QqQEqNUClBqjUAJUaoFIDVGqASg1QqQEqNUClBqjUAJWHD6K/Gqhd6LsljuUAAAAASUVORK5CYII=",
+      "type": "command"
+    }
+  }
+}

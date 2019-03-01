@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "modern-page-provisioning-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/modernPageProvisioning/ModernPageProvisioningCommandSet.js",
+          "manifest": "./src/extensions/modernPageProvisioning/ModernPageProvisioningCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ModernPageProvisioningCommandSetStrings": "lib/extensions/modernPageProvisioning/loc/{locale}.js"
+  }
+}
