@@ -4,6 +4,5 @@
         Title="ModernPageProvisioning"
         Location="ClientSideExtension.ListViewCommandSet.CommandBar"
         ListTemplateId="119"
-        Properties="{&quot;sampleTextOne&quot;:&quot;One item is selected in the list.&quot;}"
         ComponentId="ada4bf2b-a6c1-4074-a273-9d220c815e11" />
 </Elements>
