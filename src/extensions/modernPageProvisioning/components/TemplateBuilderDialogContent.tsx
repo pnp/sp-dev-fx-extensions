@@ -12,37 +12,41 @@ import {
   from 'office-ui-fabric-react';
 
 import * as strings from 'ModernPageProvisioningCommandSetStrings';
-import { ResponsiveMode } from 'office-ui-fabric-react/lib-es2015/utilities/decorators/withResponsiveMode';
+import { TemplateBuilderHelper } from './TemplateBuilderHelper'
+
 import "./TemplateBuilderDialog.module.scss";
 
 export interface ITemplateBuilderDialogContentState {
   hideDialog: boolean;
   optionSelected: string;
+  newPageName: string;
 }
 
 export interface ITemplateBuilderDialogContentProps {
   close: () => void;
 }
 
-export default class TemplateBuilderDialogContent extends React.Component<ITemplateBuilderDialogContentProps,ITemplateBuilderDialogContentState> {
+export default class TemplateBuilderDialogContent extends React.Component<ITemplateBuilderDialogContentProps, ITemplateBuilderDialogContentState> {
 
   constructor(props: ITemplateBuilderDialogContentProps) {
     super(props);
     this.state = {
       hideDialog: false,
-      optionSelected: 'A'
+      optionSelected: 'A',
+      newPageName: ""
     };
   }
+
 
   public render() {
     return (
       <div>
-        <Dialog 
+        <Dialog
           hidden={this.state.hideDialog}
-          
+
           onDismiss={this._closeDialog}
-          dialogContentProps={{ 
-            type : DialogType.largeHeader,
+          dialogContentProps={{
+            type: DialogType.largeHeader,
             title: 'Choose a Layout ',
             subText: 'Please, select a model, type page title and proceed to create a Modern Page from Custom Layout'
           }}
@@ -51,7 +55,6 @@ export default class TemplateBuilderDialogContent extends React.Component<ITempl
             isBlocking: false,
             containerClassName: 'ms-dialogMainOverride'
           }}
-          responsiveMode = {ResponsiveMode.large}
         >
           <ChoiceGroup
             label="Pick one icon"
@@ -77,9 +80,9 @@ export default class TemplateBuilderDialogContent extends React.Component<ITempl
             ]}
             onChange={this._onChange}
             required={true}
-            
+
           />
-          <TextField label="Standard" />
+          <TextField label="Page name" value={this.state.newPageName} onChanged={this._onChangeNewPageName} />
           {this.state.optionSelected === 'A' && (
             <div>
               <h1>Description</h1>
@@ -96,10 +99,10 @@ export default class TemplateBuilderDialogContent extends React.Component<ITempl
             <div>
               <h1>Description</h1>
               <div>
-              {' '}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                {' '}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.{' '}
               </div>
             </div>
@@ -115,13 +118,28 @@ export default class TemplateBuilderDialogContent extends React.Component<ITempl
             </div>
           )}
           <DialogFooter>
-            <PrimaryButton onClick={this._closeDialog} text="Save" />
+            <PrimaryButton onClick={this._executeAction} text="Save" />
             <DefaultButton onClick={this._closeDialog} text="Cancel" />
           </DialogFooter>
         </Dialog>
       </div>
     );
   }
+
+
+  private _executeAction = (): void => {
+
+    var resu: Promise<string> = TemplateBuilderHelper.createCustomPage(this.state.newPageName,this.state.optionSelected);
+    resu.then(ss => {
+      console.log(ss);
+    });
+  }
+
+  private _onChangeNewPageName = (tmpPageName:any): void => {
+    this.setState({ newPageName: tmpPageName})
+  }
+ 
+
 
   private _onChange = (ev: React.FormEvent<HTMLInputElement>, option: any): void => {
     this.setState({ optionSelected: option.key })
@@ -134,7 +152,7 @@ export default class TemplateBuilderDialogContent extends React.Component<ITempl
   private _closeDialog = (): void => {
     this.props.close();
     this.setState({ hideDialog: true })
-    
+
   };
 
 } 
