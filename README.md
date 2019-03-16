@@ -33,7 +33,7 @@ This SPFX extension allows users to define their own page models and reuse them 
 ## Prerequisites
 * Add a Choice (yes/no) Site Column to Page Library named "Is Template" to "Site Page" Content Type
 * @pnp/sp ![drop](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&type=6&v=1.3.0&x2=0)
-in 1.3.0 pnp/sp team introduce ClientSidePage copyPage extension method
+in 1.3.0 pnp/pnpjs team introduce ClientSidePage copyPage extension method, so you need to use this version or a major
 
 ## Solution
 
