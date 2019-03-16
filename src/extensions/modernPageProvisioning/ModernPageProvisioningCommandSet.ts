@@ -8,6 +8,8 @@ import {
 } from '@microsoft/sp-listview-extensibility';
 
 import TemplateBuilderDialog from './components/TemplateBuilderDialog'
+import { setup as pnpSetup } from "@pnp/common";
+
 
 
 /**
@@ -27,8 +29,16 @@ export default class ModernPageProvisioningCommandSet extends BaseListViewComman
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, 'Initialized ModernPageProvisioningCommandSet');
-    return Promise.resolve();
+    return super.onInit().then(_ => {
+
+      // other init code may be present
+
+      pnpSetup({
+        spfxContext: this.context
+      });
+    });
   }
+
 
   @override
   public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {

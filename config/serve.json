@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://federicoporceddu.sharepoint.com/sites/otbtest1/SitePages/Forms/AllPages.aspx",
+      "pageUrl": "https://federicoporceddu.sharepoint.com/sites/modern-page-demo/SitePages/Forms/AllPages.aspx",
       "customActions": {
         "ada4bf2b-a6c1-4074-a273-9d220c815e11": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -16,7 +16,7 @@
       }
     },
     "modernPageProvisioning": {
-      "pageUrl": "https://federicoporceddu.sharepoint.com/sites/otbtest1/SitePages/Forms/AllPages.aspx",
+      "pageUrl": "https://federicoporceddu.sharepoint.com/sites/modern-page-demo/SitePages/Forms/AllPages.aspx",
       "customActions": {
         "ada4bf2b-a6c1-4074-a273-9d220c815e11": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
