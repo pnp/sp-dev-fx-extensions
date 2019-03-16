@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
 
   "id": "ada4bf2b-a6c1-4074-a273-9d220c815e11",
-  "alias": "ModernPageProvisioningCommandSet",
+  "alias": "modernPageModelCommandSet",
   "componentType": "Extension",
   "extensionType": "ListViewCommandSet",
 

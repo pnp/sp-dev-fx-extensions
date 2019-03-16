@@ -7,7 +7,6 @@
         RegistrationType="List"
         Location="ClientSideExtension.ListViewCommandSet.CommandBar"
         ClientSideComponentId="ada4bf2b-a6c1-4074-a273-9d220c815e11"
-        ClientSideComponentProperties="{&quot;sampleTextOne&quot;:&quot;One item is selected in the list.&quot;}">
     </CustomAction>
 </Elements>
 

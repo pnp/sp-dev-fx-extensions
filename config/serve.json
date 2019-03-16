@@ -7,23 +7,15 @@
       "pageUrl": "https://federicoporceddu.sharepoint.com/sites/modern-page-demo/SitePages/Forms/AllPages.aspx",
       "customActions": {
         "ada4bf2b-a6c1-4074-a273-9d220c815e11": {
-          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
-          "properties": {
-            "sampleTextOne": "One item is selected in the list",
-            "sampleTextTwo": "This command is always visible."
-          }
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar"
         }
       }
     },
-    "modernPageProvisioning": {
+    "modernPageModel": {
       "pageUrl": "https://federicoporceddu.sharepoint.com/sites/modern-page-demo/SitePages/Forms/AllPages.aspx",
       "customActions": {
         "ada4bf2b-a6c1-4074-a273-9d220c815e11": {
-          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
-          "properties": {
-            "sampleTextOne": "One item is selected in the list",
-            "sampleTextTwo": "This command is always visible."
-          }
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar"
         }
       }
     }

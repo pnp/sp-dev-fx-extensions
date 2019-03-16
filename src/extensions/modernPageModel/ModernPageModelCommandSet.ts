@@ -7,7 +7,7 @@ import {
   IListViewCommandSetExecuteEventParameters
 } from '@microsoft/sp-listview-extensibility';
 
-import TemplateBuilderDialog from './components/TemplateBuilderDialog'
+import PageModelDialog from './components/PageModelDialog';
 import { setup as pnpSetup } from "@pnp/common";
 
 
@@ -17,18 +17,17 @@ import { setup as pnpSetup } from "@pnp/common";
  * it will be deserialized into the BaseExtension.properties object.
  * You can define an interface to describe it.
  */
-export interface IModernPageProvisioningCommandSetProperties {
+export interface ImodernPageModelCommandSetProperties {
   // This is an example; replace with your own properties
-  sampleTextOne: string;
 }
 
-const LOG_SOURCE: string = 'ModernPageProvisioningCommandSet';
+const LOG_SOURCE: string = 'modernPageModelCommandSet';
 
-export default class ModernPageProvisioningCommandSet extends BaseListViewCommandSet<IModernPageProvisioningCommandSetProperties> {
+export default class modernPageModelCommandSet extends BaseListViewCommandSet<ImodernPageModelCommandSetProperties> {
 
   @override
   public onInit(): Promise<void> {
-    Log.info(LOG_SOURCE, 'Initialized ModernPageProvisioningCommandSet');
+    Log.info(LOG_SOURCE, 'Initialized modernPageModelCommandSet');
     return super.onInit().then(_ => {
 
       // other init code may be present
@@ -51,7 +50,7 @@ export default class ModernPageProvisioningCommandSet extends BaseListViewComman
     switch (event.itemId) {
       case 'COMMAND_1':
 
-        const dialog: TemplateBuilderDialog = new TemplateBuilderDialog();
+        const dialog: PageModelDialog = new PageModelDialog();
         dialog.show();
 
         break;

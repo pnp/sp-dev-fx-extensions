@@ -14,16 +14,12 @@ import {
 }
   from 'office-ui-fabric-react';
 
-import * as strings from 'ModernPageProvisioningCommandSetStrings';
-import { TemplateBuilderHelper } from './TemplateBuilderHelper'
+import * as strings from 'ModernPageModelCommandSetStrings';
+import { PageModelHelper } from './PageModelHelper';
 import { sp as sp } from "@pnp/sp";
-import { setup as pnpSetup } from "@pnp/common";
+import "./PageModelDialog.module.scss";
 
-
-import "./TemplateBuilderDialog.module.scss";
-import { SPPermission } from '@microsoft/sp-page-context';
-
-export interface ITemplateBuilderDialogContentState {
+export interface IPageModelDialogContentState {
   hideDialog: boolean;
   optionSelected: string;
   newPageName: string;
@@ -34,14 +30,14 @@ export interface ITemplateBuilderDialogContentState {
   creationDone: boolean;
 }
 
-export interface ITemplateBuilderDialogContentProps {
+export interface IPageModelDialogContentProps {
   close: () => void;
 }
 
 
-export default class TemplateBuilderDialogContent extends React.Component<ITemplateBuilderDialogContentProps, ITemplateBuilderDialogContentState> {
+export default class PageModelDialogContent extends React.Component<IPageModelDialogContentProps, IPageModelDialogContentState> {
 
-  constructor(props: ITemplateBuilderDialogContentProps) {
+  constructor(props: IPageModelDialogContentProps) {
     super(props);
     this.state = {
       hideDialog: false,
@@ -56,12 +52,13 @@ export default class TemplateBuilderDialogContent extends React.Component<ITempl
     sp.web.lists.getByTitle("Site Pages").items.filter("Is_x0020_Template eq 1").select("Title,FileRef").getAll().then((items: any[]) => {
       var tmpItems: any[] = new Array();
 
+      //DropDown initialization
       items.forEach(element => {
         var item = { key: element["FileRef"], text: element["Title"] };
         tmpItems.push(item);
       });
 
-      this.setState({ allItems: tmpItems })
+      this.setState({ allItems: tmpItems });
     });
   }
 
@@ -115,7 +112,8 @@ export default class TemplateBuilderDialogContent extends React.Component<ITempl
                   <h1>Description</h1>
                   <div>
                     {' '}
-                    This is a prefilled coded template using pnpjs ClientSidePage class {' '}
+                    This is an hard-coded template defined using PnP/PnPjs ClientSidePage. It will create 
+                    a page with a People Webpart on the right and a ClientSideText on the left. {' '}
                   </div>
                 </div>
               )}
@@ -162,12 +160,13 @@ export default class TemplateBuilderDialogContent extends React.Component<ITempl
 
   public changeState = (evt: any): void => {
     this.setState({ selectedItem: evt });
-  };
+  }
 
 
   private _executeAction = (): void => {
     this.setState({ isLoading: true });
-    var resu: Promise<string> = TemplateBuilderHelper.createCustomPage(this.state.newPageName, this.state.optionSelected, this.state.selectedItem.key);
+    let selected = this.state.selectedItem ? this.state.selectedItem.key : "";
+    var resu: Promise<string> = PageModelHelper.createCustomPage(this.state.newPageName, this.state.optionSelected, selected);
     resu.then(ss => {
       console.log(ss);
       this.setState({ isLoading: false, creationDone: true });
@@ -175,23 +174,23 @@ export default class TemplateBuilderDialogContent extends React.Component<ITempl
   }
 
   private _onChangeNewPageName = (tmpPageName: any): void => {
-    this.setState({ newPageName: tmpPageName })
+    this.setState({ newPageName: tmpPageName });
   }
 
 
 
   private _onChange = (ev: React.FormEvent<HTMLInputElement>, option: any): void => {
-    this.setState({ optionSelected: option.key })
-  };
+    this.setState({ optionSelected: option.key });
+  }
 
   private _showDialog = (): void => {
-    this.setState({ hideDialog: false })
-  };
+    this.setState({ hideDialog: false });
+  }
 
   private _closeDialog = (): void => {
     this.props.close();
-    this.setState({ hideDialog: true })
+    this.setState({ hideDialog: true });
 
-  };
+  }
 
 } 

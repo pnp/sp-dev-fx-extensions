@@ -1,19 +1,22 @@
 import {
-    ClientSideText, ClientSideWebpart,
-    ClientSideWebpartPropertyTypes, sp, ClientSidePage, CheckinType
+    ClientSideText, 
+    ClientSideWebpart,
+    sp,
+    ClientSidePage
 } from "@pnp/sp";
 
 
-export declare module MyClientSideWebpartPropertyTypes {
+export declare namespace MyClientSideWebpartPropertyTypes {
     /**
-     * Propereties for People (component id: 7f718435-ee4d-431c-bdbf-9c4ff326f46e)
+     * Properties for People (component id: 7f718435-ee4d-431c-bdbf-9c4ff326f46e)
      */
     interface People {
         layout: "1" | "2";
         persons?: any[];
     }
 }
-export class TemplateBuilderHelper {
+
+export class PageModelHelper {
 
     public static async  getInfos(pagename: string): Promise<string> {
 
@@ -68,21 +71,21 @@ export class TemplateBuilderHelper {
 
                 const column2 = section.addColumn(8);
                 //// add a text control to the second new column
-                column2.addControl(new ClientSideText("Lorem Ipsum 123"));
+                column2.addControl(new ClientSideText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."));
 
                 page.disableComments();
                 await page.save();
                 console.log("case saved");
                 break;
             case 'B':
-                console.log("case b");
+                console.log("case b - start");
                 const templatePage = await ClientSidePage.fromFile(sp.web.getFileByServerRelativeUrl(templatePageUrl));
                 await templatePage.copyPage(sp.web, pagename + ".aspx", pagename, false);
+                console.log("case b - end");
                 break;
             default:
                 break;
         }
-        // we need to save our content changes
 
 
 
