@@ -1,15 +1,15 @@
-# Modern Page Template with PnP/PnPjs
+# Modern Page Model with PnP/PnPjs
 
 ## Summary
-A SPFx extension using [@pnp/sp](https://pnp.github.io/pnpjs/sp/docs/client-side-pages/) that allow creating Modern Pages based on prefilled modern pages marked as "Page Template", inside the Site Pages Library, and code defined pages.
-Users can select a Modern page as Template just setting a custom property page named "Is Template"  to "Yes".
+A SPFx extension using [@pnp/sp](https://pnp.github.io/pnpjs/sp/docs/client-side-pages/) that allow creating Modern Pages based on prefilled modern pages marked as "Page Model", inside the Site Pages Library, and code defined pages.
+Users can select a Modern page as Model just setting a custom property page named "Is Template"  to "Yes".
 People often need to create periodically editorial pages with the same composition, sections structure and webpart configuration, in order to give users the same users experience between pages with different contents but with the same communicative purpose.
 e.g.
 * Employee of the month
 * Weekly post from General Manager
 * New hires list
 
-This SPFX extension allows users to define their own page templates and reuse them easily.
+This SPFX extension allows users to define their own page models and reuse them easily.
 
 ## Modern Page Template with PnP/PnPjs in action
 ![WebPartInAction](./assets/use-Modern-Page-Template-extension.gif)
@@ -19,8 +19,8 @@ This SPFX extension allows users to define their own page templates and reuse th
 
 ## Future improvements
 * Deploy "Is Template" site column as an asset from this SPFx extension solution
-* Hide pages template from search results
-* Host pages template in a different site / library in order to share them cross site or just for isolate site pages from site template.
+* Hide pages model from search results
+* Host pages model in a different site / library in order to share them cross site or just for isolate site pages from site model.
 
 ## Used SharePoint Framework Version 
 ![drop](https://camo.githubusercontent.com/76987ab657772dcca5321aba68f3ee6b993fd651/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f535046782d312e372e312d677265656e2e737667)
