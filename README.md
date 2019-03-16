@@ -1,7 +1,7 @@
 # Modern Page Template with PnP/PnPjs
 
 ## Summary
-A SPFx extension using [@pnp/sp](https://pnp.github.io/pnpjs/sp/docs/client-side-pages/) that allow to create Modern Pages based on prefilled modern pages marked as "Page Template", inside the Site Pages Library, and code defined pages.
+A SPFx extension using [@pnp/sp](https://pnp.github.io/pnpjs/sp/docs/client-side-pages/) that allow creating Modern Pages based on prefilled modern pages marked as "Page Template", inside the Site Pages Library, and code defined pages.
 Users can select a Modern page as Template just setting a custom property page named "Is Template"  to "Yes".
 People often need to create periodically editorial pages with the same composition, sections structure and webpart configuration, in order to give users the same users experience between pages with different contents but with the same communicative purpose.
 e.g.
