@@ -14,7 +14,7 @@ This SPFX extension allows users to define their own page templates and reuse th
 ## Modern Page Template with PnP/PnPjs in action
 ![WebPartInAction](./assets/use-Modern-Page-Template-extension.gif)
 
-## How to build a Modern Page Template
+## How to set a Modern Page as Page Template
 ![WebPartInAction](./assets/how-to-make-a-page-template-pnp.gif)
 
 ## Future improvements
