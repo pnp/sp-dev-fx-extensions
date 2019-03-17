@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="LogoFestoon"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="1e3d3ef7-0983-4d40-9dbb-9c6d4539639a"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>
