@@ -38,13 +38,14 @@ in 1.3.0 pnp/pnpjs team introduce ClientSidePage copyPage extension method, so y
 
 Solution|Author
 --------|---------
-react-command-modern-page-pnpjs | [Federico Porceddu](https://www.federicoporceddu.com)
+react-command-page-model-pnpjs | [Federico Porceddu](https://www.federicoporceddu.com)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|March 16, 2019|Initial release
+1.1|March 23, 2019|Added pnp ps script for field provisioning
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
