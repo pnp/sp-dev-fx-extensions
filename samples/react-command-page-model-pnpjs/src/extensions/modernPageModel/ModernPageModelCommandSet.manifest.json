@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+
+  "id": "ada4bf2b-a6c1-4074-a273-9d220c815e11",
+  "alias": "modernPageModelCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "items": {
+    "COMMAND_1": {
+      "title": { "default": "Modern Page Demo" },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjEuNWRHWFIAAADnSURBVDhPvZI9CoNAEIW3iChorY3H8RTeQS8giqgHsRM79QaW9t4lkPiTL1nZhEQDafIVy3PmvRmQEU3TuK57+gqGtm3XB4KPYRiuX8GAbVmWe4ABlFCXPWSL1zAMqbcAPdM0qb5hWdY0TTsB1PmAf21gHMkfNpRlOc/z4QYqClpkgiBwHKfv+50NTJU+Ce44jnVdF0LYtv3cQEMhrYDOsmwcx7quyYRh+Ax8otxo3iRJqBwGOIQ8z5WbpNx8GKiqipGIVzfsHx9/0Pd9TdOiKCqKQrlBcLef552mqed5ZLqu24ySdb0BwQQB+gDyjjYAAAAASUVORK5CYII=",
+      "type": "command"
+    }
+  }
+}

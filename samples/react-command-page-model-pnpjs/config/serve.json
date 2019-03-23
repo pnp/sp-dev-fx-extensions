@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://federicoporceddu.sharepoint.com/sites/modern-page-demo/SitePages/Forms/AllPages.aspx",
+      "customActions": {
+        "ada4bf2b-a6c1-4074-a273-9d220c815e11": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar"
+        }
+      }
+    },
+    "modernPageModel": {
+      "pageUrl": "https://federicoporceddu.sharepoint.com/sites/modern-page-demo/SitePages/Forms/AllPages.aspx",
+      "customActions": {
+        "ada4bf2b-a6c1-4074-a273-9d220c815e11": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar"
+        }
+      }
+    }
+  }
+}
