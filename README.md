@@ -2,7 +2,7 @@
 
 ## Summary
 A SPFx extension using [@pnp/sp](https://pnp.github.io/pnpjs/sp/docs/client-side-pages/) that allow creating Modern Pages based on prefilled modern pages marked as "Page Model", inside the Site Pages Library, and code defined pages.
-Users can select a Modern page as Model just setting a custom property page named "Is Template"  to "Yes".
+Users can select a Modern page as Model just setting a custom property page named "Is Model"  to "Yes".
 People often need to create periodically editorial pages with the same composition, sections structure and webpart configuration, in order to give users the same users experience between pages with different contents but with the same communicative purpose.
 e.g.
 * Employee of the month
@@ -11,14 +11,13 @@ e.g.
 
 This SPFX extension allows users to define their own page models and reuse them easily.
 
-## Modern Page Template with PnP/PnPjs in action
+## Modern Page Model with PnP/PnPjs in action
 ![WebPartInAction](./assets/use-Modern-Page-Template-extension.gif)
 
-## How to set a Modern Page as Page Template
+## How to set a Modern Page as Page Model
 ![WebPartInAction](./assets/how-to-make-a-page-template-pnp.gif)
 
 ## Future improvements
-* Deploy "Is Template" site column as an asset from this SPFx extension solution
 * Hide pages model from search results
 * Host pages model in a different site / library in order to share them cross site or just for isolate site pages from site model.
 
@@ -31,7 +30,7 @@ This SPFX extension allows users to define their own page models and reuse them 
 * [Office 365 tenant](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)
 
 ## Prerequisites
-* Add a Choice (yes/no) Site Column to Page Library named "Is Template" to "Site Page" Content Type
+* Add a boolean (yes/no) Site Column to Page Library named "Is Model" to "Site Page" Content Type
 * @pnp/sp ![drop](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&type=6&v=1.3.0&x2=0)
 in 1.3.0 pnp/pnpjs team introduce ClientSidePage copyPage extension method, so you need to use this version or a major
 
@@ -59,7 +58,8 @@ Version|Date|Comments
 - in the command line run:
   - `npm install`
   - `gulp serve`
-- create in your SharePoint Modern Site a choice site column named "Is Template" in Site Pages Library
+- create in your SharePoint Modern Site a boolean list column named `Is Modern` in Site Pages Library
+  using `AddFieldToList.ps1` script under `ps` folder
 
 
 ## Features
@@ -71,3 +71,11 @@ This SPFx extension illustrates the following concepts:
 - [Office UI Fabric React Component ChoiceGroup](https://developer.microsoft.com/en-us/fabric/#/components/choicegroup)
 - [Office UI Fabric React Component SpinnerSize](https://developer.microsoft.com/en-us/fabric/#/components/Spinner)
 
+## Debug URL for testing
+Here's a debug URL for testing around this sample.
+
+```
+?loadSPFX=true&debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22ada4bf2b-a6c1-4074-a273-9d220c815e11%22%3A%7B%22location%22%3A%22ClientSideExtension.ListViewCommandSet.CommandBar%22%7D%7D
+```
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-page-model-pnpjs />

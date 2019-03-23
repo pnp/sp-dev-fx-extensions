@@ -49,7 +49,7 @@ export default class PageModelDialogContent extends React.Component<IPageModelDi
       isLoading: false,
       creationDone: false
     };
-    sp.web.lists.getByTitle("Site Pages").items.filter("Is_x0020_Template eq 1").select("Title,FileRef").getAll().then((items: any[]) => {
+    sp.web.lists.getByTitle("Site Pages").items.filter("Is_x0020_Model eq 1").select("Title,FileRef").getAll().then((items: any[]) => {
       var tmpItems: any[] = new Array();
 
       //DropDown initialization
