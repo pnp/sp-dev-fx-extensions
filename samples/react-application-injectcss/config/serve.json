@@ -4,23 +4,23 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/SitePages/Home.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
       "customActions": {
-        "fcea9230-7f22-45b7-815c-081a49474611": {
+        "5a1fcffd-dfeb-4844-b478-1feb4325a5a7": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "cssurl": "/Style%20Library/custom.css"
+            "testMessage": "Test message"
           }
         }
       }
     },
     "injectCss": {
-      "pageUrl": "https://contoso.sharepoint.com/SitePages/Home.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
       "customActions": {
-        "fcea9230-7f22-45b7-815c-081a49474611": {
+        "5a1fcffd-dfeb-4844-b478-1feb4325a5a7": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "cssurl": "/Style%20Library/custom.css"
+            "testMessage": "Test message"
           }
         }
       }
