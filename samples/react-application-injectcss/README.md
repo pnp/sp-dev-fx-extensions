@@ -65,7 +65,7 @@ For example, the CSS provided above will make the feedback button appear as foll
 
 ### Build the solution
 
-1. clone repo
+1. Clone repo
 2. Ryn `npm install`
 3. Run `gulp bundle --ship`
 4. Run `gulp package-solution --ship`
