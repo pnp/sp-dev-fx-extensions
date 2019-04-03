@@ -1,6 +1,5 @@
 # Use this file to deploy the extension to your application catalog
-#$tenantUrl = "https://<your-tenant>.sharepoint.com"
-$tenantUrl = "https://ashbay16.sharepoint.com"
+$tenantUrl = "https://<your-tenant>.sharepoint.com"
 
 # Get credentials
 $credentials = Get-Credential
