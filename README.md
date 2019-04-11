@@ -13,7 +13,7 @@ Please use following logic on submitting your questions or issues to right locat
 
 ## Additional resources
 
-* [SharePoint Framework Extensions (preview)](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
+* [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
 * [Overview of the SharePoint Framework](http://dev.office.com/sharepoint/docs/spfx/sharepoint-framework-overview)
 * [SharePoint Framework development tools and libraries](http://dev.office.com/sharepoint/docs/spfx/tools-and-libraries)
 * [SharePoint Framework Reference](http://aka.ms/spfx-reference)
