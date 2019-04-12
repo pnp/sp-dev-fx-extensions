@@ -11,10 +11,11 @@ export class bootstrapper {
     const footer = document.createElement("div");
 
     // Insert the header and footer on the page
+    const ribbon = document.getElementById('s4-ribbonrow');
     const workspace = document.getElementById('s4-workspace');
     if (workspace) {
 
-      workspace.parentElement.insertBefore(header,workspace);
+      ribbon.parentElement.insertBefore(header,ribbon);
       workspace.appendChild(footer);
 
       // For now this is hard-coded
@@ -29,10 +30,10 @@ export class bootstrapper {
         .catch ((error: string) => {
           console.log(`Error in CustomHeaderFooterApplicationCustomizer: ${error}`);
         });
-  
+
     } else {
 
-      // The elemement we want to attach to is missing
+      // The element we want to attach to is missing
       console.log('Error in CustomHeaderFooterApplicationCustomizer: Unable to find element to attach header and footer');
       
     }

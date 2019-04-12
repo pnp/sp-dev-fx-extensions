@@ -26,12 +26,18 @@ export default class CustomHeaderFooterApplicationCustomizer
 
   @override
   public onInit(): Promise<void> {
-    Log.info(LOG_SOURCE, `Initialized CustomHeaderFooterApplicationCustomizer`);
+    return new Promise(() => {
+      Log.info(LOG_SOURCE, `Initialized CustomHeaderFooterApplicationCustomizer`);
 
-    // New promise to give back to SPFx and resolve
-    // or reject when we're done
-    const promise = new Promise<void>((resolve, reject) => {
+      //Utilize placeholderProvider changed event to trigger bootstrapping header and footer.
+      this.context.placeholderProvider.changedEvent.add(this, this.bootstrap);
 
+      return;
+    });
+  }
+
+  private bootstrap(): void {
+    
     // For now this is hard-coded
     // -- UPLOAD JSON WITH MENU CONTENTS AND PUT THE URL HERE --
     const url = 'https://<tenant>.sharepoint.com/sites/scripts/Style%20Library/HeaderFooterData.json.txt';
@@ -56,16 +62,12 @@ export default class CustomHeaderFooterApplicationCustomizer
               footer ? footer.domElement : null, data);
           }
 
-          // Tell SPFx we are done
-          resolve();
         })
         .catch ((error: string) => {
           console.log(`Error in CustomHeaderFooterApplicationCustomizer: ${error}`);
-          reject();
         });
-    });
-
-    return promise;
+  
+    return;
   }
 
   private _onDispose(): void { }
