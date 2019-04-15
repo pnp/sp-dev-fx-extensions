@@ -83,4 +83,4 @@ Here's a debug URL for testing around this sample.
 - Navigate to SharePoint admin center preview (https://innofrontier-admin.sharepoint.com/_layouts/15/online/AdminHome.aspx#/webApiPermissionManagement)  and approve Microsoft Graph permissions (Group.Read.All).
 - Extension is deployed automatically on all group-connected modern team sites (WebTemplate GROUP#0).
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-team-archived-notification" />
