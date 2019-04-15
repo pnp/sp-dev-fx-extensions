@@ -61,4 +61,4 @@ Here's a debug URL for testing around this sample. **Updated based on your manif
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-print" />
