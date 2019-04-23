@@ -9,6 +9,7 @@ import {
 import {
   sp
 } from "@pnp/sp";
+import { Dialog } from '@microsoft/sp-dialog';
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
  * it will be deserialized into the BaseExtension.properties object.
@@ -57,7 +58,9 @@ export default class PrintCommandSet extends BaseListViewCommandSet<IPrintComman
         dialog.listId = this.context.pageContext.list.id.toString();
         dialog.itemId = event.selectedRows[0].getValueByName('ID');
         dialog.title = event.selectedRows[0].getValueByName('Title');
-        dialog.show();
+        dialog.show().then(()=>{
+          Dialog.alert(''); //This line prevents issues with the dialog, please do not remove it/
+        });
         break;
       default:
         throw new Error('Unknown command');
