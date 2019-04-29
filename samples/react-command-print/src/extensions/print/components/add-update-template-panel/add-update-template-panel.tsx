@@ -446,7 +446,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
             },
             onDrop: (item?: any, event?: DragEvent) => {
                 if (_draggedItem) {
-                    this._insertBeforeItem(item);
+                    this._insertAfterItem(item);
                 }
             },
             onDragStart: (item?: any, itemIndex?: number, selectedItems?: any[], event?: MouseEvent) => {
@@ -463,16 +463,23 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
         };
     }
 
-    private _insertBeforeItem = (item: any): void => {
+    private _insertAfterItem = (item: any): void => {
         const draggedItems = _draggedType === "Fields" ? this._fieldSelection.isIndexSelected(_draggedIndex) ? this._fieldSelection.getSelection() : [_draggedItem] : this._itemSelection.isIndexSelected(_draggedIndex) ? this._itemSelection.getSelection() : [_draggedItem];
-
+        
         const items: any[] = this.props.template.Columns.filter((i: number) => draggedItems.indexOf(i) === -1);
         let insertIndex = items.indexOf(item);
         // if dragging/dropping on itself, index will be 0.
         if (insertIndex === -1) {
             insertIndex = 0;
         }
-        items.splice(insertIndex, 0, ...draggedItems);
+
+        // Insert dragged items to the collection
+        items.splice(insertIndex + 1, 0, ...draggedItems);
+
+        // Clear the selection
+        this._fieldSelection.setAllSelected(false);
+
+        // Update the state
         this.props.onTemplateChanged({
             ...this.props.template,
             Columns: items

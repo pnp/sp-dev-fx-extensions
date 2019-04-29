@@ -97,8 +97,6 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
                             />
                             <span hidden={false}>
                                 <IconButton iconProps={{ iconName: 'Mail' }} title="Mail" ariaLabel="Mail" onClick={this._sendAsEmail} />
-                                <IconButton iconProps={{ iconName: 'PDF' }} title="PDF" ariaLabel="PDF" />
-                                <IconButton iconProps={{ iconName: 'ExcelLogo' }} title="Export to excel" ariaLabel="ExcelLogo" />
                             </span>
                             <span hidden={!this.state.isSiteAdmin}><IconButton iconProps={{ iconName: 'Settings' }} title="Settings" ariaLabel="Settings" onClick={this._setShowPanel(true)} /></span>
                         </div>
