@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "header-search-box-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/headerSearchBox/HeaderSearchBoxApplicationCustomizer.js",
+          "manifest": "./src/extensions/headerSearchBox/HeaderSearchBoxApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HeaderSearchBoxApplicationCustomizerStrings": "lib/extensions/headerSearchBox/loc/{locale}.js"
+  }
+}

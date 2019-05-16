@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://hatchsolutionsltd.sharepoint.com/sites/CommsSite",
+      "customActions": {
+        "41033513-c4ad-4a2b-939f-176213702ae6": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "headerSearchBox": {
+      "pageUrl": "https://hatchsolutionsltd.sharepoint.com/sites/CommsSite",
+      "customActions": {
+        "41033513-c4ad-4a2b-939f-176213702ae6": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}
