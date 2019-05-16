@@ -5,7 +5,7 @@ This demonstrates how to use an SPFx Application Customiser to inject an additio
 
 This allows you to provide an integrated and branded search box to send users to a "classic" Search Center, or custom page, rather than the OOTB "modern search" page.  
 
-!(./assets/IntranetSearchBox.gif)
+![Intranet Search Box](assets/IntranetSearchBox.gif)
 
 ## Used SharePoint Framework Version 
 ![drop](https://img.shields.io/badge/version-GA-green.svg)
