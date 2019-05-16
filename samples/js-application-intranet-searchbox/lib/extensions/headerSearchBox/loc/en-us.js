@@ -3,7 +3,7 @@ define([], function() {
     "Title": "HeaderSearchBoxApplicationCustomizer",
     "FormLabel": "Search this site",
     "InputLabel": "Search box. Press enter to get results, or use arrows to navigate suggestions below.",
-    "InputPlaceholder": "Advanced Search",
+    "InputPlaceholder": "Intranet Search",
     "ButtonTitleClear": "Clear the search box",
     "ButtonTitleMagnify": "Enter your search terms",
     "ButtonTitleSearch": "Search",

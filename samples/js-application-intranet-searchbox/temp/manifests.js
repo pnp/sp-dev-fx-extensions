@@ -936,7 +936,7 @@ function getManifests() {
   },
   {
     "id": "41033513-c4ad-4a2b-939f-176213702ae6",
-    "alias": "HeaderSearchBoxApplicationCustomizer",
+    "alias": "js-application-intranet-searchbox",
     "componentType": "Extension",
     "extensionType": "ApplicationCustomizer",
     "version": "0.0.1",
@@ -954,8 +954,7 @@ function getManifests() {
         },
         "HeaderSearchBoxApplicationCustomizerStrings": {
           "defaultPath": "lib/extensions/headerSearchBox/loc/en-us.js",
-          "type": "localizedPath",
-          "paths": {}
+          "type": "localizedPath"
         },
         "@microsoft/decorators": {
           "type": "component",

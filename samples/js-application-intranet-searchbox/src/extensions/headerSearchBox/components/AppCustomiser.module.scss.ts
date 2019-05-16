@@ -1,18 +1,18 @@
 /* tslint:disable */
 require('./AppCustomiser.module.css');
 const styles = {
-  placeholderHeader: 'placeholderHeader_bb73a86b',
-  SearchContainer: 'SearchContainer_bb73a86b',
-  Header: 'Header_bb73a86b',
-  SearchBox: 'SearchBox_bb73a86b',
-  icon: 'icon_bb73a86b',
-  buttonMagnifier: 'buttonMagnifier_bb73a86b',
-  buttonClear: 'buttonClear_bb73a86b',
-  buttonSearch: 'buttonSearch_bb73a86b',
-  input: 'input_bb73a86b',
-  SearchPanel: 'SearchPanel_bb73a86b',
-  active: 'active_bb73a86b',
-  ootbSearchBox: 'ootbSearchBox_bb73a86b',
+  placeholderHeader: 'placeholderHeader_0f7a3c43',
+  SearchContainer: 'SearchContainer_0f7a3c43',
+  Header: 'Header_0f7a3c43',
+  SearchBox: 'SearchBox_0f7a3c43',
+  icon: 'icon_0f7a3c43',
+  buttonMagnifier: 'buttonMagnifier_0f7a3c43',
+  buttonClear: 'buttonClear_0f7a3c43',
+  buttonSearch: 'buttonSearch_0f7a3c43',
+  input: 'input_0f7a3c43',
+  SearchPanel: 'SearchPanel_0f7a3c43',
+  active: 'active_0f7a3c43',
+  ootbSearchBox: 'ootbSearchBox_0f7a3c43',
 };
 
 export default styles;

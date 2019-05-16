@@ -1,11 +1,21 @@
-# SPFx Application Customiser - Intranet Search Box
+# React Application Intranet Search Box
 
 ## Summary
 This demonstrates how to use an SPFx Application Customiser to inject an additional search box into the header of each page, which uses the "Search Settings" (at either the Site Collection or Sub-Site level) to determine the redirect page.
 
 This allows you to provide an integrated and branded search box to send users to a "classic" Search Center, or custom page, rather than the OOTB "modern search" page.  
 
-![Intranet Search Box](assets/IntranetSearchBox.gif)
+!(assets/IntranetSearchBox.gif)
+
+This extension also makes use of SP Fabric Core, so the colouring and style of the search box will adapt (the same as the OOTB search box) to match the selected theme of the current site:
+
+![Blue Theme](assets/Theme_Blue.png)
+
+![Orange Theme](assets/Theme_Orange.png)
+
+![Purple Theme](assets/Theme_Purple.png)
+
+![Dark Yellow Theme](assets/Theme_Dark.png)
 
 ## Used SharePoint Framework Version 
 ![drop](https://img.shields.io/badge/version-GA-green.svg)
@@ -56,3 +66,5 @@ Here's a sample debug URL for easy testing of this sample.
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"41033513-c4ad-4a2b-939f-176213702ae6":{"location":"ClientSideExtension.ApplicationCustomizer"}}
 ```
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />

@@ -19,8 +19,6 @@ export default class HeaderSearchBoxApplicationCustomizer
   extends BaseApplicationCustomizer<IHeaderSearchBoxApplicationCustomizerProperties> {
 
   private topPlaceHolder: PlaceholderContent | undefined;
-  private searchContainer: string = ".ms-searchux-searchbox";
-  private searchBoxControl: string = ".ms-searchux-searchbox > div[class^=searchBox]";
   private appContext: ApplicationCustomizerContext = null;
   private searchResultPage: string = undefined;
 
@@ -29,13 +27,13 @@ export default class HeaderSearchBoxApplicationCustomizer
     // store context so we can use it in other methods
     this.appContext = this.context;
 
-    // register placeholder execution
-    this.context.placeholderProvider.changedEvent.add(this, this.renderPlaceholders);
-
     // do the whole search box injection thing ... 
     this.GetSearchRedirectPage()
       .then(() => {
         if (this.searchResultPage && this.searchResultPage.length > 0) {
+          // register placeholder execution
+          this.context.placeholderProvider.changedEvent.add(this, this.renderPlaceholders);
+
           // only add search box events if we have somewhere for it to go!
           this.HandleSearchEvents();
         }

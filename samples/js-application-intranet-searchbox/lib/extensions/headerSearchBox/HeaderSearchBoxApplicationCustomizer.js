@@ -24,8 +24,6 @@ var HeaderSearchBoxApplicationCustomizer = (function (_super) {
     __extends(HeaderSearchBoxApplicationCustomizer, _super);
     function HeaderSearchBoxApplicationCustomizer() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.searchContainer = ".ms-searchux-searchbox";
-        _this.searchBoxControl = ".ms-searchux-searchbox > div[class^=searchBox]";
         _this.appContext = null;
         _this.searchResultPage = undefined;
         return _this;
@@ -34,14 +32,13 @@ var HeaderSearchBoxApplicationCustomizer = (function (_super) {
         var _this = this;
         // store context so we can use it in other methods
         this.appContext = this.context;
-        // register placeholder execution
-        this.context.placeholderProvider.changedEvent.add(this, this.renderPlaceholders);
         // do the whole search box injection thing ... 
         this.GetSearchRedirectPage()
             .then(function () {
             if (_this.searchResultPage && _this.searchResultPage.length > 0) {
-                // only add our search box if we have somewhere for it to go!
-                // this.addSearchBox();
+                // register placeholder execution
+                _this.context.placeholderProvider.changedEvent.add(_this, _this.renderPlaceholders);
+                // only add search box events if we have somewhere for it to go!
                 _this.HandleSearchEvents();
             }
         });
@@ -155,26 +152,6 @@ var HeaderSearchBoxApplicationCustomizer = (function (_super) {
                     reject("" + strings.LogWebPropertiesNotFound);
                 }
             });
-        });
-    };
-    HeaderSearchBoxApplicationCustomizer.prototype.waitForElementToDisplay = function (selector) {
-        return new Promise(function (resolve, reject) {
-            var attempts = 0;
-            function checkForElement() {
-                if (document.querySelector(selector) != null) {
-                    resolve();
-                }
-                else if (attempts > 50) {
-                    reject(strings.LogElementNotFound + " (" + selector + ")");
-                }
-                else {
-                    setTimeout(function () {
-                        attempts++;
-                        checkForElement();
-                    }, 500);
-                }
-            }
-            checkForElement();
         });
     };
     __decorate([
