@@ -1,4 +1,4 @@
-# React Application Intranet Search Box
+# SPFx Application Customiser - Intranet Search Box
 
 ## Summary
 This demonstrates how to use an SPFx Application Customiser to inject an additional search box into the header of each page, which uses the "Search Settings" (at either the Site Collection or Sub-Site level) to determine the redirect page.
