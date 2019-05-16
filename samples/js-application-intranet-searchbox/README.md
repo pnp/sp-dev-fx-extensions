@@ -5,7 +5,7 @@ This demonstrates how to use an SPFx Application Customiser to inject an additio
 
 This allows you to provide an integrated and branded search box to send users to a "classic" Search Center, or custom page, rather than the OOTB "modern search" page.  
 
-!(assets/IntranetSearchBox.gif)
+![Intranet Search Box](assets/IntranetSearchBox.gif)
 
 This extension also makes use of SP Fabric Core, so the colouring and style of the search box will adapt (the same as the OOTB search box) to match the selected theme of the current site:
 
