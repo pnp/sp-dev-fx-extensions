@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/Extensions/Lists/Sheep/AllItems.aspx",
+      "pageUrl": "https://thechriskent.sharepoint.com/sites/WarriorHorses/Lists/Sheep/AllItems.aspx",
       "customActions": {
         "bf6645bd-42e4-4a30-aad7-6ff12d61fa1f": {
           "location": "ClientSideExtension.ListViewCommandSet",
@@ -13,7 +13,7 @@
       }
     },
     "spfxClone": {
-      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/Extensions/Lists/Sheep/AllItems.aspx",
+      "pageUrl": "https://thechriskent.sharepoint.com/sites/WarriorHorses/Lists/Sheep/AllItems.aspx",
       "customActions": {
         "bf6645bd-42e4-4a30-aad7-6ff12d61fa1f": {
           "location": "ClientSideExtension.ListViewCommandSet",

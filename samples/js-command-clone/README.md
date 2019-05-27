@@ -28,6 +28,7 @@ Version|Date|Comments
 1.1|September 26, 2017|Updated for SPFx Extensions GA 1.3.0
 1.4|January 20, 2018|Updated for SPFx 1.4.0
 1.4.1|February 2, 2018|Migrated sp-pnp-js to PnPJS
+||May 27, 2019|Added list filter option
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
