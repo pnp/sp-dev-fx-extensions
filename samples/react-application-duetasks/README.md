@@ -40,7 +40,7 @@ This project contains SharePoint Framework extensions that illustrates next feat
 git clone the repo
 npm i
 npm i -g gulp
-gulp server --nobrowser
+gulp serve --nobrowser
 ```
 
 This package produces the following:
