@@ -14,7 +14,7 @@ import { sp } from "@pnp/sp";
 import * as strings from 'SpfxCloneCommandSetStrings';
 
 export interface ISpfxCloneCommandSetProperties {
-  //Nope
+  Lists: string;
 }
 
 const LOG_SOURCE: string = 'SpfxCloneCommandSet';
@@ -46,8 +46,15 @@ export default class SpfxCloneCommandSet
     const command: Command | undefined = this.tryGetCommand("spfxClone");
 
     if (command) {
+      let allowed = true;
+
+      //If Lists is specified, the command should only show up for named lists
+      if(typeof this.properties.Lists !== "undefined" && this.properties.Lists.length > 0) {
+        let lists = this.properties.Lists.split(',');
+        allowed = lists.indexOf(this.context.pageContext.list.title) > -1;
+      }
       //Only show the command if at least 1 row is selected and the user has permission to add list items
-      command.visible = event.selectedRows.length >= 1 && this.context.pageContext.list.permissions.hasPermission(SPPermission.addListItems);
+      command.visible = event.selectedRows.length >= 1 && this.context.pageContext.list.permissions.hasPermission(SPPermission.addListItems) && allowed;
     }
   }
 
@@ -136,7 +143,7 @@ export default class SpfxCloneCommandSet
             //Execute the batch
             itemBatch.execute()
               .then(() => {
-                
+
                 //We'll create all the new items in a single batch
                 let cloneBatch: any = sp.createBatch();
 
@@ -157,7 +164,7 @@ export default class SpfxCloneCommandSet
                     Log.error(LOG_SOURCE, error);
                     this.safeLog(error);
                   });
-                  
+
               })
               .catch((error: any): void => {
                 Log.error(LOG_SOURCE, error);
@@ -177,7 +184,7 @@ export default class SpfxCloneCommandSet
   /** Retrieves all the fields for the list */
   private ensureListSchema(): Promise<Array<IListField>> {
     return new Promise<Array<IListField>>((resolve: (listFields: Array<IListField>) => void, reject: (error: any) => void): void => {
-      
+
       if(this._listFields) {
         //Looks like we already got it, so just return that
         resolve(this._listFields);
