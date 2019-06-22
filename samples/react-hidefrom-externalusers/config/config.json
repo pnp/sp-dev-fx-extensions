@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "internal-user-menu-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/internalUserMenu/InternalUserMenuApplicationCustomizer.js",
+          "manifest": "./src/extensions/internalUserMenu/InternalUserMenuApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "InternalUserMenuApplicationCustomizerStrings": "lib/extensions/internalUserMenu/loc/{locale}.js"
+  }
+}
