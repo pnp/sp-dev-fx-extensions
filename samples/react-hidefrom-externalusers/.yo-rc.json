@@ -1,0 +1,13 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.8.2",
+    "libraryName": "react-hidefrom-externalusers",
+    "libraryId": "1778b261-2f5e-40d4-bb6c-4c7bf97ab776",
+    "environment": "spo",
+    "packageManager": "npm",
+    "isCreatingSolution": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}

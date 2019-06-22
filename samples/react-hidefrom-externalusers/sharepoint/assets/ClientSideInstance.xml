@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="InternalUserMenu"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="855fa276-c7c1-413c-9633-3522208680f8"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>
