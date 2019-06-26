@@ -7,9 +7,9 @@ export default class HeaderSearchBoxApplicationCustomizer extends BaseApplicatio
     private appContext;
     private searchResultPage;
     onInit(): Promise<void>;
-    private renderPlaceholders();
-    private HandleSearchEvents();
-    private showSearchInputButtonDisplay(display);
-    private handleSearchRedirect(searchQuery);
-    private GetSearchRedirectPage();
+    private renderPlaceholders;
+    private HandleSearchEvents;
+    private showSearchInputButtonDisplay;
+    private handleSearchRedirect;
+    private GetSearchRedirectPage;
 }

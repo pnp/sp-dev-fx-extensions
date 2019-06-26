@@ -1,18 +1,18 @@
 /* tslint:disable */
-require('./AppCustomiser.module.css');
+require("./AppCustomiser.module.css");
 var styles = {
-    placeholderHeader: 'placeholderHeader_0f7a3c43',
-    SearchContainer: 'SearchContainer_0f7a3c43',
-    Header: 'Header_0f7a3c43',
-    SearchBox: 'SearchBox_0f7a3c43',
-    icon: 'icon_0f7a3c43',
-    buttonMagnifier: 'buttonMagnifier_0f7a3c43',
-    buttonClear: 'buttonClear_0f7a3c43',
-    buttonSearch: 'buttonSearch_0f7a3c43',
-    input: 'input_0f7a3c43',
-    SearchPanel: 'SearchPanel_0f7a3c43',
-    active: 'active_0f7a3c43',
-    ootbSearchBox: 'ootbSearchBox_0f7a3c43',
+    placeholderHeader: 'placeholderHeader_e5b81a41',
+    SearchContainer: 'SearchContainer_e5b81a41',
+    Header: 'Header_e5b81a41',
+    SearchBox: 'SearchBox_e5b81a41',
+    icon: 'icon_e5b81a41',
+    buttonMagnifier: 'buttonMagnifier_e5b81a41',
+    buttonClear: 'buttonClear_e5b81a41',
+    buttonSearch: 'buttonSearch_e5b81a41',
+    input: 'input_e5b81a41',
+    SearchPanel: 'SearchPanel_e5b81a41',
+    active: 'active_e5b81a41',
+    ootbSearchBox: 'ootbSearchBox_e5b81a41',
 };
 export default styles;
 /* tslint:enable */ 

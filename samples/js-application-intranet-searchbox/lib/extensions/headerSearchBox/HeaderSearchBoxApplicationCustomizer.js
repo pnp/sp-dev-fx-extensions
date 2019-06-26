@@ -1,7 +1,10 @@
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -20,7 +23,7 @@ import { SPHttpClient } from '@microsoft/sp-http';
 import styles from './components/AppCustomiser.module.scss';
 import * as strings from 'HeaderSearchBoxApplicationCustomizerStrings';
 /** A Custom Action which can be run during execution of a Client Side Application */
-var HeaderSearchBoxApplicationCustomizer = (function (_super) {
+var HeaderSearchBoxApplicationCustomizer = /** @class */ (function (_super) {
     __extends(HeaderSearchBoxApplicationCustomizer, _super);
     function HeaderSearchBoxApplicationCustomizer() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
