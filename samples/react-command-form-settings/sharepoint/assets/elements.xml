@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="FormSettings"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="4c8f3df1-1d4c-4381-9590-0f4f8c16e782"
+        ClientSideComponentProperties="{&quot;sampleTextOne&quot;:&quot;One item is selected in the list.&quot;, &quot;sampleTextTwo&quot;:&quot;This command is always visible.&quot;}">
+    </CustomAction>
+    <ListInstance CustomSchema="listSchema.xml" FeatureId="00bfea71-de22-43b2-a848-c05709900100" Title="Form Settings" Description="" TemplateType="100" Url="Lists/FormSettings" Hidden="TRUE">
+	</ListInstance>
+</Elements>
