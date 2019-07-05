@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/Lists/forms/AllItems.aspx",
+      "customActions": {
+        "4c8f3df1-1d4c-4381-9590-0f4f8c16e782": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    },
+    "formSettings": {
+      "pageUrl": "https://contoso.sharepoint.com/Lists/forms/AllItems.aspx",
+      "customActions": {
+        "4c8f3df1-1d4c-4381-9590-0f4f8c16e782": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<List xmlns:ows="Microsoft SharePoint" Title="Form Settings" Name="ListSchema" Direction="$Resources:Direction;" Url="Lists/FormSettings" BaseType="0" EnableContentTypes="TRUE" FolderCreation="FALSE" VersioningEnabled="false" EnableMinorVersions="FALSE" DisableAttachments="FALSE" xmlns="http://schemas.microsoft.com/sharepoint/" RootWebOnly="FALSE">
+	<MetaData>
+		<Fields>
+			<Field DisplayName="RedirectURL" Format="Dropdown" MaxLength="255" Name="RedirectURL" Title="RedirectURL" Type="Text" ID="{0ab63986-d1ae-45e8-9fe4-cc24549ec531}" SourceID="{{listid:Form Settings}}" StaticName="RedirectURL" ColName="nvarchar6" RowOrdinal="0" />
+            <Field DisplayName="OpenIn" FillInChoice="FALSE" Format="Dropdown" Name="OpenIn" Title="OpenIn" Type="Choice" ID="{4c2ba159-0f00-4dbc-be10-156df0837e5c}" SourceID="{{listid:Form Settings}}" StaticName="OpenIn" ColName="nvarchar7" RowOrdinal="0">
+              <CHOICES>
+                <CHOICE>Current Window</CHOICE>
+                <CHOICE>New Tab</CHOICE>
+                <CHOICE>Dialog</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field DisplayName="Enabled" Format="Dropdown" Name="Enabled" Title="Enabled" Type="Boolean" ID="{505fc6e9-79a6-406a-97d5-906d5becba23}" SourceID="{{listid:Form Settings}}" StaticName="Enabled" ColName="bit1" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+            <Field Type="Text" DisplayName="ContentTypeName" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{fd2d0e84-c2cc-422f-98c5-7bd1434f303f}" SourceID="{{listid:Form Settings}}" StaticName="ContentTypeName" Name="ContentTypeName" ColName="nvarchar5" RowOrdinal="0" />
+            <Field AppendOnly="FALSE" DisplayName="Parameters" Format="Dropdown" IsolateStyles="FALSE" Name="Parameters" NumLines="6" RichText="FALSE" RichTextMode="Compatible" Title="Parameters" Type="Note" ID="{5eefbbb7-7a4e-4aca-84cd-e39f68688dea}" SourceID="{{listid:Form Settings}}" StaticName="Parameters" ColName="ntext2" RowOrdinal="0" />
+            <Field Type="Choice" DisplayName="FormType" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" ID="{7f233f97-9c5b-4373-8e83-c7ccb8dd28df}" SourceID="{{listid:Form Settings}}" StaticName="FormType" Name="FormType" ColName="nvarchar8" RowOrdinal="0">
+              <Default>Display</Default>
+              <CHOICES>
+                <CHOICE>Display</CHOICE>
+                <CHOICE>New</CHOICE>
+                <CHOICE>Edit</CHOICE>
+              </CHOICES>
+            </Field>
+        </Fields>
+		<Views>
+			<View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">			
+				<RowLimit Paged="TRUE">
+					30
+				</RowLimit>
+				<Toolbar Type="Standard" />
+				<ViewFields>
+					<FieldRef Name="LinkTitle" />
+                    <FieldRef Name="RedirectURL" />
+                    <FieldRef Name="OpenIn" />
+                    <FieldRef Name="Enabled" />
+                    <FieldRef Name="ContentTypeName" />
+                    <FieldRef Name="Parameters" />
+                    <FieldRef Name="FormType" />
+				</ViewFields>
+				<Query>
+					<OrderBy>
+						<FieldRef Name="ID" />
+					</OrderBy>
+				</Query>
+			</View>
+		</Views>
+		<Forms>
+			<Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+		</Forms>
+	</MetaData>
+</List>
