@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <CustomAction
+    <ClientSideComponentInstance
         Title="AppInsights"
         Location="ClientSideExtension.ApplicationCustomizer"
-        ClientSideComponentId="5e627b50-6e2b-418e-96c9-14f4a8e0507c"
-        ClientSideComponentProperties="">
-    </CustomAction>
+        ComponentId="5e627b50-6e2b-418e-96c9-14f4a8e0507c"
+        Properties="">
+    </ClientSideComponentInstance>
 </Elements>
