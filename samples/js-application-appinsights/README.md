@@ -1,4 +1,4 @@
-# Injecting Javascript with Sharepoint Framework Extensions (Preview) - Azure Application Insights
+# Injecting Javascript with Sharepoint Framework Extensions - Azure Application Insights
 
 ## Summary
 Sample SharePoint Framework extension projects injecting Javascript code to enable Azure App Insights monitoring and statistics.
