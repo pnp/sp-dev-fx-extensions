@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "PnP SPFx Extension - Intranet Search Box",
+    "id": "2a3a1762-46ad-4028-9a68-bcdb31b9437b",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "features": [
+      {
+        "title": "PnP SPFx Extension - Intranet Search Box",
+        "description": "Add an intranet search box to the top of each page",
+        "id": "ff58400b-6a14-4bdc-9b7a-efe52d32eaf6",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "clientsideinstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/js-application-intranet-searchbox.sppkg"
+  }
+}
