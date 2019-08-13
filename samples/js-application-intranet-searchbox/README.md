@@ -1,4 +1,4 @@
-# React Application Intranet Search Box
+# Application Intranet Search Box
 
 ## Summary
 This demonstrates how to use an SPFx Application Customiser to inject an additional search box into the header of each page, which uses the "Search Settings" (at either the Site Collection or Sub-Site level) to determine the redirect page.
@@ -18,7 +18,7 @@ This extension also makes use of SP Fabric Core, so the colouring and style of t
 ![Dark Yellow Theme](assets/Theme_Dark.png)
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-GA-green.svg)
+![drop](https://img.shields.io/badge/version-1.8.0-green.svg)
 
 ## Applies to
 
@@ -46,7 +46,12 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
-- in the command line run:
+- In the `config\serve.json` file, change the `pageUrl` properties to point to a communication site you can use for testing.
+- On that same communication site, go to Site settings and then Search settings, and do the following configurations:
+  - Untick the "Use the same results page settings as my parent" option.
+  - Select the "Send queries to a custom results page URL" option.
+  - Set the "Results page URL" to point to a classic search results page, e.g. "/search/Pages/results.aspx" if your classic search center address is "/search".
+- In the command line run:
   - `npm install`
   - `gulp serve`
 
@@ -67,4 +72,4 @@ Here's a sample debug URL for easy testing of this sample.
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"41033513-c4ad-4a2b-939f-176213702ae6":{"location":"ClientSideExtension.ApplicationCustomizer"}}
 ```
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-application-intranet-searchbox" />
