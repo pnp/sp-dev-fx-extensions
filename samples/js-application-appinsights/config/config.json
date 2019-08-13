@@ -1,13 +1,18 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/extensions/extensionsInjectAppInsights/ExtensionsInjectAppInsightsApplicationCustomizer.js",
-      "manifest": "./src/extensions/extensionsInjectAppInsights/ExtensionsInjectAppInsightsApplicationCustomizer.manifest.json",
-      "outputPath": "./dist/extensions-inject-app-insights.bundle.js"
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "app-insights-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/appInsights/AppInsightsApplicationCustomizer.js",
+          "manifest": "./src/extensions/appInsights/AppInsightsApplicationCustomizer.manifest.json"
+        }
+      ]
     }
-  ],
+  },
   "externals": {},
   "localizedResources": {
-    "extensionsInjectAppInsightsStrings": "extensions/extensionsInjectAppInsights/loc/{locale}.js"
+    "AppInsightsApplicationCustomizerStrings": "lib/extensions/appInsights/loc/{locale}.js"
   }
 }

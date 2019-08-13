@@ -1,8 +1,13 @@
 {
   "@microsoft/generator-sharepoint": {
-    "version": "1.1.1",
-    "libraryName": "extensions-injectjsappinsights",
-    "libraryId": "4f127305-2154-4f97-8d81-6eca56b192e9",
-    "environment": "spo"
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.8.2",
+    "libraryName": "app-insights",
+    "libraryId": "a42bc34e-4081-41b9-af32-dd01cdf6c211",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
   }
 }
