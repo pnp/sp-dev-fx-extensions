@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="PnP SPFx Extension Samples - Intranet Search Box"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="41033513-c4ad-4a2b-939f-176213702ae6"
+        ClientSideComponentProperties="">
+    </CustomAction>
+</Elements>
