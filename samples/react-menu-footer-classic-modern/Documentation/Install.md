@@ -24,7 +24,7 @@ You will need a location to store your webpack bundle (that contains the code) a
 
 ### STEP 4: Set up your JSON data file
 
-In Classic\client\sample, you will find a file HeaderFooterData.json.txt. It's a text file to avoid SharePoint's restriction on uploading json file, but the contents must be well-formed JSON. It's not a bad idea to start with the sample and get everything working before entering your own data.
+In Classic\client\common\sample, you will find a file HeaderFooterData.json.txt. It's a text file to avoid SharePoint's restriction on uploading json file, but the contents must be well-formed JSON. It's not a bad idea to start with the sample and get everything working before entering your own data.
 
 Upload the json.txt file to SharePoint at the location you set in the bootHeaderFooter.ts file.
 
