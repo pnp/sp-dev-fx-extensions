@@ -56,7 +56,7 @@ This extension injects the Application Insights javascript code along with the s
 <br />
 The actual code is in `src\extensions\appInsights\AppInsightsApplicationCustomizer.ts`.
 <br />
-The instrumentation key of the Azure Application Insights ressource to use is stored in several locations:
+The instrumentation key of the Azure Application Insights resource to use is stored in several locations:
 * When running a gulp serve and running the page in debug mode, the key that is stored in `config\serve.json` is passed to the page as querystring.
 * When the extension is installed on a site, the key in `sharepoint\assets\elements.xml` is used.
 * When deployed tenant wide, the key in `sharepoint\assets\ClientSideInstance.xml` is used.
