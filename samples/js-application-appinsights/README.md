@@ -7,7 +7,7 @@ This sample implements the code needed for browser usage analysis, as described 
 ![Application Insights Customizer Customizer](https://github.com/SharePoint/sp-dev-fx-extensions/blob/master/samples/js-application-appinsights/assets/appinsights-1.png)
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-GA-green.svg)
+![drop](https://img.shields.io/badge/SPFx-1.9.1-green.svg)
 
 ## Applies to
 
