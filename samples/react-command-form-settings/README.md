@@ -1,9 +1,10 @@
-# Print List Item Command View Set
+# Form Settings Command View Set
 
 ## Summary
 This sample shows how you can redirect default SharePoint list forms (New,Edit,Display) to different pages.
 
 > As it's a hacky way of overriding default SharePoint behaviour I do not recommend using it in production.
+> If you have more than one content types, you need to add Content Type column to the list views
 
 ![react-command-print](./assets/screenshot.gif)
 
