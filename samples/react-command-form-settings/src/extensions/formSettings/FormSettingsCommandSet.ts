@@ -24,8 +24,6 @@ export default class FormsSettingsCommandSet extends BaseListViewCommandSet<IFor
   private listService = new ListService();
   private formSettings: IFormItem[] = [];
   private contentTypes: any[] = [];
-  private overrideEditClick = false;
-  private overrideDispClick = false;
   private editForms: IFormItem[];
   private displayForms: IFormItem[];
   private selectedRow = null;
@@ -51,11 +49,16 @@ export default class FormsSettingsCommandSet extends BaseListViewCommandSet<IFor
     const newForms = this.formSettings.filter(i => i.FormType === "New");
     this.overrideNewFormSettings(newForms, this.contentTypes.length);
 
-    // When users click on Title this method is not fired, so workground is to select the row to trigger this event
-    $("body").on("click", `button[data-automationid='FieldRenderer-title']`, (e) => {
+    $("body").on("click", `button[data-automationid='FieldRenderer-name']`, (e) => {
       this.selectedRow = $(e.target).parents().closest("div[data-automationid='DetailsRow']");
       this.selectedRow.trigger("click");
+      e.stopPropagation();
     });
+
+    $("body").on("click","button[data-automationid='FieldRender-DotDotDot']",(e)=>{
+      this.selectedRow=null;
+    });
+    // When users click on Title this method is not fired, so workground is to select the row to trigger this event
 
     if (event.selectedRows.length > 0) {
       // Get item Id to be replaced in with {ItemId} token
@@ -72,34 +75,25 @@ export default class FormsSettingsCommandSet extends BaseListViewCommandSet<IFor
         this.editForms = this.formSettings.filter(i => i.FormType === "Edit");
         this.displayForms = this.formSettings.filter(i => i.FormType === "Display");
       }
-
       // Override Edit button's click event
-      if (this.editForms.length > 0) {
-        // This flag helps to not override other content types which don't have settings
-        this.overrideEditClick = true;
+      if (this.editForms.length > 0)
         this.overrideOnClick("Edit", this.editForms[0]);
-      }
-      else {
-        this.overrideEditClick = false;
-      }
+      else
+        $("body").unbind("click.edit");
+
+
       // Override Open button's click event
       if (this.displayForms.length > 0) {
-        this.overrideDispClick = true;
         this.overrideOnClick("Open", this.displayForms[0]);
         // If user clicks on Title field, we trigger the overrided event
         if (this.selectedRow) {
           this.selectedRow = null;
           this.redirect(this.displayForms[0]);
-          // To close the Display panel
-          $(document.body.firstChild).trigger("click");
-
         }
       }
       else {
         this.selectedRow = null;
-        this.overrideDispClick = false;
       }
-
     }
   }
 
@@ -128,9 +122,11 @@ export default class FormsSettingsCommandSet extends BaseListViewCommandSet<IFor
   */
   private async overrideNewFormSettings(formSettings: IFormItem[], ctCount: number) {
     // override if only one content type exists in the list
+
     if (ctCount < 2)
       this.overrideOnClick("New", formSettings[0]);
     else {
+
       formSettings.map(form => {
         this.overrideOnClick(form.ContentTypeName, form);
       });
@@ -140,14 +136,14 @@ export default class FormsSettingsCommandSet extends BaseListViewCommandSet<IFor
     * Override buttons' event
   */
   private overrideOnClick(tagName: string, settings: IFormItem) {
-    $("body").on("click", `button[name='${tagName}']`, (e) => {
+    $("body").on("click.edit", `button[name='${tagName}']`, (e) => {
       switch (tagName) {
         case "Edit":
-          this.overrideEditClick && this.redirect(settings); return e.stopPropagation();
+          this.redirect(settings); return false;
         case "Open":
-          this.overrideDispClick && this.redirect(settings); return e.stopPropagation();
+          this.redirect(settings); return false;
         default:
-          this.redirect(settings); return e.stopPropagation();
+          this.redirect(settings); return false;
       }
     });
   }
