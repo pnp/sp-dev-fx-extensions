@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "outDir": "lib",
+    "inlineSources": false,
+    "strictNullChecks": false,
+    "noUnusedLocals": false,
     "target": "es5",
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
@@ -12,5 +16,13 @@
       "es6-collections",
       "webpack-env"
     ]
-  }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib"
+  ],
+  "extends": "./node_modules/@microsoft/rush-stack-compiler-2.9/includes/tsconfig-web.json"
 }
