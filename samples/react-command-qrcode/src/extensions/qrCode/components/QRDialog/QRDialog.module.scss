@@ -1,0 +1,139 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.qrDialog {
+  color: inherit;
+}
+
+// Don't worry, this will only load when the dialog is loaded
+:global(.ms-Overlay.ms-Overlay--dark) {
+   display:none;
+}
+
+.qrDialogContentContainer {
+  padding: 24px;
+  //text-align: center;
+}
+
+.iconContainer {
+  margin-bottom: 16px;
+  font-size: 21px;
+  text-align: center;
+}
+
+.icon
+{
+    line-height: 44px;
+    background-color: #599b00;
+    border-radius: 50%;
+    width:44px;
+    height:44px;
+    color: #ffffff;
+    animation: popup .45s;
+}
+
+.fileName {
+  font-size: 17px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.shareContainer {
+  padding: 10px 4px 12px 4px;
+  display: flex;
+}
+
+.filePathTextBox {
+  width: 100%;
+}
+
+.qrButtonsRight {
+  padding-top: 16px;
+  position: absolute;
+  top: 0;
+  padding-right: 8px;
+  right:8px;
+}
+
+.qrButton {
+  background: 0 0;
+  border: none;
+  padding: 0;
+  width: 30px;
+  color: $ms-color-neutralPrimary;
+  font-size: 16px;
+  cursor: pointer;
+  font: -apple-system-body;
+}
+
+.dismissMainTargets {
+  clear: both;
+  padding: 0 20px 20px 20px;
+}
+
+.dismissTargets {
+  padding-top: 20px;
+  ul {
+    list-style-type: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.dismissTargetsItems {
+  margin-right: -10px;
+  list-style: none;
+  display: inline-block;
+}
+
+.dismissTargetsItem {
+  margin-right: 10px;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+}
+
+.dismissTargetsTarget {
+  outline: transparent;
+  position: relative;
+  background: 0 0;
+  border: none;
+}
+
+.dismissTargetsItemImage {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: $ms-color-neutralLighter;
+  border-radius: 50%;
+  color: $ms-color-neutralPrimaryAlt;
+  cursor: pointer;
+  display: inline-block;
+  height: 48px;
+  margin-bottom: 8px;
+  width: 48px;
+}
+
+.dismissTargetsIcon {
+  font-size: 25px;
+  padding-top: 11px;
+}
+
+.dismissTargetsItemText {
+  color: $ms-color-neutralPrimary;
+  font: -apple-system-short-caption2;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.0);
+  }
+  to {
+      transform: scale(1.25);
+  }
+  to {
+      transform: scale(1.0);
+  }
+}
