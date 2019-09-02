@@ -7,11 +7,11 @@ Custom Command Set that gets metadata information from MS Cognitive Services Vis
 
 ## Used SharePoint Framework Version
 
-![SPFx v1.3.4](https://img.shields.io/badge/SPFx-1.3.4-green.svg)
+![SPFx v1.9.1](https://img.shields.io/badge/SPFx-1.9.1-green.svg)
 
 ## Applies to
 
-* [SharePoint Framework Extensions Developer Preview](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
+* [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
 * [Office 365 developer tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 
 ## Solution
@@ -26,6 +26,7 @@ Version|Date|Comments
 -------|----|--------
 1.0.0|September 30, 2017|Initial release
 2.0.0|November 11, 2017|Storing API Key as Tenant property. Image model. React custom Dialog component
+2.0.1|September 1, 2019|Update to spfx 1.9.1 and better error handling
 
 ## Disclaimer
 
@@ -60,17 +61,12 @@ Get-SPOStorageEntity -Site "https://yourtenant.sharepoint.com/sites/appcatalog" 
 
 * clone this repo
 
+* update config/serve.json with your tenant URL, pointing to an existing Image library
+
 * in the command line run
   * `npm i`
-  * `gulp serve-info --nobrowser`
-* copy the list view command set debug query string parameters:
+  * `gulp serve --config=vision`
 
-```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e109ab75-a728-418c-85c6-7430363e348d":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
-```
-* in the web browser
-  * navigate to the library with images (**note**: command only works with images. You will get an error if you try the command with any other file)
-  * to the URL of the list add the previously copied debug query string parameters
 
 ## Features
 

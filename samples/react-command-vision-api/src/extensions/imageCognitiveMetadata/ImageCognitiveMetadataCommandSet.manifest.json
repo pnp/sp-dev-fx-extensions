@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
 
   "id": "e109ab75-a728-418c-85c6-7430363e348d",
   "alias": "ImageCognitiveMetadataCommandSet",

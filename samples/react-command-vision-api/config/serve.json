@@ -6,5 +6,21 @@
   "api": {
     "port": 5432,
     "entryPath": "node_modules/@microsoft/sp-webpart-workbench/lib/api/"
+  },
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://[TENANT].sharepoint.com/sites/ModernTeamSite/_layouts/15/workbench.aspx"
+    },
+    "vision": {
+      "pageUrl": "https://[TENANT].sharepoint.com/sites/ModernTeamSite/StockImages/Forms/AllItems.aspx",
+      "customActions": {
+        "e109ab75-a728-418c-85c6-7430363e348d": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+
+          }
+        }
+      }
+    }
   }
 }

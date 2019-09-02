@@ -32,7 +32,7 @@ export default class ImageCognitiveMetadataCommandSet extends BaseListViewComman
 
   private cognitiveServicesKey: string = '';
   private cognitiveServicesVisionUrl: string = `https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Adult,Categories,Color,Description,Faces,ImageType,Tags`;
-  
+
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, 'Initialized ImageCognitiveMetadataCommandSet');
@@ -59,30 +59,30 @@ export default class ImageCognitiveMetadataCommandSet extends BaseListViewComman
   @override
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
     switch (event.itemId) {
-      case GET_TAGS_COMMAND:        
+      case GET_TAGS_COMMAND:
 
-        Log.info(LOG_SOURCE, GET_TAGS_COMMAND); 
+        Log.info(LOG_SOURCE, GET_TAGS_COMMAND);
 
         const imageInfoUrl = event.selectedRows[0].getValueByName('.spItemUrl') + '&$select=@content.downloadUrl';
 
         this._visionApiAnalyse(imageInfoUrl)
           .then((image: ICognitiveServicesImage) => {
-            //console.log(image);            
+            //console.log(image);
             //Dialog.alert(tags.map(tag => { return tag.name; }).join(', '));
             const dialog: CognitiveServicesImageDialog = new CognitiveServicesImageDialog();
             dialog.image = image;
             dialog.show();
           })
-          .catch(error => { 
+          .catch(error => {
             console.log(error);
-            Dialog.alert(`Error getting data. Ex: ${JSON.stringify(error)}`);
+            Dialog.alert(`Error getting data. Ex: ${error}`);
           });
-          
+
         break;
       default:
         throw new Error('Unknown command');
     }
-  }    
+  }
 
   private _enableCommandWhenItemIsSelected(event: IListViewCommandSetListViewUpdatedParameters): void {
     const compareOneCommand: Command = this.tryGetCommand(GET_TAGS_COMMAND);
@@ -96,17 +96,22 @@ export default class ImageCognitiveMetadataCommandSet extends BaseListViewComman
     const response: SPHttpClientResponse = await this.context.spHttpClient.fetch(imageInfoUrl, SPHttpClient.configurations.v1, imageInfoOptions);
     const responseJson: any = await response.json();
     const imageDownloadUrl: string = responseJson['@content.downloadUrl'];
-    
+
     return imageDownloadUrl;
-  }  
+  }
 
   private async _visionApiAnalyse(imageInfoUrl: string): Promise<ICognitiveServicesImage> {
     const downloadUrl: string = await this._getDownloadUrl(imageInfoUrl);
     const httpOptions: IHttpClientOptions = this._prepareHttpOptionsForVisionApi(downloadUrl);
-    
+
     const cognitiveResponse: HttpClientResponse = await this.context.httpClient.post(this.cognitiveServicesVisionUrl, HttpClient.configurations.v1, httpOptions);
+
+    if (!cognitiveResponse.ok) {
+      throw new Error("Invalid image. Ensure the Image size is not too big");
+    }
+
     const cognitiveResponseJSON: any = await cognitiveResponse.json();
-    
+
     return this._toCognitiveServicesImage(cognitiveResponseJSON);
   }
 
@@ -119,11 +124,11 @@ export default class ImageCognitiveMetadataCommandSet extends BaseListViewComman
 
     const description: Description = {
       tags: json.description.tags,
-      captions: json.description.captions.map(item => { 
+      captions: json.description.captions.map(item => {
         const caption: Caption = {
-          text: item.text, 
+          text: item.text,
           confidence: item.confidence
-        };        
+        };
         return caption;
       })
     };
@@ -149,10 +154,10 @@ export default class ImageCognitiveMetadataCommandSet extends BaseListViewComman
       'Url': imageDownloadUrl
     });
 
-    const httpOptions: IHttpClientOptions = {          
+    const httpOptions: IHttpClientOptions = {
       body: body,
       headers: this._prepareHeadersForVisionApi()
-    }; 
+    };
 
     return httpOptions;
   }
