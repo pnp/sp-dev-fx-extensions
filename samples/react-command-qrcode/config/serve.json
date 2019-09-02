@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://hugoabernier.sharepoint.com/sites/Dev/Shared%20Documents/Forms/AllItems.aspx", //"https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
       "customActions": {
         "5d3bac4c-e040-44ed-ab43-464490d22762": {
           "location": "ClientSideExtension.ListViewCommandSet",
@@ -14,7 +14,7 @@
       }
     },
     "qrCode": {
-      "pageUrl": "https://hugoabernier.sharepoint.com/sites/Dev/Shared%20Documents/Forms/AllItems.aspx", //"https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
       "customActions": {
         "5d3bac4c-e040-44ed-ab43-464490d22762": {
           "location": "ClientSideExtension.ListViewCommandSet",
