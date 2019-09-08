@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "qr-code-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/qrCode/QrCodeCommandSet.js",
+          "manifest": "./src/extensions/qrCode/QrCodeCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "QrCodeCommandSetStrings": "lib/extensions/qrCode/loc/{locale}.js"
+  }
+}

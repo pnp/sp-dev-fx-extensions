@@ -1,0 +1,6 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+// I use this technique to export theme colours so that they can be used in code
+:export {
+  iconFill: $ms-color-themeDarkAlt;
+}
