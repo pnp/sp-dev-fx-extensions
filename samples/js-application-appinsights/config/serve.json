@@ -9,7 +9,7 @@
         "5e627b50-6e2b-418e-96c9-14f4a8e0507c": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
+            "appInsightsKey": "a09f32d3-479e-4782-b6db-1bdce04536db"
           }
         }
       }
@@ -20,7 +20,7 @@
         "5e627b50-6e2b-418e-96c9-14f4a8e0507c": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
+            "appInsightsKey": "a09f32d3-479e-4782-b6db-1bdce04536db"
           }
         }
       }

@@ -47,7 +47,7 @@ export default class ListService {
      * Add form to Form Settings List
      */
     public async SaveForm(form: any): Promise<any> {
-        return sp.web.lists.getByTitle('Form Settings').items.add(form);
+        return sp.web.lists.getByTitle('Form Settings').items.add(form);        
     }
 
     /**

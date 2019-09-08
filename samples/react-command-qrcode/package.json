@@ -1,11 +1,8 @@
 {
-  "name": "react-command-vision-api",
+  "name": "react-command-qrcode",
   "version": "0.0.1",
   "private": true,
   "main": "lib/index.js",
-  "solution": {
-    "isDomainIsolated": false
-  },
   "engines": {
     "node": ">=0.10.0"
   },
@@ -20,7 +17,8 @@
     "@microsoft/sp-dialog": "1.9.1",
     "@microsoft/sp-listview-extensibility": "1.9.1",
     "@types/es6-promise": "0.0.33",
-    "@types/webpack-env": "1.13.1"
+    "@types/webpack-env": "1.13.1",
+    "qrcanvas-react": "^2.0.1"
   },
   "devDependencies": {
     "@microsoft/rush-stack-compiler-2.9": "0.7.16",
@@ -31,7 +29,6 @@
     "@types/chai": "3.4.34",
     "@types/mocha": "2.2.38",
     "ajv": "~5.2.2",
-    "gulp": "~3.9.1",
-    "tslint-microsoft-contrib": "5.0.0"
+    "gulp": "~3.9.1"
   }
 }

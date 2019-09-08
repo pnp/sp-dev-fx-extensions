@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "app-insights-client-side-solution",
-    "id": "a42bc34e-4081-41b9-af32-dd01cdf6c211",
-    "version": "2.1.0.0",
+    "name": "react-command-qrcode-client-side-solution",
+    "id": "7c4d4b69-7ecd-4db6-a6a0-88809fef6b6a",
+    "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -11,8 +11,8 @@
       {
         "title": "Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
-        "id": "b590469c-fef8-456b-b038-d5c58c9e57ae",
-        "version": "2.1.0.0",
+        "id": "bbce15df-356a-46ba-a3cc-d86cfba1989e",
+        "version": "1.0.0.0",
         "assets": {
           "elementManifests": [
             "elements.xml",
@@ -23,6 +23,6 @@
     ]
   },
   "paths": {
-    "zippedPackage": "solution/app-insights.sppkg"
+    "zippedPackage": "solution/react-command-qrcode.sppkg"
   }
 }

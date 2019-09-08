@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+
+  "id": "5d3bac4c-e040-44ed-ab43-464490d22762",
+  "alias": "QrCodeCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+
+  "version": "*",
+  "manifestVersion": 2,
+
+  "requiresCustomScript": false,
+
+  "items": {
+    "COMMAND_1": {
+      "title": {
+        "default": "QR code"
+      },
+      "ariaLabel": {
+        "default": "Generate a QR code which can be used on printed materials such as signs and posters"
+      },
+      "iconImageUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32' height='32' viewBox='0 0 401.994 401.994' style='enable-background:new 0 0 401.994 401.994;' xml:space='preserve' class='qrcodecommandsetcustomicon' %3E %3Cg%3E %3Cg%3E %3Cpath d='M0,401.991h182.724V219.265H0V401.991z M36.542,255.813h109.636v109.352H36.542V255.813z'/%3E %3Crect x='73.089' y='292.355' width='36.544' height='36.549'/%3E %3Crect x='292.352' y='365.449' width='36.553' height='36.545'/%3E %3Crect x='365.442' y='365.449' width='36.552' height='36.545'/%3E %3Cpolygon points='365.446,255.813 328.904,255.813 328.904,219.265 219.265,219.265 219.265,401.991 255.813,401.991 255.813,292.355 292.352,292.355 292.352,328.904 401.991,328.904 401.991,219.265 401.991,219.265 365.446,219.265 '/%3E %3Cpath d='M0,182.728h182.724V0H0V182.728z M36.542,36.542h109.636v109.636H36.542V36.542z'/%3E %3Crect x='73.089' y='73.089' width='36.544' height='36.547'/%3E %3Cpath d='M219.265,0v182.728h182.729V0H219.265z M365.446,146.178H255.813V36.542h109.633V146.178z'/%3E %3Crect x='292.352' y='73.089' width='36.553' height='36.547'/%3E %3C/g%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3C/svg%3E ",
+      "type": "command"
+    }
+  }
+}
