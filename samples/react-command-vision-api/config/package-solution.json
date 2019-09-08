@@ -1,10 +1,11 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "js-command-vision-api-client-side-solution",
     "id": "8949b850-7c41-43b7-b861-3ca1c55b3f7a",
     "version": "1.0.0.0",
-    "skipFeatureDeployment": false
+    "skipFeatureDeployment": false,
+    "includeClientSideAssets": true
   },
   "paths": {
     "zippedPackage": "solution/js-command-vision-api.sppkg"
