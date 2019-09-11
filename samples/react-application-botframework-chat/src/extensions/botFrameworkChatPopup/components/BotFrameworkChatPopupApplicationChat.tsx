@@ -3,6 +3,8 @@ import * as React from 'react';
 import ReactWebChat from 'botframework-webchat';
 import { DirectLine } from 'botframework-directlinejs';
 import { Popper, Manager, Reference } from 'react-popper';
+import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { IBotFrameworkChatPopupApplicationChatProps } from "./IBotFrameworkChatPopupApplicationChatProps";
 
 export interface IBotFrameworkChatPopupApplicationChatState {
   directLine: any;
@@ -10,44 +12,23 @@ export interface IBotFrameworkChatPopupApplicationChatState {
   isOpen: any;
 }
 
-export default class BotFrameworkChatPopupApplicationChat extends React.Component<{}, IBotFrameworkChatPopupApplicationChatState> {
-  private styleSetOptions = {
-    hideScrollToEndButton: false,
-    rootHeight: '50%',
-    rootWidth: '50%'
+export default class BotFrameworkChatPopupApplicationChat extends React.Component< IBotFrameworkChatPopupApplicationChatProps, IBotFrameworkChatPopupApplicationChatState> {
+  constructor(props) {
+    super(props);
+    const styleOptions = {
+      hideScrollToEndButton: false,
+      rootHeight: '50%',
+      rootWidth: '50%'
+    };
+    this.state = {
+      directLine: new DirectLine({
+        secret: this.props.directLineSecret
+      }),
+      styleSetOptions: styleOptions,
+      isOpen: false
+    };
   }
-  public state = {
-    directLine: new DirectLine({
-      secret: 'MC9aD0sY-1E.UtRGoM3hCsAvCWLxAgaeE7Fl8d-0-luWcFr69h4DWyk'
-    }),
-    styleSetOptions: this.styleSetOptions,
-    isOpen: false
-  };
-
-/*
-?loadSPFX=true&debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&customActions=%7B"f50b07b5-76a5-4e80-9cab-b4ee9a591bf6"%3A%7B"location"%3A"ClientSideExtension.ApplicationCustomizer"%7D%7D
-https://github.com/Microsoft/BotFramework-WebChat/blob/master/packages/component/src/Composer.js#L378
-
-
--- WORKING:
-<div className={ styles.banner }>
-        <DefaultButton className={ styles.botButton } secondaryText="Opens the Sample Panel" onClick={this._showPanel} text="Open Chat" />
-        <Panel
-                    isOpen={ this.state.isCalloutVisible }
-                    type={ PanelType.medium}
-                    isLightDismiss={ true }
-                    onDismiss={ () => this.setState({ isCalloutVisible: false }) }
-        >
-        
-          <div > 
-            <ReactWebChat focusSendBoxContext={ true } directLine={this.state.directLine} resize="detect" styleOptions={this.state.styleSetOptions}/>
-          </div>
-        </Panel>
-      </div>
-      -------------
-*/
        
- 
   public render() {
     return (
         <Manager>
@@ -59,7 +40,7 @@ https://github.com/Microsoft/BotFramework-WebChat/blob/master/packages/component
                 ref={ref}
                 onClick={this.handleClick}
               >
-                🤖
+                <Icon iconName="Robot" className="ms-Icon" />
               </button>
             )}
           </Reference>
