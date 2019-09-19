@@ -3,7 +3,7 @@
   "solution": {
     "name": "js-application-header-toggler-client-side-solution",
     "id": "bf3befad-88f6-460a-bac6-0424c8fd987c",
-    "version": "1.0.0.1",
+    "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [
