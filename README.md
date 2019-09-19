@@ -53,4 +53,4 @@ Here's a debug URL for testing around this sample. **Updated based on your manif
 ?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"44d11daa-2628-4618-8f0b-0a6cdb71b040":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Test message"}}}
 ```
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-application-header-toggler" />
