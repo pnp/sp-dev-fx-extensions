@@ -32,8 +32,10 @@ export default class HeaderTogglerApplicationCustomizer
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
     this.appContext = this.context;
 
+    // Add the button to the Top placeholder
     this.context.placeholderProvider.changedEvent.add(this, this.renderPlaceholders);
     
+    // Register click event handlers for the toggling buttons
     this.registerClickHandlers();
 
     return Promise.resolve();
@@ -44,6 +46,7 @@ export default class HeaderTogglerApplicationCustomizer
       this.topPlaceHolder = this.appContext.placeholderProvider.tryCreateContent(PlaceholderName.Top, { onDispose: this.onDispose });
     }
     
+    // Add the required HTML.
     if (this.topPlaceHolder.domElement) {
       let html: string = `<div class="toggleButton o365cs-base">
         <a class='toggleButtonClose' href='javascript:void(0);'>
@@ -58,9 +61,14 @@ export default class HeaderTogglerApplicationCustomizer
   }
 
   private registerClickHandlers(){
+    // Registering the handlers
     let btnClose = document.getElementsByClassName("toggleButtonClose")[0];
     let btnOpen = document.getElementsByClassName("toggleButtonOpen")[0];
 
+    // Add a class to the body element based on the button clicked
+    // Appropriate CSS classes are defined based on the body class to hide the Site Header
+    // For hiding the Site header, we defined a CSS class based on its custom attribute
+    // example : div[data-automationid='SiteHeader']{    display:none !important;  }
     btnClose.addEventListener('click', (e) => {
       document.body.classList.add("menuClosed");
     });
