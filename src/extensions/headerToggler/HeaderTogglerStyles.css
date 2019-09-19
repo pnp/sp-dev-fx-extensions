@@ -1,0 +1,25 @@
+.toggleButton{
+    background: #666;
+    position: absolute;
+    z-index: 9999;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    font-size: 0px;
+    text-align: center;
+}
+
+a.toggleButtonOpen{
+    display:none;
+}
+
+body.menuClosed a.toggleButtonOpen{
+    display:inline-block !important;
+}
+body.menuClosed a.toggleButtonClose{
+    display:none !important;
+}
+
+body.menuClosed div[data-automationid='SiteHeader']{
+    display:none !important;
+}

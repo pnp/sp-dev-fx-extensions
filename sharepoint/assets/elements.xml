@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="HeaderToggler"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="44d11daa-2628-4618-8f0b-0a6cdb71b040"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
