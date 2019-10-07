@@ -1,4 +1,187 @@
-define("3efa9b55-2736-4c81-af4a-b713c956451b_0.0.1",["@microsoft/decorators","@microsoft/sp-application-base"],function(e,t){return function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=4)}([function(e,t){var n;n=function(){return this}();try{n=n||Function("return this")()||(0,eval)("this")}catch(e){"object"==typeof window&&(n=window)}e.exports=n},function(e,t,n){"use strict";(function(e){function r(e,t){function n(){this.constructor=e}T(e,t),e.prototype=null===t?Object.create(t):(n.prototype=t.prototype,new n)}function o(e,t,n,r){var o,i=arguments.length,s=i<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,n,r);else for(var a=e.length-1;a>=0;a--)(o=e[a])&&(s=(i<3?o(s):i>3?o(t,n,s):o(t,n))||s);return i>3&&s&&Object.defineProperty(t,n,s),s}function i(e,t,n,r){return new(n||(n=Promise))(function(o,i){function s(e){try{u(r.next(e))}catch(e){i(e)}}function a(e){try{u(r.throw(e))}catch(e){i(e)}}function u(e){e.done?o(e.value):new n(function(t){t(e.value)}).then(s,a)}u((r=r.apply(e,t||[])).next())})}function s(e,t){function n(e){return function(t){return r([e,t])}}function r(n){if(o)throw new TypeError("Generator is already executing.");for(;u;)try{if(o=1,i&&(s=2&n[0]?i.return:n[0]?i.throw||((s=i.return)&&s.call(i),0):i.next)&&!(s=s.call(i,n[1])).done)return s;switch(i=0,s&&(n=[2&n[0],s.value]),n[0]){case 0:case 1:s=n;break;case 4:return u.label++,{value:n[1],done:!1};case 5:u.label++,i=n[1],n=[0];continue;case 7:n=u.ops.pop(),u.trys.pop();continue;default:if(s=u.trys,!(s=s.length>0&&s[s.length-1])&&(6===n[0]||2===n[0])){u=0;continue}if(3===n[0]&&(!s||n[1]>s[0]&&n[1]<s[3])){u.label=n[1];break}if(6===n[0]&&u.label<s[1]){u.label=s[1],s=n;break}if(s&&u.label<s[2]){u.label=s[2],u.ops.push(n);break}s[2]&&u.ops.pop(),u.trys.pop();continue}n=t.call(e,u)}catch(e){n=[6,e],i=0}finally{o=s=0}if(5&n[0])throw n[1];return{value:n[0]?n[1]:void 0,done:!0}}var o,i,s,a,u={label:0,sent:function(){if(1&s[0])throw s[1];return s[1]},trys:[],ops:[]};return a={next:n(0),throw:n(1),return:n(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a}function a(e){if(Object(m.r)(e))return"";var t=e.indexOf("_api/");return t<0&&(t=e.indexOf("_vti_bin/")),t>-1?e.substr(0,t):e}function u(e){var t=[],n=["odata.type","odata.editLink","__metadata","odata.metadata"];return Object(m.j)(e,n[0])&&"SP.Web"===e[n[0]]?Object(m.j)(e,n[1])?t.push(e[n[1]]):Object(m.j)(e,n[2])&&t.push(e.__metadata.uri):Object(m.j)(e,n[3])&&Object(m.j)(e,n[1])?t.push(a(e[n[3]]),"_api",e[n[1]]):Object(m.j)(e,n[1])?t.push("_api",e[n[1]]):Object(m.j)(e,n[2])&&t.push(e.__metadata.uri),t.length<1?(b.a.write("No uri information found in ODataEntity parsing, chaining will fail for this object.",2),""):m.d.apply(void 0,t)}function c(e){return new O(e)}function l(e){m.c.extend(e)}function p(e){return new Promise(function(t){if(Object(m.m)(e))return t(e);if(null!==_.baseUrl)return t(Object(m.d)(_.baseUrl,e));if(void 0!==N._spPageContextInfo){if(Object(m.j)(N._spPageContextInfo,"webAbsoluteUrl"))return t(Object(m.d)(N._spPageContextInfo.webAbsoluteUrl,e));if(Object(m.j)(N._spPageContextInfo,"webServerRelativeUrl"))return t(Object(m.d)(N._spPageContextInfo.webServerRelativeUrl,e))}if(void 0!==N.location){var n=N.location.toString().toLowerCase();["/_layouts/","/siteassets/"].forEach(function(r){var o=n.indexOf(r);if(o>0)return t(Object(m.d)(n.substr(0,o),e))})}return t(e)})}function h(e){return{__metadata:{type:e}}}function d(e){return function(t){return function(t){function n(){for(var n=[],r=0;r<arguments.length;r++)n[r]=arguments[r];return t.call(this,n[0],n.length>1&&void 0!==n[1]?n[1]:e)||this}return r(n,t),n}(t)}}function f(e){return e.length<1?1:Math.max.apply(null,e.map(function(e){return e.order}))+1}function y(e){for(var t=0;t<e.length;t++)e[t].order=t+1,Object(m.j)(e[t],"columns")?y(e[t].columns):Object(m.j)(e[t],"controls")&&y(e[t].controls)}n.d(t,"b",function(){return Zt}),n.d(t,"a",function(){return _t});var g,m=n(2),b=n(3),v=n(12),S=n(1),T=function(e,t){return(T=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var n in t)t.hasOwnProperty(n)&&(e[n]=t[n])})(e,t)},O=function(e){function t(t){var n=e.call(this)||this;return n.factory=t,n.hydrate=function(e){var t=new n.factory(u(e),null);return Object(m.f)(t,e)},n}return r(t,e),t.prototype.parse=function(t){var n=this;return e.prototype.parse.call(this,t).then(function(e){var t=new n.factory(u(e),null);return Object(m.f)(t,e)})},t}(v.g),w=(function(e){function t(t){var n=e.call(this)||this;return n.factory=t,n.hydrate=function(e){return e.map(function(e){var t=new n.factory(u(e),null);return Object(m.f)(t,e)})},n}r(t,e),t.prototype.parse=function(t){var n=this;return e.prototype.parse.call(this,t).then(function(e){return e.map(function(e){var t=new n.factory(u(e),null);return Object(m.f)(t,e)})})}}(v.g),function(){function e(){}return Object.defineProperty(e.prototype,"headers",{get:function(){var e=m.c.get("sp");return void 0!==e&&void 0!==e.headers?e.headers:{}},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"baseUrl",{get:function(){var e=m.c.get("sp");return void 0!==e&&void 0!==e.baseUrl?e.baseUrl:void 0!==m.c.spfxContext&&null!==m.c.spfxContext?m.c.spfxContext.pageContext.web.absoluteUrl:null},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"fetchClientFactory",{get:function(){var e=m.c.get("sp");return void 0!==e&&void 0!==e.fetchClientFactory?e.fetchClientFactory:function(){return new m.a}},enumerable:!0,configurable:!0}),e}()),_=new w,C=function(){function e(){}return e}(),P=new Map,I=function(){function e(e,t){void 0===t&&(t=P),this._httpClient=e,this._digests=t}return e.prototype.getDigest=function(e){var t=this,n=this._digests.get(e);if(void 0!==n){if(new Date<n.expiration)return Promise.resolve(n.value)}var r=Object(m.d)(e,"/_api/contextinfo"),o={Accept:"application/json;odata=verbose","Content-Type":"application/json;odata=verbose;charset=utf-8"};return this._httpClient.fetchRaw(r,{cache:"no-cache",credentials:"same-origin",headers:Object(m.f)(o,_.headers,!0),method:"POST"}).then(function(e){return(new v.f).parse(e).then(function(e){return e.GetContextWebInformation})}).then(function(n){var r=new C;r.value=n.FormDigestValue;var o=n.FormDigestTimeoutSeconds,i=new Date;return i.setTime(i.getTime()+1e3*o),r.expiration=i,t._digests.set(e,r),r.value})},e.prototype.clear=function(){this._digests.clear()},e}(),E=function(){function e(e){void 0===e&&(e=_.fetchClientFactory()),this._impl=e,this._digestCache=new I(this)}return e.prototype.fetch=function(e,t){var n=this;void 0===t&&(t={});var r=Object(m.f)(t,{cache:"no-cache",credentials:"same-origin"},!0),o=new Headers;return Object(m.o)(o,_.headers),Object(m.o)(o,t.headers),o.has("Accept")||o.append("Accept","application/json"),o.has("Content-Type")||o.append("Content-Type","application/json;odata=verbose;charset=utf-8"),o.has("X-ClientService-ClientTag")||o.append("X-ClientService-ClientTag","PnPCoreJS:@pnp-1.3.5"),o.has("User-Agent")||o.append("User-Agent","NONISV|SharePointPnP|PnPCoreJS/1.3.5"),r=Object(m.f)(r,{headers:o}),!r.method||"GET"===r.method.toUpperCase()||o.has("X-RequestDigest")||o.has("Authorization")?this.fetchRaw(e,r):this._digestCache.getDigest(a(e)).then(function(t){return o.append("X-RequestDigest",t),n.fetchRaw(e,r)})},e.prototype.fetchRaw=function(e,t){var n=this;void 0===t&&(t={});var r=new Headers;Object(m.o)(r,t.headers),t=Object(m.f)(t,{headers:r});var o=function(r){var i=function(e){var t;e.headers.has("Retry-After")?t=parseInt(e.headers.get("Retry-After"),10):(t=r.delay,r.delay*=2),r.attempts++,r.retryCount<=r.attempts?r.reject(Error("Retry count exceeded ("+r.retryCount+") for request. Response status: ["+e.status+"] "+e.statusText)):setTimeout(Object(m.g)(n,o,r),t)};n._impl.fetch(e,t).then(function(e){429===e.status?i(e):r.resolve(e)}).catch(function(e){503===e.status?i(e):r.reject(e)})};return new Promise(function(e,t){var r={attempts:0,delay:100,reject:t,resolve:e,retryCount:7};o.call(n,r)})},e.prototype.get=function(e,t){void 0===t&&(t={});var n=Object(m.f)(t,{method:"GET"});return this.fetch(e,n)},e.prototype.post=function(e,t){void 0===t&&(t={});var n=Object(m.f)(t,{method:"POST"});return this.fetch(e,n)},e.prototype.patch=function(e,t){void 0===t&&(t={});var n=Object(m.f)(t,{method:"PATCH"});return this.fetch(e,n)},e.prototype.delete=function(e,t){void 0===t&&(t={});var n=Object(m.f)(t,{method:"DELETE"});return this.fetch(e,n)},e}(),N=void 0!==e?e:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},R=function(e){function t(t,n){var r=e.call(this)||this;if(r._forceCaching=!1,"string"==typeof t)if(Object(m.m)(t)||t.lastIndexOf("/")<0)r._parentUrl=t,r._url=Object(m.d)(t,n);else if(t.lastIndexOf("/")>t.lastIndexOf("(")){var o=t.lastIndexOf("/");r._parentUrl=t.slice(0,o),n=Object(m.d)(t.slice(o),n),r._url=Object(m.d)(r._parentUrl,n)}else{var o=t.lastIndexOf("(");r._parentUrl=t.slice(0,o),r._url=Object(m.d)(t,n)}else{r.extend(t,n);var i=t.query.get("@target");void 0!==i&&r.query.set("@target",i)}return r}return r(t,e),t.prototype.as=function(e){var t=new e(this._url,null);return Object(m.f)(t,this,!0)},t.prototype.toUrlAndQuery=function(){var e=new Map(this.query),t=this.toUrl().replace(/'!(@.*?)::(.*?)'/gi,function(t,n,r){return b.a.write("Rewriting aliased parameter from match "+t+" to label: "+n+" value: "+r,0),e.set(n,"'"+r+"'"),n});if(e.size>0){t+=""+(t.indexOf("?")>-1?"&":"?")+Array.from(e).map(function(e){return e[0]+"="+e[1]}).join("&")}return t},t.prototype.select=function(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];return e.length>0&&this.query.set("$select",e.join(",")),this},t.prototype.expand=function(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];return e.length>0&&this.query.set("$expand",e.join(",")),this},t.prototype.getParent=function(e,t,n,r){void 0===t&&(t=this.parentUrl);var o=new e(t,n).configureFrom(this),i="@target";return this.query.has(i)&&o.query.set(i,this.query.get(i)),void 0!==r&&(o=o.inBatch(r)),o},t.prototype.clone=function(t,n,r){void 0===r&&(r=!0);var o=e.prototype._clone.call(this,new t(this,n),{includeBatch:r}),i="@target";return this.query.has(i)&&o.query.set(i,this.query.get(i)),o},t.prototype.toRequestContext=function(e,t,n,r){var o=this;void 0===t&&(t={});var i=this.hasBatch?this._batchDependency:function(){};return p(this.toUrlAndQuery()).then(function(s){return Object(m.p)(t,o._options),{batch:o.batch,batchDependency:i,cachingOptions:o._cachingOptions,clientFactory:function(){return new E},isBatched:o.hasBatch,isCached:o._forceCaching||o._useCaching&&/^get$/i.test(e),options:t,parser:n,pipeline:r,requestAbsoluteUrl:s,requestId:Object(m.h)(),verb:e}})},t}(v.h),j=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.filter=function(e){return this.query.set("$filter",e),this},t.prototype.orderBy=function(e,t){void 0===t&&(t=!0);var n="$orderby",r=this.query.has(n)?this.query.get(n).split(","):[];return r.push(e+" "+(t?"asc":"desc")),this.query.set(n,r.join(",")),this},t.prototype.skip=function(e){return this.query.set("$skip",e.toString()),this},t.prototype.top=function(e){return this.query.set("$top",e.toString()),this},t}(R),A=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype._update=function(e,t){var n=this;return function(r){return n.postCore({body:Object(m.n)(Object(m.f)(h(e),r)),headers:{"X-HTTP-Method":"MERGE"}}).then(function(e){return t(e,r)})}},t.prototype._delete=function(){return this.postCore({headers:{"X-HTTP-Method":"DELETE"}})},t.prototype._deleteWithETag=function(e){return void 0===e&&(e="*"),this.postCore({headers:{"IF-Match":e,"X-HTTP-Method":"DELETE"}})},t}(R),x=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){return new L(this,"getById("+e+")")},t.prototype.getByEmail=function(e){return new L(this,"getByEmail('"+e+"')")},t.prototype.getByLoginName=function(e){var t=new L(this);return t.concat("('!@v::"+encodeURIComponent(e)+"')"),t},t.prototype.removeById=function(e){return this.clone(n,"removeById("+e+")").postCore()},t.prototype.removeByLoginName=function(e){var t=this.clone(n,"removeByLoginName(@v)");return t.query.set("@v","'"+encodeURIComponent(e)+"'"),t.postCore()},t.prototype.add=function(e){var t=this;return this.clone(n,null).postCore({body:Object(m.n)(Object(m.f)(h("SP.User"),{LoginName:e}))}).then(function(){return t.getByLoginName(e)})};var n;return t=n=o([d("siteusers")],t)}(j),U=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"groups",{get:function(){return new F(this,"groups")},enumerable:!0,configurable:!0}),t}(A),L=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.update=t._update("SP.User",function(e){return{data:e,user:t}}),t.delete=t._delete,t}return r(t,e),t}(U),D=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t=o([d("currentuser")],t)}(U);!function(e){e[e.None=0]="None",e[e.User=1]="User",e[e.DistributionList=2]="DistributionList",e[e.SecurityGroup=4]="SecurityGroup",e[e.SharePointGroup=8]="SharePointGroup",e[e.All=15]="All"}(g||(g={}));var k,F=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){var t=new B(this);return t.concat("("+e+")"),t},t.prototype.add=function(e){var t=this,n=Object(m.n)(Object(m.f)(h("SP.Group"),e));return this.postCore({body:n}).then(function(e){return{data:e,group:t.getById(e.Id)}})},t.prototype.getByName=function(e){return new B(this,"getByName('"+e+"')")},t.prototype.removeById=function(e){return this.clone(n,"removeById('"+e+"')").postCore()},t.prototype.removeByLoginName=function(e){return this.clone(n,"removeByLoginName('"+e+"')").postCore()};var n;return t=n=o([d("sitegroups")],t)}(j),B=function(e){function t(){var n=null!==e&&e.apply(this,arguments)||this;return n.update=n._update("SP.Group",function(e,r){var o=n;return Object(m.j)(r,"Title")&&(o=n.getParent(t,n.parentUrl,"getByName('"+r.Title+"')")),{data:e,group:o}}),n}return r(t,e),Object.defineProperty(t.prototype,"users",{get:function(){return new x(this,"users")},enumerable:!0,configurable:!0}),t}(A),q=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){var t=new G(this);return t.concat("("+e+")"),t},t.prototype.add=function(e,t){return this.clone(n,"addroleassignment(principalid="+e+", roledefid="+t+")").postCore()},t.prototype.remove=function(e,t){return this.clone(n,"removeroleassignment(principalid="+e+", roledefid="+t+")").postCore()};var n;return t=n=o([d("roleassignments")],t)}(j),G=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.delete=t._delete,t}return r(t,e),Object.defineProperty(t.prototype,"groups",{get:function(){return new F(this,"groups")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"bindings",{get:function(){return new H(this)},enumerable:!0,configurable:!0}),t}(A),M=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getById=function(e){return new W(this,"getById("+e+")")},t.prototype.getByName=function(e){return new W(this,"getbyname('"+e+"')")},t.prototype.getByType=function(e){return new W(this,"getbytype("+e+")")},t.prototype.add=function(e,t,n,r){var o=this,i=Object(m.n)({BasePermissions:{High:r.High.toString(),Low:r.Low.toString()},Description:t,Name:e,Order:n,__metadata:{type:"SP.RoleDefinition"}});return this.postCore({body:i}).then(function(e){return{data:e,definition:o.getById(e.Id)}})},t=o([d("roledefinitions")],t)}(j),W=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.delete=t._delete,t}return r(t,e),t.prototype.update=function(e){var t=this;void 0!==Object(m.j)(e,"BasePermissions")&&(e.BasePermissions=Object(m.f)({__metadata:{type:"SP.BasePermissions"}},{High:e.BasePermissions.High.toString(),Low:e.BasePermissions.Low.toString()}));var n=Object(m.n)(Object(m.f)(h("SP.RoleDefinition"),e));return this.postCore({body:n,headers:{"X-HTTP-Method":"MERGE"}}).then(function(n){var r=t;if(Object(m.j)(e,"Name")){r=t.getParent(M,t.parentUrl,"").getByName(e.Name)}return{data:n,definition:r}})},t}(A),H=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t=o([d("roledefinitionbindings")],t)}(j);!function(e){e[e.Display=1]="Display",e[e.Edit=2]="Edit",e[e.New=3]="New"}(k||(k={}));var K;!function(e){e[e.Invalid=0]="Invalid",e[e.Integer=1]="Integer",e[e.Text=2]="Text",e[e.Note=3]="Note",e[e.DateTime=4]="DateTime",e[e.Counter=5]="Counter",e[e.Choice=6]="Choice",e[e.Lookup=7]="Lookup",e[e.Boolean=8]="Boolean",e[e.Number=9]="Number",e[e.Currency=10]="Currency",e[e.URL=11]="URL",e[e.Computed=12]="Computed",e[e.Threading=13]="Threading",e[e.Guid=14]="Guid",e[e.MultiChoice=15]="MultiChoice",e[e.GridChoice=16]="GridChoice",e[e.Calculated=17]="Calculated",e[e.File=18]="File",e[e.Attachments=19]="Attachments",e[e.User=20]="User",e[e.Recurrence=21]="Recurrence",e[e.CrossProjectLink=22]="CrossProjectLink",e[e.ModStat=23]="ModStat",e[e.Error=24]="Error",e[e.ContentTypeId=25]="ContentTypeId",e[e.PageSeparator=26]="PageSeparator",e[e.ThreadIndex=27]="ThreadIndex",e[e.WorkflowStatus=28]="WorkflowStatus",e[e.AllDayEvent=29]="AllDayEvent",e[e.WorkflowEventType=30]="WorkflowEventType"}(K||(K={}));var V;!function(e){e[e.DateOnly=0]="DateOnly",e[e.DateTime=1]="DateTime"}(V||(V={}));var Q;!function(e){e[e.Unspecified=0]="Unspecified",e[e.Disabled=1]="Disabled",e[e.Relative=2]="Relative"}(Q||(Q={}));var z;!function(e){e[e.DefaultValue=0]="DefaultValue",e[e.AddToDefaultContentType=1]="AddToDefaultContentType",e[e.AddToNoContentType=2]="AddToNoContentType",e[e.AddToAllContentTypes=4]="AddToAllContentTypes",e[e.AddFieldInternalNameHint=8]="AddFieldInternalNameHint",e[e.AddFieldToDefaultView=16]="AddFieldToDefaultView",e[e.AddFieldCheckDisplayName=32]="AddFieldCheckDisplayName"}(z||(z={}));var X;!function(e){e[e.Gregorian=1]="Gregorian",e[e.Japan=3]="Japan",e[e.Taiwan=4]="Taiwan",e[e.Korea=5]="Korea",e[e.Hijri=6]="Hijri",e[e.Thai=7]="Thai",e[e.Hebrew=8]="Hebrew",e[e.GregorianMEFrench=9]="GregorianMEFrench",e[e.GregorianArabic=10]="GregorianArabic",e[e.GregorianXLITEnglish=11]="GregorianXLITEnglish",e[e.GregorianXLITFrench=12]="GregorianXLITFrench",e[e.KoreaJapanLunar=14]="KoreaJapanLunar",e[e.ChineseLunar=15]="ChineseLunar",e[e.SakaEra=16]="SakaEra",e[e.UmAlQura=23]="UmAlQura"}(X||(X={}));var J;!function(e){e[e.Hyperlink=0]="Hyperlink",e[e.Image=1]="Image"}(J||(J={}));var Y;!function(e){e[e.EmptyMask=0]="EmptyMask",e[e.ViewListItems=1]="ViewListItems",e[e.AddListItems=2]="AddListItems",e[e.EditListItems=3]="EditListItems",e[e.DeleteListItems=4]="DeleteListItems",e[e.ApproveItems=5]="ApproveItems",e[e.OpenItems=6]="OpenItems",e[e.ViewVersions=7]="ViewVersions",e[e.DeleteVersions=8]="DeleteVersions",e[e.CancelCheckout=9]="CancelCheckout",e[e.ManagePersonalViews=10]="ManagePersonalViews",e[e.ManageLists=12]="ManageLists",e[e.ViewFormPages=13]="ViewFormPages",e[e.AnonymousSearchAccessList=14]="AnonymousSearchAccessList",e[e.Open=17]="Open",e[e.ViewPages=18]="ViewPages",e[e.AddAndCustomizePages=19]="AddAndCustomizePages",e[e.ApplyThemeAndBorder=20]="ApplyThemeAndBorder",e[e.ApplyStyleSheets=21]="ApplyStyleSheets",e[e.ViewUsageData=22]="ViewUsageData",e[e.CreateSSCSite=23]="CreateSSCSite",e[e.ManageSubwebs=24]="ManageSubwebs",e[e.CreateGroups=25]="CreateGroups",e[e.ManagePermissions=26]="ManagePermissions",e[e.BrowseDirectories=27]="BrowseDirectories",e[e.BrowseUserInfo=28]="BrowseUserInfo",e[e.AddDelPrivateWebParts=29]="AddDelPrivateWebParts",e[e.UpdatePersonalWebParts=30]="UpdatePersonalWebParts",e[e.ManageWeb=31]="ManageWeb",e[e.AnonymousSearchAccessWebLists=32]="AnonymousSearchAccessWebLists",e[e.UseClientIntegration=37]="UseClientIntegration",e[e.UseRemoteAPIs=38]="UseRemoteAPIs",e[e.ManageAlerts=39]="ManageAlerts",e[e.CreateAlerts=40]="CreateAlerts",e[e.EditMyUserInfo=41]="EditMyUserInfo",e[e.EnumeratePermissions=63]="EnumeratePermissions",e[e.FullMask=65]="FullMask"}(Y||(Y={}));var $;!function(e){e[e.None=0]="None",e[e.User=1]="User",e[e.DistributionList=2]="DistributionList",e[e.SecurityGroup=4]="SecurityGroup",e[e.SharePointGroup=8]="SharePointGroup",e[e.All=15]="All"}($||($={}));var Z;!function(e){e[e.None=0]="None",e[e.UserInfoList=1]="UserInfoList",e[e.Windows=2]="Windows",e[e.MembershipProvider=4]="MembershipProvider",e[e.RoleProvider=8]="RoleProvider",e[e.All=15]="All"}(Z||(Z={}));var ee;!function(e){e[e.None=0]="None",e[e.Guest=1]="Guest",e[e.Reader=2]="Reader",e[e.Contributor=3]="Contributor",e[e.WebDesigner=4]="WebDesigner",e[e.Administrator=5]="Administrator"}(ee||(ee={}));var te;!function(e){e[e.Invalid=-1]="Invalid",e[e.DefaultView=0]="DefaultView",e[e.NormalView=1]="NormalView",e[e.DialogView=2]="DialogView",e[e.View=3]="View",e[e.DisplayForm=4]="DisplayForm",e[e.DisplayFormDialog=5]="DisplayFormDialog",e[e.EditForm=6]="EditForm",e[e.EditFormDialog=7]="EditFormDialog",e[e.NewForm=8]="NewForm",e[e.NewFormDialog=9]="NewFormDialog",e[e.SolutionForm=10]="SolutionForm",e[e.PAGE_MAXITEMS=11]="PAGE_MAXITEMS"}(te||(te={}));var ne;!function(e){e[e.Uninitialized=0]="Uninitialized",e[e.Direct=1]="Direct",e[e.OrganizationView=2]="OrganizationView",e[e.OrganizationEdit=3]="OrganizationEdit",e[e.AnonymousView=4]="AnonymousView",e[e.AnonymousEdit=5]="AnonymousEdit",e[e.Flexible=6]="Flexible"}(ne||(ne={}));var re;!function(e){e[e.None=0]="None",e[e.View=1]="View",e[e.Edit=2]="Edit",e[e.Owner=3]="Owner"}(re||(re={}));var oe;!function(e){e[e.CompletedSuccessfully=0]="CompletedSuccessfully",e[e.AccessRequestsQueued=1]="AccessRequestsQueued",e[e.NoResolvedUsers=-1]="NoResolvedUsers",e[e.AccessDenied=-2]="AccessDenied",e[e.CrossSiteRequestNotSupported=-3]="CrossSiteRequestNotSupported",e[e.UnknowError=-4]="UnknowError",e[e.EmailBodyTooLong=-5]="EmailBodyTooLong",e[e.ListUniqueScopesExceeded=-6]="ListUniqueScopesExceeded",e[e.CapabilityDisabled=-7]="CapabilityDisabled",e[e.ObjectNotSupported=-8]="ObjectNotSupported",e[e.NestedGroupsNotSupported=-9]="NestedGroupsNotSupported"}(oe||(oe={}));var ie;!function(e){e[e.Unknown=0]="Unknown",e[e.File=1]="File",e[e.Folder=2]="Folder",e[e.Item=3]="Item",e[e.List=4]="List",e[e.Web=5]="Web",e[e.Max=6]="Max"}(ie||(ie={}));var se;!function(e){e[e.None=0]="None",e[e.AllowList=1]="AllowList",e[e.BlockList=2]="BlockList"}(se||(se={}));var ae;!function(e){e[e.None=0]="None",e[e.ContextInfo=1]="ContextInfo",e[e.ListData=2]="ListData",e[e.ListSchema=4]="ListSchema",e[e.MenuView=8]="MenuView",e[e.ListContentType=16]="ListContentType",e[e.FileSystemItemId=32]="FileSystemItemId",e[e.ClientFormSchema=64]="ClientFormSchema",e[e.QuickLaunch=128]="QuickLaunch",e[e.Spotlight=256]="Spotlight",e[e.Visualization=512]="Visualization",e[e.ViewMetadata=1024]="ViewMetadata",e[e.DisableAutoHyperlink=2048]="DisableAutoHyperlink",e[e.EnableMediaTAUrls=4096]="EnableMediaTAUrls",e[e.ParentInfo=8192]="ParentInfo",e[e.PageContextInfo=16384]="PageContextInfo",e[e.ClientSideComponentManifest=32768]="ClientSideComponentManifest"}(ae||(ae={}));var ue;!function(e){e[e.PeopleAndGroups=1]="PeopleAndGroups",e[e.PeopleOnly=0]="PeopleOnly"}(ue||(ue={}));var ce;!function(e){e[e.Dropdown=0]="Dropdown",e[e.RadioButtons=1]="RadioButtons"}(ce||(ce={}));var le;!function(e){e[e.DefaultZone=0]="DefaultZone",e[e.Intranet=1]="Intranet",e[e.Internet=2]="Internet",e[e.Custom=3]="Custom",e[e.Extranet=4]="Extranet"}(le||(le={}));var pe,he=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"roleAssignments",{get:function(){return new q(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"firstUniqueAncestorSecurableObject",{get:function(){return new A(this,"FirstUniqueAncestorSecurableObject")},enumerable:!0,configurable:!0}),t.prototype.getUserEffectivePermissions=function(e){var t=this.clone(R,"getUserEffectivePermissions(@user)");return t.query.set("@user","'"+encodeURIComponent(e)+"'"),t.get().then(function(e){return Object(m.j)(e,"GetUserEffectivePermissions")?e.GetUserEffectivePermissions:e})},t.prototype.getCurrentUserEffectivePermissions=function(){var e=this;return new A("_api/web","currentuser").configureFrom(this).select("LoginName").get().then(function(t){return e.getUserEffectivePermissions(t.LoginName)})},t.prototype.breakRoleInheritance=function(e,n){return void 0===e&&(e=!1),void 0===n&&(n=!1),this.clone(t,"breakroleinheritance(copyroleassignments="+e+", clearsubscopes="+n+")").postCore()},t.prototype.resetRoleInheritance=function(){return this.clone(t,"resetroleinheritance").postCore()},t.prototype.userHasPermissions=function(e,t){var n=this;return this.getUserEffectivePermissions(e).then(function(e){return n.hasPermissions(e,t)})},t.prototype.currentUserHasPermissions=function(e){var t=this;return this.getCurrentUserEffectivePermissions().then(function(n){return t.hasPermissions(n,e)})},t.prototype.hasPermissions=function(e,t){if(!t)return!0;if(t===Y.FullMask)return 32767==(32767&e.High)&&65535===e.Low;t-=1;var n=1;return t>=0&&t<32?(n<<=t,0!=(e.Low&n)):t>=32&&t<64&&(n<<=t-32,0!=(e.High&n))},t}(A),de=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getShareLink=function(e,n){void 0===n&&(n=null);var r=null!==n?n.toISOString():null;return this.clone(t,"shareLink").postCore({body:Object(m.n)({request:{createLink:!0,emailData:null,settings:{expiration:r,linkKind:e}}})})},t.prototype.shareWith=function(e,n,r,o,i){var s=this;void 0===r&&(r=!1),void 0===o&&(o=!1),Array.isArray(e)||(e=[e]);var a=Object(m.n)(e.map(function(e){return{Key:e}})),u=n===re.Edit?ee.Contributor:ee.Reader;return new j("_api/web","roledefinitions").select("Id").filter("RoleTypeKind eq "+u).get().then(function(e){if(!Array.isArray(e)||e.length<1)throw Error("Could not locate a role defintion with RoleTypeKind "+u);var n={includeAnonymousLinkInEmail:r,peoplePickerInput:a,propagateAcl:o,roleValue:"role:"+e[0].Id,useSimplifiedRoles:!0};return void 0!==i&&(n=Object(m.f)(n,{emailBody:i.body,emailSubject:void 0!==i.subject?i.subject:"",sendEmail:!0})),s.clone(t,"shareObject").postCore({body:Object(m.n)(n)})})},t.prototype.shareObject=function(e,t){var n=this;return void 0===t&&(t=!1),t?this.sendShareObjectRequest(e):(e=Object(m.f)(e,{group:null,includeAnonymousLinkInEmail:!1,propagateAcl:!1,useSimplifiedRoles:!0},!0),this.getRoleValue(e.role,e.group).then(function(t){Array.isArray(e.loginNames)||(e.loginNames=[e.loginNames]);var r=Object(m.n)(e.loginNames.map(function(e){return{Key:e}})),o={peoplePickerInput:r,roleValue:t,url:e.url};return void 0!==e.emailData&&null!==e.emailData&&(o=Object(m.f)(o,{emailBody:e.emailData.body,emailSubject:void 0!==e.emailData.subject?e.emailData.subject:"Shared with you.",sendEmail:!0})),n.sendShareObjectRequest(o)}))},t.prototype.unshareObjectWeb=function(e){return this.clone(t,"unshareObject").postCore({body:Object(m.n)({url:e})})},t.prototype.checkPermissions=function(e){return this.clone(t,"checkPermissions").postCore({body:Object(m.n)({recipients:e})})},t.prototype.getSharingInformation=function(e,n){void 0===e&&(e=null);var r=this.clone(t,"getSharingInformation");return r.expand.apply(r,n).postCore({body:Object(m.n)({request:e})})},t.prototype.getObjectSharingSettings=function(e){return void 0===e&&(e=!0),this.clone(t,"getObjectSharingSettings").postCore({body:Object(m.n)({useSimplifiedRoles:e})})},t.prototype.unshareObject=function(){return this.clone(t,"unshareObject").postCore()},t.prototype.deleteLinkByKind=function(e){return this.clone(t,"deleteLinkByKind").postCore({body:Object(m.n)({linkKind:e})})},t.prototype.unshareLink=function(e,n){return void 0===n&&(n="00000000-0000-0000-0000-000000000000"),this.clone(t,"unshareLink").postCore({body:Object(m.n)({linkKind:e,shareId:n})})},t.prototype.getRoleValue=function(e,t){if(void 0===t||null===t){var n=e===re.Edit?ee.Contributor:ee.Reader;return new j("_api/web","roledefinitions").select("Id").top(1).filter("RoleTypeKind eq "+n).get().then(function(e){if(e.length<1)throw Error("Could not locate associated role definition for supplied role. Edit and View are supported");return"role: "+e[0].Id})}switch(t){case ee.Contributor:return new A("_api/web","associatedmembergroup").select("Id").get().then(function(e){return"group: "+e.Id});case ee.Reader:case ee.Guest:return new A("_api/web","associatedvisitorgroup").select("Id").get().then(function(e){return"group: "+e.Id});default:throw Error("Could not determine role value for supplied value. Contributor, Reader, and Guest are supported")}},t.prototype.getShareObjectWeb=function(e){return Promise.resolve(new A(a(e),"/_api/SP.Web.ShareObject"))},t.prototype.sendShareObjectRequest=function(e){return this.getShareObjectWeb(this.toUrl()).then(function(n){return n.expand("UsersWithAccessRequests","GroupsSharedWith").as(t).postCore({body:Object(m.n)(e)})})},t}(R),fe=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.shareWith=function(e,t,n){var r=this;void 0===t&&(t=re.View);var o=this.addBatchDependency();return new A(a(this.toUrl()),"/_api/web/url").get().then(function(i){return o(),r.shareObject(Object(m.d)(i,"/_layouts/15/aclinv.aspx?forSharing=1&mbypass=1"),e,t,n)})},t.prototype.shareObject=function(e,t,n,r,o,i,s,a){return void 0===i&&(i=!1),void 0===s&&(s=!1),void 0===a&&(a=!0),this.clone(de,null).shareObject({emailData:r,group:o,includeAnonymousLinkInEmail:s,loginNames:t,propagateAcl:i,role:n,url:e,useSimplifiedRoles:a})},t.prototype.shareObjectRaw=function(e){return this.clone(de,null).shareObject(e,!0)},t.prototype.unshareObject=function(e){return this.clone(de,null).unshareObjectWeb(e)},t}(he),ye=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getShareLink=function(e,t){return void 0===e&&(e=ne.OrganizationView),void 0===t&&(t=null),this.clone(de,null).getShareLink(e,t)},t.prototype.shareWith=function(e,t,n,r){return void 0===t&&(t=re.View),void 0===n&&(n=!1),this.clone(de,null).shareWith(e,t,n,!1,r)},t.prototype.checkSharingPermissions=function(e){return this.clone(de,null).checkPermissions(e)},t.prototype.getSharingInformation=function(e,t){return void 0===e&&(e=null),this.clone(de,null).getSharingInformation(e,t)},t.prototype.getObjectSharingSettings=function(e){return void 0===e&&(e=!0),this.clone(de,null).getObjectSharingSettings(e)},t.prototype.unshare=function(){return this.clone(de,null).unshareObject()},t.prototype.deleteSharingLinkByKind=function(e){return this.clone(de,null).deleteLinkByKind(e)},t.prototype.unshareLink=function(e,t){return this.clone(de,null).unshareLink(e,t)},t}(he),ge=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getShareLink=function(e,t){void 0===e&&(e=ne.OrganizationView),void 0===t&&(t=null);var n=this.addBatchDependency();return this.getShareable().then(function(r){return n(),r.getShareLink(e,t)})},t.prototype.checkSharingPermissions=function(e){var t=this.addBatchDependency();return this.getShareable().then(function(n){return t(),n.checkPermissions(e)})},t.prototype.getSharingInformation=function(e,t){void 0===e&&(e=null);var n=this.addBatchDependency();return this.getShareable().then(function(r){return n(),r.getSharingInformation(e,t)})},t.prototype.getObjectSharingSettings=function(e){void 0===e&&(e=!0);var t=this.addBatchDependency();return this.getShareable().then(function(n){return t(),n.getObjectSharingSettings(e)})},t.prototype.unshare=function(){var e=this.addBatchDependency();return this.getShareable().then(function(t){return e(),t.unshareObject()})},t.prototype.deleteSharingLinkByKind=function(e){var t=this.addBatchDependency();return this.getShareable().then(function(n){return t(),n.deleteLinkByKind(e)})},t.prototype.unshareLink=function(e,t){var n=this.addBatchDependency();return this.getShareable().then(function(r){return n(),r.unshareLink(e,t)})},t.prototype.getShareable=function(){var e=this;return this.clone(me,"listItemAllFields",!1).select("odata.id").get().then(function(t){var n=new de(u(t));return e.hasBatch&&(n=n.inBatch(e.batch)),n})},t}(A),me=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.shareWith=function(e,t,n,r){void 0===t&&(t=re.View),void 0===n&&(n=!1);var o=this.addBatchDependency();return this.getShareable().then(function(i){return o(),i.shareWith(e,t,n,!1,r)})},t}(ge),be=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.shareWith=function(e,t,n,r,o){void 0===t&&(t=re.View),void 0===n&&(n=!1),void 0===r&&(r=!1);var i=this.addBatchDependency();return this.getShareable().then(function(s){return i(),s.shareWith(e,t,n,r,o)})},t}(ge),ve=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"webparts",{get:function(){return new Se(this,"webparts")},enumerable:!0,configurable:!0}),t.prototype.export=function(e){return this.clone(t,"ExportWebPart").postCore({body:Object(m.n)({webPartId:e})})},t.prototype.import=function(e){return this.clone(t,"ImportWebPart").postCore({body:Object(m.n)({webPartXml:e})})},t}(R),Se=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getById=function(e){return new Te(this,"getbyid('"+e+"')")},t.prototype.getByControlId=function(e){return new Te(this,"getByControlId('"+e+"')")},t}(j),Te=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"webpart",{get:function(){return new Oe(this)},enumerable:!0,configurable:!0}),t.prototype.saveChanges=function(){return this.clone(t,"SaveWebPartChanges").postCore()},t.prototype.moveTo=function(e,n){return this.clone(t,"MoveWebPartTo(zoneID='"+e+"', zoneIndex="+n+")").postCore()},t.prototype.close=function(){return this.clone(t,"CloseWebPart").postCore()},t.prototype.open=function(){return this.clone(t,"OpenWebPart").postCore()},t.prototype.delete=function(){return this.clone(t,"DeleteWebPart").postCore()},t}(A),Oe=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t=o([d("webpart")],t)}(A),we=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getByName=function(e){var t=new _e(this);return t.concat("('"+e+"')"),t},t.prototype.add=function(e){var t=this;return this.clone(n,"add('"+e+"')").postCore().then(function(n){return{data:n,folder:t.getByName(e)}})};var n;return t=n=o([d("folders")],t)}(j),_e=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.update=t._update("SP.Folder",function(e){return{data:e,folder:t}}),t}return r(t,e),Object.defineProperty(t.prototype,"contentTypeOrder",{get:function(){return new j(this,"contentTypeOrder")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"files",{get:function(){return new et(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"folders",{get:function(){return new we(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"listItemAllFields",{get:function(){return new A(this,"listItemAllFields")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"parentFolder",{get:function(){return new t(this,"parentFolder")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"properties",{get:function(){return new A(this,"properties")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"serverRelativeUrl",{get:function(){return new R(this,"serverRelativeUrl")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"uniqueContentTypeOrder",{get:function(){return new j(this,"uniqueContentTypeOrder")},enumerable:!0,configurable:!0}),t.prototype.delete=function(e){return void 0===e&&(e="*"),this.clone(t,null).postCore({headers:{"IF-Match":e,"X-HTTP-Method":"DELETE"}})},t.prototype.recycle=function(){return this.clone(t,"recycle").postCore()},t.prototype.getItem=function(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];var n=this.listItemAllFields;return n.select.apply(n,e).get().then(function(e){return Object(m.f)(new ze(u(e)),e)})},t.prototype.moveTo=function(e){var t=this;return this.select("ServerRelativeUrl").get().then(function(n){var r=n.ServerRelativeUrl,o=new E,i=t.toUrl().split("/_api")[0],s=i.replace("://","___").split("/")[0].replace("___","://"),a=i+"/_api/SP.MoveCopyUtil.MoveFolder()";return o.post(a,{body:Object(m.n)({destUrl:0===e.indexOf("http")?e:""+s+e,srcUrl:""+s+r})}).then(function(e){return e.json()})})},t}(be),Ce=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.addAvailableContentType=function(e){var t=this,r=Object(m.n)({contentTypeId:e});return this.clone(n,"addAvailableContentType").postCore({body:r}).then(function(e){return{contentType:t.getById(e.id),data:e}})},t.prototype.getById=function(e){var t=new Pe(this);return t.concat("('"+e+"')"),t},t.prototype.add=function(e,t,n,r,o){var i=this;void 0===n&&(n=""),void 0===r&&(r="Custom Content Types"),void 0===o&&(o={});var s=Object(m.n)(Object.assign(h("SP.ContentType"),{Description:n,Group:r,Id:{StringValue:e},Name:t},o));return this.postCore({body:s}).then(function(e){return{contentType:i.getById(e.id),data:e}})};var n;return t=n=o([d("contenttypes")],t)}(j),Pe=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.delete=t._delete,t}return r(t,e),Object.defineProperty(t.prototype,"fieldLinks",{get:function(){return new Ie(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"fields",{get:function(){return new j(this,"fields")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"parent",{get:function(){return new t(this,"parent")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"workflowAssociations",{get:function(){return new j(this,"workflowAssociations")},enumerable:!0,configurable:!0}),t}(A),Ie=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getById=function(e){var t=new Ee(this);return t.concat("(guid'"+e+"')"),t},t=o([d("fieldlinks")],t)}(j),Ee=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t}(A),Ne=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getByName=function(e){var t=new Re(this);return t.concat("('"+e+"')"),t},t.prototype.add=function(e,t){var r=this;return this.clone(n,"add(FileName='"+e+"')",!1).postCore({body:t}).then(function(t){return{data:t,file:r.getByName(e)}})},t.prototype.addMultiple=function(e){var t=this;return e.reduce(function(e,r){return e.then(function(){return t.clone(n,"add(FileName='"+r.name+"')",!1).postCore({body:r.content})})},Promise.resolve())},t.prototype.deleteMultiple=function(){for(var e=this,t=[],n=0;n<arguments.length;n++)t[n]=arguments[n];return t.reduce(function(t,n){return t.then(function(){return e.getByName(n).delete()})},Promise.resolve())},t.prototype.recycleMultiple=function(){for(var e=this,t=[],n=0;n<arguments.length;n++)t[n]=arguments[n];return t.reduce(function(t,n){return t.then(function(){return e.getByName(n).recycle()})},Promise.resolve())};var n;return t=n=o([d("AttachmentFiles")],t)}(j),Re=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.delete=t._deleteWithETag,t}return r(t,e),t.prototype.getText=function(){return this.getParsed(new v.i)},t.prototype.getBlob=function(){return this.getParsed(new v.a)},t.prototype.getBuffer=function(){return this.getParsed(new v.b)},t.prototype.getJSON=function(){return this.getParsed(new v.d)},t.prototype.setContent=function(e){var n=this;return this.clone(t,"$value",!1).postCore({body:e,headers:{"X-HTTP-Method":"PUT"}}).then(function(e){return new t(n)})},t.prototype.recycle=function(e){return void 0===e&&(e="*"),this.clone(t,"recycleObject").postCore({headers:{"IF-Match":e,"X-HTTP-Method":"DELETE"}})},t.prototype.getParsed=function(e){return this.clone(t,"$value",!1).get(e)},t}(A),je=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){var t=new Ae(this);return t.concat("('"+e+"')"),t},t.prototype.getByTitle=function(e){return new Ae(this,"getByTitle('"+e+"')")},t.prototype.add=function(e,t,r){var o=this;void 0===t&&(t=!1),void 0===r&&(r={});var i=Object(m.n)(Object.assign(h("SP.View"),{PersonalView:t,Title:e},r));return this.clone(n,null).postCore({body:i}).then(function(e){return{data:e,view:o.getById(e.Id)}})};var n;return t=n=o([d("views")],t)}(j),Ae=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.update=t._update("SP.View",function(e){return{data:e,view:t}}),t.delete=t._delete,t}return r(t,e),Object.defineProperty(t.prototype,"fields",{get:function(){return new xe(this)},enumerable:!0,configurable:!0}),t.prototype.renderAsHtml=function(){return this.clone(R,"renderashtml").get()},t.prototype.setViewXml=function(e){return this.clone(t,"SetViewXml").postCore({body:Object(m.n)({viewXml:e})})},t}(A),xe=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getSchemaXml=function(){return this.clone(R,"schemaxml").get()},t.prototype.add=function(e){return this.clone(n,"addviewfield('"+e+"')").postCore()},t.prototype.move=function(e,t){return this.clone(n,"moveviewfieldto").postCore({body:Object(m.n)({field:e,index:t})})},t.prototype.removeAll=function(){return this.clone(n,"removeallviewfields").postCore()},t.prototype.remove=function(e){return this.clone(n,"removeviewfield('"+e+"')").postCore()};var n;return t=n=o([d("viewfields")],t)}(j),Ue=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){var t=new Le(this);return t.concat("('"+e+"')"),t},t.prototype.getByTitle=function(e){return new Le(this,"getByTitle('"+e+"')")},t.prototype.getByInternalNameOrTitle=function(e){return new Le(this,"getByInternalNameOrTitle('"+e+"')")},t.prototype.createFieldAsXml=function(e){var t,r=this;t="string"==typeof e?{SchemaXml:e}:e;var o=Object(m.n)({parameters:Object(m.f)(h("SP.XmlSchemaFieldCreationInformation"),t)});return this.clone(n,"createfieldasxml").postCore({body:o}).then(function(e){return{data:e,field:r.getById(e.Id)}})},t.prototype.add=function(e,t,r){var o=this,i=Object(m.n)(Object.assign(h(t),{Title:e},r));return this.clone(n,null).postCore({body:i}).then(function(e){return{data:e,field:o.getById(e.Id)}})},t.prototype.addText=function(e,t,n){void 0===t&&(t=255);var r={FieldTypeKind:2,MaxLength:t};return this.add(e,"SP.FieldText",Object(m.f)(r,n))},t.prototype.addCalculated=function(e,t,n,r,o){void 0===r&&(r=K.Text);var i={DateFormat:n,FieldTypeKind:17,Formula:t,OutputType:r};return this.add(e,"SP.FieldCalculated",Object(m.f)(i,o))},t.prototype.addDateTime=function(e,t,n,r,o){void 0===t&&(t=V.DateOnly),void 0===n&&(n=X.Gregorian),void 0===r&&(r=Q.Unspecified);var i={DateTimeCalendarType:n,DisplayFormat:t,FieldTypeKind:4,FriendlyDisplayFormat:r};return this.add(e,"SP.FieldDateTime",Object(m.f)(i,o))},t.prototype.addNumber=function(e,t,n,r){var o={FieldTypeKind:9};return void 0!==t&&(o=Object(m.f)({MinimumValue:t},o)),void 0!==n&&(o=Object(m.f)({MaximumValue:n},o)),this.add(e,"SP.FieldNumber",Object(m.f)(o,r))},t.prototype.addCurrency=function(e,t,n,r,o){void 0===r&&(r=1033);var i={CurrencyLocaleId:r,FieldTypeKind:10};return void 0!==t&&(i=Object(m.f)({MinimumValue:t},i)),void 0!==n&&(i=Object(m.f)({MaximumValue:n},i)),this.add(e,"SP.FieldCurrency",Object(m.f)(i,o))},t.prototype.addMultilineText=function(e,t,n,r,o,i,s){void 0===t&&(t=6),void 0===n&&(n=!0),void 0===r&&(r=!1),void 0===o&&(o=!1),void 0===i&&(i=!0);var a={AllowHyperlink:i,AppendOnly:o,FieldTypeKind:3,NumberOfLines:t,RestrictedMode:r,RichText:n};return this.add(e,"SP.FieldMultiLineText",Object(m.f)(a,s))},t.prototype.addUrl=function(e,t,n){void 0===t&&(t=J.Hyperlink);var r={DisplayFormat:t,FieldTypeKind:11};return this.add(e,"SP.FieldUrl",Object(m.f)(r,n))},t.prototype.addUser=function(e,t,n){var r={FieldTypeKind:20,SelectionMode:t};return this.add(e,"SP.FieldUser",Object(m.f)(r,n))},t.prototype.addLookup=function(e,t,r,o){var i=this,s=Object(m.f)({FieldTypeKind:7,LookupFieldName:r,LookupListId:t,Title:e},o),a=Object(m.n)({parameters:Object(m.f)(h("SP.FieldCreationInformation"),s)});return this.clone(n,"addfield").postCore({body:a}).then(function(e){return{data:e,field:i.getById(e.Id)}})},t.prototype.addChoice=function(e,t,n,r,o){void 0===n&&(n=ce.Dropdown);var i={Choices:{results:t},EditFormat:n,FieldTypeKind:6,FillInChoice:r};return this.add(e,"SP.FieldChoice",Object(m.f)(i,o))},t.prototype.addMultiChoice=function(e,t,n,r){var o={Choices:{results:t},FieldTypeKind:15,FillInChoice:n};return this.add(e,"SP.FieldMultiChoice",Object(m.f)(o,r))},t.prototype.addBoolean=function(e,t){var n={FieldTypeKind:8};return this.add(e,"SP.Field",Object(m.f)(n,t))},t.prototype.addDependentLookupField=function(e,t,r){var o=this;return this.clone(n,"adddependentlookupfield(displayName='"+e+"', primarylookupfieldid='"+t+"', showfield='"+r+"')").postCore().then(function(e){return{data:e,field:o.getById(e.Id)}})},t.prototype.addLocation=function(e,t){var n={FieldTypeKind:33};return this.add(e,"SP.FieldLocation",Object(m.f)(n,t))};var n;return t=n=o([d("fields")],t)}(j),Le=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.delete=t._delete,t}return r(t,e),t.prototype.update=function(e,t){var n=this;void 0===t&&(t="SP.Field");var r=Object(m.n)(Object(m.f)(h(t),e));return this.postCore({body:r,headers:{"X-HTTP-Method":"MERGE"}}).then(function(e){return{data:e,field:n}})},t.prototype.setShowInDisplayForm=function(e){return this.clone(t,"setshowindisplayform("+e+")").postCore()},t.prototype.setShowInEditForm=function(e){return this.clone(t,"setshowineditform("+e+")").postCore()},t.prototype.setShowInNewForm=function(e){return this.clone(t,"setshowinnewform("+e+")").postCore()},t}(A),De=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getById=function(e){var t=new ke(this);return t.concat("('"+e+"')"),t},t=o([d("forms")],t)}(j),ke=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t}(A),Fe=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getById=function(e){var t=new Be(this);return t.concat("('"+e+"')"),t},t.prototype.add=function(e,t,n){var r=this,o={expirationDateTime:t,notificationUrl:e,resource:this.toUrl()};return n&&(o.clientState=n),this.postCore({body:Object(m.n)(o),headers:{"Content-Type":"application/json"}}).then(function(e){return{data:e,subscription:r.getById(e.id)}})},t=o([d("subscriptions")],t)}(j),Be=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.update=function(e,t,n){var r=this,o={};return e&&(o.expirationDateTime=e),t&&(o.notificationUrl=t),n&&(o.clientState=n),this.patchCore({body:Object(m.n)(o),headers:{"Content-Type":"application/json"}}).then(function(e){return{data:e,subscription:r}})},t.prototype.delete=function(){return e.prototype.deleteCore.call(this)},t}(A),qe=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){var t=new Ge(this);return t.concat("('"+e+"')"),t},t.prototype.add=function(e){var t=this,n=Object(m.n)(Object(m.f)({__metadata:{type:"SP.UserCustomAction"}},e));return this.postCore({body:n}).then(function(e){return{action:t.getById(e.Id),data:e}})},t.prototype.clear=function(){return this.clone(n,"clear").postCore()};var n;return t=n=o([d("usercustomactions")],t)}(j),Ge=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.update=t._update("SP.UserCustomAction",function(e){return{data:e,action:t}}),t}return r(t,e),t.prototype.delete=function(){return e.prototype.deleteCore.call(this)},t}(A),Me=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){var t=new We(this);return t.concat("('"+e+"')"),t},t.prototype.getByTitle=function(e){return new We(this,"getByTitle('"+e+"')")},t.prototype.add=function(e,t,n,r,o){var i=this;void 0===t&&(t=""),void 0===n&&(n=100),void 0===r&&(r=!1),void 0===o&&(o={});var s=Object(m.f)({AllowContentTypes:r,BaseTemplate:n,ContentTypesEnabled:r,Description:t,Title:e,__metadata:{type:"SP.List"}},o);return this.postCore({body:Object(m.n)(s)}).then(function(e){return{data:e,list:i.getByTitle(s.Title)}})},t.prototype.ensure=function(e,t,n,r,o){var i=this;if(void 0===t&&(t=""),void 0===n&&(n=100),void 0===r&&(r=!1),void 0===o&&(o={}),this.hasBatch)throw Error("The ensure list method is not supported for use in a batch.");return new Promise(function(s,a){var u=Object(m.f)(o,{Title:e,Description:t,ContentTypesEnabled:r},!0),c=i.getByTitle(u.Title);c.get().then(function(e){c.update(u).then(function(e){s({created:!1,data:e,list:i.getByTitle(u.Title)})}).catch(function(e){return a(e)})}).catch(function(o){i.add(e,t,n,r,u).then(function(e){s({created:!0,data:e.data,list:i.getByTitle(u.Title)})}).catch(function(e){return a(e)})})})},t.prototype.ensureSiteAssetsLibrary=function(){return this.clone(n,"ensuresiteassetslibrary").postCore().then(function(e){return new We(u(e))})},t.prototype.ensureSitePagesLibrary=function(){return this.clone(n,"ensuresitepageslibrary").postCore().then(function(e){return new We(u(e))})};var n;return t=n=o([d("lists")],t)}(j),We=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"contentTypes",{get:function(){return new Ce(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"items",{get:function(){return new Qe(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"views",{get:function(){return new je(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"fields",{get:function(){return new Ue(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"forms",{get:function(){return new De(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"defaultView",{get:function(){return new Ae(this,"DefaultView")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"userCustomActions",{get:function(){return new qe(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"effectiveBasePermissions",{get:function(){return new R(this,"EffectiveBasePermissions")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"eventReceivers",{get:function(){return new j(this,"EventReceivers")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"relatedFields",{get:function(){return new R(this,"getRelatedFields")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"informationRightsManagementSettings",{get:function(){return new R(this,"InformationRightsManagementSettings")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"subscriptions",{get:function(){return new Fe(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"rootFolder",{get:function(){return new _e(this,"rootFolder")},enumerable:!0,configurable:!0}),t.prototype.getView=function(e){return new Ae(this,"getView('"+e+"')")},t.prototype.update=function(e,n){var r=this;void 0===n&&(n="*");var o=Object(m.n)(Object(m.f)({__metadata:{type:"SP.List"}},e));return this.postCore({body:o,headers:{"IF-Match":n,"X-HTTP-Method":"MERGE"}}).then(function(n){var o=r;return Object(m.j)(e,"Title")&&(o=r.getParent(t,r.parentUrl,"getByTitle('"+e.Title+"')")),{data:n,list:o}})},t.prototype.delete=function(e){return void 0===e&&(e="*"),this.postCore({headers:{"IF-Match":e,"X-HTTP-Method":"DELETE"}})},t.prototype.getChanges=function(e){return this.clone(t,"getchanges").postCore({body:Object(m.n)({query:Object(m.f)(h("SP.ChangeQuery"),e)})})},t.prototype.getItemsByCAMLQuery=function(e){for(var n=[],r=1;r<arguments.length;r++)n[r-1]=arguments[r];var o=this.clone(t,"getitems");return o.expand.apply(o,n).postCore({body:Object(m.n)({query:Object(m.f)({__metadata:{type:"SP.CamlQuery"}},e)})})},t.prototype.getListItemChangesSinceToken=function(e){return this.clone(t,"getlistitemchangessincetoken").postCore({body:Object(m.n)({query:Object(m.f)({__metadata:{type:"SP.ChangeLogItemQuery"}},e)})},{parse:function(e){return e.text()}})},t.prototype.recycle=function(){return this.clone(t,"recycle").postCore().then(function(e){return Object(m.j)(e,"Recycle")?e.Recycle:e})},t.prototype.renderListData=function(e){var n=this.clone(t,"renderlistdata(@viewXml)");return n.query.set("@viewXml","'"+e+"'"),n.postCore().then(function(e){return JSON.parse(Object(m.j)(e,"RenderListData")?e.RenderListData:e)})},t.prototype.renderListDataAsStream=function(e,n){void 0===n&&(n=null);var r={overrideParameters:Object(m.f)(h("SP.RenderListDataOverrideParameters"),n),parameters:Object(m.f)(h("SP.RenderListDataParameters"),e)};return this.clone(t,"RenderListDataAsStream",!0).postCore({body:Object(m.n)(r)})},t.prototype.renderListFormData=function(e,n,r){return this.clone(t,"renderlistformdata(itemid="+e+", formid='"+n+"', mode='"+r+"')").postCore().then(function(e){return JSON.parse(Object(m.j)(e,"RenderListFormData")?e.RenderListFormData:e)})},t.prototype.reserveListItemId=function(){return this.clone(t,"reservelistitemid").postCore().then(function(e){return Object(m.j)(e,"ReserveListItemId")?e.ReserveListItemId:e})},t.prototype.getListItemEntityTypeFullName=function(){return this.clone(t,null,!1).select("ListItemEntityTypeFullName").get().then(function(e){return e.ListItemEntityTypeFullName})},t.prototype.addValidateUpdateItemUsingPath=function(e,n,r,o){return void 0===r&&(r=!1),this.clone(t,"AddValidateUpdateItemUsingPath()").postCore({body:Object(m.n)({bNewDocumentUpdate:r,checkInComment:o,formValues:e,listItemCreateInfo:{FolderPath:{DecodedUrl:n,__metadata:{type:"SP.ResourcePath"}},__metadata:{type:"SP.ListItemCreationInformationUsingPath"}}})}).then(function(e){return void 0!==e.AddValidateUpdateItemUsingPath?e.AddValidateUpdateItemUsingPath.results:e})},t.prototype.getSiteScript=function(){return i(this,void 0,void 0,function(){var e,n;return s(this,function(r){switch(r.label){case 0:return[4,this.clone(t).rootFolder.select("ServerRelativeUrl").get()];case 1:return e=r.sent(),[4,p(e.ServerRelativeUrl)];case 2:return n=r.sent(),[2,new S.a(this,"").getSiteScriptFromList(n)]}})})},t}(he),He=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.add=function(e){var t=this;"string"==typeof e&&(e={text:e});var r=Object(m.n)(Object(m.f)(h("Microsoft.SharePoint.Comments.comment"),e));return this.clone(n,null).postCore({body:r}).then(function(e){return Object(m.f)(t.getById(e.id),e)})},t.prototype.getById=function(e){var t=new Ke(this);return t.concat("("+e+")"),t},t.prototype.clear=function(){return this.clone(n,"DeleteAll").postCore()};var n;return t=n=o([d("comments")],t)}(j),Ke=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"replies",{get:function(){return new Ve(this)},enumerable:!0,configurable:!0}),t.prototype.like=function(){return this.clone(t,"Like").postCore()},t.prototype.unlike=function(){return this.clone(t,"Unlike").postCore()},t.prototype.delete=function(){return this.deleteCore()},t}(A),Ve=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.add=function(e){"string"==typeof e&&(e={text:e});var t=Object(m.n)(Object(m.f)(h("Microsoft.SharePoint.Comments.comment"),e));return this.clone(n,null).postCore({body:t}).then(function(e){return Object(m.f)(new Ke(u(e)),e)})};var n;return t=n=o([d("replies")],t)}(j),Qe=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){var t=new ze(this);return t.concat("("+e+")"),t},t.prototype.getItemByStringId=function(e){return new ze(this.parentUrl,"getItemByStringId('"+e+"')")},t.prototype.skip=function(e,t){return void 0===t&&(t=!1),t?this.query.set("$skiptoken",encodeURIComponent("Paged=TRUE&PagedPrev=TRUE&p_ID="+e)):this.query.set("$skiptoken",encodeURIComponent("Paged=TRUE&p_ID="+e)),this},t.prototype.getPaged=function(e){return void 0===e&&(e=new v.f),this.get(new $e(this,e))},t.prototype.getAll=function(e,t){void 0===e&&(e=2e3),void 0===t&&(t="application/json;odata=nometadata"),b.a.write("Calling items.getAll should be done sparingly. Ensure this is the correct choice. If you are unsure, it is not.",2);var r=new n(this,"").top(e).configure({headers:{Accept:t}});return this.query.forEach(function(e,t){/^\$select|filter|top|expand$/i.test(t)&&r.query.set(t,e)}),new Promise(function(e,t){var n=[],o=function(r){[].push.apply(n,r.results),r.hasNext?r.getNext().then(o).catch(t):e(n)};r.getPaged().then(o).catch(t)})},t.prototype.add=function(e,t){var r=this;void 0===e&&(e={}),void 0===t&&(t=null);var o=this.addBatchDependency();return this.ensureListItemEntityTypeName(t).then(function(t){var i=Object(m.n)(Object(m.f)(h(t),e)),s=r.clone(n,"").postCore({body:i}).then(function(e){return{data:e,item:r.getById(e.Id)}});return o(),s})},t.prototype.ensureListItemEntityTypeName=function(e){return e?Promise.resolve(e):this.getParent(We).getListItemEntityTypeFullName()};var n;return t=n=o([d("items")],t)}(j),ze=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.delete=t._deleteWithETag,t}return r(t,e),Object.defineProperty(t.prototype,"attachmentFiles",{get:function(){return new Ne(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"contentType",{get:function(){return new Pe(this,"ContentType")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"comments",{get:function(){return new He(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"effectiveBasePermissions",{get:function(){return new R(this,"EffectiveBasePermissions")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"effectiveBasePermissionsForUI",{get:function(){return new R(this,"EffectiveBasePermissionsForUI")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"fieldValuesAsHTML",{get:function(){return new A(this,"FieldValuesAsHTML")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"fieldValuesAsText",{get:function(){return new A(this,"FieldValuesAsText")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"fieldValuesForEdit",{get:function(){return new A(this,"FieldValuesForEdit")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"folder",{get:function(){return new _e(this,"folder")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"file",{get:function(){return new tt(this,"file")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"versions",{get:function(){return new Xe(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"list",{get:function(){return this.getParent(We,this.parentUrl.substr(0,this.parentUrl.lastIndexOf("/")))},enumerable:!0,configurable:!0}),t.prototype.update=function(e,t,n){var r=this;return void 0===t&&(t="*"),void 0===n&&(n=null),new Promise(function(o,i){var s=r.addBatchDependency();return r.ensureListItemEntityTypeName(n).then(function(n){var i=Object(m.n)(Object(m.f)(h(n),e));return s(),r.postCore({body:i,headers:{"IF-Match":t,"X-HTTP-Method":"MERGE"}},new Ze).then(function(e){o({data:e,item:r})})}).catch(function(e){return i(e)})})},t.prototype.getLikedBy=function(){return this.clone(t,"likedBy").postCore()},t.prototype.like=function(){return this.clone(t,"like").postCore()},t.prototype.unlike=function(){return this.clone(t,"unlike").postCore()},t.prototype.recycle=function(){return this.clone(t,"recycle").postCore()},t.prototype.getWopiFrameUrl=function(e){void 0===e&&(e=0);var n=this.clone(t,"getWOPIFrameUrl(@action)");return n.query.set("@action",e),n.postCore().then(function(e){return Object(m.j)(e,"GetWOPIFrameUrl")?e.GetWOPIFrameUrl:e})},t.prototype.validateUpdateListItem=function(e,n){return void 0===n&&(n=!1),this.clone(t,"validateupdatelistitem").postCore({body:Object(m.n)({formValues:e,bNewDocumentUpdate:n})})},t.prototype.getLikedByInformation=function(){return this.clone(t,"likedByInformation").expand("likedby").getCore()},t.prototype.ensureListItemEntityTypeName=function(e){return e?Promise.resolve(e):this.list.getListItemEntityTypeFullName()},t}(ye),Xe=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getById=function(e){var t=new Je(this);return t.concat("("+e+")"),t},t=o([d("versions")],t)}(j),Je=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.delete=t._deleteWithETag,t}return r(t,e),t}(A),Ye=function(){function e(e,t,n,r){this.parent=e,this.nextUrl=t,this.results=n,this.innerParser=r}return Object.defineProperty(e.prototype,"hasNext",{get:function(){return"string"==typeof this.nextUrl&&this.nextUrl.length>0},enumerable:!0,configurable:!0}),e.prototype.getNext=function(){if(this.hasNext){return new Qe(this.nextUrl,null).configureFrom(this.parent).getPaged(this.innerParser)}return new Promise(function(e){return e(null)})},e}(),$e=function(e){function t(t,n){var r=e.call(this)||this;return r._parent=t,r.innerParser=n,r}return r(t,e),t.prototype.parse=function(e){var t=this;return this.innerParser.parse(e).then(function(e){return i(t,void 0,void 0,function(){var t,n;return s(this,function(r){return t=this.innerParser.rawJson,n=Object(m.j)(t,"d")&&Object(m.j)(t.d,"__next")?t.d.__next:t["odata.nextLink"],[2,new Ye(this._parent,n,e,this.innerParser)]})})})},t}(v.g),Ze=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.parse=function(e){return i(this,void 0,void 0,function(){var t=this;return s(this,function(n){return[2,new Promise(function(n,r){t.handleError(e,r)&&n({"odata.etag":e.headers.get("etag")})})]})})},t}(v.g),et=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getByName=function(e){var t=new tt(this);return t.concat("('"+e+"')"),t},t.prototype.add=function(e,t,r){var o=this;return void 0===r&&(r=!0),new n(this,"add(overwrite="+r+",url='"+e+"')").postCore({body:t}).then(function(t){return{data:t,file:o.getByName(e)}})},t.prototype.addChunked=function(e,t,r,o,i){var s=this;return void 0===o&&(o=!0),void 0===i&&(i=10485760),this.clone(n,"add(overwrite="+o+",url='"+e+"')",!1).postCore().then(function(){return s.getByName(e)}).then(function(e){return e.setContentChunked(t,r,i)})},t.prototype.addTemplateFile=function(e,t){var r=this;return this.clone(n,"addTemplateFile(urloffile='"+e+"',templatefiletype="+t+")",!1).postCore().then(function(t){return{data:t,file:r.getByName(e)}})};var n;return t=n=o([d("files")],t)}(j),tt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"listItemAllFields",{get:function(){return new A(this,"listItemAllFields")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"versions",{get:function(){return new nt(this)},enumerable:!0,configurable:!0}),t.prototype.approve=function(e){return void 0===e&&(e=""),this.clone(t,"approve(comment='"+e+"')").postCore()},t.prototype.cancelUpload=function(e){return this.clone(t,"cancelUpload(uploadId=guid'"+e+"')",!1).postCore()},t.prototype.checkin=function(e,n){if(void 0===e&&(e=""),void 0===n&&(n=pe.Major),e.length>1023)throw Error("The maximum comment length is 1023 characters.");return this.clone(t,"checkin(comment='"+e+"',checkintype="+n+")").postCore()},t.prototype.checkout=function(){return this.clone(t,"checkout").postCore()},t.prototype.copyTo=function(e,n){return void 0===n&&(n=!0),this.clone(t,"copyTo(strnewurl='"+e+"',boverwrite="+n+")").postCore()},t.prototype.delete=function(e){return void 0===e&&(e="*"),this.clone(t,null).postCore({headers:{"IF-Match":e,"X-HTTP-Method":"DELETE"}})},t.prototype.deny=function(e){if(void 0===e&&(e=""),e.length>1023)throw Error("The maximum comment length is 1023 characters.");return this.clone(t,"deny(comment='"+e+"')").postCore()},t.prototype.getLimitedWebPartManager=function(e){return void 0===e&&(e=ot.Shared),new ve(this,"getLimitedWebPartManager(scope="+e+")")},t.prototype.moveTo=function(e,n){return void 0===n&&(n=it.Overwrite),this.clone(t,"moveTo(newurl='"+e+"',flags="+n+")").postCore()},t.prototype.publish=function(e){if(void 0===e&&(e=""),e.length>1023)throw Error("The maximum comment length is 1023 characters.");return this.clone(t,"publish(comment='"+e+"')").postCore()},t.prototype.recycle=function(){return this.clone(t,"recycle").postCore()},t.prototype.undoCheckout=function(){return this.clone(t,"undoCheckout").postCore()},t.prototype.unpublish=function(e){if(void 0===e&&(e=""),e.length>1023)throw Error("The maximum comment length is 1023 characters.");return this.clone(t,"unpublish(comment='"+e+"')").postCore()},t.prototype.getText=function(){return this.clone(t,"$value",!1).get(new v.i,{headers:{binaryStringResponseBody:"true"}})},t.prototype.getBlob=function(){return this.clone(t,"$value",!1).get(new v.a,{headers:{binaryStringResponseBody:"true"}})},t.prototype.getBuffer=function(){return this.clone(t,"$value",!1).get(new v.b,{headers:{binaryStringResponseBody:"true"}})},t.prototype.getJSON=function(){return this.clone(t,"$value",!1).get(new v.d,{headers:{binaryStringResponseBody:"true"}})},t.prototype.setContent=function(e){var n=this;return this.clone(t,"$value",!1).postCore({body:e,headers:{"X-HTTP-Method":"PUT"}}).then(function(e){return new t(n)})},t.prototype.getItem=function(){for(var e=this,t=[],n=0;n<arguments.length;n++)t[n]=arguments[n];var r=this.listItemAllFields;return r.select.apply(r,t).get().then(function(t){return Object(m.f)(new ze(u(t)).configureFrom(e),t)})},t.prototype.setContentChunked=function(e,t,n){var r=this;void 0===n&&(n=10485760),void 0===t&&(t=function(){return null});var o=e.size,i=parseInt((e.size/n).toString(),10)+(e.size%n==0?1:0),s=Object(m.h)();t({uploadId:s,blockNumber:1,chunkSize:n,currentPointer:0,fileSize:o,stage:"starting",totalBlocks:i});for(var a=this.startUpload(s,e.slice(0,n)),u=2;u<i;u++)!function(u){a=a.then(function(a){return t({uploadId:s,blockNumber:u,chunkSize:n,currentPointer:a,fileSize:o,stage:"continue",totalBlocks:i}),r.continueUpload(s,a,e.slice(a,a+n))})}(u);return a.then(function(a){return t({uploadId:s,blockNumber:i,chunkSize:n,currentPointer:a,fileSize:o,stage:"finishing",totalBlocks:i}),r.finishUpload(s,a,e.slice(a))})},t.prototype.startUpload=function(e,n){return this.clone(t,"startUpload(uploadId=guid'"+e+"')",!1).postCore({body:n}).then(function(e){return"object"==typeof e&&(e=e.StartUpload),parseFloat(e)})},t.prototype.continueUpload=function(e,n,r){return this.clone(t,"continueUpload(uploadId=guid'"+e+"',fileOffset="+n+")",!1).postCore({body:r}).then(function(e){return"object"==typeof e&&(e=e.ContinueUpload),parseFloat(e)})},t.prototype.finishUpload=function(e,n,r){return this.clone(t,"finishUpload(uploadId=guid'"+e+"',fileOffset="+n+")",!1).postCore({body:r}).then(function(e){return{data:e,file:new t(u(e))}})},t}(me),nt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){var t=new rt(this);return t.concat("("+e+")"),t},t.prototype.deleteAll=function(){return new n(this,"deleteAll").postCore()},t.prototype.deleteById=function(e){return this.clone(n,"deleteById(vid="+e+")").postCore()},t.prototype.recycleByID=function(e){return this.clone(n,"recycleByID(vid="+e+")").postCore()},t.prototype.deleteByLabel=function(e){return this.clone(n,"deleteByLabel(versionlabel='"+e+"')").postCore()},t.prototype.recycleByLabel=function(e){return this.clone(n,"recycleByLabel(versionlabel='"+e+"')").postCore()},t.prototype.restoreByLabel=function(e){return this.clone(n,"restoreByLabel(versionlabel='"+e+"')").postCore()};var n;return t=n=o([d("versions")],t)}(j),rt=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.delete=t._deleteWithETag,t}return r(t,e),t}(A);!function(e){e[e.Minor=0]="Minor",e[e.Major=1]="Major",e[e.Overwrite=2]="Overwrite"}(pe||(pe={}));var ot;!function(e){e[e.User=0]="User",e[e.Shared=1]="Shared"}(ot||(ot={}));var it;!function(e){e[e.Overwrite=1]="Overwrite",e[e.AllowBrokenThickets=8]="AllowBrokenThickets"}(it||(it={}));var st;!function(e){e[e.StandardPage=0]="StandardPage",e[e.WikiPage=1]="WikiPage",e[e.FormPage=2]="FormPage",e[e.ClientSidePage=3]="ClientSidePage"}(st||(st={}));var at,ut=function(e){function t(t,n){return void 0===n&&(n="_api/web/tenantappcatalog/AvailableApps"),e.call(this,a("string"==typeof t?t:t.toUrl()),n)||this}return r(t,e),t.prototype.getAppById=function(e){return new ct(this,"getById('"+e+"')")},t.prototype.add=function(e,n,r){void 0===r&&(r=!0);var o=this.toUrl().indexOf("tenantappcatalog")>0?"tenantappcatalog":"sitecollectionappcatalog";return new t(a(this.toUrl()),"_api/web/"+o+"/add(overwrite="+r+",url='"+e+"')").postCore({body:n}).then(function(e){return{data:e,file:new tt(u(e))}})},t}(j),ct=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.deploy=function(e){return void 0===e&&(e=!1),this.clone(t,"Deploy("+e+")").postCore()},t.prototype.retract=function(){return this.clone(t,"Retract").postCore()},t.prototype.install=function(){return this.clone(t,"Install").postCore()},t.prototype.uninstall=function(){return this.clone(t,"Uninstall").postCore()},t.prototype.upgrade=function(){return this.clone(t,"Upgrade").postCore()},t.prototype.remove=function(){return this.clone(t,"Remove").postCore()},t}(A),lt=function(e){function t(t){var n=e.call(this)||this;return n.baseUrl=t,n}return r(t,e),t.ParseResponse=function(e){return new Promise(function(t,n){for(var r,o,i=[],s=new RegExp("^HTTP/[0-9.]+ +([0-9]+) +(.*)","i"),a=e.split("\n"),u="batch",c=0;c<a.length;++c){var l=a[c];switch(u){case"batch":if("--batchresponse_"===l.substr(0,"--batchresponse_".length))u="batchHeaders";else if(""!==l.trim())throw Error("Invalid response, line "+c);break;case"batchHeaders":""===l.trim()&&(u="status");break;case"status":var p=s.exec(l);if(3!==p.length)throw Error("Invalid status, line "+c);r=parseInt(p[1],10),o=p[2],u="statusHeaders";break;case"statusHeaders":""===l.trim()&&(u="body");break;case"body":i.push(204===r?new Response:new Response(l,{status:r,statusText:o})),u="batch"}}"status"!==u&&n(Error("Unexpected end of input")),t(i)})},t.prototype.executeImpl=function(){var e=this;if(b.a.write("["+this.batchId+"] ("+(new Date).getTime()+") Executing batch with "+this.requests.length+" requests.",1),this.requests.length<1)return b.a.write("Resolving empty batch.",1),Promise.resolve();var n=new E;return p(this.baseUrl).then(function(r){for(var o=[],i="",s=0;s<e.requests.length;s++){var a=e.requests[s];"GET"===a.method?(i.length>0&&(o.push("--changeset_"+i+"--\n\n"),i=""),o.push("--batch_"+e.batchId+"\n")):(i.length<1&&(i=Object(m.h)(),o.push("--batch_"+e.batchId+"\n"),o.push('Content-Type: multipart/mixed; boundary="changeset_'+i+'"\n\n')),o.push("--changeset_"+i+"\n")),o.push("Content-Type: application/http\n"),o.push("Content-Transfer-Encoding: binary\n\n");var u=new Headers,c=Object(m.m)(a.url)?a.url:Object(m.d)(r,a.url);if(b.a.write("["+e.batchId+"] ("+(new Date).getTime()+") Adding request "+a.method+" "+c+" to batch.",0),"GET"!==a.method){var l=a.method,p=a.options.headers;Object(m.j)(a,"options")&&Object(m.j)(a.options,"headers")&&void 0!==p["X-HTTP-Method"]&&(l=p["X-HTTP-Method"],delete p["X-HTTP-Method"]),o.push(l+" "+c+" HTTP/1.1\n"),u.set("Content-Type","application/json;odata=verbose;charset=utf-8")}else o.push(a.method+" "+c+" HTTP/1.1\n");Object(m.o)(u,_.headers),a.options&&Object(m.o)(u,a.options.headers),u.has("Accept")||u.append("Accept","application/json"),u.has("Content-Type")||u.append("Content-Type","application/json;odata=verbose;charset=utf-8"),u.has("X-ClientService-ClientTag")||u.append("X-ClientService-ClientTag","PnPCoreJS:@pnp-1.3.5"),u.forEach(function(e,t){o.push(t+": "+e+"\n")}),o.push("\n"),a.options.body&&o.push(a.options.body+"\n\n")}i.length>0&&(o.push("--changeset_"+i+"--\n\n"),i=""),o.push("--batch_"+e.batchId+"--\n");var h={body:o.join(""),headers:{"Content-Type":"multipart/mixed; boundary=batch_"+e.batchId},method:"POST"};return b.a.write("["+e.batchId+"] ("+(new Date).getTime()+") Sending batch request.",1),n.fetch(Object(m.d)(r,"/_api/$batch"),h).then(function(e){return e.text()}).then(t.ParseResponse).then(function(t){if(t.length!==e.requests.length)throw Error("Could not properly parse responses to match requests in batch.");return b.a.write("["+e.batchId+"] ("+(new Date).getTime()+") Resolving batched requests.",1),t.reduce(function(t,n,r){var o=e.requests[r];return b.a.write("["+o.id+"] ("+(new Date).getTime()+") Resolving request in batch "+e.batchId+".",1),t.then(function(e){return o.parser.parse(n).then(o.resolve).catch(o.reject)})},Promise.resolve())})})},t}(v.e),pt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.add=function(e,t){var r=this;return void 0===t&&(t=!1),this.clone(n,"add").postCore({body:Object(m.n)({featdefScope:0,featureId:e,force:t})}).then(function(t){return{data:t,feature:r.getById(e)}})},t.prototype.getById=function(e){var t=new ht(this);return t.concat("('"+e+"')"),t},t.prototype.remove=function(e,t){return void 0===t&&(t=!1),this.clone(n,"remove").postCore({body:Object(m.n)({featureId:e,force:t})})};var n;return t=n=o([d("features")],t)}(j),ht=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.deactivate=function(e){var n=this;void 0===e&&(e=!1);var r=this.addBatchDependency();return new t(this).select("DefinitionId").get().then(function(t){var o=n.getParent(pt,n.parentUrl,"",n.batch).remove(t.DefinitionId,e);return r(),o})},t}(A),dt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,Object.defineProperty(t.prototype,"rootWeb",{get:function(){return new It(this,"rootweb")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"features",{get:function(){return new pt(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"userCustomActions",{get:function(){return new qe(this)},enumerable:!0,configurable:!0}),t.prototype.getRootWeb=function(){return this.rootWeb.select("Url").get().then(function(e){return new It(e.Url)})},t.prototype.getContextInfo=function(){return new n(this.parentUrl,"_api/contextinfo").postCore().then(function(e){if(Object(m.j)(e,"GetContextWebInformation")){var t=e.GetContextWebInformation;return t.SupportedSchemaVersions=t.SupportedSchemaVersions.results,t}return e})},t.prototype.getDocumentLibraries=function(e){var t=new R("","_api/sp.web.getdocumentlibraries(@v)");return t.query.set("@v","'"+e+"'"),t.get().then(function(e){return Object(m.j)(e,"GetDocumentLibraries")?e.GetDocumentLibraries:e})},t.prototype.getWebUrlFromPageUrl=function(e){var t=new R("","_api/sp.web.getweburlfrompageurl(@v)");return t.query.set("@v","'"+e+"'"),t.get().then(function(e){return Object(m.j)(e,"GetWebUrlFromPageUrl")?e.GetWebUrlFromPageUrl:e})},t.prototype.delete=function(){return i(this,void 0,void 0,function(){var e,t;return s(this,function(r){switch(r.label){case 0:return[4,this.clone(n,"").select("Id").get()];case 1:return e=r.sent(),t=new n(this.parentUrl,"_api/SPSiteManager/Delete"),[4,t.postCore({body:Object(m.n)({siteId:e.Id})})];case 2:return r.sent(),[2]}})})},t.prototype.createBatch=function(){return new lt(this.parentUrl)},t.prototype.openWebById=function(e){return this.clone(n,"openWebById('"+e+"')").postCore().then(function(e){return{data:e,web:It.fromUrl(e["odata.id"]||e.__metadata.uri)}})},t.prototype.joinHubSite=function(e){return this.clone(n,"joinHubSite('"+e+"')").postCore()},t.prototype.registerHubSite=function(){return this.clone(n,"registerHubSite").postCore()},t.prototype.unRegisterHubSite=function(){return this.clone(n,"unRegisterHubSite").postCore()},t.prototype.createCommunicationSite=function(e,t,n,r,o,a,u,c,l){var p=this;void 0===t&&(t=1033),void 0===n&&(n=!1),void 0===o&&(o=""),void 0===a&&(a=""),void 0===u&&(u="00000000-0000-0000-0000-000000000000"),void 0===c&&(c="00000000-0000-0000-0000-000000000000");var h={Classification:a,Description:o,HubSiteId:c,Lcid:t,Owner:l,ShareByEmailEnabled:n,SiteDesignId:u,Title:e,Url:r,WebTemplate:"SITEPAGEPUBLISHING#0",WebTemplateExtensionId:"00000000-0000-0000-0000-000000000000"},d=Object(m.n)({request:Object(m.f)({__metadata:{type:"Microsoft.SharePoint.Portal.SPSiteCreationRequest"}},h)});return this.getRootWeb().then(function(e){return i(p,void 0,void 0,function(){var t,n;return s(this,function(r){return t=new E,n=e.parentUrl+"/_api/SPSiteManager/Create",[2,t.post(n,{body:d,headers:{Accept:"application/json;odata=verbose","Content-Type":"application/json;odata=verbose;charset=utf-8"}}).then(function(e){return e.json()})]})})})},t.prototype.createModernTeamSite=function(e,t,n,r,o,a,u,c,l){var p=this;void 0===n&&(n=!0),void 0===r&&(r=1033),void 0===o&&(o=""),void 0===a&&(a=""),void 0===c&&(c="00000000-0000-0000-0000-000000000000");var h={alias:t,displayName:e,isPublic:n,optionalParams:{Classification:a,CreationOptions:{results:["SPSiteLanguage:"+r,"HubSiteId:"+c]},Description:o,Owners:{results:u||[]}}};return l&&h.optionalParams.CreationOptions.results.push("implicit_formula_292aa8a00786498a87a5ca52d9f4214a_"+l),this.getRootWeb().then(function(e){return i(p,void 0,void 0,function(){var t,n;return s(this,function(r){return t=new E,n=e.parentUrl+"/_api/GroupSiteManager/CreateGroupEx",[2,t.post(n,{body:Object(m.n)(h),headers:{Accept:"application/json;odata=verbose","Content-Type":"application/json;odata=verbose;charset=utf-8"}}).then(function(e){return e.json()})]})})})};var n;return t=n=o([d("_api/site")],t)}(A),ft=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getById=function(e){var t=new yt(this);return t.concat("("+e+")"),t},t.prototype.add=function(e,n,r){var o=this;void 0===r&&(r=!0);var i=Object(m.n)(Object(m.f)(h("SP.NavigationNode"),{IsVisible:r,Title:e,Url:n}));return this.clone(t,null).postCore({body:i}).then(function(e){return{data:e,node:o.getById(e.Id)}})},t.prototype.moveAfter=function(e,n){var r=Object(m.n)({nodeId:e,previousNodeId:n});return this.clone(t,"MoveAfter").postCore({body:r})},t}(j),yt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"children",{get:function(){return new ft(this,"Children")},enumerable:!0,configurable:!0}),t.prototype.delete=function(){return e.prototype.deleteCore.call(this)},t.prototype.update=function(e){var t=this,n=Object(m.n)(Object(m.f)({__metadata:{type:"SP.NavigationNode"}},e));return this.postCore({body:n,headers:{"X-HTTP-Method":"MERGE"}}).then(function(e){return{data:e,node:t}})},t}(A),gt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"quicklaunch",{get:function(){return new ft(this,"quicklaunch")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"topNavigationBar",{get:function(){return new ft(this,"topnavigationbar")},enumerable:!0,configurable:!0}),t=o([d("navigation")],t)}(R),mt=function(e){function t(t,n){return void 0===n&&(n=null),e.call(this,t,n)||this}return r(t,e),t.prototype.getMenuState=function(e,n,r,o){return void 0===e&&(e=null),void 0===n&&(n=10),void 0===r&&(r=null),void 0===o&&(o=null),new t(this,"_api/navigation/MenuState").postCore({body:Object(m.n)({customProperties:o,depth:n,mapProviderName:r,menuNodeKey:e})})},t.prototype.getMenuNodeKey=function(e,n){return void 0===n&&(n=null),new t(this,"_api/navigation/MenuNodeKey").postCore({body:Object(m.n)({currentUrl:e,mapProviderName:n})})},t}(R),bt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.FromUrl=function(e){if(null===e)return new n("");var t=e.indexOf("_api/");return new n(t>-1?e.substr(0,t):e)},t.prototype.getRelatedItems=function(e,t){var r=this.clone(n,null);return r.concat(".GetRelatedItems"),r.postCore({body:Object(m.n)({SourceItemID:t,SourceListName:e})})},t.prototype.getPageOneRelatedItems=function(e,t){var r=this.clone(n,null);return r.concat(".GetPageOneRelatedItems"),r.postCore({body:Object(m.n)({SourceItemID:t,SourceListName:e})})},t.prototype.addSingleLink=function(e,t,r,o,i,s,a){void 0===a&&(a=!1);var u=this.clone(n,null);return u.concat(".AddSingleLink"),u.postCore({body:Object(m.n)({SourceItemID:t,SourceListName:e,SourceWebUrl:r,TargetItemID:i,TargetListName:o,TargetWebUrl:s,TryAddReverseLink:a})})},t.prototype.addSingleLinkToUrl=function(e,t,r,o){void 0===o&&(o=!1);var i=this.clone(n,null);return i.concat(".AddSingleLinkToUrl"),i.postCore({body:Object(m.n)({SourceItemID:t,SourceListName:e,TargetItemUrl:r,TryAddReverseLink:o})})},t.prototype.addSingleLinkFromUrl=function(e,t,r,o){void 0===o&&(o=!1);var i=this.clone(n,null);return i.concat(".AddSingleLinkFromUrl"),i.postCore({body:Object(m.n)({SourceItemUrl:e,TargetItemID:r,TargetListName:t,TryAddReverseLink:o})})},t.prototype.deleteSingleLink=function(e,t,r,o,i,s,a){void 0===a&&(a=!1);var u=this.clone(n,null);return u.concat(".DeleteSingleLink"),u.postCore({body:Object(m.n)({SourceItemID:t,SourceListName:e,SourceWebUrl:r,TargetItemID:i,TargetListName:o,TargetWebUrl:s,TryDeleteReverseLink:a})})};var n;return t=n=o([d("_api/SP.RelatedItemManager")],t)}(R),vt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),Object.defineProperty(t.prototype,"installedLanguages",{get:function(){return new St(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"globalInstalledLanguages",{get:function(){return new St(this,"globalinstalledlanguages")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"timeZone",{get:function(){return new Tt(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"timeZones",{get:function(){return new Ot(this)},enumerable:!0,configurable:!0}),t=o([d("regionalsettings")],t)}(A),St=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t=o([d("installedlanguages")],t)}(j),Tt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.utcToLocalTime=function(e){var t;return t="string"==typeof e?e:e.toISOString(),this.clone(n,"utctolocaltime('"+t+"')").postCore().then(function(e){return Object(m.j)(e,"UTCToLocalTime")?e.UTCToLocalTime:e})},t.prototype.localTimeToUTC=function(e){var t;return t="string"==typeof e?e:Object(m.e)(e,"minute",-1*e.getTimezoneOffset()).toISOString(),this.clone(n,"localtimetoutc('"+t+"')").postCore().then(function(e){return Object(m.j)(e,"LocalTimeToUTC")?e.LocalTimeToUTC:e})};var n;return t=n=o([d("timezone")],t)}(A),Ot=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.getById=function(e){return this.clone(n,"GetById("+e+")").postCore({},c(Tt))};var n;return t=n=o([d("timezones")],t)}(j),wt=function(e){function t(n,r){return e.call(this,t.getBaseUrl(n),"_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility."+r)||this}return r(t,e),t.getBaseUrl=function(e){if("string"==typeof e)return e;var t=e,n=t.toUrl(),r=n.indexOf("_api/");return r<0?n:n.substr(0,r)},t.prototype.execute=function(e){return this.postCore({body:JSON.stringify(e),headers:{"Content-Type":"application/json;charset=utf-8"}})},t.prototype.createSiteDesign=function(e){return i(this,void 0,void 0,function(){return s(this,function(n){switch(n.label){case 0:return[4,this.clone(t,"CreateSiteDesign").execute({info:e})];case 1:return[2,n.sent()]}})})},t.prototype.applySiteDesign=function(e,n){return i(this,void 0,void 0,function(){return s(this,function(r){switch(r.label){case 0:return[4,this.clone(t,"ApplySiteDesign").execute({siteDesignId:e,webUrl:n})];case 1:return[2,r.sent()]}})})},t.prototype.getSiteDesigns=function(){return i(this,void 0,void 0,function(){return s(this,function(e){switch(e.label){case 0:return[4,this.clone(t,"GetSiteDesigns").execute({})];case 1:return[2,e.sent()]}})})},t.prototype.getSiteDesignMetadata=function(e){return i(this,void 0,void 0,function(){return s(this,function(n){switch(n.label){case 0:return[4,this.clone(t,"GetSiteDesignMetadata").execute({id:e})];case 1:return[2,n.sent()]}})})},t.prototype.updateSiteDesign=function(e){return i(this,void 0,void 0,function(){return s(this,function(n){switch(n.label){case 0:return[4,this.clone(t,"UpdateSiteDesign").execute({updateInfo:e})];case 1:return[2,n.sent()]}})})},t.prototype.deleteSiteDesign=function(e){return i(this,void 0,void 0,function(){return s(this,function(n){switch(n.label){case 0:return[4,this.clone(t,"DeleteSiteDesign").execute({id:e})];case 1:return[2,n.sent()]}})})},t.prototype.getSiteDesignRights=function(e){return i(this,void 0,void 0,function(){return s(this,function(n){switch(n.label){case 0:return[4,this.clone(t,"GetSiteDesignRights").execute({id:e})];case 1:return[2,n.sent()]}})})},t.prototype.grantSiteDesignRights=function(e,n,r){return void 0===r&&(r=1),i(this,void 0,void 0,function(){return s(this,function(o){switch(o.label){case 0:return[4,this.clone(t,"GrantSiteDesignRights").execute({grantedRights:r.toString(),id:e,principalNames:n})];case 1:return[2,o.sent()]}})})},t.prototype.revokeSiteDesignRights=function(e,n){return i(this,void 0,void 0,function(){return s(this,function(r){switch(r.label){case 0:return[4,this.clone(t,"RevokeSiteDesignRights").execute({id:e,principalNames:n})];case 1:return[2,r.sent()]}})})},t.prototype.addSiteDesignTask=function(e,n){return i(this,void 0,void 0,function(){return s(this,function(r){switch(r.label){case 0:return[4,this.clone(t,"AddSiteDesignTask").execute({webUrl:e,siteDesignId:n})];case 1:return[2,r.sent()]}})})},t.prototype.addSiteDesignTaskToCurrentWeb=function(e){return i(this,void 0,void 0,function(){return s(this,function(n){switch(n.label){case 0:return[4,this.clone(t,"AddSiteDesignTaskToCurrentWeb").execute({siteDesignId:e})];case 1:return[2,n.sent()]}})})},t.prototype.getSiteDesignTask=function(e){return i(this,void 0,void 0,function(){var n;return s(this,function(r){switch(r.label){case 0:return[4,this.clone(t,"GetSiteDesignTask").execute({taskId:e})];case 1:return n=r.sent(),[2,Object(m.j)(n,"ID")?n:null]}})})},t.prototype.getSiteDesignRun=function(e,n){return i(this,void 0,void 0,function(){return s(this,function(r){switch(r.label){case 0:return[4,this.clone(t,"GetSiteDesignRun").execute({webUrl:e,siteDesignId:n})];case 1:return[2,r.sent()]}})})},t.prototype.getSiteDesignRunStatus=function(e,n){return i(this,void 0,void 0,function(){return s(this,function(r){switch(r.label){case 0:return[4,this.clone(t,"GetSiteDesignRunStatus").execute({webUrl:e,runId:n})];case 1:return[2,r.sent()]}})})},t}(R),_t=function(e){function t(n,r){return e.call(this,t.getBaseUrl(n),"_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility."+r)||this}return r(t,e),t.getBaseUrl=function(e){if("string"==typeof e)return e;var t=e,n=t.toUrl(),r=n.indexOf("_api/");return r<0?n:n.substr(0,r)},t.prototype.execute=function(e){return this.postCore({body:JSON.stringify(e)})},t.prototype.getSiteScripts=function(){return this.clone(t,"GetSiteScripts",!0).execute({})},t.prototype.createSiteScript=function(e,n,r){return i(this,void 0,void 0,function(){return s(this,function(o){switch(o.label){case 0:return[4,this.clone(t,"CreateSiteScript(Title=@title,Description=@desc)?@title='"+encodeURIComponent(e)+"'&@desc='"+encodeURIComponent(n)+"'").execute(r)];case 1:return[2,o.sent()]}})})},t.prototype.getSiteScriptMetadata=function(e){return i(this,void 0,void 0,function(){return s(this,function(n){switch(n.label){case 0:return[4,this.clone(t,"GetSiteScriptMetadata").execute({id:e})];case 1:return[2,n.sent()]}})})},t.prototype.deleteSiteScript=function(e){return i(this,void 0,void 0,function(){return s(this,function(n){switch(n.label){case 0:return[4,this.clone(t,"DeleteSiteScript").execute({id:e})];case 1:return n.sent(),[2]}})})},t.prototype.updateSiteScript=function(e,n){return i(this,void 0,void 0,function(){return s(this,function(r){switch(r.label){case 0:return n&&(e.Content=JSON.stringify(n)),[4,this.clone(t,"UpdateSiteScript").execute({updateInfo:e})];case 1:return[2,r.sent()]}})})},t.prototype.getSiteScriptFromList=function(e){return i(this,void 0,void 0,function(){return s(this,function(n){switch(n.label){case 0:return[4,this.clone(t,"GetSiteScriptFromList").execute({listUrl:e})];case 1:return[2,n.sent()]}})})},t.prototype.getSiteScriptFromWeb=function(e,n){return i(this,void 0,void 0,function(){return s(this,function(r){switch(r.label){case 0:return[4,this.clone(t,"getSiteScriptFromWeb").execute({webUrl:e,info:n})];case 1:return[2,r.sent()]}})})},t}(R),Ct=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.add=function(e,t,r,o,i,s){void 0===r&&(r=""),void 0===o&&(o="STS"),void 0===i&&(i=1033),void 0===s&&(s=!0);var a={Description:r,Language:i,Title:e,Url:t,UseSamePermissionsAsParentSite:s,WebTemplate:o},c=Object(m.n)({parameters:Object(m.f)({__metadata:{type:"SP.WebCreationInformation"}},a)});return this.clone(n,"add").postCore({body:c}).then(function(e){return{data:e,web:new It(u(e).replace(/_api\/web\/?/i,""))}})};var n;return t=n=o([d("webs")],t)}(j),Pt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t=o([d("webinfos")],t)}(j),It=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.fromUrl=function(e,t){return new n(a(e),t)},Object.defineProperty(t.prototype,"webs",{get:function(){return new Ct(this)},enumerable:!0,configurable:!0}),t.prototype.getParentWeb=function(){var e=this;return this.select("ParentWeb/Id").expand("ParentWeb").get().then(function(t){var n=t.ParentWeb;return n?new dt(e.parentUrl).openWebById(n.Id):null})},t.prototype.getSubwebsFilteredForCurrentUser=function(e,t){return void 0===e&&(e=-1),void 0===t&&(t=-1),this.clone(Ct,"getSubwebsFilteredForCurrentUser(nWebTemplateFilter="+e+",nConfigurationFilter="+t+")")},Object.defineProperty(t.prototype,"allProperties",{get:function(){return this.clone(A,"allproperties")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"webinfos",{get:function(){return new Pt(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"contentTypes",{get:function(){return new Ce(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"lists",{get:function(){return new Me(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"fields",{get:function(){return new Ue(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"features",{get:function(){return new pt(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"availablefields",{get:function(){return new Ue(this,"availablefields")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"navigation",{get:function(){return new gt(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"siteUsers",{get:function(){return new x(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"siteGroups",{get:function(){return new F(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"siteUserInfoList",{get:function(){return new We(this,"siteuserinfolist")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"regionalSettings",{get:function(){return new vt(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"currentUser",{get:function(){return new D(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"folders",{get:function(){return new we(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"userCustomActions",{get:function(){return new qe(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"roleDefinitions",{get:function(){return new M(this)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"relatedItems",{get:function(){return bt.FromUrl(this.toUrl())},enumerable:!0,configurable:!0}),t.prototype.createBatch=function(){return new lt(this.parentUrl)},Object.defineProperty(t.prototype,"rootFolder",{get:function(){return new _e(this,"rootFolder")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"associatedOwnerGroup",{get:function(){return new B(this,"associatedownergroup")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"associatedMemberGroup",{get:function(){return new B(this,"associatedmembergroup")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"associatedVisitorGroup",{get:function(){return new B(this,"associatedvisitorgroup")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"defaultDocumentLibrary",{get:function(){return new We(this,"DefaultDocumentLibrary")},enumerable:!0,configurable:!0}),t.prototype.getFolderById=function(e){return new _e(this,"getFolderById('"+e+"')")},t.prototype.getFolderByServerRelativeUrl=function(e){return new _e(this,"getFolderByServerRelativeUrl('"+e+"')")},t.prototype.getFolderByServerRelativePath=function(e){return new _e(this,"getFolderByServerRelativePath(decodedUrl='"+e+"')")},t.prototype.getFileById=function(e){return new tt(this,"getFileById('"+e+"')")},t.prototype.getFileByServerRelativeUrl=function(e){return new tt(this,"getFileByServerRelativeUrl('"+e+"')")},t.prototype.getFileByServerRelativePath=function(e){return new tt(this,"getFileByServerRelativePath(decodedUrl='"+e+"')")},t.prototype.getList=function(e){return new We(this,"getList('"+e+"')")},t.prototype.update=function(e){var t=this,n=Object(m.n)(Object(m.f)({__metadata:{type:"SP.Web"}},e));return this.postCore({body:n,headers:{"X-HTTP-Method":"MERGE"}}).then(function(e){return{data:e,web:t}})},t.prototype.delete=function(){return e.prototype.deleteCore.call(this)},t.prototype.applyTheme=function(e,t,r,o){var i=Object(m.n)({backgroundImageUrl:r,colorPaletteUrl:e,fontSchemeUrl:t,shareGenerated:o});return this.clone(n,"applytheme").postCore({body:i})},t.prototype.applyWebTemplate=function(e){var t=this.clone(n,"applywebtemplate");return t.concat("(@t)"),t.query.set("@t",e),t.postCore()},t.prototype.ensureUser=function(e){var t=Object(m.n)({logonName:e});return this.clone(n,"ensureuser").postCore({body:t}).then(function(e){return{data:e,user:new L(u(e))}})},t.prototype.availableWebTemplates=function(e,t){return void 0===e&&(e=1033),void 0===t&&(t=!0),new j(this,"getavailablewebtemplates(lcid="+e+", doincludecrosslanguage="+t+")")},t.prototype.getCatalog=function(e){return this.clone(n,"getcatalog("+e+")").select("Id").get().then(function(e){return new We(u(e))})},t.prototype.getChanges=function(e){var t=Object(m.n)({query:Object(m.f)({__metadata:{type:"SP.ChangeQuery"}},e)});return this.clone(n,"getchanges").postCore({body:t})},Object.defineProperty(t.prototype,"customListTemplate",{get:function(){return new j(this,"getcustomlisttemplates")},enumerable:!0,configurable:!0}),t.prototype.getUserById=function(e){return new L(this,"getUserById("+e+")")},t.prototype.mapToIcon=function(e,t,r){return void 0===t&&(t=0),void 0===r&&(r=""),this.clone(n,"maptoicon(filename='"+e+"', progid='"+r+"', size="+t+")").get()},t.prototype.getStorageEntity=function(e){return this.clone(n,"getStorageEntity('"+e+"')").get()},t.prototype.setStorageEntity=function(e,t,r,o){return void 0===r&&(r=""),void 0===o&&(o=""),this.clone(n,"setStorageEntity").postCore({body:Object(m.n)({comments:o,description:r,key:e,value:t})})},t.prototype.removeStorageEntity=function(e){return this.clone(n,"removeStorageEntity('"+e+"')").postCore()},t.prototype.getAppCatalog=function(e){return new ut(e||this)},t.prototype.getSiteCollectionAppCatalog=function(e){return new ut(e||this,"_api/web/sitecollectionappcatalog/AvailableApps")},t.prototype.getClientSideWebParts=function(){return this.clone(j,"GetClientSideWebParts").get()},t.prototype.addClientSidePage=function(e,t){return void 0===t&&(t=e.replace(/\.[^\/.]+$/,"")),Nt.create(this,e,t)},t.prototype.addClientSidePageByPath=function(e,t){return void 0===t&&(t=e.replace(/\.[^\/.]+$/,"")),Nt.create(this,e,t)},t.prototype.createDefaultAssociatedGroups=function(e,t,r){var o=this.clone(n,"createDefaultAssociatedGroups(userLogin=@u,userLogin2=@v,groupNameSeed=@s)");return o.query.set("@u","'"+encodeURIComponent(e||"")+"'"),o.query.set("@v","'"+encodeURIComponent(t||"")+"'"),o.query.set("@s","'"+encodeURIComponent(r||"")+"'"),o.postCore()},t.prototype.hubSiteData=function(e){return void 0===e&&(e=!1),i(this,void 0,void 0,function(){return s(this,function(t){return[2,this.clone(n,"hubSiteData("+e+")").get().then(function(e){return JSON.parse(e)})]})})},t.prototype.syncHubSiteTheme=function(){return this.clone(n,"syncHubSiteTheme").postCore()},t.prototype.getSiteDesignRuns=function(e){return new wt(this,"").getSiteDesignRun(void 0,e)},t.prototype.getSiteScript=function(e){return new _t(this,"").getSiteScriptFromWeb(void 0,e)},t.prototype.addSiteDesignTask=function(e){return new wt(this,"").addSiteDesignTaskToCurrentWeb(e)},t.prototype.getSiteDesignRunStatus=function(e){return new wt(this,"").getSiteDesignRunStatus(void 0,e)};var n;return t=n=o([d("_api/web")],t)}(fe);!function(e){e[e.NotPromoted=0]="NotPromoted",e[e.PromoteOnPublish=1]="PromoteOnPublish",e[e.Promoted=2]="Promoted"}(at||(at={}));var Et,Nt=function(e){function t(n,r,o,i,s,u){void 0===i&&(i=!1),void 0===s&&(s=[]),void 0===u&&(u=!1);var c=e.call(this,n,r)||this;return c.json=o,c.sections=s,c.commentsDisabled=u,c._bannerImageDirty=!1,"string"==typeof n?(c._parentUrl="",c._url=Object(m.d)(a(n),r)):c.extend(t.initFrom(n,null),r),c._pageSettings={controlType:0,pageSettingsSlice:{isDefaultDescription:!0,isDefaultThumbnail:!0}},c._layoutPart=t.getDefaultLayoutPart(),void 0===o||i||c.fromJSON(o),c}return r(t,e),t.create=function(e,n,r,o){return void 0===o&&(o="Article"),i(this,void 0,void 0,function(){var i,a;return s(this,function(s){switch(s.label){case 0:return n=n.replace(/\.aspx$/i,""),[4,t.initFrom(e,"_api/sitepages/pages").postCore({body:Object(m.n)(Object.assign(h("SP.Publishing.SitePage"),{PageLayoutType:o}))})];case 1:return i=s.sent(),a=new t(e,"",i),a.title=n,[4,a.save(!1)];case 2:return s.sent(),a.title=r,[2,a]}})})},t.fromFile=function(e){return e.getItem().then(function(n){return new t(a(e.toUrl()),"",{Id:n.Id},!0).configureFrom(e).load()})},t.getDefaultLayoutPart=function(){return{dataVersion:"1.4",description:"Title Region Description",id:"cbe7b0a9-3504-44dd-a3a3-0e5cacd07788",instanceId:"cbe7b0a9-3504-44dd-a3a3-0e5cacd07788",properties:{authors:[],layoutType:"FullWidthImage",showPublishDate:!1,showTopicHeader:!1,textAlignment:"Left",title:"",topicHeader:""},serverProcessedContent:{htmlStrings:{},searchablePlainTexts:{},imageSources:{},links:{}},title:"Title area"}},t.initFrom=function(e,n){return new t(a(e.toUrl()),n).configureFrom(e)},Object.defineProperty(t.prototype,"pageLayout",{get:function(){return this.json.PageLayoutType},set:function(e){this.json.PageLayoutType=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"bannerImageUrl",{get:function(){return this.json.BannerImageUrl},set:function(e){this.json.BannerImageUrl=e,this._bannerImageDirty=!0},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"bannerImageSourceType",{get:function(){return this._layoutPart.properties.imageSourceType},set:function(e){this._layoutPart.properties.imageSourceType=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"topicHeader",{get:function(){return Object(m.q)(this.json.TopicHeader)?this.json.TopicHeader:""},set:function(e){this.json.TopicHeader=e,this._layoutPart.properties.topicHeader=e,Object(m.r)(e)&&(this.showTopicHeader=!1)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"title",{get:function(){return this._layoutPart.properties.title},set:function(e){this.json.Title=e,this._layoutPart.properties.title=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"layoutType",{get:function(){return this._layoutPart.properties.layoutType},set:function(e){this._layoutPart.properties.layoutType=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"headerTextAlignment",{get:function(){return this._layoutPart.properties.textAlignment},set:function(e){this._layoutPart.properties.textAlignment=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"showTopicHeader",{get:function(){return this._layoutPart.properties.showTopicHeader},set:function(e){this._layoutPart.properties.showTopicHeader=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"showPublishDate",{get:function(){return this._layoutPart.properties.showPublishDate},set:function(e){this._layoutPart.properties.showPublishDate=e},enumerable:!0,configurable:!0}),t.prototype.addSection=function(){var e=new Rt(this,f(this.sections));return this.sections.push(e),e},t.prototype.fromJSON=function(e){this.json=e;var t=JSON.parse(e.CanvasContent1),n=JSON.parse(e.LayoutWebpartsContent);return n&&n.length>0&&(this._layoutPart=n[0]),this.setControls(t),this},t.prototype.load=function(){var e=this;return this.getItem("Id","CommentsDisabled").then(function(t){return new R(e,"_api/sitepages/pages("+t.Id+")").get().then(function(n){return e.commentsDisabled=t.CommentsDisabled,e.fromJSON(n)})})},t.prototype.save=function(e){var n=this;if(void 0===e&&(e=!0),null===this.json.Id)throw Error("The id for this page is null. If you want to create a new page, please use ClientSidePage.Create");var r=Promise.resolve({});return this._bannerImageDirty&&(r=r.then(function(e){return new Promise(function(e,t){var r=n.json.BannerImageUrl;Object(m.m)(r)&&(r=r.replace(/^https?:\/\/[a-z0-9\.]*?\.[a-z]{2,3}\//i,"/"));var o=new dt(a(n.toUrl())),i=new It(a(n.toUrl())),s=i.getFileByServerRelativePath(r),u="",c="",l="",p="",h="";Promise.all([o.select("Id","Url").get().then(function(e){return u=e.Id}),i.select("Id","Url").get().then(function(e){c=e.Id,h=e.Url}),s.listItemAllFields.select("UniqueId","ParentList/Id").expand("ParentList").get().then(function(e){l=e.UniqueId,p=e.ParentList.Id})]).then(function(){var t=new R(h,"_layouts/15/getpreview.ashx");t.query.set("guidSite",""+u),t.query.set("guidWeb",""+c),t.query.set("guidFile",""+l),n.bannerImageUrl=t.toUrlAndQuery(),Object(m.q)(n._layoutPart.serverProcessedContent)||(n._layoutPart.serverProcessedContent={}),n._layoutPart.serverProcessedContent.imageSources={imageSource:r},Object(m.q)(n._layoutPart.serverProcessedContent.customMetadata)||(n._layoutPart.serverProcessedContent.customMetadata={}),n._layoutPart.serverProcessedContent.customMetadata.imageSource={listId:p,siteId:u,uniqueId:l,webId:c},n._layoutPart.properties.webId=c,n._layoutPart.properties.siteId=u,n._layoutPart.properties.listId=p,n._layoutPart.properties.uniqueId=l,e()}).catch(t)})})),this.json.IsPageCheckedOutToCurrentUser||(r=r.then(function(e){return t.initFrom(n,"_api/sitepages/pages("+n.json.Id+")/checkoutpage").postCore()})),r=r.then(function(e){var r=Object.assign(h("SP.Publishing.SitePage"),{AuthorByline:n.json.AuthorByline||[],BannerImageUrl:n.bannerImageUrl,CanvasContent1:n.getCanvasContent1(),LayoutWebpartsContent:n.getLayoutWebpartsContent(),Title:n.title,TopicHeader:n.topicHeader}),o=t.initFrom(n,"_api/sitepages/pages("+n.json.Id+")/savepage");return o.configure({headers:{"if-match":"*"}}),o.postCore({body:Object(m.n)(r)})}),e&&(r=r.then(function(e){return t.initFrom(n,"_api/sitepages/pages("+n.json.Id+")/publish").postCore()}).then(function(e){e&&(n.json.IsPageCheckedOutToCurrentUser=!1)})),r=r.then(function(e){n._bannerImageDirty=!1})},t.prototype.discardPageCheckout=function(){return i(this,void 0,void 0,function(){var e;return s(this,function(n){switch(n.label){case 0:if(null===this.json.Id)throw Error("The id for this page is null. If you want to create a new page, please use ClientSidePage.Create");return[4,t.initFrom(this,"_api/sitepages/pages("+this.json.Id+")/discardPage").postCore({body:Object(m.n)(h("SP.Publishing.SitePage"))})];case 1:return e=n.sent(),this.fromJSON(e),[2]}})})},t.prototype.promoteToNews=function(){return i(this,void 0,void 0,function(){return s(this,function(e){return[2,this.promoteNewsImpl("promoteToNews")]})})},t.prototype.enableComments=function(){var e=this;return this.setCommentsOn(!0).then(function(t){return e.commentsDisabled=!1,t})},t.prototype.disableComments=function(){var e=this;return this.setCommentsOn(!1).then(function(t){return e.commentsDisabled=!0,t})},t.prototype.findControlById=function(e){return this.findControl(function(t){return t.id===e})},t.prototype.findControl=function(e){for(var t=0;t<this.sections.length;t++)for(var n=0;n<this.sections[t].columns.length;n++)for(var r=0;r<this.sections[t].columns[n].controls.length;r++)if(e(this.sections[t].columns[n].controls[r]))return this.sections[t].columns[n].controls[r];return null},t.prototype.like=function(){return this.getItem().then(function(e){return e.like()})},t.prototype.unlike=function(){return this.getItem().then(function(e){return e.unlike()})},t.prototype.getLikedByInformation=function(){return this.getItem().then(function(e){return e.getLikedByInformation()})},t.prototype.copyPage=function(e,n,r,o){return void 0===o&&(o=!0),i(this,void 0,void 0,function(){var i;return s(this,function(s){switch(s.label){case 0:return[4,t.create(e,n,r,this.pageLayout)];case 1:return i=s.sent(),i.setControls(this.getControls()),[4,i.save(o)];case 2:return s.sent(),[2,i]}})})},t.prototype.setBannerImage=function(e,t){this.bannerImageUrl=e,this.bannerImageSourceType=2,Object(m.q)(t)&&(Object(m.j)(t,"translateX")&&(this._layoutPart.properties.translateX=t.translateX),Object(m.j)(t,"translateY")&&(this._layoutPart.properties.translateY=t.translateY),Object(m.j)(t,"imageSourceType")&&(this.bannerImageSourceType=t.imageSourceType),Object(m.j)(t,"altText")&&(this._layoutPart.properties.altText=t.altText))},t.prototype.getCanvasContent1=function(){return JSON.stringify(this.getControls())},t.prototype.getLayoutWebpartsContent=function(){return this._layoutPart?JSON.stringify([this._layoutPart]):JSON.stringify(null)},t.prototype.setControls=function(e){if(e&&e.length){for(var t=0;t<e.length;t++){switch(Object(m.j)(e[t],"controlType")?e[t].controlType:0){case 0:Object(m.j)(e[t],"pageSettingsSlice")?this._pageSettings=e[t]:this.mergeColumnToTree(new jt(e[t]));break;case 3:var n=new Ut(e[t]);this.mergePartToTree(n,n.data.position);break;case 4:var r=e[t],o=new xt(r.innerHTML,r);this.mergePartToTree(o,o.data.position)}}y(this.sections)}},t.prototype.getControls=function(){var e=this;y(this.sections);var t=[];return this.sections.forEach(function(n){n.columns.forEach(function(r){r.controls.length<1?t.push({displayMode:r.data.displayMode,emphasis:e.getEmphasisObj(n.emphasis),position:r.data.position}):r.controls.forEach(function(r){r.data.emphasis=e.getEmphasisObj(n.emphasis),t.push(r.data)})})}),t.push(this._pageSettings),t},t.prototype.getEmphasisObj=function(e){return e<1||e>3?{}:{zoneEmphasis:e}},t.prototype.setCommentsOn=function(e){return this.getItem().then(function(t){return new ze(t,"SetCommentsDisabled("+!e+")").update({})})},t.prototype.promoteNewsImpl=function(e){return i(this,void 0,void 0,function(){var n;return s(this,function(r){switch(r.label){case 0:if(null===this.json.Id)throw Error("The id for this page is null. If you want to create a new page, please use ClientSidePage.Create");return[4,t.initFrom(this,"_api/sitepages/pages("+this.json.Id+")/"+e).postCore({body:Object(m.n)(h("SP.Publishing.SitePage"))})];case 1:return n=r.sent(),[2,n]}})})},t.prototype.mergePartToTree=function(e,t){var n=null,r=null,o=12,i=0,s=0;t&&(Object(m.j)(t,"zoneIndex")&&(s=t.zoneIndex),Object(m.j)(t,"sectionIndex")&&(i=t.sectionIndex),Object(m.j)(t,"sectionFactor")&&(o=t.sectionFactor));var a=this.sections.filter(function(e){return e.order===s});a.length<1?(n=new Rt(this,s),this.sections.push(n)):n=a[0],n.emphasis=e.data.emphasis&&e.data.emphasis.zoneEmphasis?e.data.emphasis.zoneEmphasis:0;var u=n.columns.filter(function(e){return e.order===i});r=u.length<1?n.addColumn(o):u[0],e.column=r,r.addControl(e)},t.prototype.mergeColumnToTree=function(e){var t=Object(m.j)(e.data,"position")&&Object(m.j)(e.data.position,"zoneIndex")?e.data.position.zoneIndex:0,n=null,r=this.sections.filter(function(e){return e.order===t});r.length<1?(n=new Rt(this,t),n.emphasis=e.data.emphasis.zoneEmphasis||0,this.sections.push(n)):n=r[0],e.section=n,n.columns.push(e)},t.prototype.getItem=function(){for(var e=this,n=[],r=0;r<arguments.length;r++)n[r]=arguments[r];return t.initFrom(this,"/_api/lists/EnsureClientRenderedSitePagesLibrary").select("EnableModeration","EnableMinorVersions","Id").postCore().then(function(t){var r=new We(t["odata.id"]).configureFrom(e).items.getById(e.json.Id);return r.select.apply(r,n).get().then(function(t){return Object(m.f)(new ze(u(t)).configureFrom(e),t)})})},t}(R),Rt=function(){function e(e,t,n,r){void 0===n&&(n=[]),void 0===r&&(r=0),this.page=e,this.columns=n,this._emphasis=r,this._memId=Object(m.h)(),this._order=t}return Object.defineProperty(e.prototype,"order",{get:function(){return this._order},set:function(e){this._order=e;for(var t=0;t<this.columns.length;t++)this.columns[t].data.position.zoneIndex=e},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"defaultColumn",{get:function(){return this.columns.length<1&&this.addColumn(12),this.columns[0]},enumerable:!0,configurable:!0}),e.prototype.addColumn=function(e){var t=new jt;return t.section=this,t.data.position.zoneIndex=this.order,t.data.position.sectionFactor=e,t.order=f(this.columns),this.columns.push(t),t},e.prototype.addControl=function(e){return this.defaultColumn.addControl(e),this},Object.defineProperty(e.prototype,"emphasis",{get:function(){return this._emphasis},set:function(e){this._emphasis=e},enumerable:!0,configurable:!0}),e.prototype.remove=function(){var e=this;this.page.sections=this.page.sections.filter(function(t){return t._memId!==e._memId}),y(this.page.sections)},e}(),jt=function(){function e(t,n){void 0===t&&(t=JSON.parse(JSON.stringify(e.Default))),void 0===n&&(n=[]),this.json=t,this.controls=n,this._section=null,this._memId=Object(m.h)()}return Object.defineProperty(e.prototype,"data",{get:function(){return this.json},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"section",{get:function(){return this._section},set:function(e){this._section=e},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"order",{get:function(){return this.data.position.sectionIndex},set:function(e){this.data.position.sectionIndex=e;for(var t=0;t<this.controls.length;t++)this.controls[t].data.position.zoneIndex=this.data.position.zoneIndex,this.controls[t].data.position.sectionIndex=e},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"factor",{get:function(){return this.data.position.sectionFactor},set:function(e){this.data.position.sectionFactor=e},enumerable:!0,configurable:!0}),e.prototype.addControl=function(e){return e.column=this,this.controls.push(e),this},e.prototype.getControl=function(e){return this.controls[e]},e.prototype.remove=function(){var e=this;this.section.columns=this.section.columns.filter(function(t){return t._memId!==e._memId}),y(this.section.columns)},e.Default={controlType:0,displayMode:2,emphasis:{},position:{layoutIndex:1,sectionFactor:12,sectionIndex:1,zoneIndex:1}},e}(),At=function(){function e(e){this.json=e}return Object.defineProperty(e.prototype,"id",{get:function(){return this.json.id},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"data",{get:function(){return this.json},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"column",{get:function(){return this._column},set:function(e){this._column=e,this.onColumnChange(this._column)},enumerable:!0,configurable:!0}),e.prototype.remove=function(){var e=this;this.column.controls=this.column.controls.filter(function(t){return t.id!==e.id}),y(this.column.controls)},e.prototype.setData=function(e){this.json=e},e}(),xt=function(e){function t(n,r){void 0===r&&(r=JSON.parse(JSON.stringify(t.Default)));var o=this;return Object(m.r)(r.id)&&(r.id=Object(m.h)(),r.anchorComponentId=r.id),o=e.call(this,r)||this,o.text=n,o}return r(t,e),Object.defineProperty(t.prototype,"text",{get:function(){return this.data.innerHTML},set:function(e){e.startsWith("<p>")||(e="<p>"+e+"</p>"),this.data.innerHTML=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"order",{get:function(){return this.data.position.controlIndex},set:function(e){this.data.position.controlIndex=e},enumerable:!0,configurable:!0}),t.prototype.onColumnChange=function(e){this.data.position.sectionFactor=e.factor,this.data.position.controlIndex=f(e.controls),this.data.position.zoneIndex=e.data.position.zoneIndex,this.data.position.sectionIndex=e.order},t.Default={addedFromPersistedData:!1,anchorComponentId:"",controlType:4,displayMode:2,editorType:"CKEditor",emphasis:{},id:"",innerHTML:"",position:{controlIndex:1,layoutIndex:1,sectionFactor:12,sectionIndex:1,zoneIndex:1}},t}(At),Ut=function(e){function t(n){return void 0===n&&(n=JSON.parse(JSON.stringify(t.Default))),e.call(this,n)||this}return r(t,e),t.fromComponentDef=function(e){var n=new t;return n.import(e),n},Object.defineProperty(t.prototype,"title",{get:function(){return this.data.webPartData.title},set:function(e){this.data.webPartData.title=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"description",{get:function(){return this.data.webPartData.description},set:function(e){this.data.webPartData.description=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"order",{get:function(){return this.data.position.controlIndex},set:function(e){this.data.position.controlIndex=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"height",{get:function(){return this.data.reservedHeight},set:function(e){this.data.reservedHeight=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"width",{get:function(){return this.data.reservedWidth},set:function(e){this.data.reservedWidth=e},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"dataVersion",{get:function(){return this.data.webPartData.dataVersion},set:function(e){this.data.webPartData.dataVersion=e},enumerable:!0,configurable:!0}),t.prototype.setProperties=function(e){return this.data.webPartData.properties=Object(m.f)(this.data.webPartData.properties,e),this},t.prototype.getProperties=function(){return this.data.webPartData.properties},t.prototype.onColumnChange=function(e){this.data.position={controlIndex:f(e.controls),sectionFactor:e.factor,sectionIndex:e.data.position.sectionIndex,zoneIndex:e.data.position.zoneIndex}},t.prototype.import=function(e){var t=Object(m.h)(),n=e.Id.replace(/^\{|\}$/g,"").toLowerCase(),r=JSON.parse(e.Manifest),o=r.preconfiguredEntries[0];this.setData(Object.assign({},this.data,{id:t,webPartData:{dataVersion:"1.0",description:o.description.default,id:n,instanceId:t,properties:o.properties,title:o.title.default},webPartId:n}))},t.Default={addedFromPersistedData:!1,controlType:3,displayMode:2,emphasis:{},id:null,position:{controlIndex:1,sectionFactor:12,sectionIndex:1,zoneIndex:1},reservedHeight:500,reservedWidth:500,webPartData:null,webPartId:null},t}(At),Lt=(new Map([["text","Querytext"],["template","QueryTemplate"],["sourceId","SourceId"],["trimDuplicatesIncludeId",""],["startRow",""],["rowLimit",""],["rankingModelId",""],["rowsPerPage",""],["selectProperties",""],["culture",""],["timeZoneId",""],["refinementFilters",""],["refiners",""],["hiddenConstraints",""],["sortList",""],["timeout",""],["hithighlightedProperties",""],["clientType",""],["personalizationData",""],["resultsURL",""],["queryTag",""],["properties",""],["queryTemplatePropertiesUrl",""],["reorderingRules",""],["hitHighlightedMultivaluePropertyLimit",""],["collapseSpecification",""],["uiLanguage",""],["desiredSnippetLength",""],["maxSnippetLength",""],["summaryLength",""]]),new Map([]),function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.execute=function(e){var t=this,n=this.parseQuery(e),r=Object(m.n)({request:Object(m.f)(h("Microsoft.Office.Server.Search.REST.SearchRequest"),Object.assign({},n,{HitHighlightedProperties:this.fixArrProp(n.HitHighlightedProperties),Properties:this.fixArrProp(n.Properties),RefinementFilters:this.fixArrProp(n.RefinementFilters),ReorderingRules:this.fixArrProp(n.ReorderingRules),SelectProperties:this.fixArrProp(n.SelectProperties),SortList:this.fixArrProp(n.SortList)}))});if(this._useCaching){this._forceCaching=!0;var o="PnPjs.SearchWithCaching("+Object(m.i)(r)+")";Object(m.q)(this._cachingOptions)?/\/_api\/search\/postquery$/i.test(this._cachingOptions.key)&&(this._cachingOptions.key=o):this._cachingOptions=new v.c(o)}return this.postCore({body:r}).then(function(e){return new Dt(e,t.toUrl(),n)})},t.prototype.fixArrProp=function(e){return void 0===e?{results:[]}:(e=Object(m.k)(e)?e:[e],Object(m.j)(e,"results")?e:{results:e})},t.prototype.parseQuery=function(e){return"string"==typeof e?{Querytext:e}:e.toSearchQuery?e.toSearchQuery():e},t=o([d("_api/search/postquery")],t)}(A)),Dt=function(){function e(e,t,n,r,o){void 0===r&&(r=null),void 0===o&&(o=null),this._url=t,this._query=n,this._raw=r,this._primary=o,this._raw=e.postquery?e.postquery:e}return Object.defineProperty(e.prototype,"ElapsedTime",{get:function(){return this.RawSearchResults.ElapsedTime},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"RowCount",{get:function(){return this.RawSearchResults.PrimaryQueryResult.RelevantResults.RowCount},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"TotalRows",{get:function(){return this.RawSearchResults.PrimaryQueryResult.RelevantResults.TotalRows},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"TotalRowsIncludingDuplicates",{get:function(){return this.RawSearchResults.PrimaryQueryResult.RelevantResults.TotalRowsIncludingDuplicates},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"RawSearchResults",{get:function(){return this._raw},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"PrimarySearchResults",{get:function(){return null===this._primary&&(this._primary=this.formatSearchResults(this._raw.PrimaryQueryResult.RelevantResults.Table.Rows)),this._primary},enumerable:!0,configurable:!0}),e.prototype.getPage=function(e,t){if(this.TotalRows<this.RowCount)return Promise.resolve(null);var n=void 0!==t?t:Object(m.j)(this._query,"RowLimit")?this._query.RowLimit:10,r=Object(m.f)(this._query,{RowLimit:n,StartRow:n*(e-1)});return r.StartRow>this.TotalRows?Promise.resolve(null):new Lt(this._url,null).execute(r)},e.prototype.formatSearchResults=function(e){for(var t=new Array,n=e.results?e.results:e,r=0,o=n;r<o.length;r++){var i=o[r],s=i.Cells.results?i.Cells.results:i.Cells;t.push(s.reduce(function(e,t){return Object.defineProperty(e,t.Key,{configurable:!1,enumerable:!0,value:t.Value,writable:!1}),e},{}))}return t},e}();!function(e){e[e.Ascending=0]="Ascending",e[e.Descending=1]="Descending",e[e.FQLFormula=2]="FQLFormula"}(Et||(Et={}));var kt;!function(e){e[e.ResultContainsKeyword=0]="ResultContainsKeyword",e[e.TitleContainsKeyword=1]="TitleContainsKeyword",e[e.TitleMatchesKeyword=2]="TitleMatchesKeyword",e[e.UrlStartsWith=3]="UrlStartsWith",e[e.UrlExactlyMatches=4]="UrlExactlyMatches",e[e.ContentTypeIs=5]="ContentTypeIs",e[e.FileExtensionMatches=6]="FileExtensionMatches",e[e.ResultHasTag=7]="ResultHasTag",e[e.ManualCondition=8]="ManualCondition"}(kt||(kt={}));var Ft;!function(e){e[e.None=0]="None",e[e.StringType=1]="StringType",e[e.Int32Type=2]="Int32Type",e[e.BooleanType=3]="BooleanType",e[e.StringArrayType=4]="StringArrayType",e[e.UnSupportedType=5]="UnSupportedType"}(Ft||(Ft={}));var Bt,qt=(function(){function e(){}e.Documents="e7ec8cee-ded8-43c9-beb5-436b54b31e84",e.ItemsMatchingContentType="5dc9f503-801e-4ced-8a2c-5d1237132419",e.ItemsMatchingTag="e1327b9c-2b8c-4b23-99c9-3730cb29c3f7",e.ItemsRelatedToCurrentUser="48fec42e-4a92-48ce-8363-c2703a40e67d",e.ItemsWithSameKeywordAsThisItem="5c069288-1d17-454a-8ac6-9c642a065f48",e.LocalPeopleResults="b09a7990-05ea-4af9-81ef-edfab16c4e31",e.LocalReportsAndDataResults="203fba36-2763-4060-9931-911ac8c0583b",e.LocalSharePointResults="8413cd39-2156-4e00-b54d-11efd9abdb89",e.LocalVideoResults="78b793ce-7956-4669-aa3b-451fc5defebf",e.Pages="5e34578e-4d08-4edc-8bf3-002acf3cdbcc",e.Pictures="38403c8c-3975-41a8-826e-717f2d41568a",e.Popular="97c71db1-58ce-4891-8b64-585bc2326c12",e.RecentlyChangedItems="ba63bbae-fa9c-42c0-b027-9a878f16557c",e.RecommendedItems="ec675252-14fa-4fbe-84dd-8d098ed74181",e.Wiki="9479bf85-e257-4318-b5a8-81a180f5faa1"}(),function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.execute=function(e){return this.mapQueryToQueryString(e),this.get().then(function(e){var t=Object(m.j)(e,"suggest")?function(t){return e.suggest[t].results}:function(t){return e[t]};return{PeopleNames:t("PeopleNames"),PersonalResults:t("PersonalResults"),Queries:t("Queries")}})},t.prototype.mapQueryToQueryString=function(e){var t=this;this.query.set("querytext","'"+e.querytext+"'");var n=function(e){return function(n){return function(r){Object(m.j)(e,n)&&t.query.set(r,e[n].toString())}}}(e);n("count")("inumberofquerysuggestions"),n("personalCount")("inumberofresultsuggestions"),n("preQuery")("fprequerysuggestions"),n("hitHighlighting")("fhithighlighting"),n("capitalize")("fcapitalizefirstletters"),n("culture")("culture"),n("stemming")("enablestemming"),n("includePeople")("showpeoplenamesuggestions"),n("queryRules")("enablequeryrules"),n("prefixMatch")("fprefixmatchallterms")},t=o([d("_api/search/suggest")],t)}(A)),Gt=function(e){function t(t,n){void 0===n&&(n="_api/sp.userprofiles.peoplemanager");var r=e.call(this,t,n)||this;return r.clientPeoplePickerQuery=new Wt(t).configureFrom(r),r.profileLoader=new Mt(t).configureFrom(r),r}return r(t,e),Object.defineProperty(t.prototype,"editProfileLink",{get:function(){return this.clone(t,"EditProfileLink").get()},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isMyPeopleListPublic",{get:function(){return this.clone(t,"IsMyPeopleListPublic").get()},enumerable:!0,configurable:!0}),t.prototype.amIFollowedBy=function(e){var n=this.clone(t,"amifollowedby(@v)");return n.query.set("@v","'"+encodeURIComponent(e)+"'"),n.get()},t.prototype.amIFollowing=function(e){var n=this.clone(t,"amifollowing(@v)");return n.query.set("@v","'"+encodeURIComponent(e)+"'"),n.get()},t.prototype.getFollowedTags=function(e){return void 0===e&&(e=20),this.clone(t,"getfollowedtags("+e+")").get()},t.prototype.getFollowersFor=function(e){var n=this.clone(t,"getfollowersfor(@v)");return n.query.set("@v","'"+encodeURIComponent(e)+"'"),n.get()},Object.defineProperty(t.prototype,"myFollowers",{get:function(){return new j(this,"getmyfollowers")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"myProperties",{get:function(){return new t(this,"getmyproperties")},enumerable:!0,configurable:!0}),t.prototype.getPeopleFollowedBy=function(e){var n=this.clone(t,"getpeoplefollowedby(@v)");return n.query.set("@v","'"+encodeURIComponent(e)+"'"),n.get()},t.prototype.getPropertiesFor=function(e){var n=this.clone(t,"getpropertiesfor(@v)");return n.query.set("@v","'"+encodeURIComponent(e)+"'"),n.get()},Object.defineProperty(t.prototype,"trendingTags",{get:function(){var e=this.clone(t,null);return e.concat(".gettrendingtags"),e.get()},enumerable:!0,configurable:!0}),t.prototype.getUserProfilePropertyFor=function(e,n){var r=this.clone(t,"getuserprofilepropertyfor(accountname=@v, propertyname='"+n+"')");return r.query.set("@v","'"+encodeURIComponent(e)+"'"),r.get()},t.prototype.hideSuggestion=function(e){var n=this.clone(t,"hidesuggestion(@v)");return n.query.set("@v","'"+encodeURIComponent(e)+"'"),n.postCore()},t.prototype.isFollowing=function(e,n){var r=this.clone(t,null);return r.concat(".isfollowing(possiblefolloweraccountname=@v, possiblefolloweeaccountname=@y)"),r.query.set("@v","'"+encodeURIComponent(e)+"'"),r.query.set("@y","'"+encodeURIComponent(n)+"'"),r.get()},t.prototype.setMyProfilePic=function(e){var n=this;return new Promise(function(r,o){var i=null,s=new FileReader;s.onload=function(e){return i=e.target.result},s.readAsArrayBuffer(e),new t(n,"setmyprofilepicture").postCore({body:String.fromCharCode.apply(null,new Uint16Array(i))}).then(function(e){return r()}).catch(function(e){return o(e)})})},t.prototype.setSingleValueProfileProperty=function(e,n,r){var o=Object(m.n)({accountName:e,propertyName:n,propertyValue:r});return this.clone(t,"SetSingleValueProfileProperty").postCore({body:o})},t.prototype.setMultiValuedProfileProperty=function(e,n,r){var o=Object(m.n)({accountName:e,propertyName:n,propertyValues:r});return this.clone(t,"SetMultiValuedProfileProperty").postCore({body:o})},t.prototype.createPersonalSiteEnqueueBulk=function(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];return this.profileLoader.createPersonalSiteEnqueueBulk(e)},Object.defineProperty(t.prototype,"ownerUserProfile",{get:function(){return this.profileLoader.ownerUserProfile},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"userProfile",{get:function(){return this.profileLoader.userProfile},enumerable:!0,configurable:!0}),t.prototype.createPersonalSite=function(e){return void 0===e&&(e=!1),this.profileLoader.createPersonalSite(e)},t.prototype.shareAllSocialData=function(e){return this.profileLoader.shareAllSocialData(e)},t.prototype.clientPeoplePickerResolveUser=function(e){return this.clientPeoplePickerQuery.clientPeoplePickerResolveUser(e)},t.prototype.clientPeoplePickerSearchUser=function(e){return this.clientPeoplePickerQuery.clientPeoplePickerSearchUser(e)},t}(A),Mt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.createPersonalSiteEnqueueBulk=function(e){return this.clone(n,"createpersonalsiteenqueuebulk",!1).postCore({body:Object(m.n)({emailIDs:e})})},Object.defineProperty(t.prototype,"ownerUserProfile",{get:function(){var e=this.getParent(n,this.parentUrl,"_api/sp.userprofiles.profileloader.getowneruserprofile");return this.hasBatch&&(e=e.inBatch(this.batch)),e.postCore()},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"userProfile",{get:function(){return this.clone(n,"getuserprofile").postCore()},enumerable:!0,configurable:!0}),t.prototype.createPersonalSite=function(e){return void 0===e&&(e=!1),this.clone(n,"getuserprofile/createpersonalsiteenque("+e+")").postCore()},t.prototype.shareAllSocialData=function(e){return this.clone(n,"getuserprofile/shareallsocialdata("+e+")").postCore()};var n;return t=n=o([d("_api/sp.userprofiles.profileloader.getprofileloader")],t)}(R),Wt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.clientPeoplePickerResolveUser=function(e){var t=this.clone(n,null);return t.concat(".clientpeoplepickerresolveuser"),t.postCore({body:this.createClientPeoplePickerQueryParametersRequestBody(e)}).then(function(e){return"object"==typeof e?e.ClientPeoplePickerResolveUser:e}).then(JSON.parse)},t.prototype.clientPeoplePickerSearchUser=function(e){var t=this.clone(n,null);return t.concat(".clientpeoplepickersearchuser"),t.postCore({body:this.createClientPeoplePickerQueryParametersRequestBody(e)}).then(function(e){return"object"==typeof e?e.ClientPeoplePickerSearchUser:e}).then(JSON.parse)},t.prototype.createClientPeoplePickerQueryParametersRequestBody=function(e){return Object(m.n)({queryParams:Object(m.f)(h("SP.UI.ApplicationPages.ClientPeoplePickerQueryParameters"),e)})};var n;return t=n=o([d("_api/sp.ui.applicationpages.clientpeoplepickerwebserviceinterface")],t)}(R),Ht=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,Object.defineProperty(t.prototype,"my",{get:function(){return new Kt(this)},enumerable:!0,configurable:!0}),t.prototype.getFollowedSitesUri=function(){return this.clone(n,"FollowedSitesUri").get().then(function(e){return e.FollowedSitesUri||e})},t.prototype.getFollowedDocumentsUri=function(){return this.clone(n,"FollowedDocumentsUri").get().then(function(e){return e.FollowedDocumentsUri||e})},t.prototype.follow=function(e){return this.clone(n,"follow").postCore({body:this.createSocialActorInfoRequestBody(e)})},t.prototype.isFollowed=function(e){return this.clone(n,"isfollowed").postCore({body:this.createSocialActorInfoRequestBody(e)})},t.prototype.stopFollowing=function(e){return this.clone(n,"stopfollowing").postCore({body:this.createSocialActorInfoRequestBody(e)})},t.prototype.createSocialActorInfoRequestBody=function(e){return Object(m.n)({actor:Object.assign(h("SP.Social.SocialActorInfo"),{Id:null},e)})};var n;return t=n=o([d("_api/social.following")],t)}(A),Kt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}r(t,e),n=t,t.prototype.followed=function(e){return this.clone(n,"followed(types="+e+")").get().then(function(e){return Object(m.j)(e,"Followed")?e.Followed.results:e})},t.prototype.followedCount=function(e){return this.clone(n,"followedcount(types="+e+")").get().then(function(e){return e.FollowedCount||e})},t.prototype.followers=function(){return this.clone(n,"followers").get().then(function(e){return Object(m.j)(e,"Followers")?e.Followers.results:e})},t.prototype.suggestions=function(){return this.clone(n,"suggestions").get().then(function(e){return Object(m.j)(e,"Suggestions")?e.Suggestions.results:e})};var n;return t=n=o([d("my")],t)}(A);!function(e){e[e.User=0]="User",e[e.Document=1]="Document",e[e.Site=2]="Site",e[e.Tag=3]="Tag"}(Bt||(Bt={}));var Vt;!function(e){e[e.None=0]="None",e[e.User=1]="User",e[e.Document=2]="Document",e[e.Site=4]="Site",e[e.Tag=8]="Tag",e[e.ExcludeContentWithoutFeeds=268435456]="ExcludeContentWithoutFeeds",e[e.IncludeGroupsSites=536870912]="IncludeGroupsSites",e[e.WithinLast24Hours=1073741824]="WithinLast24Hours"}(Vt||(Vt={}));var Qt;!function(e){e[e.Ok=0]="Ok",e[e.AlreadyFollowing=1]="AlreadyFollowing",e[e.LimitReached=2]="LimitReached",e[e.InternalError=3]="InternalError"}(Qt||(Qt={}));var zt;!function(e){e[e.OK=0]="OK",e[e.InvalidRequest=1]="InvalidRequest",e[e.AccessDenied=2]="AccessDenied",e[e.ItemNotFound=3]="ItemNotFound",e[e.InvalidOperation=4]="InvalidOperation",e[e.ItemNotModified=5]="ItemNotModified",e[e.InternalError=6]="InternalError",e[e.CacheReadError=7]="CacheReadError",e[e.CacheUpdateError=8]="CacheUpdateError",e[e.PersonalSiteNotFound=9]="PersonalSiteNotFound",e[e.FailedToCreatePersonalSite=10]="FailedToCreatePersonalSite",e[e.NotAuthorizedToCreatePersonalSite=11]="NotAuthorizedToCreatePersonalSite",e[e.CannotCreatePersonalSite=12]="CannotCreatePersonalSite",e[e.LimitReached=13]="LimitReached",e[e.AttachmentError=14]="AttachmentError",e[e.PartialData=15]="PartialData",e[e.FeatureDisabled=16]="FeatureDisabled",e[e.StorageQuotaExceeded=17]="StorageQuotaExceeded",e[e.DatabaseError=18]="DatabaseError"}(zt||(zt={}));var Xt=function(e){function t(n,r){return e.call(this,t.getBaseUrl(n),"_api/SP.Utilities.Utility."+r)||this}return r(t,e),t.getBaseUrl=function(e){if("string"==typeof e)return e;var t=e,n=t.toUrl(),r=n.indexOf("_api/");return r<0?n:n.substr(0,r)},t.prototype.excute=function(e){return this.postCore({body:Object(m.n)(e)})},t.prototype.sendEmail=function(e){var n={properties:Object(m.f)(h("SP.Utilities.EmailProperties"),{Body:e.Body,From:e.From,Subject:e.Subject})};return e.To&&e.To.length>0&&(n.properties=Object(m.f)(n.properties,{To:{results:e.To}})),e.CC&&e.CC.length>0&&(n.properties=Object(m.f)(n.properties,{CC:{results:e.CC}})),e.BCC&&e.BCC.length>0&&(n.properties=Object(m.f)(n.properties,{BCC:{results:e.BCC}})),e.AdditionalHeaders&&(n.properties=Object(m.f)(n.properties,{AdditionalHeaders:e.AdditionalHeaders})),this.clone(t,"SendEmail",!0).excute(n)},t.prototype.getCurrentUserEmailAddresses=function(){return this.clone(t,"GetCurrentUserEmailAddresses",!0).excute({}).then(function(e){return Object(m.j)(e,"GetCurrentUserEmailAddresses")?e.GetCurrentUserEmailAddresses:e})},t.prototype.resolvePrincipal=function(e,n,r,o,i,s){void 0===s&&(s=!1);var a={addToUserInfoList:i,input:e,inputIsEmailOnly:o,matchUserInfoList:s,scopes:n,sources:r};return this.clone(t,"ResolvePrincipalInCurrentContext",!0).excute(a).then(function(e){return Object(m.j)(e,"ResolvePrincipalInCurrentContext")?e.ResolvePrincipalInCurrentContext:e})},t.prototype.searchPrincipals=function(e,n,r,o,i){var s={groupName:o,input:e,maxCount:i,scopes:n,sources:r};return this.clone(t,"SearchPrincipalsUsingContextWeb",!0).excute(s).then(function(e){return Object(m.j)(e,"SearchPrincipalsUsingContextWeb")?e.SearchPrincipalsUsingContextWeb:e})},t.prototype.createEmailBodyForInvitation=function(e){var n={pageAddress:e};return this.clone(t,"CreateEmailBodyForInvitation",!0).excute(n).then(function(e){return Object(m.j)(e,"CreateEmailBodyForInvitation")?e.CreateEmailBodyForInvitation:e})},t.prototype.expandGroupsToPrincipals=function(e,n){void 0===n&&(n=30);var r={inputs:e,maxCount:n};return this.clone(t,"ExpandGroupsToPrincipals",!0).excute(r).then(function(e){return Object(m.j)(e,"ExpandGroupsToPrincipals")?e.ExpandGroupsToPrincipals:e})},t.prototype.createWikiPage=function(e){return this.clone(t,"CreateWikiPageInContextWeb",!0).excute({parameters:e}).then(function(e){return{data:Object(m.j)(e,"CreateWikiPageInContextWeb")?e.CreateWikiPageInContextWeb:e,file:new tt(u(e))}})},t.prototype.containsInvalidFileFolderChars=function(e,n){return void 0===n&&(n=!1),n?t.InvalidFileFolderNameCharsOnPremiseRegex.test(e):t.InvalidFileFolderNameCharsOnlineRegex.test(e)},t.prototype.stripInvalidFileFolderChars=function(e,n,r){return void 0===n&&(n=""),void 0===r&&(r=!1),r?e.replace(t.InvalidFileFolderNameCharsOnPremiseRegex,n):e.replace(t.InvalidFileFolderNameCharsOnlineRegex,n)},t.InvalidFileFolderNameCharsOnlineRegex=/["*:<>?\/\\|\x00-\x1f\x7f-\x9f]/g,t.InvalidFileFolderNameCharsOnPremiseRegex=/["#%*:<>?\/\\|\x00-\x1f\x7f-\x9f]/g,t}(R),Jt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.getById=function(e){return new Yt(this,"GetById?hubSiteId='"+e+"'")},t=o([d("_api/hubsites")],t)}(j),Yt=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t}(A),$t=function(){function e(e,t){void 0===e&&(e={}),void 0===t&&(t=""),this._options=e,this._baseUrl=t}return e.prototype.configure=function(t,n){return void 0===n&&(n=""),new e(t,n)},e.prototype.setup=function(e){l(e)},e.prototype.searchSuggest=function(e){var t;return t="string"==typeof e?{querytext:e}:e,this.create(qt).execute(t)},e.prototype.search=function(e){return this.create(Lt).execute(e)},e.prototype.searchWithCaching=function(e,t){return this.create(Lt).usingCaching(t).execute(e)},Object.defineProperty(e.prototype,"site",{get:function(){return this.create(dt)},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"web",{get:function(){return this.create(It)},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"profiles",{get:function(){return this.create(Gt)},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"social",{get:function(){return this.create(Ht)},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"navigation",{get:function(){return this.create(mt)},enumerable:!0,configurable:!0}),e.prototype.createBatch=function(){return this.web.createBatch()},Object.defineProperty(e.prototype,"utility",{get:function(){return this.create(Xt,"")},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"siteScripts",{get:function(){return this.create(_t,"")},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"siteDesigns",{get:function(){return this.create(wt,"")},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"hubSites",{get:function(){return this.create(Jt)},enumerable:!0,configurable:!0}),e.prototype.getTenantAppCatalogWeb=function(){var e=this;return this.create(It,"_api/SP_TenantSettings_Current").get().then(function(t){return new It(t.CorporateCatalogUrl).configure(e._options)})},e.prototype.create=function(e,t){return new e(this._baseUrl,t).configure(this._options)},e}(),Zt=new $t}).call(t,n(0))},function(e,t,n){"use strict";(function(e){function r(e,t){function n(){this.constructor=e}w(e,t),e.prototype=null===t?Object.create(t):(n.prototype=t.prototype,new n)}function o(e,t){for(var n=[],r=2;r<arguments.length;r++)n[r-2]=arguments[r];return function(){t.apply(e,n)}}function i(e,t,n){var r=new Date(e);switch(t.toLowerCase()){case"year":r.setFullYear(r.getFullYear()+n);break;case"quarter":r.setMonth(r.getMonth()+3*n);break;case"month":r.setMonth(r.getMonth()+n);break;case"week":r.setDate(r.getDate()+7*n);break;case"day":r.setDate(r.getDate()+n);break;case"hour":r.setTime(r.getTime()+36e5*n);break;case"minute":r.setTime(r.getTime()+6e4*n);break;case"second":r.setTime(r.getTime()+1e3*n);break;default:r=void 0}return r}function s(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];return e.filter(function(e){return!d(e)}).map(function(e){return e.replace(/^[\\|\/]/,"").replace(/[\\|\/]$/,"")}).join("/").replace(/\\/g,"/")}function a(){var e=Date.now();return"undefined"!=typeof performance&&"function"==typeof performance.now&&(e+=performance.now()),"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(t){var n=(e+16*Math.random())%16|0;return e=Math.floor(e/16),("x"===t?n:3&n|8).toString(16)})}function u(e){return"function"==typeof e}function c(e){return void 0!==e&&null!==e}function l(e){return Array.isArray?Array.isArray(e):e&&"number"==typeof e.length&&e.constructor===Array}function p(e,t,n,r){if(void 0===n&&(n=!1),void 0===r&&(r=function(){return!0}),!c(t))return e;var o=n?function(e,t){return!(t in e)}:function(){return!0},i=function(t){return o(e,t)&&r(t)};return Object.getOwnPropertyNames(t).filter(i).reduce(function(e,n){return e[n]=t[n],e},e)}function h(e){return/^https?:\/\/|^\/\//i.test(e)}function d(e){return void 0===e||null===e||e.length<1}function f(e){return JSON.stringify(e)}function y(e,t){return Object.hasOwnProperty.call(e,t)}function g(e){var t=0;if(0===e.length)return t;for(var n=0;n<e.length;n++){t=(t<<5)-t+e.charCodeAt(n),t|=0}return t}function m(e,t){if(void 0!==t&&null!==t){new Request("",{headers:t}).headers.forEach(function(t,n){e.append(n,t)})}}function b(e,t){if(c(t)){var n=p(e.headers||{},t.headers);e=p(e,t),e.headers=n}}function v(e){var t=document.createElement("a");return t.href=e,t.protocol+"//"+t.hostname}function S(e){return void 0!==e&&null!==e?new Map(E(e)):new Map}function T(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];for(var r=0;r<t.length;r++)t[r].forEach(function(t,n){e.set(n,t)});return e}n.d(t,"c",function(){return A}),n.d(t,"o",function(){return m}),n.d(t,"p",function(){return b}),n.d(t,"a",function(){return C}),n.d(t,"b",function(){return L}),n.d(t,"g",function(){return o}),n.d(t,"e",function(){return i}),n.d(t,"d",function(){return s}),n.d(t,"h",function(){return a}),n.d(t,"l",function(){return u}),n.d(t,"q",function(){return c}),n.d(t,"k",function(){return l}),n.d(t,"f",function(){return p}),n.d(t,"m",function(){return h}),n.d(t,"r",function(){return d}),n.d(t,"n",function(){return f}),n.d(t,"j",function(){return y}),n.d(t,"i",function(){return g});var O=n(11),w=(n.n(O),function(e,t){return(w=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var n in t)t.hasOwnProperty(n)&&(e[n]=t[n])})(e,t)}),_=void 0!==e?e:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},C=function(){function e(){}return e.prototype.fetch=function(e,t){return _.fetch(e,t)},e}(),P=function(e){function t(t){var n=e.call(this)||this;return n._token=t,n}return r(t,e),Object.defineProperty(t.prototype,"token",{get:function(){return this._token||""},set:function(e){this._token=e},enumerable:!0,configurable:!0}),t.prototype.fetch=function(t,n){void 0===n&&(n={});var r=new Headers;return m(r,n.headers),r.set("Authorization","Bearer "+this._token),n.headers=r,e.prototype.fetch.call(this,t,n)},t}(C),I=(function(e){function t(t,n,r){var o=e.call(this,null)||this;return o.clientId=t,o.tenant=n,o.redirectUri=r,o._displayCallback=null,o._loginPromise=null,o}r(t,e),t.fromSPFxContext=function(e){return new I(e)},t.prototype.fetch=function(t,n){var r=this;if(!h(t))throw Error("You must supply absolute urls to AdalClient.fetch.");return this.getToken(v(t)).then(function(o){return r.token=o,e.prototype.fetch.call(r,t,n)})},t.prototype.getToken=function(e){var n=this;return new Promise(function(r,o){n.ensureAuthContext().then(function(e){return n.login()}).then(function(n){t._authContext.acquireToken(e,function(e,t){if(e)return o(Error(e));r(t)})}).catch(o)})},t.prototype.ensureAuthContext=function(){var e=this;return new Promise(function(n){null===t._authContext&&(t._authContext=Object(O.inject)({clientId:e.clientId,displayCall:function(t){e._displayCallback&&e._displayCallback(t)},navigateToLoginRequestUrl:!1,redirectUri:e.redirectUri,tenant:e.tenant})),n()})},t.prototype.login=function(){var e=this;return this._loginPromise?this._loginPromise:(this._loginPromise=new Promise(function(n,r){if(t._authContext.getCachedUser())return n();e._displayCallback=function(o){var i=window.open(o,"login","width=483, height=600");if(!i)return r(Error("Could not open pop-up window for auth. Likely pop-ups are blocked by the browser."));i&&i.focus&&i.focus();var s=window.setInterval(function(){i&&!i.closed&&void 0!==i.closed||window.clearInterval(s);try{-1!==i.document.URL.indexOf(e.redirectUri)&&(window.clearInterval(s),t._authContext.handleWindowCallback(i.location.hash),i.close(),n())}catch(e){r(e)}},30)},e.ensureAuthContext().then(function(n){t._authContext._loginInProgress=!1,t._authContext.login(),e._displayCallback=null})}),this._loginPromise)},t._authContext=null}(P),function(e){function t(t){var n=e.call(this,null)||this;return n.context=t,n}return r(t,e),t.prototype.fetch=function(t,n){var r=this;return this.getToken(v(t)).then(function(o){return r.token=o,e.prototype.fetch.call(r,t,n)})},t.prototype.getToken=function(e){return this.context.aadTokenProviderFactory.getTokenProvider().then(function(t){return t.getToken(e)})},t}(P)),E=u(Object.entries)?Object.entries:function(e){return Object.keys(e).map(function(t){return[t,e[t]]})},N=["defaultCachingStore","defaultCachingTimeoutSeconds","globalCacheDisable","enableCacheExpiration","cacheExpirationIntervalMilliseconds","spfxContext"],R=function(){function e(e){void 0===e&&(e=new Map),this._v=e,this._v.set(N[0],"session"),this._v.set(N[1],60),this._v.set(N[2],!1),this._v.set(N[3],!1),this._v.set(N[4],750),this._v.set(N[5],null)}return e.prototype.extend=function(e){this._v=T(this._v,S(e))},e.prototype.get=function(e){return this._v.get(e)},Object.defineProperty(e.prototype,"defaultCachingStore",{get:function(){return this.get(N[0])},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"defaultCachingTimeoutSeconds",{get:function(){return this.get(N[1])},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"globalCacheDisable",{get:function(){return this.get(N[2])},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"enableCacheExpiration",{get:function(){return this.get(N[3])},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"cacheExpirationIntervalMilliseconds",{get:function(){return this.get(N[4])},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"spfxContext",{get:function(){return this.get(N[5])},enumerable:!0,configurable:!0}),e}(),j=new R,A=j,x=function(){function e(e,t){void 0===t&&(t=-1),this.store=e,this.defaultTimeoutMinutes=t,this.enabled=this.test(),A.enableCacheExpiration&&this.cacheExpirationHandler()}return e.prototype.get=function(e){if(!this.enabled)return null;var t=this.store.getItem(e);if(!c(t))return null;var n=JSON.parse(t);return new Date(n.expiration)<=new Date?(this.delete(e),null):n.value},e.prototype.put=function(e,t,n){this.enabled&&this.store.setItem(e,this.createPersistable(t,n))},e.prototype.delete=function(e){this.enabled&&this.store.removeItem(e)},e.prototype.getOrPut=function(e,t,n){var r=this;if(!this.enabled)return t();var o=this.get(e);return null===o?t().then(function(t){return r.put(e,t,n),t}):Promise.resolve(o)},e.prototype.deleteExpired=function(){var e=this;return new Promise(function(t,n){e.enabled||t();try{for(var r=0;r<e.store.length;r++){var o=e.store.key(r);null!==o&&/["|']?pnp["|']? ?: ?1/i.test(e.store.getItem(o))&&e.get(o)}t()}catch(e){n(e)}})},e.prototype.test=function(){try{return this.store.setItem("t","t"),this.store.removeItem("t"),!0}catch(e){return!1}},e.prototype.createPersistable=function(e,t){if(void 0===t){var n=A.defaultCachingTimeoutSeconds;this.defaultTimeoutMinutes>0&&(n=60*this.defaultTimeoutMinutes),t=i(new Date,"second",n)}return f({pnp:1,expiration:t,value:e})},e.prototype.cacheExpirationHandler=function(){var e=this;this.deleteExpired().then(function(t){setTimeout(o(e,e.cacheExpirationHandler),A.cacheExpirationIntervalMilliseconds)}).catch(function(e){console.error(e)})},e}(),U=function(){function e(e){void 0===e&&(e=new Map),this._store=e}return Object.defineProperty(e.prototype,"length",{get:function(){return this._store.size},enumerable:!0,configurable:!0}),e.prototype.clear=function(){this._store.clear()},e.prototype.getItem=function(e){return this._store.get(e)},e.prototype.key=function(e){return Array.from(this._store)[e][0]},e.prototype.removeItem=function(e){this._store.delete(e)},e.prototype.setItem=function(e,t){this._store.set(e,t)},e}(),L=function(){function e(e,t){void 0===e&&(e=null),void 0===t&&(t=null),this._local=e,this._session=t}return Object.defineProperty(e.prototype,"local",{get:function(){return null===this._local&&(this._local=this.getStore("local")),this._local},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"session",{get:function(){return null===this._session&&(this._session=this.getStore("session")),this._session},enumerable:!0,configurable:!0}),e.prototype.getStore=function(e){return new x("local"===e?"undefined"==typeof localStorage?new U:localStorage:"undefined"==typeof sessionStorage?new U:sessionStorage)},e}()}).call(t,n(0))},function(e,t,n){"use strict";n.d(t,"a",function(){return o});/**
+define("3efa9b55-2736-4c81-af4a-b713c956451b_0.0.1", ["@microsoft/decorators","@microsoft/sp-application-base"], function(__WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_6__) { return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {/* unused harmony export odataUrlFrom */
+/* unused harmony export spODataEntity */
+/* unused harmony export spODataEntityArray */
+/* unused harmony export SharePointQueryable */
+/* unused harmony export SharePointQueryableInstance */
+/* unused harmony export SharePointQueryableCollection */
+/* unused harmony export SharePointQueryableSecurable */
+/* unused harmony export FileFolderShared */
+/* unused harmony export SharePointQueryableShareable */
+/* unused harmony export SharePointQueryableShareableFile */
+/* unused harmony export SharePointQueryableShareableFolder */
+/* unused harmony export SharePointQueryableShareableItem */
+/* unused harmony export SharePointQueryableShareableWeb */
+/* unused harmony export AppCatalog */
+/* unused harmony export App */
+/* unused harmony export SPBatch */
+/* unused harmony export ContentType */
+/* unused harmony export ContentTypes */
+/* unused harmony export FieldLink */
+/* unused harmony export FieldLinks */
+/* unused harmony export Field */
+/* unused harmony export Fields */
+/* unused harmony export CheckinType */
+/* unused harmony export WebPartsPersonalizationScope */
+/* unused harmony export MoveOperations */
+/* unused harmony export TemplateFileType */
+/* unused harmony export File */
+/* unused harmony export Files */
+/* unused harmony export Folder */
+/* unused harmony export Folders */
+/* unused harmony export SPHttpClient */
+/* unused harmony export Item */
+/* unused harmony export Items */
+/* unused harmony export ItemVersion */
+/* unused harmony export ItemVersions */
+/* unused harmony export PagedItemCollection */
+/* unused harmony export NavigationNodes */
+/* unused harmony export NavigationNode */
+/* unused harmony export NavigationService */
+/* unused harmony export List */
+/* unused harmony export Lists */
+/* unused harmony export RegionalSettings */
+/* unused harmony export InstalledLanguages */
+/* unused harmony export TimeZone */
+/* unused harmony export TimeZones */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return sp; });
+/* unused harmony export SPRest */
+/* unused harmony export RoleDefinitionBindings */
+/* unused harmony export Search */
+/* unused harmony export SearchQueryBuilder */
+/* unused harmony export SearchResults */
+/* unused harmony export SortDirection */
+/* unused harmony export ReorderingRuleMatchType */
+/* unused harmony export QueryPropertyValueType */
+/* unused harmony export SearchBuiltInSourceId */
+/* unused harmony export SearchSuggest */
+/* unused harmony export Site */
+/* unused harmony export UserProfileQuery */
+/* unused harmony export toAbsoluteUrl */
+/* unused harmony export extractWebUrl */
+/* unused harmony export UtilityMethod */
+/* unused harmony export View */
+/* unused harmony export Views */
+/* unused harmony export ViewFields */
+/* unused harmony export WebPartDefinitions */
+/* unused harmony export WebPartDefinition */
+/* unused harmony export WebPart */
+/* unused harmony export Web */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteScripts$1; });
+/* unused harmony export SiteDesigns */
+/* unused harmony export HubSite */
+/* unused harmony export HubSites */
+/* unused harmony export PromotedState */
+/* unused harmony export ClientSidePage */
+/* unused harmony export CanvasSection */
+/* unused harmony export CanvasColumn */
+/* unused harmony export ColumnControl */
+/* unused harmony export ClientSideText */
+/* unused harmony export ClientSideWebpart */
+/* unused harmony export Comments */
+/* unused harmony export Comment */
+/* unused harmony export Replies */
+/* unused harmony export SocialQuery */
+/* unused harmony export MySocialQuery */
+/* unused harmony export SocialActorType */
+/* unused harmony export SocialActorTypes */
+/* unused harmony export SocialFollowResult */
+/* unused harmony export SocialStatusCode */
+/* unused harmony export ControlMode */
+/* unused harmony export FieldTypes */
+/* unused harmony export DateTimeFieldFormatType */
+/* unused harmony export DateTimeFieldFriendlyFormatType */
+/* unused harmony export AddFieldOptions */
+/* unused harmony export CalendarType */
+/* unused harmony export UrlFieldFormatType */
+/* unused harmony export PermissionKind */
+/* unused harmony export PrincipalType */
+/* unused harmony export PrincipalSource */
+/* unused harmony export RoleType */
+/* unused harmony export PageType */
+/* unused harmony export SharingLinkKind */
+/* unused harmony export SharingRole */
+/* unused harmony export SharingOperationStatusCode */
+/* unused harmony export SPSharedObjectType */
+/* unused harmony export SharingDomainRestrictionMode */
+/* unused harmony export RenderListDataOptions */
+/* unused harmony export FieldUserSelectionMode */
+/* unused harmony export ChoiceFieldFormatType */
+/* unused harmony export UrlZone */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pnp_common__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pnp_logging__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pnp_odata__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3____ = __webpack_require__(0);
+/**
  * @license
  * v1.3.5
  * MIT (https://github.com/pnp/pnpjs/blob/master/LICENSE)
@@ -7,5 +190,12319 @@ define("3efa9b55-2736-4c81-af4a-b713c956451b_0.0.1",["@microsoft/decorators","@m
  * source: https://github.com/pnp/pnpjs
  * bugs: https://github.com/pnp/pnpjs/issues
  */
-var r,o=function(){function e(){}return Object.defineProperty(e,"activeLogLevel",{get:function(){return e.instance.activeLogLevel},set:function(t){e.instance.activeLogLevel=t},enumerable:!0,configurable:!0}),Object.defineProperty(e,"instance",{get:function(){return void 0!==e._instance&&null!==e._instance||(e._instance=new i),e._instance},enumerable:!0,configurable:!0}),e.subscribe=function(){for(var t=[],n=0;n<arguments.length;n++)t[n]=arguments[n];t.map(function(t){return e.instance.subscribe(t)})},e.clearSubscribers=function(){return e.instance.clearSubscribers()},Object.defineProperty(e,"count",{get:function(){return e.instance.count},enumerable:!0,configurable:!0}),e.write=function(t,n){void 0===n&&(n=1),e.instance.log({level:n,message:t})},e.writeJSON=function(e,t){void 0===t&&(t=1),this.write(JSON.stringify(e),t)},e.log=function(t){e.instance.log(t)},e.error=function(t){e.instance.log({data:t,level:3,message:t.message})},e}(),i=function(){function e(e,t){void 0===e&&(e=2),void 0===t&&(t=[]),this.activeLogLevel=e,this.subscribers=t}return e.prototype.subscribe=function(e){this.subscribers.push(e)},e.prototype.clearSubscribers=function(){var e=this.subscribers.slice(0);return this.subscribers.length=0,e},Object.defineProperty(e.prototype,"count",{get:function(){return this.subscribers.length},enumerable:!0,configurable:!0}),e.prototype.write=function(e,t){void 0===t&&(t=1),this.log({level:t,message:e})},e.prototype.log=function(e){void 0!==e&&this.activeLogLevel<=e.level&&this.subscribers.map(function(t){return t.log(e)})},e}();!function(e){e[e.Verbose=0]="Verbose",e[e.Info=1]="Info",e[e.Warning=2]="Warning",e[e.Error=3]="Error",e[e.Off=99]="Off"}(r||(r={}));(function(){function e(){}e.prototype.log=function(e){var t=this.format(e);switch(e.level){case 0:case 1:console.log(t);break;case 2:console.warn(t);break;case 3:console.error(t)}},e.prototype.format=function(e){var t=[];if(t.push("Message: "+e.message),void 0!==e.data)try{t.push(" Data: "+JSON.stringify(e.data))}catch(e){t.push(" Data: Error in stringify of supplied data "+e)}return t.join("")}})(),function(){function e(e){this.method=e}e.prototype.log=function(e){this.method(e)}}()},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=n(6);n(7);var i={app:"app_10340138",top:"top_10340138"},s=i,a=n(1),u=this&&this.__extends||function(){var e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var n in t)t.hasOwnProperty(n)&&(e[n]=t[n])};return function(t,n){function r(){this.constructor=t}e(t,n),t.prototype=null===n?Object.create(n):(r.prototype=n.prototype,new r)}}(),c=this&&this.__decorate||function(e,t,n,r){var o,i=arguments.length,s=i<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,n,r);else for(var a=e.length-1;a>=0;a--)(o=e[a])&&(s=(i<3?o(s):i>3?o(t,n,s):o(t,n))||s);return i>3&&s&&Object.defineProperty(t,n,s),s},l=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return u(t,e),t.prototype.onInit=function(){return a.b.setup({spfxContext:this.context}),this.context.placeholderProvider.changedEvent.add(this,this._renderPlaceHolders),Promise.resolve()},t.prototype._renderPlaceHolders=function(){var e=this;this._topPlaceholder||(this._topPlaceholder=this.context.placeholderProvider.tryCreateContent(o.PlaceholderName.Top),this._topPlaceholder.domElement&&a.b.web.currentUser.get().then(function(t){t.LoginName.match("#ext#")&&(e._topPlaceholder.domElement.innerHTML='\n              <div id="userGuessApp" class="'+s.app+'">\n                <div class="'+s.top+'">\n                  <div id="pnpinfo"> ths</div>\n                </div>\n              </div>',e.getElementStyles())}))},t.prototype.getElementStyles=function(){this._topPlaceholder.domElement.querySelector("#pnpinfo").innerHTML=this.properties.textmessage,this._topPlaceholder.domElement.style.backgroundColor=this.properties.backgroundColor,this._topPlaceholder.domElement.style.color=this.properties.textColor,this._topPlaceholder.domElement.style.height="20px"},c([r.override],t.prototype,"onInit",null),t}(o.BaseApplicationCustomizer);t.default=l},function(t,n){t.exports=e},function(e,n){e.exports=t},function(e,t,n){var r=n(8),o=n(10);"string"==typeof r&&(r=[[e.i,r]]);for(var i=0;i<r.length;i++)o.loadStyles(r[i][1],!0);r.locals&&(e.exports=r.locals)},function(e,t,n){t=e.exports=n(9)(!1),t.push([e.i,".app_10340138 .top_10340138{text-align:center;font-weight:700;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}",""])},function(e,t){function n(e,t){var n=e[1]||"",o=e[3];if(!o)return n;if(t&&"function"==typeof btoa){var i=r(o);return[n].concat(o.sources.map(function(e){return"/*# sourceURL="+o.sourceRoot+e+" */"})).concat([i]).join("\n")}return[n].join("\n")}function r(e){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(e))))+" */"}e.exports=function(e){var t=[];return t.toString=function(){return this.map(function(t){var r=n(t,e);return t[2]?"@media "+t[2]+"{"+r+"}":r}).join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},o=0;o<this.length;o++){var i=this[o][0];"number"==typeof i&&(r[i]=!0)}for(o=0;o<e.length;o++){var s=e[o];"number"==typeof s[0]&&r[s[0]]||(n&&!s[2]?s[2]=n:n&&(s[2]="("+s[2]+") and ("+n+")"),t.push(s))}},t}},function(e,t,n){"use strict";(function(e){function n(e){var t=C();e();var n=C();O.perf.duration+=n-t}function r(e,t){void 0===t&&(t=!1),n(function(){var n=Array.isArray(e)?e:y(e);void 0===S&&(S=b());var r=O.runState,o=r.mode,i=r.buffer,s=r.flushTimer;t||1===o?(i.push(n),s||(O.runState.flushTimer=a())):u(n)})}function o(e){O.loadStyles=e}function i(e){O.runState.mode=e}function s(){n(function(){var e=O.runState.buffer.slice();O.runState.buffer=[];var t=[].concat.apply([],e);t.length>0&&u(t)})}function a(){return setTimeout(function(){O.runState.flushTimer=0,s()},0)}function u(e,t){O.loadStyles?O.loadStyles(f(e).styleString,e):S?m(e,t):g(e)}function c(e){O.theme=e,h()}function l(e){void 0===e&&(e=3),3!==e&&2!==e||(p(O.registeredStyles),O.registeredStyles=[]),3!==e&&1!==e||(p(O.registeredThemableStyles),O.registeredThemableStyles=[])}function p(e){e.forEach(function(e){var t=e&&e.styleElement;t&&t.parentElement&&t.parentElement.removeChild(t)})}function h(){if(O.theme){for(var e=[],t=0,n=O.registeredThemableStyles;t<n.length;t++){var r=n[t];e.push(r.themableStyle)}e.length>0&&(l(1),u([].concat.apply([],e)))}}function d(e){return e&&(e=f(y(e)).styleString),e}function f(e){var t=O.theme,n=!1;return{styleString:(e||[]).map(function(e){var r=e.theme;if(r){n=!0;var o=t?t[r]:void 0,i=e.defaultValue||"inherit";return t&&!o&&console,o||i}return e.rawString}).join(""),themable:n}}function y(e){var t=[];if(e){for(var n=0,r=void 0;r=w.exec(e);){var o=r.index;o>n&&t.push({rawString:e.substring(n,o)}),t.push({theme:r[1],defaultValue:r[2]}),n=w.lastIndex}t.push({rawString:e.substring(n)})}return t}function g(e){if("undefined"!=typeof document){var t=document.getElementsByTagName("head")[0],n=document.createElement("style"),r=f(e),o=r.styleString,i=r.themable;n.type="text/css",n.appendChild(document.createTextNode(o)),O.perf.count++,t.appendChild(n);var s={styleElement:n,themableStyle:e};i?O.registeredThemableStyles.push(s):O.registeredStyles.push(s)}}function m(e,t){if("undefined"!=typeof document){var n=document.getElementsByTagName("head")[0],r=O.registeredStyles,o=O.lastStyleElement,i=o?o.styleSheet:void 0,s=i?i.cssText:"",a=r[r.length-1],u=f(e).styleString;(!o||s.length+u.length>_)&&(o=document.createElement("style"),o.type="text/css",t?(n.replaceChild(o,t.styleElement),t.styleElement=o):n.appendChild(o),t||(a={styleElement:o,themableStyle:e},r.push(a))),o.styleSheet.cssText+=d(u),Array.prototype.push.apply(a.themableStyle,e),O.lastStyleElement=o}}function b(){var e=!1;if("undefined"!=typeof document){var t=document.createElement("style");t.type="text/css",e=!!t.styleSheet}return e}var v=this&&this.__assign||function(){return v=Object.assign||function(e){for(var t,n=1,r=arguments.length;n<r;n++){t=arguments[n];for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o])}return e},v.apply(this,arguments)};Object.defineProperty(t,"__esModule",{value:!0});var S,T="undefined"==typeof window?e:window,O=function(){var e=T.__themeState__||{theme:void 0,lastStyleElement:void 0,registeredStyles:[]};return e.runState||(e=v({},e,{perf:{count:0,duration:0},runState:{flushTimer:0,mode:0,buffer:[]}})),e.registeredThemableStyles||(e=v({},e,{registeredThemableStyles:[]})),T.__themeState__=e,e}(),w=/[\'\"]\[theme:\s*(\w+)\s*(?:\,\s*default:\s*([\\"\']?[\.\,\(\)\#\-\s\w]*[\.\,\(\)\#\-\w][\"\']?))?\s*\][\'\"]/g,_=1e4,C=function(){return"undefined"!=typeof performance&&performance.now?performance.now():Date.now()};t.loadStyles=r,t.configureLoadStyles=o,t.configureRunMode=i,t.flush=s,t.loadTheme=c,t.clearStyles=l,t.detokenize=d,t.splitStyles=y}).call(t,n(0))},function(e,t){/*! adal-angular v1.0.17 2018-02-27 */
-var n=function(){"use strict";return n=function(e){if(this.REQUEST_TYPE={LOGIN:"LOGIN",RENEW_TOKEN:"RENEW_TOKEN",UNKNOWN:"UNKNOWN"},this.RESPONSE_TYPE={ID_TOKEN_TOKEN:"id_token token",TOKEN:"token"},this.CONSTANTS={ACCESS_TOKEN:"access_token",EXPIRES_IN:"expires_in",ID_TOKEN:"id_token",ERROR_DESCRIPTION:"error_description",SESSION_STATE:"session_state",ERROR:"error",STORAGE:{TOKEN_KEYS:"adal.token.keys",ACCESS_TOKEN_KEY:"adal.access.token.key",EXPIRATION_KEY:"adal.expiration.key",STATE_LOGIN:"adal.state.login",STATE_RENEW:"adal.state.renew",NONCE_IDTOKEN:"adal.nonce.idtoken",SESSION_STATE:"adal.session.state",USERNAME:"adal.username",IDTOKEN:"adal.idtoken",ERROR:"adal.error",ERROR_DESCRIPTION:"adal.error.description",LOGIN_REQUEST:"adal.login.request",LOGIN_ERROR:"adal.login.error",RENEW_STATUS:"adal.token.renew.status",ANGULAR_LOGIN_REQUEST:"adal.angular.login.request"},RESOURCE_DELIMETER:"|",CACHE_DELIMETER:"||",LOADFRAME_TIMEOUT:6e3,TOKEN_RENEW_STATUS_CANCELED:"Canceled",TOKEN_RENEW_STATUS_COMPLETED:"Completed",TOKEN_RENEW_STATUS_IN_PROGRESS:"In Progress",LOGGING_LEVEL:{ERROR:0,WARN:1,INFO:2,VERBOSE:3},LEVEL_STRING_MAP:{0:"ERROR:",1:"WARNING:",2:"INFO:",3:"VERBOSE:"},POPUP_WIDTH:483,POPUP_HEIGHT:600},n.prototype._singletonInstance)return n.prototype._singletonInstance;if(n.prototype._singletonInstance=this,this.instance="https://login.microsoftonline.com/",this.config={},this.callback=null,this.popUp=!1,this.isAngular=!1,this._user=null,this._activeRenewals={},this._loginInProgress=!1,this._acquireTokenInProgress=!1,this._renewStates=[],this._callBackMappedToRenewStates={},this._callBacksMappedToRenewStates={},this._openedWindows=[],this._requestType=this.REQUEST_TYPE.LOGIN,window._adalInstance=this,e.displayCall&&"function"!=typeof e.displayCall)throw new Error("displayCall is not a function");if(!e.clientId)throw new Error("clientId is required");this.config=this._cloneConfig(e),void 0===this.config.navigateToLoginRequestUrl&&(this.config.navigateToLoginRequestUrl=!0),this.config.popUp&&(this.popUp=!0),this.config.callback&&"function"==typeof this.config.callback&&(this.callback=this.config.callback),this.config.instance&&(this.instance=this.config.instance),this.config.loginResource||(this.config.loginResource=this.config.clientId),this.config.redirectUri||(this.config.redirectUri=window.location.href.split("?")[0].split("#")[0]),this.config.postLogoutRedirectUri||(this.config.postLogoutRedirectUri=window.location.href.split("?")[0].split("#")[0]),this.config.anonymousEndpoints||(this.config.anonymousEndpoints=[]),this.config.isAngular&&(this.isAngular=this.config.isAngular),this.config.loadFrameTimeout&&(this.CONSTANTS.LOADFRAME_TIMEOUT=this.config.loadFrameTimeout)},"undefined"!=typeof window&&(window.Logging={piiLoggingEnabled:!1,level:0,log:function(e){}}),n.prototype.login=function(){if(this._loginInProgress)return void this.info("Login in progress");this._loginInProgress=!0;var e=this._guid();this.config.state=e,this._idTokenNonce=this._guid();var t=this._getItem(this.CONSTANTS.STORAGE.ANGULAR_LOGIN_REQUEST);t&&""!==t?this._saveItem(this.CONSTANTS.STORAGE.ANGULAR_LOGIN_REQUEST,""):t=window.location.href,this.verbose("Expected state: "+e+" startPage:"+t),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_REQUEST,t),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.STATE_LOGIN,e,!0),this._saveItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN,this._idTokenNonce,!0),this._saveItem(this.CONSTANTS.STORAGE.ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,"");var n=this._getNavigateUrl("id_token",null)+"&nonce="+encodeURIComponent(this._idTokenNonce);this.config.displayCall?this.config.displayCall(n):this.popUp?(this._saveItem(this.CONSTANTS.STORAGE.STATE_LOGIN,""),this._renewStates.push(e),this.registerCallback(e,this.config.clientId,this.callback),this._loginPopup(n)):this.promptUser(n)},n.prototype._openPopup=function(e,t,n,r){try{var o=window.screenLeft?window.screenLeft:window.screenX,i=window.screenTop?window.screenTop:window.screenY,s=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,a=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,u=s/2-n/2+o,c=a/2-r/2+i,l=window.open(e,t,"width="+n+", height="+r+", top="+c+", left="+u);return l.focus&&l.focus(),l}catch(e){return this.warn("Error opening popup, "+e.message),this._loginInProgress=!1,this._acquireTokenInProgress=!1,null}},n.prototype._handlePopupError=function(e,t,n,r,o){this.warn(r),this._saveItem(this.CONSTANTS.STORAGE.ERROR,n),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,r),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,o),t&&this._activeRenewals[t]&&(this._activeRenewals[t]=null),this._loginInProgress=!1,this._acquireTokenInProgress=!1,e&&e(r,null,n)},n.prototype._loginPopup=function(e,t,n){var r=this._openPopup(e,"login",this.CONSTANTS.POPUP_WIDTH,this.CONSTANTS.POPUP_HEIGHT),o=n||this.callback;if(null==r){var i="Popup Window is null. This can happen if you are using IE";return void this._handlePopupError(o,t,"Error opening popup",i,i)}if(this._openedWindows.push(r),-1!=this.config.redirectUri.indexOf("#"))var s=this.config.redirectUri.split("#")[0];else var s=this.config.redirectUri;var a=this,u=window.setInterval(function(){if(!r||r.closed||void 0===r.closed){var e="Popup Window closed",n="Popup Window closed by UI action/ Popup Window handle destroyed due to cross zone navigation in IE/Edge";return a.isAngular&&a._broadcast("adal:popUpClosed",n+a.CONSTANTS.RESOURCE_DELIMETER+e),a._handlePopupError(o,t,e,n,n),void window.clearInterval(u)}try{var i=r.location;if(-1!=encodeURI(i.href).indexOf(encodeURI(s)))return a.isAngular?a._broadcast("adal:popUpHashChanged",i.hash):a.handleWindowCallback(i.hash),window.clearInterval(u),a._loginInProgress=!1,a._acquireTokenInProgress=!1,a.info("Closing popup window"),a._openedWindows=[],void r.close()}catch(e){}},1)},n.prototype._broadcast=function(e,t){!function(){function e(e,t){t=t||{bubbles:!1,cancelable:!1,detail:void 0};var n=document.createEvent("CustomEvent");return n.initCustomEvent(e,t.bubbles,t.cancelable,t.detail),n}if("function"==typeof window.CustomEvent)return!1;e.prototype=window.Event.prototype,window.CustomEvent=e}();var n=new CustomEvent(e,{detail:t});window.dispatchEvent(n)},n.prototype.loginInProgress=function(){return this._loginInProgress},n.prototype._hasResource=function(e){var t=this._getItem(this.CONSTANTS.STORAGE.TOKEN_KEYS);return t&&!this._isEmpty(t)&&t.indexOf(e+this.CONSTANTS.RESOURCE_DELIMETER)>-1},n.prototype.getCachedToken=function(e){if(!this._hasResource(e))return null;var t=this._getItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+e),n=this._getItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+e),r=this.config.expireOffsetSeconds||300;return n&&n>this._now()+r?t:(this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+e,""),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+e,0),null)},n.prototype.getCachedUser=function(){if(this._user)return this._user;var e=this._getItem(this.CONSTANTS.STORAGE.IDTOKEN);return this._user=this._createUser(e),this._user},n.prototype.registerCallback=function(e,t,n){this._activeRenewals[t]=e,this._callBacksMappedToRenewStates[e]||(this._callBacksMappedToRenewStates[e]=[]);var r=this;this._callBacksMappedToRenewStates[e].push(n),this._callBackMappedToRenewStates[e]||(this._callBackMappedToRenewStates[e]=function(n,o,i,s){r._activeRenewals[t]=null;for(var a=0;a<r._callBacksMappedToRenewStates[e].length;++a)try{r._callBacksMappedToRenewStates[e][a](n,o,i,s)}catch(i){r.warn(i)}r._callBacksMappedToRenewStates[e]=null,r._callBackMappedToRenewStates[e]=null})},n.prototype._renewToken=function(e,t,n){this.info("renewToken is called for resource:"+e);var r=this._addAdalFrame("adalRenewFrame"+e),o=this._guid()+"|"+e;this.config.state=o,this._renewStates.push(o),this.verbose("Renew token Expected state: "+o),n=n||"token";var i=this._urlRemoveQueryStringParameter(this._getNavigateUrl(n,e),"prompt");n===this.RESPONSE_TYPE.ID_TOKEN_TOKEN&&(this._idTokenNonce=this._guid(),this._saveItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN,this._idTokenNonce,!0),i+="&nonce="+encodeURIComponent(this._idTokenNonce)),i+="&prompt=none",i=this._addHintParameters(i),this.registerCallback(o,e,t),this.verbosePii("Navigate to:"+i),r.src="about:blank",this._loadFrameTimeout(i,"adalRenewFrame"+e,e)},n.prototype._renewIdToken=function(e,t){this.info("renewIdToken is called");var n=this._addAdalFrame("adalIdTokenFrame"),r=this._guid()+"|"+this.config.clientId;this._idTokenNonce=this._guid(),this._saveItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN,this._idTokenNonce,!0),this.config.state=r,this._renewStates.push(r),this.verbose("Renew Idtoken Expected state: "+r);var o=null===t||void 0===t?null:this.config.clientId,t=t||"id_token",i=this._urlRemoveQueryStringParameter(this._getNavigateUrl(t,o),"prompt");i+="&prompt=none",i=this._addHintParameters(i),i+="&nonce="+encodeURIComponent(this._idTokenNonce),this.registerCallback(r,this.config.clientId,e),this.verbosePii("Navigate to:"+i),n.src="about:blank",this._loadFrameTimeout(i,"adalIdTokenFrame",this.config.clientId)},n.prototype._urlContainsQueryStringParameter=function(e,t){return new RegExp("[\\?&]"+e+"=").test(t)},n.prototype._urlRemoveQueryStringParameter=function(e,t){var n=new RegExp("(\\&"+t+"=)[^&]+");return e=e.replace(n,""),n=new RegExp("("+t+"=)[^&]+&"),e=e.replace(n,""),n=new RegExp("("+t+"=)[^&]+"),e=e.replace(n,"")},n.prototype._loadFrameTimeout=function(e,t,n){this.verbose("Set loading state to pending for: "+n),this._saveItem(this.CONSTANTS.STORAGE.RENEW_STATUS+n,this.CONSTANTS.TOKEN_RENEW_STATUS_IN_PROGRESS),this._loadFrame(e,t);var r=this;setTimeout(function(){if(r._getItem(r.CONSTANTS.STORAGE.RENEW_STATUS+n)===r.CONSTANTS.TOKEN_RENEW_STATUS_IN_PROGRESS){r.verbose("Loading frame has timed out after: "+r.CONSTANTS.LOADFRAME_TIMEOUT/1e3+" seconds for resource "+n);var e=r._activeRenewals[n];e&&r._callBackMappedToRenewStates[e]&&r._callBackMappedToRenewStates[e]("Token renewal operation failed due to timeout",null,"Token Renewal Failed"),r._saveItem(r.CONSTANTS.STORAGE.RENEW_STATUS+n,r.CONSTANTS.TOKEN_RENEW_STATUS_CANCELED)}},r.CONSTANTS.LOADFRAME_TIMEOUT)},n.prototype._loadFrame=function(e,t){var n=this;n.info("LoadFrame: "+t);var r=t;setTimeout(function(){var t=n._addAdalFrame(r);""!==t.src&&"about:blank"!==t.src||(t.src=e,n._loadFrame(e,r))},500)},n.prototype.acquireToken=function(e,t){if(this._isEmpty(e))return this.warn("resource is required"),void t("resource is required",null,"resource is required");var n=this.getCachedToken(e);return n?(this.info("Token is already in cache for resource:"+e),void t(null,n,null)):this._user||this.config.extraQueryParameter&&-1!==this.config.extraQueryParameter.indexOf("login_hint")?void(this._activeRenewals[e]?this.registerCallback(this._activeRenewals[e],e,t):(this._requestType=this.REQUEST_TYPE.RENEW_TOKEN,e===this.config.clientId?this._user?(this.verbose("renewing idtoken"),this._renewIdToken(t)):(this.verbose("renewing idtoken and access_token"),this._renewIdToken(t,this.RESPONSE_TYPE.ID_TOKEN_TOKEN)):this._user?(this.verbose("renewing access_token"),this._renewToken(e,t)):(this.verbose("renewing idtoken and access_token"),this._renewToken(e,t,this.RESPONSE_TYPE.ID_TOKEN_TOKEN)))):(this.warn("User login is required"),void t("User login is required",null,"login required"))},n.prototype.acquireTokenPopup=function(e,t,n,r){if(this._isEmpty(e))return this.warn("resource is required"),void r("resource is required",null,"resource is required");if(!this._user)return this.warn("User login is required"),void r("User login is required",null,"login required");if(this._acquireTokenInProgress)return this.warn("Acquire token interactive is already in progress"),void r("Acquire token interactive is already in progress",null,"Acquire token interactive is already in progress");var o=this._guid()+"|"+e;this.config.state=o,this._renewStates.push(o),this._requestType=this.REQUEST_TYPE.RENEW_TOKEN,this.verbose("Renew token Expected state: "+o);var i=this._urlRemoveQueryStringParameter(this._getNavigateUrl("token",e),"prompt");if(i+="&prompt=select_account",t&&(i+=t),n&&-1===i.indexOf("&claims"))i+="&claims="+encodeURIComponent(n);else if(n&&-1!==i.indexOf("&claims"))throw new Error("Claims cannot be passed as an extraQueryParameter");i=this._addHintParameters(i),this._acquireTokenInProgress=!0,this.info("acquireToken interactive is called for the resource "+e),this.registerCallback(o,e,r),this._loginPopup(i,e,r)},n.prototype.acquireTokenRedirect=function(e,t,n){if(this._isEmpty(e))return this.warn("resource is required"),void r("resource is required",null,"resource is required");var r=this.callback;if(!this._user)return this.warn("User login is required"),void r("User login is required",null,"login required");if(this._acquireTokenInProgress)return this.warn("Acquire token interactive is already in progress"),void r("Acquire token interactive is already in progress",null,"Acquire token interactive is already in progress");var o=this._guid()+"|"+e;this.config.state=o,this.verbose("Renew token Expected state: "+o);var i=this._urlRemoveQueryStringParameter(this._getNavigateUrl("token",e),"prompt");if(i+="&prompt=select_account",t&&(i+=t),n&&-1===i.indexOf("&claims"))i+="&claims="+encodeURIComponent(n);else if(n&&-1!==i.indexOf("&claims"))throw new Error("Claims cannot be passed as an extraQueryParameter");i=this._addHintParameters(i),this._acquireTokenInProgress=!0,this.info("acquireToken interactive is called for the resource "+e),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_REQUEST,window.location.href),this._saveItem(this.CONSTANTS.STORAGE.STATE_RENEW,o,!0),this.promptUser(i)},n.prototype.promptUser=function(e){e?(this.infoPii("Navigate to:"+e),window.location.replace(e)):this.info("Navigate url is empty")},n.prototype.clearCache=function(){this._saveItem(this.CONSTANTS.STORAGE.LOGIN_REQUEST,""),this._saveItem(this.CONSTANTS.STORAGE.ANGULAR_LOGIN_REQUEST,""),this._saveItem(this.CONSTANTS.STORAGE.SESSION_STATE,""),this._saveItem(this.CONSTANTS.STORAGE.STATE_LOGIN,""),this._saveItem(this.CONSTANTS.STORAGE.STATE_RENEW,""),this._renewStates=[],this._saveItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN,""),this._saveItem(this.CONSTANTS.STORAGE.IDTOKEN,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,""),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,"");var e=this._getItem(this.CONSTANTS.STORAGE.TOKEN_KEYS);if(!this._isEmpty(e)){e=e.split(this.CONSTANTS.RESOURCE_DELIMETER);for(var t=0;t<e.length&&""!==e[t];t++)this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+e[t],""),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+e[t],0)}this._saveItem(this.CONSTANTS.STORAGE.TOKEN_KEYS,"")},n.prototype.clearCacheForResource=function(e){this._saveItem(this.CONSTANTS.STORAGE.STATE_RENEW,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,""),this._hasResource(e)&&(this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+e,""),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+e,0))},n.prototype.logOut=function(){this.clearCache(),this._user=null;var e;if(this.config.logOutUri)e=this.config.logOutUri;else{var t="common",n="";this.config.tenant&&(t=this.config.tenant),this.config.postLogoutRedirectUri&&(n="post_logout_redirect_uri="+encodeURIComponent(this.config.postLogoutRedirectUri)),e=this.instance+t+"/oauth2/logout?"+n}this.infoPii("Logout navigate to: "+e),this.promptUser(e)},n.prototype._isEmpty=function(e){return void 0===e||!e||0===e.length},n.prototype.getUser=function(e){if("function"!=typeof e)throw new Error("callback is not a function");if(this._user)return void e(null,this._user);var t=this._getItem(this.CONSTANTS.STORAGE.IDTOKEN);this._isEmpty(t)?(this.warn("User information is not available"),e("User information is not available",null)):(this.info("User exists in cache: "),this._user=this._createUser(t),e(null,this._user))},n.prototype._addHintParameters=function(e){if(this._user&&this._user.profile)if(this._user.profile.sid&&-1!==e.indexOf("&prompt=none"))this._urlContainsQueryStringParameter("sid",e)||(e+="&sid="+encodeURIComponent(this._user.profile.sid));else if(this._user.profile.upn&&(this._urlContainsQueryStringParameter("login_hint",e)||(e+="&login_hint="+encodeURIComponent(this._user.profile.upn)),!this._urlContainsQueryStringParameter("domain_hint",e)&&this._user.profile.upn.indexOf("@")>-1)){var t=this._user.profile.upn.split("@");e+="&domain_hint="+encodeURIComponent(t[t.length-1])}return e},n.prototype._createUser=function(e){var t=null,n=this._extractIdToken(e);return n&&n.hasOwnProperty("aud")&&(n.aud.toLowerCase()===this.config.clientId.toLowerCase()?(t={userName:"",profile:n},n.hasOwnProperty("upn")?t.userName=n.upn:n.hasOwnProperty("email")&&(t.userName=n.email)):this.warn("IdToken has invalid aud field")),t},n.prototype._getHash=function(e){return e.indexOf("#/")>-1?e=e.substring(e.indexOf("#/")+2):e.indexOf("#")>-1&&(e=e.substring(1)),e},n.prototype.isCallback=function(e){e=this._getHash(e);var t=this._deserialize(e);return t.hasOwnProperty(this.CONSTANTS.ERROR_DESCRIPTION)||t.hasOwnProperty(this.CONSTANTS.ACCESS_TOKEN)||t.hasOwnProperty(this.CONSTANTS.ID_TOKEN)},n.prototype.getLoginError=function(){return this._getItem(this.CONSTANTS.STORAGE.LOGIN_ERROR)},n.prototype.getRequestInfo=function(e){e=this._getHash(e);var t=this._deserialize(e),n={valid:!1,parameters:{},stateMatch:!1,stateResponse:"",requestType:this.REQUEST_TYPE.UNKNOWN};if(t&&(n.parameters=t,t.hasOwnProperty(this.CONSTANTS.ERROR_DESCRIPTION)||t.hasOwnProperty(this.CONSTANTS.ACCESS_TOKEN)||t.hasOwnProperty(this.CONSTANTS.ID_TOKEN))){n.valid=!0;var r="";if(!t.hasOwnProperty("state"))return this.warn("No state returned"),n;if(this.verbose("State: "+t.state),r=t.state,n.stateResponse=r,this._matchState(n))return n;if(!n.stateMatch&&window.parent){n.requestType=this._requestType;for(var o=this._renewStates,i=0;i<o.length;i++)if(o[i]===n.stateResponse){n.stateMatch=!0;break}}}return n},n.prototype._matchNonce=function(e){var t=this._getItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN);if(t){t=t.split(this.CONSTANTS.CACHE_DELIMETER);for(var n=0;n<t.length;n++)if(t[n]===e.profile.nonce)return!0}return!1},n.prototype._matchState=function(e){var t=this._getItem(this.CONSTANTS.STORAGE.STATE_LOGIN);if(t){t=t.split(this.CONSTANTS.CACHE_DELIMETER);for(var n=0;n<t.length;n++)if(t[n]===e.stateResponse)return e.requestType=this.REQUEST_TYPE.LOGIN,e.stateMatch=!0,!0}var r=this._getItem(this.CONSTANTS.STORAGE.STATE_RENEW);if(r){r=r.split(this.CONSTANTS.CACHE_DELIMETER);for(var n=0;n<r.length;n++)if(r[n]===e.stateResponse)return e.requestType=this.REQUEST_TYPE.RENEW_TOKEN,e.stateMatch=!0,!0}return!1},n.prototype._getResourceFromState=function(e){if(e){var t=e.indexOf("|");if(t>-1&&t+1<e.length)return e.substring(t+1)}return""},n.prototype.saveTokenFromHash=function(e){this.info("State status:"+e.stateMatch+"; Request type:"+e.requestType),this._saveItem(this.CONSTANTS.STORAGE.ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,"");var t=this._getResourceFromState(e.stateResponse);if(e.parameters.hasOwnProperty(this.CONSTANTS.ERROR_DESCRIPTION))this.infoPii("Error :"+e.parameters.error+"; Error description:"+e.parameters[this.CONSTANTS.ERROR_DESCRIPTION]),this._saveItem(this.CONSTANTS.STORAGE.ERROR,e.parameters.error),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,e.parameters[this.CONSTANTS.ERROR_DESCRIPTION]),e.requestType===this.REQUEST_TYPE.LOGIN&&(this._loginInProgress=!1,this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,e.parameters.error_description));else if(e.stateMatch){this.info("State is right"),e.parameters.hasOwnProperty(this.CONSTANTS.SESSION_STATE)&&this._saveItem(this.CONSTANTS.STORAGE.SESSION_STATE,e.parameters[this.CONSTANTS.SESSION_STATE]);var n;e.parameters.hasOwnProperty(this.CONSTANTS.ACCESS_TOKEN)&&(this.info("Fragment has access token"),this._hasResource(t)||(n=this._getItem(this.CONSTANTS.STORAGE.TOKEN_KEYS)||"",this._saveItem(this.CONSTANTS.STORAGE.TOKEN_KEYS,n+t+this.CONSTANTS.RESOURCE_DELIMETER)),this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+t,e.parameters[this.CONSTANTS.ACCESS_TOKEN]),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+t,this._expiresIn(e.parameters[this.CONSTANTS.EXPIRES_IN]))),e.parameters.hasOwnProperty(this.CONSTANTS.ID_TOKEN)&&(this.info("Fragment has id token"),this._loginInProgress=!1,this._user=this._createUser(e.parameters[this.CONSTANTS.ID_TOKEN]),this._user&&this._user.profile?this._matchNonce(this._user)?(this._saveItem(this.CONSTANTS.STORAGE.IDTOKEN,e.parameters[this.CONSTANTS.ID_TOKEN]),t=this.config.loginResource?this.config.loginResource:this.config.clientId,this._hasResource(t)||(n=this._getItem(this.CONSTANTS.STORAGE.TOKEN_KEYS)||"",this._saveItem(this.CONSTANTS.STORAGE.TOKEN_KEYS,n+t+this.CONSTANTS.RESOURCE_DELIMETER)),this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+t,e.parameters[this.CONSTANTS.ID_TOKEN]),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+t,this._user.profile.exp)):(this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,"Nonce received: "+this._user.profile.nonce+" is not same as requested: "+this._getItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN)),this._user=null):(e.parameters.error="invalid id_token",e.parameters.error_description="Invalid id_token. id_token: "+e.parameters[this.CONSTANTS.ID_TOKEN],this._saveItem(this.CONSTANTS.STORAGE.ERROR,"invalid id_token"),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,"Invalid id_token. id_token: "+e.parameters[this.CONSTANTS.ID_TOKEN])))}else e.parameters.error="Invalid_state",e.parameters.error_description="Invalid_state. state: "+e.stateResponse,this._saveItem(this.CONSTANTS.STORAGE.ERROR,"Invalid_state"),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,"Invalid_state. state: "+e.stateResponse);this._saveItem(this.CONSTANTS.STORAGE.RENEW_STATUS+t,this.CONSTANTS.TOKEN_RENEW_STATUS_COMPLETED)},n.prototype.getResourceForEndpoint=function(e){if(this.config&&this.config.anonymousEndpoints)for(var t=0;t<this.config.anonymousEndpoints.length;t++)if(e.indexOf(this.config.anonymousEndpoints[t])>-1)return null;if(this.config&&this.config.endpoints)for(var n in this.config.endpoints)if(e.indexOf(n)>-1)return this.config.endpoints[n];return e.indexOf("http://")>-1||e.indexOf("https://")>-1?this._getHostFromUri(e)===this._getHostFromUri(this.config.redirectUri)?this.config.loginResource:null:this.config.loginResource},n.prototype._getHostFromUri=function(e){var t=String(e).replace(/^(https?:)\/\//,"");return t=t.split("/")[0]},n.prototype.handleWindowCallback=function(e){if(null==e&&(e=window.location.hash),this.isCallback(e)){var t=null,n=!1;this._openedWindows.length>0&&this._openedWindows[this._openedWindows.length-1].opener&&this._openedWindows[this._openedWindows.length-1].opener._adalInstance?(t=this._openedWindows[this._openedWindows.length-1].opener._adalInstance,n=!0):window.parent&&window.parent._adalInstance&&(t=window.parent._adalInstance);var r,o,i=t.getRequestInfo(e),s=null;o=n||window.parent!==window?t._callBackMappedToRenewStates[i.stateResponse]:t.callback,t.info("Returned from redirect url"),t.saveTokenFromHash(i),i.requestType===this.REQUEST_TYPE.RENEW_TOKEN&&window.parent?(window.parent!==window?t.verbose("Window is in iframe, acquiring token silently"):t.verbose("acquiring token interactive in progress"),r=i.parameters[t.CONSTANTS.ACCESS_TOKEN]||i.parameters[t.CONSTANTS.ID_TOKEN],s=t.CONSTANTS.ACCESS_TOKEN):i.requestType===this.REQUEST_TYPE.LOGIN&&(r=i.parameters[t.CONSTANTS.ID_TOKEN],s=t.CONSTANTS.ID_TOKEN);var a=i.parameters[t.CONSTANTS.ERROR_DESCRIPTION],u=i.parameters[t.CONSTANTS.ERROR];try{o&&o(a,r,u,s)}catch(e){t.error("Error occurred in user defined callback function: "+e)}window.parent!==window||n||(t.config.navigateToLoginRequestUrl?window.location.href=t._getItem(t.CONSTANTS.STORAGE.LOGIN_REQUEST):window.location.hash="")}},n.prototype._getNavigateUrl=function(e,t){var n="common";this.config.tenant&&(n=this.config.tenant);var r=this.instance+n+"/oauth2/authorize"+this._serialize(e,this.config,t)+this._addLibMetadata();return this.info("Navigate url:"+r),r},n.prototype._extractIdToken=function(e){var t=this._decodeJwt(e);if(!t)return null;try{var n=t.JWSPayload,r=this._base64DecodeStringUrlSafe(n);return r?JSON.parse(r):(this.info("The returned id_token could not be base64 url safe decoded."),null)}catch(e){this.error("The returned id_token could not be decoded",e)}return null},n.prototype._base64DecodeStringUrlSafe=function(e){return e=e.replace(/-/g,"+").replace(/_/g,"/"),window.atob?decodeURIComponent(escape(window.atob(e))):decodeURIComponent(escape(this._decode(e)))},n.prototype._decode=function(e){var t="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";e=String(e).replace(/=+$/,"");var n=e.length;if(n%4==1)throw new Error("The token to be decoded is not correctly encoded.");for(var r,o,i,s,a,u,c,l,p="",h=0;h<n;h+=4){if(r=t.indexOf(e.charAt(h)),o=t.indexOf(e.charAt(h+1)),i=t.indexOf(e.charAt(h+2)),s=t.indexOf(e.charAt(h+3)),h+2===n-1){a=r<<18|o<<12|i<<6,u=a>>16&255,c=a>>8&255,p+=String.fromCharCode(u,c);break}if(h+1===n-1){a=r<<18|o<<12,u=a>>16&255,p+=String.fromCharCode(u);break}a=r<<18|o<<12|i<<6|s,u=a>>16&255,c=a>>8&255,l=255&a,p+=String.fromCharCode(u,c,l)}return p},n.prototype._decodeJwt=function(e){if(this._isEmpty(e))return null;var t=/^([^\.\s]*)\.([^\.\s]+)\.([^\.\s]*)$/,n=t.exec(e);return!n||n.length<4?(this.warn("The returned id_token is not parseable."),null):{header:n[1],JWSPayload:n[2],JWSSig:n[3]}},n.prototype._convertUrlSafeToRegularBase64EncodedString=function(e){return e.replace("-","+").replace("_","/")},n.prototype._serialize=function(e,t,n){var r=[];if(null!==t){r.push("?response_type="+e),r.push("client_id="+encodeURIComponent(t.clientId)),n&&r.push("resource="+encodeURIComponent(n)),r.push("redirect_uri="+encodeURIComponent(t.redirectUri)),r.push("state="+encodeURIComponent(t.state)),t.hasOwnProperty("slice")&&r.push("slice="+encodeURIComponent(t.slice)),t.hasOwnProperty("extraQueryParameter")&&r.push(t.extraQueryParameter);var o=t.correlationId?t.correlationId:this._guid();r.push("client-request-id="+encodeURIComponent(o))}return r.join("&")},n.prototype._deserialize=function(e){var t,n=/\+/g,r=/([^&=]+)=([^&]*)/g,o=function(e){return decodeURIComponent(e.replace(n," "))},i={};for(t=r.exec(e);t;)i[o(t[1])]=o(t[2]),t=r.exec(e);return i},n.prototype._decimalToHex=function(e){for(var t=e.toString(16);t.length<2;)t="0"+t;return t},n.prototype._guid=function(){var e=window.crypto||window.msCrypto;if(e&&e.getRandomValues){var t=new Uint8Array(16);return e.getRandomValues(t),t[6]|=64,t[6]&=79,t[8]|=128,t[8]&=191,this._decimalToHex(t[0])+this._decimalToHex(t[1])+this._decimalToHex(t[2])+this._decimalToHex(t[3])+"-"+this._decimalToHex(t[4])+this._decimalToHex(t[5])+"-"+this._decimalToHex(t[6])+this._decimalToHex(t[7])+"-"+this._decimalToHex(t[8])+this._decimalToHex(t[9])+"-"+this._decimalToHex(t[10])+this._decimalToHex(t[11])+this._decimalToHex(t[12])+this._decimalToHex(t[13])+this._decimalToHex(t[14])+this._decimalToHex(t[15])}for(var n="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",r="0123456789abcdef",o=0,i="",s=0;s<36;s++)"-"!==n[s]&&"4"!==n[s]&&(o=16*Math.random()|0),"x"===n[s]?i+=r[o]:"y"===n[s]?(o&=3,o|=8,i+=r[o]):i+=n[s];return i},n.prototype._expiresIn=function(e){return e||(e=3599),this._now()+parseInt(e,10)},n.prototype._now=function(){return Math.round((new Date).getTime()/1e3)},n.prototype._addAdalFrame=function(e){if(void 0!==e){this.info("Add adal frame to document:"+e);var t=document.getElementById(e);if(!t){if(document.createElement&&document.documentElement&&(window.opera||-1===window.navigator.userAgent.indexOf("MSIE 5.0"))){var n=document.createElement("iframe");n.setAttribute("id",e),n.setAttribute("aria-hidden","true"),n.style.visibility="hidden",n.style.position="absolute",n.style.width=n.style.height=n.borderWidth="0px",t=document.getElementsByTagName("body")[0].appendChild(n)}else document.body&&document.body.insertAdjacentHTML&&document.body.insertAdjacentHTML("beforeEnd",'<iframe name="'+e+'" id="'+e+'" style="display:none"></iframe>');window.frames&&window.frames[e]&&(t=window.frames[e])}return t}},n.prototype._saveItem=function(e,t,n){if(this.config&&this.config.cacheLocation&&"localStorage"===this.config.cacheLocation){if(!this._supportsLocalStorage())return this.info("Local storage is not supported"),!1;if(n){var r=this._getItem(e)||"";localStorage.setItem(e,r+t+this.CONSTANTS.CACHE_DELIMETER)}else localStorage.setItem(e,t);return!0}return this._supportsSessionStorage()?(sessionStorage.setItem(e,t),!0):(this.info("Session storage is not supported"),!1)},n.prototype._getItem=function(e){return this.config&&this.config.cacheLocation&&"localStorage"===this.config.cacheLocation?this._supportsLocalStorage()?localStorage.getItem(e):(this.info("Local storage is not supported"),null):this._supportsSessionStorage()?sessionStorage.getItem(e):(this.info("Session storage is not supported"),null)},n.prototype._supportsLocalStorage=function(){try{return!!window.localStorage&&(window.localStorage.setItem("storageTest","A"),"A"==window.localStorage.getItem("storageTest")&&(window.localStorage.removeItem("storageTest"),!window.localStorage.getItem("storageTest")))}catch(e){return!1}},n.prototype._supportsSessionStorage=function(){try{return!!window.sessionStorage&&(window.sessionStorage.setItem("storageTest","A"),"A"==window.sessionStorage.getItem("storageTest")&&(window.sessionStorage.removeItem("storageTest"),!window.sessionStorage.getItem("storageTest")))}catch(e){return!1}},n.prototype._cloneConfig=function(e){if(null===e||"object"!=typeof e)return e;var t={};for(var n in e)e.hasOwnProperty(n)&&(t[n]=e[n]);return t},n.prototype._addLibMetadata=function(){return"&x-client-SKU=Js&x-client-Ver="+this._libVersion()},n.prototype.log=function(e,t,n,r){if(e<=Logging.level){if(!Logging.piiLoggingEnabled&&r)return;var o=(new Date).toUTCString(),i="";i=this.config.correlationId?o+":"+this.config.correlationId+"-"+this._libVersion()+"-"+this.CONSTANTS.LEVEL_STRING_MAP[e]+" "+t:o+":"+this._libVersion()+"-"+this.CONSTANTS.LEVEL_STRING_MAP[e]+" "+t,n&&(i+="\nstack:\n"+n.stack),Logging.log(i)}},n.prototype.error=function(e,t){this.log(this.CONSTANTS.LOGGING_LEVEL.ERROR,e,t)},n.prototype.warn=function(e){this.log(this.CONSTANTS.LOGGING_LEVEL.WARN,e,null)},n.prototype.info=function(e){this.log(this.CONSTANTS.LOGGING_LEVEL.INFO,e,null)},n.prototype.verbose=function(e){this.log(this.CONSTANTS.LOGGING_LEVEL.VERBOSE,e,null)},n.prototype.errorPii=function(e,t){this.log(this.CONSTANTS.LOGGING_LEVEL.ERROR,e,t,!0)},n.prototype.warnPii=function(e){this.log(this.CONSTANTS.LOGGING_LEVEL.WARN,e,null,!0)},n.prototype.infoPii=function(e){this.log(this.CONSTANTS.LOGGING_LEVEL.INFO,e,null,!0)},n.prototype.verbosePii=function(e){this.log(this.CONSTANTS.LOGGING_LEVEL.VERBOSE,e,null,!0)},n.prototype._libVersion=function(){return"1.0.17"},void 0!==e&&e.exports&&(e.exports=n,e.exports.inject=function(e){return new n(e)}),n}()},function(e,t,n){"use strict";function r(e,t){function n(){this.constructor=e}y(e,t),e.prototype=null===t?Object.create(t):(n.prototype=t.prototype,new n)}function o(e,t,n,r){var o,i=arguments.length,s=i<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,n,r);else for(var a=e.length-1;a>=0;a--)(o=e[a])&&(s=(i<3?o(s):i>3?o(t,n,s):o(t,n))||s);return i>3&&s&&Object.defineProperty(t,n,s),s}function i(e){return h.a.log({data:0===h.a.activeLogLevel?e.result:{},level:1,message:"["+e.requestId+"] ("+(new Date).getTime()+") Returning result from pipeline. Set logging to verbose to see data."}),Promise.resolve(e.result)}function s(e,t){return new Promise(function(n){e.result=t,e.hasResult=!0,n(e)})}function a(e){return e.pipeline.length>0?e.pipeline.shift()(e):Promise.resolve(e)}function u(e){e.pipeline.length<1&&h.a.write("["+e.requestId+"] ("+(new Date).getTime()+") Request pipeline contains no methods!",2);var t=a(e).then(function(e){return i(e)}).catch(function(e){throw h.a.error(e),e});return e.isBatched&&e.batch.addResolveBatchDependency(t),t}function c(e){return void 0===e&&(e=!1),function(t,n,r){var o=r.value;r.value=function(){for(var r=[],i=0;i<arguments.length;i++)r[i]=arguments[i];return!e&&r.length>0&&Object(p.j)(r[0],"hasResult")&&r[0].hasResult?(h.a.write("["+r[0].requestId+"] ("+(new Date).getTime()+") Skipping request pipeline method "+n+", existing result in pipeline.",0),Promise.resolve(r[0])):(h.a.write("["+r[0].requestId+"] ("+(new Date).getTime()+") Calling request pipeline method "+n+".",0),o.apply(t,r).then(function(e){return a(e)}))}}}function l(){return[w.logStart,w.caching,w.send,w.logEnd].slice(0)}n.d(t,"c",function(){return d}),n.d(t,"g",function(){return m}),n.d(t,"f",function(){return b}),n.d(t,"i",function(){return v}),n.d(t,"a",function(){return S}),n.d(t,"d",function(){return T}),n.d(t,"b",function(){return O}),n.d(t,"h",function(){return C}),n.d(t,"e",function(){return P});var p=n(2),h=n(3),d=function(){function e(e){this.key=e,this.expiration=Object(p.e)(new Date,"second",p.c.defaultCachingTimeoutSeconds),this.storeName=p.c.defaultCachingStore}return Object.defineProperty(e.prototype,"store",{get:function(){return"local"===this.storeName?e.storage.local:e.storage.session},enumerable:!0,configurable:!0}),e.storage=new p.b,e}(),f=function(){function e(e,t){this.parser=e,this.cacheOptions=t}return e.prototype.parse=function(e){var t=this;return this.parser.parse(e).then(function(e){return t.cacheData(e)})},e.prototype.cacheData=function(e){return null!==this.cacheOptions.store&&this.cacheOptions.store.put(this.cacheOptions.key,e,this.cacheOptions.expiration),e},e}(),y=function(e,t){return(y=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var n in t)t.hasOwnProperty(n)&&(e[n]=t[n])})(e,t)},g=function(e){function t(t,n,r,o){void 0===r&&(r=n.status),void 0===o&&(o=n.statusText);var i=e.call(this,t)||this;return i.response=n,i.status=r,i.statusText=o,i.isHttpRequestError=!0,i}return r(t,e),t.init=function(e){return e.clone().text().then(function(n){return new t("Error making HttpClient request in queryable ["+e.status+"] "+e.statusText+" ::> "+n,e.clone())})},t}(Error),m=function(){function e(){this.rawJson={}}return e.prototype.parse=function(e){var t=this;return new Promise(function(n,r){t.handleError(e,r)&&t.parseImpl(e,n,r)})},e.prototype.parseImpl=function(e,t,n){var r=this;e.headers.has("Content-Length")&&0===parseFloat(e.headers.get("Content-Length"))||204===e.status?t({}):e.text().then(function(e){return e.replace(/\s/gi,"").length>0?JSON.parse(e):{}}).then(function(e){return t(r.parseODataJSON(e))}).catch(function(e){return n(e)})},e.prototype.handleError=function(e,t){return e.ok||g.init(e).then(t),e.ok},e.prototype.parseODataJSON=function(e){this.rawJson=e;var t=e;return Object(p.j)(e,"d")?t=Object(p.j)(e.d,"results")?e.d.results:e.d:Object(p.j)(e,"value")&&(t=e.value),t},e}(),b=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t}(m),v=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.parseImpl=function(e,t){e.text().then(t)},t}(m),S=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.parseImpl=function(e,t){e.blob().then(t)},t}(m),T=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.parseImpl=function(e,t){e.json().then(t)},t}(m),O=function(e){function t(){return null!==e&&e.apply(this,arguments)||this}return r(t,e),t.prototype.parseImpl=function(e,t){Object(p.l)(e.arrayBuffer)?e.arrayBuffer().then(t):e.buffer().then(t)},t}(m),w=(function(e){function t(t){var n=e.call(this)||this;return n.parser=t,n}r(t,e),t.prototype.parseImpl=function(e,t){this.parser(e).then(t)}}(m),function(){function e(){}return e.logStart=function(e){return new Promise(function(t){h.a.log({data:1===h.a.activeLogLevel?{}:e,level:1,message:"["+e.requestId+"] ("+(new Date).getTime()+") Beginning "+e.verb+" request ("+e.requestAbsoluteUrl+")"}),t(e)})},e.caching=function(e){return new Promise(function(t){if(e.isCached){h.a.write("["+e.requestId+"] ("+(new Date).getTime()+") Caching is enabled for request, checking cache...",1);var n=new d(e.requestAbsoluteUrl.toLowerCase());if(void 0!==e.cachingOptions&&(n=Object(p.f)(n,e.cachingOptions)),null!==n.store){var r=n.store.get(n.key);if(null!==r)return h.a.log({data:1===h.a.activeLogLevel?{}:r,level:1,message:"["+e.requestId+"] ("+(new Date).getTime()+") Value returned from cache."}),Object(p.l)(e.batchDependency)&&e.batchDependency(),Object(p.j)(e.parser,"hydrate")&&(r=e.parser.hydrate(r)),s(e,r).then(function(e){return t(e)})}h.a.write("["+e.requestId+"] ("+(new Date).getTime()+") Value not found in cache.",1),e.parser=new f(e.parser,n)}return t(e)})},e.send=function(e){return new Promise(function(t,n){if(e.isBatched){var r=e.batch.add(e.requestAbsoluteUrl,e.verb,e.options,e.parser,e.requestId);Object(p.l)(e.batchDependency)&&e.batchDependency(),h.a.write("["+e.requestId+"] ("+(new Date).getTime()+") Batching request in batch "+e.batch.batchId+".",1),t(s(e,r))}else{h.a.write("["+e.requestId+"] ("+(new Date).getTime()+") Sending request.",1);var o=e.clientFactory(),i=Object(p.f)(e.options||{},{method:e.verb});o.fetch(e.requestAbsoluteUrl,i).then(function(t){return e.parser.parse(t)}).then(function(t){return s(e,t)}).then(function(e){return t(e)}).catch(function(e){return n(e)})}})},e.logEnd=function(e){return new Promise(function(t){e.isBatched?h.a.log({data:1===h.a.activeLogLevel?{}:e,level:1,message:"["+e.requestId+"] ("+(new Date).getTime()+") "+e.verb+" request will complete in batch "+e.batch.batchId+"."}):h.a.log({data:1===h.a.activeLogLevel?{}:e,level:1,message:"["+e.requestId+"] ("+(new Date).getTime()+") Completing "+e.verb+" request."}),t(e)})},o([c(!0)],e,"logStart",null),o([c()],e,"caching",null),o([c()],e,"send",null),o([c(!0)],e,"logEnd",null),e}()),_=function(){function e(){this._query=new Map,this._options={},this._url="",this._parentUrl="",this._useCaching=!1,this._cachingOptions=null,this._cloneParentWasCaching=!1,this._cloneParentCacheOptions=null,this._requestPipeline=null}return e.prototype.toUrl=function(){return this._url},e.prototype.concat=function(e){return this._url+=e,this},Object.defineProperty(e.prototype,"query",{get:function(){return this._query},enumerable:!0,configurable:!0}),e.prototype.configure=function(e){return Object(p.p)(this._options,e),this},e.prototype.configureFrom=function(e){return Object(p.p)(this._options,e._options),this},e.prototype.usingCaching=function(e){return p.c.globalCacheDisable||(this._useCaching=!0,void 0!==e&&(this._cachingOptions=e)),this},e.prototype.withPipeline=function(e){return this._requestPipeline=e.slice(0),this},e.prototype.getCore=function(e,t){return void 0===e&&(e=new T),void 0===t&&(t={}),this._cloneParentWasCaching&&this.usingCaching(this._cloneParentCacheOptions),this.reqImpl("GET",t,e)},e.prototype.postCore=function(e,t){return void 0===e&&(e={}),void 0===t&&(t=new T),this.reqImpl("POST",e,t)},e.prototype.patchCore=function(e,t){return void 0===e&&(e={}),void 0===t&&(t=new T),this.reqImpl("PATCH",e,t)},e.prototype.deleteCore=function(e,t){return void 0===e&&(e={}),void 0===t&&(t=new T),this.reqImpl("DELETE",e,t)},e.prototype.putCore=function(e,t){return void 0===e&&(e={}),void 0===t&&(t=new T),this.reqImpl("PUT",e,t)},e.prototype.reqImpl=function(e,t,n){var r=this;return void 0===t&&(t={}),this.getRequestPipeline(e,t,n).then(function(o){return r.toRequestContext(e,t,n,o)}).then(function(e){return u(e)})},e.prototype.append=function(e){this._url=Object(p.d)(this._url,e)},Object.defineProperty(e.prototype,"parentUrl",{get:function(){return this._parentUrl},enumerable:!0,configurable:!0}),e.prototype.extend=function(e,t){this._parentUrl=e._url,this._url=Object(p.d)(this._parentUrl,t||""),this.configureFrom(e)},e.prototype._clone=function(e,t){return e.configureFrom(this),this._useCaching&&(e._cloneParentWasCaching=!0,e._cloneParentCacheOptions=this._cachingOptions),e},e.prototype.getRequestPipeline=function(e,t,n){var r=this;return void 0===t&&(t={}),new Promise(function(e){e(Object(p.q)(r._requestPipeline)&&Object(p.k)(r._requestPipeline)?r._requestPipeline:l())})},e}(),C=function(e){function t(){var t=e.call(this)||this;return t._batch=null,t._batchDependency=null,t}return r(t,e),t.prototype.inBatch=function(e){if(null!==this.batch)throw Error("This query is already part of a batch.");return Object(p.q)(e)&&(this._batch=e),this},t.prototype.toUrl=function(){return this._url},t.prototype.get=function(e,t){return void 0===e&&(e=new b),void 0===t&&(t={}),this.getCore(e,t)},t.prototype.getCore=function(t,n){return void 0===t&&(t=new b),void 0===n&&(n={}),e.prototype.getCore.call(this,t,n)},t.prototype.postCore=function(t,n){return void 0===t&&(t={}),void 0===n&&(n=new b),e.prototype.postCore.call(this,t,n)},t.prototype.patchCore=function(t,n){return void 0===t&&(t={}),void 0===n&&(n=new b),e.prototype.patchCore.call(this,t,n)},t.prototype.deleteCore=function(t,n){return void 0===t&&(t={}),void 0===n&&(n=new b),e.prototype.deleteCore.call(this,t,n)},t.prototype.putCore=function(t,n){return void 0===t&&(t={}),void 0===n&&(n=new b),e.prototype.putCore.call(this,t,n)},t.prototype.reqImpl=function(t,n,r){return void 0===n&&(n={}),this.hasBatch&&(this._batchDependency=this.addBatchDependency()),e.prototype.reqImpl.call(this,t,n,r)},t.prototype.addBatchDependency=function(){return null!==this._batch?this._batch.addDependency():function(){return null}},Object.defineProperty(t.prototype,"hasBatch",{get:function(){return Object(p.q)(this._batch)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"batch",{get:function(){return this.hasBatch?this._batch:null},enumerable:!0,configurable:!0}),t.prototype._clone=function(t,n){return t=e.prototype._clone.call(this,t,n),n.includeBatch&&(t=t.inBatch(this._batch)),t},t}(_),P=function(){function e(e){void 0===e&&(e=Object(p.h)()),this._batchId=e,this._reqs=[],this._deps=[],this._rDeps=[]}return Object.defineProperty(e.prototype,"batchId",{get:function(){return this._batchId},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"requests",{get:function(){return this._reqs},enumerable:!0,configurable:!0}),e.prototype.add=function(e,t,n,r,o){var i={id:o,method:t.toUpperCase(),options:n,parser:r,reject:null,resolve:null,url:e},s=new Promise(function(e,t){i.resolve=e,i.reject=t});return this._reqs.push(i),s},e.prototype.addDependency=function(){var e=function(){};return this._deps.push(new Promise(function(t){e=t})),e},e.prototype.addResolveBatchDependency=function(e){this._rDeps.push(e)},e.prototype.execute=function(){var e=this;return Promise.all(this._deps).then(function(){return Promise.all(e._deps)}).then(function(){return e.executeImpl()}).then(function(){return Promise.all(e._rDeps)}).then(function(){})},e}()}])});
+
+
+
+
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function extractWebUrl(candidateUrl) {
+    if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["r" /* stringIsNullOrEmpty */])(candidateUrl)) {
+        return "";
+    }
+    var index = candidateUrl.indexOf("_api/");
+    if (index < 0) {
+        index = candidateUrl.indexOf("_vti_bin/");
+    }
+    if (index > -1) {
+        return candidateUrl.substr(0, index);
+    }
+    // if all else fails just give them what they gave us back
+    return candidateUrl;
+}
+
+function odataUrlFrom(candidate) {
+    var parts = [];
+    var s = ["odata.type", "odata.editLink", "__metadata", "odata.metadata"];
+    if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(candidate, s[0]) && candidate[s[0]] === "SP.Web") {
+        // webs return an absolute url in the editLink
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(candidate, s[1])) {
+            parts.push(candidate[s[1]]);
+        }
+        else if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(candidate, s[2])) {
+            // we are dealing with verbose, which has an absolute uri
+            parts.push(candidate.__metadata.uri);
+        }
+    }
+    else {
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(candidate, s[3]) && Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(candidate, s[1])) {
+            // we are dealign with minimal metadata (default)
+            parts.push(extractWebUrl(candidate[s[3]]), "_api", candidate[s[1]]);
+        }
+        else if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(candidate, s[1])) {
+            parts.push("_api", candidate[s[1]]);
+        }
+        else if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(candidate, s[2])) {
+            // we are dealing with verbose, which has an absolute uri
+            parts.push(candidate.__metadata.uri);
+        }
+    }
+    if (parts.length < 1) {
+        __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("No uri information found in ODataEntity parsing, chaining will fail for this object.", 2 /* Warning */);
+        return "";
+    }
+    return __WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */].apply(void 0, parts);
+}
+var SPODataEntityParserImpl = /** @class */ (function (_super) {
+    __extends(SPODataEntityParserImpl, _super);
+    function SPODataEntityParserImpl(factory) {
+        var _this = _super.call(this) || this;
+        _this.factory = factory;
+        _this.hydrate = function (d) {
+            var o = new _this.factory(odataUrlFrom(d), null);
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(o, d);
+        };
+        return _this;
+    }
+    SPODataEntityParserImpl.prototype.parse = function (r) {
+        var _this = this;
+        return _super.prototype.parse.call(this, r).then(function (d) {
+            var o = new _this.factory(odataUrlFrom(d), null);
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(o, d);
+        });
+    };
+    return SPODataEntityParserImpl;
+}(__WEBPACK_IMPORTED_MODULE_2__pnp_odata__["g" /* ODataParserBase */]));
+var SPODataEntityArrayParserImpl = /** @class */ (function (_super) {
+    __extends(SPODataEntityArrayParserImpl, _super);
+    function SPODataEntityArrayParserImpl(factory) {
+        var _this = _super.call(this) || this;
+        _this.factory = factory;
+        _this.hydrate = function (d) {
+            return d.map(function (v) {
+                var o = new _this.factory(odataUrlFrom(v), null);
+                return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(o, v);
+            });
+        };
+        return _this;
+    }
+    SPODataEntityArrayParserImpl.prototype.parse = function (r) {
+        var _this = this;
+        return _super.prototype.parse.call(this, r).then(function (d) {
+            return d.map(function (v) {
+                var o = new _this.factory(odataUrlFrom(v), null);
+                return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(o, v);
+            });
+        });
+    };
+    return SPODataEntityArrayParserImpl;
+}(__WEBPACK_IMPORTED_MODULE_2__pnp_odata__["g" /* ODataParserBase */]));
+function spODataEntity(factory) {
+    return new SPODataEntityParserImpl(factory);
+}
+function spODataEntityArray(factory) {
+    return new SPODataEntityArrayParserImpl(factory);
+}
+
+function setup(config) {
+    __WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].extend(config);
+}
+var SPRuntimeConfigImpl = /** @class */ (function () {
+    function SPRuntimeConfigImpl() {
+    }
+    Object.defineProperty(SPRuntimeConfigImpl.prototype, "headers", {
+        get: function () {
+            var spPart = __WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].get("sp");
+            if (spPart !== undefined && spPart.headers !== undefined) {
+                return spPart.headers;
+            }
+            return {};
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SPRuntimeConfigImpl.prototype, "baseUrl", {
+        get: function () {
+            var spPart = __WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].get("sp");
+            if (spPart !== undefined && spPart.baseUrl !== undefined) {
+                return spPart.baseUrl;
+            }
+            if (__WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].spfxContext !== undefined && __WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].spfxContext !== null) {
+                return __WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].spfxContext.pageContext.web.absoluteUrl;
+            }
+            return null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SPRuntimeConfigImpl.prototype, "fetchClientFactory", {
+        get: function () {
+            var spPart = __WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].get("sp");
+            if (spPart !== undefined && spPart.fetchClientFactory !== undefined) {
+                return spPart.fetchClientFactory;
+            }
+            else {
+                return function () { return new __WEBPACK_IMPORTED_MODULE_0__pnp_common__["a" /* FetchClient */](); };
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return SPRuntimeConfigImpl;
+}());
+var SPRuntimeConfig = new SPRuntimeConfigImpl();
+
+var CachedDigest = /** @class */ (function () {
+    function CachedDigest() {
+    }
+    return CachedDigest;
+}());
+// allows for the caching of digests across all HttpClient's which each have their own DigestCache wrapper.
+var digests = new Map();
+var DigestCache = /** @class */ (function () {
+    function DigestCache(_httpClient, _digests) {
+        if (_digests === void 0) { _digests = digests; }
+        this._httpClient = _httpClient;
+        this._digests = _digests;
+    }
+    DigestCache.prototype.getDigest = function (webUrl) {
+        var _this = this;
+        var cachedDigest = this._digests.get(webUrl);
+        if (cachedDigest !== undefined) {
+            var now = new Date();
+            if (now < cachedDigest.expiration) {
+                return Promise.resolve(cachedDigest.value);
+            }
+        }
+        var url = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(webUrl, "/_api/contextinfo");
+        var headers = {
+            "Accept": "application/json;odata=verbose",
+            "Content-Type": "application/json;odata=verbose;charset=utf-8",
+        };
+        return this._httpClient.fetchRaw(url, {
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(headers, SPRuntimeConfig.headers, true),
+            method: "POST",
+        }).then(function (response) {
+            var parser = new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["f" /* ODataDefaultParser */]();
+            return parser.parse(response).then(function (d) { return d.GetContextWebInformation; });
+        }).then(function (data) {
+            var newCachedDigest = new CachedDigest();
+            newCachedDigest.value = data.FormDigestValue;
+            var seconds = data.FormDigestTimeoutSeconds;
+            var expiration = new Date();
+            expiration.setTime(expiration.getTime() + 1000 * seconds);
+            newCachedDigest.expiration = expiration;
+            _this._digests.set(webUrl, newCachedDigest);
+            return newCachedDigest.value;
+        });
+    };
+    DigestCache.prototype.clear = function () {
+        this._digests.clear();
+    };
+    return DigestCache;
+}());
+
+var SPHttpClient = /** @class */ (function () {
+    function SPHttpClient(_impl) {
+        if (_impl === void 0) { _impl = SPRuntimeConfig.fetchClientFactory(); }
+        this._impl = _impl;
+        this._digestCache = new DigestCache(this);
+    }
+    SPHttpClient.prototype.fetch = function (url, options) {
+        var _this = this;
+        if (options === void 0) { options = {}; }
+        var opts = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(options, { cache: "no-cache", credentials: "same-origin" }, true);
+        var headers = new Headers();
+        // first we add the global headers so they can be overwritten by any passed in locally to this call
+        Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["o" /* mergeHeaders */])(headers, SPRuntimeConfig.headers);
+        // second we add the local options so we can overwrite the globals
+        Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["o" /* mergeHeaders */])(headers, options.headers);
+        // lastly we apply any default headers we need that may not exist
+        if (!headers.has("Accept")) {
+            headers.append("Accept", "application/json");
+        }
+        if (!headers.has("Content-Type")) {
+            headers.append("Content-Type", "application/json;odata=verbose;charset=utf-8");
+        }
+        if (!headers.has("X-ClientService-ClientTag")) {
+            headers.append("X-ClientService-ClientTag", "PnPCoreJS:@pnp-1.3.5");
+        }
+        if (!headers.has("User-Agent")) {
+            // this marks the requests for understanding by the service
+            headers.append("User-Agent", "NONISV|SharePointPnP|PnPCoreJS/1.3.5");
+        }
+        opts = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(opts, { headers: headers });
+        if (opts.method && opts.method.toUpperCase() !== "GET") {
+            // if we have either a request digest or an authorization header we don't need a digest
+            if (!headers.has("X-RequestDigest") && !headers.has("Authorization")) {
+                return this._digestCache.getDigest(extractWebUrl(url))
+                    .then(function (digest) {
+                    headers.append("X-RequestDigest", digest);
+                    return _this.fetchRaw(url, opts);
+                });
+            }
+        }
+        return this.fetchRaw(url, opts);
+    };
+    SPHttpClient.prototype.fetchRaw = function (url, options) {
+        var _this = this;
+        if (options === void 0) { options = {}; }
+        // here we need to normalize the headers
+        var rawHeaders = new Headers();
+        Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["o" /* mergeHeaders */])(rawHeaders, options.headers);
+        options = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(options, { headers: rawHeaders });
+        var retry = function (ctx) {
+            // handles setting the proper timeout for a retry
+            var setRetry = function (response) {
+                var delay;
+                if (response.headers.has("Retry-After")) {
+                    // if we have gotten a header, use that value as the delay value
+                    delay = parseInt(response.headers.get("Retry-After"), 10);
+                }
+                else {
+                    // grab our current delay
+                    delay = ctx.delay;
+                    // Increment our counters.
+                    ctx.delay *= 2;
+                }
+                ctx.attempts++;
+                // If we have exceeded the retry count, reject.
+                if (ctx.retryCount <= ctx.attempts) {
+                    ctx.reject(Error("Retry count exceeded (" + ctx.retryCount + ") for request. Response status: [" + response.status + "] " + response.statusText));
+                }
+                else {
+                    // Set our retry timeout for {delay} milliseconds.
+                    setTimeout(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["g" /* getCtxCallback */])(_this, retry, ctx), delay);
+                }
+            };
+            // send the actual request
+            _this._impl.fetch(url, options).then(function (response) {
+                if (response.status === 429) {
+                    // we have been throttled
+                    setRetry(response);
+                }
+                else {
+                    ctx.resolve(response);
+                }
+            }).catch(function (response) {
+                if (response.status === 503) {
+                    // http status code 503, we can retry this
+                    setRetry(response);
+                }
+                else {
+                    ctx.reject(response);
+                }
+            });
+        };
+        return new Promise(function (resolve, reject) {
+            var retryContext = {
+                attempts: 0,
+                delay: 100,
+                reject: reject,
+                resolve: resolve,
+                retryCount: 7,
+            };
+            retry.call(_this, retryContext);
+        });
+    };
+    SPHttpClient.prototype.get = function (url, options) {
+        if (options === void 0) { options = {}; }
+        var opts = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(options, { method: "GET" });
+        return this.fetch(url, opts);
+    };
+    SPHttpClient.prototype.post = function (url, options) {
+        if (options === void 0) { options = {}; }
+        var opts = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(options, { method: "POST" });
+        return this.fetch(url, opts);
+    };
+    SPHttpClient.prototype.patch = function (url, options) {
+        if (options === void 0) { options = {}; }
+        var opts = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(options, { method: "PATCH" });
+        return this.fetch(url, opts);
+    };
+    SPHttpClient.prototype.delete = function (url, options) {
+        if (options === void 0) { options = {}; }
+        var opts = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(options, { method: "DELETE" });
+        return this.fetch(url, opts);
+    };
+    return SPHttpClient;
+}());
+
+var global$1 = (typeof global !== "undefined" ? global :
+            typeof self !== "undefined" ? self :
+            typeof window !== "undefined" ? window : {});
+
+/**
+ * Ensures that a given url is absolute for the current web based on context
+ *
+ * @param candidateUrl The url to make absolute
+ *
+ */
+function toAbsoluteUrl(candidateUrl) {
+    return new Promise(function (resolve) {
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["m" /* isUrlAbsolute */])(candidateUrl)) {
+            // if we are already absolute, then just return the url
+            return resolve(candidateUrl);
+        }
+        if (SPRuntimeConfig.baseUrl !== null) {
+            // base url specified either with baseUrl of spfxContext config property
+            return resolve(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(SPRuntimeConfig.baseUrl, candidateUrl));
+        }
+        if (global$1._spPageContextInfo !== undefined) {
+            // operating in classic pages
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(global$1._spPageContextInfo, "webAbsoluteUrl")) {
+                return resolve(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(global$1._spPageContextInfo.webAbsoluteUrl, candidateUrl));
+            }
+            else if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(global$1._spPageContextInfo, "webServerRelativeUrl")) {
+                return resolve(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(global$1._spPageContextInfo.webServerRelativeUrl, candidateUrl));
+            }
+        }
+        // does window.location exist and have a certain path part in it?
+        if (global$1.location !== undefined) {
+            var baseUrl_1 = global$1.location.toString().toLowerCase();
+            ["/_layouts/", "/siteassets/"].forEach(function (s) {
+                var index = baseUrl_1.indexOf(s);
+                if (index > 0) {
+                    return resolve(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(baseUrl_1.substr(0, index), candidateUrl));
+                }
+            });
+        }
+        return resolve(candidateUrl);
+    });
+}
+
+function metadata(type) {
+    return {
+        "__metadata": { "type": type },
+    };
+}
+
+/**
+ * SharePointQueryable Base Class
+ *
+ */
+var SharePointQueryable = /** @class */ (function (_super) {
+    __extends(SharePointQueryable, _super);
+    /**
+     * Creates a new instance of the SharePointQueryable class
+     *
+     * @constructor
+     * @param baseUrl A string or SharePointQueryable that should form the base part of the url
+     *
+     */
+    function SharePointQueryable(baseUrl, path) {
+        var _this = _super.call(this) || this;
+        _this._forceCaching = false;
+        if (typeof baseUrl === "string") {
+            // we need to do some extra parsing to get the parent url correct if we are
+            // being created from just a string.
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["m" /* isUrlAbsolute */])(baseUrl) || baseUrl.lastIndexOf("/") < 0) {
+                _this._parentUrl = baseUrl;
+                _this._url = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(baseUrl, path);
+            }
+            else if (baseUrl.lastIndexOf("/") > baseUrl.lastIndexOf("(")) {
+                // .../items(19)/fields
+                var index = baseUrl.lastIndexOf("/");
+                _this._parentUrl = baseUrl.slice(0, index);
+                path = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(baseUrl.slice(index), path);
+                _this._url = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(_this._parentUrl, path);
+            }
+            else {
+                // .../items(19)
+                var index = baseUrl.lastIndexOf("(");
+                _this._parentUrl = baseUrl.slice(0, index);
+                _this._url = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(baseUrl, path);
+            }
+        }
+        else {
+            _this.extend(baseUrl, path);
+            var target = baseUrl.query.get("@target");
+            if (target !== undefined) {
+                _this.query.set("@target", target);
+            }
+        }
+        return _this;
+    }
+    /**
+     * Creates a new instance of the supplied factory and extends this into that new instance
+     *
+     * @param factory constructor for the new SharePointQueryable
+     */
+    SharePointQueryable.prototype.as = function (factory) {
+        var o = new factory(this._url, null);
+        return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(o, this, true);
+    };
+    /**
+     * Gets the full url with query information
+     *
+     */
+    SharePointQueryable.prototype.toUrlAndQuery = function () {
+        var aliasedParams = new Map(this.query);
+        var url = this.toUrl().replace(/'!(@.*?)::(.*?)'/ig, function (match, labelName, value) {
+            __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("Rewriting aliased parameter from match " + match + " to label: " + labelName + " value: " + value, 0 /* Verbose */);
+            aliasedParams.set(labelName, "'" + value + "'");
+            return labelName;
+        });
+        if (aliasedParams.size > 0) {
+            var char = url.indexOf("?") > -1 ? "&" : "?";
+            url += "" + char + Array.from(aliasedParams).map(function (v) { return v[0] + "=" + v[1]; }).join("&");
+        }
+        return url;
+    };
+    /**
+     * Choose which fields to return
+     *
+     * @param selects One or more fields to return
+     */
+    SharePointQueryable.prototype.select = function () {
+        var selects = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            selects[_i] = arguments[_i];
+        }
+        if (selects.length > 0) {
+            this.query.set("$select", selects.join(","));
+        }
+        return this;
+    };
+    /**
+     * Expands fields such as lookups to get additional data
+     *
+     * @param expands The Fields for which to expand the values
+     */
+    SharePointQueryable.prototype.expand = function () {
+        var expands = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            expands[_i] = arguments[_i];
+        }
+        if (expands.length > 0) {
+            this.query.set("$expand", expands.join(","));
+        }
+        return this;
+    };
+    /**
+     * Gets a parent for this instance as specified
+     *
+     * @param factory The contructor for the class to create
+     */
+    SharePointQueryable.prototype.getParent = function (factory, baseUrl, path, batch) {
+        if (baseUrl === void 0) { baseUrl = this.parentUrl; }
+        var parent = new factory(baseUrl, path).configureFrom(this);
+        var t = "@target";
+        if (this.query.has(t)) {
+            parent.query.set(t, this.query.get(t));
+        }
+        if (batch !== undefined) {
+            parent = parent.inBatch(batch);
+        }
+        return parent;
+    };
+    /**
+     * Clones this SharePointQueryable into a new SharePointQueryable instance of T
+     * @param factory Constructor used to create the new instance
+     * @param additionalPath Any additional path to include in the clone
+     * @param includeBatch If true this instance's batch will be added to the cloned instance
+     */
+    SharePointQueryable.prototype.clone = function (factory, additionalPath, includeBatch) {
+        if (includeBatch === void 0) { includeBatch = true; }
+        var clone = _super.prototype._clone.call(this, new factory(this, additionalPath), { includeBatch: includeBatch });
+        // handle sp specific clone actions
+        var t = "@target";
+        if (this.query.has(t)) {
+            clone.query.set(t, this.query.get(t));
+        }
+        return clone;
+    };
+    /**
+     * Converts the current instance to a request context
+     *
+     * @param verb The request verb
+     * @param options The set of supplied request options
+     * @param parser The supplied ODataParser instance
+     * @param pipeline Optional request processing pipeline
+     */
+    SharePointQueryable.prototype.toRequestContext = function (verb, options, parser, pipeline) {
+        var _this = this;
+        if (options === void 0) { options = {}; }
+        var dependencyDispose = this.hasBatch ? this._batchDependency : function () { return; };
+        return toAbsoluteUrl(this.toUrlAndQuery()).then(function (url) {
+            Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["p" /* mergeOptions */])(options, _this._options);
+            // build our request context
+            var context = {
+                batch: _this.batch,
+                batchDependency: dependencyDispose,
+                cachingOptions: _this._cachingOptions,
+                clientFactory: function () { return new SPHttpClient(); },
+                isBatched: _this.hasBatch,
+                isCached: _this._forceCaching || (_this._useCaching && /^get$/i.test(verb)),
+                options: options,
+                parser: parser,
+                pipeline: pipeline,
+                requestAbsoluteUrl: url,
+                requestId: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["h" /* getGUID */])(),
+                verb: verb,
+            };
+            return context;
+        });
+    };
+    return SharePointQueryable;
+}(__WEBPACK_IMPORTED_MODULE_2__pnp_odata__["h" /* ODataQueryable */]));
+/**
+ * Represents a REST collection which can be filtered, paged, and selected
+ *
+ */
+var SharePointQueryableCollection = /** @class */ (function (_super) {
+    __extends(SharePointQueryableCollection, _super);
+    function SharePointQueryableCollection() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Filters the returned collection (https://msdn.microsoft.com/en-us/library/office/fp142385.aspx#bk_supported)
+     *
+     * @param filter The string representing the filter query
+     */
+    SharePointQueryableCollection.prototype.filter = function (filter) {
+        this.query.set("$filter", filter);
+        return this;
+    };
+    /**
+     * Orders based on the supplied fields
+     *
+     * @param orderby The name of the field on which to sort
+     * @param ascending If false DESC is appended, otherwise ASC (default)
+     */
+    SharePointQueryableCollection.prototype.orderBy = function (orderBy, ascending) {
+        if (ascending === void 0) { ascending = true; }
+        var o = "$orderby";
+        var query = this.query.has(o) ? this.query.get(o).split(",") : [];
+        query.push(orderBy + " " + (ascending ? "asc" : "desc"));
+        this.query.set(o, query.join(","));
+        return this;
+    };
+    /**
+     * Skips the specified number of items
+     *
+     * @param skip The number of items to skip
+     */
+    SharePointQueryableCollection.prototype.skip = function (skip) {
+        this.query.set("$skip", skip.toString());
+        return this;
+    };
+    /**
+     * Limits the query to only return the specified number of items
+     *
+     * @param top The query row limit
+     */
+    SharePointQueryableCollection.prototype.top = function (top) {
+        this.query.set("$top", top.toString());
+        return this;
+    };
+    return SharePointQueryableCollection;
+}(SharePointQueryable));
+/**
+ * Represents an instance that can be selected
+ *
+ */
+var SharePointQueryableInstance = /** @class */ (function (_super) {
+    __extends(SharePointQueryableInstance, _super);
+    function SharePointQueryableInstance() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Curries the update function into the common pieces
+     *
+     * @param type
+     * @param mapper
+     */
+    SharePointQueryableInstance.prototype._update = function (type, mapper) {
+        var _this = this;
+        return function (props) { return _this.postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata(type), props)),
+            headers: {
+                "X-HTTP-Method": "MERGE",
+            },
+        }).then(function (d) { return mapper(d, props); }); };
+    };
+    /**
+    * Deletes this instance
+    *
+    */
+    SharePointQueryableInstance.prototype._delete = function () {
+        return this.postCore({
+            headers: {
+                "X-HTTP-Method": "DELETE",
+            },
+        });
+    };
+    /**
+     * Deletes this instance with an etag value in the headers
+     *
+     * @param eTag eTag to delete
+     */
+    SharePointQueryableInstance.prototype._deleteWithETag = function (eTag) {
+        if (eTag === void 0) { eTag = "*"; }
+        return this.postCore({
+            headers: {
+                "IF-Match": eTag,
+                "X-HTTP-Method": "DELETE",
+            },
+        });
+    };
+    return SharePointQueryableInstance;
+}(SharePointQueryable));
+/**
+ * Decorator used to specify the default path for SharePointQueryable objects
+ *
+ * @param path
+ */
+function defaultPath(path) {
+    return function (target) {
+        return /** @class */ (function (_super) {
+            __extends(class_1, _super);
+            function class_1() {
+                var args = [];
+                for (var _i = 0; _i < arguments.length; _i++) {
+                    args[_i] = arguments[_i];
+                }
+                return _super.call(this, args[0], args.length > 1 && args[1] !== undefined ? args[1] : path) || this;
+            }
+            return class_1;
+        }(target));
+    };
+}
+
+/**
+ * Describes a collection of all site collection users
+ *
+ */
+var SiteUsers = /** @class */ (function (_super) {
+    __extends(SiteUsers, _super);
+    function SiteUsers() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SiteUsers_1 = SiteUsers;
+    /**
+     * Gets a user from the collection by id
+     *
+     * @param id The id of the user to retrieve
+     */
+    SiteUsers.prototype.getById = function (id) {
+        return new SiteUser(this, "getById(" + id + ")");
+    };
+    /**
+     * Gets a user from the collection by email
+     *
+     * @param email The email address of the user to retrieve
+     */
+    SiteUsers.prototype.getByEmail = function (email) {
+        return new SiteUser(this, "getByEmail('" + email + "')");
+    };
+    /**
+     * Gets a user from the collection by login name
+     *
+     * @param loginName The login name of the user to retrieve
+     */
+    SiteUsers.prototype.getByLoginName = function (loginName) {
+        var su = new SiteUser(this);
+        su.concat("('!@v::" + encodeURIComponent(loginName) + "')");
+        return su;
+    };
+    /**
+     * Removes a user from the collection by id
+     *
+     * @param id The id of the user to remove
+     */
+    SiteUsers.prototype.removeById = function (id) {
+        return this.clone(SiteUsers_1, "removeById(" + id + ")").postCore();
+    };
+    /**
+     * Removes a user from the collection by login name
+     *
+     * @param loginName The login name of the user to remove
+     */
+    SiteUsers.prototype.removeByLoginName = function (loginName) {
+        var o = this.clone(SiteUsers_1, "removeByLoginName(@v)");
+        o.query.set("@v", "'" + encodeURIComponent(loginName) + "'");
+        return o.postCore();
+    };
+    /**
+     * Adds a user to a group
+     *
+     * @param loginName The login name of the user to add to the group
+     *
+     */
+    SiteUsers.prototype.add = function (loginName) {
+        var _this = this;
+        return this.clone(SiteUsers_1, null).postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.User"), { LoginName: loginName })),
+        }).then(function () { return _this.getByLoginName(loginName); });
+    };
+    var SiteUsers_1;
+    SiteUsers = SiteUsers_1 = __decorate([
+        defaultPath("siteusers")
+    ], SiteUsers);
+    return SiteUsers;
+}(SharePointQueryableCollection));
+/**
+ * Base class for a user
+ *
+ */
+var UserBase = /** @class */ (function (_super) {
+    __extends(UserBase, _super);
+    function UserBase() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(UserBase.prototype, "groups", {
+        /**
+         * Gets the groups for this user
+         *
+         */
+        get: function () {
+            return new SiteGroups(this, "groups");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return UserBase;
+}(SharePointQueryableInstance));
+/**
+ * Describes a single user
+ *
+ */
+var SiteUser = /** @class */ (function (_super) {
+    __extends(SiteUser, _super);
+    function SiteUser() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+        * Updates this user instance with the supplied properties
+        *
+        * @param properties A plain object of property names and values to update for the user
+        */
+        _this.update = _this._update("SP.User", function (data) { return ({ data: data, user: _this }); });
+        /**
+         * Delete this user
+         *
+         */
+        _this.delete = _this._delete;
+        return _this;
+    }
+    return SiteUser;
+}(UserBase));
+/**
+ * Represents the current user
+ */
+var CurrentUser = /** @class */ (function (_super) {
+    __extends(CurrentUser, _super);
+    function CurrentUser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    CurrentUser = __decorate([
+        defaultPath("currentuser")
+    ], CurrentUser);
+    return CurrentUser;
+}(UserBase));
+
+/**
+ * Principal Type enum
+ *
+ */
+var PrincipalType;
+(function (PrincipalType) {
+    PrincipalType[PrincipalType["None"] = 0] = "None";
+    PrincipalType[PrincipalType["User"] = 1] = "User";
+    PrincipalType[PrincipalType["DistributionList"] = 2] = "DistributionList";
+    PrincipalType[PrincipalType["SecurityGroup"] = 4] = "SecurityGroup";
+    PrincipalType[PrincipalType["SharePointGroup"] = 8] = "SharePointGroup";
+    PrincipalType[PrincipalType["All"] = 15] = "All";
+})(PrincipalType || (PrincipalType = {}));
+/**
+ * Describes a collection of site groups
+ *
+ */
+var SiteGroups = /** @class */ (function (_super) {
+    __extends(SiteGroups, _super);
+    function SiteGroups() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SiteGroups_1 = SiteGroups;
+    /**
+     * Gets a group from the collection by id
+     *
+     * @param id The id of the group to retrieve
+     */
+    SiteGroups.prototype.getById = function (id) {
+        var sg = new SiteGroup(this);
+        sg.concat("(" + id + ")");
+        return sg;
+    };
+    /**
+     * Adds a new group to the site collection
+     *
+     * @param props The group properties object of property names and values to be set for the group
+     */
+    SiteGroups.prototype.add = function (properties) {
+        var _this = this;
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.Group"), properties));
+        return this.postCore({ body: postBody }).then(function (data) {
+            return {
+                data: data,
+                group: _this.getById(data.Id),
+            };
+        });
+    };
+    /**
+     * Gets a group from the collection by name
+     *
+     * @param groupName The name of the group to retrieve
+     */
+    SiteGroups.prototype.getByName = function (groupName) {
+        return new SiteGroup(this, "getByName('" + groupName + "')");
+    };
+    /**
+     * Removes the group with the specified member id from the collection
+     *
+     * @param id The id of the group to remove
+     */
+    SiteGroups.prototype.removeById = function (id) {
+        return this.clone(SiteGroups_1, "removeById('" + id + "')").postCore();
+    };
+    /**
+     * Removes the cross-site group with the specified name from the collection
+     *
+     * @param loginName The name of the group to remove
+     */
+    SiteGroups.prototype.removeByLoginName = function (loginName) {
+        return this.clone(SiteGroups_1, "removeByLoginName('" + loginName + "')").postCore();
+    };
+    var SiteGroups_1;
+    SiteGroups = SiteGroups_1 = __decorate([
+        defaultPath("sitegroups")
+    ], SiteGroups);
+    return SiteGroups;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single group
+ *
+ */
+var SiteGroup = /** @class */ (function (_super) {
+    __extends(SiteGroup, _super);
+    function SiteGroup() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.update = _this._update("SP.Group", function (d, p) {
+            var retGroup = _this;
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(p, "Title")) {
+                /* tslint:disable-next-line no-string-literal */
+                retGroup = _this.getParent(SiteGroup, _this.parentUrl, "getByName('" + p["Title"] + "')");
+            }
+            return {
+                data: d,
+                group: retGroup,
+            };
+        });
+        return _this;
+    }
+    Object.defineProperty(SiteGroup.prototype, "users", {
+        /**
+         * Gets the users for this group
+         *
+         */
+        get: function () {
+            return new SiteUsers(this, "users");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return SiteGroup;
+}(SharePointQueryableInstance));
+
+/**
+ * Describes a set of role assignments for the current scope
+ *
+ */
+var RoleAssignments = /** @class */ (function (_super) {
+    __extends(RoleAssignments, _super);
+    function RoleAssignments() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    RoleAssignments_1 = RoleAssignments;
+    /**
+     * Gets the role assignment associated with the specified principal id from the collection.
+     *
+     * @param id The id of the role assignment
+     */
+    RoleAssignments.prototype.getById = function (id) {
+        var ra = new RoleAssignment(this);
+        ra.concat("(" + id + ")");
+        return ra;
+    };
+    /**
+     * Adds a new role assignment with the specified principal and role definitions to the collection
+     *
+     * @param principalId The id of the user or group to assign permissions to
+     * @param roleDefId The id of the role definition that defines the permissions to assign
+     *
+     */
+    RoleAssignments.prototype.add = function (principalId, roleDefId) {
+        return this.clone(RoleAssignments_1, "addroleassignment(principalid=" + principalId + ", roledefid=" + roleDefId + ")").postCore();
+    };
+    /**
+     * Removes the role assignment with the specified principal and role definition from the collection
+     *
+     * @param principalId The id of the user or group in the role assignment
+     * @param roleDefId The id of the role definition in the role assignment
+     *
+     */
+    RoleAssignments.prototype.remove = function (principalId, roleDefId) {
+        return this.clone(RoleAssignments_1, "removeroleassignment(principalid=" + principalId + ", roledefid=" + roleDefId + ")").postCore();
+    };
+    var RoleAssignments_1;
+    RoleAssignments = RoleAssignments_1 = __decorate([
+        defaultPath("roleassignments")
+    ], RoleAssignments);
+    return RoleAssignments;
+}(SharePointQueryableCollection));
+/**
+ * Describes a role assignment
+ *
+ */
+var RoleAssignment = /** @class */ (function (_super) {
+    __extends(RoleAssignment, _super);
+    function RoleAssignment() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+         * Deletes this role assignment
+         *
+         */
+        _this.delete = _this._delete;
+        return _this;
+    }
+    Object.defineProperty(RoleAssignment.prototype, "groups", {
+        /**
+         * Gets the groups that directly belong to the access control list (ACL) for this securable object
+         *
+         */
+        get: function () {
+            return new SiteGroups(this, "groups");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RoleAssignment.prototype, "bindings", {
+        /**
+         * Gets the role definition bindings for this role assignment
+         *
+         */
+        get: function () {
+            return new RoleDefinitionBindings(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return RoleAssignment;
+}(SharePointQueryableInstance));
+/**
+ * Describes a collection of role definitions
+ *
+ */
+var RoleDefinitions = /** @class */ (function (_super) {
+    __extends(RoleDefinitions, _super);
+    function RoleDefinitions() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets the role definition with the specified id from the collection
+     *
+     * @param id The id of the role definition
+     *
+     */
+    RoleDefinitions.prototype.getById = function (id) {
+        return new RoleDefinition(this, "getById(" + id + ")");
+    };
+    /**
+     * Gets the role definition with the specified name
+     *
+     * @param name The name of the role definition
+     *
+     */
+    RoleDefinitions.prototype.getByName = function (name) {
+        return new RoleDefinition(this, "getbyname('" + name + "')");
+    };
+    /**
+     * Gets the role definition with the specified role type
+     *
+     * @param roleTypeKind The roletypekind of the role definition (None=0, Guest=1, Reader=2, Contributor=3, WebDesigner=4, Administrator=5, Editor=6, System=7)
+     *
+     */
+    RoleDefinitions.prototype.getByType = function (roleTypeKind) {
+        return new RoleDefinition(this, "getbytype(" + roleTypeKind + ")");
+    };
+    /**
+     * Creates a role definition
+     *
+     * @param name The new role definition's name
+     * @param description The new role definition's description
+     * @param order The order in which the role definition appears
+     * @param basePermissions The permissions mask for this role definition
+     *
+     */
+    RoleDefinitions.prototype.add = function (name, description, order, basePermissions) {
+        var _this = this;
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            BasePermissions: {
+                High: basePermissions.High.toString(),
+                Low: basePermissions.Low.toString(),
+            },
+            Description: description,
+            Name: name,
+            Order: order,
+            __metadata: { "type": "SP.RoleDefinition" },
+        });
+        return this.postCore({ body: postBody }).then(function (data) {
+            return {
+                data: data,
+                definition: _this.getById(data.Id),
+            };
+        });
+    };
+    RoleDefinitions = __decorate([
+        defaultPath("roledefinitions")
+    ], RoleDefinitions);
+    return RoleDefinitions;
+}(SharePointQueryableCollection));
+/**
+ * Describes a role definition
+ *
+ */
+var RoleDefinition = /** @class */ (function (_super) {
+    __extends(RoleDefinition, _super);
+    function RoleDefinition() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+         * Deletes this role definition
+         *
+         */
+        _this.delete = _this._delete;
+        return _this;
+        /* tslint:enable */
+    }
+    /**
+     * Updates this role definition with the supplied properties
+     *
+     * @param properties A plain object hash of values to update for the role definition
+     */
+    /* tslint:disable no-string-literal */
+    RoleDefinition.prototype.update = function (properties) {
+        var _this = this;
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(properties, "BasePermissions") !== undefined) {
+            properties["BasePermissions"] = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({ __metadata: { type: "SP.BasePermissions" } }, {
+                High: properties["BasePermissions"].High.toString(),
+                Low: properties["BasePermissions"].Low.toString(),
+            });
+        }
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.RoleDefinition"), properties));
+        return this.postCore({
+            body: postBody,
+            headers: {
+                "X-HTTP-Method": "MERGE",
+            },
+        }).then(function (data) {
+            var retDef = _this;
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(properties, "Name")) {
+                var parent_1 = _this.getParent(RoleDefinitions, _this.parentUrl, "");
+                retDef = parent_1.getByName(properties["Name"]);
+            }
+            return {
+                data: data,
+                definition: retDef,
+            };
+        });
+    };
+    return RoleDefinition;
+}(SharePointQueryableInstance));
+/**
+ * Describes the role definitons bound to a role assignment object
+ *
+ */
+var RoleDefinitionBindings = /** @class */ (function (_super) {
+    __extends(RoleDefinitionBindings, _super);
+    function RoleDefinitionBindings() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    RoleDefinitionBindings = __decorate([
+        defaultPath("roledefinitionbindings")
+    ], RoleDefinitionBindings);
+    return RoleDefinitionBindings;
+}(SharePointQueryableCollection));
+
+/**
+ * Determines the display mode of the given control or view
+ */
+var ControlMode;
+(function (ControlMode) {
+    ControlMode[ControlMode["Display"] = 1] = "Display";
+    ControlMode[ControlMode["Edit"] = 2] = "Edit";
+    ControlMode[ControlMode["New"] = 3] = "New";
+})(ControlMode || (ControlMode = {}));
+/**
+ * Specifies the type of the field.
+ */
+var FieldTypes;
+(function (FieldTypes) {
+    FieldTypes[FieldTypes["Invalid"] = 0] = "Invalid";
+    FieldTypes[FieldTypes["Integer"] = 1] = "Integer";
+    FieldTypes[FieldTypes["Text"] = 2] = "Text";
+    FieldTypes[FieldTypes["Note"] = 3] = "Note";
+    FieldTypes[FieldTypes["DateTime"] = 4] = "DateTime";
+    FieldTypes[FieldTypes["Counter"] = 5] = "Counter";
+    FieldTypes[FieldTypes["Choice"] = 6] = "Choice";
+    FieldTypes[FieldTypes["Lookup"] = 7] = "Lookup";
+    FieldTypes[FieldTypes["Boolean"] = 8] = "Boolean";
+    FieldTypes[FieldTypes["Number"] = 9] = "Number";
+    FieldTypes[FieldTypes["Currency"] = 10] = "Currency";
+    FieldTypes[FieldTypes["URL"] = 11] = "URL";
+    FieldTypes[FieldTypes["Computed"] = 12] = "Computed";
+    FieldTypes[FieldTypes["Threading"] = 13] = "Threading";
+    FieldTypes[FieldTypes["Guid"] = 14] = "Guid";
+    FieldTypes[FieldTypes["MultiChoice"] = 15] = "MultiChoice";
+    FieldTypes[FieldTypes["GridChoice"] = 16] = "GridChoice";
+    FieldTypes[FieldTypes["Calculated"] = 17] = "Calculated";
+    FieldTypes[FieldTypes["File"] = 18] = "File";
+    FieldTypes[FieldTypes["Attachments"] = 19] = "Attachments";
+    FieldTypes[FieldTypes["User"] = 20] = "User";
+    FieldTypes[FieldTypes["Recurrence"] = 21] = "Recurrence";
+    FieldTypes[FieldTypes["CrossProjectLink"] = 22] = "CrossProjectLink";
+    FieldTypes[FieldTypes["ModStat"] = 23] = "ModStat";
+    FieldTypes[FieldTypes["Error"] = 24] = "Error";
+    FieldTypes[FieldTypes["ContentTypeId"] = 25] = "ContentTypeId";
+    FieldTypes[FieldTypes["PageSeparator"] = 26] = "PageSeparator";
+    FieldTypes[FieldTypes["ThreadIndex"] = 27] = "ThreadIndex";
+    FieldTypes[FieldTypes["WorkflowStatus"] = 28] = "WorkflowStatus";
+    FieldTypes[FieldTypes["AllDayEvent"] = 29] = "AllDayEvent";
+    FieldTypes[FieldTypes["WorkflowEventType"] = 30] = "WorkflowEventType";
+})(FieldTypes || (FieldTypes = {}));
+var DateTimeFieldFormatType;
+(function (DateTimeFieldFormatType) {
+    DateTimeFieldFormatType[DateTimeFieldFormatType["DateOnly"] = 0] = "DateOnly";
+    DateTimeFieldFormatType[DateTimeFieldFormatType["DateTime"] = 1] = "DateTime";
+})(DateTimeFieldFormatType || (DateTimeFieldFormatType = {}));
+var DateTimeFieldFriendlyFormatType;
+(function (DateTimeFieldFriendlyFormatType) {
+    DateTimeFieldFriendlyFormatType[DateTimeFieldFriendlyFormatType["Unspecified"] = 0] = "Unspecified";
+    DateTimeFieldFriendlyFormatType[DateTimeFieldFriendlyFormatType["Disabled"] = 1] = "Disabled";
+    DateTimeFieldFriendlyFormatType[DateTimeFieldFriendlyFormatType["Relative"] = 2] = "Relative";
+})(DateTimeFieldFriendlyFormatType || (DateTimeFieldFriendlyFormatType = {}));
+/**
+ * Specifies the control settings while adding a field.
+ */
+var AddFieldOptions;
+(function (AddFieldOptions) {
+    /**
+     *  Specify that a new field added to the list must also be added to the default content type in the site collection
+     */
+    AddFieldOptions[AddFieldOptions["DefaultValue"] = 0] = "DefaultValue";
+    /**
+     * Specify that a new field added to the list must also be added to the default content type in the site collection.
+     */
+    AddFieldOptions[AddFieldOptions["AddToDefaultContentType"] = 1] = "AddToDefaultContentType";
+    /**
+     * Specify that a new field must not be added to any other content type
+     */
+    AddFieldOptions[AddFieldOptions["AddToNoContentType"] = 2] = "AddToNoContentType";
+    /**
+     *  Specify that a new field that is added to the specified list must also be added to all content types in the site collection
+     */
+    AddFieldOptions[AddFieldOptions["AddToAllContentTypes"] = 4] = "AddToAllContentTypes";
+    /**
+     * Specify adding an internal field name hint for the purpose of avoiding possible database locking or field renaming operations
+     */
+    AddFieldOptions[AddFieldOptions["AddFieldInternalNameHint"] = 8] = "AddFieldInternalNameHint";
+    /**
+     * Specify that a new field that is added to the specified list must also be added to the default list view
+     */
+    AddFieldOptions[AddFieldOptions["AddFieldToDefaultView"] = 16] = "AddFieldToDefaultView";
+    /**
+     * Specify to confirm that no other field has the same display name
+     */
+    AddFieldOptions[AddFieldOptions["AddFieldCheckDisplayName"] = 32] = "AddFieldCheckDisplayName";
+})(AddFieldOptions || (AddFieldOptions = {}));
+var CalendarType;
+(function (CalendarType) {
+    CalendarType[CalendarType["Gregorian"] = 1] = "Gregorian";
+    CalendarType[CalendarType["Japan"] = 3] = "Japan";
+    CalendarType[CalendarType["Taiwan"] = 4] = "Taiwan";
+    CalendarType[CalendarType["Korea"] = 5] = "Korea";
+    CalendarType[CalendarType["Hijri"] = 6] = "Hijri";
+    CalendarType[CalendarType["Thai"] = 7] = "Thai";
+    CalendarType[CalendarType["Hebrew"] = 8] = "Hebrew";
+    CalendarType[CalendarType["GregorianMEFrench"] = 9] = "GregorianMEFrench";
+    CalendarType[CalendarType["GregorianArabic"] = 10] = "GregorianArabic";
+    CalendarType[CalendarType["GregorianXLITEnglish"] = 11] = "GregorianXLITEnglish";
+    CalendarType[CalendarType["GregorianXLITFrench"] = 12] = "GregorianXLITFrench";
+    CalendarType[CalendarType["KoreaJapanLunar"] = 14] = "KoreaJapanLunar";
+    CalendarType[CalendarType["ChineseLunar"] = 15] = "ChineseLunar";
+    CalendarType[CalendarType["SakaEra"] = 16] = "SakaEra";
+    CalendarType[CalendarType["UmAlQura"] = 23] = "UmAlQura";
+})(CalendarType || (CalendarType = {}));
+var UrlFieldFormatType;
+(function (UrlFieldFormatType) {
+    UrlFieldFormatType[UrlFieldFormatType["Hyperlink"] = 0] = "Hyperlink";
+    UrlFieldFormatType[UrlFieldFormatType["Image"] = 1] = "Image";
+})(UrlFieldFormatType || (UrlFieldFormatType = {}));
+var PermissionKind;
+(function (PermissionKind) {
+    /**
+     * Has no permissions on the Site. Not available through the user interface.
+     */
+    PermissionKind[PermissionKind["EmptyMask"] = 0] = "EmptyMask";
+    /**
+     * View items in lists, documents in document libraries, and Web discussion comments.
+     */
+    PermissionKind[PermissionKind["ViewListItems"] = 1] = "ViewListItems";
+    /**
+     * Add items to lists, documents to document libraries, and Web discussion comments.
+     */
+    PermissionKind[PermissionKind["AddListItems"] = 2] = "AddListItems";
+    /**
+     * Edit items in lists, edit documents in document libraries, edit Web discussion comments
+     * in documents, and customize Web Part Pages in document libraries.
+     */
+    PermissionKind[PermissionKind["EditListItems"] = 3] = "EditListItems";
+    /**
+     * Delete items from a list, documents from a document library, and Web discussion
+     * comments in documents.
+     */
+    PermissionKind[PermissionKind["DeleteListItems"] = 4] = "DeleteListItems";
+    /**
+     * Approve a minor version of a list item or document.
+     */
+    PermissionKind[PermissionKind["ApproveItems"] = 5] = "ApproveItems";
+    /**
+     * View the source of documents with server-side file handlers.
+     */
+    PermissionKind[PermissionKind["OpenItems"] = 6] = "OpenItems";
+    /**
+     * View past versions of a list item or document.
+     */
+    PermissionKind[PermissionKind["ViewVersions"] = 7] = "ViewVersions";
+    /**
+     * Delete past versions of a list item or document.
+     */
+    PermissionKind[PermissionKind["DeleteVersions"] = 8] = "DeleteVersions";
+    /**
+     * Discard or check in a document which is checked out to another user.
+     */
+    PermissionKind[PermissionKind["CancelCheckout"] = 9] = "CancelCheckout";
+    /**
+     * Create, change, and delete personal views of lists.
+     */
+    PermissionKind[PermissionKind["ManagePersonalViews"] = 10] = "ManagePersonalViews";
+    /**
+     * Create and delete lists, add or remove columns in a list, and add or remove public views of a list.
+     */
+    PermissionKind[PermissionKind["ManageLists"] = 12] = "ManageLists";
+    /**
+     * View forms, views, and application pages, and enumerate lists.
+     */
+    PermissionKind[PermissionKind["ViewFormPages"] = 13] = "ViewFormPages";
+    /**
+     * Make content of a list or document library retrieveable for anonymous users through SharePoint search.
+     * The list permissions in the site do not change.
+     */
+    PermissionKind[PermissionKind["AnonymousSearchAccessList"] = 14] = "AnonymousSearchAccessList";
+    /**
+     * Allow users to open a Site, list, or folder to access items inside that container.
+     */
+    PermissionKind[PermissionKind["Open"] = 17] = "Open";
+    /**
+     * View pages in a Site.
+     */
+    PermissionKind[PermissionKind["ViewPages"] = 18] = "ViewPages";
+    /**
+     * Add, change, or delete HTML pages or Web Part Pages, and edit the Site using
+     * a Windows SharePoint Services compatible editor.
+     */
+    PermissionKind[PermissionKind["AddAndCustomizePages"] = 19] = "AddAndCustomizePages";
+    /**
+     * Apply a theme or borders to the entire Site.
+     */
+    PermissionKind[PermissionKind["ApplyThemeAndBorder"] = 20] = "ApplyThemeAndBorder";
+    /**
+     * Apply a style sheet (.css file) to the Site.
+     */
+    PermissionKind[PermissionKind["ApplyStyleSheets"] = 21] = "ApplyStyleSheets";
+    /**
+     * View reports on Site usage.
+     */
+    PermissionKind[PermissionKind["ViewUsageData"] = 22] = "ViewUsageData";
+    /**
+     * Create a Site using Self-Service Site Creation.
+     */
+    PermissionKind[PermissionKind["CreateSSCSite"] = 23] = "CreateSSCSite";
+    /**
+     * Create subsites such as team sites, Meeting Workspace sites, and Document Workspace sites.
+     */
+    PermissionKind[PermissionKind["ManageSubwebs"] = 24] = "ManageSubwebs";
+    /**
+     * Create a group of users that can be used anywhere within the site collection.
+     */
+    PermissionKind[PermissionKind["CreateGroups"] = 25] = "CreateGroups";
+    /**
+     * Create and change permission levels on the Site and assign permissions to users
+     * and groups.
+     */
+    PermissionKind[PermissionKind["ManagePermissions"] = 26] = "ManagePermissions";
+    /**
+     * Enumerate files and folders in a Site using Microsoft Office SharePoint Designer
+     * and WebDAV interfaces.
+     */
+    PermissionKind[PermissionKind["BrowseDirectories"] = 27] = "BrowseDirectories";
+    /**
+     * View information about users of the Site.
+     */
+    PermissionKind[PermissionKind["BrowseUserInfo"] = 28] = "BrowseUserInfo";
+    /**
+     * Add or remove personal Web Parts on a Web Part Page.
+     */
+    PermissionKind[PermissionKind["AddDelPrivateWebParts"] = 29] = "AddDelPrivateWebParts";
+    /**
+     * Update Web Parts to display personalized information.
+     */
+    PermissionKind[PermissionKind["UpdatePersonalWebParts"] = 30] = "UpdatePersonalWebParts";
+    /**
+     * Grant the ability to perform all administration tasks for the Site as well as
+     * manage content, activate, deactivate, or edit properties of Site scoped Features
+     * through the object model or through the user interface (UI). When granted on the
+     * root Site of a Site Collection, activate, deactivate, or edit properties of
+     * site collection scoped Features through the object model. To browse to the Site
+     * Collection Features page and activate or deactivate Site Collection scoped Features
+     * through the UI, you must be a Site Collection administrator.
+     */
+    PermissionKind[PermissionKind["ManageWeb"] = 31] = "ManageWeb";
+    /**
+     * Content of lists and document libraries in the Web site will be retrieveable for anonymous users through
+     * SharePoint search if the list or document library has AnonymousSearchAccessList set.
+     */
+    PermissionKind[PermissionKind["AnonymousSearchAccessWebLists"] = 32] = "AnonymousSearchAccessWebLists";
+    /**
+     * Use features that launch client applications. Otherwise, users must work on documents
+     * locally and upload changes.
+     */
+    PermissionKind[PermissionKind["UseClientIntegration"] = 37] = "UseClientIntegration";
+    /**
+     * Use SOAP, WebDAV, or Microsoft Office SharePoint Designer interfaces to access the Site.
+     */
+    PermissionKind[PermissionKind["UseRemoteAPIs"] = 38] = "UseRemoteAPIs";
+    /**
+     * Manage alerts for all users of the Site.
+     */
+    PermissionKind[PermissionKind["ManageAlerts"] = 39] = "ManageAlerts";
+    /**
+     * Create e-mail alerts.
+     */
+    PermissionKind[PermissionKind["CreateAlerts"] = 40] = "CreateAlerts";
+    /**
+     * Allows a user to change his or her user information, such as adding a picture.
+     */
+    PermissionKind[PermissionKind["EditMyUserInfo"] = 41] = "EditMyUserInfo";
+    /**
+     * Enumerate permissions on Site, list, folder, document, or list item.
+     */
+    PermissionKind[PermissionKind["EnumeratePermissions"] = 63] = "EnumeratePermissions";
+    /**
+     * Has all permissions on the Site. Not available through the user interface.
+     */
+    PermissionKind[PermissionKind["FullMask"] = 65] = "FullMask";
+})(PermissionKind || (PermissionKind = {}));
+/**
+ * Specifies the type of a principal.
+ */
+/* tslint:disable:no-bitwise */
+var PrincipalType$1;
+(function (PrincipalType) {
+    /**
+     * Enumeration whose value specifies no principal type.
+     */
+    PrincipalType[PrincipalType["None"] = 0] = "None";
+    /**
+     * Enumeration whose value specifies a user as the principal type.
+     */
+    PrincipalType[PrincipalType["User"] = 1] = "User";
+    /**
+     * Enumeration whose value specifies a distribution list as the principal type.
+     */
+    PrincipalType[PrincipalType["DistributionList"] = 2] = "DistributionList";
+    /**
+     * Enumeration whose value specifies a security group as the principal type.
+     */
+    PrincipalType[PrincipalType["SecurityGroup"] = 4] = "SecurityGroup";
+    /**
+     * Enumeration whose value specifies a group as the principal type.
+     */
+    PrincipalType[PrincipalType["SharePointGroup"] = 8] = "SharePointGroup";
+    /**
+     * Enumeration whose value specifies all principal types.
+     */
+    PrincipalType[PrincipalType["All"] = 15] = "All";
+})(PrincipalType$1 || (PrincipalType$1 = {}));
+/* tslint:enable:no-bitwise */
+/**
+ * Specifies the source of a principal.
+ */
+/* tslint:disable:no-bitwise */
+var PrincipalSource;
+(function (PrincipalSource) {
+    /**
+     * Enumeration whose value specifies no principal source.
+     */
+    PrincipalSource[PrincipalSource["None"] = 0] = "None";
+    /**
+     * Enumeration whose value specifies user information list as the principal source.
+     */
+    PrincipalSource[PrincipalSource["UserInfoList"] = 1] = "UserInfoList";
+    /**
+     * Enumeration whose value specifies Active Directory as the principal source.
+     */
+    PrincipalSource[PrincipalSource["Windows"] = 2] = "Windows";
+    /**
+     * Enumeration whose value specifies the current membership provider as the principal source.
+     */
+    PrincipalSource[PrincipalSource["MembershipProvider"] = 4] = "MembershipProvider";
+    /**
+     * Enumeration whose value specifies the current role provider as the principal source.
+     */
+    PrincipalSource[PrincipalSource["RoleProvider"] = 8] = "RoleProvider";
+    /**
+     * Enumeration whose value specifies all principal sources.
+     */
+    PrincipalSource[PrincipalSource["All"] = 15] = "All";
+})(PrincipalSource || (PrincipalSource = {}));
+/* tslint:enable:no-bitwise */
+var RoleType;
+(function (RoleType) {
+    RoleType[RoleType["None"] = 0] = "None";
+    RoleType[RoleType["Guest"] = 1] = "Guest";
+    RoleType[RoleType["Reader"] = 2] = "Reader";
+    RoleType[RoleType["Contributor"] = 3] = "Contributor";
+    RoleType[RoleType["WebDesigner"] = 4] = "WebDesigner";
+    RoleType[RoleType["Administrator"] = 5] = "Administrator";
+})(RoleType || (RoleType = {}));
+var PageType;
+(function (PageType) {
+    PageType[PageType["Invalid"] = -1] = "Invalid";
+    PageType[PageType["DefaultView"] = 0] = "DefaultView";
+    PageType[PageType["NormalView"] = 1] = "NormalView";
+    PageType[PageType["DialogView"] = 2] = "DialogView";
+    PageType[PageType["View"] = 3] = "View";
+    PageType[PageType["DisplayForm"] = 4] = "DisplayForm";
+    PageType[PageType["DisplayFormDialog"] = 5] = "DisplayFormDialog";
+    PageType[PageType["EditForm"] = 6] = "EditForm";
+    PageType[PageType["EditFormDialog"] = 7] = "EditFormDialog";
+    PageType[PageType["NewForm"] = 8] = "NewForm";
+    PageType[PageType["NewFormDialog"] = 9] = "NewFormDialog";
+    PageType[PageType["SolutionForm"] = 10] = "SolutionForm";
+    PageType[PageType["PAGE_MAXITEMS"] = 11] = "PAGE_MAXITEMS";
+})(PageType || (PageType = {}));
+var SharingLinkKind;
+(function (SharingLinkKind) {
+    /**
+     * Uninitialized link
+     */
+    SharingLinkKind[SharingLinkKind["Uninitialized"] = 0] = "Uninitialized";
+    /**
+     * Direct link to the object being shared
+     */
+    SharingLinkKind[SharingLinkKind["Direct"] = 1] = "Direct";
+    /**
+     * Organization-shareable link to the object being shared with view permissions
+     */
+    SharingLinkKind[SharingLinkKind["OrganizationView"] = 2] = "OrganizationView";
+    /**
+     * Organization-shareable link to the object being shared with edit permissions
+     */
+    SharingLinkKind[SharingLinkKind["OrganizationEdit"] = 3] = "OrganizationEdit";
+    /**
+     * View only anonymous link
+     */
+    SharingLinkKind[SharingLinkKind["AnonymousView"] = 4] = "AnonymousView";
+    /**
+     * Read/Write anonymous link
+     */
+    SharingLinkKind[SharingLinkKind["AnonymousEdit"] = 5] = "AnonymousEdit";
+    /**
+     * Flexible sharing Link where properties can change without affecting link URL
+     */
+    SharingLinkKind[SharingLinkKind["Flexible"] = 6] = "Flexible";
+})(SharingLinkKind || (SharingLinkKind = {}));
+/**
+ * Indicates the role of the sharing link
+ */
+var SharingRole;
+(function (SharingRole) {
+    SharingRole[SharingRole["None"] = 0] = "None";
+    SharingRole[SharingRole["View"] = 1] = "View";
+    SharingRole[SharingRole["Edit"] = 2] = "Edit";
+    SharingRole[SharingRole["Owner"] = 3] = "Owner";
+})(SharingRole || (SharingRole = {}));
+var SharingOperationStatusCode;
+(function (SharingOperationStatusCode) {
+    /**
+     * The share operation completed without errors.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["CompletedSuccessfully"] = 0] = "CompletedSuccessfully";
+    /**
+     * The share operation completed and generated requests for access.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["AccessRequestsQueued"] = 1] = "AccessRequestsQueued";
+    /**
+     * The share operation failed as there were no resolved users.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["NoResolvedUsers"] = -1] = "NoResolvedUsers";
+    /**
+     * The share operation failed due to insufficient permissions.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["AccessDenied"] = -2] = "AccessDenied";
+    /**
+     * The share operation failed when attempting a cross site share, which is not supported.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["CrossSiteRequestNotSupported"] = -3] = "CrossSiteRequestNotSupported";
+    /**
+     * The sharing operation failed due to an unknown error.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["UnknowError"] = -4] = "UnknowError";
+    /**
+     * The text you typed is too long. Please shorten it.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["EmailBodyTooLong"] = -5] = "EmailBodyTooLong";
+    /**
+     * The maximum number of unique scopes in the list has been exceeded.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["ListUniqueScopesExceeded"] = -6] = "ListUniqueScopesExceeded";
+    /**
+     * The share operation failed because a sharing capability is disabled in the site.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["CapabilityDisabled"] = -7] = "CapabilityDisabled";
+    /**
+     * The specified object for the share operation is not supported.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["ObjectNotSupported"] = -8] = "ObjectNotSupported";
+    /**
+     * A SharePoint group cannot contain another SharePoint group.
+     */
+    SharingOperationStatusCode[SharingOperationStatusCode["NestedGroupsNotSupported"] = -9] = "NestedGroupsNotSupported";
+})(SharingOperationStatusCode || (SharingOperationStatusCode = {}));
+var SPSharedObjectType;
+(function (SPSharedObjectType) {
+    SPSharedObjectType[SPSharedObjectType["Unknown"] = 0] = "Unknown";
+    SPSharedObjectType[SPSharedObjectType["File"] = 1] = "File";
+    SPSharedObjectType[SPSharedObjectType["Folder"] = 2] = "Folder";
+    SPSharedObjectType[SPSharedObjectType["Item"] = 3] = "Item";
+    SPSharedObjectType[SPSharedObjectType["List"] = 4] = "List";
+    SPSharedObjectType[SPSharedObjectType["Web"] = 5] = "Web";
+    SPSharedObjectType[SPSharedObjectType["Max"] = 6] = "Max";
+})(SPSharedObjectType || (SPSharedObjectType = {}));
+var SharingDomainRestrictionMode;
+(function (SharingDomainRestrictionMode) {
+    SharingDomainRestrictionMode[SharingDomainRestrictionMode["None"] = 0] = "None";
+    SharingDomainRestrictionMode[SharingDomainRestrictionMode["AllowList"] = 1] = "AllowList";
+    SharingDomainRestrictionMode[SharingDomainRestrictionMode["BlockList"] = 2] = "BlockList";
+})(SharingDomainRestrictionMode || (SharingDomainRestrictionMode = {}));
+var RenderListDataOptions;
+(function (RenderListDataOptions) {
+    RenderListDataOptions[RenderListDataOptions["None"] = 0] = "None";
+    RenderListDataOptions[RenderListDataOptions["ContextInfo"] = 1] = "ContextInfo";
+    RenderListDataOptions[RenderListDataOptions["ListData"] = 2] = "ListData";
+    RenderListDataOptions[RenderListDataOptions["ListSchema"] = 4] = "ListSchema";
+    RenderListDataOptions[RenderListDataOptions["MenuView"] = 8] = "MenuView";
+    RenderListDataOptions[RenderListDataOptions["ListContentType"] = 16] = "ListContentType";
+    RenderListDataOptions[RenderListDataOptions["FileSystemItemId"] = 32] = "FileSystemItemId";
+    RenderListDataOptions[RenderListDataOptions["ClientFormSchema"] = 64] = "ClientFormSchema";
+    RenderListDataOptions[RenderListDataOptions["QuickLaunch"] = 128] = "QuickLaunch";
+    RenderListDataOptions[RenderListDataOptions["Spotlight"] = 256] = "Spotlight";
+    RenderListDataOptions[RenderListDataOptions["Visualization"] = 512] = "Visualization";
+    RenderListDataOptions[RenderListDataOptions["ViewMetadata"] = 1024] = "ViewMetadata";
+    RenderListDataOptions[RenderListDataOptions["DisableAutoHyperlink"] = 2048] = "DisableAutoHyperlink";
+    RenderListDataOptions[RenderListDataOptions["EnableMediaTAUrls"] = 4096] = "EnableMediaTAUrls";
+    RenderListDataOptions[RenderListDataOptions["ParentInfo"] = 8192] = "ParentInfo";
+    RenderListDataOptions[RenderListDataOptions["PageContextInfo"] = 16384] = "PageContextInfo";
+    RenderListDataOptions[RenderListDataOptions["ClientSideComponentManifest"] = 32768] = "ClientSideComponentManifest";
+})(RenderListDataOptions || (RenderListDataOptions = {}));
+var FieldUserSelectionMode;
+(function (FieldUserSelectionMode) {
+    FieldUserSelectionMode[FieldUserSelectionMode["PeopleAndGroups"] = 1] = "PeopleAndGroups";
+    FieldUserSelectionMode[FieldUserSelectionMode["PeopleOnly"] = 0] = "PeopleOnly";
+})(FieldUserSelectionMode || (FieldUserSelectionMode = {}));
+var ChoiceFieldFormatType;
+(function (ChoiceFieldFormatType) {
+    ChoiceFieldFormatType[ChoiceFieldFormatType["Dropdown"] = 0] = "Dropdown";
+    ChoiceFieldFormatType[ChoiceFieldFormatType["RadioButtons"] = 1] = "RadioButtons";
+})(ChoiceFieldFormatType || (ChoiceFieldFormatType = {}));
+/**
+ * Specifies the originating zone of a request received.
+ */
+var UrlZone;
+(function (UrlZone) {
+    /**
+     * Specifies the default zone used for requests unless another zone is specified.
+     */
+    UrlZone[UrlZone["DefaultZone"] = 0] = "DefaultZone";
+    /**
+     * Specifies an intranet zone.
+     */
+    UrlZone[UrlZone["Intranet"] = 1] = "Intranet";
+    /**
+     * Specifies an Internet zone.
+     */
+    UrlZone[UrlZone["Internet"] = 2] = "Internet";
+    /**
+     * Specifies a custom zone.
+     */
+    UrlZone[UrlZone["Custom"] = 3] = "Custom";
+    /**
+     * Specifies an extranet zone.
+     */
+    UrlZone[UrlZone["Extranet"] = 4] = "Extranet";
+})(UrlZone || (UrlZone = {}));
+
+var SharePointQueryableSecurable = /** @class */ (function (_super) {
+    __extends(SharePointQueryableSecurable, _super);
+    function SharePointQueryableSecurable() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(SharePointQueryableSecurable.prototype, "roleAssignments", {
+        /**
+         * Gets the set of role assignments for this item
+         *
+         */
+        get: function () {
+            return new RoleAssignments(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SharePointQueryableSecurable.prototype, "firstUniqueAncestorSecurableObject", {
+        /**
+         * Gets the closest securable up the security hierarchy whose permissions are applied to this list item
+         *
+         */
+        get: function () {
+            return new SharePointQueryableInstance(this, "FirstUniqueAncestorSecurableObject");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets the effective permissions for the user supplied
+     *
+     * @param loginName The claims username for the user (ex: i:0#.f|membership|user@domain.com)
+     */
+    SharePointQueryableSecurable.prototype.getUserEffectivePermissions = function (loginName) {
+        var q = this.clone(SharePointQueryable, "getUserEffectivePermissions(@user)");
+        q.query.set("@user", "'" + encodeURIComponent(loginName) + "'");
+        return q.get().then(function (r) {
+            // handle verbose mode
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "GetUserEffectivePermissions") ? r.GetUserEffectivePermissions : r;
+        });
+    };
+    /**
+     * Gets the effective permissions for the current user
+     */
+    SharePointQueryableSecurable.prototype.getCurrentUserEffectivePermissions = function () {
+        var _this = this;
+        // remove need to reference Web here, which created a circular build issue
+        var w = new SharePointQueryableInstance("_api/web", "currentuser");
+        return w.configureFrom(this).select("LoginName").get().then(function (user) {
+            return _this.getUserEffectivePermissions(user.LoginName);
+        });
+    };
+    /**
+     * Breaks the security inheritance at this level optinally copying permissions and clearing subscopes
+     *
+     * @param copyRoleAssignments If true the permissions are copied from the current parent scope
+     * @param clearSubscopes Optional. true to make all child securable objects inherit role assignments from the current object
+     */
+    SharePointQueryableSecurable.prototype.breakRoleInheritance = function (copyRoleAssignments, clearSubscopes) {
+        if (copyRoleAssignments === void 0) { copyRoleAssignments = false; }
+        if (clearSubscopes === void 0) { clearSubscopes = false; }
+        return this.clone(SharePointQueryableSecurable, "breakroleinheritance(copyroleassignments=" + copyRoleAssignments + ", clearsubscopes=" + clearSubscopes + ")").postCore();
+    };
+    /**
+     * Removes the local role assignments so that it re-inherit role assignments from the parent object.
+     *
+     */
+    SharePointQueryableSecurable.prototype.resetRoleInheritance = function () {
+        return this.clone(SharePointQueryableSecurable, "resetroleinheritance").postCore();
+    };
+    /**
+     * Determines if a given user has the appropriate permissions
+     *
+     * @param loginName The user to check
+     * @param permission The permission being checked
+     */
+    SharePointQueryableSecurable.prototype.userHasPermissions = function (loginName, permission) {
+        var _this = this;
+        return this.getUserEffectivePermissions(loginName).then(function (perms) {
+            return _this.hasPermissions(perms, permission);
+        });
+    };
+    /**
+     * Determines if the current user has the requested permissions
+     *
+     * @param permission The permission we wish to check
+     */
+    SharePointQueryableSecurable.prototype.currentUserHasPermissions = function (permission) {
+        var _this = this;
+        return this.getCurrentUserEffectivePermissions().then(function (perms) {
+            return _this.hasPermissions(perms, permission);
+        });
+    };
+    /**
+     * Taken from sp.js, checks the supplied permissions against the mask
+     *
+     * @param value The security principal's permissions on the given object
+     * @param perm The permission checked against the value
+     */
+    /* tslint:disable:no-bitwise */
+    SharePointQueryableSecurable.prototype.hasPermissions = function (value, perm) {
+        if (!perm) {
+            return true;
+        }
+        if (perm === PermissionKind.FullMask) {
+            return (value.High & 32767) === 32767 && value.Low === 65535;
+        }
+        perm = perm - 1;
+        var num = 1;
+        if (perm >= 0 && perm < 32) {
+            num = num << perm;
+            return 0 !== (value.Low & num);
+        }
+        else if (perm >= 32 && perm < 64) {
+            num = num << perm - 32;
+            return 0 !== (value.High & num);
+        }
+        return false;
+    };
+    return SharePointQueryableSecurable;
+}(SharePointQueryableInstance));
+
+/**
+ * Internal helper class used to augment classes to include sharing functionality
+ */
+var SharePointQueryableShareable = /** @class */ (function (_super) {
+    __extends(SharePointQueryableShareable, _super);
+    function SharePointQueryableShareable() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets a sharing link for the supplied
+     *
+     * @param kind The kind of link to share
+     * @param expiration The optional expiration for this link
+     */
+    SharePointQueryableShareable.prototype.getShareLink = function (kind, expiration) {
+        if (expiration === void 0) { expiration = null; }
+        // date needs to be an ISO string or null
+        var expString = expiration !== null ? expiration.toISOString() : null;
+        // clone using the factory and send the request
+        return this.clone(SharePointQueryableShareable, "shareLink").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                request: {
+                    createLink: true,
+                    emailData: null,
+                    settings: {
+                        expiration: expString,
+                        linkKind: kind,
+                    },
+                },
+            }),
+        });
+    };
+    /**
+     * Shares this instance with the supplied users
+     *
+     * @param loginNames Resolved login names to share
+     * @param role The role
+     * @param requireSignin True to require the user is authenticated, otherwise false
+     * @param propagateAcl True to apply this share to all children
+     * @param emailData If supplied an email will be sent with the indicated properties
+     */
+    SharePointQueryableShareable.prototype.shareWith = function (loginNames, role, requireSignin, propagateAcl, emailData) {
+        var _this = this;
+        if (requireSignin === void 0) { requireSignin = false; }
+        if (propagateAcl === void 0) { propagateAcl = false; }
+        // handle the multiple input types
+        if (!Array.isArray(loginNames)) {
+            loginNames = [loginNames];
+        }
+        var userStr = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(loginNames.map(function (login) { return { Key: login }; }));
+        var roleFilter = role === SharingRole.Edit ? RoleType.Contributor : RoleType.Reader;
+        // start by looking up the role definition id we need to set the roleValue
+        // remove need to reference Web here, which created a circular build issue
+        var w = new SharePointQueryableCollection("_api/web", "roledefinitions");
+        return w.select("Id").filter("RoleTypeKind eq " + roleFilter).get().then(function (def) {
+            if (!Array.isArray(def) || def.length < 1) {
+                throw Error("Could not locate a role defintion with RoleTypeKind " + roleFilter);
+            }
+            var postBody = {
+                includeAnonymousLinkInEmail: requireSignin,
+                peoplePickerInput: userStr,
+                propagateAcl: propagateAcl,
+                roleValue: "role:" + def[0].Id,
+                useSimplifiedRoles: true,
+            };
+            if (emailData !== undefined) {
+                postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(postBody, {
+                    emailBody: emailData.body,
+                    emailSubject: emailData.subject !== undefined ? emailData.subject : "",
+                    sendEmail: true,
+                });
+            }
+            return _this.clone(SharePointQueryableShareable, "shareObject").postCore({
+                body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(postBody),
+            });
+        });
+    };
+    /**
+     * Shares an object based on the supplied options
+     *
+     * @param options The set of options to send to the ShareObject method
+     * @param bypass If true any processing is skipped and the options are sent directly to the ShareObject method
+     */
+    SharePointQueryableShareable.prototype.shareObject = function (options, bypass) {
+        var _this = this;
+        if (bypass === void 0) { bypass = false; }
+        if (bypass) {
+            // if the bypass flag is set send the supplied parameters directly to the service
+            return this.sendShareObjectRequest(options);
+        }
+        // extend our options with some defaults
+        options = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(options, {
+            group: null,
+            includeAnonymousLinkInEmail: false,
+            propagateAcl: false,
+            useSimplifiedRoles: true,
+        }, true);
+        return this.getRoleValue(options.role, options.group).then(function (roleValue) {
+            // handle the multiple input types
+            if (!Array.isArray(options.loginNames)) {
+                options.loginNames = [options.loginNames];
+            }
+            var userStr = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(options.loginNames.map(function (login) { return { Key: login }; }));
+            var postBody = {
+                peoplePickerInput: userStr,
+                roleValue: roleValue,
+                url: options.url,
+            };
+            if (options.emailData !== undefined && options.emailData !== null) {
+                postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(postBody, {
+                    emailBody: options.emailData.body,
+                    emailSubject: options.emailData.subject !== undefined ? options.emailData.subject : "Shared with you.",
+                    sendEmail: true,
+                });
+            }
+            return _this.sendShareObjectRequest(postBody);
+        });
+    };
+    /**
+     * Calls the web's UnshareObject method
+     *
+     * @param url The url of the object to unshare
+     */
+    SharePointQueryableShareable.prototype.unshareObjectWeb = function (url) {
+        return this.clone(SharePointQueryableShareable, "unshareObject").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                url: url,
+            }),
+        });
+    };
+    /**
+     * Checks Permissions on the list of Users and returns back role the users have on the Item.
+     *
+     * @param recipients The array of Entities for which Permissions need to be checked.
+     */
+    SharePointQueryableShareable.prototype.checkPermissions = function (recipients) {
+        return this.clone(SharePointQueryableShareable, "checkPermissions").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                recipients: recipients,
+            }),
+        });
+    };
+    /**
+     * Get Sharing Information.
+     *
+     * @param request The SharingInformationRequest Object.
+     * @param expands Expand more fields.
+     *
+     */
+    SharePointQueryableShareable.prototype.getSharingInformation = function (request, expands) {
+        if (request === void 0) { request = null; }
+        var q = this.clone(SharePointQueryableShareable, "getSharingInformation");
+        return q.expand.apply(q, expands).postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                request: request,
+            }),
+        });
+    };
+    /**
+     * Gets the sharing settings of an item.
+     *
+     * @param useSimplifiedRoles Determines whether to use simplified roles.
+     */
+    SharePointQueryableShareable.prototype.getObjectSharingSettings = function (useSimplifiedRoles) {
+        if (useSimplifiedRoles === void 0) { useSimplifiedRoles = true; }
+        return this.clone(SharePointQueryableShareable, "getObjectSharingSettings").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                useSimplifiedRoles: useSimplifiedRoles,
+            }),
+        });
+    };
+    /**
+     * Unshares this object
+     */
+    SharePointQueryableShareable.prototype.unshareObject = function () {
+        return this.clone(SharePointQueryableShareable, "unshareObject").postCore();
+    };
+    /**
+     * Deletes a link by type
+     *
+     * @param kind Deletes a sharing link by the kind of link
+     */
+    SharePointQueryableShareable.prototype.deleteLinkByKind = function (kind) {
+        return this.clone(SharePointQueryableShareable, "deleteLinkByKind").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ linkKind: kind }),
+        });
+    };
+    /**
+     * Removes the specified link to the item.
+     *
+     * @param kind The kind of link to be deleted.
+     * @param shareId
+     */
+    SharePointQueryableShareable.prototype.unshareLink = function (kind, shareId) {
+        if (shareId === void 0) { shareId = "00000000-0000-0000-0000-000000000000"; }
+        return this.clone(SharePointQueryableShareable, "unshareLink").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ linkKind: kind, shareId: shareId }),
+        });
+    };
+    /**
+     * Calculates the roleValue string used in the sharing query
+     *
+     * @param role The Sharing Role
+     * @param group The Group type
+     */
+    SharePointQueryableShareable.prototype.getRoleValue = function (role, group) {
+        // we will give group precedence, because we had to make a choice
+        if (group !== undefined && group !== null) {
+            switch (group) {
+                case RoleType.Contributor:
+                    // remove need to reference Web here, which created a circular build issue
+                    var memberGroup = new SharePointQueryableInstance("_api/web", "associatedmembergroup");
+                    return memberGroup.select("Id").get().then(function (g) { return "group: " + g.Id; });
+                case RoleType.Reader:
+                case RoleType.Guest:
+                    // remove need to reference Web here, which created a circular build issue
+                    var visitorGroup = new SharePointQueryableInstance("_api/web", "associatedvisitorgroup");
+                    return visitorGroup.select("Id").get().then(function (g) { return "group: " + g.Id; });
+                default:
+                    throw Error("Could not determine role value for supplied value. Contributor, Reader, and Guest are supported");
+            }
+        }
+        else {
+            var roleFilter = role === SharingRole.Edit ? RoleType.Contributor : RoleType.Reader;
+            // remove need to reference Web here, which created a circular build issue
+            var roleDefs = new SharePointQueryableCollection("_api/web", "roledefinitions");
+            return roleDefs.select("Id").top(1).filter("RoleTypeKind eq " + roleFilter).get().then(function (def) {
+                if (def.length < 1) {
+                    throw Error("Could not locate associated role definition for supplied role. Edit and View are supported");
+                }
+                return "role: " + def[0].Id;
+            });
+        }
+    };
+    SharePointQueryableShareable.prototype.getShareObjectWeb = function (candidate) {
+        return Promise.resolve(new SharePointQueryableInstance(extractWebUrl(candidate), "/_api/SP.Web.ShareObject"));
+    };
+    SharePointQueryableShareable.prototype.sendShareObjectRequest = function (options) {
+        return this.getShareObjectWeb(this.toUrl()).then(function (web) {
+            return web.expand("UsersWithAccessRequests", "GroupsSharedWith").as(SharePointQueryableShareable).postCore({
+                body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(options),
+            });
+        });
+    };
+    return SharePointQueryableShareable;
+}(SharePointQueryable));
+var SharePointQueryableShareableWeb = /** @class */ (function (_super) {
+    __extends(SharePointQueryableShareableWeb, _super);
+    function SharePointQueryableShareableWeb() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Shares this web with the supplied users
+     * @param loginNames The resolved login names to share
+     * @param role The role to share this web
+     * @param emailData Optional email data
+     */
+    SharePointQueryableShareableWeb.prototype.shareWith = function (loginNames, role, emailData) {
+        var _this = this;
+        if (role === void 0) { role = SharingRole.View; }
+        var dependency = this.addBatchDependency();
+        // remove need to reference Web here, which created a circular build issue
+        var web = new SharePointQueryableInstance(extractWebUrl(this.toUrl()), "/_api/web/url");
+        return web.get().then(function (url) {
+            dependency();
+            return _this.shareObject(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(url, "/_layouts/15/aclinv.aspx?forSharing=1&mbypass=1"), loginNames, role, emailData);
+        });
+    };
+    /**
+     * Provides direct access to the static web.ShareObject method
+     *
+     * @param url The url to share
+     * @param loginNames Resolved loginnames string[] of a single login name string
+     * @param roleValue Role value
+     * @param emailData Optional email data
+     * @param groupId Optional group id
+     * @param propagateAcl
+     * @param includeAnonymousLinkInEmail
+     * @param useSimplifiedRoles
+     */
+    SharePointQueryableShareableWeb.prototype.shareObject = function (url, loginNames, role, emailData, group, propagateAcl, includeAnonymousLinkInEmail, useSimplifiedRoles) {
+        if (propagateAcl === void 0) { propagateAcl = false; }
+        if (includeAnonymousLinkInEmail === void 0) { includeAnonymousLinkInEmail = false; }
+        if (useSimplifiedRoles === void 0) { useSimplifiedRoles = true; }
+        return this.clone(SharePointQueryableShareable, null).shareObject({
+            emailData: emailData,
+            group: group,
+            includeAnonymousLinkInEmail: includeAnonymousLinkInEmail,
+            loginNames: loginNames,
+            propagateAcl: propagateAcl,
+            role: role,
+            url: url,
+            useSimplifiedRoles: useSimplifiedRoles,
+        });
+    };
+    /**
+     * Supplies a method to pass any set of arguments to ShareObject
+     *
+     * @param options The set of options to send to ShareObject
+     */
+    SharePointQueryableShareableWeb.prototype.shareObjectRaw = function (options) {
+        return this.clone(SharePointQueryableShareable, null).shareObject(options, true);
+    };
+    /**
+     * Unshares the object
+     *
+     * @param url The url of the object to stop sharing
+     */
+    SharePointQueryableShareableWeb.prototype.unshareObject = function (url) {
+        return this.clone(SharePointQueryableShareable, null).unshareObjectWeb(url);
+    };
+    return SharePointQueryableShareableWeb;
+}(SharePointQueryableSecurable));
+var SharePointQueryableShareableItem = /** @class */ (function (_super) {
+    __extends(SharePointQueryableShareableItem, _super);
+    function SharePointQueryableShareableItem() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets a link suitable for sharing for this item
+     *
+     * @param kind The type of link to share
+     * @param expiration The optional expiration date
+     */
+    SharePointQueryableShareableItem.prototype.getShareLink = function (kind, expiration) {
+        if (kind === void 0) { kind = SharingLinkKind.OrganizationView; }
+        if (expiration === void 0) { expiration = null; }
+        return this.clone(SharePointQueryableShareable, null).getShareLink(kind, expiration);
+    };
+    /**
+     * Shares this item with one or more users
+     *
+     * @param loginNames string or string[] of resolved login names to which this item will be shared
+     * @param role The role (View | Edit) applied to the share
+     * @param emailData Optional, if inlucded an email will be sent. Note subject currently has no effect.
+     */
+    SharePointQueryableShareableItem.prototype.shareWith = function (loginNames, role, requireSignin, emailData) {
+        if (role === void 0) { role = SharingRole.View; }
+        if (requireSignin === void 0) { requireSignin = false; }
+        return this.clone(SharePointQueryableShareable, null).shareWith(loginNames, role, requireSignin, false, emailData);
+    };
+    /**
+     * Checks Permissions on the list of Users and returns back role the users have on the Item.
+     *
+     * @param recipients The array of Entities for which Permissions need to be checked.
+     */
+    SharePointQueryableShareableItem.prototype.checkSharingPermissions = function (recipients) {
+        return this.clone(SharePointQueryableShareable, null).checkPermissions(recipients);
+    };
+    /**
+     * Get Sharing Information.
+     *
+     * @param request The SharingInformationRequest Object.
+     * @param expands Expand more fields.
+     *
+     */
+    SharePointQueryableShareableItem.prototype.getSharingInformation = function (request, expands) {
+        if (request === void 0) { request = null; }
+        return this.clone(SharePointQueryableShareable, null).getSharingInformation(request, expands);
+    };
+    /**
+     * Gets the sharing settings of an item.
+     *
+     * @param useSimplifiedRoles Determines whether to use simplified roles.
+     */
+    SharePointQueryableShareableItem.prototype.getObjectSharingSettings = function (useSimplifiedRoles) {
+        if (useSimplifiedRoles === void 0) { useSimplifiedRoles = true; }
+        return this.clone(SharePointQueryableShareable, null).getObjectSharingSettings(useSimplifiedRoles);
+    };
+    /**
+     * Unshare this item
+     */
+    SharePointQueryableShareableItem.prototype.unshare = function () {
+        return this.clone(SharePointQueryableShareable, null).unshareObject();
+    };
+    /**
+     * Deletes a sharing link by kind
+     *
+     * @param kind Deletes a sharing link by the kind of link
+     */
+    SharePointQueryableShareableItem.prototype.deleteSharingLinkByKind = function (kind) {
+        return this.clone(SharePointQueryableShareable, null).deleteLinkByKind(kind);
+    };
+    /**
+     * Removes the specified link to the item.
+     *
+     * @param kind The kind of link to be deleted.
+     * @param shareId
+     */
+    SharePointQueryableShareableItem.prototype.unshareLink = function (kind, shareId) {
+        return this.clone(SharePointQueryableShareable, null).unshareLink(kind, shareId);
+    };
+    return SharePointQueryableShareableItem;
+}(SharePointQueryableSecurable));
+var FileFolderShared = /** @class */ (function (_super) {
+    __extends(FileFolderShared, _super);
+    function FileFolderShared() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets a link suitable for sharing
+     *
+     * @param kind The kind of link to get
+     * @param expiration Optional, an expiration for this link
+     */
+    FileFolderShared.prototype.getShareLink = function (kind, expiration) {
+        if (kind === void 0) { kind = SharingLinkKind.OrganizationView; }
+        if (expiration === void 0) { expiration = null; }
+        var dependency = this.addBatchDependency();
+        return this.getShareable().then(function (shareable) {
+            dependency();
+            return shareable.getShareLink(kind, expiration);
+        });
+    };
+    /**
+         * Checks Permissions on the list of Users and returns back role the users have on the Item.
+         *
+         * @param recipients The array of Entities for which Permissions need to be checked.
+         */
+    FileFolderShared.prototype.checkSharingPermissions = function (recipients) {
+        var dependency = this.addBatchDependency();
+        return this.getShareable().then(function (shareable) {
+            dependency();
+            return shareable.checkPermissions(recipients);
+        });
+    };
+    /**
+     * Get Sharing Information.
+     *
+     * @param request The SharingInformationRequest Object.
+     * @param expands Expand more fields.
+     *
+     */
+    FileFolderShared.prototype.getSharingInformation = function (request, expands) {
+        if (request === void 0) { request = null; }
+        var dependency = this.addBatchDependency();
+        return this.getShareable().then(function (shareable) {
+            dependency();
+            return shareable.getSharingInformation(request, expands);
+        });
+    };
+    /**
+     * Gets the sharing settings of an item.
+     *
+     * @param useSimplifiedRoles Determines whether to use simplified roles.
+     */
+    FileFolderShared.prototype.getObjectSharingSettings = function (useSimplifiedRoles) {
+        if (useSimplifiedRoles === void 0) { useSimplifiedRoles = true; }
+        var dependency = this.addBatchDependency();
+        return this.getShareable().then(function (shareable) {
+            dependency();
+            return shareable.getObjectSharingSettings(useSimplifiedRoles);
+        });
+    };
+    /**
+     * Unshare this item
+     */
+    FileFolderShared.prototype.unshare = function () {
+        var dependency = this.addBatchDependency();
+        return this.getShareable().then(function (shareable) {
+            dependency();
+            return shareable.unshareObject();
+        });
+    };
+    /**
+     * Deletes a sharing link by the kind of link
+     *
+     * @param kind The kind of link to be deleted.
+     */
+    FileFolderShared.prototype.deleteSharingLinkByKind = function (kind) {
+        var dependency = this.addBatchDependency();
+        return this.getShareable().then(function (shareable) {
+            dependency();
+            return shareable.deleteLinkByKind(kind);
+        });
+    };
+    /**
+     * Removes the specified link to the item.
+     *
+     * @param kind The kind of link to be deleted.
+     * @param shareId The share id to delete
+     */
+    FileFolderShared.prototype.unshareLink = function (kind, shareId) {
+        var dependency = this.addBatchDependency();
+        return this.getShareable().then(function (shareable) {
+            dependency();
+            return shareable.unshareLink(kind, shareId);
+        });
+    };
+    /**
+     * For files and folders we need to use the associated item end point
+     */
+    FileFolderShared.prototype.getShareable = function () {
+        var _this = this;
+        // sharing only works on the item end point, not the file one - so we create a folder instance with the item url internally
+        return this.clone(SharePointQueryableShareableFile, "listItemAllFields", false).select("odata.id").get().then(function (d) {
+            var shareable = new SharePointQueryableShareable(odataUrlFrom(d));
+            // we need to handle batching
+            if (_this.hasBatch) {
+                shareable = shareable.inBatch(_this.batch);
+            }
+            return shareable;
+        });
+    };
+    return FileFolderShared;
+}(SharePointQueryableInstance));
+var SharePointQueryableShareableFile = /** @class */ (function (_super) {
+    __extends(SharePointQueryableShareableFile, _super);
+    function SharePointQueryableShareableFile() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Shares this item with one or more users
+     *
+     * @param loginNames string or string[] of resolved login names to which this item will be shared
+     * @param role The role (View | Edit) applied to the share
+     * @param shareEverything Share everything in this folder, even items with unique permissions.
+     * @param requireSignin If true the user must signin to view link, otherwise anyone with the link can access the resource
+     * @param emailData Optional, if inlucded an email will be sent. Note subject currently has no effect.
+     */
+    SharePointQueryableShareableFile.prototype.shareWith = function (loginNames, role, requireSignin, emailData) {
+        if (role === void 0) { role = SharingRole.View; }
+        if (requireSignin === void 0) { requireSignin = false; }
+        var dependency = this.addBatchDependency();
+        return this.getShareable().then(function (shareable) {
+            dependency();
+            return shareable.shareWith(loginNames, role, requireSignin, false, emailData);
+        });
+    };
+    return SharePointQueryableShareableFile;
+}(FileFolderShared));
+var SharePointQueryableShareableFolder = /** @class */ (function (_super) {
+    __extends(SharePointQueryableShareableFolder, _super);
+    function SharePointQueryableShareableFolder() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Shares this item with one or more users
+     *
+     * @param loginNames string or string[] of resolved login names to which this item will be shared
+     * @param role The role (View | Edit) applied to the share
+     * @param shareEverything Share everything in this folder, even items with unique permissions.
+     * @param requireSignin If true the user must signin to view link, otherwise anyone with the link can access the resource
+     * @param emailData Optional, if inlucded an email will be sent. Note subject currently has no effect.
+     */
+    SharePointQueryableShareableFolder.prototype.shareWith = function (loginNames, role, requireSignin, shareEverything, emailData) {
+        if (role === void 0) { role = SharingRole.View; }
+        if (requireSignin === void 0) { requireSignin = false; }
+        if (shareEverything === void 0) { shareEverything = false; }
+        var dependency = this.addBatchDependency();
+        return this.getShareable().then(function (shareable) {
+            dependency();
+            return shareable.shareWith(loginNames, role, requireSignin, shareEverything, emailData);
+        });
+    };
+    return SharePointQueryableShareableFolder;
+}(FileFolderShared));
+
+var LimitedWebPartManager = /** @class */ (function (_super) {
+    __extends(LimitedWebPartManager, _super);
+    function LimitedWebPartManager() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(LimitedWebPartManager.prototype, "webparts", {
+        /**
+         * Gets the set of web part definitions contained by this web part manager
+         *
+         */
+        get: function () {
+            return new WebPartDefinitions(this, "webparts");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Exports a webpart definition
+     *
+     * @param id the GUID id of the definition to export
+     */
+    LimitedWebPartManager.prototype.export = function (id) {
+        return this.clone(LimitedWebPartManager, "ExportWebPart").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ webPartId: id }),
+        });
+    };
+    /**
+     * Imports a webpart
+     *
+     * @param xml webpart definition which must be valid XML in the .dwp or .webpart format
+     */
+    LimitedWebPartManager.prototype.import = function (xml) {
+        return this.clone(LimitedWebPartManager, "ImportWebPart").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ webPartXml: xml }),
+        });
+    };
+    return LimitedWebPartManager;
+}(SharePointQueryable));
+var WebPartDefinitions = /** @class */ (function (_super) {
+    __extends(WebPartDefinitions, _super);
+    function WebPartDefinitions() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets a web part definition from the collection by id
+     *
+     * @param id The storage ID of the SPWebPartDefinition to retrieve
+     */
+    WebPartDefinitions.prototype.getById = function (id) {
+        return new WebPartDefinition(this, "getbyid('" + id + "')");
+    };
+    /**
+     * Gets a web part definition from the collection by storage id
+     *
+     * @param id The WebPart.ID of the SPWebPartDefinition to retrieve
+     */
+    WebPartDefinitions.prototype.getByControlId = function (id) {
+        return new WebPartDefinition(this, "getByControlId('" + id + "')");
+    };
+    return WebPartDefinitions;
+}(SharePointQueryableCollection));
+var WebPartDefinition = /** @class */ (function (_super) {
+    __extends(WebPartDefinition, _super);
+    function WebPartDefinition() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(WebPartDefinition.prototype, "webpart", {
+        /**
+         * Gets the webpart information associated with this definition
+         */
+        get: function () {
+            return new WebPart(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Saves changes to the Web Part made using other properties and methods on the SPWebPartDefinition object
+     */
+    WebPartDefinition.prototype.saveChanges = function () {
+        return this.clone(WebPartDefinition, "SaveWebPartChanges").postCore();
+    };
+    /**
+     * Moves the Web Part to a different location on a Web Part Page
+     *
+     * @param zoneId The ID of the Web Part Zone to which to move the Web Part
+     * @param zoneIndex A Web Part zone index that specifies the position at which the Web Part is to be moved within the destination Web Part zone
+     */
+    WebPartDefinition.prototype.moveTo = function (zoneId, zoneIndex) {
+        return this.clone(WebPartDefinition, "MoveWebPartTo(zoneID='" + zoneId + "', zoneIndex=" + zoneIndex + ")").postCore();
+    };
+    /**
+     * Closes the Web Part. If the Web Part is already closed, this method does nothing
+     */
+    WebPartDefinition.prototype.close = function () {
+        return this.clone(WebPartDefinition, "CloseWebPart").postCore();
+    };
+    /**
+     * Opens the Web Part. If the Web Part is already closed, this method does nothing
+     */
+    WebPartDefinition.prototype.open = function () {
+        return this.clone(WebPartDefinition, "OpenWebPart").postCore();
+    };
+    /**
+     * Removes a webpart from a page, all settings will be lost
+     */
+    WebPartDefinition.prototype.delete = function () {
+        return this.clone(WebPartDefinition, "DeleteWebPart").postCore();
+    };
+    return WebPartDefinition;
+}(SharePointQueryableInstance));
+var WebPart = /** @class */ (function (_super) {
+    __extends(WebPart, _super);
+    function WebPart() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    WebPart = __decorate([
+        defaultPath("webpart")
+    ], WebPart);
+    return WebPart;
+}(SharePointQueryableInstance));
+
+/**
+ * Describes a collection of Folder objects
+ *
+ */
+var Folders = /** @class */ (function (_super) {
+    __extends(Folders, _super);
+    function Folders() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Folders_1 = Folders;
+    /**
+     * Gets a folder by folder name
+     *
+     */
+    Folders.prototype.getByName = function (name) {
+        var f = new Folder(this);
+        f.concat("('" + name + "')");
+        return f;
+    };
+    /**
+     * Adds a new folder to the current folder (relative) or any folder (absolute)
+     *
+     * @param url The relative or absolute url where the new folder will be created. Urls starting with a forward slash are absolute.
+     * @returns The new Folder and the raw response.
+     */
+    Folders.prototype.add = function (url) {
+        var _this = this;
+        return this.clone(Folders_1, "add('" + url + "')").postCore().then(function (response) {
+            return {
+                data: response,
+                folder: _this.getByName(url),
+            };
+        });
+    };
+    var Folders_1;
+    Folders = Folders_1 = __decorate([
+        defaultPath("folders")
+    ], Folders);
+    return Folders;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single Folder instance
+ *
+ */
+var Folder = /** @class */ (function (_super) {
+    __extends(Folder, _super);
+    function Folder() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.update = _this._update("SP.Folder", function (data) { return ({ data: data, folder: _this }); });
+        return _this;
+    }
+    Object.defineProperty(Folder.prototype, "contentTypeOrder", {
+        /**
+         * Specifies the sequence in which content types are displayed.
+         *
+         */
+        get: function () {
+            return new SharePointQueryableCollection(this, "contentTypeOrder");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Folder.prototype, "files", {
+        /**
+         * Gets this folder's files
+         *
+         */
+        get: function () {
+            return new Files(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Folder.prototype, "folders", {
+        /**
+         * Gets this folder's sub folders
+         *
+         */
+        get: function () {
+            return new Folders(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Folder.prototype, "listItemAllFields", {
+        /**
+         * Gets this folder's list item field values
+         *
+         */
+        get: function () {
+            return new SharePointQueryableInstance(this, "listItemAllFields");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Folder.prototype, "parentFolder", {
+        /**
+         * Gets the parent folder, if available
+         *
+         */
+        get: function () {
+            return new Folder(this, "parentFolder");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Folder.prototype, "properties", {
+        /**
+         * Gets this folder's properties
+         *
+         */
+        get: function () {
+            return new SharePointQueryableInstance(this, "properties");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Folder.prototype, "serverRelativeUrl", {
+        /**
+         * Gets this folder's server relative url
+         *
+         */
+        get: function () {
+            return new SharePointQueryable(this, "serverRelativeUrl");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Folder.prototype, "uniqueContentTypeOrder", {
+        /**
+         * Gets a value that specifies the content type order.
+         *
+         */
+        get: function () {
+            return new SharePointQueryableCollection(this, "uniqueContentTypeOrder");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+    * Delete this folder
+    *
+    * @param eTag Value used in the IF-Match header, by default "*"
+    */
+    Folder.prototype.delete = function (eTag) {
+        if (eTag === void 0) { eTag = "*"; }
+        return this.clone(Folder, null).postCore({
+            headers: {
+                "IF-Match": eTag,
+                "X-HTTP-Method": "DELETE",
+            },
+        });
+    };
+    /**
+     * Moves the folder to the Recycle Bin and returns the identifier of the new Recycle Bin item.
+     */
+    Folder.prototype.recycle = function () {
+        return this.clone(Folder, "recycle").postCore();
+    };
+    /**
+     * Gets the associated list item for this folder, loading the default properties
+     */
+    Folder.prototype.getItem = function () {
+        var selects = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            selects[_i] = arguments[_i];
+        }
+        var q = this.listItemAllFields;
+        return q.select.apply(q, selects).get().then(function (d) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(new Item(odataUrlFrom(d)), d);
+        });
+    };
+    /**
+     * Moves a folder to destination path
+     *
+     * @param destUrl Absolute or relative URL of the destination path
+     */
+    Folder.prototype.moveTo = function (destUrl) {
+        var _this = this;
+        return this.select("ServerRelativeUrl").get().then(function (_a) {
+            var srcUrl = _a.ServerRelativeUrl;
+            var client = new SPHttpClient();
+            var webBaseUrl = _this.toUrl().split("/_api")[0];
+            var hostUrl = webBaseUrl.replace("://", "___").split("/")[0].replace("___", "://");
+            var methodUrl = webBaseUrl + "/_api/SP.MoveCopyUtil.MoveFolder()";
+            return client.post(methodUrl, {
+                body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                    destUrl: destUrl.indexOf("http") === 0 ? destUrl : "" + hostUrl + destUrl,
+                    srcUrl: "" + hostUrl + srcUrl,
+                }),
+            }).then(function (r) { return r.json(); });
+        });
+    };
+    return Folder;
+}(SharePointQueryableShareableFolder));
+
+/**
+ * Describes a collection of content types
+ *
+ */
+var ContentTypes = /** @class */ (function (_super) {
+    __extends(ContentTypes, _super);
+    function ContentTypes() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ContentTypes_1 = ContentTypes;
+    /**
+     * Adds an existing contenttype to a content type collection
+     *
+     * @param contentTypeId in the following format, for example: 0x010102
+     */
+    ContentTypes.prototype.addAvailableContentType = function (contentTypeId) {
+        var _this = this;
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            "contentTypeId": contentTypeId,
+        });
+        return this.clone(ContentTypes_1, "addAvailableContentType").postCore({ body: postBody }).then(function (data) {
+            return {
+                contentType: _this.getById(data.id),
+                data: data,
+            };
+        });
+    };
+    /**
+     * Gets a ContentType by content type id
+     */
+    ContentTypes.prototype.getById = function (id) {
+        var ct = new ContentType(this);
+        ct.concat("('" + id + "')");
+        return ct;
+    };
+    /**
+     * Adds a new content type to the collection
+     *
+     * @param id The desired content type id for the new content type (also determines the parent content type)
+     * @param name The name of the content type
+     * @param description The description of the content type
+     * @param group The group in which to add the content type
+     * @param additionalSettings Any additional settings to provide when creating the content type
+     *
+     */
+    ContentTypes.prototype.add = function (id, name, description, group, additionalSettings) {
+        var _this = this;
+        if (description === void 0) { description = ""; }
+        if (group === void 0) { group = "Custom Content Types"; }
+        if (additionalSettings === void 0) { additionalSettings = {}; }
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object.assign(metadata("SP.ContentType"), {
+            "Description": description,
+            "Group": group,
+            "Id": { "StringValue": id },
+            "Name": name,
+        }, additionalSettings));
+        return this.postCore({ body: postBody }).then(function (data) {
+            return { contentType: _this.getById(data.id), data: data };
+        });
+    };
+    var ContentTypes_1;
+    ContentTypes = ContentTypes_1 = __decorate([
+        defaultPath("contenttypes")
+    ], ContentTypes);
+    return ContentTypes;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single ContentType instance
+ *
+ */
+var ContentType = /** @class */ (function (_super) {
+    __extends(ContentType, _super);
+    function ContentType() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+         * Delete this content type
+         */
+        _this.delete = _this._delete;
+        return _this;
+    }
+    Object.defineProperty(ContentType.prototype, "fieldLinks", {
+        /**
+         * Gets the column (also known as field) references in the content type.
+        */
+        get: function () {
+            return new FieldLinks(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ContentType.prototype, "fields", {
+        /**
+         * Gets a value that specifies the collection of fields for the content type.
+         */
+        get: function () {
+            return new SharePointQueryableCollection(this, "fields");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ContentType.prototype, "parent", {
+        /**
+         * Gets the parent content type of the content type.
+         */
+        get: function () {
+            return new ContentType(this, "parent");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ContentType.prototype, "workflowAssociations", {
+        /**
+         * Gets a value that specifies the collection of workflow associations for the content type.
+         */
+        get: function () {
+            return new SharePointQueryableCollection(this, "workflowAssociations");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return ContentType;
+}(SharePointQueryableInstance));
+/**
+ * Represents a collection of field link instances
+ */
+var FieldLinks = /** @class */ (function (_super) {
+    __extends(FieldLinks, _super);
+    function FieldLinks() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets a FieldLink by GUID id
+     *
+     * @param id The GUID id of the field link
+     */
+    FieldLinks.prototype.getById = function (id) {
+        var fl = new FieldLink(this);
+        fl.concat("(guid'" + id + "')");
+        return fl;
+    };
+    FieldLinks = __decorate([
+        defaultPath("fieldlinks")
+    ], FieldLinks);
+    return FieldLinks;
+}(SharePointQueryableCollection));
+/**
+ * Represents a field link instance
+ */
+var FieldLink = /** @class */ (function (_super) {
+    __extends(FieldLink, _super);
+    function FieldLink() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return FieldLink;
+}(SharePointQueryableInstance));
+
+/**
+ * Describes a collection of Item objects
+ *
+ */
+var AttachmentFiles = /** @class */ (function (_super) {
+    __extends(AttachmentFiles, _super);
+    function AttachmentFiles() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    AttachmentFiles_1 = AttachmentFiles;
+    /**
+     * Gets a Attachment File by filename
+     *
+     * @param name The name of the file, including extension.
+     */
+    AttachmentFiles.prototype.getByName = function (name) {
+        var f = new AttachmentFile(this);
+        f.concat("('" + name + "')");
+        return f;
+    };
+    /**
+     * Adds a new attachment to the collection. Not supported for batching.
+     *
+     * @param name The name of the file, including extension.
+     * @param content The Base64 file content.
+     */
+    AttachmentFiles.prototype.add = function (name, content) {
+        var _this = this;
+        return this.clone(AttachmentFiles_1, "add(FileName='" + name + "')", false).postCore({
+            body: content,
+        }).then(function (response) {
+            return {
+                data: response,
+                file: _this.getByName(name),
+            };
+        });
+    };
+    /**
+     * Adds multiple new attachment to the collection. Not supported for batching.
+     *
+     * @param files The collection of files to add
+     */
+    AttachmentFiles.prototype.addMultiple = function (files) {
+        var _this = this;
+        // add the files in series so we don't get update conflicts
+        return files.reduce(function (chain, file) { return chain.then(function () { return _this.clone(AttachmentFiles_1, "add(FileName='" + file.name + "')", false).postCore({
+            body: file.content,
+        }); }); }, Promise.resolve());
+    };
+    /**
+     * Delete multiple attachments from the collection. Not supported for batching.
+     *
+     * @param files The collection of files to delete
+     */
+    AttachmentFiles.prototype.deleteMultiple = function () {
+        var _this = this;
+        var files = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            files[_i] = arguments[_i];
+        }
+        return files.reduce(function (chain, file) { return chain.then(function () { return _this.getByName(file).delete(); }); }, Promise.resolve());
+    };
+    /**
+     * Delete multiple attachments from the collection and send to recycle bin. Not supported for batching.
+     *
+     * @param files The collection of files to be deleted and sent to recycle bin
+     */
+    AttachmentFiles.prototype.recycleMultiple = function () {
+        var _this = this;
+        var files = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            files[_i] = arguments[_i];
+        }
+        return files.reduce(function (chain, file) { return chain.then(function () { return _this.getByName(file).recycle(); }); }, Promise.resolve());
+    };
+    var AttachmentFiles_1;
+    AttachmentFiles = AttachmentFiles_1 = __decorate([
+        defaultPath("AttachmentFiles")
+    ], AttachmentFiles);
+    return AttachmentFiles;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single attachment file instance
+ *
+ */
+var AttachmentFile = /** @class */ (function (_super) {
+    __extends(AttachmentFile, _super);
+    function AttachmentFile() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.delete = _this._deleteWithETag;
+        return _this;
+    }
+    /**
+     * Gets the contents of the file as text
+     *
+     */
+    AttachmentFile.prototype.getText = function () {
+        return this.getParsed(new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["i" /* TextParser */]());
+    };
+    /**
+     * Gets the contents of the file as a blob, does not work in Node.js
+     *
+     */
+    AttachmentFile.prototype.getBlob = function () {
+        return this.getParsed(new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["a" /* BlobParser */]());
+    };
+    /**
+     * Gets the contents of a file as an ArrayBuffer, works in Node.js
+     */
+    AttachmentFile.prototype.getBuffer = function () {
+        return this.getParsed(new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["b" /* BufferParser */]());
+    };
+    /**
+     * Gets the contents of a file as an ArrayBuffer, works in Node.js
+     */
+    AttachmentFile.prototype.getJSON = function () {
+        return this.getParsed(new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["d" /* JSONParser */]());
+    };
+    /**
+     * Sets the content of a file. Not supported for batching
+     *
+     * @param content The value to set for the file contents
+     */
+    AttachmentFile.prototype.setContent = function (content) {
+        var _this = this;
+        return this.clone(AttachmentFile, "$value", false).postCore({
+            body: content,
+            headers: {
+                "X-HTTP-Method": "PUT",
+            },
+        }).then(function (_) { return new AttachmentFile(_this); });
+    };
+    /**
+     * Delete this attachment file and send it to recycle bin
+     *
+     * @param eTag Value used in the IF-Match header, by default "*"
+     */
+    AttachmentFile.prototype.recycle = function (eTag) {
+        if (eTag === void 0) { eTag = "*"; }
+        return this.clone(AttachmentFile, "recycleObject").postCore({
+            headers: {
+                "IF-Match": eTag,
+                "X-HTTP-Method": "DELETE",
+            },
+        });
+    };
+    // /**
+    //  * Delete this attachment file
+    //  *
+    //  * @param eTag Value used in the IF-Match header, by default "*"
+    //  */
+    // public delete(eTag = "*"): Promise<void> {
+    //     return this.postCore({
+    //         headers: {
+    //             "IF-Match": eTag,
+    //             "X-HTTP-Method": "DELETE",
+    //         },
+    //     });
+    // }
+    AttachmentFile.prototype.getParsed = function (parser) {
+        return this.clone(AttachmentFile, "$value", false).get(parser);
+    };
+    return AttachmentFile;
+}(SharePointQueryableInstance));
+
+/**
+ * Describes the views available in the current context
+ *
+ */
+var Views = /** @class */ (function (_super) {
+    __extends(Views, _super);
+    function Views() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Views_1 = Views;
+    /**
+     * Gets a view by guid id
+     *
+     * @param id The GUID id of the view
+     */
+    Views.prototype.getById = function (id) {
+        var v = new View(this);
+        v.concat("('" + id + "')");
+        return v;
+    };
+    /**
+     * Gets a view by title (case-sensitive)
+     *
+     * @param title The case-sensitive title of the view
+     */
+    Views.prototype.getByTitle = function (title) {
+        return new View(this, "getByTitle('" + title + "')");
+    };
+    /**
+     * Adds a new view to the collection
+     *
+     * @param title The new views's title
+     * @param personalView True if this is a personal view, otherwise false, default = false
+     * @param additionalSettings Will be passed as part of the view creation body
+     */
+    Views.prototype.add = function (title, personalView, additionalSettings) {
+        var _this = this;
+        if (personalView === void 0) { personalView = false; }
+        if (additionalSettings === void 0) { additionalSettings = {}; }
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object.assign(metadata("SP.View"), {
+            "PersonalView": personalView,
+            "Title": title,
+        }, additionalSettings));
+        return this.clone(Views_1, null).postCore({ body: postBody }).then(function (data) {
+            return {
+                data: data,
+                view: _this.getById(data.Id),
+            };
+        });
+    };
+    var Views_1;
+    Views = Views_1 = __decorate([
+        defaultPath("views")
+    ], Views);
+    return Views;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single View instance
+ *
+ */
+var View = /** @class */ (function (_super) {
+    __extends(View, _super);
+    function View() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+         * Updates this view intance with the supplied properties
+         *
+         * @param properties A plain object hash of values to update for the view
+         */
+        _this.update = _this._update("SP.View", function (data) { return ({ data: data, view: _this }); });
+        /**
+         * Delete this view
+         *
+         */
+        _this.delete = _this._delete;
+        return _this;
+    }
+    Object.defineProperty(View.prototype, "fields", {
+        get: function () {
+            return new ViewFields(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Returns the list view as HTML.
+     *
+     */
+    View.prototype.renderAsHtml = function () {
+        return this.clone(SharePointQueryable, "renderashtml").get();
+    };
+    /**
+     * Sets the view schema
+     *
+     * @param viewXml The view XML to set
+     */
+    View.prototype.setViewXml = function (viewXml) {
+        return this.clone(View, "SetViewXml").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                viewXml: viewXml,
+            }),
+        });
+    };
+    return View;
+}(SharePointQueryableInstance));
+var ViewFields = /** @class */ (function (_super) {
+    __extends(ViewFields, _super);
+    function ViewFields() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ViewFields_1 = ViewFields;
+    /**
+     * Gets a value that specifies the XML schema that represents the collection.
+     */
+    ViewFields.prototype.getSchemaXml = function () {
+        return this.clone(SharePointQueryable, "schemaxml").get();
+    };
+    /**
+     * Adds the field with the specified field internal name or display name to the collection.
+     *
+     * @param fieldTitleOrInternalName The case-sensitive internal name or display name of the field to add.
+     */
+    ViewFields.prototype.add = function (fieldTitleOrInternalName) {
+        return this.clone(ViewFields_1, "addviewfield('" + fieldTitleOrInternalName + "')").postCore();
+    };
+    /**
+     * Moves the field with the specified field internal name to the specified position in the collection.
+     *
+     * @param fieldInternalName The case-sensitive internal name of the field to move.
+     * @param index The zero-based index of the new position for the field.
+     */
+    ViewFields.prototype.move = function (fieldInternalName, index) {
+        return this.clone(ViewFields_1, "moveviewfieldto").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ "field": fieldInternalName, "index": index }),
+        });
+    };
+    /**
+     * Removes all the fields from the collection.
+     */
+    ViewFields.prototype.removeAll = function () {
+        return this.clone(ViewFields_1, "removeallviewfields").postCore();
+    };
+    /**
+     * Removes the field with the specified field internal name from the collection.
+     *
+     * @param fieldInternalName The case-sensitive internal name of the field to remove from the view.
+     */
+    ViewFields.prototype.remove = function (fieldInternalName) {
+        return this.clone(ViewFields_1, "removeviewfield('" + fieldInternalName + "')").postCore();
+    };
+    var ViewFields_1;
+    ViewFields = ViewFields_1 = __decorate([
+        defaultPath("viewfields")
+    ], ViewFields);
+    return ViewFields;
+}(SharePointQueryableCollection));
+
+/**
+ * Describes a collection of Field objects
+ *
+ */
+var Fields = /** @class */ (function (_super) {
+    __extends(Fields, _super);
+    function Fields() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Fields_1 = Fields;
+    /**
+     * Gets a field from the collection by id
+     *
+     * @param id The Id of the list
+     */
+    Fields.prototype.getById = function (id) {
+        var f = new Field(this);
+        f.concat("('" + id + "')");
+        return f;
+    };
+    /**
+     * Gets a field from the collection by title
+     *
+     * @param title The case-sensitive title of the field
+     */
+    Fields.prototype.getByTitle = function (title) {
+        return new Field(this, "getByTitle('" + title + "')");
+    };
+    /**
+     * Gets a field from the collection by using internal name or title
+     *
+     * @param name The case-sensitive internal name or title of the field
+     */
+    Fields.prototype.getByInternalNameOrTitle = function (name) {
+        return new Field(this, "getByInternalNameOrTitle('" + name + "')");
+    };
+    /**
+     * Creates a field based on the specified schema
+     */
+    Fields.prototype.createFieldAsXml = function (xml) {
+        var _this = this;
+        var info;
+        if (typeof xml === "string") {
+            info = { SchemaXml: xml };
+        }
+        else {
+            info = xml;
+        }
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            "parameters": Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.XmlSchemaFieldCreationInformation"), info),
+        });
+        return this.clone(Fields_1, "createfieldasxml").postCore({ body: postBody }).then(function (data) {
+            return {
+                data: data,
+                field: _this.getById(data.Id),
+            };
+        });
+    };
+    /**
+     * Adds a new field to the collection
+     *
+     * @param title The new field's title
+     * @param fieldType The new field's type (ex: SP.FieldText)
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.add = function (title, fieldType, properties) {
+        var _this = this;
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object.assign(metadata(fieldType), {
+            "Title": title,
+        }, properties));
+        return this.clone(Fields_1, null).postCore({ body: postBody }).then(function (data) {
+            return {
+                data: data,
+                field: _this.getById(data.Id),
+            };
+        });
+    };
+    /**
+     * Adds a new SP.FieldText to the collection
+     *
+     * @param title The field title
+     * @param maxLength The maximum number of characters allowed in the value of the field.
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.addText = function (title, maxLength, properties) {
+        if (maxLength === void 0) { maxLength = 255; }
+        var props = {
+            FieldTypeKind: 2,
+            MaxLength: maxLength,
+        };
+        return this.add(title, "SP.FieldText", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+     * Adds a new SP.FieldCalculated to the collection
+     *
+     * @param title The field title.
+     * @param formula The formula for the field.
+     * @param dateFormat The date and time format that is displayed in the field.
+     * @param outputType Specifies the output format for the field. Represents a FieldType value.
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.addCalculated = function (title, formula, dateFormat, outputType, properties) {
+        if (outputType === void 0) { outputType = FieldTypes.Text; }
+        var props = {
+            DateFormat: dateFormat,
+            FieldTypeKind: 17,
+            Formula: formula,
+            OutputType: outputType,
+        };
+        return this.add(title, "SP.FieldCalculated", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+     * Adds a new SP.FieldDateTime to the collection
+     *
+     * @param title The field title
+     * @param displayFormat The format of the date and time that is displayed in the field.
+     * @param calendarType Specifies the calendar type of the field.
+     * @param friendlyDisplayFormat The type of friendly display format that is used in the field.
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.addDateTime = function (title, displayFormat, calendarType, friendlyDisplayFormat, properties) {
+        if (displayFormat === void 0) { displayFormat = DateTimeFieldFormatType.DateOnly; }
+        if (calendarType === void 0) { calendarType = CalendarType.Gregorian; }
+        if (friendlyDisplayFormat === void 0) { friendlyDisplayFormat = DateTimeFieldFriendlyFormatType.Unspecified; }
+        var props = {
+            DateTimeCalendarType: calendarType,
+            DisplayFormat: displayFormat,
+            FieldTypeKind: 4,
+            FriendlyDisplayFormat: friendlyDisplayFormat,
+        };
+        return this.add(title, "SP.FieldDateTime", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+     * Adds a new SP.FieldNumber to the collection
+     *
+     * @param title The field title
+     * @param minValue The field's minimum value
+     * @param maxValue The field's maximum value
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.addNumber = function (title, minValue, maxValue, properties) {
+        var props = { FieldTypeKind: 9 };
+        if (minValue !== undefined) {
+            props = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({ MinimumValue: minValue }, props);
+        }
+        if (maxValue !== undefined) {
+            props = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({ MaximumValue: maxValue }, props);
+        }
+        return this.add(title, "SP.FieldNumber", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+     * Adds a new SP.FieldCurrency to the collection
+     *
+     * @param title The field title
+     * @param minValue The field's minimum value
+     * @param maxValue The field's maximum value
+     * @param currencyLocalId Specifies the language code identifier (LCID) used to format the value of the field
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.addCurrency = function (title, minValue, maxValue, currencyLocalId, properties) {
+        if (currencyLocalId === void 0) { currencyLocalId = 1033; }
+        var props = {
+            CurrencyLocaleId: currencyLocalId,
+            FieldTypeKind: 10,
+        };
+        if (minValue !== undefined) {
+            props = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({ MinimumValue: minValue }, props);
+        }
+        if (maxValue !== undefined) {
+            props = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({ MaximumValue: maxValue }, props);
+        }
+        return this.add(title, "SP.FieldCurrency", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+     * Adds a new SP.FieldMultiLineText to the collection
+     *
+     * @param title The field title
+     * @param numberOfLines Specifies the number of lines of text to display for the field.
+     * @param richText Specifies whether the field supports rich formatting.
+     * @param restrictedMode Specifies whether the field supports a subset of rich formatting.
+     * @param appendOnly Specifies whether all changes to the value of the field are displayed in list forms.
+     * @param allowHyperlink Specifies whether a hyperlink is allowed as a value of the field.
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     *
+     */
+    Fields.prototype.addMultilineText = function (title, numberOfLines, richText, restrictedMode, appendOnly, allowHyperlink, properties) {
+        if (numberOfLines === void 0) { numberOfLines = 6; }
+        if (richText === void 0) { richText = true; }
+        if (restrictedMode === void 0) { restrictedMode = false; }
+        if (appendOnly === void 0) { appendOnly = false; }
+        if (allowHyperlink === void 0) { allowHyperlink = true; }
+        var props = {
+            AllowHyperlink: allowHyperlink,
+            AppendOnly: appendOnly,
+            FieldTypeKind: 3,
+            NumberOfLines: numberOfLines,
+            RestrictedMode: restrictedMode,
+            RichText: richText,
+        };
+        return this.add(title, "SP.FieldMultiLineText", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+     * Adds a new SP.FieldUrl to the collection
+     *
+     * @param title The field title
+     */
+    Fields.prototype.addUrl = function (title, displayFormat, properties) {
+        if (displayFormat === void 0) { displayFormat = UrlFieldFormatType.Hyperlink; }
+        var props = {
+            DisplayFormat: displayFormat,
+            FieldTypeKind: 11,
+        };
+        return this.add(title, "SP.FieldUrl", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /** Adds a user field to the colleciton
+    *
+    * @param title The new field's title
+    * @param selectionMode The selection mode of the field
+    * @param selectionGroup Value that specifies the identifier of the SharePoint group whose members can be selected as values of the field
+    * @param properties
+    */
+    Fields.prototype.addUser = function (title, selectionMode, properties) {
+        var props = {
+            FieldTypeKind: 20,
+            SelectionMode: selectionMode,
+        };
+        return this.add(title, "SP.FieldUser", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+     * Adds a SP.FieldLookup to the collection
+     *
+     * @param title The new field's title
+     * @param lookupListId The guid id of the list where the source of the lookup is found
+     * @param lookupFieldName The internal name of the field in the source list
+     * @param properties Set of additional properties to set on the new field
+     */
+    Fields.prototype.addLookup = function (title, lookupListId, lookupFieldName, properties) {
+        var _this = this;
+        var props = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({
+            FieldTypeKind: 7,
+            LookupFieldName: lookupFieldName,
+            LookupListId: lookupListId,
+            Title: title,
+        }, properties);
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            "parameters": Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.FieldCreationInformation"), props),
+        });
+        return this.clone(Fields_1, "addfield").postCore({ body: postBody }).then(function (data) {
+            return {
+                data: data,
+                field: _this.getById(data.Id),
+            };
+        });
+    };
+    /**
+     * Adds a new SP.FieldChoice to the collection
+     *
+     * @param title The field title.
+     * @param choices The choices for the field.
+     * @param format The display format of the available options for the field.
+     * @param fillIn Specifies whether the field allows fill-in values.
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.addChoice = function (title, choices, format, fillIn, properties) {
+        if (format === void 0) { format = ChoiceFieldFormatType.Dropdown; }
+        var props = {
+            Choices: {
+                results: choices,
+            },
+            EditFormat: format,
+            FieldTypeKind: 6,
+            FillInChoice: fillIn,
+        };
+        return this.add(title, "SP.FieldChoice", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+     * Adds a new SP.FieldMultiChoice to the collection
+     *
+     * @param title The field title.
+     * @param choices The choices for the field.
+     * @param fillIn Specifies whether the field allows fill-in values.
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.addMultiChoice = function (title, choices, fillIn, properties) {
+        var props = {
+            Choices: {
+                results: choices,
+            },
+            FieldTypeKind: 15,
+            FillInChoice: fillIn,
+        };
+        return this.add(title, "SP.FieldMultiChoice", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+     * Adds a new SP.FieldBoolean to the collection
+     *
+     * @param title The field title.
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.addBoolean = function (title, properties) {
+        var props = {
+            FieldTypeKind: 8,
+        };
+        return this.add(title, "SP.Field", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    /**
+    * Creates a secondary (dependent) lookup field, based on the Id of the primary lookup field.
+    *
+    * @param displayName The display name of the new field.
+    * @param primaryLookupFieldId The guid of the primary Lookup Field.
+    * @param showField Which field to show from the lookup list.
+    */
+    Fields.prototype.addDependentLookupField = function (displayName, primaryLookupFieldId, showField) {
+        var _this = this;
+        return this.clone(Fields_1, "adddependentlookupfield(displayName='" + displayName + "', primarylookupfieldid='" + primaryLookupFieldId + "', showfield='" + showField + "')")
+            .postCore()
+            .then(function (data) {
+            return {
+                data: data,
+                field: _this.getById(data.Id),
+            };
+        });
+    };
+    /**
+     * Adds a new SP.FieldLocation to the collection
+     *
+     * @param title The field title.
+     * @param properties Differ by type of field being created (see: https://msdn.microsoft.com/en-us/library/office/dn600182.aspx)
+     */
+    Fields.prototype.addLocation = function (title, properties) {
+        var props = { FieldTypeKind: 33 };
+        return this.add(title, "SP.FieldLocation", Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(props, properties));
+    };
+    var Fields_1;
+    Fields = Fields_1 = __decorate([
+        defaultPath("fields")
+    ], Fields);
+    return Fields;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single of Field instance
+ *
+ */
+var Field = /** @class */ (function (_super) {
+    __extends(Field, _super);
+    function Field() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+         * Delete this fields
+         *
+         */
+        _this.delete = _this._delete;
+        return _this;
+    }
+    /**
+     * Updates this field intance with the supplied properties
+     *
+     * @param properties A plain object hash of values to update for the list
+     * @param fieldType The type value, required to update child field type properties
+     */
+    Field.prototype.update = function (properties, fieldType) {
+        var _this = this;
+        if (fieldType === void 0) { fieldType = "SP.Field"; }
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata(fieldType), properties));
+        return this.postCore({
+            body: postBody,
+            headers: {
+                "X-HTTP-Method": "MERGE",
+            },
+        }).then(function (data) {
+            return {
+                data: data,
+                field: _this,
+            };
+        });
+    };
+    /**
+     * Sets the value of the ShowInDisplayForm property for this field.
+     */
+    Field.prototype.setShowInDisplayForm = function (show) {
+        return this.clone(Field, "setshowindisplayform(" + show + ")").postCore();
+    };
+    /**
+     * Sets the value of the ShowInEditForm property for this field.
+     */
+    Field.prototype.setShowInEditForm = function (show) {
+        return this.clone(Field, "setshowineditform(" + show + ")").postCore();
+    };
+    /**
+     * Sets the value of the ShowInNewForm property for this field.
+     */
+    Field.prototype.setShowInNewForm = function (show) {
+        return this.clone(Field, "setshowinnewform(" + show + ")").postCore();
+    };
+    return Field;
+}(SharePointQueryableInstance));
+
+/**
+ * Describes a collection of Field objects
+ *
+ */
+var Forms = /** @class */ (function (_super) {
+    __extends(Forms, _super);
+    function Forms() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets a form by id
+     *
+     * @param id The guid id of the item to retrieve
+     */
+    Forms.prototype.getById = function (id) {
+        var i = new Form(this);
+        i.concat("('" + id + "')");
+        return i;
+    };
+    Forms = __decorate([
+        defaultPath("forms")
+    ], Forms);
+    return Forms;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single of Form instance
+ *
+ */
+var Form = /** @class */ (function (_super) {
+    __extends(Form, _super);
+    function Form() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Form;
+}(SharePointQueryableInstance));
+
+/**
+ * Describes a collection of webhook subscriptions
+ *
+ */
+var Subscriptions = /** @class */ (function (_super) {
+    __extends(Subscriptions, _super);
+    function Subscriptions() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Returns all the webhook subscriptions or the specified webhook subscription
+     *
+     * @param subscriptionId The id of a specific webhook subscription to retrieve, omit to retrieve all the webhook subscriptions
+     */
+    Subscriptions.prototype.getById = function (subscriptionId) {
+        var s = new Subscription(this);
+        s.concat("('" + subscriptionId + "')");
+        return s;
+    };
+    /**
+     * Creates a new webhook subscription
+     *
+     * @param notificationUrl The url to receive the notifications
+     * @param expirationDate The date and time to expire the subscription in the form YYYY-MM-ddTHH:mm:ss+00:00 (maximum of 6 months)
+     * @param clientState A client specific string (optional)
+     */
+    Subscriptions.prototype.add = function (notificationUrl, expirationDate, clientState) {
+        var _this = this;
+        var postBody = {
+            "expirationDateTime": expirationDate,
+            "notificationUrl": notificationUrl,
+            "resource": this.toUrl(),
+        };
+        if (clientState) {
+            postBody.clientState = clientState;
+        }
+        return this.postCore({ body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(postBody), headers: { "Content-Type": "application/json" } }).then(function (result) {
+            return { data: result, subscription: _this.getById(result.id) };
+        });
+    };
+    Subscriptions = __decorate([
+        defaultPath("subscriptions")
+    ], Subscriptions);
+    return Subscriptions;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single webhook subscription instance
+ *
+ */
+var Subscription = /** @class */ (function (_super) {
+    __extends(Subscription, _super);
+    function Subscription() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Renews this webhook subscription
+     *
+     * @param expirationDate The date and time to expire the subscription in the form YYYY-MM-ddTHH:mm:ss+00:00 (maximum of 6 months, optional)
+     * @param notificationUrl The url to receive the notifications (optional)
+     * @param clientState A client specific string (optional)
+     */
+    Subscription.prototype.update = function (expirationDate, notificationUrl, clientState) {
+        var _this = this;
+        var postBody = {};
+        if (expirationDate) {
+            postBody.expirationDateTime = expirationDate;
+        }
+        if (notificationUrl) {
+            postBody.notificationUrl = notificationUrl;
+        }
+        if (clientState) {
+            postBody.clientState = clientState;
+        }
+        return this.patchCore({ body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(postBody), headers: { "Content-Type": "application/json" } }).then(function (data) {
+            return { data: data, subscription: _this };
+        });
+    };
+    /**
+     * Removes this webhook subscription
+     *
+     */
+    Subscription.prototype.delete = function () {
+        return _super.prototype.deleteCore.call(this);
+    };
+    return Subscription;
+}(SharePointQueryableInstance));
+
+/**
+ * Describes a collection of user custom actions
+ *
+ */
+var UserCustomActions = /** @class */ (function (_super) {
+    __extends(UserCustomActions, _super);
+    function UserCustomActions() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    UserCustomActions_1 = UserCustomActions;
+    /**
+     * Returns the user custom action with the specified id
+     *
+     * @param id The GUID id of the user custom action to retrieve
+     */
+    UserCustomActions.prototype.getById = function (id) {
+        var uca = new UserCustomAction(this);
+        uca.concat("('" + id + "')");
+        return uca;
+    };
+    /**
+     * Creates a user custom action
+     *
+     * @param properties The information object of property names and values which define the new user custom action
+     *
+     */
+    UserCustomActions.prototype.add = function (properties) {
+        var _this = this;
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({ __metadata: { "type": "SP.UserCustomAction" } }, properties));
+        return this.postCore({ body: postBody }).then(function (data) {
+            return {
+                action: _this.getById(data.Id),
+                data: data,
+            };
+        });
+    };
+    /**
+     * Deletes all user custom actions in the collection
+     *
+     */
+    UserCustomActions.prototype.clear = function () {
+        return this.clone(UserCustomActions_1, "clear").postCore();
+    };
+    var UserCustomActions_1;
+    UserCustomActions = UserCustomActions_1 = __decorate([
+        defaultPath("usercustomactions")
+    ], UserCustomActions);
+    return UserCustomActions;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single user custom action
+ *
+ */
+var UserCustomAction = /** @class */ (function (_super) {
+    __extends(UserCustomAction, _super);
+    function UserCustomAction() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+        * Updates this user custom action with the supplied properties
+        *
+        * @param properties An information object of property names and values to update for this user custom action
+        */
+        _this.update = _this._update("SP.UserCustomAction", function (data) { return ({ data: data, action: _this }); });
+        return _this;
+    }
+    /**
+    * Removes this user custom action
+    *
+    */
+    UserCustomAction.prototype.delete = function () {
+        return _super.prototype.deleteCore.call(this);
+    };
+    return UserCustomAction;
+}(SharePointQueryableInstance));
+
+/**
+ * Describes a collection of List objects
+ *
+ */
+var Lists = /** @class */ (function (_super) {
+    __extends(Lists, _super);
+    function Lists() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Lists_1 = Lists;
+    /**
+     * Gets a list from the collection by guid id
+     *
+     * @param id The Id of the list (GUID)
+     */
+    Lists.prototype.getById = function (id) {
+        var list = new List(this);
+        list.concat("('" + id + "')");
+        return list;
+    };
+    /**
+     * Gets a list from the collection by title
+     *
+     * @param title The title of the list
+     */
+    Lists.prototype.getByTitle = function (title) {
+        return new List(this, "getByTitle('" + title + "')");
+    };
+    /**
+     * Adds a new list to the collection
+     *
+     * @param title The new list's title
+     * @param description The new list's description
+     * @param template The list template value
+     * @param enableContentTypes If true content types will be allowed and enabled, otherwise they will be disallowed and not enabled
+     * @param additionalSettings Will be passed as part of the list creation body
+     */
+    Lists.prototype.add = function (title, description, template, enableContentTypes, additionalSettings) {
+        var _this = this;
+        if (description === void 0) { description = ""; }
+        if (template === void 0) { template = 100; }
+        if (enableContentTypes === void 0) { enableContentTypes = false; }
+        if (additionalSettings === void 0) { additionalSettings = {}; }
+        var addSettings = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({
+            "AllowContentTypes": enableContentTypes,
+            "BaseTemplate": template,
+            "ContentTypesEnabled": enableContentTypes,
+            "Description": description,
+            "Title": title,
+            "__metadata": { "type": "SP.List" },
+        }, additionalSettings);
+        return this.postCore({ body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(addSettings) }).then(function (data) {
+            return { data: data, list: _this.getByTitle(addSettings.Title) };
+        });
+    };
+    /**
+     * Ensures that the specified list exists in the collection (note: this method not supported for batching)
+     *
+     * @param title The new list's title
+     * @param description The new list's description
+     * @param template The list template value
+     * @param enableContentTypes If true content types will be allowed and enabled, otherwise they will be disallowed and not enabled
+     * @param additionalSettings Will be passed as part of the list creation body or used to update an existing list
+     */
+    Lists.prototype.ensure = function (title, description, template, enableContentTypes, additionalSettings) {
+        var _this = this;
+        if (description === void 0) { description = ""; }
+        if (template === void 0) { template = 100; }
+        if (enableContentTypes === void 0) { enableContentTypes = false; }
+        if (additionalSettings === void 0) { additionalSettings = {}; }
+        if (this.hasBatch) {
+            throw Error("The ensure list method is not supported for use in a batch.");
+        }
+        return new Promise(function (resolve, reject) {
+            var addOrUpdateSettings = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(additionalSettings, { Title: title, Description: description, ContentTypesEnabled: enableContentTypes }, true);
+            var list = _this.getByTitle(addOrUpdateSettings.Title);
+            list.get().then(function (_) {
+                list.update(addOrUpdateSettings).then(function (d) {
+                    resolve({ created: false, data: d, list: _this.getByTitle(addOrUpdateSettings.Title) });
+                }).catch(function (e) { return reject(e); });
+            }).catch(function (_) {
+                _this.add(title, description, template, enableContentTypes, addOrUpdateSettings).then(function (r) {
+                    resolve({ created: true, data: r.data, list: _this.getByTitle(addOrUpdateSettings.Title) });
+                }).catch(function (e) { return reject(e); });
+            });
+        });
+    };
+    /**
+     * Gets a list that is the default asset location for images or other files, which the users upload to their wiki pages.
+     */
+    Lists.prototype.ensureSiteAssetsLibrary = function () {
+        return this.clone(Lists_1, "ensuresiteassetslibrary").postCore().then(function (json) {
+            return new List(odataUrlFrom(json));
+        });
+    };
+    /**
+     * Gets a list that is the default location for wiki pages.
+     */
+    Lists.prototype.ensureSitePagesLibrary = function () {
+        return this.clone(Lists_1, "ensuresitepageslibrary").postCore().then(function (json) {
+            return new List(odataUrlFrom(json));
+        });
+    };
+    var Lists_1;
+    Lists = Lists_1 = __decorate([
+        defaultPath("lists")
+    ], Lists);
+    return Lists;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single List instance
+ *
+ */
+var List = /** @class */ (function (_super) {
+    __extends(List, _super);
+    function List() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(List.prototype, "contentTypes", {
+        /**
+         * Gets the content types in this list
+         *
+         */
+        get: function () {
+            return new ContentTypes(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "items", {
+        /**
+         * Gets the items in this list
+         *
+         */
+        get: function () {
+            return new Items(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "views", {
+        /**
+         * Gets the views in this list
+         *
+         */
+        get: function () {
+            return new Views(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "fields", {
+        /**
+         * Gets the fields in this list
+         *
+         */
+        get: function () {
+            return new Fields(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "forms", {
+        /**
+         * Gets the forms in this list
+         *
+         */
+        get: function () {
+            return new Forms(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "defaultView", {
+        /**
+         * Gets the default view of this list
+         *
+         */
+        get: function () {
+            return new View(this, "DefaultView");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "userCustomActions", {
+        /**
+         * Get all custom actions on a site collection
+         *
+         */
+        get: function () {
+            return new UserCustomActions(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "effectiveBasePermissions", {
+        /**
+         * Gets the effective base permissions of this list
+         *
+         */
+        get: function () {
+            return new SharePointQueryable(this, "EffectiveBasePermissions");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "eventReceivers", {
+        /**
+         * Gets the event receivers attached to this list
+         *
+         */
+        get: function () {
+            return new SharePointQueryableCollection(this, "EventReceivers");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "relatedFields", {
+        /**
+         * Gets the related fields of this list
+         *
+         */
+        get: function () {
+            return new SharePointQueryable(this, "getRelatedFields");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "informationRightsManagementSettings", {
+        /**
+         * Gets the IRM settings for this list
+         *
+         */
+        get: function () {
+            return new SharePointQueryable(this, "InformationRightsManagementSettings");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "subscriptions", {
+        /**
+         * Gets the webhook subscriptions of this list
+         *
+         */
+        get: function () {
+            return new Subscriptions(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "rootFolder", {
+        /**
+         * The root folder of the list
+         */
+        get: function () {
+            return new Folder(this, "rootFolder");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets a view by view guid id
+     *
+     */
+    List.prototype.getView = function (viewId) {
+        return new View(this, "getView('" + viewId + "')");
+    };
+    /**
+     * Updates this list intance with the supplied properties
+     *
+     * @param properties A plain object hash of values to update for the list
+     * @param eTag Value used in the IF-Match header, by default "*"
+     */
+    /* tslint:disable no-string-literal */
+    List.prototype.update = function (properties, eTag) {
+        var _this = this;
+        if (eTag === void 0) { eTag = "*"; }
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({
+            "__metadata": { "type": "SP.List" },
+        }, properties));
+        return this.postCore({
+            body: postBody,
+            headers: {
+                "IF-Match": eTag,
+                "X-HTTP-Method": "MERGE",
+            },
+        }).then(function (data) {
+            var retList = _this;
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(properties, "Title")) {
+                retList = _this.getParent(List, _this.parentUrl, "getByTitle('" + properties["Title"] + "')");
+            }
+            return {
+                data: data,
+                list: retList,
+            };
+        });
+    };
+    /* tslint:enable */
+    /**
+     * Delete this list
+     *
+     * @param eTag Value used in the IF-Match header, by default "*"
+     */
+    List.prototype.delete = function (eTag) {
+        if (eTag === void 0) { eTag = "*"; }
+        return this.postCore({
+            headers: {
+                "IF-Match": eTag,
+                "X-HTTP-Method": "DELETE",
+            },
+        });
+    };
+    /**
+     * Returns the collection of changes from the change log that have occurred within the list, based on the specified query.
+     */
+    List.prototype.getChanges = function (query) {
+        return this.clone(List, "getchanges").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ "query": Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.ChangeQuery"), query) }),
+        });
+    };
+    /**
+     * Returns a collection of items from the list based on the specified query.
+     *
+     * @param CamlQuery The Query schema of Collaborative Application Markup
+     * Language (CAML) is used in various ways within the context of Microsoft SharePoint Foundation
+     * to define queries against list data.
+     * see:
+     *
+     * https://msdn.microsoft.com/en-us/library/office/ms467521.aspx
+     *
+     * @param expands A URI with a $expand System Query Option indicates that Entries associated with
+     * the Entry or Collection of Entries identified by the Resource Path
+     * section of the URI must be represented inline (i.e. eagerly loaded).
+     * see:
+     *
+     * https://msdn.microsoft.com/en-us/library/office/fp142385.aspx
+     *
+     * http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#ExpandSystemQueryOption
+     */
+    List.prototype.getItemsByCAMLQuery = function (query) {
+        var expands = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            expands[_i - 1] = arguments[_i];
+        }
+        var q = this.clone(List, "getitems");
+        return q.expand.apply(q, expands).postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ "query": Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({ "__metadata": { "type": "SP.CamlQuery" } }, query) }),
+        });
+    };
+    /**
+     * See: https://msdn.microsoft.com/en-us/library/office/dn292554.aspx
+     */
+    List.prototype.getListItemChangesSinceToken = function (query) {
+        return this.clone(List, "getlistitemchangessincetoken").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ "query": Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({ "__metadata": { "type": "SP.ChangeLogItemQuery" } }, query) }),
+        }, { parse: function (r) { return r.text(); } });
+    };
+    /**
+     * Moves the list to the Recycle Bin and returns the identifier of the new Recycle Bin item.
+     */
+    List.prototype.recycle = function () {
+        return this.clone(List, "recycle").postCore().then(function (data) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(data, "Recycle")) {
+                return data.Recycle;
+            }
+            else {
+                return data;
+            }
+        });
+    };
+    /**
+     * Renders list data based on the view xml provided
+     */
+    List.prototype.renderListData = function (viewXml) {
+        var q = this.clone(List, "renderlistdata(@viewXml)");
+        q.query.set("@viewXml", "'" + viewXml + "'");
+        return q.postCore().then(function (data) {
+            // data will be a string, so we parse it again
+            return JSON.parse(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(data, "RenderListData") ? data.RenderListData : data);
+        });
+    };
+    /**
+     * Returns the data for the specified query view
+     *
+     * @param parameters The parameters to be used to render list data as JSON string.
+     * @param overrideParameters The parameters that are used to override and extend the regular SPRenderListDataParameters.
+     */
+    List.prototype.renderListDataAsStream = function (parameters, overrideParameters) {
+        if (overrideParameters === void 0) { overrideParameters = null; }
+        var postBody = {
+            overrideParameters: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.RenderListDataOverrideParameters"), overrideParameters),
+            parameters: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.RenderListDataParameters"), parameters),
+        };
+        return this.clone(List, "RenderListDataAsStream", true).postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(postBody),
+        });
+    };
+    /**
+     * Gets the field values and field schema attributes for a list item.
+     */
+    List.prototype.renderListFormData = function (itemId, formId, mode) {
+        return this.clone(List, "renderlistformdata(itemid=" + itemId + ", formid='" + formId + "', mode='" + mode + "')").postCore().then(function (data) {
+            // data will be a string, so we parse it again
+            return JSON.parse(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(data, "RenderListFormData") ? data.RenderListFormData : data);
+        });
+    };
+    /**
+     * Reserves a list item ID for idempotent list item creation.
+     */
+    List.prototype.reserveListItemId = function () {
+        return this.clone(List, "reservelistitemid").postCore().then(function (data) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(data, "ReserveListItemId")) {
+                return data.ReserveListItemId;
+            }
+            else {
+                return data;
+            }
+        });
+    };
+    /**
+     * Returns the ListItemEntityTypeFullName for this list, used when adding/updating list items. Does not support batching.
+     *
+     */
+    List.prototype.getListItemEntityTypeFullName = function () {
+        return this.clone(List, null, false).select("ListItemEntityTypeFullName").get().then(function (o) { return o.ListItemEntityTypeFullName; });
+    };
+    /**
+     * Creates an item using path (in a folder), validates and sets its field values.
+     *
+     * @param formValues The fields to change and their new values.
+     * @param decodedUrl Path decoded url; folder's server relative path.
+     * @param bNewDocumentUpdate true if the list item is a document being updated after upload; otherwise false.
+     * @param checkInComment Optional check in comment.
+     */
+    List.prototype.addValidateUpdateItemUsingPath = function (formValues, decodedUrl, bNewDocumentUpdate, checkInComment) {
+        if (bNewDocumentUpdate === void 0) { bNewDocumentUpdate = false; }
+        return this.clone(List, "AddValidateUpdateItemUsingPath()").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                bNewDocumentUpdate: bNewDocumentUpdate,
+                checkInComment: checkInComment,
+                formValues: formValues,
+                listItemCreateInfo: {
+                    FolderPath: {
+                        DecodedUrl: decodedUrl,
+                        __metadata: { type: "SP.ResourcePath" },
+                    },
+                    __metadata: { type: "SP.ListItemCreationInformationUsingPath" },
+                },
+            }),
+        }).then(function (res) {
+            if (typeof res.AddValidateUpdateItemUsingPath !== "undefined") {
+                return res.AddValidateUpdateItemUsingPath.results;
+            }
+            return res;
+        });
+    };
+    /**
+    * Gets the site script syntax (JSON) for the current list
+    */
+    List.prototype.getSiteScript = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var rootFolder, absoluteListUrl;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(List).rootFolder.select("ServerRelativeUrl").get()];
+                    case 1:
+                        rootFolder = _a.sent();
+                        return [4 /*yield*/, toAbsoluteUrl(rootFolder.ServerRelativeUrl)];
+                    case 2:
+                        absoluteListUrl = _a.sent();
+                        return [2 /*return*/, new __WEBPACK_IMPORTED_MODULE_3____["a" /* SiteScripts */](this, "").getSiteScriptFromList(absoluteListUrl)];
+                }
+            });
+        });
+    };
+    return List;
+}(SharePointQueryableSecurable));
+
+/**
+ * Represents a Collection of comments
+ */
+var Comments = /** @class */ (function (_super) {
+    __extends(Comments, _super);
+    function Comments() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Comments_1 = Comments;
+    /**
+     * Adds a new comment to this collection
+     *
+     * @param info Comment information to add
+     */
+    Comments.prototype.add = function (info) {
+        var _this = this;
+        if (typeof info === "string") {
+            info = { text: info };
+        }
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("Microsoft.SharePoint.Comments.comment"), info));
+        return this.clone(Comments_1, null).postCore({ body: postBody }).then(function (d) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(_this.getById(d.id), d);
+        });
+    };
+    /**
+     * Gets a comment by id
+     *
+     * @param id Id of the comment to load
+     */
+    Comments.prototype.getById = function (id) {
+        var c = new Comment(this);
+        c.concat("(" + id + ")");
+        return c;
+    };
+    /**
+     * Deletes all the comments in this collection
+     */
+    Comments.prototype.clear = function () {
+        return this.clone(Comments_1, "DeleteAll").postCore();
+    };
+    var Comments_1;
+    Comments = Comments_1 = __decorate([
+        defaultPath("comments")
+    ], Comments);
+    return Comments;
+}(SharePointQueryableCollection));
+/**
+ * Represents a comment
+ */
+var Comment = /** @class */ (function (_super) {
+    __extends(Comment, _super);
+    function Comment() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(Comment.prototype, "replies", {
+        get: function () {
+            return new Replies(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Likes the comment as the current user
+     */
+    Comment.prototype.like = function () {
+        return this.clone(Comment, "Like").postCore();
+    };
+    /**
+     * Unlikes the comment as the current user
+     */
+    Comment.prototype.unlike = function () {
+        return this.clone(Comment, "Unlike").postCore();
+    };
+    /**
+     * Deletes this comment
+     */
+    Comment.prototype.delete = function () {
+        return this.deleteCore();
+    };
+    return Comment;
+}(SharePointQueryableInstance));
+/**
+ * Represents a Collection of comments
+ */
+var Replies = /** @class */ (function (_super) {
+    __extends(Replies, _super);
+    function Replies() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Replies_1 = Replies;
+    /**
+     * Adds a new reply to this collection
+     *
+     * @param info Comment information to add
+     */
+    Replies.prototype.add = function (info) {
+        if (typeof info === "string") {
+            info = { text: info };
+        }
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("Microsoft.SharePoint.Comments.comment"), info));
+        return this.clone(Replies_1, null).postCore({ body: postBody }).then(function (d) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(new Comment(odataUrlFrom(d)), d);
+        });
+    };
+    var Replies_1;
+    Replies = Replies_1 = __decorate([
+        defaultPath("replies")
+    ], Replies);
+    return Replies;
+}(SharePointQueryableCollection));
+
+/**
+ * Describes a collection of Item objects
+ *
+ */
+var Items = /** @class */ (function (_super) {
+    __extends(Items, _super);
+    function Items() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Items_1 = Items;
+    /**
+    * Gets an Item by id
+    *
+    * @param id The integer id of the item to retrieve
+    */
+    Items.prototype.getById = function (id) {
+        var i = new Item(this);
+        i.concat("(" + id + ")");
+        return i;
+    };
+    /**
+     * Gets BCS Item by string id
+     *
+     * @param stringId The string id of the BCS item to retrieve
+     */
+    Items.prototype.getItemByStringId = function (stringId) {
+        // creates an item with the parent list path and append out method call
+        return new Item(this.parentUrl, "getItemByStringId('" + stringId + "')");
+    };
+    /**
+     * Skips the specified number of items (https://msdn.microsoft.com/en-us/library/office/fp142385.aspx#sectionSection6)
+     *
+     * @param skip The starting id where the page should start, use with top to specify pages
+     * @param reverse It true the PagedPrev=true parameter is added allowing backwards navigation in the collection
+     */
+    Items.prototype.skip = function (skip, reverse) {
+        if (reverse === void 0) { reverse = false; }
+        if (reverse) {
+            this.query.set("$skiptoken", encodeURIComponent("Paged=TRUE&PagedPrev=TRUE&p_ID=" + skip));
+        }
+        else {
+            this.query.set("$skiptoken", encodeURIComponent("Paged=TRUE&p_ID=" + skip));
+        }
+        return this;
+    };
+    /**
+     * Gets a collection designed to aid in paging through data
+     *
+     */
+    Items.prototype.getPaged = function (parser) {
+        if (parser === void 0) { parser = new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["f" /* ODataDefaultParser */](); }
+        return this.get(new PagedItemCollectionParser(this, parser));
+    };
+    /**
+     * Gets all the items in a list, regardless of count. Does not support batching or caching
+     *
+     *  @param requestSize Number of items to return in each request (Default: 2000)
+     *  @param acceptHeader Allows for setting the value of the Accept header for SP 2013 support
+     */
+    Items.prototype.getAll = function (requestSize, acceptHeader) {
+        if (requestSize === void 0) { requestSize = 2000; }
+        if (acceptHeader === void 0) { acceptHeader = "application/json;odata=nometadata"; }
+        __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("Calling items.getAll should be done sparingly. Ensure this is the correct choice. If you are unsure, it is not.", 2 /* Warning */);
+        // this will be used for the actual query
+        // and we set no metadata here to try and reduce traffic
+        var items = new Items_1(this, "").top(requestSize).configure({
+            headers: {
+                "Accept": acceptHeader,
+            },
+        });
+        // let's copy over the odata query params that can be applied
+        // $top - allow setting the page size this way (override what we did above)
+        // $select - allow picking the return fields (good behavior)
+        // $filter - allow setting a filter, though this may fail due for large lists
+        this.query.forEach(function (v, k) {
+            if (/^\$select|filter|top|expand$/i.test(k)) {
+                items.query.set(k, v);
+            }
+        });
+        // give back the promise
+        return new Promise(function (resolve, reject) {
+            // this will eventually hold the items we return
+            var itemsCollector = [];
+            // action that will gather up our results recursively
+            var gatherer = function (last) {
+                // collect that set of results
+                [].push.apply(itemsCollector, last.results);
+                // if we have more, repeat - otherwise resolve with the collected items
+                if (last.hasNext) {
+                    last.getNext().then(gatherer).catch(reject);
+                }
+                else {
+                    resolve(itemsCollector);
+                }
+            };
+            // start the cycle
+            items.getPaged().then(gatherer).catch(reject);
+        });
+    };
+    /**
+     * Adds a new item to the collection
+     *
+     * @param properties The new items's properties
+     * @param listItemEntityTypeFullName The type name of the list's entities
+     */
+    Items.prototype.add = function (properties, listItemEntityTypeFullName) {
+        var _this = this;
+        if (properties === void 0) { properties = {}; }
+        if (listItemEntityTypeFullName === void 0) { listItemEntityTypeFullName = null; }
+        var removeDependency = this.addBatchDependency();
+        return this.ensureListItemEntityTypeName(listItemEntityTypeFullName).then(function (listItemEntityType) {
+            var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata(listItemEntityType), properties));
+            var promise = _this.clone(Items_1, "").postCore({ body: postBody }).then(function (data) {
+                return {
+                    data: data,
+                    item: _this.getById(data.Id),
+                };
+            });
+            removeDependency();
+            return promise;
+        });
+    };
+    /**
+     * Ensures we have the proper list item entity type name, either from the value provided or from the list
+     *
+     * @param candidatelistItemEntityTypeFullName The potential type name
+     */
+    Items.prototype.ensureListItemEntityTypeName = function (candidatelistItemEntityTypeFullName) {
+        return candidatelistItemEntityTypeFullName ?
+            Promise.resolve(candidatelistItemEntityTypeFullName) :
+            this.getParent(List).getListItemEntityTypeFullName();
+    };
+    var Items_1;
+    Items = Items_1 = __decorate([
+        defaultPath("items")
+    ], Items);
+    return Items;
+}(SharePointQueryableCollection));
+/**
+ * Descrines a single Item instance
+ *
+ */
+var Item = /** @class */ (function (_super) {
+    __extends(Item, _super);
+    function Item() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+         * Delete this item
+         *
+         * @param eTag Value used in the IF-Match header, by default "*"
+         */
+        _this.delete = _this._deleteWithETag;
+        return _this;
+    }
+    Object.defineProperty(Item.prototype, "attachmentFiles", {
+        /**
+         * Gets the set of attachments for this item
+         *
+         */
+        get: function () {
+            return new AttachmentFiles(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "contentType", {
+        /**
+         * Gets the content type for this item
+         *
+         */
+        get: function () {
+            return new ContentType(this, "ContentType");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "comments", {
+        /**
+         * Gets the collection of comments associated with this list item
+         */
+        get: function () {
+            return new Comments(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "effectiveBasePermissions", {
+        /**
+         * Gets the effective base permissions for the item
+         *
+         */
+        get: function () {
+            return new SharePointQueryable(this, "EffectiveBasePermissions");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "effectiveBasePermissionsForUI", {
+        /**
+         * Gets the effective base permissions for the item in a UI context
+         *
+         */
+        get: function () {
+            return new SharePointQueryable(this, "EffectiveBasePermissionsForUI");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "fieldValuesAsHTML", {
+        /**
+         * Gets the field values for this list item in their HTML representation
+         *
+         */
+        get: function () {
+            return new SharePointQueryableInstance(this, "FieldValuesAsHTML");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "fieldValuesAsText", {
+        /**
+         * Gets the field values for this list item in their text representation
+         *
+         */
+        get: function () {
+            return new SharePointQueryableInstance(this, "FieldValuesAsText");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "fieldValuesForEdit", {
+        /**
+         * Gets the field values for this list item for use in editing controls
+         *
+         */
+        get: function () {
+            return new SharePointQueryableInstance(this, "FieldValuesForEdit");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "folder", {
+        /**
+         * Gets the folder associated with this list item (if this item represents a folder)
+         *
+         */
+        get: function () {
+            return new Folder(this, "folder");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "file", {
+        /**
+         * Gets the folder associated with this list item (if this item represents a folder)
+         *
+         */
+        get: function () {
+            return new File(this, "file");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "versions", {
+        /**
+         * Gets the collection of versions associated with this item
+         */
+        get: function () {
+            return new ItemVersions(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Item.prototype, "list", {
+        get: function () {
+            return this.getParent(List, this.parentUrl.substr(0, this.parentUrl.lastIndexOf("/")));
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Updates this list intance with the supplied properties
+     *
+     * @param properties A plain object hash of values to update for the list
+     * @param eTag Value used in the IF-Match header, by default "*"
+     * @param listItemEntityTypeFullName The type name of the list's entities
+     */
+    Item.prototype.update = function (properties, eTag, listItemEntityTypeFullName) {
+        var _this = this;
+        if (eTag === void 0) { eTag = "*"; }
+        if (listItemEntityTypeFullName === void 0) { listItemEntityTypeFullName = null; }
+        return new Promise(function (resolve, reject) {
+            var removeDependency = _this.addBatchDependency();
+            return _this.ensureListItemEntityTypeName(listItemEntityTypeFullName).then(function (listItemEntityType) {
+                var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata(listItemEntityType), properties));
+                removeDependency();
+                return _this.postCore({
+                    body: postBody,
+                    headers: {
+                        "IF-Match": eTag,
+                        "X-HTTP-Method": "MERGE",
+                    },
+                }, new ItemUpdatedParser()).then(function (data) {
+                    resolve({
+                        data: data,
+                        item: _this,
+                    });
+                });
+            }).catch(function (e) { return reject(e); });
+        });
+    };
+    /**
+     * Gets the collection of people who have liked this item
+     */
+    Item.prototype.getLikedBy = function () {
+        return this.clone(Item, "likedBy").postCore();
+    };
+    /**
+     * Likes this item as the current user
+     */
+    Item.prototype.like = function () {
+        return this.clone(Item, "like").postCore();
+    };
+    /**
+     * Unlikes this item as the current user
+     */
+    Item.prototype.unlike = function () {
+        return this.clone(Item, "unlike").postCore();
+    };
+    /**
+     * Moves the list item to the Recycle Bin and returns the identifier of the new Recycle Bin item.
+     */
+    Item.prototype.recycle = function () {
+        return this.clone(Item, "recycle").postCore();
+    };
+    /**
+     * Gets a string representation of the full URL to the WOPI frame.
+     * If there is no associated WOPI application, or no associated action, an empty string is returned.
+     *
+     * @param action Display mode: 0: view, 1: edit, 2: mobileView, 3: interactivePreview
+     */
+    Item.prototype.getWopiFrameUrl = function (action) {
+        if (action === void 0) { action = 0; }
+        var i = this.clone(Item, "getWOPIFrameUrl(@action)");
+        i.query.set("@action", action);
+        return i.postCore().then(function (data) {
+            // handle verbose mode
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(data, "GetWOPIFrameUrl")) {
+                return data.GetWOPIFrameUrl;
+            }
+            return data;
+        });
+    };
+    /**
+     * Validates and sets the values of the specified collection of fields for the list item.
+     *
+     * @param formValues The fields to change and their new values.
+     * @param newDocumentUpdate true if the list item is a document being updated after upload; otherwise false.
+     */
+    Item.prototype.validateUpdateListItem = function (formValues, newDocumentUpdate) {
+        if (newDocumentUpdate === void 0) { newDocumentUpdate = false; }
+        return this.clone(Item, "validateupdatelistitem").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ "formValues": formValues, bNewDocumentUpdate: newDocumentUpdate }),
+        });
+    };
+    /**
+     * Get the like by information for a modern site page
+     */
+    Item.prototype.getLikedByInformation = function () {
+        return this.clone(Item, "likedByInformation").expand("likedby").getCore();
+    };
+    /**
+     * Ensures we have the proper list item entity type name, either from the value provided or from the list
+     *
+     * @param candidatelistItemEntityTypeFullName The potential type name
+     */
+    Item.prototype.ensureListItemEntityTypeName = function (candidatelistItemEntityTypeFullName) {
+        return candidatelistItemEntityTypeFullName ?
+            Promise.resolve(candidatelistItemEntityTypeFullName) :
+            this.list.getListItemEntityTypeFullName();
+    };
+    return Item;
+}(SharePointQueryableShareableItem));
+/**
+ * Describes a collection of Version objects
+ *
+ */
+var ItemVersions = /** @class */ (function (_super) {
+    __extends(ItemVersions, _super);
+    function ItemVersions() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets a version by id
+     *
+     * @param versionId The id of the version to retrieve
+     */
+    ItemVersions.prototype.getById = function (versionId) {
+        var v = new ItemVersion(this);
+        v.concat("(" + versionId + ")");
+        return v;
+    };
+    ItemVersions = __decorate([
+        defaultPath("versions")
+    ], ItemVersions);
+    return ItemVersions;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single Version instance
+ *
+ */
+var ItemVersion = /** @class */ (function (_super) {
+    __extends(ItemVersion, _super);
+    function ItemVersion() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+        * Delete a specific version of a file.
+        *
+        * @param eTag Value used in the IF-Match header, by default "*"
+        */
+        _this.delete = _this._deleteWithETag;
+        return _this;
+    }
+    return ItemVersion;
+}(SharePointQueryableInstance));
+/**
+ * Provides paging functionality for list items
+ */
+var PagedItemCollection = /** @class */ (function () {
+    function PagedItemCollection(parent, nextUrl, results, innerParser) {
+        this.parent = parent;
+        this.nextUrl = nextUrl;
+        this.results = results;
+        this.innerParser = innerParser;
+    }
+    Object.defineProperty(PagedItemCollection.prototype, "hasNext", {
+        /**
+         * If true there are more results available in the set, otherwise there are not
+         */
+        get: function () {
+            return typeof this.nextUrl === "string" && this.nextUrl.length > 0;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets the next set of results, or resolves to null if no results are available
+     */
+    PagedItemCollection.prototype.getNext = function () {
+        if (this.hasNext) {
+            var items = new Items(this.nextUrl, null).configureFrom(this.parent);
+            return items.getPaged(this.innerParser);
+        }
+        return new Promise(function (r) { return r(null); });
+    };
+    return PagedItemCollection;
+}());
+var PagedItemCollectionParser = /** @class */ (function (_super) {
+    __extends(PagedItemCollectionParser, _super);
+    function PagedItemCollectionParser(_parent, innerParser) {
+        var _this = _super.call(this) || this;
+        _this._parent = _parent;
+        _this.innerParser = innerParser;
+        return _this;
+    }
+    PagedItemCollectionParser.prototype.parse = function (r) {
+        var _this = this;
+        return this.innerParser.parse(r).then(function (items) { return __awaiter(_this, void 0, void 0, function () {
+            var json, nextUrl;
+            return __generator(this, function (_a) {
+                json = this.innerParser.rawJson;
+                nextUrl = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(json, "d") && Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(json.d, "__next") ? json.d.__next : json["odata.nextLink"];
+                return [2 /*return*/, new PagedItemCollection(this._parent, nextUrl, items, this.innerParser)];
+            });
+        }); });
+    };
+    return PagedItemCollectionParser;
+}(__WEBPACK_IMPORTED_MODULE_2__pnp_odata__["g" /* ODataParserBase */]));
+var ItemUpdatedParser = /** @class */ (function (_super) {
+    __extends(ItemUpdatedParser, _super);
+    function ItemUpdatedParser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ItemUpdatedParser.prototype.parse = function (r) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        if (_this.handleError(r, reject)) {
+                            resolve({
+                                "odata.etag": r.headers.get("etag"),
+                            });
+                        }
+                    })];
+            });
+        });
+    };
+    return ItemUpdatedParser;
+}(__WEBPACK_IMPORTED_MODULE_2__pnp_odata__["g" /* ODataParserBase */]));
+
+/**
+ * Describes a collection of File objects
+ *
+ */
+var Files = /** @class */ (function (_super) {
+    __extends(Files, _super);
+    function Files() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Files_1 = Files;
+    /**
+     * Gets a File by filename
+     *
+     * @param name The name of the file, including extension.
+     */
+    Files.prototype.getByName = function (name) {
+        var f = new File(this);
+        f.concat("('" + name + "')");
+        return f;
+    };
+    /**
+     * Uploads a file. Not supported for batching
+     *
+     * @param url The folder-relative url of the file.
+     * @param content The file contents blob.
+     * @param shouldOverWrite Should a file with the same name in the same location be overwritten? (default: true)
+     * @returns The new File and the raw response.
+     */
+    Files.prototype.add = function (url, content, shouldOverWrite) {
+        var _this = this;
+        if (shouldOverWrite === void 0) { shouldOverWrite = true; }
+        return new Files_1(this, "add(overwrite=" + shouldOverWrite + ",url='" + url + "')")
+            .postCore({
+            body: content,
+        }).then(function (response) {
+            return {
+                data: response,
+                file: _this.getByName(url),
+            };
+        });
+    };
+    /**
+     * Uploads a file. Not supported for batching
+     *
+     * @param url The folder-relative url of the file.
+     * @param content The Blob file content to add
+     * @param progress A callback function which can be used to track the progress of the upload
+     * @param shouldOverWrite Should a file with the same name in the same location be overwritten? (default: true)
+     * @param chunkSize The size of each file slice, in bytes (default: 10485760)
+     * @returns The new File and the raw response.
+     */
+    Files.prototype.addChunked = function (url, content, progress, shouldOverWrite, chunkSize) {
+        var _this = this;
+        if (shouldOverWrite === void 0) { shouldOverWrite = true; }
+        if (chunkSize === void 0) { chunkSize = 10485760; }
+        var adder = this.clone(Files_1, "add(overwrite=" + shouldOverWrite + ",url='" + url + "')", false);
+        return adder.postCore()
+            .then(function () { return _this.getByName(url); })
+            .then(function (file) { return file.setContentChunked(content, progress, chunkSize); });
+    };
+    /**
+     * Adds a ghosted file to an existing list or document library. Not supported for batching.
+     *
+     * @param fileUrl The server-relative url where you want to save the file.
+     * @param templateFileType The type of use to create the file.
+     * @returns The template file that was added and the raw response.
+     */
+    Files.prototype.addTemplateFile = function (fileUrl, templateFileType) {
+        var _this = this;
+        return this.clone(Files_1, "addTemplateFile(urloffile='" + fileUrl + "',templatefiletype=" + templateFileType + ")", false)
+            .postCore().then(function (response) {
+            return {
+                data: response,
+                file: _this.getByName(fileUrl),
+            };
+        });
+    };
+    var Files_1;
+    Files = Files_1 = __decorate([
+        defaultPath("files")
+    ], Files);
+    return Files;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single File instance
+ *
+ */
+var File = /** @class */ (function (_super) {
+    __extends(File, _super);
+    function File() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(File.prototype, "listItemAllFields", {
+        /**
+         * Gets a value that specifies the list item field values for the list item corresponding to the file.
+         *
+         */
+        get: function () {
+            return new SharePointQueryableInstance(this, "listItemAllFields");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(File.prototype, "versions", {
+        /**
+         * Gets a collection of versions
+         *
+         */
+        get: function () {
+            return new Versions(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Approves the file submitted for content approval with the specified comment.
+     * Only documents in lists that are enabled for content approval can be approved.
+     *
+     * @param comment The comment for the approval.
+     */
+    File.prototype.approve = function (comment) {
+        if (comment === void 0) { comment = ""; }
+        return this.clone(File, "approve(comment='" + comment + "')").postCore();
+    };
+    /**
+     * Stops the chunk upload session without saving the uploaded data. Does not support batching.
+     * If the file doesn’t already exist in the library, the partially uploaded file will be deleted.
+     * Use this in response to user action (as in a request to cancel an upload) or an error or exception.
+     * Use the uploadId value that was passed to the StartUpload method that started the upload session.
+     * This method is currently available only on Office 365.
+     *
+     * @param uploadId The unique identifier of the upload session.
+     */
+    File.prototype.cancelUpload = function (uploadId) {
+        return this.clone(File, "cancelUpload(uploadId=guid'" + uploadId + "')", false).postCore();
+    };
+    /**
+     * Checks the file in to a document library based on the check-in type.
+     *
+     * @param comment A comment for the check-in. Its length must be <= 1023.
+     * @param checkinType The check-in type for the file.
+     */
+    File.prototype.checkin = function (comment, checkinType) {
+        if (comment === void 0) { comment = ""; }
+        if (checkinType === void 0) { checkinType = CheckinType.Major; }
+        if (comment.length > 1023) {
+            throw Error("The maximum comment length is 1023 characters.");
+        }
+        return this.clone(File, "checkin(comment='" + comment + "',checkintype=" + checkinType + ")").postCore();
+    };
+    /**
+     * Checks out the file from a document library.
+     */
+    File.prototype.checkout = function () {
+        return this.clone(File, "checkout").postCore();
+    };
+    /**
+     * Copies the file to the destination url.
+     *
+     * @param url The absolute url or server relative url of the destination file path to copy to.
+     * @param shouldOverWrite Should a file with the same name in the same location be overwritten?
+     */
+    File.prototype.copyTo = function (url, shouldOverWrite) {
+        if (shouldOverWrite === void 0) { shouldOverWrite = true; }
+        return this.clone(File, "copyTo(strnewurl='" + url + "',boverwrite=" + shouldOverWrite + ")").postCore();
+    };
+    /**
+     * Delete this file.
+     *
+     * @param eTag Value used in the IF-Match header, by default "*"
+     */
+    File.prototype.delete = function (eTag) {
+        if (eTag === void 0) { eTag = "*"; }
+        return this.clone(File, null).postCore({
+            headers: {
+                "IF-Match": eTag,
+                "X-HTTP-Method": "DELETE",
+            },
+        });
+    };
+    /**
+     * Denies approval for a file that was submitted for content approval.
+     * Only documents in lists that are enabled for content approval can be denied.
+     *
+     * @param comment The comment for the denial.
+     */
+    File.prototype.deny = function (comment) {
+        if (comment === void 0) { comment = ""; }
+        if (comment.length > 1023) {
+            throw Error("The maximum comment length is 1023 characters.");
+        }
+        return this.clone(File, "deny(comment='" + comment + "')").postCore();
+    };
+    /**
+     * Specifies the control set used to access, modify, or add Web Parts associated with this Web Part Page and view.
+     * An exception is thrown if the file is not an ASPX page.
+     *
+     * @param scope The WebPartsPersonalizationScope view on the Web Parts page.
+     */
+    File.prototype.getLimitedWebPartManager = function (scope) {
+        if (scope === void 0) { scope = WebPartsPersonalizationScope.Shared; }
+        return new LimitedWebPartManager(this, "getLimitedWebPartManager(scope=" + scope + ")");
+    };
+    /**
+     * Moves the file to the specified destination url.
+     *
+     * @param url The absolute url or server relative url of the destination file path to move to.
+     * @param moveOperations The bitwise MoveOperations value for how to move the file.
+     */
+    File.prototype.moveTo = function (url, moveOperations) {
+        if (moveOperations === void 0) { moveOperations = MoveOperations.Overwrite; }
+        return this.clone(File, "moveTo(newurl='" + url + "',flags=" + moveOperations + ")").postCore();
+    };
+    /**
+     * Submits the file for content approval with the specified comment.
+     *
+     * @param comment The comment for the published file. Its length must be <= 1023.
+     */
+    File.prototype.publish = function (comment) {
+        if (comment === void 0) { comment = ""; }
+        if (comment.length > 1023) {
+            throw Error("The maximum comment length is 1023 characters.");
+        }
+        return this.clone(File, "publish(comment='" + comment + "')").postCore();
+    };
+    /**
+     * Moves the file to the Recycle Bin and returns the identifier of the new Recycle Bin item.
+     *
+     * @returns The GUID of the recycled file.
+     */
+    File.prototype.recycle = function () {
+        return this.clone(File, "recycle").postCore();
+    };
+    /**
+     * Reverts an existing checkout for the file.
+     *
+     */
+    File.prototype.undoCheckout = function () {
+        return this.clone(File, "undoCheckout").postCore();
+    };
+    /**
+     * Removes the file from content approval or unpublish a major version.
+     *
+     * @param comment The comment for the unpublish operation. Its length must be <= 1023.
+     */
+    File.prototype.unpublish = function (comment) {
+        if (comment === void 0) { comment = ""; }
+        if (comment.length > 1023) {
+            throw Error("The maximum comment length is 1023 characters.");
+        }
+        return this.clone(File, "unpublish(comment='" + comment + "')").postCore();
+    };
+    /**
+     * Gets the contents of the file as text. Not supported in batching.
+     *
+     */
+    File.prototype.getText = function () {
+        return this.clone(File, "$value", false).get(new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["i" /* TextParser */](), { headers: { "binaryStringResponseBody": "true" } });
+    };
+    /**
+     * Gets the contents of the file as a blob, does not work in Node.js. Not supported in batching.
+     *
+     */
+    File.prototype.getBlob = function () {
+        return this.clone(File, "$value", false).get(new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["a" /* BlobParser */](), { headers: { "binaryStringResponseBody": "true" } });
+    };
+    /**
+     * Gets the contents of a file as an ArrayBuffer, works in Node.js. Not supported in batching.
+     */
+    File.prototype.getBuffer = function () {
+        return this.clone(File, "$value", false).get(new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["b" /* BufferParser */](), { headers: { "binaryStringResponseBody": "true" } });
+    };
+    /**
+     * Gets the contents of a file as an ArrayBuffer, works in Node.js. Not supported in batching.
+     */
+    File.prototype.getJSON = function () {
+        return this.clone(File, "$value", false).get(new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["d" /* JSONParser */](), { headers: { "binaryStringResponseBody": "true" } });
+    };
+    /**
+     * Sets the content of a file, for large files use setContentChunked. Not supported in batching.
+     *
+     * @param content The file content
+     *
+     */
+    File.prototype.setContent = function (content) {
+        var _this = this;
+        return this.clone(File, "$value", false).postCore({
+            body: content,
+            headers: {
+                "X-HTTP-Method": "PUT",
+            },
+        }).then(function (_) { return new File(_this); });
+    };
+    /**
+     * Gets the associated list item for this folder, loading the default properties
+     */
+    File.prototype.getItem = function () {
+        var _this = this;
+        var selects = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            selects[_i] = arguments[_i];
+        }
+        var q = this.listItemAllFields;
+        return q.select.apply(q, selects).get().then(function (d) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])((new Item(odataUrlFrom(d))).configureFrom(_this), d);
+        });
+    };
+    /**
+     * Sets the contents of a file using a chunked upload approach. Not supported in batching.
+     *
+     * @param file The file to upload
+     * @param progress A callback function which can be used to track the progress of the upload
+     * @param chunkSize The size of each file slice, in bytes (default: 10485760)
+     */
+    File.prototype.setContentChunked = function (file, progress, chunkSize) {
+        var _this = this;
+        if (chunkSize === void 0) { chunkSize = 10485760; }
+        if (progress === undefined) {
+            progress = function () { return null; };
+        }
+        var fileSize = file.size;
+        var blockCount = parseInt((file.size / chunkSize).toString(), 10) + ((file.size % chunkSize === 0) ? 1 : 0);
+        var uploadId = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["h" /* getGUID */])();
+        // start the chain with the first fragment
+        progress({ uploadId: uploadId, blockNumber: 1, chunkSize: chunkSize, currentPointer: 0, fileSize: fileSize, stage: "starting", totalBlocks: blockCount });
+        var chain = this.startUpload(uploadId, file.slice(0, chunkSize));
+        var _loop_1 = function (i) {
+            chain = chain.then(function (pointer) {
+                progress({ uploadId: uploadId, blockNumber: i, chunkSize: chunkSize, currentPointer: pointer, fileSize: fileSize, stage: "continue", totalBlocks: blockCount });
+                return _this.continueUpload(uploadId, pointer, file.slice(pointer, pointer + chunkSize));
+            });
+        };
+        // skip the first and last blocks
+        for (var i = 2; i < blockCount; i++) {
+            _loop_1(i);
+        }
+        return chain.then(function (pointer) {
+            progress({ uploadId: uploadId, blockNumber: blockCount, chunkSize: chunkSize, currentPointer: pointer, fileSize: fileSize, stage: "finishing", totalBlocks: blockCount });
+            return _this.finishUpload(uploadId, pointer, file.slice(pointer));
+        });
+    };
+    /**
+     * Starts a new chunk upload session and uploads the first fragment.
+     * The current file content is not changed when this method completes.
+     * The method is idempotent (and therefore does not change the result) as long as you use the same values for uploadId and stream.
+     * The upload session ends either when you use the CancelUpload method or when you successfully
+     * complete the upload session by passing the rest of the file contents through the ContinueUpload and FinishUpload methods.
+     * The StartUpload and ContinueUpload methods return the size of the running total of uploaded data in bytes,
+     * so you can pass those return values to subsequent uses of ContinueUpload and FinishUpload.
+     * This method is currently available only on Office 365.
+     *
+     * @param uploadId The unique identifier of the upload session.
+     * @param fragment The file contents.
+     * @returns The size of the total uploaded data in bytes.
+     */
+    File.prototype.startUpload = function (uploadId, fragment) {
+        return this.clone(File, "startUpload(uploadId=guid'" + uploadId + "')", false)
+            .postCore({ body: fragment })
+            .then(function (n) {
+            // When OData=verbose the payload has the following shape:
+            // { StartUpload: "10485760" }
+            if (typeof n === "object") {
+                n = n.StartUpload;
+            }
+            return parseFloat(n);
+        });
+    };
+    /**
+     * Continues the chunk upload session with an additional fragment.
+     * The current file content is not changed.
+     * Use the uploadId value that was passed to the StartUpload method that started the upload session.
+     * This method is currently available only on Office 365.
+     *
+     * @param uploadId The unique identifier of the upload session.
+     * @param fileOffset The size of the offset into the file where the fragment starts.
+     * @param fragment The file contents.
+     * @returns The size of the total uploaded data in bytes.
+     */
+    File.prototype.continueUpload = function (uploadId, fileOffset, fragment) {
+        return this.clone(File, "continueUpload(uploadId=guid'" + uploadId + "',fileOffset=" + fileOffset + ")", false)
+            .postCore({ body: fragment })
+            .then(function (n) {
+            // When OData=verbose the payload has the following shape:
+            // { ContinueUpload: "20971520" }
+            if (typeof n === "object") {
+                n = n.ContinueUpload;
+            }
+            return parseFloat(n);
+        });
+    };
+    /**
+     * Uploads the last file fragment and commits the file. The current file content is changed when this method completes.
+     * Use the uploadId value that was passed to the StartUpload method that started the upload session.
+     * This method is currently available only on Office 365.
+     *
+     * @param uploadId The unique identifier of the upload session.
+     * @param fileOffset The size of the offset into the file where the fragment starts.
+     * @param fragment The file contents.
+     * @returns The newly uploaded file.
+     */
+    File.prototype.finishUpload = function (uploadId, fileOffset, fragment) {
+        return this.clone(File, "finishUpload(uploadId=guid'" + uploadId + "',fileOffset=" + fileOffset + ")", false)
+            .postCore({ body: fragment })
+            .then(function (response) {
+            return {
+                data: response,
+                file: new File(odataUrlFrom(response)),
+            };
+        });
+    };
+    return File;
+}(SharePointQueryableShareableFile));
+/**
+ * Describes a collection of Version objects
+ *
+ */
+var Versions = /** @class */ (function (_super) {
+    __extends(Versions, _super);
+    function Versions() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Versions_1 = Versions;
+    /**
+     * Gets a version by id
+     *
+     * @param versionId The id of the version to retrieve
+     */
+    Versions.prototype.getById = function (versionId) {
+        var v = new Version(this);
+        v.concat("(" + versionId + ")");
+        return v;
+    };
+    /**
+     * Deletes all the file version objects in the collection.
+     *
+     */
+    Versions.prototype.deleteAll = function () {
+        return new Versions_1(this, "deleteAll").postCore();
+    };
+    /**
+     * Deletes the specified version of the file.
+     *
+     * @param versionId The ID of the file version to delete.
+     */
+    Versions.prototype.deleteById = function (versionId) {
+        return this.clone(Versions_1, "deleteById(vid=" + versionId + ")").postCore();
+    };
+    /**
+     * Recycles the specified version of the file.
+     *
+     * @param versionId The ID of the file version to delete.
+     */
+    Versions.prototype.recycleByID = function (versionId) {
+        return this.clone(Versions_1, "recycleByID(vid=" + versionId + ")").postCore();
+    };
+    /**
+     * Deletes the file version object with the specified version label.
+     *
+     * @param label The version label of the file version to delete, for example: 1.2
+     */
+    Versions.prototype.deleteByLabel = function (label) {
+        return this.clone(Versions_1, "deleteByLabel(versionlabel='" + label + "')").postCore();
+    };
+    /**
+     * Recycles the file version object with the specified version label.
+     *
+     * @param label The version label of the file version to delete, for example: 1.2
+     */
+    Versions.prototype.recycleByLabel = function (label) {
+        return this.clone(Versions_1, "recycleByLabel(versionlabel='" + label + "')").postCore();
+    };
+    /**
+     * Creates a new file version from the file specified by the version label.
+     *
+     * @param label The version label of the file version to restore, for example: 1.2
+     */
+    Versions.prototype.restoreByLabel = function (label) {
+        return this.clone(Versions_1, "restoreByLabel(versionlabel='" + label + "')").postCore();
+    };
+    var Versions_1;
+    Versions = Versions_1 = __decorate([
+        defaultPath("versions")
+    ], Versions);
+    return Versions;
+}(SharePointQueryableCollection));
+/**
+ * Describes a single Version instance
+ *
+ */
+var Version = /** @class */ (function (_super) {
+    __extends(Version, _super);
+    function Version() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+        * Delete a specific version of a file.
+        *
+        * @param eTag Value used in the IF-Match header, by default "*"
+        */
+        _this.delete = _this._deleteWithETag;
+        return _this;
+        // /**
+        // * Delete a specific version of a file.
+        // *
+        // * @param eTag Value used in the IF-Match header, by default "*"
+        // */
+        // public delete(eTag = "*"): Promise<void> {
+        //     return this.postCore({
+        //         headers: {
+        //             "IF-Match": eTag,
+        //             "X-HTTP-Method": "DELETE",
+        //         },
+        //     });
+        // }
+    }
+    return Version;
+}(SharePointQueryableInstance));
+var CheckinType;
+(function (CheckinType) {
+    CheckinType[CheckinType["Minor"] = 0] = "Minor";
+    CheckinType[CheckinType["Major"] = 1] = "Major";
+    CheckinType[CheckinType["Overwrite"] = 2] = "Overwrite";
+})(CheckinType || (CheckinType = {}));
+var WebPartsPersonalizationScope;
+(function (WebPartsPersonalizationScope) {
+    WebPartsPersonalizationScope[WebPartsPersonalizationScope["User"] = 0] = "User";
+    WebPartsPersonalizationScope[WebPartsPersonalizationScope["Shared"] = 1] = "Shared";
+})(WebPartsPersonalizationScope || (WebPartsPersonalizationScope = {}));
+var MoveOperations;
+(function (MoveOperations) {
+    MoveOperations[MoveOperations["Overwrite"] = 1] = "Overwrite";
+    MoveOperations[MoveOperations["AllowBrokenThickets"] = 8] = "AllowBrokenThickets";
+})(MoveOperations || (MoveOperations = {}));
+var TemplateFileType;
+(function (TemplateFileType) {
+    TemplateFileType[TemplateFileType["StandardPage"] = 0] = "StandardPage";
+    TemplateFileType[TemplateFileType["WikiPage"] = 1] = "WikiPage";
+    TemplateFileType[TemplateFileType["FormPage"] = 2] = "FormPage";
+    TemplateFileType[TemplateFileType["ClientSidePage"] = 3] = "ClientSidePage";
+})(TemplateFileType || (TemplateFileType = {}));
+
+/**
+ * Represents an app catalog
+ */
+var AppCatalog = /** @class */ (function (_super) {
+    __extends(AppCatalog, _super);
+    function AppCatalog(baseUrl, path) {
+        if (path === void 0) { path = "_api/web/tenantappcatalog/AvailableApps"; }
+        return _super.call(this, extractWebUrl(typeof baseUrl === "string" ? baseUrl : baseUrl.toUrl()), path) || this;
+    }
+    /**
+     * Get details of specific app from the app catalog
+     * @param id - Specify the guid of the app
+     */
+    AppCatalog.prototype.getAppById = function (id) {
+        return new App(this, "getById('" + id + "')");
+    };
+    /**
+     * Uploads an app package. Not supported for batching
+     *
+     * @param filename Filename to create.
+     * @param content app package data (eg: the .app or .sppkg file).
+     * @param shouldOverWrite Should an app with the same name in the same location be overwritten? (default: true)
+     * @returns Promise<AppAddResult>
+     */
+    AppCatalog.prototype.add = function (filename, content, shouldOverWrite) {
+        if (shouldOverWrite === void 0) { shouldOverWrite = true; }
+        var catalog = this.toUrl().indexOf("tenantappcatalog") > 0 ? "tenantappcatalog" : "sitecollectionappcatalog";
+        // you don't add to the availableapps collection
+        var adder = new AppCatalog(extractWebUrl(this.toUrl()), "_api/web/" + catalog + "/add(overwrite=" + shouldOverWrite + ",url='" + filename + "')");
+        return adder.postCore({
+            body: content,
+        }).then(function (r) {
+            return {
+                data: r,
+                file: new File(odataUrlFrom(r)),
+            };
+        });
+    };
+    return AppCatalog;
+}(SharePointQueryableCollection));
+/**
+ * Represents the actions you can preform on a given app within the catalog
+ */
+var App = /** @class */ (function (_super) {
+    __extends(App, _super);
+    function App() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * This method deploys an app on the app catalog.  It must be called in the context
+     * of the tenant app catalog web or it will fail.
+     *
+     * @param skipFeatureDeployment Deploy the app to the entire tenant
+     */
+    App.prototype.deploy = function (skipFeatureDeployment) {
+        if (skipFeatureDeployment === void 0) { skipFeatureDeployment = false; }
+        return this.clone(App, "Deploy(" + skipFeatureDeployment + ")").postCore();
+    };
+    /**
+     * This method retracts a deployed app on the app catalog.  It must be called in the context
+     * of the tenant app catalog web or it will fail.
+     */
+    App.prototype.retract = function () {
+        return this.clone(App, "Retract").postCore();
+    };
+    /**
+     * This method allows an app which is already deployed to be installed on a web
+     */
+    App.prototype.install = function () {
+        return this.clone(App, "Install").postCore();
+    };
+    /**
+     * This method allows an app which is already insatlled to be uninstalled on a web
+     */
+    App.prototype.uninstall = function () {
+        return this.clone(App, "Uninstall").postCore();
+    };
+    /**
+     * This method allows an app which is already insatlled to be upgraded on a web
+     */
+    App.prototype.upgrade = function () {
+        return this.clone(App, "Upgrade").postCore();
+    };
+    /**
+     * This method removes an app from the app catalog.  It must be called in the context
+     * of the tenant app catalog web or it will fail.
+     */
+    App.prototype.remove = function () {
+        return this.clone(App, "Remove").postCore();
+    };
+    return App;
+}(SharePointQueryableInstance));
+
+/**
+ * Manages a batch of OData operations
+ */
+var SPBatch = /** @class */ (function (_super) {
+    __extends(SPBatch, _super);
+    function SPBatch(baseUrl) {
+        var _this = _super.call(this) || this;
+        _this.baseUrl = baseUrl;
+        return _this;
+    }
+    /**
+     * Parses the response from a batch request into an array of Response instances
+     *
+     * @param body Text body of the response from the batch request
+     */
+    SPBatch.ParseResponse = function (body) {
+        return new Promise(function (resolve, reject) {
+            var responses = [];
+            var header = "--batchresponse_";
+            // Ex. "HTTP/1.1 500 Internal Server Error"
+            var statusRegExp = new RegExp("^HTTP/[0-9.]+ +([0-9]+) +(.*)", "i");
+            var lines = body.split("\n");
+            var state = "batch";
+            var status;
+            var statusText;
+            for (var i = 0; i < lines.length; ++i) {
+                var line = lines[i];
+                switch (state) {
+                    case "batch":
+                        if (line.substr(0, header.length) === header) {
+                            state = "batchHeaders";
+                        }
+                        else {
+                            if (line.trim() !== "") {
+                                throw Error("Invalid response, line " + i);
+                            }
+                        }
+                        break;
+                    case "batchHeaders":
+                        if (line.trim() === "") {
+                            state = "status";
+                        }
+                        break;
+                    case "status":
+                        var parts = statusRegExp.exec(line);
+                        if (parts.length !== 3) {
+                            throw Error("Invalid status, line " + i);
+                        }
+                        status = parseInt(parts[1], 10);
+                        statusText = parts[2];
+                        state = "statusHeaders";
+                        break;
+                    case "statusHeaders":
+                        if (line.trim() === "") {
+                            state = "body";
+                        }
+                        break;
+                    case "body":
+                        responses.push((status === 204) ? new Response() : new Response(line, { status: status, statusText: statusText }));
+                        state = "batch";
+                        break;
+                }
+            }
+            if (state !== "status") {
+                reject(Error("Unexpected end of input"));
+            }
+            resolve(responses);
+        });
+    };
+    SPBatch.prototype.executeImpl = function () {
+        var _this = this;
+        __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + this.batchId + "] (" + (new Date()).getTime() + ") Executing batch with " + this.requests.length + " requests.", 1 /* Info */);
+        // if we don't have any requests, don't bother sending anything
+        // this could be due to caching further upstream, or just an empty batch
+        if (this.requests.length < 1) {
+            __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("Resolving empty batch.", 1 /* Info */);
+            return Promise.resolve();
+        }
+        // creating the client here allows the url to be populated for nodejs client as well as potentially
+        // any other hacks needed for other types of clients. Essentially allows the absoluteRequestUrl
+        // below to be correct
+        var client = new SPHttpClient();
+        // due to timing we need to get the absolute url here so we can use it for all the individual requests
+        // and for sending the entire batch
+        return toAbsoluteUrl(this.baseUrl).then(function (absoluteRequestUrl) {
+            // build all the requests, send them, pipe results in order to parsers
+            var batchBody = [];
+            var currentChangeSetId = "";
+            for (var i = 0; i < _this.requests.length; i++) {
+                var reqInfo = _this.requests[i];
+                if (reqInfo.method === "GET") {
+                    if (currentChangeSetId.length > 0) {
+                        // end an existing change set
+                        batchBody.push("--changeset_" + currentChangeSetId + "--\n\n");
+                        currentChangeSetId = "";
+                    }
+                    batchBody.push("--batch_" + _this.batchId + "\n");
+                }
+                else {
+                    if (currentChangeSetId.length < 1) {
+                        // start new change set
+                        currentChangeSetId = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["h" /* getGUID */])();
+                        batchBody.push("--batch_" + _this.batchId + "\n");
+                        batchBody.push("Content-Type: multipart/mixed; boundary=\"changeset_" + currentChangeSetId + "\"\n\n");
+                    }
+                    batchBody.push("--changeset_" + currentChangeSetId + "\n");
+                }
+                // common batch part prefix
+                batchBody.push("Content-Type: application/http\n");
+                batchBody.push("Content-Transfer-Encoding: binary\n\n");
+                var headers = new Headers();
+                // this is the url of the individual request within the batch
+                var url = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["m" /* isUrlAbsolute */])(reqInfo.url) ? reqInfo.url : Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(absoluteRequestUrl, reqInfo.url);
+                __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + _this.batchId + "] (" + (new Date()).getTime() + ") Adding request " + reqInfo.method + " " + url + " to batch.", 0 /* Verbose */);
+                if (reqInfo.method !== "GET") {
+                    var method = reqInfo.method;
+                    var castHeaders = reqInfo.options.headers;
+                    if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(reqInfo, "options") && Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(reqInfo.options, "headers") && castHeaders["X-HTTP-Method"] !== undefined) {
+                        method = castHeaders["X-HTTP-Method"];
+                        delete castHeaders["X-HTTP-Method"];
+                    }
+                    batchBody.push(method + " " + url + " HTTP/1.1\n");
+                    headers.set("Content-Type", "application/json;odata=verbose;charset=utf-8");
+                }
+                else {
+                    batchBody.push(reqInfo.method + " " + url + " HTTP/1.1\n");
+                }
+                // merge global config headers
+                Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["o" /* mergeHeaders */])(headers, SPRuntimeConfig.headers);
+                // merge per-request headers
+                if (reqInfo.options) {
+                    Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["o" /* mergeHeaders */])(headers, reqInfo.options.headers);
+                }
+                // lastly we apply any default headers we need that may not exist
+                if (!headers.has("Accept")) {
+                    headers.append("Accept", "application/json");
+                }
+                if (!headers.has("Content-Type")) {
+                    headers.append("Content-Type", "application/json;odata=verbose;charset=utf-8");
+                }
+                if (!headers.has("X-ClientService-ClientTag")) {
+                    headers.append("X-ClientService-ClientTag", "PnPCoreJS:@pnp-1.3.5");
+                }
+                // write headers into batch body
+                headers.forEach(function (value, name) {
+                    batchBody.push(name + ": " + value + "\n");
+                });
+                batchBody.push("\n");
+                if (reqInfo.options.body) {
+                    batchBody.push(reqInfo.options.body + "\n\n");
+                }
+            }
+            if (currentChangeSetId.length > 0) {
+                // Close the changeset
+                batchBody.push("--changeset_" + currentChangeSetId + "--\n\n");
+                currentChangeSetId = "";
+            }
+            batchBody.push("--batch_" + _this.batchId + "--\n");
+            var batchOptions = {
+                "body": batchBody.join(""),
+                "headers": {
+                    "Content-Type": "multipart/mixed; boundary=batch_" + _this.batchId,
+                },
+                "method": "POST",
+            };
+            __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + _this.batchId + "] (" + (new Date()).getTime() + ") Sending batch request.", 1 /* Info */);
+            return client.fetch(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(absoluteRequestUrl, "/_api/$batch"), batchOptions)
+                .then(function (r) { return r.text(); })
+                .then(SPBatch.ParseResponse)
+                .then(function (responses) {
+                if (responses.length !== _this.requests.length) {
+                    throw Error("Could not properly parse responses to match requests in batch.");
+                }
+                __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + _this.batchId + "] (" + (new Date()).getTime() + ") Resolving batched requests.", 1 /* Info */);
+                return responses.reduce(function (chain, response, index) {
+                    var request = _this.requests[index];
+                    __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + request.id + "] (" + (new Date()).getTime() + ") Resolving request in batch " + _this.batchId + ".", 1 /* Info */);
+                    return chain.then(function (_) { return request.parser.parse(response).then(request.resolve).catch(request.reject); });
+                }, Promise.resolve());
+            });
+        });
+    };
+    return SPBatch;
+}(__WEBPACK_IMPORTED_MODULE_2__pnp_odata__["e" /* ODataBatch */]));
+
+/**
+ * Describes a collection of List objects
+ *
+ */
+var Features = /** @class */ (function (_super) {
+    __extends(Features, _super);
+    function Features() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Features_1 = Features;
+    /**
+     * Adds a new list to the collection
+     *
+     * @param id The Id of the feature (GUID)
+     * @param force If true the feature activation will be forced
+     */
+    Features.prototype.add = function (id, force) {
+        var _this = this;
+        if (force === void 0) { force = false; }
+        return this.clone(Features_1, "add").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                featdefScope: 0,
+                featureId: id,
+                force: force,
+            }),
+        }).then(function (data) {
+            return {
+                data: data,
+                feature: _this.getById(id),
+            };
+        });
+    };
+    /**
+     * Gets a list from the collection by guid id
+     *
+     * @param id The Id of the feature (GUID)
+     */
+    Features.prototype.getById = function (id) {
+        var feature = new Feature(this);
+        feature.concat("('" + id + "')");
+        return feature;
+    };
+    /**
+     * Removes (deactivates) a feature from the collection
+     *
+     * @param id The Id of the feature (GUID)
+     * @param force If true the feature deactivation will be forced
+     */
+    Features.prototype.remove = function (id, force) {
+        if (force === void 0) { force = false; }
+        return this.clone(Features_1, "remove").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                featureId: id,
+                force: force,
+            }),
+        });
+    };
+    var Features_1;
+    Features = Features_1 = __decorate([
+        defaultPath("features")
+    ], Features);
+    return Features;
+}(SharePointQueryableCollection));
+var Feature = /** @class */ (function (_super) {
+    __extends(Feature, _super);
+    function Feature() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Removes (deactivates) a feature from the collection
+     *
+     * @param force If true the feature deactivation will be forced
+     */
+    Feature.prototype.deactivate = function (force) {
+        var _this = this;
+        if (force === void 0) { force = false; }
+        var removeDependency = this.addBatchDependency();
+        var idGet = new Feature(this).select("DefinitionId");
+        return idGet.get().then(function (feature) {
+            var promise = _this.getParent(Features, _this.parentUrl, "", _this.batch).remove(feature.DefinitionId, force);
+            removeDependency();
+            return promise;
+        });
+    };
+    return Feature;
+}(SharePointQueryableInstance));
+
+/**
+ * Describes a site collection
+ *
+ */
+var Site = /** @class */ (function (_super) {
+    __extends(Site, _super);
+    function Site() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Site_1 = Site;
+    Object.defineProperty(Site.prototype, "rootWeb", {
+        /**
+         * Gets the root web of the site collection
+         *
+         */
+        get: function () {
+            return new Web(this, "rootweb");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Site.prototype, "features", {
+        /**
+         * Gets the active features for this site collection
+         *
+         */
+        get: function () {
+            return new Features(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Site.prototype, "userCustomActions", {
+        /**
+         * Gets all custom actions for this site collection
+         *
+         */
+        get: function () {
+            return new UserCustomActions(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets a Web instance representing the root web of the site collection
+     * correctly setup for chaining within the library
+     */
+    Site.prototype.getRootWeb = function () {
+        return this.rootWeb.select("Url").get().then(function (web) { return new Web(web.Url); });
+    };
+    /**
+     * Gets the context information for this site collection
+     */
+    Site.prototype.getContextInfo = function () {
+        var q = new Site_1(this.parentUrl, "_api/contextinfo");
+        return q.postCore().then(function (data) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(data, "GetContextWebInformation")) {
+                var info = data.GetContextWebInformation;
+                info.SupportedSchemaVersions = info.SupportedSchemaVersions.results;
+                return info;
+            }
+            else {
+                return data;
+            }
+        });
+    };
+    /**
+     * Gets the document libraries on a site. Static method. (SharePoint Online only)
+     *
+     * @param absoluteWebUrl The absolute url of the web whose document libraries should be returned
+     */
+    Site.prototype.getDocumentLibraries = function (absoluteWebUrl) {
+        var q = new SharePointQueryable("", "_api/sp.web.getdocumentlibraries(@v)");
+        q.query.set("@v", "'" + absoluteWebUrl + "'");
+        return q.get().then(function (data) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(data, "GetDocumentLibraries")) {
+                return data.GetDocumentLibraries;
+            }
+            else {
+                return data;
+            }
+        });
+    };
+    /**
+     * Gets the site url from a page url
+     *
+     * @param absolutePageUrl The absolute url of the page
+     */
+    Site.prototype.getWebUrlFromPageUrl = function (absolutePageUrl) {
+        var q = new SharePointQueryable("", "_api/sp.web.getweburlfrompageurl(@v)");
+        q.query.set("@v", "'" + absolutePageUrl + "'");
+        return q.get().then(function (data) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(data, "GetWebUrlFromPageUrl")) {
+                return data.GetWebUrlFromPageUrl;
+            }
+            else {
+                return data;
+            }
+        });
+    };
+    /**
+     * Deletes the current site
+     *
+     */
+    Site.prototype.delete = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var site, q;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(Site_1, "").select("Id").get()];
+                    case 1:
+                        site = _a.sent();
+                        q = new Site_1(this.parentUrl, "_api/SPSiteManager/Delete");
+                        return [4 /*yield*/, q.postCore({
+                                body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                                    siteId: site.Id,
+                                }),
+                            })];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Creates a new batch for requests within the context of this site collection
+     *
+     */
+    Site.prototype.createBatch = function () {
+        return new SPBatch(this.parentUrl);
+    };
+    /**
+     * Opens a web by id (using POST)
+     *
+     * @param webId The GUID id of the web to open
+     */
+    Site.prototype.openWebById = function (webId) {
+        return this.clone(Site_1, "openWebById('" + webId + "')").postCore().then(function (d) { return ({
+            data: d,
+            web: Web.fromUrl(d["odata.id"] || d.__metadata.uri),
+        }); });
+    };
+    /**
+     * Associates a site collection to a hub site.
+     *
+     * @param siteId Id of the hub site collection you want to join.
+     * If you want to disassociate the site collection from hub site, then
+     * pass the siteId as 00000000-0000-0000-0000-000000000000
+     */
+    Site.prototype.joinHubSite = function (siteId) {
+        return this.clone(Site_1, "joinHubSite('" + siteId + "')").postCore();
+    };
+    /**
+     * Registers the current site collection as hub site collection
+     */
+    Site.prototype.registerHubSite = function () {
+        return this.clone(Site_1, "registerHubSite").postCore();
+    };
+    /**
+     * Unregisters the current site collection as hub site collection.
+     */
+    Site.prototype.unRegisterHubSite = function () {
+        return this.clone(Site_1, "unRegisterHubSite").postCore();
+    };
+    /**
+     * Creates a Modern communication site.
+     *
+     * @param title The title of the site to create
+     * @param lcid The language to use for the site. If not specified will default to 1033 (English).
+     * @param shareByEmailEnabled If set to true, it will enable sharing files via Email. By default it is set to false
+     * @param url The fully qualified URL (e.g. https://yourtenant.sharepoint.com/sites/mysitecollection) of the site.
+     * @param description The description of the communication site.
+     * @param classification The Site classification to use. For instance 'Contoso Classified'. See https://www.youtube.com/watch?v=E-8Z2ggHcS0 for more information
+     * @param siteDesignId The Guid of the site design to be used.
+     *                     You can use the below default OOTB GUIDs:
+     *                     Topic: 00000000-0000-0000-0000-000000000000
+     *                     Showcase: 6142d2a0-63a5-4ba0-aede-d9fefca2c767
+     *                     Blank: f6cc5403-0d63-442e-96c0-285923709ffc
+     * @param owner Required when creating the site using app-only context
+     */
+    Site.prototype.createCommunicationSite = function (title, lcid, shareByEmailEnabled, url, description, classification, siteDesignId, hubSiteId, owner) {
+        var _this = this;
+        if (lcid === void 0) { lcid = 1033; }
+        if (shareByEmailEnabled === void 0) { shareByEmailEnabled = false; }
+        if (description === void 0) { description = ""; }
+        if (classification === void 0) { classification = ""; }
+        if (siteDesignId === void 0) { siteDesignId = "00000000-0000-0000-0000-000000000000"; }
+        if (hubSiteId === void 0) { hubSiteId = "00000000-0000-0000-0000-000000000000"; }
+        var props = {
+            Classification: classification,
+            Description: description,
+            HubSiteId: hubSiteId,
+            Lcid: lcid,
+            Owner: owner,
+            ShareByEmailEnabled: shareByEmailEnabled,
+            SiteDesignId: siteDesignId,
+            Title: title,
+            Url: url,
+            WebTemplate: "SITEPAGEPUBLISHING#0",
+            WebTemplateExtensionId: "00000000-0000-0000-0000-000000000000",
+        };
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            "request": Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({
+                "__metadata": { "type": "Microsoft.SharePoint.Portal.SPSiteCreationRequest" },
+            }, props),
+        });
+        return this.getRootWeb().then(function (d) { return __awaiter(_this, void 0, void 0, function () {
+            var client, methodUrl;
+            return __generator(this, function (_a) {
+                client = new SPHttpClient();
+                methodUrl = d.parentUrl + "/_api/SPSiteManager/Create";
+                return [2 /*return*/, client.post(methodUrl, {
+                        body: postBody,
+                        headers: {
+                            "Accept": "application/json;odata=verbose",
+                            "Content-Type": "application/json;odata=verbose;charset=utf-8",
+                        },
+                    }).then(function (r) { return r.json(); })];
+            });
+        }); });
+    };
+    /**
+     * Creates a Modern team site backed by Office 365 group. For use in SP Online only. This will not work with App-only tokens
+     *
+     * @param displayName The title or display name of the Modern team site to be created
+     * @param alias Alias of the underlying Office 365 Group
+     * @param isPublic Defines whether the Office 365 Group will be public (default), or private.
+     * @param lcid The language to use for the site. If not specified will default to English (1033).
+     * @param description The description of the site to be created.
+     * @param classification The Site classification to use. For instance 'Contoso Classified'. See https://www.youtube.com/watch?v=E-8Z2ggHcS0 for more information
+     * @param owners The Owners of the site to be created
+     * @param siteDesignId The ID of the site design to apply to the new site
+     */
+    Site.prototype.createModernTeamSite = function (displayName, alias, isPublic, lcid, description, classification, owners, hubSiteId, siteDesignId) {
+        var _this = this;
+        if (isPublic === void 0) { isPublic = true; }
+        if (lcid === void 0) { lcid = 1033; }
+        if (description === void 0) { description = ""; }
+        if (classification === void 0) { classification = ""; }
+        if (hubSiteId === void 0) { hubSiteId = "00000000-0000-0000-0000-000000000000"; }
+        var postBody = {
+            alias: alias,
+            displayName: displayName,
+            isPublic: isPublic,
+            optionalParams: {
+                Classification: classification,
+                CreationOptions: {
+                    "results": ["SPSiteLanguage:" + lcid, "HubSiteId:" + hubSiteId],
+                },
+                Description: description,
+                Owners: {
+                    "results": owners ? owners : [],
+                },
+            },
+        };
+        if (siteDesignId) {
+            postBody.optionalParams.CreationOptions.results.push("implicit_formula_292aa8a00786498a87a5ca52d9f4214a_" + siteDesignId);
+        }
+        return this.getRootWeb().then(function (d) { return __awaiter(_this, void 0, void 0, function () {
+            var client, methodUrl;
+            return __generator(this, function (_a) {
+                client = new SPHttpClient();
+                methodUrl = d.parentUrl + "/_api/GroupSiteManager/CreateGroupEx";
+                return [2 /*return*/, client.post(methodUrl, {
+                        body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(postBody),
+                        headers: {
+                            "Accept": "application/json;odata=verbose",
+                            "Content-Type": "application/json;odata=verbose;charset=utf-8",
+                        },
+                    }).then(function (r) { return r.json(); })];
+            });
+        }); });
+    };
+    var Site_1;
+    Site = Site_1 = __decorate([
+        defaultPath("_api/site")
+    ], Site);
+    return Site;
+}(SharePointQueryableInstance));
+
+/**
+ * Represents a collection of navigation nodes
+ *
+ */
+var NavigationNodes = /** @class */ (function (_super) {
+    __extends(NavigationNodes, _super);
+    function NavigationNodes() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets a navigation node by id
+     *
+     * @param id The id of the node
+     */
+    NavigationNodes.prototype.getById = function (id) {
+        var node = new NavigationNode(this);
+        node.concat("(" + id + ")");
+        return node;
+    };
+    /**
+     * Adds a new node to the collection
+     *
+     * @param title Display name of the node
+     * @param url The url of the node
+     * @param visible If true the node is visible, otherwise it is hidden (default: true)
+     */
+    NavigationNodes.prototype.add = function (title, url, visible) {
+        var _this = this;
+        if (visible === void 0) { visible = true; }
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.NavigationNode"), {
+            IsVisible: visible,
+            Title: title,
+            Url: url,
+        }));
+        return this.clone(NavigationNodes, null).postCore({ body: postBody }).then(function (data) {
+            return {
+                data: data,
+                node: _this.getById(data.Id),
+            };
+        });
+    };
+    /**
+     * Moves a node to be after another node in the navigation
+     *
+     * @param nodeId Id of the node to move
+     * @param previousNodeId Id of the node after which we move the node specified by nodeId
+     */
+    NavigationNodes.prototype.moveAfter = function (nodeId, previousNodeId) {
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            nodeId: nodeId,
+            previousNodeId: previousNodeId,
+        });
+        return this.clone(NavigationNodes, "MoveAfter").postCore({ body: postBody });
+    };
+    return NavigationNodes;
+}(SharePointQueryableCollection));
+/**
+ * Represents an instance of a navigation node
+ *
+ */
+var NavigationNode = /** @class */ (function (_super) {
+    __extends(NavigationNode, _super);
+    function NavigationNode() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(NavigationNode.prototype, "children", {
+        /**
+         * Represents the child nodes of this node
+         */
+        get: function () {
+            return new NavigationNodes(this, "Children");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Deletes this node and any child nodes
+     */
+    NavigationNode.prototype.delete = function () {
+        return _super.prototype.deleteCore.call(this);
+    };
+    /**
+     * Updates this node
+     *
+     * @param properties Properties used to update this node
+     */
+    NavigationNode.prototype.update = function (properties) {
+        var _this = this;
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({
+            "__metadata": { "type": "SP.NavigationNode" },
+        }, properties));
+        return this.postCore({
+            body: postBody,
+            headers: {
+                "X-HTTP-Method": "MERGE",
+            },
+        }).then(function (data) {
+            return {
+                data: data,
+                node: _this,
+            };
+        });
+    };
+    return NavigationNode;
+}(SharePointQueryableInstance));
+/**
+ * Exposes the navigation components
+ *
+ */
+var Navigation = /** @class */ (function (_super) {
+    __extends(Navigation, _super);
+    function Navigation() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(Navigation.prototype, "quicklaunch", {
+        /**
+         * Gets the quicklaunch navigation nodes for the current context
+         *
+         */
+        get: function () {
+            return new NavigationNodes(this, "quicklaunch");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Navigation.prototype, "topNavigationBar", {
+        /**
+         * Gets the top bar navigation nodes for the current context
+         *
+         */
+        get: function () {
+            return new NavigationNodes(this, "topnavigationbar");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Navigation = __decorate([
+        defaultPath("navigation")
+    ], Navigation);
+    return Navigation;
+}(SharePointQueryable));
+/**
+ * Represents the top level navigation service
+ */
+var NavigationService = /** @class */ (function (_super) {
+    __extends(NavigationService, _super);
+    function NavigationService(baseUrl, path) {
+        if (path === void 0) { path = null; }
+        return _super.call(this, baseUrl, path) || this;
+    }
+    /**
+     * The MenuState service operation returns a Menu-State (dump) of a SiteMapProvider on a site.
+     *
+     * @param menuNodeKey MenuNode.Key of the start node within the SiteMapProvider If no key is provided the SiteMapProvider.RootNode will be the root of the menu state.
+     * @param depth Depth of the dump. If no value is provided a dump with the depth of 10 is returned
+     * @param mapProviderName The name identifying the SiteMapProvider to be used
+     * @param customProperties comma seperated list of custom properties to be returned.
+     */
+    NavigationService.prototype.getMenuState = function (menuNodeKey, depth, mapProviderName, customProperties) {
+        if (menuNodeKey === void 0) { menuNodeKey = null; }
+        if (depth === void 0) { depth = 10; }
+        if (mapProviderName === void 0) { mapProviderName = null; }
+        if (customProperties === void 0) { customProperties = null; }
+        return (new NavigationService(this, "_api/navigation/MenuState")).postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                customProperties: customProperties,
+                depth: depth,
+                mapProviderName: mapProviderName,
+                menuNodeKey: menuNodeKey,
+            }),
+        });
+    };
+    /**
+     * Tries to get a SiteMapNode.Key for a given URL within a site collection.
+     *
+     * @param currentUrl A url representing the SiteMapNode
+     * @param mapProviderName The name identifying the SiteMapProvider to be used
+     */
+    NavigationService.prototype.getMenuNodeKey = function (currentUrl, mapProviderName) {
+        if (mapProviderName === void 0) { mapProviderName = null; }
+        return (new NavigationService(this, "_api/navigation/MenuNodeKey")).postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                currentUrl: currentUrl,
+                mapProviderName: mapProviderName,
+            }),
+        });
+    };
+    return NavigationService;
+}(SharePointQueryable));
+
+var RelatedItemManagerImpl = /** @class */ (function (_super) {
+    __extends(RelatedItemManagerImpl, _super);
+    function RelatedItemManagerImpl() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    RelatedItemManagerImpl_1 = RelatedItemManagerImpl;
+    RelatedItemManagerImpl.FromUrl = function (url) {
+        if (url === null) {
+            return new RelatedItemManagerImpl_1("");
+        }
+        var index = url.indexOf("_api/");
+        if (index > -1) {
+            return new RelatedItemManagerImpl_1(url.substr(0, index));
+        }
+        return new RelatedItemManagerImpl_1(url);
+    };
+    RelatedItemManagerImpl.prototype.getRelatedItems = function (sourceListName, sourceItemId) {
+        var query = this.clone(RelatedItemManagerImpl_1, null);
+        query.concat(".GetRelatedItems");
+        return query.postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                SourceItemID: sourceItemId,
+                SourceListName: sourceListName,
+            }),
+        });
+    };
+    RelatedItemManagerImpl.prototype.getPageOneRelatedItems = function (sourceListName, sourceItemId) {
+        var query = this.clone(RelatedItemManagerImpl_1, null);
+        query.concat(".GetPageOneRelatedItems");
+        return query.postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                SourceItemID: sourceItemId,
+                SourceListName: sourceListName,
+            }),
+        });
+    };
+    RelatedItemManagerImpl.prototype.addSingleLink = function (sourceListName, sourceItemId, sourceWebUrl, targetListName, targetItemID, targetWebUrl, tryAddReverseLink) {
+        if (tryAddReverseLink === void 0) { tryAddReverseLink = false; }
+        var query = this.clone(RelatedItemManagerImpl_1, null);
+        query.concat(".AddSingleLink");
+        return query.postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                SourceItemID: sourceItemId,
+                SourceListName: sourceListName,
+                SourceWebUrl: sourceWebUrl,
+                TargetItemID: targetItemID,
+                TargetListName: targetListName,
+                TargetWebUrl: targetWebUrl,
+                TryAddReverseLink: tryAddReverseLink,
+            }),
+        });
+    };
+    /**
+     * Adds a related item link from an item specified by list name and item id, to an item specified by url
+     *
+     * @param sourceListName The source list name or list id
+     * @param sourceItemId The source item id
+     * @param targetItemUrl The target item url
+     * @param tryAddReverseLink If set to true try to add the reverse link (will not return error if it fails)
+     */
+    RelatedItemManagerImpl.prototype.addSingleLinkToUrl = function (sourceListName, sourceItemId, targetItemUrl, tryAddReverseLink) {
+        if (tryAddReverseLink === void 0) { tryAddReverseLink = false; }
+        var query = this.clone(RelatedItemManagerImpl_1, null);
+        query.concat(".AddSingleLinkToUrl");
+        return query.postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                SourceItemID: sourceItemId,
+                SourceListName: sourceListName,
+                TargetItemUrl: targetItemUrl,
+                TryAddReverseLink: tryAddReverseLink,
+            }),
+        });
+    };
+    /**
+     * Adds a related item link from an item specified by url, to an item specified by list name and item id
+     *
+     * @param sourceItemUrl The source item url
+     * @param targetListName The target list name or list id
+     * @param targetItemId The target item id
+     * @param tryAddReverseLink If set to true try to add the reverse link (will not return error if it fails)
+     */
+    RelatedItemManagerImpl.prototype.addSingleLinkFromUrl = function (sourceItemUrl, targetListName, targetItemId, tryAddReverseLink) {
+        if (tryAddReverseLink === void 0) { tryAddReverseLink = false; }
+        var query = this.clone(RelatedItemManagerImpl_1, null);
+        query.concat(".AddSingleLinkFromUrl");
+        return query.postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                SourceItemUrl: sourceItemUrl,
+                TargetItemID: targetItemId,
+                TargetListName: targetListName,
+                TryAddReverseLink: tryAddReverseLink,
+            }),
+        });
+    };
+    RelatedItemManagerImpl.prototype.deleteSingleLink = function (sourceListName, sourceItemId, sourceWebUrl, targetListName, targetItemId, targetWebUrl, tryDeleteReverseLink) {
+        if (tryDeleteReverseLink === void 0) { tryDeleteReverseLink = false; }
+        var query = this.clone(RelatedItemManagerImpl_1, null);
+        query.concat(".DeleteSingleLink");
+        return query.postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                SourceItemID: sourceItemId,
+                SourceListName: sourceListName,
+                SourceWebUrl: sourceWebUrl,
+                TargetItemID: targetItemId,
+                TargetListName: targetListName,
+                TargetWebUrl: targetWebUrl,
+                TryDeleteReverseLink: tryDeleteReverseLink,
+            }),
+        });
+    };
+    var RelatedItemManagerImpl_1;
+    RelatedItemManagerImpl = RelatedItemManagerImpl_1 = __decorate([
+        defaultPath("_api/SP.RelatedItemManager")
+    ], RelatedItemManagerImpl);
+    return RelatedItemManagerImpl;
+}(SharePointQueryable));
+
+/**
+ * Describes regional settings ODada object
+ */
+var RegionalSettings = /** @class */ (function (_super) {
+    __extends(RegionalSettings, _super);
+    function RegionalSettings() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(RegionalSettings.prototype, "installedLanguages", {
+        /**
+         * Gets the collection of languages used in a server farm.
+         */
+        get: function () {
+            return new InstalledLanguages(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RegionalSettings.prototype, "globalInstalledLanguages", {
+        /**
+         * Gets the collection of language packs that are installed on the server.
+         */
+        get: function () {
+            return new InstalledLanguages(this, "globalinstalledlanguages");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RegionalSettings.prototype, "timeZone", {
+        /**
+         * Gets time zone
+         */
+        get: function () {
+            return new TimeZone(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RegionalSettings.prototype, "timeZones", {
+        /**
+         * Gets time zones
+         */
+        get: function () {
+            return new TimeZones(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    RegionalSettings = __decorate([
+        defaultPath("regionalsettings")
+    ], RegionalSettings);
+    return RegionalSettings;
+}(SharePointQueryableInstance));
+/**
+ * Describes installed languages ODada queriable collection
+ */
+var InstalledLanguages = /** @class */ (function (_super) {
+    __extends(InstalledLanguages, _super);
+    function InstalledLanguages() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    InstalledLanguages = __decorate([
+        defaultPath("installedlanguages")
+    ], InstalledLanguages);
+    return InstalledLanguages;
+}(SharePointQueryableCollection));
+/**
+ * Describes TimeZone ODada object
+ */
+var TimeZone = /** @class */ (function (_super) {
+    __extends(TimeZone, _super);
+    function TimeZone() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TimeZone_1 = TimeZone;
+    /**
+     * Gets an Local Time by UTC Time
+     *
+     * @param utcTime UTC Time as Date or ISO String
+     */
+    TimeZone.prototype.utcToLocalTime = function (utcTime) {
+        var dateIsoString;
+        if (typeof utcTime === "string") {
+            dateIsoString = utcTime;
+        }
+        else {
+            dateIsoString = utcTime.toISOString();
+        }
+        return this.clone(TimeZone_1, "utctolocaltime('" + dateIsoString + "')")
+            .postCore()
+            .then(function (res) { return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(res, "UTCToLocalTime") ? res.UTCToLocalTime : res; });
+    };
+    /**
+     * Gets an UTC Time by Local Time
+     *
+     * @param localTime Local Time as Date or ISO String
+     */
+    TimeZone.prototype.localTimeToUTC = function (localTime) {
+        var dateIsoString;
+        if (typeof localTime === "string") {
+            dateIsoString = localTime;
+        }
+        else {
+            dateIsoString = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["e" /* dateAdd */])(localTime, "minute", localTime.getTimezoneOffset() * -1).toISOString();
+        }
+        return this.clone(TimeZone_1, "localtimetoutc('" + dateIsoString + "')")
+            .postCore()
+            .then(function (res) { return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(res, "LocalTimeToUTC") ? res.LocalTimeToUTC : res; });
+    };
+    var TimeZone_1;
+    TimeZone = TimeZone_1 = __decorate([
+        defaultPath("timezone")
+    ], TimeZone);
+    return TimeZone;
+}(SharePointQueryableInstance));
+/**
+ * Describes time zones queriable collection
+ */
+var TimeZones = /** @class */ (function (_super) {
+    __extends(TimeZones, _super);
+    function TimeZones() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TimeZones_1 = TimeZones;
+    // https://msdn.microsoft.com/en-us/library/office/jj247008.aspx - timezones ids
+    /**
+     * Gets an TimeZone by id
+     *
+     * @param id The integer id of the timezone to retrieve
+     */
+    TimeZones.prototype.getById = function (id) {
+        // do the post and merge the result into a TimeZone instance so the data and methods are available
+        return this.clone(TimeZones_1, "GetById(" + id + ")").postCore({}, spODataEntity(TimeZone));
+    };
+    var TimeZones_1;
+    TimeZones = TimeZones_1 = __decorate([
+        defaultPath("timezones")
+    ], TimeZones);
+    return TimeZones;
+}(SharePointQueryableCollection));
+
+/**
+ * Implements the site designs API REST methods
+ *
+ */
+var SiteDesigns = /** @class */ (function (_super) {
+    __extends(SiteDesigns, _super);
+    /**
+     * Creates a new instance of the SiteDesigns method class
+     *
+     * @param baseUrl The parent url provider
+     * @param methodName The static method name to call on the utility class
+     */
+    function SiteDesigns(baseUrl, methodName) {
+        return _super.call(this, SiteDesigns.getBaseUrl(baseUrl), "_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility." + methodName) || this;
+    }
+    SiteDesigns.getBaseUrl = function (candidate) {
+        if (typeof candidate === "string") {
+            return candidate;
+        }
+        var c = candidate;
+        var url = c.toUrl();
+        var index = url.indexOf("_api/");
+        if (index < 0) {
+            return url;
+        }
+        return url.substr(0, index);
+    };
+    SiteDesigns.prototype.execute = function (props) {
+        return this.postCore({
+            body: JSON.stringify(props),
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
+        });
+    };
+    /**
+     * Creates a new site design available to users when they create a new site from the SharePoint home page.
+     *
+     * @param creationInfo A sitedesign creation information object
+     */
+    SiteDesigns.prototype.createSiteDesign = function (creationInfo) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "CreateSiteDesign").execute({ info: creationInfo })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Applies a site design to an existing site collection.
+     *
+     * @param siteDesignId The ID of the site design to apply.
+     * @param webUrl The URL of the site collection where you want to apply the site design.
+     */
+    SiteDesigns.prototype.applySiteDesign = function (siteDesignId, webUrl) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "ApplySiteDesign").execute({ siteDesignId: siteDesignId, "webUrl": webUrl })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Gets a list of information about existing site designs.
+     */
+    SiteDesigns.prototype.getSiteDesigns = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "GetSiteDesigns").execute({})];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Gets information about a specific site design.
+     * @param id The ID of the site design to get information about.
+     */
+    SiteDesigns.prototype.getSiteDesignMetadata = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "GetSiteDesignMetadata").execute({ id: id })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Updates a site design with new values. In the REST call, all parameters are optional except the site script Id.
+     * If you had previously set the IsDefault parameter to TRUE and wish it to remain true, you must pass in this parameter again (otherwise it will be reset to FALSE).
+     * @param updateInfo A sitedesign update information object
+     */
+    SiteDesigns.prototype.updateSiteDesign = function (updateInfo) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "UpdateSiteDesign").execute({ updateInfo: updateInfo })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Deletes a site design.
+     * @param id The ID of the site design to delete.
+     */
+    SiteDesigns.prototype.deleteSiteDesign = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "DeleteSiteDesign").execute({ id: id })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Gets a list of principals that have access to a site design.
+     * @param id The ID of the site design to get rights information from.
+     */
+    SiteDesigns.prototype.getSiteDesignRights = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "GetSiteDesignRights").execute({ id: id })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Grants access to a site design for one or more principals.
+     * @param id The ID of the site design to grant rights on.
+     * @param principalNames An array of one or more principals to grant view rights.
+     *                       Principals can be users or mail-enabled security groups in the form of "alias" or "alias@<domain name>.com"
+     * @param grantedRights Always set to 1. This represents the View right.
+     */
+    SiteDesigns.prototype.grantSiteDesignRights = function (id, principalNames, grantedRights) {
+        if (grantedRights === void 0) { grantedRights = 1; }
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "GrantSiteDesignRights")
+                            .execute({
+                            "grantedRights": grantedRights.toString(),
+                            "id": id,
+                            "principalNames": principalNames,
+                        })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Revokes access from a site design for one or more principals.
+     * @param id The ID of the site design to revoke rights from.
+     * @param principalNames An array of one or more principals to revoke view rights from.
+     *                       If all principals have rights revoked on the site design, the site design becomes viewable to everyone.
+     */
+    SiteDesigns.prototype.revokeSiteDesignRights = function (id, principalNames) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "RevokeSiteDesignRights")
+                            .execute({
+                            "id": id,
+                            "principalNames": principalNames,
+                        })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Adds a site design task on the specified web url to be invoked asynchronously.
+     * @param webUrl The absolute url of the web on where to create the task
+     * @param siteDesignId The ID of the site design to create a task for
+     */
+    SiteDesigns.prototype.addSiteDesignTask = function (webUrl, siteDesignId) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "AddSiteDesignTask")
+                            .execute({ "webUrl": webUrl, "siteDesignId": siteDesignId })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Adds a site design task on the current web to be invoked asynchronously.
+     * @param siteDesignId The ID of the site design to create a task for
+     */
+    SiteDesigns.prototype.addSiteDesignTaskToCurrentWeb = function (siteDesignId) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "AddSiteDesignTaskToCurrentWeb")
+                            .execute({ "siteDesignId": siteDesignId })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Retrieves the site design task, if the task has finished running null will be returned
+     * @param id The ID of the site design task
+     */
+    SiteDesigns.prototype.getSiteDesignTask = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            var task;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "GetSiteDesignTask")
+                            .execute({ "taskId": id })];
+                    case 1:
+                        task = _a.sent();
+                        return [2 /*return*/, Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(task, "ID") ? task : null];
+                }
+            });
+        });
+    };
+    /**
+     * Retrieves a list of site design that have run on a specific web
+     * @param webUrl The url of the web where the site design was applied
+     * @param siteDesignId (Optional) the site design ID, if not provided will return all site design runs
+     */
+    SiteDesigns.prototype.getSiteDesignRun = function (webUrl, siteDesignId) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "GetSiteDesignRun")
+                            .execute({ "webUrl": webUrl, siteDesignId: siteDesignId })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Retrieves the status of a site design that has been run or is still running
+     * @param webUrl The url of the web where the site design was applied
+     * @param runId the run ID
+     */
+    SiteDesigns.prototype.getSiteDesignRunStatus = function (webUrl, runId) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteDesigns, "GetSiteDesignRunStatus")
+                            .execute({ "webUrl": webUrl, runId: runId })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    return SiteDesigns;
+}(SharePointQueryable));
+
+/**
+ * Implements the site script API REST methods
+ *
+ */
+var SiteScripts$1 = /** @class */ (function (_super) {
+    __extends(SiteScripts$$1, _super);
+    /**
+     * Creates a new instance of the SiteScripts method class
+     *
+     * @param baseUrl The parent url provider
+     * @param methodName The static method name to call on the utility class
+     */
+    function SiteScripts$$1(baseUrl, methodName) {
+        return _super.call(this, SiteScripts$$1.getBaseUrl(baseUrl), "_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility." + methodName) || this;
+    }
+    SiteScripts$$1.getBaseUrl = function (candidate) {
+        if (typeof candidate === "string") {
+            return candidate;
+        }
+        var c = candidate;
+        var url = c.toUrl();
+        var index = url.indexOf("_api/");
+        if (index < 0) {
+            return url;
+        }
+        return url.substr(0, index);
+    };
+    SiteScripts$$1.prototype.execute = function (props) {
+        return this.postCore({
+            body: JSON.stringify(props),
+        });
+    };
+    /**
+     * Gets a list of information on all existing site scripts.
+     */
+    SiteScripts$$1.prototype.getSiteScripts = function () {
+        return this.clone(SiteScripts$$1, "GetSiteScripts", true).execute({});
+    };
+    /**
+     * Creates a new site script.
+     *
+     * @param title The display name of the site design.
+     * @param content JSON value that describes the script. For more information, see JSON reference.
+     */
+    SiteScripts$$1.prototype.createSiteScript = function (title, description, content) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteScripts$$1, "CreateSiteScript(Title=@title,Description=@desc)?@title='" + encodeURIComponent(title) + "'&@desc='" + encodeURIComponent(description) + "'")
+                            .execute(content)];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Gets information about a specific site script. It also returns the JSON of the script.
+     *
+     * @param id The ID of the site script to get information about.
+     */
+    SiteScripts$$1.prototype.getSiteScriptMetadata = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteScripts$$1, "GetSiteScriptMetadata").execute({ id: id })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Deletes a site script.
+     *
+     * @param id The ID of the site script to delete.
+     */
+    SiteScripts$$1.prototype.deleteSiteScript = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteScripts$$1, "DeleteSiteScript").execute({ id: id })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Updates a site script with new values. In the REST call, all parameters are optional except the site script Id.
+     *
+     * @param siteScriptUpdateInfo Object that contains the information to update a site script.
+     *                             Make sure you stringify the content object or pass it in the second 'content' parameter
+     * @param content (Optional) A new JSON script defining the script actions. For more information, see Site design JSON schema.
+     */
+    SiteScripts$$1.prototype.updateSiteScript = function (siteScriptUpdateInfo, content) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (content) {
+                            siteScriptUpdateInfo.Content = JSON.stringify(content);
+                        }
+                        return [4 /*yield*/, this.clone(SiteScripts$$1, "UpdateSiteScript").execute({ updateInfo: siteScriptUpdateInfo })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Gets the site script syntax (JSON) for a specific list
+     * @param listUrl The absolute url of the list to retrieve site script
+     */
+    SiteScripts$$1.prototype.getSiteScriptFromList = function (listUrl) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteScripts$$1, "GetSiteScriptFromList")
+                            .execute({ "listUrl": listUrl })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Gets the site script syntax (JSON) for a specific web
+     * @param webUrl The absolute url of the web to retrieve site script
+     * @param extractInfo configuration object to specify what to extract
+     */
+    SiteScripts$$1.prototype.getSiteScriptFromWeb = function (webUrl, extractInfo) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.clone(SiteScripts$$1, "getSiteScriptFromWeb")
+                            .execute({ "webUrl": webUrl, info: extractInfo })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    return SiteScripts$$1;
+}(SharePointQueryable));
+
+/**
+ * Describes a collection of webs
+ *
+ */
+var Webs = /** @class */ (function (_super) {
+    __extends(Webs, _super);
+    function Webs() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Webs_1 = Webs;
+    /**
+     * Adds a new web to the collection
+     *
+     * @param title The new web's title
+     * @param url The new web's relative url
+     * @param description The new web's description
+     * @param template The new web's template internal name (default = STS)
+     * @param language The locale id that specifies the new web's language (default = 1033 [English, US])
+     * @param inheritPermissions When true, permissions will be inherited from the new web's parent (default = true)
+     */
+    Webs.prototype.add = function (title, url, description, template, language, inheritPermissions) {
+        if (description === void 0) { description = ""; }
+        if (template === void 0) { template = "STS"; }
+        if (language === void 0) { language = 1033; }
+        if (inheritPermissions === void 0) { inheritPermissions = true; }
+        var props = {
+            Description: description,
+            Language: language,
+            Title: title,
+            Url: url,
+            UseSamePermissionsAsParentSite: inheritPermissions,
+            WebTemplate: template,
+        };
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            "parameters": Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({
+                "__metadata": { "type": "SP.WebCreationInformation" },
+            }, props),
+        });
+        return this.clone(Webs_1, "add").postCore({ body: postBody }).then(function (data) {
+            return {
+                data: data,
+                web: new Web(odataUrlFrom(data).replace(/_api\/web\/?/i, "")),
+            };
+        });
+    };
+    var Webs_1;
+    Webs = Webs_1 = __decorate([
+        defaultPath("webs")
+    ], Webs);
+    return Webs;
+}(SharePointQueryableCollection));
+/**
+ * Describes a collection of web infos
+ *
+ */
+var WebInfos = /** @class */ (function (_super) {
+    __extends(WebInfos, _super);
+    function WebInfos() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    WebInfos = __decorate([
+        defaultPath("webinfos")
+    ], WebInfos);
+    return WebInfos;
+}(SharePointQueryableCollection));
+/**
+ * Describes a web
+ *
+ */
+var Web = /** @class */ (function (_super) {
+    __extends(Web, _super);
+    function Web() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Web_1 = Web;
+    /**
+     * Creates a new web instance from the given url by indexing the location of the /_api/
+     * segment. If this is not found the method creates a new web with the entire string as
+     * supplied.
+     *
+     * @param url
+     */
+    Web.fromUrl = function (url, path) {
+        return new Web_1(extractWebUrl(url), path);
+    };
+    Object.defineProperty(Web.prototype, "webs", {
+        /**
+         * Gets this web's subwebs
+         *
+         */
+        get: function () {
+            return new Webs(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets this web's parent web and data
+     *
+     */
+    Web.prototype.getParentWeb = function () {
+        var _this = this;
+        return this.select("ParentWeb/Id").expand("ParentWeb").get()
+            .then(function (_a) {
+            var ParentWeb = _a.ParentWeb;
+            return ParentWeb ? new Site(_this.parentUrl).openWebById(ParentWeb.Id) : null;
+        });
+    };
+    /**
+    * Returns a collection of objects that contain metadata about subsites of the current site in which the current user is a member.
+    *
+    * @param nWebTemplateFilter Specifies the site definition (default = -1)
+    * @param nConfigurationFilter A 16-bit integer that specifies the identifier of a configuration (default = -1)
+    */
+    Web.prototype.getSubwebsFilteredForCurrentUser = function (nWebTemplateFilter, nConfigurationFilter) {
+        if (nWebTemplateFilter === void 0) { nWebTemplateFilter = -1; }
+        if (nConfigurationFilter === void 0) { nConfigurationFilter = -1; }
+        return this.clone(Webs, "getSubwebsFilteredForCurrentUser(nWebTemplateFilter=" + nWebTemplateFilter + ",nConfigurationFilter=" + nConfigurationFilter + ")");
+    };
+    Object.defineProperty(Web.prototype, "allProperties", {
+        /**
+         * Allows access to the web's all properties collection
+         */
+        get: function () {
+            return this.clone(SharePointQueryableInstance, "allproperties");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "webinfos", {
+        /**
+         * Gets a collection of WebInfos for this web's subwebs
+         *
+         */
+        get: function () {
+            return new WebInfos(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "contentTypes", {
+        /**
+         * Gets the content types available in this web
+         *
+         */
+        get: function () {
+            return new ContentTypes(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "lists", {
+        /**
+         * Gets the lists in this web
+         *
+         */
+        get: function () {
+            return new Lists(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "fields", {
+        /**
+         * Gets the fields in this web
+         *
+         */
+        get: function () {
+            return new Fields(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "features", {
+        /**
+         * Gets the active features for this web
+         *
+         */
+        get: function () {
+            return new Features(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "availablefields", {
+        /**
+         * Gets the available fields in this web
+         *
+         */
+        get: function () {
+            return new Fields(this, "availablefields");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "navigation", {
+        /**
+         * Gets the navigation options in this web
+         *
+         */
+        get: function () {
+            return new Navigation(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "siteUsers", {
+        /**
+         * Gets the site users
+         *
+         */
+        get: function () {
+            return new SiteUsers(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "siteGroups", {
+        /**
+         * Gets the site groups
+         *
+         */
+        get: function () {
+            return new SiteGroups(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "siteUserInfoList", {
+        /**
+         * Gets site user info list
+         *
+         */
+        get: function () {
+            return new List(this, "siteuserinfolist");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "regionalSettings", {
+        /**
+         * Gets regional settings
+         *
+         */
+        get: function () {
+            return new RegionalSettings(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "currentUser", {
+        /**
+         * Gets the current user
+         */
+        get: function () {
+            return new CurrentUser(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "folders", {
+        /**
+         * Gets the top-level folders in this web
+         *
+         */
+        get: function () {
+            return new Folders(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "userCustomActions", {
+        /**
+         * Gets all user custom actions for this web
+         *
+         */
+        get: function () {
+            return new UserCustomActions(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "roleDefinitions", {
+        /**
+         * Gets the collection of RoleDefinition resources
+         *
+         */
+        get: function () {
+            return new RoleDefinitions(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "relatedItems", {
+        /**
+         * Provides an interface to manage related items
+         *
+         */
+        get: function () {
+            return RelatedItemManagerImpl.FromUrl(this.toUrl());
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Creates a new batch for requests within the context of this web
+     *
+     */
+    Web.prototype.createBatch = function () {
+        return new SPBatch(this.parentUrl);
+    };
+    Object.defineProperty(Web.prototype, "rootFolder", {
+        /**
+         * Gets the root folder of this web
+         *
+         */
+        get: function () {
+            return new Folder(this, "rootFolder");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "associatedOwnerGroup", {
+        /**
+         * Gets the associated owner group for this web
+         *
+         */
+        get: function () {
+            return new SiteGroup(this, "associatedownergroup");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "associatedMemberGroup", {
+        /**
+         * Gets the associated member group for this web
+         *
+         */
+        get: function () {
+            return new SiteGroup(this, "associatedmembergroup");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "associatedVisitorGroup", {
+        /**
+         * Gets the associated visitor group for this web
+         *
+         */
+        get: function () {
+            return new SiteGroup(this, "associatedvisitorgroup");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Web.prototype, "defaultDocumentLibrary", {
+        /**
+         * Gets the default document library for this web
+         *
+         */
+        get: function () {
+            return new List(this, "DefaultDocumentLibrary");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets a folder by id
+     *
+     * @param uniqueId The uniqueId of the folder
+     */
+    Web.prototype.getFolderById = function (uniqueId) {
+        return new Folder(this, "getFolderById('" + uniqueId + "')");
+    };
+    /**
+     * Gets a folder by server relative url
+     *
+     * @param folderRelativeUrl The server relative path to the folder (including /sites/ if applicable)
+     */
+    Web.prototype.getFolderByServerRelativeUrl = function (folderRelativeUrl) {
+        return new Folder(this, "getFolderByServerRelativeUrl('" + folderRelativeUrl + "')");
+    };
+    /**
+     * Gets a folder by server relative relative path if your folder name contains # and % characters
+     * you need to first encode the file name using encodeURIComponent() and then pass the url
+     * let url = "/sites/test/Shared Documents/" + encodeURIComponent("%123");
+     * This works only in SharePoint online.
+     *
+     * @param folderRelativeUrl The server relative path to the folder (including /sites/ if applicable)
+     */
+    Web.prototype.getFolderByServerRelativePath = function (folderRelativeUrl) {
+        return new Folder(this, "getFolderByServerRelativePath(decodedUrl='" + folderRelativeUrl + "')");
+    };
+    /**
+     * Gets a file by id
+     *
+     * @param uniqueId The uniqueId of the file
+     */
+    Web.prototype.getFileById = function (uniqueId) {
+        return new File(this, "getFileById('" + uniqueId + "')");
+    };
+    /**
+     * Gets a file by server relative url
+     *
+     * @param fileRelativeUrl The server relative path to the file (including /sites/ if applicable)
+     */
+    Web.prototype.getFileByServerRelativeUrl = function (fileRelativeUrl) {
+        return new File(this, "getFileByServerRelativeUrl('" + fileRelativeUrl + "')");
+    };
+    /**
+     * Gets a file by server relative url if your file name contains # and % characters
+     * you need to first encode the file name using encodeURIComponent() and then pass the url
+     * let url = "/sites/test/Shared Documents/" + encodeURIComponent("%123.docx");
+     *
+     * @param fileRelativeUrl The server relative path to the file (including /sites/ if applicable)
+     */
+    Web.prototype.getFileByServerRelativePath = function (fileRelativeUrl) {
+        return new File(this, "getFileByServerRelativePath(decodedUrl='" + fileRelativeUrl + "')");
+    };
+    /**
+     * Gets a list by server relative url (list's root folder)
+     *
+     * @param listRelativeUrl The server relative path to the list's root folder (including /sites/ if applicable)
+     */
+    Web.prototype.getList = function (listRelativeUrl) {
+        return new List(this, "getList('" + listRelativeUrl + "')");
+    };
+    /**
+     * Updates this web instance with the supplied properties
+     *
+     * @param properties A plain object hash of values to update for the web
+     */
+    Web.prototype.update = function (properties) {
+        var _this = this;
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({
+            "__metadata": { "type": "SP.Web" },
+        }, properties));
+        return this.postCore({
+            body: postBody,
+            headers: {
+                "X-HTTP-Method": "MERGE",
+            },
+        }).then(function (data) {
+            return {
+                data: data,
+                web: _this,
+            };
+        });
+    };
+    /**
+     * Deletes this web
+     *
+     */
+    Web.prototype.delete = function () {
+        return _super.prototype.deleteCore.call(this);
+    };
+    /**
+     * Applies the theme specified by the contents of each of the files specified in the arguments to the site
+     *
+     * @param colorPaletteUrl The server-relative URL of the color palette file
+     * @param fontSchemeUrl The server-relative URL of the font scheme
+     * @param backgroundImageUrl The server-relative URL of the background image
+     * @param shareGenerated When true, the generated theme files are stored in the root site. When false, they are stored in this web
+     */
+    Web.prototype.applyTheme = function (colorPaletteUrl, fontSchemeUrl, backgroundImageUrl, shareGenerated) {
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            backgroundImageUrl: backgroundImageUrl,
+            colorPaletteUrl: colorPaletteUrl,
+            fontSchemeUrl: fontSchemeUrl,
+            shareGenerated: shareGenerated,
+        });
+        return this.clone(Web_1, "applytheme").postCore({ body: postBody });
+    };
+    /**
+     * Applies the specified site definition or site template to the Web site that has no template applied to it
+     *
+     * @param template Name of the site definition or the name of the site template
+     */
+    Web.prototype.applyWebTemplate = function (template) {
+        var q = this.clone(Web_1, "applywebtemplate");
+        q.concat("(@t)");
+        q.query.set("@t", template);
+        return q.postCore();
+    };
+    /**
+     * Checks whether the specified login name belongs to a valid user in the web. If the user doesn't exist, adds the user to the web.
+     *
+     * @param loginName The login name of the user (ex: i:0#.f|membership|user@domain.onmicrosoft.com)
+     */
+    Web.prototype.ensureUser = function (loginName) {
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            logonName: loginName,
+        });
+        return this.clone(Web_1, "ensureuser").postCore({ body: postBody }).then(function (data) {
+            return {
+                data: data,
+                user: new SiteUser(odataUrlFrom(data)),
+            };
+        });
+    };
+    /**
+     * Returns a collection of site templates available for the site
+     *
+     * @param language The locale id of the site templates to retrieve (default = 1033 [English, US])
+     * @param includeCrossLanguage When true, includes language-neutral site templates; otherwise false (default = true)
+     */
+    Web.prototype.availableWebTemplates = function (language, includeCrossLanugage) {
+        if (language === void 0) { language = 1033; }
+        if (includeCrossLanugage === void 0) { includeCrossLanugage = true; }
+        return new SharePointQueryableCollection(this, "getavailablewebtemplates(lcid=" + language + ", doincludecrosslanguage=" + includeCrossLanugage + ")");
+    };
+    /**
+     * Returns the list gallery on the site
+     *
+     * @param type The gallery type - WebTemplateCatalog = 111, WebPartCatalog = 113 ListTemplateCatalog = 114,
+     * MasterPageCatalog = 116, SolutionCatalog = 121, ThemeCatalog = 123, DesignCatalog = 124, AppDataCatalog = 125
+     */
+    Web.prototype.getCatalog = function (type) {
+        return this.clone(Web_1, "getcatalog(" + type + ")").select("Id").get().then(function (data) {
+            return new List(odataUrlFrom(data));
+        });
+    };
+    /**
+     * Returns the collection of changes from the change log that have occurred within the list, based on the specified query
+     *
+     * @param query The change query
+     */
+    Web.prototype.getChanges = function (query) {
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ "query": Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])({ "__metadata": { "type": "SP.ChangeQuery" } }, query) });
+        return this.clone(Web_1, "getchanges").postCore({ body: postBody });
+    };
+    Object.defineProperty(Web.prototype, "customListTemplate", {
+        /**
+         * Gets the custom list templates for the site
+         *
+         */
+        get: function () {
+            return new SharePointQueryableCollection(this, "getcustomlisttemplates");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Returns the user corresponding to the specified member identifier for the current site
+     *
+     * @param id The id of the user
+     */
+    Web.prototype.getUserById = function (id) {
+        return new SiteUser(this, "getUserById(" + id + ")");
+    };
+    /**
+     * Returns the name of the image file for the icon that is used to represent the specified file
+     *
+     * @param filename The file name. If this parameter is empty, the server returns an empty string
+     * @param size The size of the icon: 16x16 pixels = 0, 32x32 pixels = 1 (default = 0)
+     * @param progId The ProgID of the application that was used to create the file, in the form OLEServerName.ObjectName
+     */
+    Web.prototype.mapToIcon = function (filename, size, progId) {
+        if (size === void 0) { size = 0; }
+        if (progId === void 0) { progId = ""; }
+        return this.clone(Web_1, "maptoicon(filename='" + filename + "', progid='" + progId + "', size=" + size + ")").get();
+    };
+    /**
+     * Returns the tenant property corresponding to the specified key in the app catalog site
+     *
+     * @param key Id of storage entity to be set
+     */
+    Web.prototype.getStorageEntity = function (key) {
+        return this.clone(Web_1, "getStorageEntity('" + key + "')").get();
+    };
+    /**
+     * This will set the storage entity identified by the given key (MUST be called in the context of the app catalog)
+     *
+     * @param key Id of storage entity to be set
+     * @param value Value of storage entity to be set
+     * @param description Description of storage entity to be set
+     * @param comments Comments of storage entity to be set
+     */
+    Web.prototype.setStorageEntity = function (key, value, description, comments) {
+        if (description === void 0) { description = ""; }
+        if (comments === void 0) { comments = ""; }
+        return this.clone(Web_1, "setStorageEntity").postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+                comments: comments,
+                description: description,
+                key: key,
+                value: value,
+            }),
+        });
+    };
+    /**
+     * This will remove the storage entity identified by the given key
+     *
+     * @param key Id of storage entity to be removed
+     */
+    Web.prototype.removeStorageEntity = function (key) {
+        return this.clone(Web_1, "removeStorageEntity('" + key + "')").postCore();
+    };
+    /**
+     * Gets the tenant app catalog for this web
+     *
+     * @param url Optional url or web containing the app catalog (default: current web)
+     */
+    Web.prototype.getAppCatalog = function (url) {
+        return new AppCatalog(url || this);
+    };
+    /**
+     * Gets the site collection app catalog for this web
+     *
+     * @param url Optional url or web containing the app catalog (default: current web)
+     */
+    Web.prototype.getSiteCollectionAppCatalog = function (url) {
+        return new AppCatalog(url || this, "_api/web/sitecollectionappcatalog/AvailableApps");
+    };
+    /**
+     * Gets the collection of available client side web parts for this web instance
+     */
+    Web.prototype.getClientSideWebParts = function () {
+        return this.clone(SharePointQueryableCollection, "GetClientSideWebParts").get();
+    };
+    /**
+     * Creates a new client side page
+     *
+     * @param pageName Name of the new page
+     * @param title Display title of the new page
+     * @param libraryTitle Title of the library in which to create the new page. Default: "Site Pages"
+     */
+    Web.prototype.addClientSidePage = function (pageName, title) {
+        if (title === void 0) { title = pageName.replace(/\.[^/.]+$/, ""); }
+        return ClientSidePage.create(this, pageName, title);
+    };
+    /**
+     * Creates a new client side page using the library path
+     *
+     * @param pageName Name of the new page
+     * @param listRelativePath The server relative path to the list's root folder (including /sites/ if applicable)
+     * @param title Display title of the new page
+     */
+    Web.prototype.addClientSidePageByPath = function (pageName, title) {
+        if (title === void 0) { title = pageName.replace(/\.[^/.]+$/, ""); }
+        return ClientSidePage.create(this, pageName, title);
+    };
+    /**
+     * Creates the default associated groups (Members, Owners, Visitors) and gives them the default permissions on the site.
+     * The target site must have unique permissions and no associated members / owners / visitors groups
+     *
+     * @param siteOwner The user login name to be added to the site Owners group. Default is the current user
+     * @param siteOwner2 The second user login name to be added to the site Owners group. Default is empty
+     * @param groupNameSeed The base group name. E.g. 'TestSite' would produce 'TestSite Members' etc.
+     */
+    Web.prototype.createDefaultAssociatedGroups = function (siteOwner, siteOwner2, groupNameSeed) {
+        var q = this.clone(Web_1, "createDefaultAssociatedGroups(userLogin=@u,userLogin2=@v,groupNameSeed=@s)");
+        q.query.set("@u", "'" + encodeURIComponent(siteOwner || "") + "'");
+        q.query.set("@v", "'" + encodeURIComponent(siteOwner2 || "") + "'");
+        q.query.set("@s", "'" + encodeURIComponent(groupNameSeed || "") + "'");
+        return q.postCore();
+    };
+    /**
+     * Gets hub site data for the current web.
+     *
+     * @param forceRefresh Default value is false. When false, the data is returned from the server's cache.
+     * When true, the cache is refreshed with the latest updates and then returned.
+     * Use this if you just made changes and need to see those changes right away.
+     */
+    Web.prototype.hubSiteData = function (forceRefresh) {
+        if (forceRefresh === void 0) { forceRefresh = false; }
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.clone(Web_1, "hubSiteData(" + forceRefresh + ")").get().then(function (r) { return JSON.parse(r); })];
+            });
+        });
+    };
+    /**
+     * Applies theme updates from the parent hub site collection.
+     */
+    Web.prototype.syncHubSiteTheme = function () {
+        return this.clone(Web_1, "syncHubSiteTheme").postCore();
+    };
+    /**
+     * Retrieves a list of site design that have run on the current web
+     * @param siteDesignId (Optional) the site design ID, if not provided will return all site design runs
+     */
+    Web.prototype.getSiteDesignRuns = function (siteDesignId) {
+        return new SiteDesigns(this, "").getSiteDesignRun(undefined, siteDesignId);
+    };
+    /**
+     * Gets the site script syntax (JSON) for a specific web
+     * @param extractInfo configuration object to specify what to extract
+     */
+    Web.prototype.getSiteScript = function (extractInfo) {
+        return new SiteScripts$1(this, "").getSiteScriptFromWeb(undefined, extractInfo);
+    };
+    /**
+     * Adds a site design task on the current web to be invoked asynchronously.
+     * @param siteDesignId The ID of the site design to create a task for
+     */
+    Web.prototype.addSiteDesignTask = function (siteDesignId) {
+        return new SiteDesigns(this, "").addSiteDesignTaskToCurrentWeb(siteDesignId);
+    };
+    /**
+     * Retrieves the status of a site design that has been run or is still running
+     * @param runId the run ID
+     */
+    Web.prototype.getSiteDesignRunStatus = function (runId) {
+        return new SiteDesigns(this, "").getSiteDesignRunStatus(undefined, runId);
+    };
+    var Web_1;
+    Web = Web_1 = __decorate([
+        defaultPath("_api/web")
+    ], Web);
+    return Web;
+}(SharePointQueryableShareableWeb));
+
+/**
+ * Page promotion state
+ */
+var PromotedState;
+(function (PromotedState) {
+    /**
+     * Regular client side page
+     */
+    PromotedState[PromotedState["NotPromoted"] = 0] = "NotPromoted";
+    /**
+     * Page that will be promoted as news article after publishing
+     */
+    PromotedState[PromotedState["PromoteOnPublish"] = 1] = "PromoteOnPublish";
+    /**
+     * Page that is promoted as news article
+     */
+    PromotedState[PromotedState["Promoted"] = 2] = "Promoted";
+})(PromotedState || (PromotedState = {}));
+/**
+ * Gets the next order value 1 based for the provided collection
+ *
+ * @param collection Collection of orderable things
+ */
+function getNextOrder(collection) {
+    if (collection.length < 1) {
+        return 1;
+    }
+    return Math.max.apply(null, collection.map(function (i) { return i.order; })) + 1;
+}
+/**
+ * Normalizes the order value for all the sections, columns, and controls to be 1 based and stepped (1, 2, 3...)
+ *
+ * @param collection The collection to normalize
+ */
+function reindex(collection) {
+    for (var i = 0; i < collection.length; i++) {
+        collection[i].order = i + 1;
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(collection[i], "columns")) {
+            reindex(collection[i].columns);
+        }
+        else if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(collection[i], "controls")) {
+            reindex(collection[i].controls);
+        }
+    }
+}
+/**
+ * Represents the data and methods associated with client side "modern" pages
+ */
+var ClientSidePage = /** @class */ (function (_super) {
+    __extends(ClientSidePage, _super);
+    /**
+     * PLEASE DON'T USE THIS CONSTRUCTOR DIRECTLY
+     *
+     */
+    function ClientSidePage(baseUrl, path, json, noInit, sections, commentsDisabled) {
+        if (noInit === void 0) { noInit = false; }
+        if (sections === void 0) { sections = []; }
+        if (commentsDisabled === void 0) { commentsDisabled = false; }
+        var _this = _super.call(this, baseUrl, path) || this;
+        _this.json = json;
+        _this.sections = sections;
+        _this.commentsDisabled = commentsDisabled;
+        _this._bannerImageDirty = false;
+        // ensure we have a good url to build on for the pages api
+        if (typeof baseUrl === "string") {
+            _this._parentUrl = "";
+            _this._url = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(extractWebUrl(baseUrl), path);
+        }
+        else {
+            _this.extend(ClientSidePage.initFrom(baseUrl, null), path);
+        }
+        // set a default page settings slice
+        _this._pageSettings = { controlType: 0, pageSettingsSlice: { isDefaultDescription: true, isDefaultThumbnail: true } };
+        // set a default layout part
+        _this._layoutPart = ClientSidePage.getDefaultLayoutPart();
+        if (typeof json !== "undefined" && !noInit) {
+            _this.fromJSON(json);
+        }
+        return _this;
+    }
+    /**
+     * Creates a new blank page within the supplied library [does not work with batching]
+     *
+     * @param web Parent web in which we will create the page (we allow list here too matching the old api)
+     * @param pageName Filename of the page, such as "page"
+     * @param title The display title of the page
+     * @param pageLayoutType Layout type of the page to use
+     */
+    ClientSidePage.create = function (web, pageName, title, pageLayoutType) {
+        if (pageLayoutType === void 0) { pageLayoutType = "Article"; }
+        return __awaiter(this, void 0, void 0, function () {
+            var pageInitData, newPage;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        // patched because previously we used the full page name with the .aspx at the end
+                        // this allows folk's existing code to work after the re-write to the new API
+                        pageName = pageName.replace(/\.aspx$/i, "");
+                        return [4 /*yield*/, ClientSidePage.initFrom(web, "_api/sitepages/pages").postCore({
+                                body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(Object.assign(metadata("SP.Publishing.SitePage"), {
+                                    PageLayoutType: pageLayoutType,
+                                })),
+                            })];
+                    case 1:
+                        pageInitData = _a.sent();
+                        newPage = new ClientSidePage(web, "", pageInitData);
+                        // newPage.authors = [currentUserLogin.UserPrincipalName];
+                        newPage.title = pageName;
+                        return [4 /*yield*/, newPage.save(false)];
+                    case 2:
+                        _a.sent();
+                        newPage.title = title;
+                        return [2 /*return*/, newPage];
+                }
+            });
+        });
+    };
+    /**
+     * Creates a new ClientSidePage instance from the provided html content string
+     *
+     * @param html HTML markup representing the page
+     */
+    ClientSidePage.fromFile = function (file) {
+        return file.getItem().then(function (i) {
+            var page = new ClientSidePage(extractWebUrl(file.toUrl()), "", { Id: i.Id }, true);
+            return page.configureFrom(file).load();
+        });
+    };
+    ClientSidePage.getDefaultLayoutPart = function () {
+        return {
+            dataVersion: "1.4",
+            description: "Title Region Description",
+            id: "cbe7b0a9-3504-44dd-a3a3-0e5cacd07788",
+            instanceId: "cbe7b0a9-3504-44dd-a3a3-0e5cacd07788",
+            properties: {
+                authors: [],
+                layoutType: "FullWidthImage",
+                showPublishDate: false,
+                showTopicHeader: false,
+                textAlignment: "Left",
+                title: "",
+                topicHeader: "",
+            },
+            serverProcessedContent: { htmlStrings: {}, searchablePlainTexts: {}, imageSources: {}, links: {} },
+            title: "Title area",
+        };
+    };
+    ClientSidePage.initFrom = function (o, url) {
+        return (new ClientSidePage(extractWebUrl(o.toUrl()), url)).configureFrom(o);
+    };
+    Object.defineProperty(ClientSidePage.prototype, "pageLayout", {
+        get: function () {
+            return this.json.PageLayoutType;
+        },
+        set: function (value) {
+            this.json.PageLayoutType = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSidePage.prototype, "bannerImageUrl", {
+        get: function () {
+            return this.json.BannerImageUrl;
+        },
+        set: function (value) {
+            this.json.BannerImageUrl = value;
+            this._bannerImageDirty = true;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSidePage.prototype, "bannerImageSourceType", {
+        get: function () {
+            return this._layoutPart.properties.imageSourceType;
+        },
+        set: function (value) {
+            this._layoutPart.properties.imageSourceType = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSidePage.prototype, "topicHeader", {
+        get: function () {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["q" /* objectDefinedNotNull */])(this.json.TopicHeader) ? this.json.TopicHeader : "";
+        },
+        set: function (value) {
+            this.json.TopicHeader = value;
+            this._layoutPart.properties.topicHeader = value;
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["r" /* stringIsNullOrEmpty */])(value)) {
+                this.showTopicHeader = false;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSidePage.prototype, "title", {
+        // public get authors(): string[] {
+        //     return this._layoutPart.properties.authorByline;
+        // }
+        // public set authors(value: string[]) {
+        //     this.json.AuthorByline = value;
+        //     this._layoutPart.properties.authorByline = value;
+        //     this._layoutPart.properties.authors = null;
+        // }
+        get: function () {
+            return this._layoutPart.properties.title;
+        },
+        set: function (value) {
+            this.json.Title = value;
+            this._layoutPart.properties.title = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSidePage.prototype, "layoutType", {
+        get: function () {
+            return this._layoutPart.properties.layoutType;
+        },
+        set: function (value) {
+            this._layoutPart.properties.layoutType = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSidePage.prototype, "headerTextAlignment", {
+        get: function () {
+            return this._layoutPart.properties.textAlignment;
+        },
+        set: function (value) {
+            this._layoutPart.properties.textAlignment = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSidePage.prototype, "showTopicHeader", {
+        get: function () {
+            return this._layoutPart.properties.showTopicHeader;
+        },
+        set: function (value) {
+            this._layoutPart.properties.showTopicHeader = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSidePage.prototype, "showPublishDate", {
+        get: function () {
+            return this._layoutPart.properties.showPublishDate;
+        },
+        set: function (value) {
+            this._layoutPart.properties.showPublishDate = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Add a section to this page
+     */
+    ClientSidePage.prototype.addSection = function () {
+        var section = new CanvasSection(this, getNextOrder(this.sections));
+        this.sections.push(section);
+        return section;
+    };
+    ClientSidePage.prototype.fromJSON = function (pageData) {
+        this.json = pageData;
+        var canvasControls = JSON.parse(pageData.CanvasContent1);
+        var layouts = JSON.parse(pageData.LayoutWebpartsContent);
+        if (layouts && layouts.length > 0) {
+            this._layoutPart = layouts[0];
+        }
+        this.setControls(canvasControls);
+        return this;
+    };
+    /**
+     * Loads this page's content from the server
+     */
+    ClientSidePage.prototype.load = function () {
+        var _this = this;
+        // load item id, then load page data from new pages api
+        return this.getItem("Id", "CommentsDisabled").then(function (item) {
+            return (new SharePointQueryable(_this, "_api/sitepages/pages(" + item.Id + ")")).get().then(function (pageData) {
+                _this.commentsDisabled = item.CommentsDisabled;
+                return _this.fromJSON(pageData);
+            });
+        });
+    };
+    /**
+     * Persists the content changes (sections, columns, and controls) [does not work with batching]
+     *
+     * @param publish If true the page is published, if false the changes are persisted to SharePoint but not published
+     */
+    ClientSidePage.prototype.save = function (publish) {
+        var _this = this;
+        if (publish === void 0) { publish = true; }
+        if (this.json.Id === null) {
+            throw Error("The id for this page is null. If you want to create a new page, please use ClientSidePage.Create");
+        }
+        // we will chain our work on this promise
+        var promise = Promise.resolve({});
+        if (this._bannerImageDirty) {
+            // we have to do these gymnastics to set the banner image url
+            promise = promise.then(function (_) { return new Promise(function (resolve, reject) {
+                var origImgUrl = _this.json.BannerImageUrl;
+                if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["m" /* isUrlAbsolute */])(origImgUrl)) {
+                    // do our best to make this a server relative url by removing the x.sharepoint.com part
+                    origImgUrl = origImgUrl.replace(/^https?:\/\/[a-z0-9\.]*?\.[a-z]{2,3}\//i, "/");
+                }
+                var site = new Site(extractWebUrl(_this.toUrl()));
+                var web = new Web(extractWebUrl(_this.toUrl()));
+                var imgFile = web.getFileByServerRelativePath(origImgUrl);
+                var siteId = "";
+                var webId = "";
+                var imgId = "";
+                var listId = "";
+                var webUrl = "";
+                Promise.all([
+                    site.select("Id", "Url").get().then(function (r) { return siteId = r.Id; }),
+                    web.select("Id", "Url").get().then(function (r) { webId = r.Id; webUrl = r.Url; }),
+                    imgFile.listItemAllFields.select("UniqueId", "ParentList/Id").expand("ParentList").get().then(function (r) { imgId = r.UniqueId; listId = r.ParentList.Id; }),
+                ]).then(function () {
+                    var f = new SharePointQueryable(webUrl, "_layouts/15/getpreview.ashx");
+                    f.query.set("guidSite", "" + siteId);
+                    f.query.set("guidWeb", "" + webId);
+                    f.query.set("guidFile", "" + imgId);
+                    _this.bannerImageUrl = f.toUrlAndQuery();
+                    if (!Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["q" /* objectDefinedNotNull */])(_this._layoutPart.serverProcessedContent)) {
+                        _this._layoutPart.serverProcessedContent = {};
+                    }
+                    _this._layoutPart.serverProcessedContent.imageSources = { imageSource: origImgUrl };
+                    if (!Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["q" /* objectDefinedNotNull */])(_this._layoutPart.serverProcessedContent.customMetadata)) {
+                        _this._layoutPart.serverProcessedContent.customMetadata = {};
+                    }
+                    _this._layoutPart.serverProcessedContent.customMetadata.imageSource = {
+                        listId: listId,
+                        siteId: siteId,
+                        uniqueId: imgId,
+                        webId: webId,
+                    };
+                    _this._layoutPart.properties.webId = webId;
+                    _this._layoutPart.properties.siteId = siteId;
+                    _this._layoutPart.properties.listId = listId;
+                    _this._layoutPart.properties.uniqueId = imgId;
+                    resolve();
+                }).catch(reject);
+            }); });
+        }
+        // we need to update our authors if they have changed
+        // if (this._layoutPart.properties.authors === null && this._layoutPart.properties.authorByline.length > 0) {
+        //     promise = promise.then(_ => new Promise(resolve => {
+        //         const collector: any[] = [];
+        //         const userResolver = ClientSidePage.getPoster("/_api/SP.UI.ApplicationPages.ClientPeoplePickerWebServiceInterface.ClientPeoplePickerResolveUser");
+        //         this._layoutPart.properties.authorByline.forEach(async author => {
+        //             const userData = await userResolver.postCore({
+        //                 body: jsS({
+        //                     queryParams: {
+        //                         AllowEmailAddresses: false,
+        //                         MaximumEntitySuggestions: 1,
+        //                         PrincipalSource: 15,
+        //                         PrincipalType: 1,
+        //                         QueryString: author,
+        //                         SharePointGroupID: 0,
+        //                     },
+        //                 }),
+        //             });
+        //             collector.push({
+        //                 email: userData.EntityData.Email,
+        //                 id: userData.Key,
+        //                 name: userData.DisplayName,
+        //                 role: "",
+        //                 upn: userData.EntityData.Email,
+        //             });
+        //         });
+        //         this._layoutPart.properties.authors = collector;
+        //         resolve();
+        //     }));
+        // }
+        // we try and check out the page for the user
+        if (!this.json.IsPageCheckedOutToCurrentUser) {
+            promise = promise.then(function (_) { return (ClientSidePage.initFrom(_this, "_api/sitepages/pages(" + _this.json.Id + ")/checkoutpage")).postCore(); });
+        }
+        promise = promise.then(function (_) {
+            var saveBody = Object.assign(metadata("SP.Publishing.SitePage"), {
+                AuthorByline: _this.json.AuthorByline || [],
+                BannerImageUrl: _this.bannerImageUrl,
+                CanvasContent1: _this.getCanvasContent1(),
+                LayoutWebpartsContent: _this.getLayoutWebpartsContent(),
+                Title: _this.title,
+                TopicHeader: _this.topicHeader,
+            });
+            var updater = ClientSidePage.initFrom(_this, "_api/sitepages/pages(" + _this.json.Id + ")/savepage");
+            updater.configure({
+                headers: {
+                    "if-match": "*",
+                },
+            });
+            return updater.postCore({ body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(saveBody) });
+        });
+        if (publish) {
+            promise = promise.then(function (_) { return (ClientSidePage.initFrom(_this, "_api/sitepages/pages(" + _this.json.Id + ")/publish")).postCore(); }).then(function (r) {
+                if (r) {
+                    _this.json.IsPageCheckedOutToCurrentUser = false;
+                }
+            });
+        }
+        promise = promise.then(function (_) {
+            // these are post-save actions
+            _this._bannerImageDirty = false;
+        });
+        return promise;
+    };
+    ClientSidePage.prototype.discardPageCheckout = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var d;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (this.json.Id === null) {
+                            throw Error("The id for this page is null. If you want to create a new page, please use ClientSidePage.Create");
+                        }
+                        return [4 /*yield*/, ClientSidePage.initFrom(this, "_api/sitepages/pages(" + this.json.Id + ")/discardPage").postCore({
+                                body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(metadata("SP.Publishing.SitePage")),
+                            })];
+                    case 1:
+                        d = _a.sent();
+                        this.fromJSON(d);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ClientSidePage.prototype.promoteToNews = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.promoteNewsImpl("promoteToNews")];
+            });
+        });
+    };
+    // API is currently broken on server side
+    // public async demoteFromNews(): Promise<boolean> {
+    //     return this.promoteNewsImpl("demoteFromNews");
+    // }
+    /**
+     * Enables comments on this page
+     */
+    ClientSidePage.prototype.enableComments = function () {
+        var _this = this;
+        return this.setCommentsOn(true).then(function (r) {
+            _this.commentsDisabled = false;
+            return r;
+        });
+    };
+    /**
+     * Disables comments on this page
+     */
+    ClientSidePage.prototype.disableComments = function () {
+        var _this = this;
+        return this.setCommentsOn(false).then(function (r) {
+            _this.commentsDisabled = true;
+            return r;
+        });
+    };
+    /**
+     * Finds a control by the specified instance id
+     *
+     * @param id Instance id of the control to find
+     */
+    ClientSidePage.prototype.findControlById = function (id) {
+        return this.findControl(function (c) { return c.id === id; });
+    };
+    /**
+     * Finds a control within this page's control tree using the supplied predicate
+     *
+     * @param predicate Takes a control and returns true or false, if true that control is returned by findControl
+     */
+    ClientSidePage.prototype.findControl = function (predicate) {
+        // check all sections
+        for (var i = 0; i < this.sections.length; i++) {
+            // check all columns
+            for (var j = 0; j < this.sections[i].columns.length; j++) {
+                // check all controls
+                for (var k = 0; k < this.sections[i].columns[j].controls.length; k++) {
+                    // check to see if the predicate likes this control
+                    if (predicate(this.sections[i].columns[j].controls[k])) {
+                        return this.sections[i].columns[j].controls[k];
+                    }
+                }
+            }
+        }
+        // we found nothing so give nothing back
+        return null;
+    };
+    /**
+     * Like the modern site page
+     */
+    ClientSidePage.prototype.like = function () {
+        return this.getItem().then(function (i) {
+            return i.like();
+        });
+    };
+    /**
+     * Unlike the modern site page
+     */
+    ClientSidePage.prototype.unlike = function () {
+        return this.getItem().then(function (i) {
+            return i.unlike();
+        });
+    };
+    /**
+     * Get the liked by information for a modern site page
+     */
+    ClientSidePage.prototype.getLikedByInformation = function () {
+        return this.getItem().then(function (i) {
+            return i.getLikedByInformation();
+        });
+    };
+    /**
+     * Creates a copy of this page
+     *
+     * @param web The web where we will create the copy
+     * @param pageName The file name of the new page
+     * @param title The title of the new page
+     * @param publish If true the page will be published
+     */
+    ClientSidePage.prototype.copyPage = function (web, pageName, title, publish) {
+        if (publish === void 0) { publish = true; }
+        return __awaiter(this, void 0, void 0, function () {
+            var page;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, ClientSidePage.create(web, pageName, title, this.pageLayout)];
+                    case 1:
+                        page = _a.sent();
+                        page.setControls(this.getControls());
+                        return [4 /*yield*/, page.save(publish)];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/, page];
+                }
+            });
+        });
+    };
+    /**
+     * Sets the modern page banner image
+     *
+     * @param url Url of the image to display
+     * @param altText Alt text to describe the image
+     * @param bannerProps Additional properties to control display of the banner
+     */
+    ClientSidePage.prototype.setBannerImage = function (url, props) {
+        this.bannerImageUrl = url;
+        this.bannerImageSourceType = 2; // this seems to always be true, so default?
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["q" /* objectDefinedNotNull */])(props)) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(props, "translateX")) {
+                this._layoutPart.properties.translateX = props.translateX;
+            }
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(props, "translateY")) {
+                this._layoutPart.properties.translateY = props.translateY;
+            }
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(props, "imageSourceType")) {
+                this.bannerImageSourceType = props.imageSourceType;
+            }
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(props, "altText")) {
+                this._layoutPart.properties.altText = props.altText;
+            }
+        }
+    };
+    ClientSidePage.prototype.getCanvasContent1 = function () {
+        return JSON.stringify(this.getControls());
+    };
+    ClientSidePage.prototype.getLayoutWebpartsContent = function () {
+        if (this._layoutPart) {
+            return JSON.stringify([this._layoutPart]);
+        }
+        else {
+            return JSON.stringify(null);
+        }
+    };
+    ClientSidePage.prototype.setControls = function (controls) {
+        if (controls && controls.length) {
+            for (var i = 0; i < controls.length; i++) {
+                // if no control type is present this is a column which we give type 0 to let us process it
+                var controlType = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(controls[i], "controlType") ? controls[i].controlType : 0;
+                switch (controlType) {
+                    case 0:
+                        // empty canvas column or page settings
+                        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(controls[i], "pageSettingsSlice")) {
+                            this._pageSettings = controls[i];
+                        }
+                        else {
+                            // we have an empty column
+                            this.mergeColumnToTree(new CanvasColumn(controls[i]));
+                        }
+                        break;
+                    case 3:
+                        var part = new ClientSideWebpart(controls[i]);
+                        this.mergePartToTree(part, part.data.position);
+                        break;
+                    case 4:
+                        var textData = controls[i];
+                        var text = new ClientSideText(textData.innerHTML, textData);
+                        this.mergePartToTree(text, text.data.position);
+                        break;
+                }
+            }
+            reindex(this.sections);
+        }
+    };
+    ClientSidePage.prototype.getControls = function () {
+        var _this = this;
+        // reindex things
+        reindex(this.sections);
+        // rollup the control changes
+        var canvasData = [];
+        this.sections.forEach(function (section) {
+            section.columns.forEach(function (column) {
+                if (column.controls.length < 1) {
+                    // empty column
+                    canvasData.push({
+                        displayMode: column.data.displayMode,
+                        emphasis: _this.getEmphasisObj(section.emphasis),
+                        position: column.data.position,
+                    });
+                }
+                else {
+                    column.controls.forEach(function (control) {
+                        control.data.emphasis = _this.getEmphasisObj(section.emphasis);
+                        canvasData.push(control.data);
+                    });
+                }
+            });
+        });
+        canvasData.push(this._pageSettings);
+        return canvasData;
+    };
+    ClientSidePage.prototype.getEmphasisObj = function (value) {
+        if (value < 1 || value > 3) {
+            return {};
+        }
+        return { zoneEmphasis: value };
+    };
+    /**
+     * Sets the comments flag for a page
+     *
+     * @param on If true comments are enabled, false they are disabled
+     */
+    ClientSidePage.prototype.setCommentsOn = function (on) {
+        return this.getItem().then(function (i) {
+            var updater = new Item(i, "SetCommentsDisabled(" + !on + ")");
+            return updater.update({});
+        });
+    };
+    ClientSidePage.prototype.promoteNewsImpl = function (method) {
+        return __awaiter(this, void 0, void 0, function () {
+            var d;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (this.json.Id === null) {
+                            throw Error("The id for this page is null. If you want to create a new page, please use ClientSidePage.Create");
+                        }
+                        return [4 /*yield*/, ClientSidePage.initFrom(this, "_api/sitepages/pages(" + this.json.Id + ")/" + method).postCore({
+                                body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(metadata("SP.Publishing.SitePage")),
+                            })];
+                    case 1:
+                        d = _a.sent();
+                        return [2 /*return*/, d];
+                }
+            });
+        });
+    };
+    /**
+     * Merges the control into the tree of sections and columns for this page
+     *
+     * @param control The control to merge
+     */
+    ClientSidePage.prototype.mergePartToTree = function (control, positionData) {
+        var section = null;
+        var column = null;
+        var sectionFactor = 12;
+        var sectionIndex = 0;
+        var zoneIndex = 0;
+        // handle case where we don't have position data (shouldn't happen?)
+        if (positionData) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(positionData, "zoneIndex")) {
+                zoneIndex = positionData.zoneIndex;
+            }
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(positionData, "sectionIndex")) {
+                sectionIndex = positionData.sectionIndex;
+            }
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(positionData, "sectionFactor")) {
+                sectionFactor = positionData.sectionFactor;
+            }
+        }
+        var sections = this.sections.filter(function (s) { return s.order === zoneIndex; });
+        if (sections.length < 1) {
+            section = new CanvasSection(this, zoneIndex);
+            this.sections.push(section);
+        }
+        else {
+            section = sections[0];
+        }
+        section.emphasis = control.data.emphasis && control.data.emphasis.zoneEmphasis ? control.data.emphasis.zoneEmphasis : 0;
+        var columns = section.columns.filter(function (c) { return c.order === sectionIndex; });
+        if (columns.length < 1) {
+            column = section.addColumn(sectionFactor);
+        }
+        else {
+            column = columns[0];
+        }
+        control.column = column;
+        column.addControl(control);
+    };
+    /**
+     * Merges the supplied column into the tree
+     *
+     * @param column Column to merge
+     * @param position The position data for the column
+     */
+    ClientSidePage.prototype.mergeColumnToTree = function (column) {
+        var order = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(column.data, "position") && Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(column.data.position, "zoneIndex") ? column.data.position.zoneIndex : 0;
+        var section = null;
+        var sections = this.sections.filter(function (s) { return s.order === order; });
+        if (sections.length < 1) {
+            section = new CanvasSection(this, order);
+            section.emphasis = column.data.emphasis.zoneEmphasis || 0;
+            this.sections.push(section);
+        }
+        else {
+            section = sections[0];
+        }
+        column.section = section;
+        section.columns.push(column);
+    };
+    ClientSidePage.prototype.getItem = function () {
+        var _this = this;
+        var selects = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            selects[_i] = arguments[_i];
+        }
+        var initer = ClientSidePage.initFrom(this, "/_api/lists/EnsureClientRenderedSitePagesLibrary").select("EnableModeration", "EnableMinorVersions", "Id");
+        return initer.postCore().then(function (listData) {
+            var item = (new List(listData["odata.id"])).configureFrom(_this).items.getById(_this.json.Id);
+            return item.select.apply(item, selects).get().then(function (d) {
+                return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])((new Item(odataUrlFrom(d))).configureFrom(_this), d);
+            });
+        });
+    };
+    return ClientSidePage;
+}(SharePointQueryable));
+var CanvasSection = /** @class */ (function () {
+    function CanvasSection(page, order, columns, _emphasis) {
+        if (columns === void 0) { columns = []; }
+        if (_emphasis === void 0) { _emphasis = 0; }
+        this.page = page;
+        this.columns = columns;
+        this._emphasis = _emphasis;
+        this._memId = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["h" /* getGUID */])();
+        this._order = order;
+    }
+    Object.defineProperty(CanvasSection.prototype, "order", {
+        get: function () {
+            return this._order;
+        },
+        set: function (value) {
+            this._order = value;
+            for (var i = 0; i < this.columns.length; i++) {
+                this.columns[i].data.position.zoneIndex = value;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CanvasSection.prototype, "defaultColumn", {
+        /**
+         * Default column (this.columns[0]) for this section
+         */
+        get: function () {
+            if (this.columns.length < 1) {
+                this.addColumn(12);
+            }
+            return this.columns[0];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Adds a new column to this section
+     */
+    CanvasSection.prototype.addColumn = function (factor) {
+        var column = new CanvasColumn();
+        column.section = this;
+        column.data.position.zoneIndex = this.order;
+        column.data.position.sectionFactor = factor;
+        column.order = getNextOrder(this.columns);
+        this.columns.push(column);
+        return column;
+    };
+    /**
+     * Adds a control to the default column for this section
+     *
+     * @param control Control to add to the default column
+     */
+    CanvasSection.prototype.addControl = function (control) {
+        this.defaultColumn.addControl(control);
+        return this;
+    };
+    Object.defineProperty(CanvasSection.prototype, "emphasis", {
+        get: function () {
+            return this._emphasis;
+        },
+        set: function (value) {
+            this._emphasis = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Removes this section and all contained columns and controls from the collection
+     */
+    CanvasSection.prototype.remove = function () {
+        var _this = this;
+        this.page.sections = this.page.sections.filter(function (section) { return section._memId !== _this._memId; });
+        reindex(this.page.sections);
+    };
+    return CanvasSection;
+}());
+var CanvasColumn = /** @class */ (function () {
+    function CanvasColumn(json, controls) {
+        if (json === void 0) { json = JSON.parse(JSON.stringify(CanvasColumn.Default)); }
+        if (controls === void 0) { controls = []; }
+        this.json = json;
+        this.controls = controls;
+        this._section = null;
+        this._memId = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["h" /* getGUID */])();
+    }
+    Object.defineProperty(CanvasColumn.prototype, "data", {
+        get: function () {
+            return this.json;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CanvasColumn.prototype, "section", {
+        get: function () {
+            return this._section;
+        },
+        set: function (section) {
+            this._section = section;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CanvasColumn.prototype, "order", {
+        get: function () {
+            return this.data.position.sectionIndex;
+        },
+        set: function (value) {
+            this.data.position.sectionIndex = value;
+            for (var i = 0; i < this.controls.length; i++) {
+                this.controls[i].data.position.zoneIndex = this.data.position.zoneIndex;
+                this.controls[i].data.position.sectionIndex = value;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CanvasColumn.prototype, "factor", {
+        get: function () {
+            return this.data.position.sectionFactor;
+        },
+        set: function (value) {
+            this.data.position.sectionFactor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CanvasColumn.prototype.addControl = function (control) {
+        control.column = this;
+        this.controls.push(control);
+        return this;
+    };
+    CanvasColumn.prototype.getControl = function (index) {
+        return this.controls[index];
+    };
+    CanvasColumn.prototype.remove = function () {
+        var _this = this;
+        this.section.columns = this.section.columns.filter(function (column) { return column._memId !== _this._memId; });
+        reindex(this.section.columns);
+    };
+    CanvasColumn.Default = {
+        controlType: 0,
+        displayMode: 2,
+        emphasis: {},
+        position: {
+            layoutIndex: 1,
+            sectionFactor: 12,
+            sectionIndex: 1,
+            zoneIndex: 1,
+        },
+    };
+    return CanvasColumn;
+}());
+var ColumnControl = /** @class */ (function () {
+    function ColumnControl(json) {
+        this.json = json;
+    }
+    Object.defineProperty(ColumnControl.prototype, "id", {
+        get: function () {
+            return this.json.id;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ColumnControl.prototype, "data", {
+        get: function () {
+            return this.json;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ColumnControl.prototype, "column", {
+        get: function () {
+            return this._column;
+        },
+        set: function (value) {
+            this._column = value;
+            this.onColumnChange(this._column);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ColumnControl.prototype.remove = function () {
+        var _this = this;
+        this.column.controls = this.column.controls.filter(function (control) { return control.id !== _this.id; });
+        reindex(this.column.controls);
+    };
+    ColumnControl.prototype.setData = function (data) {
+        this.json = data;
+    };
+    return ColumnControl;
+}());
+var ClientSideText = /** @class */ (function (_super) {
+    __extends(ClientSideText, _super);
+    function ClientSideText(text, json) {
+        if (json === void 0) { json = JSON.parse(JSON.stringify(ClientSideText.Default)); }
+        var _this = this;
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["r" /* stringIsNullOrEmpty */])(json.id)) {
+            json.id = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["h" /* getGUID */])();
+            json.anchorComponentId = json.id;
+        }
+        _this = _super.call(this, json) || this;
+        _this.text = text;
+        return _this;
+    }
+    Object.defineProperty(ClientSideText.prototype, "text", {
+        get: function () {
+            return this.data.innerHTML;
+        },
+        set: function (value) {
+            if (!value.startsWith("<p>")) {
+                value = "<p>" + value + "</p>";
+            }
+            this.data.innerHTML = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSideText.prototype, "order", {
+        get: function () {
+            return this.data.position.controlIndex;
+        },
+        set: function (value) {
+            this.data.position.controlIndex = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ClientSideText.prototype.onColumnChange = function (col) {
+        this.data.position.sectionFactor = col.factor;
+        this.data.position.controlIndex = getNextOrder(col.controls);
+        this.data.position.zoneIndex = col.data.position.zoneIndex;
+        this.data.position.sectionIndex = col.order;
+    };
+    ClientSideText.Default = {
+        addedFromPersistedData: false,
+        anchorComponentId: "",
+        controlType: 4,
+        displayMode: 2,
+        editorType: "CKEditor",
+        emphasis: {},
+        id: "",
+        innerHTML: "",
+        position: {
+            controlIndex: 1,
+            layoutIndex: 1,
+            sectionFactor: 12,
+            sectionIndex: 1,
+            zoneIndex: 1,
+        },
+    };
+    return ClientSideText;
+}(ColumnControl));
+var ClientSideWebpart = /** @class */ (function (_super) {
+    __extends(ClientSideWebpart, _super);
+    function ClientSideWebpart(json) {
+        if (json === void 0) { json = JSON.parse(JSON.stringify(ClientSideWebpart.Default)); }
+        return _super.call(this, json) || this;
+    }
+    ClientSideWebpart.fromComponentDef = function (definition) {
+        var part = new ClientSideWebpart();
+        part.import(definition);
+        return part;
+    };
+    Object.defineProperty(ClientSideWebpart.prototype, "title", {
+        get: function () {
+            return this.data.webPartData.title;
+        },
+        set: function (value) {
+            this.data.webPartData.title = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSideWebpart.prototype, "description", {
+        get: function () {
+            return this.data.webPartData.description;
+        },
+        set: function (value) {
+            this.data.webPartData.description = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSideWebpart.prototype, "order", {
+        get: function () {
+            return this.data.position.controlIndex;
+        },
+        set: function (value) {
+            this.data.position.controlIndex = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSideWebpart.prototype, "height", {
+        get: function () {
+            return this.data.reservedHeight;
+        },
+        set: function (value) {
+            this.data.reservedHeight = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSideWebpart.prototype, "width", {
+        get: function () {
+            return this.data.reservedWidth;
+        },
+        set: function (value) {
+            this.data.reservedWidth = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClientSideWebpart.prototype, "dataVersion", {
+        get: function () {
+            return this.data.webPartData.dataVersion;
+        },
+        set: function (value) {
+            this.data.webPartData.dataVersion = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ClientSideWebpart.prototype.setProperties = function (properties) {
+        this.data.webPartData.properties = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(this.data.webPartData.properties, properties);
+        return this;
+    };
+    ClientSideWebpart.prototype.getProperties = function () {
+        return this.data.webPartData.properties;
+    };
+    ClientSideWebpart.prototype.onColumnChange = function (col) {
+        this.data.position = {
+            controlIndex: getNextOrder(col.controls),
+            sectionFactor: col.factor,
+            sectionIndex: col.data.position.sectionIndex,
+            zoneIndex: col.data.position.zoneIndex,
+        };
+    };
+    ClientSideWebpart.prototype.import = function (component) {
+        var id = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["h" /* getGUID */])();
+        var componendId = component.Id.replace(/^\{|\}$/g, "").toLowerCase();
+        var manifest = JSON.parse(component.Manifest);
+        var preconfiguredEntries = manifest.preconfiguredEntries[0];
+        this.setData(Object.assign({}, this.data, {
+            id: id,
+            webPartData: {
+                dataVersion: "1.0",
+                description: preconfiguredEntries.description.default,
+                id: componendId,
+                instanceId: id,
+                properties: preconfiguredEntries.properties,
+                title: preconfiguredEntries.title.default,
+            },
+            webPartId: componendId,
+        }));
+    };
+    ClientSideWebpart.Default = {
+        addedFromPersistedData: false,
+        controlType: 3,
+        displayMode: 2,
+        emphasis: {},
+        id: null,
+        position: {
+            controlIndex: 1,
+            sectionFactor: 12,
+            sectionIndex: 1,
+            zoneIndex: 1,
+        },
+        reservedHeight: 500,
+        reservedWidth: 500,
+        webPartData: null,
+        webPartId: null,
+    };
+    return ClientSideWebpart;
+}(ColumnControl));
+
+var funcs = new Map([
+    ["text", "Querytext"],
+    ["template", "QueryTemplate"],
+    ["sourceId", "SourceId"],
+    ["trimDuplicatesIncludeId", ""],
+    ["startRow", ""],
+    ["rowLimit", ""],
+    ["rankingModelId", ""],
+    ["rowsPerPage", ""],
+    ["selectProperties", ""],
+    ["culture", ""],
+    ["timeZoneId", ""],
+    ["refinementFilters", ""],
+    ["refiners", ""],
+    ["hiddenConstraints", ""],
+    ["sortList", ""],
+    ["timeout", ""],
+    ["hithighlightedProperties", ""],
+    ["clientType", ""],
+    ["personalizationData", ""],
+    ["resultsURL", ""],
+    ["queryTag", ""],
+    ["properties", ""],
+    ["queryTemplatePropertiesUrl", ""],
+    ["reorderingRules", ""],
+    ["hitHighlightedMultivaluePropertyLimit", ""],
+    ["collapseSpecification", ""],
+    ["uiLanguage", ""],
+    ["desiredSnippetLength", ""],
+    ["maxSnippetLength", ""],
+    ["summaryLength", ""],
+]);
+var props = new Map([]);
+function toPropCase(str) {
+    return str.replace(/^(.)/, function ($1) { return $1.toUpperCase(); });
+}
+/**
+ * Creates a new instance of the SearchQueryBuilder
+ *
+ * @param queryText Initial query text
+ * @param _query Any initial query configuration
+ */
+function SearchQueryBuilder(queryText, _query) {
+    if (queryText === void 0) { queryText = ""; }
+    if (_query === void 0) { _query = {}; }
+    return new Proxy({
+        query: Object.assign({
+            Querytext: queryText,
+        }, _query),
+    }, {
+        get: function (self, propertyKey, proxy) {
+            var pk = propertyKey.toString();
+            if (pk === "toSearchQuery") {
+                return function () { return self.query; };
+            }
+            if (funcs.has(pk)) {
+                return function () {
+                    var value = [];
+                    for (var _i = 0; _i < arguments.length; _i++) {
+                        value[_i] = arguments[_i];
+                    }
+                    var mappedPk = funcs.get(pk);
+                    self.query[mappedPk.length > 0 ? mappedPk : toPropCase(pk)] = value.length > 1 ? value : value[0];
+                    return proxy;
+                };
+            }
+            var propKey = props.has(pk) ? props.get(pk) : toPropCase(pk);
+            self.query[propKey] = true;
+            return proxy;
+        },
+    });
+}
+/**
+ * Describes the search API
+ *
+ */
+var Search = /** @class */ (function (_super) {
+    __extends(Search, _super);
+    function Search() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * @returns Promise
+     */
+    Search.prototype.execute = function (queryInit) {
+        var _this = this;
+        var query = this.parseQuery(queryInit);
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            request: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("Microsoft.Office.Server.Search.REST.SearchRequest"), Object.assign({}, query, {
+                HitHighlightedProperties: this.fixArrProp(query.HitHighlightedProperties),
+                Properties: this.fixArrProp(query.Properties),
+                RefinementFilters: this.fixArrProp(query.RefinementFilters),
+                ReorderingRules: this.fixArrProp(query.ReorderingRules),
+                SelectProperties: this.fixArrProp(query.SelectProperties),
+                SortList: this.fixArrProp(query.SortList),
+            })),
+        });
+        // if we are using caching with this search request, then we need to handle some work upfront to enable that
+        if (this._useCaching) {
+            // force use of the cache for this request if .usingCaching was called
+            this._forceCaching = true;
+            // because all the requests use the same url they would collide in the cache we use a special key
+            var cacheKey = "PnPjs.SearchWithCaching(" + Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["i" /* getHashCode */])(postBody) + ")";
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["q" /* objectDefinedNotNull */])(this._cachingOptions)) {
+                // if our key ends in the postquery url we overwrite it
+                if (/\/_api\/search\/postquery$/i.test(this._cachingOptions.key)) {
+                    this._cachingOptions.key = cacheKey;
+                }
+            }
+            else {
+                this._cachingOptions = new __WEBPACK_IMPORTED_MODULE_2__pnp_odata__["c" /* CachingOptions */](cacheKey);
+            }
+        }
+        return this.postCore({ body: postBody }).then(function (data) { return new SearchResults(data, _this.toUrl(), query); });
+    };
+    /**
+     * Fix array property
+     *
+     * @param prop property to fix for container struct
+     */
+    Search.prototype.fixArrProp = function (prop) {
+        if (typeof prop === "undefined") {
+            return ({ results: [] });
+        }
+        prop = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["k" /* isArray */])(prop) ? prop : [prop];
+        return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(prop, "results") ? prop : { results: prop };
+    };
+    /**
+     * Translates one of the query initializers into a SearchQuery instance
+     *
+     * @param query
+     */
+    Search.prototype.parseQuery = function (query) {
+        var finalQuery;
+        if (typeof query === "string") {
+            finalQuery = { Querytext: query };
+        }
+        else if (query.toSearchQuery) {
+            finalQuery = query.toSearchQuery();
+        }
+        else {
+            finalQuery = query;
+        }
+        return finalQuery;
+    };
+    Search = __decorate([
+        defaultPath("_api/search/postquery")
+    ], Search);
+    return Search;
+}(SharePointQueryableInstance));
+/**
+ * Describes the SearchResults class, which returns the formatted and raw version of the query response
+ */
+var SearchResults = /** @class */ (function () {
+    /**
+     * Creates a new instance of the SearchResult class
+     *
+     */
+    function SearchResults(rawResponse, _url, _query, _raw, _primary) {
+        if (_raw === void 0) { _raw = null; }
+        if (_primary === void 0) { _primary = null; }
+        this._url = _url;
+        this._query = _query;
+        this._raw = _raw;
+        this._primary = _primary;
+        this._raw = rawResponse.postquery ? rawResponse.postquery : rawResponse;
+    }
+    Object.defineProperty(SearchResults.prototype, "ElapsedTime", {
+        get: function () {
+            return this.RawSearchResults.ElapsedTime;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SearchResults.prototype, "RowCount", {
+        get: function () {
+            return this.RawSearchResults.PrimaryQueryResult.RelevantResults.RowCount;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SearchResults.prototype, "TotalRows", {
+        get: function () {
+            return this.RawSearchResults.PrimaryQueryResult.RelevantResults.TotalRows;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SearchResults.prototype, "TotalRowsIncludingDuplicates", {
+        get: function () {
+            return this.RawSearchResults.PrimaryQueryResult.RelevantResults.TotalRowsIncludingDuplicates;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SearchResults.prototype, "RawSearchResults", {
+        get: function () {
+            return this._raw;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SearchResults.prototype, "PrimarySearchResults", {
+        get: function () {
+            if (this._primary === null) {
+                this._primary = this.formatSearchResults(this._raw.PrimaryQueryResult.RelevantResults.Table.Rows);
+            }
+            return this._primary;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets a page of results
+     *
+     * @param pageNumber Index of the page to return. Used to determine StartRow
+     * @param pageSize Optional, items per page (default = 10)
+     */
+    SearchResults.prototype.getPage = function (pageNumber, pageSize) {
+        // if we got all the available rows we don't have another page
+        if (this.TotalRows < this.RowCount) {
+            return Promise.resolve(null);
+        }
+        // if pageSize is supplied, then we use that regardless of any previous values
+        // otherwise get the previous RowLimit or default to 10
+        var rows = pageSize !== undefined ? pageSize : Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(this._query, "RowLimit") ? this._query.RowLimit : 10;
+        var query = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(this._query, {
+            RowLimit: rows,
+            StartRow: rows * (pageNumber - 1),
+        });
+        // we have reached the end
+        if (query.StartRow > this.TotalRows) {
+            return Promise.resolve(null);
+        }
+        var search = new Search(this._url, null);
+        return search.execute(query);
+    };
+    /**
+     * Formats a search results array
+     *
+     * @param rawResults The array to process
+     */
+    SearchResults.prototype.formatSearchResults = function (rawResults) {
+        var results = new Array();
+        var tempResults = rawResults.results ? rawResults.results : rawResults;
+        for (var _i = 0, tempResults_1 = tempResults; _i < tempResults_1.length; _i++) {
+            var tempResult = tempResults_1[_i];
+            var cells = tempResult.Cells.results ? tempResult.Cells.results : tempResult.Cells;
+            results.push(cells.reduce(function (res, cell) {
+                Object.defineProperty(res, cell.Key, {
+                    configurable: false,
+                    enumerable: true,
+                    value: cell.Value,
+                    writable: false,
+                });
+                return res;
+            }, {}));
+        }
+        return results;
+    };
+    return SearchResults;
+}());
+/**
+ * defines the SortDirection enum
+ */
+var SortDirection;
+(function (SortDirection) {
+    SortDirection[SortDirection["Ascending"] = 0] = "Ascending";
+    SortDirection[SortDirection["Descending"] = 1] = "Descending";
+    SortDirection[SortDirection["FQLFormula"] = 2] = "FQLFormula";
+})(SortDirection || (SortDirection = {}));
+/**
+ * defines the ReorderingRuleMatchType  enum
+ */
+var ReorderingRuleMatchType;
+(function (ReorderingRuleMatchType) {
+    ReorderingRuleMatchType[ReorderingRuleMatchType["ResultContainsKeyword"] = 0] = "ResultContainsKeyword";
+    ReorderingRuleMatchType[ReorderingRuleMatchType["TitleContainsKeyword"] = 1] = "TitleContainsKeyword";
+    ReorderingRuleMatchType[ReorderingRuleMatchType["TitleMatchesKeyword"] = 2] = "TitleMatchesKeyword";
+    ReorderingRuleMatchType[ReorderingRuleMatchType["UrlStartsWith"] = 3] = "UrlStartsWith";
+    ReorderingRuleMatchType[ReorderingRuleMatchType["UrlExactlyMatches"] = 4] = "UrlExactlyMatches";
+    ReorderingRuleMatchType[ReorderingRuleMatchType["ContentTypeIs"] = 5] = "ContentTypeIs";
+    ReorderingRuleMatchType[ReorderingRuleMatchType["FileExtensionMatches"] = 6] = "FileExtensionMatches";
+    ReorderingRuleMatchType[ReorderingRuleMatchType["ResultHasTag"] = 7] = "ResultHasTag";
+    ReorderingRuleMatchType[ReorderingRuleMatchType["ManualCondition"] = 8] = "ManualCondition";
+})(ReorderingRuleMatchType || (ReorderingRuleMatchType = {}));
+/**
+ * Specifies the type value for the property
+ */
+var QueryPropertyValueType;
+(function (QueryPropertyValueType) {
+    QueryPropertyValueType[QueryPropertyValueType["None"] = 0] = "None";
+    QueryPropertyValueType[QueryPropertyValueType["StringType"] = 1] = "StringType";
+    QueryPropertyValueType[QueryPropertyValueType["Int32Type"] = 2] = "Int32Type";
+    QueryPropertyValueType[QueryPropertyValueType["BooleanType"] = 3] = "BooleanType";
+    QueryPropertyValueType[QueryPropertyValueType["StringArrayType"] = 4] = "StringArrayType";
+    QueryPropertyValueType[QueryPropertyValueType["UnSupportedType"] = 5] = "UnSupportedType";
+})(QueryPropertyValueType || (QueryPropertyValueType = {}));
+var SearchBuiltInSourceId = /** @class */ (function () {
+    function SearchBuiltInSourceId() {
+    }
+    SearchBuiltInSourceId.Documents = "e7ec8cee-ded8-43c9-beb5-436b54b31e84";
+    SearchBuiltInSourceId.ItemsMatchingContentType = "5dc9f503-801e-4ced-8a2c-5d1237132419";
+    SearchBuiltInSourceId.ItemsMatchingTag = "e1327b9c-2b8c-4b23-99c9-3730cb29c3f7";
+    SearchBuiltInSourceId.ItemsRelatedToCurrentUser = "48fec42e-4a92-48ce-8363-c2703a40e67d";
+    SearchBuiltInSourceId.ItemsWithSameKeywordAsThisItem = "5c069288-1d17-454a-8ac6-9c642a065f48";
+    SearchBuiltInSourceId.LocalPeopleResults = "b09a7990-05ea-4af9-81ef-edfab16c4e31";
+    SearchBuiltInSourceId.LocalReportsAndDataResults = "203fba36-2763-4060-9931-911ac8c0583b";
+    SearchBuiltInSourceId.LocalSharePointResults = "8413cd39-2156-4e00-b54d-11efd9abdb89";
+    SearchBuiltInSourceId.LocalVideoResults = "78b793ce-7956-4669-aa3b-451fc5defebf";
+    SearchBuiltInSourceId.Pages = "5e34578e-4d08-4edc-8bf3-002acf3cdbcc";
+    SearchBuiltInSourceId.Pictures = "38403c8c-3975-41a8-826e-717f2d41568a";
+    SearchBuiltInSourceId.Popular = "97c71db1-58ce-4891-8b64-585bc2326c12";
+    SearchBuiltInSourceId.RecentlyChangedItems = "ba63bbae-fa9c-42c0-b027-9a878f16557c";
+    SearchBuiltInSourceId.RecommendedItems = "ec675252-14fa-4fbe-84dd-8d098ed74181";
+    SearchBuiltInSourceId.Wiki = "9479bf85-e257-4318-b5a8-81a180f5faa1";
+    return SearchBuiltInSourceId;
+}());
+
+var SearchSuggest = /** @class */ (function (_super) {
+    __extends(SearchSuggest, _super);
+    function SearchSuggest() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SearchSuggest.prototype.execute = function (query) {
+        this.mapQueryToQueryString(query);
+        return this.get().then(function (response) {
+            var mapper = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(response, "suggest") ? function (s) { return response.suggest[s].results; } : function (s) { return response[s]; };
+            return {
+                PeopleNames: mapper("PeopleNames"),
+                PersonalResults: mapper("PersonalResults"),
+                Queries: mapper("Queries"),
+            };
+        });
+    };
+    SearchSuggest.prototype.mapQueryToQueryString = function (query) {
+        var _this = this;
+        var setProp = function (q) { return function (checkProp) { return function (sp) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(q, checkProp)) {
+                _this.query.set(sp, q[checkProp].toString());
+            }
+        }; }; };
+        this.query.set("querytext", "'" + query.querytext + "'");
+        var querySetter = setProp(query);
+        querySetter("count")("inumberofquerysuggestions");
+        querySetter("personalCount")("inumberofresultsuggestions");
+        querySetter("preQuery")("fprequerysuggestions");
+        querySetter("hitHighlighting")("fhithighlighting");
+        querySetter("capitalize")("fcapitalizefirstletters");
+        querySetter("culture")("culture");
+        querySetter("stemming")("enablestemming");
+        querySetter("includePeople")("showpeoplenamesuggestions");
+        querySetter("queryRules")("enablequeryrules");
+        querySetter("prefixMatch")("fprefixmatchallterms");
+    };
+    SearchSuggest = __decorate([
+        defaultPath("_api/search/suggest")
+    ], SearchSuggest);
+    return SearchSuggest;
+}(SharePointQueryableInstance));
+
+var UserProfileQuery = /** @class */ (function (_super) {
+    __extends(UserProfileQuery, _super);
+    /**
+     * Creates a new instance of the UserProfileQuery class
+     *
+     * @param baseUrl The url or SharePointQueryable which forms the parent of this user profile query
+     */
+    function UserProfileQuery(baseUrl, path) {
+        if (path === void 0) { path = "_api/sp.userprofiles.peoplemanager"; }
+        var _this = _super.call(this, baseUrl, path) || this;
+        _this.clientPeoplePickerQuery = (new ClientPeoplePickerQuery(baseUrl)).configureFrom(_this);
+        _this.profileLoader = (new ProfileLoader(baseUrl)).configureFrom(_this);
+        return _this;
+    }
+    Object.defineProperty(UserProfileQuery.prototype, "editProfileLink", {
+        /**
+         * The url of the edit profile page for the current user
+         */
+        get: function () {
+            return this.clone(UserProfileQuery, "EditProfileLink").get();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(UserProfileQuery.prototype, "isMyPeopleListPublic", {
+        /**
+         * A boolean value that indicates whether the current user's "People I'm Following" list is public
+         */
+        get: function () {
+            return this.clone(UserProfileQuery, "IsMyPeopleListPublic").get();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * A boolean value that indicates whether the current user is being followed by the specified user
+     *
+     * @param loginName The account name of the user
+     */
+    UserProfileQuery.prototype.amIFollowedBy = function (loginName) {
+        var q = this.clone(UserProfileQuery, "amifollowedby(@v)");
+        q.query.set("@v", "'" + encodeURIComponent(loginName) + "'");
+        return q.get();
+    };
+    /**
+     * A boolean value that indicates whether the current user is following the specified user
+     *
+     * @param loginName The account name of the user
+     */
+    UserProfileQuery.prototype.amIFollowing = function (loginName) {
+        var q = this.clone(UserProfileQuery, "amifollowing(@v)");
+        q.query.set("@v", "'" + encodeURIComponent(loginName) + "'");
+        return q.get();
+    };
+    /**
+     * Gets tags that the current user is following
+     *
+     * @param maxCount The maximum number of tags to retrieve (default is 20)
+     */
+    UserProfileQuery.prototype.getFollowedTags = function (maxCount) {
+        if (maxCount === void 0) { maxCount = 20; }
+        return this.clone(UserProfileQuery, "getfollowedtags(" + maxCount + ")").get();
+    };
+    /**
+     * Gets the people who are following the specified user
+     *
+     * @param loginName The account name of the user
+     */
+    UserProfileQuery.prototype.getFollowersFor = function (loginName) {
+        var q = this.clone(UserProfileQuery, "getfollowersfor(@v)");
+        q.query.set("@v", "'" + encodeURIComponent(loginName) + "'");
+        return q.get();
+    };
+    Object.defineProperty(UserProfileQuery.prototype, "myFollowers", {
+        /**
+         * Gets the people who are following the current user
+         *
+         */
+        get: function () {
+            return new SharePointQueryableCollection(this, "getmyfollowers");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(UserProfileQuery.prototype, "myProperties", {
+        /**
+         * Gets user properties for the current user
+         *
+         */
+        get: function () {
+            return new UserProfileQuery(this, "getmyproperties");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets the people who the specified user is following
+     *
+     * @param loginName The account name of the user.
+     */
+    UserProfileQuery.prototype.getPeopleFollowedBy = function (loginName) {
+        var q = this.clone(UserProfileQuery, "getpeoplefollowedby(@v)");
+        q.query.set("@v", "'" + encodeURIComponent(loginName) + "'");
+        return q.get();
+    };
+    /**
+     * Gets user properties for the specified user.
+     *
+     * @param loginName The account name of the user.
+     */
+    UserProfileQuery.prototype.getPropertiesFor = function (loginName) {
+        var q = this.clone(UserProfileQuery, "getpropertiesfor(@v)");
+        q.query.set("@v", "'" + encodeURIComponent(loginName) + "'");
+        return q.get();
+    };
+    Object.defineProperty(UserProfileQuery.prototype, "trendingTags", {
+        /**
+         * Gets the 20 most popular hash tags over the past week, sorted so that the most popular tag appears first
+         *
+         */
+        get: function () {
+            var q = this.clone(UserProfileQuery, null);
+            q.concat(".gettrendingtags");
+            return q.get();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets the specified user profile property for the specified user
+     *
+     * @param loginName The account name of the user
+     * @param propertyName The case-sensitive name of the property to get
+     */
+    UserProfileQuery.prototype.getUserProfilePropertyFor = function (loginName, propertyName) {
+        var q = this.clone(UserProfileQuery, "getuserprofilepropertyfor(accountname=@v, propertyname='" + propertyName + "')");
+        q.query.set("@v", "'" + encodeURIComponent(loginName) + "'");
+        return q.get();
+    };
+    /**
+     * Removes the specified user from the user's list of suggested people to follow
+     *
+     * @param loginName The account name of the user
+     */
+    UserProfileQuery.prototype.hideSuggestion = function (loginName) {
+        var q = this.clone(UserProfileQuery, "hidesuggestion(@v)");
+        q.query.set("@v", "'" + encodeURIComponent(loginName) + "'");
+        return q.postCore();
+    };
+    /**
+     * A boolean values that indicates whether the first user is following the second user
+     *
+     * @param follower The account name of the user who might be following the followee
+     * @param followee The account name of the user who might be followed by the follower
+     */
+    UserProfileQuery.prototype.isFollowing = function (follower, followee) {
+        var q = this.clone(UserProfileQuery, null);
+        q.concat(".isfollowing(possiblefolloweraccountname=@v, possiblefolloweeaccountname=@y)");
+        q.query.set("@v", "'" + encodeURIComponent(follower) + "'");
+        q.query.set("@y", "'" + encodeURIComponent(followee) + "'");
+        return q.get();
+    };
+    /**
+     * Uploads and sets the user profile picture (Users can upload a picture to their own profile only). Not supported for batching.
+     *
+     * @param profilePicSource Blob data representing the user's picture in BMP, JPEG, or PNG format of up to 4.76MB
+     */
+    UserProfileQuery.prototype.setMyProfilePic = function (profilePicSource) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var buffer = null;
+            var reader = new FileReader();
+            reader.onload = function (e) { return buffer = e.target.result; };
+            reader.readAsArrayBuffer(profilePicSource);
+            var request = new UserProfileQuery(_this, "setmyprofilepicture");
+            request.postCore({
+                body: String.fromCharCode.apply(null, new Uint16Array(buffer)),
+            }).then(function (_) { return resolve(); }).catch(function (e) { return reject(e); });
+        });
+    };
+    /**
+     * Sets single value User Profile property
+     *
+     * @param accountName The account name of the user
+     * @param propertyName Property name
+     * @param propertyValue Property value
+     */
+    UserProfileQuery.prototype.setSingleValueProfileProperty = function (accountName, propertyName, propertyValue) {
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            accountName: accountName,
+            propertyName: propertyName,
+            propertyValue: propertyValue,
+        });
+        return this.clone(UserProfileQuery, "SetSingleValueProfileProperty")
+            .postCore({ body: postBody });
+    };
+    /**
+     * Sets multi valued User Profile property
+     *
+     * @param accountName The account name of the user
+     * @param propertyName Property name
+     * @param propertyValues Property values
+     */
+    UserProfileQuery.prototype.setMultiValuedProfileProperty = function (accountName, propertyName, propertyValues) {
+        var postBody = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            accountName: accountName,
+            propertyName: propertyName,
+            propertyValues: propertyValues,
+        });
+        return this.clone(UserProfileQuery, "SetMultiValuedProfileProperty")
+            .postCore({ body: postBody });
+    };
+    /**
+     * Provisions one or more users' personal sites. (My Site administrator on SharePoint Online only)
+     *
+     * @param emails The email addresses of the users to provision sites for
+     */
+    UserProfileQuery.prototype.createPersonalSiteEnqueueBulk = function () {
+        var emails = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            emails[_i] = arguments[_i];
+        }
+        return this.profileLoader.createPersonalSiteEnqueueBulk(emails);
+    };
+    Object.defineProperty(UserProfileQuery.prototype, "ownerUserProfile", {
+        /**
+         * Gets the user profile of the site owner
+         *
+         */
+        get: function () {
+            return this.profileLoader.ownerUserProfile;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(UserProfileQuery.prototype, "userProfile", {
+        /**
+         * Gets the user profile for the current user
+         */
+        get: function () {
+            return this.profileLoader.userProfile;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Enqueues creating a personal site for this user, which can be used to share documents, web pages, and other files
+     *
+     * @param interactiveRequest true if interactively (web) initiated request, or false (default) if non-interactively (client) initiated request
+     */
+    UserProfileQuery.prototype.createPersonalSite = function (interactiveRequest) {
+        if (interactiveRequest === void 0) { interactiveRequest = false; }
+        return this.profileLoader.createPersonalSite(interactiveRequest);
+    };
+    /**
+     * Sets the privacy settings for this profile
+     *
+     * @param share true to make all social data public; false to make all social data private
+     */
+    UserProfileQuery.prototype.shareAllSocialData = function (share) {
+        return this.profileLoader.shareAllSocialData(share);
+    };
+    /**
+     * Resolves user or group using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform resolve
+     */
+    UserProfileQuery.prototype.clientPeoplePickerResolveUser = function (queryParams) {
+        return this.clientPeoplePickerQuery.clientPeoplePickerResolveUser(queryParams);
+    };
+    /**
+     * Searches for users or groups using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform search
+     */
+    UserProfileQuery.prototype.clientPeoplePickerSearchUser = function (queryParams) {
+        return this.clientPeoplePickerQuery.clientPeoplePickerSearchUser(queryParams);
+    };
+    return UserProfileQuery;
+}(SharePointQueryableInstance));
+var ProfileLoader = /** @class */ (function (_super) {
+    __extends(ProfileLoader, _super);
+    function ProfileLoader() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ProfileLoader_1 = ProfileLoader;
+    /**
+     * Provisions one or more users' personal sites. (My Site administrator on SharePoint Online only) Doesn't support batching
+     *
+     * @param emails The email addresses of the users to provision sites for
+     */
+    ProfileLoader.prototype.createPersonalSiteEnqueueBulk = function (emails) {
+        return this.clone(ProfileLoader_1, "createpersonalsiteenqueuebulk", false).postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({ "emailIDs": emails }),
+        });
+    };
+    Object.defineProperty(ProfileLoader.prototype, "ownerUserProfile", {
+        /**
+         * Gets the user profile of the site owner.
+         *
+         */
+        get: function () {
+            var q = this.getParent(ProfileLoader_1, this.parentUrl, "_api/sp.userprofiles.profileloader.getowneruserprofile");
+            if (this.hasBatch) {
+                q = q.inBatch(this.batch);
+            }
+            return q.postCore();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ProfileLoader.prototype, "userProfile", {
+        /**
+         * Gets the user profile of the current user.
+         *
+         */
+        get: function () {
+            return this.clone(ProfileLoader_1, "getuserprofile").postCore();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Enqueues creating a personal site for this user, which can be used to share documents, web pages, and other files.
+     *
+     * @param interactiveRequest true if interactively (web) initiated request, or false (default) if non-interactively (client) initiated request
+     */
+    ProfileLoader.prototype.createPersonalSite = function (interactiveRequest) {
+        if (interactiveRequest === void 0) { interactiveRequest = false; }
+        return this.clone(ProfileLoader_1, "getuserprofile/createpersonalsiteenque(" + interactiveRequest + ")").postCore();
+    };
+    /**
+     * Sets the privacy settings for this profile
+     *
+     * @param share true to make all social data public; false to make all social data private.
+     */
+    ProfileLoader.prototype.shareAllSocialData = function (share) {
+        return this.clone(ProfileLoader_1, "getuserprofile/shareallsocialdata(" + share + ")").postCore();
+    };
+    var ProfileLoader_1;
+    ProfileLoader = ProfileLoader_1 = __decorate([
+        defaultPath("_api/sp.userprofiles.profileloader.getprofileloader")
+    ], ProfileLoader);
+    return ProfileLoader;
+}(SharePointQueryable));
+var ClientPeoplePickerQuery = /** @class */ (function (_super) {
+    __extends(ClientPeoplePickerQuery, _super);
+    function ClientPeoplePickerQuery() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ClientPeoplePickerQuery_1 = ClientPeoplePickerQuery;
+    /**
+     * Resolves user or group using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform resolve
+     */
+    ClientPeoplePickerQuery.prototype.clientPeoplePickerResolveUser = function (queryParams) {
+        var q = this.clone(ClientPeoplePickerQuery_1, null);
+        q.concat(".clientpeoplepickerresolveuser");
+        return q.postCore({
+            body: this.createClientPeoplePickerQueryParametersRequestBody(queryParams),
+        })
+            .then(function (res) {
+            if (typeof res === "object") {
+                return res.ClientPeoplePickerResolveUser;
+            }
+            return res;
+        })
+            .then(JSON.parse);
+    };
+    /**
+     * Searches for users or groups using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform search
+     */
+    ClientPeoplePickerQuery.prototype.clientPeoplePickerSearchUser = function (queryParams) {
+        var q = this.clone(ClientPeoplePickerQuery_1, null);
+        q.concat(".clientpeoplepickersearchuser");
+        return q.postCore({
+            body: this.createClientPeoplePickerQueryParametersRequestBody(queryParams),
+        })
+            .then(function (res) {
+            if (typeof res === "object") {
+                return res.ClientPeoplePickerSearchUser;
+            }
+            return res;
+        })
+            .then(JSON.parse);
+    };
+    /**
+     * Creates ClientPeoplePickerQueryParameters request body
+     *
+     * @param queryParams The query parameters to create request body
+     */
+    ClientPeoplePickerQuery.prototype.createClientPeoplePickerQueryParametersRequestBody = function (queryParams) {
+        return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            "queryParams": Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.UI.ApplicationPages.ClientPeoplePickerQueryParameters"), queryParams),
+        });
+    };
+    var ClientPeoplePickerQuery_1;
+    ClientPeoplePickerQuery = ClientPeoplePickerQuery_1 = __decorate([
+        defaultPath("_api/sp.ui.applicationpages.clientpeoplepickerwebserviceinterface")
+    ], ClientPeoplePickerQuery);
+    return ClientPeoplePickerQuery;
+}(SharePointQueryable));
+
+/**
+ * Exposes social following methods
+ */
+var SocialQuery = /** @class */ (function (_super) {
+    __extends(SocialQuery, _super);
+    function SocialQuery() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SocialQuery_1 = SocialQuery;
+    Object.defineProperty(SocialQuery.prototype, "my", {
+        get: function () {
+            return new MySocialQuery(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets a URI to a site that lists the current user's followed sites.
+     */
+    SocialQuery.prototype.getFollowedSitesUri = function () {
+        return this.clone(SocialQuery_1, "FollowedSitesUri").get().then(function (r) {
+            return r.FollowedSitesUri || r;
+        });
+    };
+    /**
+     * Gets a URI to a site that lists the current user's followed documents.
+     */
+    SocialQuery.prototype.getFollowedDocumentsUri = function () {
+        return this.clone(SocialQuery_1, "FollowedDocumentsUri").get().then(function (r) {
+            return r.FollowedDocumentsUri || r;
+        });
+    };
+    /**
+     * Makes the current user start following a user, document, site, or tag
+     *
+     * @param actorInfo The actor to start following
+     */
+    SocialQuery.prototype.follow = function (actorInfo) {
+        return this.clone(SocialQuery_1, "follow").postCore({ body: this.createSocialActorInfoRequestBody(actorInfo) });
+    };
+    /**
+     * Indicates whether the current user is following a specified user, document, site, or tag
+     *
+     * @param actorInfo The actor to find the following status for
+     */
+    SocialQuery.prototype.isFollowed = function (actorInfo) {
+        return this.clone(SocialQuery_1, "isfollowed").postCore({ body: this.createSocialActorInfoRequestBody(actorInfo) });
+    };
+    /**
+     * Makes the current user stop following a user, document, site, or tag
+     *
+     * @param actorInfo The actor to stop following
+     */
+    SocialQuery.prototype.stopFollowing = function (actorInfo) {
+        return this.clone(SocialQuery_1, "stopfollowing").postCore({ body: this.createSocialActorInfoRequestBody(actorInfo) });
+    };
+    /**
+     * Creates SocialActorInfo request body
+     *
+     * @param actorInfo The actor to create request body
+     */
+    SocialQuery.prototype.createSocialActorInfoRequestBody = function (actorInfo) {
+        return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])({
+            "actor": Object.assign(metadata("SP.Social.SocialActorInfo"), {
+                Id: null,
+            }, actorInfo),
+        });
+    };
+    var SocialQuery_1;
+    SocialQuery = SocialQuery_1 = __decorate([
+        defaultPath("_api/social.following")
+    ], SocialQuery);
+    return SocialQuery;
+}(SharePointQueryableInstance));
+var MySocialQuery = /** @class */ (function (_super) {
+    __extends(MySocialQuery, _super);
+    function MySocialQuery() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MySocialQuery_1 = MySocialQuery;
+    /**
+     * Gets users, documents, sites, and tags that the current user is following.
+     *
+     * @param types Bitwise set of SocialActorTypes to retrieve
+     */
+    MySocialQuery.prototype.followed = function (types) {
+        return this.clone(MySocialQuery_1, "followed(types=" + types + ")").get().then(function (r) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "Followed") ? r.Followed.results : r;
+        });
+    };
+    /**
+     * Gets the count of users, documents, sites, and tags that the current user is following.
+     *
+     * @param types Bitwise set of SocialActorTypes to retrieve
+     */
+    MySocialQuery.prototype.followedCount = function (types) {
+        return this.clone(MySocialQuery_1, "followedcount(types=" + types + ")").get().then(function (r) {
+            return r.FollowedCount || r;
+        });
+    };
+    /**
+     * Gets the users who are following the current user.
+     */
+    MySocialQuery.prototype.followers = function () {
+        return this.clone(MySocialQuery_1, "followers").get().then(function (r) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "Followers") ? r.Followers.results : r;
+        });
+    };
+    /**
+     * Gets users who the current user might want to follow.
+     */
+    MySocialQuery.prototype.suggestions = function () {
+        return this.clone(MySocialQuery_1, "suggestions").get().then(function (r) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "Suggestions") ? r.Suggestions.results : r;
+        });
+    };
+    var MySocialQuery_1;
+    MySocialQuery = MySocialQuery_1 = __decorate([
+        defaultPath("my")
+    ], MySocialQuery);
+    return MySocialQuery;
+}(SharePointQueryableInstance));
+/**
+ * Social actor type
+ *
+ */
+var SocialActorType;
+(function (SocialActorType) {
+    SocialActorType[SocialActorType["User"] = 0] = "User";
+    SocialActorType[SocialActorType["Document"] = 1] = "Document";
+    SocialActorType[SocialActorType["Site"] = 2] = "Site";
+    SocialActorType[SocialActorType["Tag"] = 3] = "Tag";
+})(SocialActorType || (SocialActorType = {}));
+/**
+ * Social actor type
+ *
+ */
+/* tslint:disable:no-bitwise */
+var SocialActorTypes;
+(function (SocialActorTypes) {
+    SocialActorTypes[SocialActorTypes["None"] = 0] = "None";
+    SocialActorTypes[SocialActorTypes["User"] = 1] = "User";
+    SocialActorTypes[SocialActorTypes["Document"] = 2] = "Document";
+    SocialActorTypes[SocialActorTypes["Site"] = 4] = "Site";
+    SocialActorTypes[SocialActorTypes["Tag"] = 8] = "Tag";
+    /**
+     * The set excludes documents and sites that do not have feeds.
+     */
+    SocialActorTypes[SocialActorTypes["ExcludeContentWithoutFeeds"] = 268435456] = "ExcludeContentWithoutFeeds";
+    /**
+     * The set includes group sites
+     */
+    SocialActorTypes[SocialActorTypes["IncludeGroupsSites"] = 536870912] = "IncludeGroupsSites";
+    /**
+     * The set includes only items created within the last 24 hours
+     */
+    SocialActorTypes[SocialActorTypes["WithinLast24Hours"] = 1073741824] = "WithinLast24Hours";
+})(SocialActorTypes || (SocialActorTypes = {}));
+/* tslint:enable */
+/**
+ * Result from following
+ *
+ */
+var SocialFollowResult;
+(function (SocialFollowResult) {
+    SocialFollowResult[SocialFollowResult["Ok"] = 0] = "Ok";
+    SocialFollowResult[SocialFollowResult["AlreadyFollowing"] = 1] = "AlreadyFollowing";
+    SocialFollowResult[SocialFollowResult["LimitReached"] = 2] = "LimitReached";
+    SocialFollowResult[SocialFollowResult["InternalError"] = 3] = "InternalError";
+})(SocialFollowResult || (SocialFollowResult = {}));
+/**
+ * Specifies an exception or status code.
+ */
+var SocialStatusCode;
+(function (SocialStatusCode) {
+    /**
+     * The operation completed successfully
+     */
+    SocialStatusCode[SocialStatusCode["OK"] = 0] = "OK";
+    /**
+     * The request is invalid.
+     */
+    SocialStatusCode[SocialStatusCode["InvalidRequest"] = 1] = "InvalidRequest";
+    /**
+     *  The current user is not authorized to perform the operation.
+     */
+    SocialStatusCode[SocialStatusCode["AccessDenied"] = 2] = "AccessDenied";
+    /**
+     * The target of the operation was not found.
+     */
+    SocialStatusCode[SocialStatusCode["ItemNotFound"] = 3] = "ItemNotFound";
+    /**
+     * The operation is invalid for the target's current state.
+     */
+    SocialStatusCode[SocialStatusCode["InvalidOperation"] = 4] = "InvalidOperation";
+    /**
+     * The operation completed without modifying the target.
+     */
+    SocialStatusCode[SocialStatusCode["ItemNotModified"] = 5] = "ItemNotModified";
+    /**
+     * The operation failed because an internal error occurred.
+     */
+    SocialStatusCode[SocialStatusCode["InternalError"] = 6] = "InternalError";
+    /**
+     * The operation failed because the server could not access the distributed cache.
+     */
+    SocialStatusCode[SocialStatusCode["CacheReadError"] = 7] = "CacheReadError";
+    /**
+     * The operation succeeded but the server could not update the distributed cache.
+     */
+    SocialStatusCode[SocialStatusCode["CacheUpdateError"] = 8] = "CacheUpdateError";
+    /**
+     * No personal site exists for the current user, and no further information is available.
+     */
+    SocialStatusCode[SocialStatusCode["PersonalSiteNotFound"] = 9] = "PersonalSiteNotFound";
+    /**
+     * No personal site exists for the current user, and a previous attempt to create one failed.
+     */
+    SocialStatusCode[SocialStatusCode["FailedToCreatePersonalSite"] = 10] = "FailedToCreatePersonalSite";
+    /**
+     * No personal site exists for the current user, and a previous attempt to create one was not authorized.
+     */
+    SocialStatusCode[SocialStatusCode["NotAuthorizedToCreatePersonalSite"] = 11] = "NotAuthorizedToCreatePersonalSite";
+    /**
+     * No personal site exists for the current user, and no attempt should be made to create one.
+     */
+    SocialStatusCode[SocialStatusCode["CannotCreatePersonalSite"] = 12] = "CannotCreatePersonalSite";
+    /**
+     * The operation was rejected because an internal limit had been reached.
+     */
+    SocialStatusCode[SocialStatusCode["LimitReached"] = 13] = "LimitReached";
+    /**
+     * The operation failed because an error occurred during the processing of the specified attachment.
+     */
+    SocialStatusCode[SocialStatusCode["AttachmentError"] = 14] = "AttachmentError";
+    /**
+     * The operation succeeded with recoverable errors; the returned data is incomplete.
+     */
+    SocialStatusCode[SocialStatusCode["PartialData"] = 15] = "PartialData";
+    /**
+     * A required SharePoint feature is not enabled.
+     */
+    SocialStatusCode[SocialStatusCode["FeatureDisabled"] = 16] = "FeatureDisabled";
+    /**
+     * The site's storage quota has been exceeded.
+     */
+    SocialStatusCode[SocialStatusCode["StorageQuotaExceeded"] = 17] = "StorageQuotaExceeded";
+    /**
+     * The operation failed because the server could not access the database.
+     */
+    SocialStatusCode[SocialStatusCode["DatabaseError"] = 18] = "DatabaseError";
+})(SocialStatusCode || (SocialStatusCode = {}));
+
+/**
+ * Allows for calling of the static SP.Utilities.Utility methods by supplying the method name
+ */
+var UtilityMethod = /** @class */ (function (_super) {
+    __extends(UtilityMethod, _super);
+    /**
+     * Creates a new instance of the Utility method class
+     *
+     * @param baseUrl The parent url provider
+     * @param methodName The static method name to call on the utility class
+     */
+    function UtilityMethod(baseUrl, methodName) {
+        return _super.call(this, UtilityMethod.getBaseUrl(baseUrl), "_api/SP.Utilities.Utility." + methodName) || this;
+    }
+    UtilityMethod.getBaseUrl = function (candidate) {
+        if (typeof candidate === "string") {
+            return candidate;
+        }
+        var c = candidate;
+        var url = c.toUrl();
+        var index = url.indexOf("_api/");
+        if (index < 0) {
+            return url;
+        }
+        return url.substr(0, index);
+    };
+    UtilityMethod.prototype.excute = function (props) {
+        return this.postCore({
+            body: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["n" /* jsS */])(props),
+        });
+    };
+    /**
+     * Sends an email based on the supplied properties
+     *
+     * @param props The properties of the email to send
+     */
+    UtilityMethod.prototype.sendEmail = function (props) {
+        var params = {
+            properties: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(metadata("SP.Utilities.EmailProperties"), {
+                Body: props.Body,
+                From: props.From,
+                Subject: props.Subject,
+            }),
+        };
+        if (props.To && props.To.length > 0) {
+            params.properties = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(params.properties, {
+                To: { results: props.To },
+            });
+        }
+        if (props.CC && props.CC.length > 0) {
+            params.properties = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(params.properties, {
+                CC: { results: props.CC },
+            });
+        }
+        if (props.BCC && props.BCC.length > 0) {
+            params.properties = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(params.properties, {
+                BCC: { results: props.BCC },
+            });
+        }
+        if (props.AdditionalHeaders) {
+            params.properties = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(params.properties, {
+                AdditionalHeaders: props.AdditionalHeaders,
+            });
+        }
+        return this.clone(UtilityMethod, "SendEmail", true).excute(params);
+    };
+    UtilityMethod.prototype.getCurrentUserEmailAddresses = function () {
+        return this.clone(UtilityMethod, "GetCurrentUserEmailAddresses", true).excute({}).then(function (r) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "GetCurrentUserEmailAddresses") ? r.GetCurrentUserEmailAddresses : r;
+        });
+    };
+    UtilityMethod.prototype.resolvePrincipal = function (input, scopes, sources, inputIsEmailOnly, addToUserInfoList, matchUserInfoList) {
+        if (matchUserInfoList === void 0) { matchUserInfoList = false; }
+        var params = {
+            addToUserInfoList: addToUserInfoList,
+            input: input,
+            inputIsEmailOnly: inputIsEmailOnly,
+            matchUserInfoList: matchUserInfoList,
+            scopes: scopes,
+            sources: sources,
+        };
+        return this.clone(UtilityMethod, "ResolvePrincipalInCurrentContext", true).excute(params).then(function (r) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "ResolvePrincipalInCurrentContext") ? r.ResolvePrincipalInCurrentContext : r;
+        });
+    };
+    UtilityMethod.prototype.searchPrincipals = function (input, scopes, sources, groupName, maxCount) {
+        var params = {
+            groupName: groupName,
+            input: input,
+            maxCount: maxCount,
+            scopes: scopes,
+            sources: sources,
+        };
+        return this.clone(UtilityMethod, "SearchPrincipalsUsingContextWeb", true).excute(params).then(function (r) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "SearchPrincipalsUsingContextWeb") ? r.SearchPrincipalsUsingContextWeb : r;
+        });
+    };
+    UtilityMethod.prototype.createEmailBodyForInvitation = function (pageAddress) {
+        var params = {
+            pageAddress: pageAddress,
+        };
+        return this.clone(UtilityMethod, "CreateEmailBodyForInvitation", true).excute(params).then(function (r) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "CreateEmailBodyForInvitation") ? r.CreateEmailBodyForInvitation : r;
+        });
+    };
+    UtilityMethod.prototype.expandGroupsToPrincipals = function (inputs, maxCount) {
+        if (maxCount === void 0) { maxCount = 30; }
+        var params = {
+            inputs: inputs,
+            maxCount: maxCount,
+        };
+        return this.clone(UtilityMethod, "ExpandGroupsToPrincipals", true).excute(params).then(function (r) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "ExpandGroupsToPrincipals") ? r.ExpandGroupsToPrincipals : r;
+        });
+    };
+    UtilityMethod.prototype.createWikiPage = function (info) {
+        return this.clone(UtilityMethod, "CreateWikiPageInContextWeb", true).excute({
+            parameters: info,
+        }).then(function (r) {
+            return {
+                data: Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(r, "CreateWikiPageInContextWeb") ? r.CreateWikiPageInContextWeb : r,
+                file: new File(odataUrlFrom(r)),
+            };
+        });
+    };
+    /**
+     * Checks if file or folder name contains invalid characters
+     *
+     * @param input File or folder name to check
+     * @param onPremise Set to true for SharePoint On-Premise
+     * @returns True if contains invalid chars, false otherwise
+     */
+    UtilityMethod.prototype.containsInvalidFileFolderChars = function (input, onPremise) {
+        if (onPremise === void 0) { onPremise = false; }
+        if (onPremise) {
+            return UtilityMethod.InvalidFileFolderNameCharsOnPremiseRegex.test(input);
+        }
+        else {
+            return UtilityMethod.InvalidFileFolderNameCharsOnlineRegex.test(input);
+        }
+    };
+    /**
+     * Removes invalid characters from file or folder name
+     *
+     * @param input File or folder name
+     * @param replacer Value that will replace invalid characters
+     * @param onPremise Set to true for SharePoint On-Premise
+     * @returns File or folder name with replaced invalid characters
+     */
+    UtilityMethod.prototype.stripInvalidFileFolderChars = function (input, replacer, onPremise) {
+        if (replacer === void 0) { replacer = ""; }
+        if (onPremise === void 0) { onPremise = false; }
+        if (onPremise) {
+            return input.replace(UtilityMethod.InvalidFileFolderNameCharsOnPremiseRegex, replacer);
+        }
+        else {
+            return input.replace(UtilityMethod.InvalidFileFolderNameCharsOnlineRegex, replacer);
+        }
+    };
+    UtilityMethod.InvalidFileFolderNameCharsOnlineRegex = /["*:<>?/\\|\x00-\x1f\x7f-\x9f]/g;
+    UtilityMethod.InvalidFileFolderNameCharsOnPremiseRegex = /["#%*:<>?/\\|\x00-\x1f\x7f-\x9f]/g;
+    return UtilityMethod;
+}(SharePointQueryable));
+
+/**
+ * Describes a collection of Hub Sites
+ *
+ */
+var HubSites = /** @class */ (function (_super) {
+    __extends(HubSites, _super);
+    function HubSites() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Gets a Hub Site from the collection by id
+     *
+     * @param id The Id of the Hub Site
+     */
+    HubSites.prototype.getById = function (id) {
+        return new HubSite(this, "GetById?hubSiteId='" + id + "'");
+    };
+    HubSites = __decorate([
+        defaultPath("_api/hubsites")
+    ], HubSites);
+    return HubSites;
+}(SharePointQueryableCollection));
+var HubSite = /** @class */ (function (_super) {
+    __extends(HubSite, _super);
+    function HubSite() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return HubSite;
+}(SharePointQueryableInstance));
+
+/**
+ * Root of the SharePoint REST module
+ */
+var SPRest = /** @class */ (function () {
+    /**
+     * Creates a new instance of the SPRest class
+     *
+     * @param options Additional options
+     * @param baseUrl A string that should form the base part of the url
+     */
+    function SPRest(_options, _baseUrl) {
+        if (_options === void 0) { _options = {}; }
+        if (_baseUrl === void 0) { _baseUrl = ""; }
+        this._options = _options;
+        this._baseUrl = _baseUrl;
+    }
+    /**
+     * Configures instance with additional options and baseUrl.
+     * Provided configuration used by other objects in a chain
+     *
+     * @param options Additional options
+     * @param baseUrl A string that should form the base part of the url
+     */
+    SPRest.prototype.configure = function (options, baseUrl) {
+        if (baseUrl === void 0) { baseUrl = ""; }
+        return new SPRest(options, baseUrl);
+    };
+    /**
+     * Global SharePoint configuration options
+     *
+     * @param config The SharePoint configuration to apply
+     */
+    SPRest.prototype.setup = function (config) {
+        setup(config);
+    };
+    /**
+     * Executes a search against this web context
+     *
+     * @param query The SearchQuery definition
+     */
+    SPRest.prototype.searchSuggest = function (query) {
+        var finalQuery;
+        if (typeof query === "string") {
+            finalQuery = { querytext: query };
+        }
+        else {
+            finalQuery = query;
+        }
+        return this.create(SearchSuggest).execute(finalQuery);
+    };
+    /**
+     * Executes a search against this web context
+     *
+     * @param query The SearchQuery definition
+     */
+    SPRest.prototype.search = function (query) {
+        return this.create(Search).execute(query);
+    };
+    /**
+     * Executes the provided search query, caching the results
+     *
+     * @param query The SearchQuery definition
+     * @param options The set of caching options used to store the results
+     */
+    SPRest.prototype.searchWithCaching = function (query, options) {
+        return this.create(Search).usingCaching(options).execute(query);
+    };
+    Object.defineProperty(SPRest.prototype, "site", {
+        /**
+         * Begins a site collection scoped REST request
+         *
+         */
+        get: function () {
+            return this.create(Site);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SPRest.prototype, "web", {
+        /**
+         * Begins a web scoped REST request
+         *
+         */
+        get: function () {
+            return this.create(Web);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SPRest.prototype, "profiles", {
+        /**
+         * Access to user profile methods
+         *
+         */
+        get: function () {
+            return this.create(UserProfileQuery);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SPRest.prototype, "social", {
+        /**
+         * Access to social methods
+         */
+        get: function () {
+            return this.create(SocialQuery);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SPRest.prototype, "navigation", {
+        /**
+         * Access to the site collection level navigation service
+         */
+        get: function () {
+            return this.create(NavigationService);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Creates a new batch object for use with the SharePointQueryable.addToBatch method
+     *
+     */
+    SPRest.prototype.createBatch = function () {
+        return this.web.createBatch();
+    };
+    Object.defineProperty(SPRest.prototype, "utility", {
+        /**
+         * Static utilities methods from SP.Utilities.Utility
+         */
+        get: function () {
+            return this.create(UtilityMethod, "");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SPRest.prototype, "siteScripts", {
+        /**
+         * Access to sitescripts methods
+         */
+        get: function () {
+            return this.create(SiteScripts$1, "");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SPRest.prototype, "siteDesigns", {
+        /**
+         * Access to sitedesigns methods
+         */
+        get: function () {
+            return this.create(SiteDesigns, "");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SPRest.prototype, "hubSites", {
+        /**
+         * Access to Hub Site methods
+         */
+        get: function () {
+            return this.create(HubSites);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Gets the Web instance representing the tenant app catalog web
+     */
+    SPRest.prototype.getTenantAppCatalogWeb = function () {
+        var _this = this;
+        return this.create(Web, "_api/SP_TenantSettings_Current").get().then(function (r) {
+            return (new Web(r.CorporateCatalogUrl)).configure(_this._options);
+        });
+    };
+    /**
+     * Handles creating and configuring the objects returned from this class
+     *
+     * @param fm The factory method used to create the instance
+     * @param path Optional additional path information to pass to the factory method
+     */
+    SPRest.prototype.create = function (fm, path) {
+        return new fm(this._baseUrl, path).configure(this._options);
+    };
+    return SPRest;
+}());
+var sp = new SPRest();
+
+
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {/* unused harmony export AdalClient */
+/* unused harmony export SPFxAdalClient */
+/* unused harmony export objectToMap */
+/* unused harmony export mergeMaps */
+/* unused harmony export setup */
+/* unused harmony export RuntimeConfigImpl */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return RuntimeConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return mergeHeaders; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return mergeOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FetchClient; });
+/* unused harmony export BearerTokenFetchClient */
+/* unused harmony export PnPClientStorageWrapper */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return PnPClientStorage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getCtxCallback; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return dateAdd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return combine; });
+/* unused harmony export getRandomString */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return getGUID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return isFunc; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return objectDefinedNotNull; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return isArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return extend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return isUrlAbsolute; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return stringIsNullOrEmpty; });
+/* unused harmony export getAttrValueFromString */
+/* unused harmony export sanitizeGuid */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return jsS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return hOP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return getHashCode; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_adal_angular_dist_adal_min_js__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_adal_angular_dist_adal_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_adal_angular_dist_adal_min_js__);
+/**
+ * @license
+ * v1.3.5
+ * MIT (https://github.com/pnp/pnpjs/blob/master/LICENSE)
+ * Copyright (c) 2019 Microsoft
+ * docs: https://pnp.github.io/pnpjs/
+ * source: https://github.com/pnp/pnpjs
+ * bugs: https://github.com/pnp/pnpjs/issues
+ */
+
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var global$1 = (typeof global !== "undefined" ? global :
+            typeof self !== "undefined" ? self :
+            typeof window !== "undefined" ? window : {});
+
+/**
+ * Gets a callback function which will maintain context across async calls.
+ * Allows for the calling pattern getCtxCallback(thisobj, method, methodarg1, methodarg2, ...)
+ *
+ * @param context The object that will be the 'this' value in the callback
+ * @param method The method to which we will apply the context and parameters
+ * @param params Optional, additional arguments to supply to the wrapped method when it is invoked
+ */
+function getCtxCallback(context, method) {
+    var params = [];
+    for (var _i = 2; _i < arguments.length; _i++) {
+        params[_i - 2] = arguments[_i];
+    }
+    return function () {
+        method.apply(context, params);
+    };
+}
+/**
+ * Adds a value to a date
+ *
+ * @param date The date to which we will add units, done in local time
+ * @param interval The name of the interval to add, one of: ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute', 'second']
+ * @param units The amount to add to date of the given interval
+ *
+ * http://stackoverflow.com/questions/1197928/how-to-add-30-minutes-to-a-javascript-date-object
+ */
+function dateAdd(date, interval, units) {
+    var ret = new Date(date); // don't change original date
+    switch (interval.toLowerCase()) {
+        case "year":
+            ret.setFullYear(ret.getFullYear() + units);
+            break;
+        case "quarter":
+            ret.setMonth(ret.getMonth() + 3 * units);
+            break;
+        case "month":
+            ret.setMonth(ret.getMonth() + units);
+            break;
+        case "week":
+            ret.setDate(ret.getDate() + 7 * units);
+            break;
+        case "day":
+            ret.setDate(ret.getDate() + units);
+            break;
+        case "hour":
+            ret.setTime(ret.getTime() + units * 3600000);
+            break;
+        case "minute":
+            ret.setTime(ret.getTime() + units * 60000);
+            break;
+        case "second":
+            ret.setTime(ret.getTime() + units * 1000);
+            break;
+        default:
+            ret = undefined;
+            break;
+    }
+    return ret;
+}
+/**
+ * Combines an arbitrary set of paths ensuring and normalizes the slashes
+ *
+ * @param paths 0 to n path parts to combine
+ */
+function combine() {
+    var paths = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        paths[_i] = arguments[_i];
+    }
+    return paths
+        .filter(function (path) { return !stringIsNullOrEmpty(path); })
+        .map(function (path) { return path.replace(/^[\\|\/]/, "").replace(/[\\|\/]$/, ""); })
+        .join("/")
+        .replace(/\\/g, "/");
+}
+/**
+ * Gets a random string of chars length
+ *
+ * https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+ *
+ * @param chars The length of the random string to generate
+ */
+function getRandomString(chars) {
+    var text = new Array(chars);
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < chars; i++) {
+        text[i] = possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text.join("");
+}
+/**
+ * Gets a random GUID value
+ *
+ * http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+ * https://stackoverflow.com/a/8809472 updated to prevent collisions.
+ */
+/* tslint:disable no-bitwise */
+function getGUID() {
+    var d = Date.now();
+    if (typeof performance !== "undefined" && typeof performance.now === "function") {
+        d += performance.now(); // use high-precision timer if available
+    }
+    var guid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c === "x" ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return guid;
+}
+/* tslint:enable */
+/**
+ * Determines if a given value is a function
+ *
+ * @param cf The thing to test for functionness
+ */
+function isFunc(cf) {
+    return typeof cf === "function";
+}
+/**
+ * Determines if an object is both defined and not null
+ * @param obj Object to test
+ */
+function objectDefinedNotNull(obj) {
+    return typeof obj !== "undefined" && obj !== null;
+}
+/**
+ * @returns whether the provided parameter is a JavaScript Array or not.
+*/
+function isArray(array) {
+    if (Array.isArray) {
+        return Array.isArray(array);
+    }
+    return array && typeof array.length === "number" && array.constructor === Array;
+}
+/**
+ * Provides functionality to extend the given object by doing a shallow copy
+ *
+ * @param target The object to which properties will be copied
+ * @param source The source object from which properties will be copied
+ * @param noOverwrite If true existing properties on the target are not overwritten from the source
+ * @param filter If provided allows additional filtering on what properties are copied (propName: string) => boolean
+ *
+ */
+function extend(target, source, noOverwrite, filter) {
+    if (noOverwrite === void 0) { noOverwrite = false; }
+    if (filter === void 0) { filter = function () { return true; }; }
+    if (!objectDefinedNotNull(source)) {
+        return target;
+    }
+    // ensure we don't overwrite things we don't want overwritten
+    var check = noOverwrite ? function (o, i) { return !(i in o); } : function () { return true; };
+    // final filter we will use
+    var f = function (v) { return check(target, v) && filter(v); };
+    return Object.getOwnPropertyNames(source)
+        .filter(f)
+        .reduce(function (t, v) {
+        t[v] = source[v];
+        return t;
+    }, target);
+}
+/**
+ * Determines if a given url is absolute
+ *
+ * @param url The url to check to see if it is absolute
+ */
+function isUrlAbsolute(url) {
+    return /^https?:\/\/|^\/\//i.test(url);
+}
+/**
+ * Determines if a string is null or empty or undefined
+ *
+ * @param s The string to test
+ */
+function stringIsNullOrEmpty(s) {
+    return s === undefined || s === null || s.length < 1;
+}
+/**
+ * Gets an attribute value from an html/xml string block. NOTE: if the input attribute value has
+ * RegEx special characters they will be escaped in the returned string
+ *
+ * @param html HTML to search
+ * @param attrName The name of the attribute to find
+ */
+function getAttrValueFromString(html, attrName) {
+    // make the input safe for regex
+    html = html.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    var reg = new RegExp(attrName + "\\s*?=\\s*?(\"|')([^\\1]*?)\\1", "i");
+    var match = reg.exec(html);
+    return match !== null && match.length > 0 ? match[2] : null;
+}
+/**
+ * Ensures guid values are represented consistently as "ea123463-137d-4ae3-89b8-cf3fc578ca05"
+ *
+ * @param guid The candidate guid
+ */
+function sanitizeGuid(guid) {
+    if (stringIsNullOrEmpty(guid)) {
+        return guid;
+    }
+    var matches = /([0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})/i.exec(guid);
+    return matches === null ? guid : matches[1];
+}
+/**
+ * Shorthand for JSON.stringify
+ *
+ * @param o Any type of object
+ */
+function jsS(o) {
+    return JSON.stringify(o);
+}
+/**
+ * Shorthand for Object.hasOwnProperty
+ *
+ * @param o Object to check for
+ * @param p Name of the property
+ */
+function hOP(o, p) {
+    return Object.hasOwnProperty.call(o, p);
+}
+/**
+ * Generates a ~unique hash code
+ *
+ * From: https://stackoverflow.com/questions/6122571/simple-non-secure-hash-function-for-javascript
+ */
+// tslint:disable:no-bitwise
+function getHashCode(s) {
+    var hash = 0;
+    if (s.length === 0) {
+        return hash;
+    }
+    for (var i = 0; i < s.length; i++) {
+        var chr = s.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+}
+// tslint:enable:no-bitwise
+
+function mergeHeaders(target, source) {
+    if (source !== undefined && source !== null) {
+        var temp = new Request("", { headers: source });
+        temp.headers.forEach(function (value, name) {
+            target.append(name, value);
+        });
+    }
+}
+function mergeOptions(target, source) {
+    if (objectDefinedNotNull(source)) {
+        var headers = extend(target.headers || {}, source.headers);
+        target = extend(target, source);
+        target.headers = headers;
+    }
+}
+/**
+ * Makes requests using the global/window fetch API
+ */
+var FetchClient = /** @class */ (function () {
+    function FetchClient() {
+    }
+    FetchClient.prototype.fetch = function (url, options) {
+        return global$1.fetch(url, options);
+    };
+    return FetchClient;
+}());
+/**
+ * Makes requests using the fetch API adding the supplied token to the Authorization header
+ */
+var BearerTokenFetchClient = /** @class */ (function (_super) {
+    __extends(BearerTokenFetchClient, _super);
+    function BearerTokenFetchClient(_token) {
+        var _this = _super.call(this) || this;
+        _this._token = _token;
+        return _this;
+    }
+    Object.defineProperty(BearerTokenFetchClient.prototype, "token", {
+        get: function () {
+            return this._token || "";
+        },
+        set: function (token) {
+            this._token = token;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    BearerTokenFetchClient.prototype.fetch = function (url, options) {
+        if (options === void 0) { options = {}; }
+        var headers = new Headers();
+        mergeHeaders(headers, options.headers);
+        headers.set("Authorization", "Bearer " + this._token);
+        options.headers = headers;
+        return _super.prototype.fetch.call(this, url, options);
+    };
+    return BearerTokenFetchClient;
+}(FetchClient));
+
+/**
+ * Parses out the root of the request url to use as the resource when getting the token
+ *
+ * After: https://gist.github.com/jlong/2428561
+ * @param url The url to parse
+ */
+function getResource(url) {
+    var parser = document.createElement("a");
+    parser.href = url;
+    return parser.protocol + "//" + parser.hostname;
+}
+/**
+ * Azure AD Client for use in the browser
+ */
+var AdalClient = /** @class */ (function (_super) {
+    __extends(AdalClient, _super);
+    /**
+     * Creates a new instance of AdalClient
+     * @param clientId Azure App Id
+     * @param tenant Office 365 tenant (Ex: {tenant}.onmicrosoft.com)
+     * @param redirectUri The redirect url used to authenticate the
+     */
+    function AdalClient(clientId, tenant, redirectUri) {
+        var _this = _super.call(this, null) || this;
+        _this.clientId = clientId;
+        _this.tenant = tenant;
+        _this.redirectUri = redirectUri;
+        _this._displayCallback = null;
+        _this._loginPromise = null;
+        return _this;
+    }
+    /**
+     * Creates a new AdalClient using the values of the supplied SPFx context (requires SPFx >= 1.6)
+     *
+     * @param spfxContext Current SPFx context
+     * @description Using this method requires that the features described in this article
+     * https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient are activated in the tenant.
+     */
+    AdalClient.fromSPFxContext = function (spfxContext) {
+        return new SPFxAdalClient(spfxContext);
+    };
+    /**
+     * Conducts the fetch opertation against the AAD secured resource
+     *
+     * @param url Absolute URL for the request
+     * @param options Any fetch options passed to the underlying fetch implementation
+     */
+    AdalClient.prototype.fetch = function (url, options) {
+        var _this = this;
+        if (!isUrlAbsolute(url)) {
+            throw Error("You must supply absolute urls to AdalClient.fetch.");
+        }
+        // the url we are calling is the resource
+        return this.getToken(getResource(url)).then(function (token) {
+            _this.token = token;
+            return _super.prototype.fetch.call(_this, url, options);
+        });
+    };
+    /**
+     * Gets a token based on the current user
+     *
+     * @param resource The resource for which we are requesting a token
+     */
+    AdalClient.prototype.getToken = function (resource) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.ensureAuthContext().then(function (_) { return _this.login(); }).then(function (_) {
+                AdalClient._authContext.acquireToken(resource, function (message, token) {
+                    if (message) {
+                        return reject(Error(message));
+                    }
+                    resolve(token);
+                });
+            }).catch(reject);
+        });
+    };
+    /**
+     * Ensures we have created and setup the adal AuthenticationContext instance
+     */
+    AdalClient.prototype.ensureAuthContext = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            if (AdalClient._authContext === null) {
+                AdalClient._authContext = Object(__WEBPACK_IMPORTED_MODULE_0_adal_angular_dist_adal_min_js__["inject"])({
+                    clientId: _this.clientId,
+                    displayCall: function (url) {
+                        if (_this._displayCallback) {
+                            _this._displayCallback(url);
+                        }
+                    },
+                    navigateToLoginRequestUrl: false,
+                    redirectUri: _this.redirectUri,
+                    tenant: _this.tenant,
+                });
+            }
+            resolve();
+        });
+    };
+    /**
+     * Ensures the current user is logged in
+     */
+    AdalClient.prototype.login = function () {
+        var _this = this;
+        if (this._loginPromise) {
+            return this._loginPromise;
+        }
+        this._loginPromise = new Promise(function (resolve, reject) {
+            if (AdalClient._authContext.getCachedUser()) {
+                return resolve();
+            }
+            _this._displayCallback = function (url) {
+                var popupWindow = window.open(url, "login", "width=483, height=600");
+                if (!popupWindow) {
+                    return reject(Error("Could not open pop-up window for auth. Likely pop-ups are blocked by the browser."));
+                }
+                if (popupWindow && popupWindow.focus) {
+                    popupWindow.focus();
+                }
+                var pollTimer = window.setInterval(function () {
+                    if (!popupWindow || popupWindow.closed || popupWindow.closed === undefined) {
+                        window.clearInterval(pollTimer);
+                    }
+                    try {
+                        if (popupWindow.document.URL.indexOf(_this.redirectUri) !== -1) {
+                            window.clearInterval(pollTimer);
+                            AdalClient._authContext.handleWindowCallback(popupWindow.location.hash);
+                            popupWindow.close();
+                            resolve();
+                        }
+                    }
+                    catch (e) {
+                        reject(e);
+                    }
+                }, 30);
+            };
+            // this triggers the login process
+            _this.ensureAuthContext().then(function (_) {
+                AdalClient._authContext._loginInProgress = false;
+                AdalClient._authContext.login();
+                _this._displayCallback = null;
+            });
+        });
+        return this._loginPromise;
+    };
+    /**
+     * Our auth context
+     */
+    AdalClient._authContext = null;
+    return AdalClient;
+}(BearerTokenFetchClient));
+/**
+ * Client wrapping the aadTokenProvider available from SPFx >= 1.6
+ */
+var SPFxAdalClient = /** @class */ (function (_super) {
+    __extends(SPFxAdalClient, _super);
+    /**
+     *
+     * @param context provide the appropriate SPFx Context object
+     */
+    function SPFxAdalClient(context) {
+        var _this = _super.call(this, null) || this;
+        _this.context = context;
+        return _this;
+    }
+    /**
+     * Executes a fetch request using the supplied url and options
+     *
+     * @param url Absolute url of the request
+     * @param options Any options
+     */
+    SPFxAdalClient.prototype.fetch = function (url, options) {
+        var _this = this;
+        return this.getToken(getResource(url)).then(function (token) {
+            _this.token = token;
+            return _super.prototype.fetch.call(_this, url, options);
+        });
+    };
+    /**
+     * Gets an AAD token for the provided resource using the SPFx AADTokenProvider
+     *
+     * @param resource Resource for which a token is to be requested (ex: https://graph.microsoft.com)
+     */
+    SPFxAdalClient.prototype.getToken = function (resource) {
+        return this.context.aadTokenProviderFactory.getTokenProvider().then(function (provider) {
+            return provider.getToken(resource);
+        });
+    };
+    return SPFxAdalClient;
+}(BearerTokenFetchClient));
+
+/**
+ * Used to calculate the object properties, with polyfill if needed
+ */
+var objectEntries = isFunc(Object.entries) ? Object.entries : function (o) { return Object.keys(o).map(function (k) { return [k, o[k]]; }); };
+/**
+ * Converts the supplied object to a map
+ *
+ * @param o The object to map
+ */
+function objectToMap(o) {
+    if (o !== undefined && o !== null) {
+        return new Map(objectEntries(o));
+    }
+    return new Map();
+}
+/**
+ * Merges to Map instances together, overwriting values in target with matching keys, last in wins
+ *
+ * @param target map into which the other maps are merged
+ * @param maps One or more maps to merge into the target
+ */
+function mergeMaps(target) {
+    var maps = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        maps[_i - 1] = arguments[_i];
+    }
+    for (var i = 0; i < maps.length; i++) {
+        maps[i].forEach(function (v, k) {
+            target.set(k, v);
+        });
+    }
+    return target;
+}
+
+function setup(config) {
+    RuntimeConfig.extend(config);
+}
+// lable mapping for known config values
+var s = [
+    "defaultCachingStore",
+    "defaultCachingTimeoutSeconds",
+    "globalCacheDisable",
+    "enableCacheExpiration",
+    "cacheExpirationIntervalMilliseconds",
+    "spfxContext",
+];
+var RuntimeConfigImpl = /** @class */ (function () {
+    function RuntimeConfigImpl(_v) {
+        if (_v === void 0) { _v = new Map(); }
+        this._v = _v;
+        // setup defaults
+        this._v.set(s[0], "session");
+        this._v.set(s[1], 60);
+        this._v.set(s[2], false);
+        this._v.set(s[3], false);
+        this._v.set(s[4], 750);
+        this._v.set(s[5], null);
+    }
+    /**
+     *
+     * @param config The set of properties to add to the globa configuration instance
+     */
+    RuntimeConfigImpl.prototype.extend = function (config) {
+        this._v = mergeMaps(this._v, objectToMap(config));
+    };
+    RuntimeConfigImpl.prototype.get = function (key) {
+        return this._v.get(key);
+    };
+    Object.defineProperty(RuntimeConfigImpl.prototype, "defaultCachingStore", {
+        get: function () {
+            return this.get(s[0]);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RuntimeConfigImpl.prototype, "defaultCachingTimeoutSeconds", {
+        get: function () {
+            return this.get(s[1]);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RuntimeConfigImpl.prototype, "globalCacheDisable", {
+        get: function () {
+            return this.get(s[2]);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RuntimeConfigImpl.prototype, "enableCacheExpiration", {
+        get: function () {
+            return this.get(s[3]);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RuntimeConfigImpl.prototype, "cacheExpirationIntervalMilliseconds", {
+        get: function () {
+            return this.get(s[4]);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RuntimeConfigImpl.prototype, "spfxContext", {
+        get: function () {
+            return this.get(s[5]);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return RuntimeConfigImpl;
+}());
+var _runtimeConfig = new RuntimeConfigImpl();
+var RuntimeConfig = _runtimeConfig;
+
+/**
+ * A wrapper class to provide a consistent interface to browser based storage
+ *
+ */
+var PnPClientStorageWrapper = /** @class */ (function () {
+    /**
+     * Creates a new instance of the PnPClientStorageWrapper class
+     *
+     * @constructor
+     */
+    function PnPClientStorageWrapper(store, defaultTimeoutMinutes) {
+        if (defaultTimeoutMinutes === void 0) { defaultTimeoutMinutes = -1; }
+        this.store = store;
+        this.defaultTimeoutMinutes = defaultTimeoutMinutes;
+        this.enabled = this.test();
+        // if the cache timeout is enabled call the handler
+        // this will clear any expired items and set the timeout function
+        if (RuntimeConfig.enableCacheExpiration) {
+            this.cacheExpirationHandler();
+        }
+    }
+    /**
+     * Get a value from storage, or null if that value does not exist
+     *
+     * @param key The key whose value we want to retrieve
+     */
+    PnPClientStorageWrapper.prototype.get = function (key) {
+        if (!this.enabled) {
+            return null;
+        }
+        var o = this.store.getItem(key);
+        if (!objectDefinedNotNull(o)) {
+            return null;
+        }
+        var persistable = JSON.parse(o);
+        if (new Date(persistable.expiration) <= new Date()) {
+            this.delete(key);
+            return null;
+        }
+        else {
+            return persistable.value;
+        }
+    };
+    /**
+     * Adds a value to the underlying storage
+     *
+     * @param key The key to use when storing the provided value
+     * @param o The value to store
+     * @param expire Optional, if provided the expiration of the item, otherwise the default is used
+     */
+    PnPClientStorageWrapper.prototype.put = function (key, o, expire) {
+        if (this.enabled) {
+            this.store.setItem(key, this.createPersistable(o, expire));
+        }
+    };
+    /**
+     * Deletes a value from the underlying storage
+     *
+     * @param key The key of the pair we want to remove from storage
+     */
+    PnPClientStorageWrapper.prototype.delete = function (key) {
+        if (this.enabled) {
+            this.store.removeItem(key);
+        }
+    };
+    /**
+     * Gets an item from the underlying storage, or adds it if it does not exist using the supplied getter function
+     *
+     * @param key The key to use when storing the provided value
+     * @param getter A function which will upon execution provide the desired value
+     * @param expire Optional, if provided the expiration of the item, otherwise the default is used
+     */
+    PnPClientStorageWrapper.prototype.getOrPut = function (key, getter, expire) {
+        var _this = this;
+        if (!this.enabled) {
+            return getter();
+        }
+        var o = this.get(key);
+        if (o === null) {
+            return getter().then(function (d) {
+                _this.put(key, d, expire);
+                return d;
+            });
+        }
+        return Promise.resolve(o);
+    };
+    /**
+     * Deletes any expired items placed in the store by the pnp library, leaves other items untouched
+     */
+    PnPClientStorageWrapper.prototype.deleteExpired = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            if (!_this.enabled) {
+                resolve();
+            }
+            try {
+                for (var i = 0; i < _this.store.length; i++) {
+                    var key = _this.store.key(i);
+                    if (key !== null) {
+                        // test the stored item to see if we stored it
+                        if (/["|']?pnp["|']? ?: ?1/i.test(_this.store.getItem(key))) {
+                            // get those items as get will delete from cache if they are expired
+                            _this.get(key);
+                        }
+                    }
+                }
+                resolve();
+            }
+            catch (e) {
+                reject(e);
+            }
+        });
+    };
+    /**
+     * Used to determine if the wrapped storage is available currently
+     */
+    PnPClientStorageWrapper.prototype.test = function () {
+        var str = "t";
+        try {
+            this.store.setItem(str, str);
+            this.store.removeItem(str);
+            return true;
+        }
+        catch (e) {
+            return false;
+        }
+    };
+    /**
+     * Creates the persistable to store
+     */
+    PnPClientStorageWrapper.prototype.createPersistable = function (o, expire) {
+        if (expire === undefined) {
+            // ensure we are by default inline with the global library setting
+            var defaultTimeout = RuntimeConfig.defaultCachingTimeoutSeconds;
+            if (this.defaultTimeoutMinutes > 0) {
+                defaultTimeout = this.defaultTimeoutMinutes * 60;
+            }
+            expire = dateAdd(new Date(), "second", defaultTimeout);
+        }
+        return jsS({ pnp: 1, expiration: expire, value: o });
+    };
+    /**
+     * Deletes expired items added by this library in this.store and sets a timeout to call itself
+     */
+    PnPClientStorageWrapper.prototype.cacheExpirationHandler = function () {
+        var _this = this;
+        this.deleteExpired().then(function (_) {
+            // call ourself in the future
+            setTimeout(getCtxCallback(_this, _this.cacheExpirationHandler), RuntimeConfig.cacheExpirationIntervalMilliseconds);
+        }).catch(function (e) {
+            console.error(e);
+        });
+    };
+    return PnPClientStorageWrapper;
+}());
+/**
+ * A thin implementation of in-memory storage for use in nodejs
+ */
+var MemoryStorage = /** @class */ (function () {
+    function MemoryStorage(_store) {
+        if (_store === void 0) { _store = new Map(); }
+        this._store = _store;
+    }
+    Object.defineProperty(MemoryStorage.prototype, "length", {
+        get: function () {
+            return this._store.size;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MemoryStorage.prototype.clear = function () {
+        this._store.clear();
+    };
+    MemoryStorage.prototype.getItem = function (key) {
+        return this._store.get(key);
+    };
+    MemoryStorage.prototype.key = function (index) {
+        return Array.from(this._store)[index][0];
+    };
+    MemoryStorage.prototype.removeItem = function (key) {
+        this._store.delete(key);
+    };
+    MemoryStorage.prototype.setItem = function (key, data) {
+        this._store.set(key, data);
+    };
+    return MemoryStorage;
+}());
+/**
+ * A class that will establish wrappers for both local and session storage
+ */
+var PnPClientStorage = /** @class */ (function () {
+    /**
+     * Creates a new instance of the PnPClientStorage class
+     *
+     * @constructor
+     */
+    function PnPClientStorage(_local, _session) {
+        if (_local === void 0) { _local = null; }
+        if (_session === void 0) { _session = null; }
+        this._local = _local;
+        this._session = _session;
+    }
+    Object.defineProperty(PnPClientStorage.prototype, "local", {
+        /**
+         * Provides access to the local storage of the browser
+         */
+        get: function () {
+            if (this._local === null) {
+                this._local = this.getStore("local");
+            }
+            return this._local;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(PnPClientStorage.prototype, "session", {
+        /**
+         * Provides access to the session storage of the browser
+         */
+        get: function () {
+            if (this._session === null) {
+                this._session = this.getStore("session");
+            }
+            return this._session;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    PnPClientStorage.prototype.getStore = function (name) {
+        if (name === "local") {
+            return new PnPClientStorageWrapper(typeof (localStorage) === "undefined" ? new MemoryStorage() : localStorage);
+        }
+        return new PnPClientStorageWrapper(typeof (sessionStorage) === "undefined" ? new MemoryStorage() : sessionStorage);
+    };
+    return PnPClientStorage;
+}());
+
+
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Logger; });
+/* unused harmony export LogLevel */
+/* unused harmony export ConsoleListener */
+/* unused harmony export FunctionListener */
+/**
+ * @license
+ * v1.3.5
+ * MIT (https://github.com/pnp/pnpjs/blob/master/LICENSE)
+ * Copyright (c) 2019 Microsoft
+ * docs: https://pnp.github.io/pnpjs/
+ * source: https://github.com/pnp/pnpjs
+ * bugs: https://github.com/pnp/pnpjs/issues
+ */
+/**
+ * Class used to subscribe ILogListener and log messages throughout an application
+ *
+ */
+var Logger = /** @class */ (function () {
+    function Logger() {
+    }
+    Object.defineProperty(Logger, "activeLogLevel", {
+        /**
+         * Gets or sets the active log level to apply for log filtering
+         */
+        get: function () {
+            return Logger.instance.activeLogLevel;
+        },
+        set: function (value) {
+            Logger.instance.activeLogLevel = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Logger, "instance", {
+        get: function () {
+            if (Logger._instance === undefined || Logger._instance === null) {
+                Logger._instance = new LoggerImpl();
+            }
+            return Logger._instance;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Adds ILogListener instances to the set of subscribed listeners
+     *
+     * @param listeners One or more listeners to subscribe to this log
+     */
+    Logger.subscribe = function () {
+        var listeners = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            listeners[_i] = arguments[_i];
+        }
+        listeners.map(function (listener) { return Logger.instance.subscribe(listener); });
+    };
+    /**
+     * Clears the subscribers collection, returning the collection before modifiction
+     */
+    Logger.clearSubscribers = function () {
+        return Logger.instance.clearSubscribers();
+    };
+    Object.defineProperty(Logger, "count", {
+        /**
+         * Gets the current subscriber count
+         */
+        get: function () {
+            return Logger.instance.count;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Writes the supplied string to the subscribed listeners
+     *
+     * @param message The message to write
+     * @param level [Optional] if supplied will be used as the level of the entry (Default: LogLevel.Info)
+     */
+    Logger.write = function (message, level) {
+        if (level === void 0) { level = 1 /* Info */; }
+        Logger.instance.log({ level: level, message: message });
+    };
+    /**
+     * Writes the supplied string to the subscribed listeners
+     *
+     * @param json The json object to stringify and write
+     * @param level [Optional] if supplied will be used as the level of the entry (Default: LogLevel.Info)
+     */
+    Logger.writeJSON = function (json, level) {
+        if (level === void 0) { level = 1 /* Info */; }
+        this.write(JSON.stringify(json), level);
+    };
+    /**
+     * Logs the supplied entry to the subscribed listeners
+     *
+     * @param entry The message to log
+     */
+    Logger.log = function (entry) {
+        Logger.instance.log(entry);
+    };
+    /**
+     * Logs an error object to the subscribed listeners
+     *
+     * @param err The error object
+     */
+    Logger.error = function (err) {
+        Logger.instance.log({ data: err, level: 3 /* Error */, message: err.message });
+    };
+    return Logger;
+}());
+var LoggerImpl = /** @class */ (function () {
+    function LoggerImpl(activeLogLevel, subscribers) {
+        if (activeLogLevel === void 0) { activeLogLevel = 2 /* Warning */; }
+        if (subscribers === void 0) { subscribers = []; }
+        this.activeLogLevel = activeLogLevel;
+        this.subscribers = subscribers;
+    }
+    LoggerImpl.prototype.subscribe = function (listener) {
+        this.subscribers.push(listener);
+    };
+    LoggerImpl.prototype.clearSubscribers = function () {
+        var s = this.subscribers.slice(0);
+        this.subscribers.length = 0;
+        return s;
+    };
+    Object.defineProperty(LoggerImpl.prototype, "count", {
+        get: function () {
+            return this.subscribers.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    LoggerImpl.prototype.write = function (message, level) {
+        if (level === void 0) { level = 1 /* Info */; }
+        this.log({ level: level, message: message });
+    };
+    LoggerImpl.prototype.log = function (entry) {
+        if (entry !== undefined && this.activeLogLevel <= entry.level) {
+            this.subscribers.map(function (subscriber) { return subscriber.log(entry); });
+        }
+    };
+    return LoggerImpl;
+}());
+
+/**
+ * A set of logging levels
+ */
+var LogLevel;
+(function (LogLevel) {
+    LogLevel[LogLevel["Verbose"] = 0] = "Verbose";
+    LogLevel[LogLevel["Info"] = 1] = "Info";
+    LogLevel[LogLevel["Warning"] = 2] = "Warning";
+    LogLevel[LogLevel["Error"] = 3] = "Error";
+    LogLevel[LogLevel["Off"] = 99] = "Off";
+})(LogLevel || (LogLevel = {}));
+
+/**
+ * Implementation of LogListener which logs to the console
+ *
+ */
+var ConsoleListener = /** @class */ (function () {
+    function ConsoleListener() {
+    }
+    /**
+     * Any associated data that a given logging listener may choose to log or ignore
+     *
+     * @param entry The information to be logged
+     */
+    ConsoleListener.prototype.log = function (entry) {
+        var msg = this.format(entry);
+        switch (entry.level) {
+            case 0 /* Verbose */:
+            case 1 /* Info */:
+                console.log(msg);
+                break;
+            case 2 /* Warning */:
+                console.warn(msg);
+                break;
+            case 3 /* Error */:
+                console.error(msg);
+                break;
+        }
+    };
+    /**
+     * Formats the message
+     *
+     * @param entry The information to format into a string
+     */
+    ConsoleListener.prototype.format = function (entry) {
+        var msg = [];
+        msg.push("Message: " + entry.message);
+        if (entry.data !== undefined) {
+            try {
+                msg.push(" Data: " + JSON.stringify(entry.data));
+            }
+            catch (e) {
+                msg.push(" Data: Error in stringify of supplied data " + e);
+            }
+        }
+        return msg.join("");
+    };
+    return ConsoleListener;
+}());
+/**
+ * Implementation of LogListener which logs to the supplied function
+ *
+ */
+var FunctionListener = /** @class */ (function () {
+    /**
+     * Creates a new instance of the FunctionListener class
+     *
+     * @constructor
+     * @param  method The method to which any logging data will be passed
+     */
+    function FunctionListener(method) {
+        this.method = method;
+    }
+    /**
+     * Any associated data that a given logging listener may choose to log or ignore
+     *
+     * @param entry The information to be logged
+     */
+    FunctionListener.prototype.log = function (entry) {
+        this.method(entry);
+    };
+    return FunctionListener;
+}());
+
+
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__microsoft_decorators__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__microsoft_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__microsoft_decorators__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__microsoft_sp_application_base__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__microsoft_sp_application_base___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__microsoft_sp_application_base__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pnp_sp__ = __webpack_require__(0);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var LOG_SOURCE = 'GuestMessageApplicationCustomizer';
+var GuestMessageApplicationCustomizer = /** @class */ (function (_super) {
+    __extends(GuestMessageApplicationCustomizer, _super);
+    function GuestMessageApplicationCustomizer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    GuestMessageApplicationCustomizer.prototype.onInit = function () {
+        __WEBPACK_IMPORTED_MODULE_2__pnp_sp__["b" /* sp */].setup({ spfxContext: this.context });
+        __WEBPACK_IMPORTED_MODULE_2__pnp_sp__["b" /* sp */].web.currentUser.get().then(function (result) {
+            if (result.LoginName.match("#ext#")) {
+                console.log("External User");
+            }
+            else {
+                console.log("Internal User");
+            }
+        });
+        this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
+        return Promise.resolve();
+    };
+    GuestMessageApplicationCustomizer.prototype._renderPlaceHolders = function () {
+        if (!this._topPlaceholder) {
+            this._topPlaceholder = this.context.placeholderProvider.tryCreateContent(__WEBPACK_IMPORTED_MODULE_1__microsoft_sp_application_base__["PlaceholderName"].Top);
+        }
+    };
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_0__microsoft_decorators__["override"]
+    ], GuestMessageApplicationCustomizer.prototype, "onInit", null);
+    return GuestMessageApplicationCustomizer;
+}(__WEBPACK_IMPORTED_MODULE_1__microsoft_sp_application_base__["BaseApplicationCustomizer"]));
+/* harmony default export */ __webpack_exports__["default"] = (GuestMessageApplicationCustomizer);
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+/*! adal-angular v1.0.17 2018-02-27 */
+var AuthenticationContext=function(){"use strict";return AuthenticationContext=function(a){if(this.REQUEST_TYPE={LOGIN:"LOGIN",RENEW_TOKEN:"RENEW_TOKEN",UNKNOWN:"UNKNOWN"},this.RESPONSE_TYPE={ID_TOKEN_TOKEN:"id_token token",TOKEN:"token"},this.CONSTANTS={ACCESS_TOKEN:"access_token",EXPIRES_IN:"expires_in",ID_TOKEN:"id_token",ERROR_DESCRIPTION:"error_description",SESSION_STATE:"session_state",ERROR:"error",STORAGE:{TOKEN_KEYS:"adal.token.keys",ACCESS_TOKEN_KEY:"adal.access.token.key",EXPIRATION_KEY:"adal.expiration.key",STATE_LOGIN:"adal.state.login",STATE_RENEW:"adal.state.renew",NONCE_IDTOKEN:"adal.nonce.idtoken",SESSION_STATE:"adal.session.state",USERNAME:"adal.username",IDTOKEN:"adal.idtoken",ERROR:"adal.error",ERROR_DESCRIPTION:"adal.error.description",LOGIN_REQUEST:"adal.login.request",LOGIN_ERROR:"adal.login.error",RENEW_STATUS:"adal.token.renew.status",ANGULAR_LOGIN_REQUEST:"adal.angular.login.request"},RESOURCE_DELIMETER:"|",CACHE_DELIMETER:"||",LOADFRAME_TIMEOUT:6e3,TOKEN_RENEW_STATUS_CANCELED:"Canceled",TOKEN_RENEW_STATUS_COMPLETED:"Completed",TOKEN_RENEW_STATUS_IN_PROGRESS:"In Progress",LOGGING_LEVEL:{ERROR:0,WARN:1,INFO:2,VERBOSE:3},LEVEL_STRING_MAP:{0:"ERROR:",1:"WARNING:",2:"INFO:",3:"VERBOSE:"},POPUP_WIDTH:483,POPUP_HEIGHT:600},AuthenticationContext.prototype._singletonInstance)return AuthenticationContext.prototype._singletonInstance;if(AuthenticationContext.prototype._singletonInstance=this,this.instance="https://login.microsoftonline.com/",this.config={},this.callback=null,this.popUp=!1,this.isAngular=!1,this._user=null,this._activeRenewals={},this._loginInProgress=!1,this._acquireTokenInProgress=!1,this._renewStates=[],this._callBackMappedToRenewStates={},this._callBacksMappedToRenewStates={},this._openedWindows=[],this._requestType=this.REQUEST_TYPE.LOGIN,window._adalInstance=this,a.displayCall&&"function"!=typeof a.displayCall)throw new Error("displayCall is not a function");if(!a.clientId)throw new Error("clientId is required");this.config=this._cloneConfig(a),void 0===this.config.navigateToLoginRequestUrl&&(this.config.navigateToLoginRequestUrl=!0),this.config.popUp&&(this.popUp=!0),this.config.callback&&"function"==typeof this.config.callback&&(this.callback=this.config.callback),this.config.instance&&(this.instance=this.config.instance),this.config.loginResource||(this.config.loginResource=this.config.clientId),this.config.redirectUri||(this.config.redirectUri=window.location.href.split("?")[0].split("#")[0]),this.config.postLogoutRedirectUri||(this.config.postLogoutRedirectUri=window.location.href.split("?")[0].split("#")[0]),this.config.anonymousEndpoints||(this.config.anonymousEndpoints=[]),this.config.isAngular&&(this.isAngular=this.config.isAngular),this.config.loadFrameTimeout&&(this.CONSTANTS.LOADFRAME_TIMEOUT=this.config.loadFrameTimeout)},"undefined"!=typeof window&&(window.Logging={piiLoggingEnabled:!1,level:0,log:function(a){}}),AuthenticationContext.prototype.login=function(){if(this._loginInProgress)return void this.info("Login in progress");this._loginInProgress=!0;var a=this._guid();this.config.state=a,this._idTokenNonce=this._guid();var b=this._getItem(this.CONSTANTS.STORAGE.ANGULAR_LOGIN_REQUEST);b&&""!==b?this._saveItem(this.CONSTANTS.STORAGE.ANGULAR_LOGIN_REQUEST,""):b=window.location.href,this.verbose("Expected state: "+a+" startPage:"+b),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_REQUEST,b),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.STATE_LOGIN,a,!0),this._saveItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN,this._idTokenNonce,!0),this._saveItem(this.CONSTANTS.STORAGE.ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,"");var c=this._getNavigateUrl("id_token",null)+"&nonce="+encodeURIComponent(this._idTokenNonce);this.config.displayCall?this.config.displayCall(c):this.popUp?(this._saveItem(this.CONSTANTS.STORAGE.STATE_LOGIN,""),this._renewStates.push(a),this.registerCallback(a,this.config.clientId,this.callback),this._loginPopup(c)):this.promptUser(c)},AuthenticationContext.prototype._openPopup=function(a,b,c,d){try{var e=window.screenLeft?window.screenLeft:window.screenX,f=window.screenTop?window.screenTop:window.screenY,g=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,h=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,i=g/2-c/2+e,j=h/2-d/2+f,k=window.open(a,b,"width="+c+", height="+d+", top="+j+", left="+i);return k.focus&&k.focus(),k}catch(a){return this.warn("Error opening popup, "+a.message),this._loginInProgress=!1,this._acquireTokenInProgress=!1,null}},AuthenticationContext.prototype._handlePopupError=function(a,b,c,d,e){this.warn(d),this._saveItem(this.CONSTANTS.STORAGE.ERROR,c),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,d),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,e),b&&this._activeRenewals[b]&&(this._activeRenewals[b]=null),this._loginInProgress=!1,this._acquireTokenInProgress=!1,a&&a(d,null,c)},AuthenticationContext.prototype._loginPopup=function(a,b,c){var d=this._openPopup(a,"login",this.CONSTANTS.POPUP_WIDTH,this.CONSTANTS.POPUP_HEIGHT),e=c||this.callback;if(null==d){var f="Popup Window is null. This can happen if you are using IE";return void this._handlePopupError(e,b,"Error opening popup",f,f)}if(this._openedWindows.push(d),-1!=this.config.redirectUri.indexOf("#"))var g=this.config.redirectUri.split("#")[0];else var g=this.config.redirectUri;var h=this,i=window.setInterval(function(){if(!d||d.closed||void 0===d.closed){var a="Popup Window closed",c="Popup Window closed by UI action/ Popup Window handle destroyed due to cross zone navigation in IE/Edge";return h.isAngular&&h._broadcast("adal:popUpClosed",c+h.CONSTANTS.RESOURCE_DELIMETER+a),h._handlePopupError(e,b,a,c,c),void window.clearInterval(i)}try{var f=d.location;if(-1!=encodeURI(f.href).indexOf(encodeURI(g)))return h.isAngular?h._broadcast("adal:popUpHashChanged",f.hash):h.handleWindowCallback(f.hash),window.clearInterval(i),h._loginInProgress=!1,h._acquireTokenInProgress=!1,h.info("Closing popup window"),h._openedWindows=[],void d.close()}catch(a){}},1)},AuthenticationContext.prototype._broadcast=function(a,b){!function(){function a(a,b){b=b||{bubbles:!1,cancelable:!1,detail:void 0};var c=document.createEvent("CustomEvent");return c.initCustomEvent(a,b.bubbles,b.cancelable,b.detail),c}if("function"==typeof window.CustomEvent)return!1;a.prototype=window.Event.prototype,window.CustomEvent=a}();var c=new CustomEvent(a,{detail:b});window.dispatchEvent(c)},AuthenticationContext.prototype.loginInProgress=function(){return this._loginInProgress},AuthenticationContext.prototype._hasResource=function(a){var b=this._getItem(this.CONSTANTS.STORAGE.TOKEN_KEYS);return b&&!this._isEmpty(b)&&b.indexOf(a+this.CONSTANTS.RESOURCE_DELIMETER)>-1},AuthenticationContext.prototype.getCachedToken=function(a){if(!this._hasResource(a))return null;var b=this._getItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+a),c=this._getItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+a),d=this.config.expireOffsetSeconds||300;return c&&c>this._now()+d?b:(this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+a,""),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+a,0),null)},AuthenticationContext.prototype.getCachedUser=function(){if(this._user)return this._user;var a=this._getItem(this.CONSTANTS.STORAGE.IDTOKEN);return this._user=this._createUser(a),this._user},AuthenticationContext.prototype.registerCallback=function(a,b,c){this._activeRenewals[b]=a,this._callBacksMappedToRenewStates[a]||(this._callBacksMappedToRenewStates[a]=[]);var d=this;this._callBacksMappedToRenewStates[a].push(c),this._callBackMappedToRenewStates[a]||(this._callBackMappedToRenewStates[a]=function(c,e,f,g){d._activeRenewals[b]=null;for(var h=0;h<d._callBacksMappedToRenewStates[a].length;++h)try{d._callBacksMappedToRenewStates[a][h](c,e,f,g)}catch(f){d.warn(f)}d._callBacksMappedToRenewStates[a]=null,d._callBackMappedToRenewStates[a]=null})},AuthenticationContext.prototype._renewToken=function(a,b,c){this.info("renewToken is called for resource:"+a);var d=this._addAdalFrame("adalRenewFrame"+a),e=this._guid()+"|"+a;this.config.state=e,this._renewStates.push(e),this.verbose("Renew token Expected state: "+e),c=c||"token";var f=this._urlRemoveQueryStringParameter(this._getNavigateUrl(c,a),"prompt");c===this.RESPONSE_TYPE.ID_TOKEN_TOKEN&&(this._idTokenNonce=this._guid(),this._saveItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN,this._idTokenNonce,!0),f+="&nonce="+encodeURIComponent(this._idTokenNonce)),f+="&prompt=none",f=this._addHintParameters(f),this.registerCallback(e,a,b),this.verbosePii("Navigate to:"+f),d.src="about:blank",this._loadFrameTimeout(f,"adalRenewFrame"+a,a)},AuthenticationContext.prototype._renewIdToken=function(a,b){this.info("renewIdToken is called");var c=this._addAdalFrame("adalIdTokenFrame"),d=this._guid()+"|"+this.config.clientId;this._idTokenNonce=this._guid(),this._saveItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN,this._idTokenNonce,!0),this.config.state=d,this._renewStates.push(d),this.verbose("Renew Idtoken Expected state: "+d);var e=null===b||void 0===b?null:this.config.clientId,b=b||"id_token",f=this._urlRemoveQueryStringParameter(this._getNavigateUrl(b,e),"prompt");f+="&prompt=none",f=this._addHintParameters(f),f+="&nonce="+encodeURIComponent(this._idTokenNonce),this.registerCallback(d,this.config.clientId,a),this.verbosePii("Navigate to:"+f),c.src="about:blank",this._loadFrameTimeout(f,"adalIdTokenFrame",this.config.clientId)},AuthenticationContext.prototype._urlContainsQueryStringParameter=function(a,b){return new RegExp("[\\?&]"+a+"=").test(b)},AuthenticationContext.prototype._urlRemoveQueryStringParameter=function(a,b){var c=new RegExp("(\\&"+b+"=)[^&]+");return a=a.replace(c,""),c=new RegExp("("+b+"=)[^&]+&"),a=a.replace(c,""),c=new RegExp("("+b+"=)[^&]+"),a=a.replace(c,"")},AuthenticationContext.prototype._loadFrameTimeout=function(a,b,c){this.verbose("Set loading state to pending for: "+c),this._saveItem(this.CONSTANTS.STORAGE.RENEW_STATUS+c,this.CONSTANTS.TOKEN_RENEW_STATUS_IN_PROGRESS),this._loadFrame(a,b);var d=this;setTimeout(function(){if(d._getItem(d.CONSTANTS.STORAGE.RENEW_STATUS+c)===d.CONSTANTS.TOKEN_RENEW_STATUS_IN_PROGRESS){d.verbose("Loading frame has timed out after: "+d.CONSTANTS.LOADFRAME_TIMEOUT/1e3+" seconds for resource "+c);var a=d._activeRenewals[c];a&&d._callBackMappedToRenewStates[a]&&d._callBackMappedToRenewStates[a]("Token renewal operation failed due to timeout",null,"Token Renewal Failed"),d._saveItem(d.CONSTANTS.STORAGE.RENEW_STATUS+c,d.CONSTANTS.TOKEN_RENEW_STATUS_CANCELED)}},d.CONSTANTS.LOADFRAME_TIMEOUT)},AuthenticationContext.prototype._loadFrame=function(a,b){var c=this;c.info("LoadFrame: "+b);var d=b;setTimeout(function(){var b=c._addAdalFrame(d);""!==b.src&&"about:blank"!==b.src||(b.src=a,c._loadFrame(a,d))},500)},AuthenticationContext.prototype.acquireToken=function(a,b){if(this._isEmpty(a))return this.warn("resource is required"),void b("resource is required",null,"resource is required");var c=this.getCachedToken(a);return c?(this.info("Token is already in cache for resource:"+a),void b(null,c,null)):this._user||this.config.extraQueryParameter&&-1!==this.config.extraQueryParameter.indexOf("login_hint")?void(this._activeRenewals[a]?this.registerCallback(this._activeRenewals[a],a,b):(this._requestType=this.REQUEST_TYPE.RENEW_TOKEN,a===this.config.clientId?this._user?(this.verbose("renewing idtoken"),this._renewIdToken(b)):(this.verbose("renewing idtoken and access_token"),this._renewIdToken(b,this.RESPONSE_TYPE.ID_TOKEN_TOKEN)):this._user?(this.verbose("renewing access_token"),this._renewToken(a,b)):(this.verbose("renewing idtoken and access_token"),this._renewToken(a,b,this.RESPONSE_TYPE.ID_TOKEN_TOKEN)))):(this.warn("User login is required"),void b("User login is required",null,"login required"))},AuthenticationContext.prototype.acquireTokenPopup=function(a,b,c,d){if(this._isEmpty(a))return this.warn("resource is required"),void d("resource is required",null,"resource is required");if(!this._user)return this.warn("User login is required"),void d("User login is required",null,"login required");if(this._acquireTokenInProgress)return this.warn("Acquire token interactive is already in progress"),void d("Acquire token interactive is already in progress",null,"Acquire token interactive is already in progress");var e=this._guid()+"|"+a;this.config.state=e,this._renewStates.push(e),this._requestType=this.REQUEST_TYPE.RENEW_TOKEN,this.verbose("Renew token Expected state: "+e);var f=this._urlRemoveQueryStringParameter(this._getNavigateUrl("token",a),"prompt");if(f+="&prompt=select_account",b&&(f+=b),c&&-1===f.indexOf("&claims"))f+="&claims="+encodeURIComponent(c);else if(c&&-1!==f.indexOf("&claims"))throw new Error("Claims cannot be passed as an extraQueryParameter");f=this._addHintParameters(f),this._acquireTokenInProgress=!0,this.info("acquireToken interactive is called for the resource "+a),this.registerCallback(e,a,d),this._loginPopup(f,a,d)},AuthenticationContext.prototype.acquireTokenRedirect=function(a,b,c){if(this._isEmpty(a))return this.warn("resource is required"),void d("resource is required",null,"resource is required");var d=this.callback;if(!this._user)return this.warn("User login is required"),void d("User login is required",null,"login required");if(this._acquireTokenInProgress)return this.warn("Acquire token interactive is already in progress"),void d("Acquire token interactive is already in progress",null,"Acquire token interactive is already in progress");var e=this._guid()+"|"+a;this.config.state=e,this.verbose("Renew token Expected state: "+e);var f=this._urlRemoveQueryStringParameter(this._getNavigateUrl("token",a),"prompt");if(f+="&prompt=select_account",b&&(f+=b),c&&-1===f.indexOf("&claims"))f+="&claims="+encodeURIComponent(c);else if(c&&-1!==f.indexOf("&claims"))throw new Error("Claims cannot be passed as an extraQueryParameter");f=this._addHintParameters(f),this._acquireTokenInProgress=!0,this.info("acquireToken interactive is called for the resource "+a),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_REQUEST,window.location.href),this._saveItem(this.CONSTANTS.STORAGE.STATE_RENEW,e,!0),this.promptUser(f)},AuthenticationContext.prototype.promptUser=function(a){a?(this.infoPii("Navigate to:"+a),window.location.replace(a)):this.info("Navigate url is empty")},AuthenticationContext.prototype.clearCache=function(){this._saveItem(this.CONSTANTS.STORAGE.LOGIN_REQUEST,""),this._saveItem(this.CONSTANTS.STORAGE.ANGULAR_LOGIN_REQUEST,""),this._saveItem(this.CONSTANTS.STORAGE.SESSION_STATE,""),this._saveItem(this.CONSTANTS.STORAGE.STATE_LOGIN,""),this._saveItem(this.CONSTANTS.STORAGE.STATE_RENEW,""),this._renewStates=[],this._saveItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN,""),this._saveItem(this.CONSTANTS.STORAGE.IDTOKEN,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,""),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,"");var a=this._getItem(this.CONSTANTS.STORAGE.TOKEN_KEYS);if(!this._isEmpty(a)){a=a.split(this.CONSTANTS.RESOURCE_DELIMETER);for(var b=0;b<a.length&&""!==a[b];b++)this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+a[b],""),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+a[b],0)}this._saveItem(this.CONSTANTS.STORAGE.TOKEN_KEYS,"")},AuthenticationContext.prototype.clearCacheForResource=function(a){this._saveItem(this.CONSTANTS.STORAGE.STATE_RENEW,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,""),this._hasResource(a)&&(this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+a,""),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+a,0))},AuthenticationContext.prototype.logOut=function(){this.clearCache(),this._user=null;var a;if(this.config.logOutUri)a=this.config.logOutUri;else{var b="common",c="";this.config.tenant&&(b=this.config.tenant),this.config.postLogoutRedirectUri&&(c="post_logout_redirect_uri="+encodeURIComponent(this.config.postLogoutRedirectUri)),a=this.instance+b+"/oauth2/logout?"+c}this.infoPii("Logout navigate to: "+a),this.promptUser(a)},AuthenticationContext.prototype._isEmpty=function(a){return void 0===a||!a||0===a.length},AuthenticationContext.prototype.getUser=function(a){if("function"!=typeof a)throw new Error("callback is not a function");if(this._user)return void a(null,this._user);var b=this._getItem(this.CONSTANTS.STORAGE.IDTOKEN);this._isEmpty(b)?(this.warn("User information is not available"),a("User information is not available",null)):(this.info("User exists in cache: "),this._user=this._createUser(b),a(null,this._user))},AuthenticationContext.prototype._addHintParameters=function(a){if(this._user&&this._user.profile)if(this._user.profile.sid&&-1!==a.indexOf("&prompt=none"))this._urlContainsQueryStringParameter("sid",a)||(a+="&sid="+encodeURIComponent(this._user.profile.sid));else if(this._user.profile.upn&&(this._urlContainsQueryStringParameter("login_hint",a)||(a+="&login_hint="+encodeURIComponent(this._user.profile.upn)),!this._urlContainsQueryStringParameter("domain_hint",a)&&this._user.profile.upn.indexOf("@")>-1)){var b=this._user.profile.upn.split("@");a+="&domain_hint="+encodeURIComponent(b[b.length-1])}return a},AuthenticationContext.prototype._createUser=function(a){var b=null,c=this._extractIdToken(a);return c&&c.hasOwnProperty("aud")&&(c.aud.toLowerCase()===this.config.clientId.toLowerCase()?(b={userName:"",profile:c},c.hasOwnProperty("upn")?b.userName=c.upn:c.hasOwnProperty("email")&&(b.userName=c.email)):this.warn("IdToken has invalid aud field")),b},AuthenticationContext.prototype._getHash=function(a){return a.indexOf("#/")>-1?a=a.substring(a.indexOf("#/")+2):a.indexOf("#")>-1&&(a=a.substring(1)),a},AuthenticationContext.prototype.isCallback=function(a){a=this._getHash(a);var b=this._deserialize(a);return b.hasOwnProperty(this.CONSTANTS.ERROR_DESCRIPTION)||b.hasOwnProperty(this.CONSTANTS.ACCESS_TOKEN)||b.hasOwnProperty(this.CONSTANTS.ID_TOKEN)},AuthenticationContext.prototype.getLoginError=function(){return this._getItem(this.CONSTANTS.STORAGE.LOGIN_ERROR)},AuthenticationContext.prototype.getRequestInfo=function(a){a=this._getHash(a);var b=this._deserialize(a),c={valid:!1,parameters:{},stateMatch:!1,stateResponse:"",requestType:this.REQUEST_TYPE.UNKNOWN};if(b&&(c.parameters=b,b.hasOwnProperty(this.CONSTANTS.ERROR_DESCRIPTION)||b.hasOwnProperty(this.CONSTANTS.ACCESS_TOKEN)||b.hasOwnProperty(this.CONSTANTS.ID_TOKEN))){c.valid=!0;var d="";if(!b.hasOwnProperty("state"))return this.warn("No state returned"),c;if(this.verbose("State: "+b.state),d=b.state,c.stateResponse=d,this._matchState(c))return c;if(!c.stateMatch&&window.parent){c.requestType=this._requestType;for(var e=this._renewStates,f=0;f<e.length;f++)if(e[f]===c.stateResponse){c.stateMatch=!0;break}}}return c},AuthenticationContext.prototype._matchNonce=function(a){var b=this._getItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN);if(b){b=b.split(this.CONSTANTS.CACHE_DELIMETER);for(var c=0;c<b.length;c++)if(b[c]===a.profile.nonce)return!0}return!1},AuthenticationContext.prototype._matchState=function(a){var b=this._getItem(this.CONSTANTS.STORAGE.STATE_LOGIN);if(b){b=b.split(this.CONSTANTS.CACHE_DELIMETER);for(var c=0;c<b.length;c++)if(b[c]===a.stateResponse)return a.requestType=this.REQUEST_TYPE.LOGIN,a.stateMatch=!0,!0}var d=this._getItem(this.CONSTANTS.STORAGE.STATE_RENEW);if(d){d=d.split(this.CONSTANTS.CACHE_DELIMETER);for(var c=0;c<d.length;c++)if(d[c]===a.stateResponse)return a.requestType=this.REQUEST_TYPE.RENEW_TOKEN,a.stateMatch=!0,!0}return!1},AuthenticationContext.prototype._getResourceFromState=function(a){if(a){var b=a.indexOf("|");if(b>-1&&b+1<a.length)return a.substring(b+1)}return""},AuthenticationContext.prototype.saveTokenFromHash=function(a){this.info("State status:"+a.stateMatch+"; Request type:"+a.requestType),this._saveItem(this.CONSTANTS.STORAGE.ERROR,""),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,"");var b=this._getResourceFromState(a.stateResponse);if(a.parameters.hasOwnProperty(this.CONSTANTS.ERROR_DESCRIPTION))this.infoPii("Error :"+a.parameters.error+"; Error description:"+a.parameters[this.CONSTANTS.ERROR_DESCRIPTION]),this._saveItem(this.CONSTANTS.STORAGE.ERROR,a.parameters.error),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,a.parameters[this.CONSTANTS.ERROR_DESCRIPTION]),a.requestType===this.REQUEST_TYPE.LOGIN&&(this._loginInProgress=!1,this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,a.parameters.error_description));else if(a.stateMatch){this.info("State is right"),a.parameters.hasOwnProperty(this.CONSTANTS.SESSION_STATE)&&this._saveItem(this.CONSTANTS.STORAGE.SESSION_STATE,a.parameters[this.CONSTANTS.SESSION_STATE]);var c;a.parameters.hasOwnProperty(this.CONSTANTS.ACCESS_TOKEN)&&(this.info("Fragment has access token"),this._hasResource(b)||(c=this._getItem(this.CONSTANTS.STORAGE.TOKEN_KEYS)||"",this._saveItem(this.CONSTANTS.STORAGE.TOKEN_KEYS,c+b+this.CONSTANTS.RESOURCE_DELIMETER)),this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+b,a.parameters[this.CONSTANTS.ACCESS_TOKEN]),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+b,this._expiresIn(a.parameters[this.CONSTANTS.EXPIRES_IN]))),a.parameters.hasOwnProperty(this.CONSTANTS.ID_TOKEN)&&(this.info("Fragment has id token"),this._loginInProgress=!1,this._user=this._createUser(a.parameters[this.CONSTANTS.ID_TOKEN]),this._user&&this._user.profile?this._matchNonce(this._user)?(this._saveItem(this.CONSTANTS.STORAGE.IDTOKEN,a.parameters[this.CONSTANTS.ID_TOKEN]),b=this.config.loginResource?this.config.loginResource:this.config.clientId,this._hasResource(b)||(c=this._getItem(this.CONSTANTS.STORAGE.TOKEN_KEYS)||"",this._saveItem(this.CONSTANTS.STORAGE.TOKEN_KEYS,c+b+this.CONSTANTS.RESOURCE_DELIMETER)),this._saveItem(this.CONSTANTS.STORAGE.ACCESS_TOKEN_KEY+b,a.parameters[this.CONSTANTS.ID_TOKEN]),this._saveItem(this.CONSTANTS.STORAGE.EXPIRATION_KEY+b,this._user.profile.exp)):(this._saveItem(this.CONSTANTS.STORAGE.LOGIN_ERROR,"Nonce received: "+this._user.profile.nonce+" is not same as requested: "+this._getItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN)),this._user=null):(a.parameters.error="invalid id_token",a.parameters.error_description="Invalid id_token. id_token: "+a.parameters[this.CONSTANTS.ID_TOKEN],this._saveItem(this.CONSTANTS.STORAGE.ERROR,"invalid id_token"),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,"Invalid id_token. id_token: "+a.parameters[this.CONSTANTS.ID_TOKEN])))}else a.parameters.error="Invalid_state",a.parameters.error_description="Invalid_state. state: "+a.stateResponse,this._saveItem(this.CONSTANTS.STORAGE.ERROR,"Invalid_state"),this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION,"Invalid_state. state: "+a.stateResponse);this._saveItem(this.CONSTANTS.STORAGE.RENEW_STATUS+b,this.CONSTANTS.TOKEN_RENEW_STATUS_COMPLETED)},AuthenticationContext.prototype.getResourceForEndpoint=function(a){if(this.config&&this.config.anonymousEndpoints)for(var b=0;b<this.config.anonymousEndpoints.length;b++)if(a.indexOf(this.config.anonymousEndpoints[b])>-1)return null;if(this.config&&this.config.endpoints)for(var c in this.config.endpoints)if(a.indexOf(c)>-1)return this.config.endpoints[c];return a.indexOf("http://")>-1||a.indexOf("https://")>-1?this._getHostFromUri(a)===this._getHostFromUri(this.config.redirectUri)?this.config.loginResource:null:this.config.loginResource},AuthenticationContext.prototype._getHostFromUri=function(a){var b=String(a).replace(/^(https?:)\/\//,"");return b=b.split("/")[0]},AuthenticationContext.prototype.handleWindowCallback=function(a){if(null==a&&(a=window.location.hash),this.isCallback(a)){var b=null,c=!1;this._openedWindows.length>0&&this._openedWindows[this._openedWindows.length-1].opener&&this._openedWindows[this._openedWindows.length-1].opener._adalInstance?(b=this._openedWindows[this._openedWindows.length-1].opener._adalInstance,c=!0):window.parent&&window.parent._adalInstance&&(b=window.parent._adalInstance);var d,e,f=b.getRequestInfo(a),g=null;e=c||window.parent!==window?b._callBackMappedToRenewStates[f.stateResponse]:b.callback,b.info("Returned from redirect url"),b.saveTokenFromHash(f),f.requestType===this.REQUEST_TYPE.RENEW_TOKEN&&window.parent?(window.parent!==window?b.verbose("Window is in iframe, acquiring token silently"):b.verbose("acquiring token interactive in progress"),d=f.parameters[b.CONSTANTS.ACCESS_TOKEN]||f.parameters[b.CONSTANTS.ID_TOKEN],g=b.CONSTANTS.ACCESS_TOKEN):f.requestType===this.REQUEST_TYPE.LOGIN&&(d=f.parameters[b.CONSTANTS.ID_TOKEN],g=b.CONSTANTS.ID_TOKEN);var h=f.parameters[b.CONSTANTS.ERROR_DESCRIPTION],i=f.parameters[b.CONSTANTS.ERROR];try{e&&e(h,d,i,g)}catch(a){b.error("Error occurred in user defined callback function: "+a)}window.parent!==window||c||(b.config.navigateToLoginRequestUrl?window.location.href=b._getItem(b.CONSTANTS.STORAGE.LOGIN_REQUEST):window.location.hash="")}},AuthenticationContext.prototype._getNavigateUrl=function(a,b){var c="common";this.config.tenant&&(c=this.config.tenant);var d=this.instance+c+"/oauth2/authorize"+this._serialize(a,this.config,b)+this._addLibMetadata();return this.info("Navigate url:"+d),d},AuthenticationContext.prototype._extractIdToken=function(a){var b=this._decodeJwt(a);if(!b)return null;try{var c=b.JWSPayload,d=this._base64DecodeStringUrlSafe(c);return d?JSON.parse(d):(this.info("The returned id_token could not be base64 url safe decoded."),null)}catch(a){this.error("The returned id_token could not be decoded",a)}return null},AuthenticationContext.prototype._base64DecodeStringUrlSafe=function(a){return a=a.replace(/-/g,"+").replace(/_/g,"/"),window.atob?decodeURIComponent(escape(window.atob(a))):decodeURIComponent(escape(this._decode(a)))},AuthenticationContext.prototype._decode=function(a){var b="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";a=String(a).replace(/=+$/,"");var c=a.length;if(c%4==1)throw new Error("The token to be decoded is not correctly encoded.");for(var d,e,f,g,h,i,j,k,l="",m=0;m<c;m+=4){if(d=b.indexOf(a.charAt(m)),e=b.indexOf(a.charAt(m+1)),f=b.indexOf(a.charAt(m+2)),g=b.indexOf(a.charAt(m+3)),m+2===c-1){h=d<<18|e<<12|f<<6,i=h>>16&255,j=h>>8&255,l+=String.fromCharCode(i,j);break}if(m+1===c-1){h=d<<18|e<<12,i=h>>16&255,l+=String.fromCharCode(i);break}h=d<<18|e<<12|f<<6|g,i=h>>16&255,j=h>>8&255,k=255&h,l+=String.fromCharCode(i,j,k)}return l},AuthenticationContext.prototype._decodeJwt=function(a){if(this._isEmpty(a))return null;var b=/^([^\.\s]*)\.([^\.\s]+)\.([^\.\s]*)$/,c=b.exec(a);return!c||c.length<4?(this.warn("The returned id_token is not parseable."),null):{header:c[1],JWSPayload:c[2],JWSSig:c[3]}},AuthenticationContext.prototype._convertUrlSafeToRegularBase64EncodedString=function(a){return a.replace("-","+").replace("_","/")},AuthenticationContext.prototype._serialize=function(a,b,c){var d=[];if(null!==b){d.push("?response_type="+a),d.push("client_id="+encodeURIComponent(b.clientId)),c&&d.push("resource="+encodeURIComponent(c)),d.push("redirect_uri="+encodeURIComponent(b.redirectUri)),d.push("state="+encodeURIComponent(b.state)),b.hasOwnProperty("slice")&&d.push("slice="+encodeURIComponent(b.slice)),b.hasOwnProperty("extraQueryParameter")&&d.push(b.extraQueryParameter);var e=b.correlationId?b.correlationId:this._guid();d.push("client-request-id="+encodeURIComponent(e))}return d.join("&")},AuthenticationContext.prototype._deserialize=function(a){var b,c=/\+/g,d=/([^&=]+)=([^&]*)/g,e=function(a){return decodeURIComponent(a.replace(c," "))},f={};for(b=d.exec(a);b;)f[e(b[1])]=e(b[2]),b=d.exec(a);return f},AuthenticationContext.prototype._decimalToHex=function(a){for(var b=a.toString(16);b.length<2;)b="0"+b;return b},AuthenticationContext.prototype._guid=function(){var a=window.crypto||window.msCrypto;if(a&&a.getRandomValues){var b=new Uint8Array(16);return a.getRandomValues(b),b[6]|=64,b[6]&=79,b[8]|=128,b[8]&=191,this._decimalToHex(b[0])+this._decimalToHex(b[1])+this._decimalToHex(b[2])+this._decimalToHex(b[3])+"-"+this._decimalToHex(b[4])+this._decimalToHex(b[5])+"-"+this._decimalToHex(b[6])+this._decimalToHex(b[7])+"-"+this._decimalToHex(b[8])+this._decimalToHex(b[9])+"-"+this._decimalToHex(b[10])+this._decimalToHex(b[11])+this._decimalToHex(b[12])+this._decimalToHex(b[13])+this._decimalToHex(b[14])+this._decimalToHex(b[15])}for(var c="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",d="0123456789abcdef",e=0,f="",g=0;g<36;g++)"-"!==c[g]&&"4"!==c[g]&&(e=16*Math.random()|0),"x"===c[g]?f+=d[e]:"y"===c[g]?(e&=3,e|=8,f+=d[e]):f+=c[g];return f},AuthenticationContext.prototype._expiresIn=function(a){return a||(a=3599),this._now()+parseInt(a,10)},AuthenticationContext.prototype._now=function(){return Math.round((new Date).getTime()/1e3)},AuthenticationContext.prototype._addAdalFrame=function(a){if(void 0!==a){this.info("Add adal frame to document:"+a);var b=document.getElementById(a);if(!b){if(document.createElement&&document.documentElement&&(window.opera||-1===window.navigator.userAgent.indexOf("MSIE 5.0"))){var c=document.createElement("iframe");c.setAttribute("id",a),c.setAttribute("aria-hidden","true"),c.style.visibility="hidden",c.style.position="absolute",c.style.width=c.style.height=c.borderWidth="0px",b=document.getElementsByTagName("body")[0].appendChild(c)}else document.body&&document.body.insertAdjacentHTML&&document.body.insertAdjacentHTML("beforeEnd",'<iframe name="'+a+'" id="'+a+'" style="display:none"></iframe>');window.frames&&window.frames[a]&&(b=window.frames[a])}return b}},AuthenticationContext.prototype._saveItem=function(a,b,c){if(this.config&&this.config.cacheLocation&&"localStorage"===this.config.cacheLocation){if(!this._supportsLocalStorage())return this.info("Local storage is not supported"),!1;if(c){var d=this._getItem(a)||"";localStorage.setItem(a,d+b+this.CONSTANTS.CACHE_DELIMETER)}else localStorage.setItem(a,b);return!0}return this._supportsSessionStorage()?(sessionStorage.setItem(a,b),!0):(this.info("Session storage is not supported"),!1)},AuthenticationContext.prototype._getItem=function(a){return this.config&&this.config.cacheLocation&&"localStorage"===this.config.cacheLocation?this._supportsLocalStorage()?localStorage.getItem(a):(this.info("Local storage is not supported"),null):this._supportsSessionStorage()?sessionStorage.getItem(a):(this.info("Session storage is not supported"),null)},AuthenticationContext.prototype._supportsLocalStorage=function(){try{return!!window.localStorage&&(window.localStorage.setItem("storageTest","A"),"A"==window.localStorage.getItem("storageTest")&&(window.localStorage.removeItem("storageTest"),!window.localStorage.getItem("storageTest")))}catch(a){return!1}},AuthenticationContext.prototype._supportsSessionStorage=function(){try{return!!window.sessionStorage&&(window.sessionStorage.setItem("storageTest","A"),"A"==window.sessionStorage.getItem("storageTest")&&(window.sessionStorage.removeItem("storageTest"),!window.sessionStorage.getItem("storageTest")))}catch(a){return!1}},AuthenticationContext.prototype._cloneConfig=function(a){if(null===a||"object"!=typeof a)return a;var b={};for(var c in a)a.hasOwnProperty(c)&&(b[c]=a[c]);return b},AuthenticationContext.prototype._addLibMetadata=function(){return"&x-client-SKU=Js&x-client-Ver="+this._libVersion()},AuthenticationContext.prototype.log=function(a,b,c,d){if(a<=Logging.level){if(!Logging.piiLoggingEnabled&&d)return;var e=(new Date).toUTCString(),f="";f=this.config.correlationId?e+":"+this.config.correlationId+"-"+this._libVersion()+"-"+this.CONSTANTS.LEVEL_STRING_MAP[a]+" "+b:e+":"+this._libVersion()+"-"+this.CONSTANTS.LEVEL_STRING_MAP[a]+" "+b,c&&(f+="\nstack:\n"+c.stack),Logging.log(f)}},AuthenticationContext.prototype.error=function(a,b){this.log(this.CONSTANTS.LOGGING_LEVEL.ERROR,a,b)},AuthenticationContext.prototype.warn=function(a){this.log(this.CONSTANTS.LOGGING_LEVEL.WARN,a,null)},AuthenticationContext.prototype.info=function(a){
+this.log(this.CONSTANTS.LOGGING_LEVEL.INFO,a,null)},AuthenticationContext.prototype.verbose=function(a){this.log(this.CONSTANTS.LOGGING_LEVEL.VERBOSE,a,null)},AuthenticationContext.prototype.errorPii=function(a,b){this.log(this.CONSTANTS.LOGGING_LEVEL.ERROR,a,b,!0)},AuthenticationContext.prototype.warnPii=function(a){this.log(this.CONSTANTS.LOGGING_LEVEL.WARN,a,null,!0)},AuthenticationContext.prototype.infoPii=function(a){this.log(this.CONSTANTS.LOGGING_LEVEL.INFO,a,null,!0)},AuthenticationContext.prototype.verbosePii=function(a){this.log(this.CONSTANTS.LOGGING_LEVEL.VERBOSE,a,null,!0)},AuthenticationContext.prototype._libVersion=function(){return"1.0.17"},"undefined"!=typeof module&&module.exports&&(module.exports=AuthenticationContext,module.exports.inject=function(a){return new AuthenticationContext(a)}),AuthenticationContext}();
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CachingOptions; });
+/* unused harmony export CachingParserWrapper */
+/* unused harmony export HttpRequestError */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return ODataParserBase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return ODataDefaultParser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return TextParser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BlobParser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return JSONParser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return BufferParser; });
+/* unused harmony export LambdaParser */
+/* unused harmony export setResult */
+/* unused harmony export pipe */
+/* unused harmony export requestPipelineMethod */
+/* unused harmony export PipelineMethods */
+/* unused harmony export getDefaultPipeline */
+/* unused harmony export Queryable */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return ODataQueryable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return ODataBatch; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pnp_common__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pnp_logging__ = __webpack_require__(3);
+/**
+ * @license
+ * v1.3.5
+ * MIT (https://github.com/pnp/pnpjs/blob/master/LICENSE)
+ * Copyright (c) 2019 Microsoft
+ * docs: https://pnp.github.io/pnpjs/
+ * source: https://github.com/pnp/pnpjs
+ * bugs: https://github.com/pnp/pnpjs/issues
+ */
+
+
+
+var CachingOptions = /** @class */ (function () {
+    function CachingOptions(key) {
+        this.key = key;
+        this.expiration = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["e" /* dateAdd */])(new Date(), "second", __WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].defaultCachingTimeoutSeconds);
+        this.storeName = __WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].defaultCachingStore;
+    }
+    Object.defineProperty(CachingOptions.prototype, "store", {
+        get: function () {
+            if (this.storeName === "local") {
+                return CachingOptions.storage.local;
+            }
+            else {
+                return CachingOptions.storage.session;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CachingOptions.storage = new __WEBPACK_IMPORTED_MODULE_0__pnp_common__["b" /* PnPClientStorage */]();
+    return CachingOptions;
+}());
+var CachingParserWrapper = /** @class */ (function () {
+    function CachingParserWrapper(parser, cacheOptions) {
+        this.parser = parser;
+        this.cacheOptions = cacheOptions;
+    }
+    CachingParserWrapper.prototype.parse = function (response) {
+        var _this = this;
+        return this.parser.parse(response).then(function (r) { return _this.cacheData(r); });
+    };
+    CachingParserWrapper.prototype.cacheData = function (data) {
+        if (this.cacheOptions.store !== null) {
+            this.cacheOptions.store.put(this.cacheOptions.key, data, this.cacheOptions.expiration);
+        }
+        return data;
+    };
+    return CachingParserWrapper;
+}());
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+var HttpRequestError = /** @class */ (function (_super) {
+    __extends(HttpRequestError, _super);
+    function HttpRequestError(message, response, status, statusText) {
+        if (status === void 0) { status = response.status; }
+        if (statusText === void 0) { statusText = response.statusText; }
+        var _this = _super.call(this, message) || this;
+        _this.response = response;
+        _this.status = status;
+        _this.statusText = statusText;
+        _this.isHttpRequestError = true;
+        return _this;
+    }
+    HttpRequestError.init = function (r) {
+        return r.clone().text().then(function (t) {
+            return new HttpRequestError("Error making HttpClient request in queryable [" + r.status + "] " + r.statusText + " ::> " + t, r.clone());
+        });
+    };
+    return HttpRequestError;
+}(Error));
+var ODataParserBase = /** @class */ (function () {
+    function ODataParserBase() {
+        this.rawJson = {};
+    }
+    ODataParserBase.prototype.parse = function (r) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            if (_this.handleError(r, reject)) {
+                _this.parseImpl(r, resolve, reject);
+            }
+        });
+    };
+    ODataParserBase.prototype.parseImpl = function (r, resolve, reject) {
+        var _this = this;
+        if ((r.headers.has("Content-Length") && parseFloat(r.headers.get("Content-Length")) === 0) || r.status === 204) {
+            resolve({});
+        }
+        else {
+            // patch to handle cases of 200 response with no or whitespace only bodies (#487 & #545)
+            r.text()
+                .then(function (txt) { return txt.replace(/\s/ig, "").length > 0 ? JSON.parse(txt) : {}; })
+                .then(function (json) { return resolve(_this.parseODataJSON(json)); })
+                .catch(function (e) { return reject(e); });
+        }
+    };
+    /**
+     * Handles a response with ok === false by parsing the body and creating a ProcessHttpClientResponseException
+     * which is passed to the reject delegate. This method returns true if there is no error, otherwise false
+     *
+     * @param r Current response object
+     * @param reject reject delegate for the surrounding promise
+     */
+    ODataParserBase.prototype.handleError = function (r, reject) {
+        if (!r.ok) {
+            HttpRequestError.init(r).then(reject);
+        }
+        return r.ok;
+    };
+    /**
+     * Normalizes the json response by removing the various nested levels
+     *
+     * @param json json object to parse
+     */
+    ODataParserBase.prototype.parseODataJSON = function (json) {
+        this.rawJson = json;
+        var result = json;
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(json, "d")) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(json.d, "results")) {
+                result = json.d.results;
+            }
+            else {
+                result = json.d;
+            }
+        }
+        else if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(json, "value")) {
+            result = json.value;
+        }
+        return result;
+    };
+    return ODataParserBase;
+}());
+var ODataDefaultParser = /** @class */ (function (_super) {
+    __extends(ODataDefaultParser, _super);
+    function ODataDefaultParser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return ODataDefaultParser;
+}(ODataParserBase));
+var TextParser = /** @class */ (function (_super) {
+    __extends(TextParser, _super);
+    function TextParser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TextParser.prototype.parseImpl = function (r, resolve) {
+        r.text().then(resolve);
+    };
+    return TextParser;
+}(ODataParserBase));
+var BlobParser = /** @class */ (function (_super) {
+    __extends(BlobParser, _super);
+    function BlobParser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    BlobParser.prototype.parseImpl = function (r, resolve) {
+        r.blob().then(resolve);
+    };
+    return BlobParser;
+}(ODataParserBase));
+var JSONParser = /** @class */ (function (_super) {
+    __extends(JSONParser, _super);
+    function JSONParser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    JSONParser.prototype.parseImpl = function (r, resolve) {
+        r.json().then(resolve);
+    };
+    return JSONParser;
+}(ODataParserBase));
+var BufferParser = /** @class */ (function (_super) {
+    __extends(BufferParser, _super);
+    function BufferParser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    BufferParser.prototype.parseImpl = function (r, resolve) {
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["l" /* isFunc */])(r.arrayBuffer)) {
+            r.arrayBuffer().then(resolve);
+        }
+        else {
+            r.buffer().then(resolve);
+        }
+    };
+    return BufferParser;
+}(ODataParserBase));
+var LambdaParser = /** @class */ (function (_super) {
+    __extends(LambdaParser, _super);
+    function LambdaParser(parser) {
+        var _this = _super.call(this) || this;
+        _this.parser = parser;
+        return _this;
+    }
+    LambdaParser.prototype.parseImpl = function (r, resolve) {
+        this.parser(r).then(resolve);
+    };
+    return LambdaParser;
+}(ODataParserBase));
+
+/**
+ * Resolves the context's result value
+ *
+ * @param context The current context
+ */
+function returnResult(context) {
+    __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].log({
+        data: __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].activeLogLevel === 0 /* Verbose */ ? context.result : {},
+        level: 1 /* Info */,
+        message: "[" + context.requestId + "] (" + (new Date()).getTime() + ") Returning result from pipeline. Set logging to verbose to see data.",
+    });
+    return Promise.resolve(context.result);
+}
+/**
+ * Sets the result on the context
+ */
+function setResult(context, value) {
+    return new Promise(function (resolve) {
+        context.result = value;
+        context.hasResult = true;
+        resolve(context);
+    });
+}
+/**
+ * Invokes the next method in the provided context's pipeline
+ *
+ * @param c The current request context
+ */
+function next(c) {
+    if (c.pipeline.length > 0) {
+        return c.pipeline.shift()(c);
+    }
+    else {
+        return Promise.resolve(c);
+    }
+}
+/**
+ * Executes the current request context's pipeline
+ *
+ * @param context Current context
+ */
+function pipe(context) {
+    if (context.pipeline.length < 1) {
+        __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + context.requestId + "] (" + (new Date()).getTime() + ") Request pipeline contains no methods!", 2 /* Warning */);
+    }
+    var promise = next(context).then(function (ctx) { return returnResult(ctx); }).catch(function (e) {
+        __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].error(e);
+        throw e;
+    });
+    if (context.isBatched) {
+        // this will block the batch's execute method from returning until the child requets have been resolved
+        context.batch.addResolveBatchDependency(promise);
+    }
+    return promise;
+}
+/**
+ * decorator factory applied to methods in the pipeline to control behavior
+ */
+function requestPipelineMethod(alwaysRun) {
+    if (alwaysRun === void 0) { alwaysRun = false; }
+    return function (target, propertyKey, descriptor) {
+        var method = descriptor.value;
+        descriptor.value = function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            // if we have a result already in the pipeline, pass it along and don't call the tagged method
+            if (!alwaysRun && args.length > 0 && Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(args[0], "hasResult") && args[0].hasResult) {
+                __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + args[0].requestId + "] (" + (new Date()).getTime() + ") Skipping request pipeline method " + propertyKey + ", existing result in pipeline.", 0 /* Verbose */);
+                return Promise.resolve(args[0]);
+            }
+            // apply the tagged method
+            __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + args[0].requestId + "] (" + (new Date()).getTime() + ") Calling request pipeline method " + propertyKey + ".", 0 /* Verbose */);
+            // then chain the next method in the context's pipeline - allows for dynamic pipeline
+            return method.apply(target, args).then(function (ctx) { return next(ctx); });
+        };
+    };
+}
+/**
+ * Contains the methods used within the request pipeline
+ */
+var PipelineMethods = /** @class */ (function () {
+    function PipelineMethods() {
+    }
+    /**
+     * Logs the start of the request
+     */
+    PipelineMethods.logStart = function (context) {
+        return new Promise(function (resolve) {
+            __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].log({
+                data: __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].activeLogLevel === 1 /* Info */ ? {} : context,
+                level: 1 /* Info */,
+                message: "[" + context.requestId + "] (" + (new Date()).getTime() + ") Beginning " + context.verb + " request (" + context.requestAbsoluteUrl + ")",
+            });
+            resolve(context);
+        });
+    };
+    /**
+     * Handles caching of the request
+     */
+    PipelineMethods.caching = function (context) {
+        return new Promise(function (resolve) {
+            // handle caching, if applicable
+            if (context.isCached) {
+                __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + context.requestId + "] (" + (new Date()).getTime() + ") Caching is enabled for request, checking cache...", 1 /* Info */);
+                var cacheOptions = new CachingOptions(context.requestAbsoluteUrl.toLowerCase());
+                if (context.cachingOptions !== undefined) {
+                    cacheOptions = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(cacheOptions, context.cachingOptions);
+                }
+                // we may not have a valid store
+                if (cacheOptions.store !== null) {
+                    // check if we have the data in cache and if so resolve the promise and return
+                    var data = cacheOptions.store.get(cacheOptions.key);
+                    if (data !== null) {
+                        // ensure we clear any held batch dependency we are resolving from the cache
+                        __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].log({
+                            data: __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].activeLogLevel === 1 /* Info */ ? {} : data,
+                            level: 1 /* Info */,
+                            message: "[" + context.requestId + "] (" + (new Date()).getTime() + ") Value returned from cache.",
+                        });
+                        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["l" /* isFunc */])(context.batchDependency)) {
+                            context.batchDependency();
+                        }
+                        // handle the case where a parser needs to take special actions with a cached result
+                        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["j" /* hOP */])(context.parser, "hydrate")) {
+                            data = context.parser.hydrate(data);
+                        }
+                        return setResult(context, data).then(function (ctx) { return resolve(ctx); });
+                    }
+                }
+                __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + context.requestId + "] (" + (new Date()).getTime() + ") Value not found in cache.", 1 /* Info */);
+                // if we don't then wrap the supplied parser in the caching parser wrapper
+                // and send things on their way
+                context.parser = new CachingParserWrapper(context.parser, cacheOptions);
+            }
+            return resolve(context);
+        });
+    };
+    /**
+     * Sends the request
+     */
+    PipelineMethods.send = function (context) {
+        return new Promise(function (resolve, reject) {
+            // send or batch the request
+            if (context.isBatched) {
+                // we are in a batch, so add to batch, remove dependency, and resolve with the batch's promise
+                var p = context.batch.add(context.requestAbsoluteUrl, context.verb, context.options, context.parser, context.requestId);
+                // we release the dependency here to ensure the batch does not execute until the request is added to the batch
+                if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["l" /* isFunc */])(context.batchDependency)) {
+                    context.batchDependency();
+                }
+                __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + context.requestId + "] (" + (new Date()).getTime() + ") Batching request in batch " + context.batch.batchId + ".", 1 /* Info */);
+                // we set the result as the promise which will be resolved by the batch's execution
+                resolve(setResult(context, p));
+            }
+            else {
+                __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].write("[" + context.requestId + "] (" + (new Date()).getTime() + ") Sending request.", 1 /* Info */);
+                // we are not part of a batch, so proceed as normal
+                var client = context.clientFactory();
+                var opts = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["f" /* extend */])(context.options || {}, { method: context.verb });
+                client.fetch(context.requestAbsoluteUrl, opts)
+                    .then(function (response) { return context.parser.parse(response); })
+                    .then(function (result) { return setResult(context, result); })
+                    .then(function (ctx) { return resolve(ctx); })
+                    .catch(function (e) { return reject(e); });
+            }
+        });
+    };
+    /**
+     * Logs the end of the request
+     */
+    PipelineMethods.logEnd = function (context) {
+        return new Promise(function (resolve) {
+            if (context.isBatched) {
+                __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].log({
+                    data: __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].activeLogLevel === 1 /* Info */ ? {} : context,
+                    level: 1 /* Info */,
+                    message: "[" + context.requestId + "] (" + (new Date()).getTime() + ") " + context.verb + " request will complete in batch " + context.batch.batchId + ".",
+                });
+            }
+            else {
+                __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].log({
+                    data: __WEBPACK_IMPORTED_MODULE_1__pnp_logging__["a" /* Logger */].activeLogLevel === 1 /* Info */ ? {} : context,
+                    level: 1 /* Info */,
+                    message: "[" + context.requestId + "] (" + (new Date()).getTime() + ") Completing " + context.verb + " request.",
+                });
+            }
+            resolve(context);
+        });
+    };
+    __decorate([
+        requestPipelineMethod(true)
+    ], PipelineMethods, "logStart", null);
+    __decorate([
+        requestPipelineMethod()
+    ], PipelineMethods, "caching", null);
+    __decorate([
+        requestPipelineMethod()
+    ], PipelineMethods, "send", null);
+    __decorate([
+        requestPipelineMethod(true)
+    ], PipelineMethods, "logEnd", null);
+    return PipelineMethods;
+}());
+function getDefaultPipeline() {
+    return [
+        PipelineMethods.logStart,
+        PipelineMethods.caching,
+        PipelineMethods.send,
+        PipelineMethods.logEnd,
+    ].slice(0);
+}
+
+var Queryable = /** @class */ (function () {
+    function Queryable() {
+        this._query = new Map();
+        this._options = {};
+        this._url = "";
+        this._parentUrl = "";
+        this._useCaching = false;
+        this._cachingOptions = null;
+        this._cloneParentWasCaching = false;
+        this._cloneParentCacheOptions = null;
+        this._requestPipeline = null;
+    }
+    /**
+    * Gets the currentl url
+    *
+    */
+    Queryable.prototype.toUrl = function () {
+        return this._url;
+    };
+    /**
+     * Directly concatonates the supplied string to the current url, not normalizing "/" chars
+     *
+     * @param pathPart The string to concatonate to the url
+     */
+    Queryable.prototype.concat = function (pathPart) {
+        this._url += pathPart;
+        return this;
+    };
+    Object.defineProperty(Queryable.prototype, "query", {
+        /**
+         * Provides access to the query builder for this url
+         *
+         */
+        get: function () {
+            return this._query;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Sets custom options for current object and all derived objects accessible via chaining
+     *
+     * @param options custom options
+     */
+    Queryable.prototype.configure = function (options) {
+        Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["p" /* mergeOptions */])(this._options, options);
+        return this;
+    };
+    /**
+     * Configures this instance from the configure options of the supplied instance
+     *
+     * @param o Instance from which options should be taken
+     */
+    Queryable.prototype.configureFrom = function (o) {
+        Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["p" /* mergeOptions */])(this._options, o._options);
+        return this;
+    };
+    /**
+     * Enables caching for this request
+     *
+     * @param options Defines the options used when caching this request
+     */
+    Queryable.prototype.usingCaching = function (options) {
+        if (!__WEBPACK_IMPORTED_MODULE_0__pnp_common__["c" /* RuntimeConfig */].globalCacheDisable) {
+            this._useCaching = true;
+            if (options !== undefined) {
+                this._cachingOptions = options;
+            }
+        }
+        return this;
+    };
+    /**
+     * Allows you to set a request specific processing pipeline
+     *
+     * @param pipeline The set of methods, in order, to execute a given request
+     */
+    Queryable.prototype.withPipeline = function (pipeline) {
+        this._requestPipeline = pipeline.slice(0);
+        return this;
+    };
+    Queryable.prototype.getCore = function (parser, options) {
+        if (parser === void 0) { parser = new JSONParser(); }
+        if (options === void 0) { options = {}; }
+        // Fix for #304 - when we clone objects we in some cases then execute a get request
+        // in these cases the caching settings were getting dropped from the request
+        // this tracks if the object from which this was cloned was caching and applies that to an immediate get request
+        // does not affect objects cloned from this as we are using different fields to track the settings so it won't
+        // be triggered
+        if (this._cloneParentWasCaching) {
+            this.usingCaching(this._cloneParentCacheOptions);
+        }
+        return this.reqImpl("GET", options, parser);
+    };
+    Queryable.prototype.postCore = function (options, parser) {
+        if (options === void 0) { options = {}; }
+        if (parser === void 0) { parser = new JSONParser(); }
+        return this.reqImpl("POST", options, parser);
+    };
+    Queryable.prototype.patchCore = function (options, parser) {
+        if (options === void 0) { options = {}; }
+        if (parser === void 0) { parser = new JSONParser(); }
+        return this.reqImpl("PATCH", options, parser);
+    };
+    Queryable.prototype.deleteCore = function (options, parser) {
+        if (options === void 0) { options = {}; }
+        if (parser === void 0) { parser = new JSONParser(); }
+        return this.reqImpl("DELETE", options, parser);
+    };
+    Queryable.prototype.putCore = function (options, parser) {
+        if (options === void 0) { options = {}; }
+        if (parser === void 0) { parser = new JSONParser(); }
+        return this.reqImpl("PUT", options, parser);
+    };
+    Queryable.prototype.reqImpl = function (method, options, parser) {
+        var _this = this;
+        if (options === void 0) { options = {}; }
+        return this.getRequestPipeline(method, options, parser)
+            .then(function (pipeline) { return _this.toRequestContext(method, options, parser, pipeline); })
+            .then(function (context) { return pipe(context); });
+    };
+    /**
+     * Appends the given string and normalizes "/" chars
+     *
+     * @param pathPart The string to append
+     */
+    Queryable.prototype.append = function (pathPart) {
+        this._url = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(this._url, pathPart);
+    };
+    Object.defineProperty(Queryable.prototype, "parentUrl", {
+        /**
+         * Gets the parent url used when creating this instance
+         *
+         */
+        get: function () {
+            return this._parentUrl;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Extends this queryable from the provided parent
+     *
+     * @param parent Parent queryable from which we will derive a base url
+     * @param path Additional path
+     */
+    Queryable.prototype.extend = function (parent, path) {
+        this._parentUrl = parent._url;
+        this._url = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["d" /* combine */])(this._parentUrl, path || "");
+        this.configureFrom(parent);
+    };
+    /**
+     * Configures a cloned object from this instance
+     *
+     * @param clone
+     */
+    Queryable.prototype._clone = function (clone, _0) {
+        clone.configureFrom(this);
+        if (this._useCaching) {
+            clone._cloneParentWasCaching = true;
+            clone._cloneParentCacheOptions = this._cachingOptions;
+        }
+        return clone;
+    };
+    /**
+     * Handles getting the request pipeline to run for a given request
+     */
+    // @ts-ignore
+    // justified because we want to show that all these arguments are passed to the method so folks inheriting and potentially overriding
+    // clearly see how the method is invoked inside the class
+    Queryable.prototype.getRequestPipeline = function (method, options, parser) {
+        var _this = this;
+        if (options === void 0) { options = {}; }
+        return new Promise(function (resolve) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["q" /* objectDefinedNotNull */])(_this._requestPipeline) && Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["k" /* isArray */])(_this._requestPipeline)) {
+                resolve(_this._requestPipeline);
+            }
+            else {
+                resolve(getDefaultPipeline());
+            }
+        });
+    };
+    return Queryable;
+}());
+var ODataQueryable = /** @class */ (function (_super) {
+    __extends(ODataQueryable, _super);
+    function ODataQueryable() {
+        var _this = _super.call(this) || this;
+        _this._batch = null;
+        _this._batchDependency = null;
+        return _this;
+    }
+    /**
+     * Adds this query to the supplied batch
+     *
+     * @example
+     * ```
+     *
+     * let b = pnp.sp.createBatch();
+     * pnp.sp.web.inBatch(b).get().then(...);
+     * b.execute().then(...)
+     * ```
+     */
+    ODataQueryable.prototype.inBatch = function (batch) {
+        if (this.batch !== null) {
+            throw Error("This query is already part of a batch.");
+        }
+        if (Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["q" /* objectDefinedNotNull */])(batch)) {
+            this._batch = batch;
+        }
+        return this;
+    };
+    /**
+     * Gets the currentl url
+     *
+     */
+    ODataQueryable.prototype.toUrl = function () {
+        return this._url;
+    };
+    /**
+     * Executes the currently built request
+     *
+     * @param parser Allows you to specify a parser to handle the result
+     * @param getOptions The options used for this request
+     */
+    ODataQueryable.prototype.get = function (parser, options) {
+        if (parser === void 0) { parser = new ODataDefaultParser(); }
+        if (options === void 0) { options = {}; }
+        return this.getCore(parser, options);
+    };
+    ODataQueryable.prototype.getCore = function (parser, options) {
+        if (parser === void 0) { parser = new ODataDefaultParser(); }
+        if (options === void 0) { options = {}; }
+        return _super.prototype.getCore.call(this, parser, options);
+    };
+    ODataQueryable.prototype.postCore = function (options, parser) {
+        if (options === void 0) { options = {}; }
+        if (parser === void 0) { parser = new ODataDefaultParser(); }
+        return _super.prototype.postCore.call(this, options, parser);
+    };
+    ODataQueryable.prototype.patchCore = function (options, parser) {
+        if (options === void 0) { options = {}; }
+        if (parser === void 0) { parser = new ODataDefaultParser(); }
+        return _super.prototype.patchCore.call(this, options, parser);
+    };
+    ODataQueryable.prototype.deleteCore = function (options, parser) {
+        if (options === void 0) { options = {}; }
+        if (parser === void 0) { parser = new ODataDefaultParser(); }
+        return _super.prototype.deleteCore.call(this, options, parser);
+    };
+    ODataQueryable.prototype.putCore = function (options, parser) {
+        if (options === void 0) { options = {}; }
+        if (parser === void 0) { parser = new ODataDefaultParser(); }
+        return _super.prototype.putCore.call(this, options, parser);
+    };
+    ODataQueryable.prototype.reqImpl = function (method, options, parser) {
+        if (options === void 0) { options = {}; }
+        if (this.hasBatch) {
+            this._batchDependency = this.addBatchDependency();
+        }
+        return _super.prototype.reqImpl.call(this, method, options, parser);
+    };
+    /**
+     * Blocks a batch call from occuring, MUST be cleared by calling the returned function
+    */
+    ODataQueryable.prototype.addBatchDependency = function () {
+        if (this._batch !== null) {
+            return this._batch.addDependency();
+        }
+        return function () { return null; };
+    };
+    Object.defineProperty(ODataQueryable.prototype, "hasBatch", {
+        /**
+         * Indicates if the current query has a batch associated
+         *
+         */
+        get: function () {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["q" /* objectDefinedNotNull */])(this._batch);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ODataQueryable.prototype, "batch", {
+        /**
+         * The batch currently associated with this query or null
+         *
+         */
+        get: function () {
+            return this.hasBatch ? this._batch : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Configures a cloned object from this instance
+     *
+     * @param clone
+     */
+    ODataQueryable.prototype._clone = function (clone, cloneSettings) {
+        clone = _super.prototype._clone.call(this, clone, cloneSettings);
+        if (cloneSettings.includeBatch) {
+            clone = clone.inBatch(this._batch);
+        }
+        return clone;
+    };
+    return ODataQueryable;
+}(Queryable));
+
+var ODataBatch = /** @class */ (function () {
+    function ODataBatch(_batchId) {
+        if (_batchId === void 0) { _batchId = Object(__WEBPACK_IMPORTED_MODULE_0__pnp_common__["h" /* getGUID */])(); }
+        this._batchId = _batchId;
+        this._reqs = [];
+        this._deps = [];
+        this._rDeps = [];
+    }
+    Object.defineProperty(ODataBatch.prototype, "batchId", {
+        get: function () {
+            return this._batchId;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ODataBatch.prototype, "requests", {
+        /**
+         * The requests contained in this batch
+         */
+        get: function () {
+            return this._reqs;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     *
+     * @param url Request url
+     * @param method Request method (GET, POST, etc)
+     * @param options Any request options
+     * @param parser The parser used to handle the eventual return from the query
+     * @param id An identifier used to track a request within a batch
+     */
+    ODataBatch.prototype.add = function (url, method, options, parser, id) {
+        var info = {
+            id: id,
+            method: method.toUpperCase(),
+            options: options,
+            parser: parser,
+            reject: null,
+            resolve: null,
+            url: url,
+        };
+        var p = new Promise(function (resolve, reject) {
+            info.resolve = resolve;
+            info.reject = reject;
+        });
+        this._reqs.push(info);
+        return p;
+    };
+    /**
+     * Adds a dependency insuring that some set of actions will occur before a batch is processed.
+     * MUST be cleared using the returned resolve delegate to allow batches to run
+     */
+    ODataBatch.prototype.addDependency = function () {
+        var resolver = function () { return void (0); };
+        this._deps.push(new Promise(function (resolve) {
+            resolver = resolve;
+        }));
+        return resolver;
+    };
+    /**
+     * The batch's execute method will not resolve util any promises added here resolve
+     *
+     * @param p The dependent promise
+     */
+    ODataBatch.prototype.addResolveBatchDependency = function (p) {
+        this._rDeps.push(p);
+    };
+    /**
+     * Execute the current batch and resolve the associated promises
+     *
+     * @returns A promise which will be resolved once all of the batch's child promises have resolved
+     */
+    ODataBatch.prototype.execute = function () {
+        var _this = this;
+        // we need to check the dependencies twice due to how different engines handle things.
+        // We can get a second set of promises added during the first set resolving
+        return Promise.all(this._deps)
+            .then(function () { return Promise.all(_this._deps); })
+            .then(function () { return _this.executeImpl(); })
+            .then(function () { return Promise.all(_this._rDeps); })
+            .then(function () { return void (0); });
+    };
+    return ODataBatch;
+}());
+
+
+
+
+/***/ })
+/******/ ])});;
+//# sourceMappingURL=guest-message-application-customizer.js.map

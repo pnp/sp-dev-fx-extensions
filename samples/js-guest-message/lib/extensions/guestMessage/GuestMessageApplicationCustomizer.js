@@ -16,7 +16,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { override } from '@microsoft/decorators';
 import { BaseApplicationCustomizer, PlaceholderName } from '@microsoft/sp-application-base';
-import styles from './GuestMessage.module.scss';
 import { sp } from "@pnp/sp";
 var LOG_SOURCE = 'GuestMessageApplicationCustomizer';
 var GuestMessageApplicationCustomizer = /** @class */ (function (_super) {
@@ -26,28 +25,21 @@ var GuestMessageApplicationCustomizer = /** @class */ (function (_super) {
     }
     GuestMessageApplicationCustomizer.prototype.onInit = function () {
         sp.setup({ spfxContext: this.context });
+        sp.web.currentUser.get().then(function (result) {
+            if (result.LoginName.match("#ext#")) {
+                console.log("External User");
+            }
+            else {
+                console.log("Internal User");
+            }
+        });
         this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
         return Promise.resolve();
     };
     GuestMessageApplicationCustomizer.prototype._renderPlaceHolders = function () {
-        var _this = this;
         if (!this._topPlaceholder) {
             this._topPlaceholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
-            if (this._topPlaceholder.domElement) {
-                sp.web.currentUser.get().then(function (result) {
-                    if (result.LoginName.match("#ext#")) {
-                        _this._topPlaceholder.domElement.innerHTML = "\n              <div id=\"userGuessApp\" class=\"" + styles.app + "\">\n                <div class=\"" + styles.top + "\">\n                  <div id=\"pnpinfo\"> ths</div>\n                </div>\n              </div>";
-                        _this.getElementStyles();
-                    }
-                });
-            }
         }
-    };
-    GuestMessageApplicationCustomizer.prototype.getElementStyles = function () {
-        this._topPlaceholder.domElement.querySelector("#pnpinfo").innerHTML = this.properties.textmessage;
-        this._topPlaceholder.domElement.style.backgroundColor = this.properties.backgroundColor;
-        this._topPlaceholder.domElement.style.color = this.properties.textColor;
-        this._topPlaceholder.domElement.style.height = "20px";
     };
     __decorate([
         override

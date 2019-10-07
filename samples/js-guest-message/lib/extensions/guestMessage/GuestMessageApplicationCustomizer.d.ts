@@ -8,6 +8,5 @@ export default class GuestMessageApplicationCustomizer extends BaseApplicationCu
     private _topPlaceholder;
     onInit(): Promise<void>;
     private _renderPlaceHolders;
-    private getElementStyles;
 }
 //# sourceMappingURL=GuestMessageApplicationCustomizer.d.ts.map
