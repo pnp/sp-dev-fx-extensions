@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "header-toggler-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/headerToggler/HeaderTogglerApplicationCustomizer.js",
+          "manifest": "./src/extensions/headerToggler/HeaderTogglerApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HeaderTogglerApplicationCustomizerStrings": "lib/extensions/headerToggler/loc/{locale}.js"
+  }
+}
