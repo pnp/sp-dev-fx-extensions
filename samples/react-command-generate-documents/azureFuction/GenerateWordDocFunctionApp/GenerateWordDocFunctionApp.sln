@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateWordDocFunctionApp", "GenerateWordDocFunctionApp\GenerateWordDocFunctionApp.csproj", "{DB791825-95AC-4195-A554-527029E4B0B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB791825-95AC-4195-A554-527029E4B0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB791825-95AC-4195-A554-527029E4B0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB791825-95AC-4195-A554-527029E4B0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB791825-95AC-4195-A554-527029E4B0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58197F66-2726-4909-923C-1E6491DA7FAF}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://okctfs002:8080/tfs/sharepointonline365projects
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GenerateWordDocFunctionApp\\GenerateWordDocFunctionApp.csproj
+		SccProjectName1 = GenerateWordDocFunctionApp
+		SccLocalPath1 = GenerateWordDocFunctionApp
+	EndGlobalSection
+EndGlobal
