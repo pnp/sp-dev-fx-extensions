@@ -45,7 +45,7 @@ export default class SpfxItemOrderFieldCustomizer
     // a different (number) column can be specified through the
     // ClientSideComponentProperties instead
     this._orderField = this.properties.OrderField || 'Order';
-  
+
     this._useIcons = this.properties.ShowIcons != undefined ? this.properties.ShowIcons : true;
 
     console.log("Useicons: " + this._useIcons);
@@ -63,7 +63,7 @@ export default class SpfxItemOrderFieldCustomizer
 
   @override
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
-    
+
     //Cancel the previous timeout (if any)
     if(this._timeoutId_Init) {
       clearTimeout(this._timeoutId_Init);
@@ -79,13 +79,13 @@ export default class SpfxItemOrderFieldCustomizer
       } else {
         event.domElement.innerHTML = `<span class="${styles.reorderField}" title="${strings.ReorderTooltip}">${INDICATORTEXTVALUE}</span>`;
       }
-      
+
       //Track the Ids and Order values of each row (so that they can be referenced later)
       this._rowMap.push({
         Id: event.listItem.getValueByName('ID'),
         Order: event.listItem.getValueByName(this._orderField)
       });
-  
+
       //Reset timeout (only needed since there isn't an official onCellsRendered event)
       this._timeoutId_Init = setTimeout(this.onCellsRendered.bind(this), TIMEOUTDURATION_INIT);
     } else {
@@ -95,7 +95,7 @@ export default class SpfxItemOrderFieldCustomizer
         event.domElement.innerHTML = `<span aria-hidden="true" title="${strings.NoPermissionsTooltip}">${DISABLEDTEXTVALUE}</span>`;
       }
     }
-    
+
   }
 
   /** Once all the cells are rendered (icons), and the key values stored in the
@@ -181,7 +181,7 @@ export default class SpfxItemOrderFieldCustomizer
 
         //Reset the internal row order tracking so we can track new changes
         this._rowOrder = newOrder;
-        
+
         //Turn reordering back on
         $(LISTPAGECONTAINER).sortable('enable');
 
@@ -235,7 +235,7 @@ export default class SpfxItemOrderFieldCustomizer
 
     for(let i: number = 0; i < newOrder.length; i++) {
       if(newOrder[i] !== prevOrder[i]) {
-        
+
         //Stores the original listIndex value along with its current position
         diffRows.push({
           listIndex: newOrder[i],
@@ -271,7 +271,7 @@ export default class SpfxItemOrderFieldCustomizer
   public static hideLoading(useIcons: boolean): void {
 
     //jQuery selector just finds all of our fields that are
-    // currently showing the loading indicator 
+    // currently showing the loading indicator
     if(useIcons) {
       $(`.${styles.reorderField}.isSpinning`)
         .removeClass('isSpinning')

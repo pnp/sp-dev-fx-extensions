@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/Extensions/Lists/Links/AllItems.aspx",
+      "pageUrl": "https://thechriskent.sharepoint.com/sites/WarriorHorses/Lists/Allies/Orderable.aspx",
       "fieldCustomizers": {
         "Reorder": {
           "id": "e6bdc269-2080-47b8-b096-e7bf2a9263a9",
@@ -13,7 +13,7 @@
       }
     },
     "spfxItemOrder": {
-      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/Extensions/Lists/Links/AllItems.aspx",
+      "pageUrl": "https://thechriskent.sharepoint.com/sites/WarriorHorses/Lists/Allies/AllItems.aspx?viewid=fb02a141-bf4a-4e38-89b3-a20bfc22281d",
       "fieldCustomizers": {
         "Reorder": {
           "id": "e6bdc269-2080-47b8-b096-e7bf2a9263a9",
@@ -33,7 +33,7 @@
       }
     },
     "text": {
-      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/Extensions/Lists/Links/AllItems.aspx",
+      "pageUrl": "https://thechriskent.sharepoint.com/sites/WarriorHorses/Lists/Allies/AllItems.aspx?viewid=fb02a141-bf4a-4e38-89b3-a20bfc22281d",
       "fieldCustomizers": {
         "Reorder": {
           "id": "e6bdc269-2080-47b8-b096-e7bf2a9263a9",
