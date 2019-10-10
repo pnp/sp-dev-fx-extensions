@@ -144,7 +144,7 @@ export default class DocumentGenerator {
         var ifrAttachementFiles = await web.lists.getById(listId.toString()).items.getById(itemId).attachmentFiles.get();
       
         if (ifrAttachementFiles.length > 0) {
-            replacementParameters.plainTextParameters.push({ "replacementType": "Image", "token": "pic1", "value": ifrAttachementFiles[0].ServerRelativeUrl+"XX" });
+            replacementParameters.plainTextParameters.push({ "replacementType": "Image", "token": "pic1", "value": ifrAttachementFiles[0].ServerRelativeUrl });
         }
         replacementParameters.plainTextParameters.push({ "replacementType": "PlainText", "token": "ptIsComplete", "value": ifr["IsComplete"] === "Yes" ? "☒" : "☐" });
         return replacementParameters;
