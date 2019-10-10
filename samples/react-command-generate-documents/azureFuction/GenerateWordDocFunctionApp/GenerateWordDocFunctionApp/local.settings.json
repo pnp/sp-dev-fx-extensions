@@ -4,7 +4,7 @@
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
     "HostName": "rgove3.sharepoint.com",
-    "ClientId": "a56837db-4ace-46ab-944a-1091c2cd93c5",
+    "ClientId": "yourtenantid",
     "ClientSecret": "OLus7+y/+rt36Jy-ALdx01CvptM=POGd",
     "TenantId": "6fe49e6a-6255-4ee0-b4e7-a8e3357dc55f"
   }
