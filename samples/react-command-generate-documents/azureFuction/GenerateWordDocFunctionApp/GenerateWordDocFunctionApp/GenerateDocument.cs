@@ -59,10 +59,27 @@ namespace GenerateWordDocFunctionApp
         public string replacementType { get; set; }  // plainText or picture (for now)
     }
 
+    // see https://docs.microsoft.com/en-us/previous-versions/office/developer/office-2007/cc197932(v=office.12)?redirectedfrom=MSDN
+    public class TableColumnReplacementParameters
+    {
+        public string value { get; set; }
+        public string replacementType { get; set; }  // plainText or picture (for now)
+    }
+    public class TableRowReplacementParameters
+    {
+        public TableColumnReplacementParameters[] columns        { get; set; }
+    }
+
+    public class TableReplacementParameters
+    {
+        public string token { get; set; }
+        public TableRowReplacementParameters[] rows { get; set; }
+
+    }
     public class PostData
     {
         public PlainTextReplacementParameters[] plainTextParameters { get; set; }
-
+        public TableReplacementParameters[] tableParameters { get; set; }
         public string templateServerRelativeUrl { get; set; }
         public string destinationFolderServerRelativeUrl { get; set; }
         public string temporaryFolderServerRelativeUrl { get; set; }
@@ -277,7 +294,7 @@ namespace GenerateWordDocFunctionApp
         {
             /***  
  * SEE https://www.vrdmn.com/2018/05/spfx-calling-back-to-sharepoint-from.html
- 
+
  */
             //Exchange the SPFx access token with another Access token containing the delegated scope for Microsoft Graph
             ClientCredential clientCred = new ClientCredential(ConfigurationManager.AppSettings["ClientId"], ConfigurationManager.AppSettings["ClientSecret"]);
@@ -348,6 +365,12 @@ namespace GenerateWordDocFunctionApp
                     }
                 }
 
+                // experimantal replace all the tables 
+                foreach (var tableParm in postData.tableParameters)
+                {
+                    localDocxFile = ReplaceTable(localDocxFile, tableParm, log, messages);
+                }
+
                 // remove the content controls
                 IEnumerable<string> m_oEnum = new string[] { "ptIncidentSummary" };
                 localDocxFile = RemoveSdtBlocks(localDocxFile, m_oEnum);
@@ -366,7 +389,33 @@ namespace GenerateWordDocFunctionApp
             }
         }
 
+        private static WordprocessingDocument ReplaceTable(WordprocessingDocument localDocxFile, TableReplacementParameters tableParm, TraceWriter log, List<string> messages)
+        {
+            MainDocumentPart mainPart = localDocxFile.MainDocumentPart;
+            SdtBlock ccWithTable = mainPart.Document.Body.Descendants<SdtBlock>().Where
+           (r => r.SdtProperties.GetFirstChild<Tag>().Val == tableParm.token).Single();
 
+            // This should return only one table.
+            Table theTable = ccWithTable.Descendants<Table>().Single();
+
+            // Get the last row in the table. Table should have one tow with titles and an empty data row.
+            TableRow theRow = theTable.Elements<TableRow>().Last();
+
+            foreach (var tblParmRow in tableParm.rows)
+            {
+                TableRow rowCopy = (TableRow)theRow.CloneNode(true);
+                int colidx = 0;
+                foreach (var tblParmCol in tblParmRow.columns) {
+                    Console.WriteLine(tblParmCol.value);
+                    rowCopy.Descendants<TableCell>().ElementAt(colidx).Append(new Paragraph
+                    (new Run(new Text(tblParmCol.value))));
+                }
+            }
+
+            return localDocxFile;
+
+
+        }
 
         private static async Task<string> DownloadFileFromSPAsPDF(TraceWriter log, string fileName, string tempFilePath, string webServerRelativeUrl, HttpClient httpClient)
         {
@@ -479,10 +528,10 @@ namespace GenerateWordDocFunctionApp
                SdtProperties p = c.Elements<SdtProperties>().FirstOrDefault();
                if (p != null)
                {
-                   // Is it a picture content control? 
-                   SdtContentPicture pict = p.Elements<SdtContentPicture>().FirstOrDefault();
-                   // Get the alias. 
-                   SdtAlias a = p.Elements<SdtAlias>().FirstOrDefault();
+                       // Is it a picture content control? 
+                       SdtContentPicture pict = p.Elements<SdtContentPicture>().FirstOrDefault();
+                       // Get the alias. 
+                       SdtAlias a = p.Elements<SdtAlias>().FirstOrDefault();
 
                    if (pict != null && a.Val == contentControlTag)
                        return true;
