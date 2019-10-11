@@ -392,6 +392,8 @@ namespace GenerateWordDocFunctionApp
         private static WordprocessingDocument ReplaceTable(WordprocessingDocument localDocxFile, TableReplacementParameters tableParm, TraceWriter log, List<string> messages)
         {
             MainDocumentPart mainPart = localDocxFile.MainDocumentPart;
+            var stuff = mainPart.Document.Body.Descendants<SdtBlock>();
+            
             SdtBlock ccWithTable = mainPart.Document.Body.Descendants<SdtBlock>().Where
            (r => r.SdtProperties.GetFirstChild<Tag>().Val == tableParm.token).Single();
 
@@ -409,8 +411,15 @@ namespace GenerateWordDocFunctionApp
                     Console.WriteLine(tblParmCol.value);
                     rowCopy.Descendants<TableCell>().ElementAt(colidx).Append(new Paragraph
                     (new Run(new Text(tblParmCol.value))));
+                    colidx++;
                 }
+                theTable.AppendChild(rowCopy);
             }
+            // Remove the empty placeholder row from the table.
+            theTable.RemoveChild(theRow);
+
+            // Save the changes to the table back into the document.
+            mainPart.Document.Save();
 
             return localDocxFile;
 

@@ -34,7 +34,7 @@ export default class DocumentGenerator {
         temporaryFolderServerRelativeUrl: string,
         webServerRelativeUrl: string,
         saveAsFormat: string): Promise<string> {
-    
+
         var rp: ReplacementParameters = await this.getData(web, listId, itemId, new ReplacementParameters());
         var ifr = await web.lists.getById(listId.toString()).items.getById(itemId).get();
         var newFileName = ifr["Title"].replace(/\//g, "-").replace(":", "-");
@@ -89,12 +89,33 @@ export default class DocumentGenerator {
         temporaryFolderServerRelativeUrl: string,
         webServerRelativeUrl: string,
         saveAsFormat: string): Promise<string> {
-        
+
         var rp: ReplacementParameters = await this.getData(web, listId, itemId, new ReplacementParameters());
         var ifr = await web.lists.getById(listId.toString()).items.getById(itemId).get();
         var newFileName = ifr["Title"].replace(/\//g, "-").replace(":", "-");
         const body: string = JSON.stringify({
             'plainTextParameters': rp.plainTextParameters,
+            'tableParameters': [
+                {
+                    'token': 'table1',
+                    'rows': [
+                        {
+                            'columns': [
+                                { 'replacementType': 'PlainText', 'value': '1' },
+                                { 'replacementType': 'PlainText', 'value': '2' },
+                                { 'replacementType': 'PlainText', 'value': '3' },
+                            ]
+                        },
+                        {
+                            'columns': [
+                                { 'replacementType': 'PlainText', 'value': 'a' },
+                                { 'replacementType': 'PlainText', 'value': 'b' },
+                                { 'replacementType': 'PlainText', 'value': 'c' },
+                            ]
+                        },
+                    ],
+                }
+            ],
             "temporaryFolderServerRelativeUrl": temporaryFolderServerRelativeUrl,
             "webServerRelativeUrl": webServerRelativeUrl,
             'templateServerRelativeUrl': templateServerRelativeUrl,
@@ -135,14 +156,14 @@ export default class DocumentGenerator {
 
     public static async   getData(web: Web, listId: Guid, itemId: number, replacementParameters: ReplacementParameters): Promise<ReplacementParameters> {
         var ifr = await web.lists.getById(listId.toString()).items.getById(itemId)
-        .expand('Author')
-        .select('Title,Created,IsComplete,Author/Title')
-        .get();
+            .expand('Author')
+            .select('Title,Created,IsComplete,Author/Title')
+            .get();
         replacementParameters.plainTextParameters.push({ "replacementType": "PlainText", "token": "ptTitle", "value": ifr.Title });
         replacementParameters.plainTextParameters.push({ "replacementType": "PlainText", "token": "ptCreated", "value": ifr.Created });
         replacementParameters.plainTextParameters.push({ "replacementType": "PlainText", "token": "ptAuthor", "value": ifr.Author.Title });
         var ifrAttachementFiles = await web.lists.getById(listId.toString()).items.getById(itemId).attachmentFiles.get();
-      
+
         if (ifrAttachementFiles.length > 0) {
             replacementParameters.plainTextParameters.push({ "replacementType": "Image", "token": "pic1", "value": ifrAttachementFiles[0].ServerRelativeUrl });
         }
