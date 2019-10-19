@@ -17,7 +17,7 @@ SPFx application extension that uses the [Bot Framework React Webchat Component]
 
 Solution|Author(s)
 --------|---------
-react-application-botframework-chat|[Stephan Bisser](https://bisser.io) - [@stephanbisser](https://twitter.com/stephanbisser))
+react-application-botframework-chat|[Stephan Bisser](https://bisser.io) - [@stephanbisser](https://twitter.com/stephanbisser)
 
 ## Version history
 
@@ -34,7 +34,7 @@ Version|Date|Comments
 ## Prerequisites
 
 * Office 365 tenant with a modern site collection 
-* Bot Framework Bot with a Direct Line key [more info on how to establish this here](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-directline?WT.mc_id=AI-MVP-5003073))
+* Bot Framework Bot with a Direct Line key ([more info on how to establish this here](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-directline?WT.mc_id=AI-MVP-5003073))
 
 ## Minimal Path to Awesome
 
