@@ -48,7 +48,7 @@ export default class BotFrameworkChatPopupApplicationChat extends React.Componen
             <Popper placement="right">
               {({ ref, style, placement, arrowProps }) => (
                 <div ref={ref} style={style} data-placement={placement}>
-                  <ReactWebChat className = {styles.BotFrameworkChatPopupApplicationChat } directLine={this.state.directLine} styleOptions={this.state.styleSetOptions}/>
+                  <ReactWebChat className = { styles.BotFrameworkChatPopupApplicationChat } directLine={ this.state.directLine } styleOptions={ this.state.styleSetOptions }/>
                   <div ref={arrowProps.ref} style={arrowProps.style} />
                 </div>
               )}
@@ -62,5 +62,5 @@ export default class BotFrameworkChatPopupApplicationChat extends React.Componen
     this.setState({
       isOpen: !this.state.isOpen,
     });
-  };
+  }
 }
