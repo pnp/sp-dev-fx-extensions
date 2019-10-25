@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://in8aakbh.sharepoint.com/sites/LCSPlaybookDev5/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "46fe1f48-0c8d-4236-b8c0-e70f2a5eeb08": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    },
+    "getThumbnail": {
+      "pageUrl": "https://in8aakbh.sharepoint.com/sites/LCSPlaybookDev5/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "46fe1f48-0c8d-4236-b8c0-e70f2a5eeb08": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    }
+  }
+}
