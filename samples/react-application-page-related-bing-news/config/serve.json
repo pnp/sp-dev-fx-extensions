@@ -4,23 +4,23 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://sambori.sharepoint.com/SitePages/Facebook's-Zuckerberg-grilled-over-ad-fact-checking-policy.aspx",
+      "pageUrl": "https://[TENANT].sharepoint.com/SitePages/[PAGE].aspx",
       "customActions": {
         "3013b2a1-5a5a-4f23-aaac-2b12791eeba4": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "bingSearchApiKey": "69037507b3fb4b8d98682baa87d1a2fd"
+            "bingSearchApiKey": "[BING_API_KEY]"
           }
         }
       }
     },
     "pageRelatedBingNews": {
-      "pageUrl": "https://sambori.sharepoint.com/SitePages/Facebook's-Zuckerberg-grilled-over-ad-fact-checking-policy.aspx",
+      "pageUrl": "https://[TENANT].sharepoint.com/SitePages/[PAGE].aspx",
       "customActions": {
         "3013b2a1-5a5a-4f23-aaac-2b12791eeba4": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "bingSearchApiKey": "69037507b3fb4b8d98682baa87d1a2fd"
+            "bingSearchApiKey": "BING_API_KEY"
           }
         }
       }
