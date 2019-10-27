@@ -389,43 +389,7 @@ namespace GenerateWordDocFunctionApp
             }
         }
 
-        private static WordprocessingDocument ReplaceTable(WordprocessingDocument localDocxFile, TableReplacementParameters tableParm, TraceWriter log, List<string> messages)
-        {
-            MainDocumentPart mainPart = localDocxFile.MainDocumentPart;
-            var stuff = mainPart.Document.Body.Descendants<SdtBlock>();
-            
-            SdtBlock ccWithTable = mainPart.Document.Body.Descendants<SdtBlock>().Where
-           (r => r.SdtProperties.GetFirstChild<Tag>().Val == tableParm.token).Single();
-
-            // This should return only one table.
-            Table theTable = ccWithTable.Descendants<Table>().Single();
-
-            // Get the last row in the table. Table should have one tow with titles and an empty data row.
-            TableRow theRow = theTable.Elements<TableRow>().Last();
-
-            foreach (var tblParmRow in tableParm.rows)
-            {
-                TableRow rowCopy = (TableRow)theRow.CloneNode(true);
-                int colidx = 0;
-                foreach (var tblParmCol in tblParmRow.columns) {
-                    Console.WriteLine(tblParmCol.value);
-                    rowCopy.Descendants<TableCell>().ElementAt(colidx).Append(new Paragraph
-                    (new Run(new Text(tblParmCol.value))));
-                    colidx++;
-                }
-                theTable.AppendChild(rowCopy);
-            }
-            // Remove the empty placeholder row from the table.
-            theTable.RemoveChild(theRow);
-
-            // Save the changes to the table back into the document.
-            mainPart.Document.Save();
-
-            return localDocxFile;
-
-
-        }
-
+     
         private static async Task<string> DownloadFileFromSPAsPDF(TraceWriter log, string fileName, string tempFilePath, string webServerRelativeUrl, HttpClient httpClient)
         {
             string requestUrl = await GetPDFUrlForSPDocument(log, fileName, tempFilePath, webServerRelativeUrl, httpClient);
@@ -619,6 +583,53 @@ namespace GenerateWordDocFunctionApp
 
 
         }
+        private static WordprocessingDocument ReplaceTable(WordprocessingDocument localDocxFile, TableReplacementParameters tableParm, TraceWriter log, List<string> messages)
+        {
+            try
+            {
+                MainDocumentPart mainPart = localDocxFile.MainDocumentPart;
+            var stuff = mainPart.Document.Body.Descendants<SdtBlock>();
+
+            SdtBlock ccWithTable = mainPart.Document.Body.Descendants<SdtBlock>().Where
+           (r => r.SdtProperties.GetFirstChild<Tag>().Val == tableParm.token).Single();
+
+            // This should return only one table.
+            Table theTable = ccWithTable.Descendants<Table>().Single();
+
+            // Get the last row in the table. Table should have one tow with titles and an empty data row.
+            TableRow theRow = theTable.Elements<TableRow>().Last();
+            foreach (var tblParmRow in tableParm.rows)
+            {
+                TableRow rowCopy = (TableRow)theRow.CloneNode(true);
+                int colidx = 0;
+                foreach (var tblParmCol in tblParmRow.columns)
+                {
+                    Console.WriteLine(tblParmCol.value);
+                    rowCopy.Descendants<TableCell>().ElementAt(colidx).Append(new Paragraph
+                    (new Run(new Text(tblParmCol.value))));
+                    colidx++;
+                }
+                theTable.AppendChild(rowCopy);
+            }
+            // Remove the empty placeholder row from the table.
+            theTable.RemoveChild(theRow);
+
+            // Save the changes to the table back into the document.
+            mainPart.Document.Save();
+
+            return localDocxFile;
+            }
+            catch (Exception ex)
+            {
+                string message = $"An error occurred replacing the table in Plain Text Content Control Tag \"{tableParm.token}\". Please ensure its a Plain Text COntent Control that contains a table, and the number of columns in that table is equal to the number of columns in the JSON array.";
+                log.Info(message);
+                messages.Add(message);
+                return localDocxFile;
+            }
+
+
+        }
+
         internal static WordprocessingDocument RemoveSdtBlocks(this WordprocessingDocument doc, IEnumerable<string> contentBlocks)
         {
             List<SdtElement> SdtBlocks = doc.MainDocumentPart.Document.Descendants<SdtElement>().ToList();

@@ -3,15 +3,15 @@
   "solution": {
     "name": "react-command-generate-documents-client-side-solution",
     "id": "e7657191-8142-4948-a8c1-e711af060450",
-    "version": "1.17.0.0",
+    "version": "1.23.0.0",
     "includeClientSideAssets": true,
     "webApiPermissionRequests": [
       {
-        "resource": "again",
+        "resource": "GenDocs",
         "scope": "user_impersonation"
       }
     ],
-    "skipFeatureDeployment": true,
+    "skipFeatureDeployment": false,
     "isDomainIsolated": false,
     "features": [
       {
