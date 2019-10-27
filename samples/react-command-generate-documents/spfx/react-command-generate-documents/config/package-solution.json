@@ -3,7 +3,7 @@
   "solution": {
     "name": "react-command-generate-documents-client-side-solution",
     "id": "e7657191-8142-4948-a8c1-e711af060450",
-    "version": "1.15.0.0",
+    "version": "1.17.0.0",
     "includeClientSideAssets": true,
     "webApiPermissionRequests": [
       {
@@ -23,7 +23,8 @@
           "elementManifests": [
             "elements.xml",
             "clientsideinstance.xml"
-          ]
+          ],
+        
         }
       }
     ]
