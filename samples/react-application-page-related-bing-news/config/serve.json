@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://[TENANT].sharepoint.com/SitePages/[PAGE].aspx",
+      "customActions": {
+        "3013b2a1-5a5a-4f23-aaac-2b12791eeba4": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "bingSearchApiKey": "[BING_API_KEY]"
+          }
+        }
+      }
+    },
+    "pageRelatedBingNews": {
+      "pageUrl": "https://[TENANT].sharepoint.com/SitePages/[PAGE].aspx",
+      "customActions": {
+        "3013b2a1-5a5a-4f23-aaac-2b12791eeba4": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "bingSearchApiKey": "BING_API_KEY"
+          }
+        }
+      }
+    }
+  }
+}
