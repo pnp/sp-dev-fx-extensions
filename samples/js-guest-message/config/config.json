@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "guest-message-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/guestMessage/GuestMessageApplicationCustomizer.js",
+          "manifest": "./src/extensions/guestMessage/GuestMessageApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GuestMessageApplicationCustomizerStrings": "lib/extensions/guestMessage/loc/{locale}.js"
+  }
+}
