@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "get-thumbnail-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/getThumbnail/GetThumbnailCommandSet.js",
+          "manifest": "./src/extensions/getThumbnail/GetThumbnailCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GetThumbnailCommandSetStrings": "lib/extensions/getThumbnail/loc/{locale}.js"
+  }
+}
