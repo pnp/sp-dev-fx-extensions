@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="PageRelatedBingNews"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="3013b2a1-5a5a-4f23-aaac-2b12791eeba4"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

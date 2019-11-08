@@ -1,24 +1,22 @@
-import { Log } from '@microsoft/sp-core-library';
-import { override } from '@microsoft/decorators';
-import {
-  BaseFieldCustomizer,
-  IFieldCustomizerCellEventParameters
-} from '@microsoft/sp-listview-extensibility';
-
-import * as $ from 'jquery';
 import "jqueryui";
-import { IOrderedRow } from './IOrderedRow';
-import { IChangedRow } from './IChangedRow';
-import { ISpfxItemOrderFieldCustomizerProperties } from './ISpfxItemOrderFieldCustomizerProperties';
+
+import { override } from "@microsoft/decorators";
+import { Log } from "@microsoft/sp-core-library";
+import { BaseFieldCustomizer, IFieldCustomizerCellEventParameters } from "@microsoft/sp-listview-extensibility";
 import { SPPermission } from "@microsoft/sp-page-context";
 import { sp } from "@pnp/sp";
+import * as $ from "jquery";
+import * as strings from "SpfxItemOrderFieldCustomizerStrings";
 
-import * as strings from 'SpfxItemOrderFieldCustomizerStrings';
-import styles from './SpfxItemOrderFieldCustomizer.module.scss';
+import { IChangedRow } from "./IChangedRow";
+import { IOrderedRow } from "./IOrderedRow";
+import { ISpfxItemOrderFieldCustomizerProperties } from "./ISpfxItemOrderFieldCustomizerProperties";
+import styles from "./SpfxItemOrderFieldCustomizer.module.scss";
 
 //Constants (simplifies updates should these values change)
 const TIMEOUTDURATION_INIT: number = 100;
-const LISTPAGECONTAINER: string = '.ms-List-page';
+const LISTSURFACE: string = '.ms-List-surface';
+//const LISTPAGECONTAINER: string = '.ms-List-page';
 const LISTROWCONTAINER: string = '.ms-List-cell';
 const INDICATORICONCLASS: string = 'ms-Icon--Pin';
 const LOADINGICONCLASS: string = 'ms-Icon--Refresh';
@@ -37,7 +35,6 @@ export default class SpfxItemOrderFieldCustomizer
   private _orderField: string;
   private _useIcons: boolean;
 
-
   @override
   public onInit(): Promise<void> {
 
@@ -45,10 +42,8 @@ export default class SpfxItemOrderFieldCustomizer
     // a different (number) column can be specified through the
     // ClientSideComponentProperties instead
     this._orderField = this.properties.OrderField || 'Order';
-  
-    this._useIcons = this.properties.ShowIcons != undefined ? this.properties.ShowIcons : true;
 
-    console.log("Useicons: " + this._useIcons);
+    this._useIcons = this.properties.ShowIcons != undefined ? this.properties.ShowIcons : true;
 
     //Initialize the row map
     this._rowMap = new Array<IOrderedRow>();
@@ -63,7 +58,7 @@ export default class SpfxItemOrderFieldCustomizer
 
   @override
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
-    
+
     //Cancel the previous timeout (if any)
     if(this._timeoutId_Init) {
       clearTimeout(this._timeoutId_Init);
@@ -79,23 +74,25 @@ export default class SpfxItemOrderFieldCustomizer
       } else {
         event.domElement.innerHTML = `<span class="${styles.reorderField}" title="${strings.ReorderTooltip}">${INDICATORTEXTVALUE}</span>`;
       }
-      
+
       //Track the Ids and Order values of each row (so that they can be referenced later)
       this._rowMap.push({
         Id: event.listItem.getValueByName('ID'),
         Order: event.listItem.getValueByName(this._orderField)
       });
-  
+
       //Reset timeout (only needed since there isn't an official onCellsRendered event)
       this._timeoutId_Init = setTimeout(this.onCellsRendered.bind(this), TIMEOUTDURATION_INIT);
+
     } else {
+      //Fallback for when user doesn't have edit list item permission
       if(this._useIcons) {
         event.domElement.innerHTML = `<i class="ms-Icon ${DISABLEDICONCLASS}" aria-hidden="true" title="${strings.NoPermissionsTooltip}"></i>`;
       } else {
         event.domElement.innerHTML = `<span aria-hidden="true" title="${strings.NoPermissionsTooltip}">${DISABLEDTEXTVALUE}</span>`;
       }
     }
-    
+
   }
 
   /** Once all the cells are rendered (icons), and the key values stored in the
@@ -108,8 +105,9 @@ export default class SpfxItemOrderFieldCustomizer
 
       //Apply jQuery UI sortable to the item rows
       // see http://jqueryui.com/sortable for more details
-      $(LISTPAGECONTAINER).sortable({
-        stop: this.onOrderChanged.bind(this) //This fires whenever a row is dragged and dropped within our list
+      $(LISTSURFACE).sortable({
+        stop: this.onOrderChanged.bind(this), //This fires whenever a row is dragged and dropped within our list
+        items: LISTROWCONTAINER,
       });
 
       //Store the current row order (so we can track what changes)
@@ -128,7 +126,7 @@ export default class SpfxItemOrderFieldCustomizer
   public onOrderChanged(e: JQueryEventObject, ui: JQueryUI.SortableUIParams): void {
 
     //Disable reordering
-    $(LISTPAGECONTAINER).sortable('disable');
+    $(LISTSURFACE).sortable('disable');
 
     //Grab the current row order
     let newOrder: Array<number> = SpfxItemOrderFieldCustomizer.getRowOrder();
@@ -142,7 +140,7 @@ export default class SpfxItemOrderFieldCustomizer
     } else {
 
       //No order changes, so turn the reordering back on
-      $(LISTPAGECONTAINER).sortable('enable');
+      $(LISTSURFACE).sortable('enable');
 
     }
 
@@ -181,9 +179,9 @@ export default class SpfxItemOrderFieldCustomizer
 
         //Reset the internal row order tracking so we can track new changes
         this._rowOrder = newOrder;
-        
+
         //Turn reordering back on
-        $(LISTPAGECONTAINER).sortable('enable');
+        $(LISTSURFACE).sortable('enable');
 
       })
       .catch((error: any): void => {
@@ -209,7 +207,7 @@ export default class SpfxItemOrderFieldCustomizer
     // used in the toArray method, so we cast it to <any> first
     //The initial results are string values so we map to an array of integers
     // since this makes referencing by index much easier
-    return (<any>$(LISTPAGECONTAINER)).sortable('toArray', {
+    return (<any>$(LISTSURFACE)).sortable('toArray', {
       attribute: 'data-list-index'
     }).map((value: string) => {
       return parseInt(value);
@@ -229,13 +227,13 @@ export default class SpfxItemOrderFieldCustomizer
 
   }
 
-  /** Evalues the order arrays and only returns those rows which have changed */
+  /** Evaluates the order arrays and only returns those rows which have changed */
   public static changedRows(prevOrder: Array<number>, newOrder: Array<number>): Array<IChangedRow> {
     let diffRows: Array<IChangedRow> = new Array<IChangedRow>();
 
     for(let i: number = 0; i < newOrder.length; i++) {
       if(newOrder[i] !== prevOrder[i]) {
-        
+
         //Stores the original listIndex value along with its current position
         diffRows.push({
           listIndex: newOrder[i],
@@ -271,7 +269,7 @@ export default class SpfxItemOrderFieldCustomizer
   public static hideLoading(useIcons: boolean): void {
 
     //jQuery selector just finds all of our fields that are
-    // currently showing the loading indicator 
+    // currently showing the loading indicator
     if(useIcons) {
       $(`.${styles.reorderField}.isSpinning`)
         .removeClass('isSpinning')

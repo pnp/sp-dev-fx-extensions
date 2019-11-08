@@ -1,0 +1,58 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.ThumbnailDialogContent { 
+  padding: 1px;
+  width: 400px;
+
+  .linkRow {
+    display: flex
+  }
+
+  .linkTextfield {
+    width: 100%;
+  }
+
+  .linkCopyButton {
+    width: auto;
+  }
+
+  .iconContainer {
+    margin-bottom: 16px;
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .icon {
+    line-height: 44px;
+    background-color: #599b00;
+    border-radius: 50%;
+    width:44px;
+    height:44px;
+    color: #ffffff;
+    animation: popup .45s;
+  }
+
+  .linkCopied {
+    text-align: center;
+  }
+
+  .dialogHeading {
+    text-align: center;
+  }
+
+  .dropdown {
+    text-align: left;
+  }
+
+  @keyframes popup {
+    from {
+      transform: scale(0.0);
+    }
+    to {
+        transform: scale(1.25);
+    }
+    to {
+        transform: scale(1.0);
+    }
+  }
+}
