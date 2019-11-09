@@ -92,6 +92,7 @@ namespace GenerateWordDocFunctionApp
     {
         public string url { get; set; }
         public List<string> messages { get; set; }
+        public List<string> tagsFound { get; set; }
     }
 
     public static class DocumentGenerator
@@ -122,11 +123,12 @@ namespace GenerateWordDocFunctionApp
 
                 //set httpc;oent tp use accesstoken
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", spToken);
-                List<string> messages = new List<string>();
+                List<string> messages = new List<string>(); //errors/warnings to send to caller
+                List<string> tagsFound = new List<string>(); //list of tags found in document to send to caller
                 string localDocxFilePath = null;
                 try
                 {
-                    localDocxFilePath = await CreateLocalDocxFile(log, response, postData, clientContext, messages);
+                    localDocxFilePath = await CreateLocalDocxFile(log, response, postData, clientContext, messages,tagsFound);
                 }
                 catch (Exception ex)
                 {
@@ -140,7 +142,7 @@ namespace GenerateWordDocFunctionApp
                 string url = await GetPDFUrlForSPDocument(log, postData.fileName + ".docx", postData.temporaryFolderServerRelativeUrl, postData.webServerRelativeUrl, httpClient);
 
                 response.StatusCode = HttpStatusCode.OK;
-                ResponseBody b = new ResponseBody() { url = url, messages = messages };
+                ResponseBody b = new ResponseBody() { url = url, messages = messages, tagsFound = tagsFound };
                 response.Content = new StringContent(JsonConvert.SerializeObject(b), Encoding.UTF8, "application/json");
                 return response;
             }
@@ -181,9 +183,10 @@ namespace GenerateWordDocFunctionApp
 
                 string localDocxFilePath = null;
                 List<string> messages = new List<string>();
+                List<string> tagsFound = new List<string>(); //list of tags found in document to send to caller
                 try
                 {
-                    localDocxFilePath = await CreateLocalDocxFile(log, response, postData, clientContext, messages);
+                    localDocxFilePath = await CreateLocalDocxFile(log, response, postData, clientContext, messages, tagsFound);
                 }
                 catch (Exception ex)
                 {
@@ -209,7 +212,7 @@ namespace GenerateWordDocFunctionApp
                 }
 
                 response.StatusCode = HttpStatusCode.OK;
-                ResponseBody b = new ResponseBody() { url = docUrl, messages = messages };
+                ResponseBody b = new ResponseBody() { url = docUrl, messages = messages, tagsFound = tagsFound };
                 response.Content = new StringContent(JsonConvert.SerializeObject(b), Encoding.UTF8, "application/json");
                 return response;
             }
@@ -317,7 +320,7 @@ namespace GenerateWordDocFunctionApp
 
         }
 
-        private static async Task<string> CreateLocalDocxFile(TraceWriter log, HttpResponseMessage response, PostData postData, ClientContext clientContext, List<string> messages)
+        private static async Task<string> CreateLocalDocxFile(TraceWriter log, HttpResponseMessage response, PostData postData, ClientContext clientContext, List<string> messages, List<string> tagsFound)
         {
             // Get the document template
             File templateFile = null;
@@ -349,6 +352,7 @@ namespace GenerateWordDocFunctionApp
                 // open the local file as a WordProcessingDocument
                 WordprocessingDocument localDocxFile = WordprocessingDocument.Open(localDocxFilePath, true);
 
+                DumpTags(localDocxFile, tagsFound); // get a list of tags in the document so we can rtun to client to help troubleshooting
                 // replace all the content controls 
                 foreach (var replacementParm in postData.plainTextParameters)
                 {
@@ -583,41 +587,65 @@ namespace GenerateWordDocFunctionApp
 
 
         }
+        private static List<String> DumpTags(WordprocessingDocument localDocxFile, List<string> tags)
+        {
+            var elements = localDocxFile.MainDocumentPart.Document.Body.Descendants();
+            var count = elements.Count();
+            foreach (var element in elements)
+            {
+
+                if (element.GetType().IsSubclassOf(typeof(SdtElement)))
+                {
+                    SdtElement block = (SdtElement)element;
+                    SdtProperties prop = block.SdtProperties;
+                    var tag = prop.GetFirstChild<Tag>();
+                    if (tag != null)
+                    {
+                        tags.Add(tag.Val);
+                    }
+
+                }
+
+            }
+            return tags;
+        }
         private static WordprocessingDocument ReplaceTable(WordprocessingDocument localDocxFile, TableReplacementParameters tableParm, TraceWriter log, List<string> messages)
         {
             try
             {
                 MainDocumentPart mainPart = localDocxFile.MainDocumentPart;
-            var stuff = mainPart.Document.Body.Descendants<SdtBlock>();
+                var stuff = mainPart.Document.Body.Descendants<SdtElement>();
+                SdtElement ccWithTable = localDocxFile.MainDocumentPart.Document.Body.Descendants<SdtElement>()
+                  .FirstOrDefault(sdt => sdt.SdtProperties.GetFirstChild<Tag>()?.Val == tableParm.token);
 
-            SdtBlock ccWithTable = mainPart.Document.Body.Descendants<SdtBlock>().Where
-           (r => r.SdtProperties.GetFirstChild<Tag>().Val == tableParm.token).Single();
+                //                SdtElement ccWithTable = mainPart.Document.Body.Descendants<SdtElement>().Where
+                //               (r => r.SdtProperties.GetFirstChild<Tag>().Val == tableParm.token).Single();
 
-            // This should return only one table.
-            Table theTable = ccWithTable.Descendants<Table>().Single();
+                // This should return only one table.
+                Table theTable = ccWithTable.Descendants<Table>().Single();
 
-            // Get the last row in the table. Table should have one tow with titles and an empty data row.
-            TableRow theRow = theTable.Elements<TableRow>().Last();
-            foreach (var tblParmRow in tableParm.rows)
-            {
-                TableRow rowCopy = (TableRow)theRow.CloneNode(true);
-                int colidx = 0;
-                foreach (var tblParmCol in tblParmRow.columns)
+                // Get the last row in the table. Table should have one tow with titles and an empty data row.
+                TableRow theRow = theTable.Elements<TableRow>().Last();
+                foreach (var tblParmRow in tableParm.rows)
                 {
-                    Console.WriteLine(tblParmCol.value);
-                    rowCopy.Descendants<TableCell>().ElementAt(colidx).Append(new Paragraph
-                    (new Run(new Text(tblParmCol.value))));
-                    colidx++;
+                    TableRow rowCopy = (TableRow)theRow.CloneNode(true);
+                    int colidx = 0;
+                    foreach (var tblParmCol in tblParmRow.columns)
+                    {
+                        Console.WriteLine(tblParmCol.value);
+                        rowCopy.Descendants<TableCell>().ElementAt(colidx).Append(new Paragraph
+                        (new Run(new Text(tblParmCol.value))));
+                        colidx++;
+                    }
+                    theTable.AppendChild(rowCopy);
                 }
-                theTable.AppendChild(rowCopy);
-            }
-            // Remove the empty placeholder row from the table.
-            theTable.RemoveChild(theRow);
+                // Remove the empty placeholder row from the table.
+                theTable.RemoveChild(theRow);
 
-            // Save the changes to the table back into the document.
-            mainPart.Document.Save();
+                // Save the changes to the table back into the document.
+                mainPart.Document.Save();
 
-            return localDocxFile;
+                return localDocxFile;
             }
             catch (Exception ex)
             {
