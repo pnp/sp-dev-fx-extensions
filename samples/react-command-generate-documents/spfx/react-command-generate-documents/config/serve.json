@@ -4,12 +4,13 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://rgove3.sharepoint.com/sites/DocGen/Lists/Tasks/AllItems.aspx",
+      "pageUrl": "https://rgove3.sharepoint.com/sites/testDocGen/Lists/Tasks/AllItems.aspx",
       "customActions": {
         "8b1494b2-3820-4797-a3d1-522fbab86854": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
           "properties": {
-            "azureFunctionBaseUrl":"https://generateworddocfunctionapp20191011091356.azurewebsites.net",
+            "azureFunctionBaseUrl":"https://generateworddocfunctionapp20191026065257.azurewebsites.net",
+                                    
             "azureFunctionGenerateDocumentMethod":"GenerateDocument",
             "azureFunctionGetPDFPreviewUrlMethod":"GetPDFPreviewUrl",
             "templateServerRelativeUrl":"/sites/TestDocGen/templates/testTemplate.docx",
@@ -17,7 +18,7 @@
             "webServerRelativeUrl":"/sites/TestDocGen",
             "saveAsFormat":"PDF",
             "temporaryFolderServerRelativeUrl":"/sites/TestDocGen/Temporary",
-            "taskListId":"7b44c525-28d8-4f24-984c-23897b550cd0"
+            "taskListId":"f1d86da4-71a8-4755-bfaa-a9c1aab2fd8b"
         
             
             

@@ -3,12 +3,41 @@ import { HttpClient, AadHttpClient, IHttpClientOptions, HttpClientResponse } fro
 
 import { Guid } from "@microsoft/sp-core-library";
 import { Dialog } from '@microsoft/sp-dialog';
+class TableColumn {
+    public replacementType: "PlainText" | "Image"; //  havent tested image in tables
+    public value: string
+};
+class TableRow {
+    public columns: TableColumn[];
+    public constructor() {
+        this.columns = [];
+    }
+};
+class TableParameter {
+    public token: string;
+    public rows: TableRow[];
+    public constructor(token: string) {
+        this.rows = [];
+        this.token = token;
+    }
+};
 class ReplacementParameters {
-    public plainTextParameters: { replacementType: string, token: string, value: string }[];
+
+    public tableParameters: TableParameter[]
+    public plainTextParameters: {
+        replacementType: "PlainText" | "Image",
+        token: string,
+        value: string
+    }[];
+
+
     public constructor() {
         this.plainTextParameters = [];
+        this.tableParameters = [];
+
     }
 }
+
 export default class DocumentGenerator {
     /**
      * 
@@ -93,29 +122,47 @@ export default class DocumentGenerator {
         var rp: ReplacementParameters = await this.getData(web, listId, itemId, new ReplacementParameters());
         var ifr = await web.lists.getById(listId.toString()).items.getById(itemId).get();
         var newFileName = ifr["Title"].replace(/\//g, "-").replace(":", "-");
+        
+        var testTableData = [ //sample table replacement data here can come from any sharepoint lists or elsewhere
+            { "Id": "XXX", "desc": "desk", "qty": "1" },// argh!! need to get numbers in tables
+            { "Id": "YYY", "desc": "chair", "qty": "3" }
+        ]
+        var tbl1= new TableParameter("table1");// table 1 is the name of the tag in your word template
+        for (var rc of testTableData) {
+            var  tr = new TableRow();
+            tr.columns.push({replacementType:"PlainText",value:rc.Id});
+            tr.columns.push({replacementType:"PlainText",value:rc.desc});
+            tr.columns.push({replacementType:"PlainText",value:rc.qty});
+            tbl1.rows.push(tr);
+           }
+           
+           
+
+
         const body: string = JSON.stringify({
             'plainTextParameters': rp.plainTextParameters,
-            'tableParameters': [
-                {
-                    'token': 'table1',
-                    'rows': [
-                        {
-                            'columns': [
-                                { 'replacementType': 'PlainText', 'value': '1' },
-                                { 'replacementType': 'PlainText', 'value': '2' },
-                                { 'replacementType': 'PlainText', 'value': '3' },
-                            ]
-                        },
-                        {
-                            'columns': [
-                                { 'replacementType': 'PlainText', 'value': 'a' },
-                                { 'replacementType': 'PlainText', 'value': 'b' },
-                                { 'replacementType': 'PlainText', 'value': 'c' },
-                            ]
-                        },
-                    ],
-                }
-            ],
+            'tableParameters': [tbl1],
+            // 'tableParameters': [
+            //     {
+            //         'token': 'table1',
+            //         'rows': [
+            //             {
+            //                 'columns': [
+            //                     { 'replacementType': 'PlainText', 'value': '1' },
+            //                     { 'replacementType': 'PlainText', 'value': '2' },
+            //                     { 'replacementType': 'PlainText', 'value': '3' },
+            //                 ]
+            //             },
+            //             {
+            //                 'columns': [
+            //                     { 'replacementType': 'PlainText', 'value': 'a' },
+            //                     { 'replacementType': 'PlainText', 'value': 'b' },
+            //                     { 'replacementType': 'PlainText', 'value': 'c' },
+            //                 ]
+            //             },
+            //         ],
+            //     }
+            // ],
             "temporaryFolderServerRelativeUrl": temporaryFolderServerRelativeUrl,
             "webServerRelativeUrl": webServerRelativeUrl,
             'templateServerRelativeUrl': templateServerRelativeUrl,
