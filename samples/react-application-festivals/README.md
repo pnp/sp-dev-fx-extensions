@@ -22,7 +22,7 @@ react-application-festivals | Anoop T ([@anooptells](https://twitter.com/anoopte
 
 Version|Date|Comments
 -------|----|--------
-1.0|Decmber 05, 2018|Initial release
+1.0|December 05, 2018|Initial release
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
