@@ -26,7 +26,7 @@ react-command-direct-link|Jonas Bjerke Hansen, [JonasBjerke.wordpress.com](https
 
 Version|Date|Comments
 -------|----|--------
-1.0.0|Januar 6, 2019|Initial release
+1.0.0|January 6, 2019|Initial release
 
 ## Disclaimer
 
