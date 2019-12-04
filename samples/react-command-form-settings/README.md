@@ -26,7 +26,7 @@ react-command-form-settings | Ramin Ahmadi
 
 Version|Date|Comments
 -------|----|--------
-1.0|Jun 30, 2019|Initial release
+1.0|June 30, 2019|Initial release
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
