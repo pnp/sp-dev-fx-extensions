@@ -1,6 +1,4 @@
-# Title of the sample
- 
-Guest Message
+# Guest Message
 
 ## Summary
 
