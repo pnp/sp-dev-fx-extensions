@@ -12,7 +12,7 @@ lib
 solution
 temp
 *.sppkg
-.yo-rc.json
+*.yo-rc.json
 
 # Coverage directory used by tools like istanbul
 coverage
