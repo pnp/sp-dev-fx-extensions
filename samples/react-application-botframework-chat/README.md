@@ -50,7 +50,9 @@ this.state = {
 
 * in the command line run
   * `npm i`
-  * `gulp serve-info --nobrowser`
+  * `gulp serve --nobrowser`
+
+Then open up a SharePoint modern page and add the following string to your URL:
 
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"f50b07b5-76a5-4e80-9cab-b4ee9a591bf6":{"location":"ClientSideExtension.ApplicationCustomizer"}}
