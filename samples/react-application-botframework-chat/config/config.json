@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "bot-framework-chat-popup-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/botFrameworkChatPopup/BotFrameworkChatPopupApplicationCustomizer.js",
+          "manifest": "./src/extensions/botFrameworkChatPopup/BotFrameworkChatPopupApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "BotFrameworkChatPopupApplicationCustomizerStrings": "lib/extensions/botFrameworkChatPopup/loc/{locale}.js"
+  }
+}
