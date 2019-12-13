@@ -1,0 +1,16 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+    "version": "2.0",
+    "bundles": {
+        "my-followed-sites-application-customizer": {
+            "components": [{
+                "entrypoint": "./lib/extensions/myFollowedSites/MyFollowedSitesApplicationCustomizer.js",
+                "manifest": "./src/extensions/myFollowedSites/MyFollowedSitesApplicationCustomizer.manifest.json"
+            }]
+        }
+    },
+    "externals": {},
+    "localizedResources": {
+        "MyFollowedSitesApplicationCustomizerStrings": "lib/extensions/myFollowedSites/loc/{locale}.js"
+    }
+}
