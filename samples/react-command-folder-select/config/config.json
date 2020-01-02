@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "react-command-folder-select-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/reactCommandFolderSelect/ReactCommandFolderSelectCommandSet.js",
+          "manifest": "./src/extensions/reactCommandFolderSelect/ReactCommandFolderSelectCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReactCommandFolderSelectCommandSetStrings": "lib/extensions/reactCommandFolderSelect/loc/{locale}.js"
+  }
+}
