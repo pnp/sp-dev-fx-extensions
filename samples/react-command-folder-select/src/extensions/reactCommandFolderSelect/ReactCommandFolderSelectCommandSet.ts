@@ -11,6 +11,7 @@ import FolderSelect from './components/FolderSelect';
 import * as strings from 'ReactCommandFolderSelectCommandSetStrings';
 import { sp, Folders } from "@pnp/sp";
 import { Dropdown, DropdownMenuItemType, IDropdownStyles, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
+import _ from 'underscore';
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
@@ -48,7 +49,6 @@ export default class ReactCommandFolderSelectCommandSet extends BaseListViewComm
   }
 
   public _compare = (a, b): any => {
-    console.log(a.Name);
     const itema = a.Name.toUpperCase();
     const itemb = b.Name.toUpperCase();
 
@@ -66,13 +66,15 @@ export default class ReactCommandFolderSelectCommandSet extends BaseListViewComm
     switch (event.itemId) {
       case 'COMMAND_1':
         const folderOptions: Array<any> = [];
-        sp.web.folders.getByName('Tooling Library').folders.get().then(folders => {
+        let libraryName = this.context.pageContext.list.title;
+        sp.web.folders.getByName(libraryName).folders.get().then(folders => {
           folders.sort((a, b) => {
             if(a.Name.toUpperCase() < b.Name.toUpperCase()) return -1;
             if(a.Name.toUpperCase() > b.Name.toUpperCase()) return 1;
             return 0;
           });
-          folders.map(folder => {
+          let filteredFolders = _.reject(folders, function(folder) { return folder.Name === 'Forms';});
+          filteredFolders.map(folder => {
             folderOptions.push({key: folder.ServerRelativeUrl, text: folder.Name, title: folder.Name});
           });
         });

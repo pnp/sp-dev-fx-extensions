@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://coriuminternational.sharepoint.com/sites/Groups/Engineering/Tooling%20Library/Forms/AllItems.aspx",
+      "pageUrl": "https://devroberts.sharepoint.com/sites/Test/Test%20Documents/Forms/AllItems.aspx",
       "customActions": {
         "dafc7fb0-3eca-4a09-b5ea-efe0bb38ee0f": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -16,7 +16,7 @@
       }
     },
     "reactCommandFolderSelect": {
-      "pageUrl": "https://coriuminternational.sharepoint.com/sites/Groups/Engineering/Tooling%20Library/Forms/AllItems.aspx",
+      "pageUrl": "https://devroberts.sharepoint.com/sites/Test/Test%20Documents/Forms/AllItems.aspx",
       "customActions": {
         "dafc7fb0-3eca-4a09-b5ea-efe0bb38ee0f": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
