@@ -13,10 +13,6 @@ This extension creates a callout with a dropdown that allows users to select fro
 * [SharePoint Framework](https://dev.office.com/sharepoint)
 
 
-## Prerequisites
- 
-> Any special pre-requisites?
-
 ## Solution
 
 Solution|Author(s)
