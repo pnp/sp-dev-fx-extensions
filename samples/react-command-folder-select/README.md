@@ -1,4 +1,4 @@
-# title of the sample
+# react-command-folder-select
 
 ## Summary
 This extension creates a callout with a dropdown that allows users to select from a list of top level folders in a document library. After selecting the folder they can use the button to navigate to that folder.
