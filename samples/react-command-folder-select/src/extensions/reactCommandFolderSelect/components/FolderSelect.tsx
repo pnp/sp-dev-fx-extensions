@@ -75,8 +75,6 @@ class FolderSelectContext extends React.Component<IFolderSelectProps, IFolderSta
     });
   }
 
-  private _dismiss() {
-    this.props.dismiss();
-  }
+
 
 }
