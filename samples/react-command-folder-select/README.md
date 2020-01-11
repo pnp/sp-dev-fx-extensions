@@ -48,4 +48,5 @@ This extension illustrates the following concepts:
 - Retrieiving top level folders of a document library using [PnP Js](https://pnp.github.io/pnpjs/).
 
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-folder-select
+" />
