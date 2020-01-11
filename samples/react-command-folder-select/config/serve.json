@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://devroberts.sharepoint.com/sites/Test/Test%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "dafc7fb0-3eca-4a09-b5ea-efe0bb38ee0f": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    },
+    "reactCommandFolderSelect": {
+      "pageUrl": "https://devroberts.sharepoint.com/sites/Test/Test%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "dafc7fb0-3eca-4a09-b5ea-efe0bb38ee0f": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    }
+  }
+}
