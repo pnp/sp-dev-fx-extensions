@@ -201,10 +201,6 @@
     color:#8a8886;
   }
 
-  .sample:hover .sample-video {
-    display: none;
-  }
-
   .form-control {
     display: block;
     width: 100%;
@@ -227,5 +223,16 @@
   #samplestable th {
     cursor: pointer;
   }
+
+  
+  
+  .sample-item[data-thumbnail$='.gif'] .sample-video {
+    display: block;
+  }
+
+  .sample:hover .sample-video {
+    display: none;
+  }
+
 
   html { overflow-y: scroll; }
