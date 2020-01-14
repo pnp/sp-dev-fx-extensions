@@ -23,7 +23,7 @@ react-command-folder-select | Zach Roberts, [spodev.com](https://spodev.com)
 
 Version|Date|Comments
 -------|----|--------
-1.0|Janurary 3, 2020|Initial Version
+1.0|January 3, 2020|Initial Version
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -48,5 +48,4 @@ This extension illustrates the following concepts:
 - Retrieiving top level folders of a document library using [PnP Js](https://pnp.github.io/pnpjs/).
 
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-folder-select
-" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-folder-select" />
