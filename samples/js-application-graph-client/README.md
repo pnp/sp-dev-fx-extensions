@@ -1,3 +1,16 @@
+---
+page_type: sample
+products:
+- office-sp
+languages:
+- javascript
+- typescript
+extensions:
+  contentType: samples
+  technologies:
+  - SharePoint Framework
+  createdDate: 6/1/2017 12:00:00 AM
+---
 # Application Customizer GraphClient from Modern Teamsite
 
 ## Summary
