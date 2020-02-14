@@ -1,3 +1,18 @@
+---
+page_type: sample
+products:
+- office-sp
+languages:
+- javascript
+- typescript
+extensions:
+  contentType: samples
+  technologies:
+  - SharePoint Framework
+  platforms:
+  - react
+  createdDate: 4/1/2018 12:00:00 AM
+---
 # React Menu Footer Classic Modern
 
 ## Summary
