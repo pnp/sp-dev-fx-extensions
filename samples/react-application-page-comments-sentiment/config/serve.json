@@ -9,18 +9,18 @@
         "ac0bbe10-482e-471d-ae8b-e71162333c3e": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "textAnalyticsApiKey": "fcc87a502a374394afb715c254e79f10"
+            "textAnalyticsApiKey": "[YOUR API KEY]"
           }
         }
       }
     },
     "pageSentiment": {
-      "pageUrl": "https://inheritscloud.sharepoint.com/sites/ModernTeamSite/SitePages/Introducing%20the%20new%20Surface%20Book%202.aspx",
+      "pageUrl": "https://[YOUR TENANT].sharepoint.com/sites/[SITE]/SitePages/[ANY PAGE WITH COMMENTS].aspx",
       "customActions": {
         "ac0bbe10-482e-471d-ae8b-e71162333c3e": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "textAnalyticsApiKey": "fcc87a502a374394afb715c254e79f10"
+            "textAnalyticsApiKey": "[YOUR API KEY]"
           }
         }
       }
