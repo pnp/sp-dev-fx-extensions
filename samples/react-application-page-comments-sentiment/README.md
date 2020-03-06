@@ -25,6 +25,7 @@ react-application-page-comments-sentiment|Luis Mañez (MVP, [ClearPeople](http:/
 Version|Date|Comments
 -------|----|--------
 1.0.0|August 1, 2018|Initial release
+1.1.0|March 6, 2020|Updated to spfx 1.10.0, Language detection
 
 ## Disclaimer
 
