@@ -2,18 +2,20 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "react-application-page-comments-sentiment-client-side-solution",
-    "id": "fc0abcae-985a-47c6-a803-da9b5744fcb0",
+    "id": "f3cc0ed7-5d4d-4b4b-a7ae-6b659180234a",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
+    "isDomainIsolated": false,
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
-        "id": "cc80704a-250b-454b-aa79-ee9b180e5a4e",
+        "id": "2606d823-5cca-40ee-960a-d7555116988a",
         "version": "1.0.0.0",
         "assets": {
           "elementManifests": [
-            "elements.xml"
+            "elements.xml",
+            "ClientSideInstance.xml"
           ]
         }
       }

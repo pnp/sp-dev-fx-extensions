@@ -4,23 +4,23 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://YOUR_TENANT.sharepoint.com/sites/ModernTeamSite/SitePages/Introducing%20the%20new%20Surface%20Book%202.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
       "customActions": {
-        "13f4f154-b4a6-4cf8-b1a1-2bcfa6f245ac": {
+        "ac0bbe10-482e-471d-ae8b-e71162333c3e": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "textAnalyticsApiKey": "[YOUR_API_KEY]"
+            "textAnalyticsApiKey": "[YOUR API KEY]"
           }
         }
       }
     },
     "pageSentiment": {
-      "pageUrl": "https://YOUR_TENANT.sharepoint.com/sites/ModernTeamSite/SitePages/Introducing%20the%20new%20Surface%20Book%202.aspx",
+      "pageUrl": "https://[YOUR TENANT].sharepoint.com/sites/[SITE]/SitePages/[ANY PAGE WITH COMMENTS].aspx",
       "customActions": {
-        "13f4f154-b4a6-4cf8-b1a1-2bcfa6f245ac": {
+        "ac0bbe10-482e-471d-ae8b-e71162333c3e": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "textAnalyticsApiKey": "[YOUR_API_KEY]"
+            "textAnalyticsApiKey": "[YOUR API KEY]"
           }
         }
       }

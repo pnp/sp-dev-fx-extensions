@@ -1,12 +1,12 @@
 {
   "@microsoft/generator-sharepoint": {
-    "plusBeta": true,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.5.1",
+    "version": "1.10.0",
     "libraryName": "react-application-page-comments-sentiment",
-    "libraryId": "fc0abcae-985a-47c6-a803-da9b5744fcb0",
+    "libraryId": "f3cc0ed7-5d4d-4b4b-a7ae-6b659180234a",
     "packageManager": "npm",
+    "isDomainIsolated": false,
     "componentType": "extension",
     "extensionType": "ApplicationCustomizer"
   }

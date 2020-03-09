@@ -1,17 +1,17 @@
-import { override } from "@microsoft/decorators";
-import { Log } from "@microsoft/sp-core-library";
+import { override } from '@microsoft/decorators';
+import { Log } from '@microsoft/sp-core-library';
 import {
   BaseApplicationCustomizer, PlaceholderContent, PlaceholderName
-} from "@microsoft/sp-application-base";
-import { Dialog } from "@microsoft/sp-dialog";
+} from '@microsoft/sp-application-base';
+import { Dialog } from '@microsoft/sp-dialog';
 
-import * as strings from "PageSentimentApplicationCustomizerStrings";
-import IPageSentimentHeaderProps from "./components/IPageSentimentHeaderProps";
 import * as React from "react";
 import * as ReactDom from "react-dom";
+import * as strings from 'PageSentimentApplicationCustomizerStrings';
+import IPageSentimentHeaderProps from './components/IPageSentimentHeaderProps';
 import PageSentimentHeader from "./components/PageSentimentHeader";
 
-const LOG_SOURCE: string = "PageSentimentApplicationCustomizer";
+const LOG_SOURCE: string = 'PageSentimentApplicationCustomizer';
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
