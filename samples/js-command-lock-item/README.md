@@ -1,3 +1,16 @@
+---
+page_type: sample
+products:
+- office-sp
+languages:
+- javascript
+- typescript
+extensions:
+  contentType: samples
+  technologies:
+  - SharePoint Framework
+  createdDate: 1/1/2018 12:00:00 AM
+---
 # Lock Item Command Set Customizer
 
 ## Summary

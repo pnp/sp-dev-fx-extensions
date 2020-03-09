@@ -1,3 +1,15 @@
+---
+page_type: sample
+products:
+- office-sp
+languages:
+- typescript
+extensions:
+  contentType: samples
+  technologies:
+  - SharePoint Framework
+  createdDate: 6/1/2017 4:27:24 AM
+---
 # SharePoint Framework Extensions Samples & Tutorial Materials
 
 This repository contains the samples that demonstrate different usage patterns for the SharePoint Framework extensions.

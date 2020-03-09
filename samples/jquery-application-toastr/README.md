@@ -1,3 +1,18 @@
+---
+page_type: sample
+products:
+- office-sp
+languages:
+- javascript
+- typescript
+extensions:
+  contentType: samples
+  technologies:
+  - SharePoint Framework
+  platforms:
+  - jQuery
+  createdDate: 8/1/2017 12:00:00 AM
+---
 # SPFx Toastr Application Customizer
 
 ## Summary

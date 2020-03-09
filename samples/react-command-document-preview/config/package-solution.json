@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Document Preview",
+    "id": "ee2d4b69-35e6-4be7-a5bf-8efc80d08edc",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "features": [
+      {
+        "title": "Application Extension - Document Smart View.",
+        "description": "Custom action to view the document in a panel.",
+        "id": "697266f4-7bc6-4044-8ccf-679209994904",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-document-preview.sppkg"
+  }
+}
