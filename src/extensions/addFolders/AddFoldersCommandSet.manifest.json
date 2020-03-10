@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+
+  "id": "5c2a88cb-baf3-4e91-bfc2-4c6add795219",
+  "alias": "AddFoldersCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "items": {
+    "ADDFOLDERS": {
+      "title": {
+        "default": "Add Folders",
+        "fr-fr": "Ajouter des dossiers" },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAYAAADj79JYAAAD/klEQVR4Xu2cPYhUVxiGn28sFEwQsUsRNH0KyzQiuLsz6xKSJkUICSFNLGxEhYCNgiCKIGlCGi3yg41FQiLZ2YVEbAQbITY2/jWiiASRBUWZE2b9uzs/e75z79wzzvpe2Gbu+53v3Oe88517zt25ho6sBCxrNiVDwDObQMAFPDOBzOnkcAHPTCBzOjlcwDMTyJxODl9LwMMCPxH4MvM11ZGuA9wA9lmTP6skqNXhawj4S8bPgKPW5EhZ6AKeTu4/4FNrcjE9lHqX9mvQ4c8ZG8dthu8mAfgT4ArG4zKdHUtMYAOwHVj/Kr/xs83wVZn+5C4pD2gwbdNcKdPZccSERbbTYRHYIuAZRkDAM0AuphBwAR9OYMBdimp4nYYR8H66ukuJOE41vM6v5IC2BVzANWmmeEA1XDU8xS/1a1XD62e8IoOAC7gmzRQPaNLUpJnil/q1quH1M9akmZmxgAu4k4C2Z7U967TKa5kmzWRk1QIEvBq/5GgBT0ZWLUDAq/FLjp4s4G0OYMy9usrAwxf/8nsz+crHFDBRwMfEaKRpBXykOOONCXic0UgVAj5SnPHGBDzOaKQKAR8pznhjAh5nNFKFgI8UZ7yxiQIe1sLCZ545jLPAu4XhWbAmzfhwaXs2mVFo8yPwbU/gXTo0bZZ/UxvUU/tViIVFPqTDPPBejywQ+MFa7BXwVAJD9OEf3uEpfxDYOUSyhLHHZvglJaUcPgz4AmcIfL38M9jhx10Cn1iLy17oAj6AVGjzMfBrz0QZgO5foydknkvM2WG6L0CIHgLeW5wP0+Cj5bo9veKUcYGwXD6+BzYWzi0R+MJa/B6lHfm6eOJX1UziU/vQZgfwG7C5cHF3aNCyaa6GeY5jHOxhd86afOYBJof3Ory7doATBaDdO5Jj1uJQVxr+YisN/ga2FUKvsY6dNsW9GHQB7wd+Gvim8PEjAp9bi/MvPwtt2sBMQXOfDlOe+3IB7wXe/xajvh/zVimVAi7gsSpY73mPez2aYb2Uw99Ehw/coqzXaCtbr/AGntRuetzr0VRyuICvfIuRgKfaeBW9B6ZHI4c7B8UD06OpBry9vKo6hbHJ2e/nssAHwPuFmHJvdQuctyYnk3KXFHtgejSVgJfsO1U6VjZn1ThPnz0aAXeOhAemRyPgAu4kkFnmca9HI4c7B84D06MRcAF3Esgs87jXo5HDnQPngenRTAzwUHaR5QQalXkWa/0a9xtH37jt2bFvlEVHZIDAuM0zdtlursfCBTxGyHd+cp/aT6DDr9Fh1ma55RkbOdxDabBmCTjHOvbbFA+8zdQK3NuJt0kn4JlHW8AFPDOBzOnkcAHPTCBzOjlcwDMTyJxODhfwzAQyp/sf1fRxiubHdHcAAAAASUVORK5CYII=",
+      "type": "command"
+    }
+  }
+}

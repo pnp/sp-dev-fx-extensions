@@ -1,0 +1,66 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.folderHierarchyGenerator {
+  .messages {
+    min-height: 32px;
+  }
+
+  .container {
+    padding-left: 5px;
+
+    .labelerror {
+      min-height: 32px;
+    }
+
+    .folderscontainer {
+      min-height: 35px;
+
+      .dialogContainer {
+        max-height: 200px;
+        overflow-y: scroll;
+      }
+
+      .overflow {
+        margin-right: -4px;
+        margin-left: -4px;
+
+        .addoverflowloading {
+          @extend .addloading;
+        }
+
+        .addoverflowsuccess {
+          @extend .addsuccess;
+        }
+
+        .addoverflowwarning {
+          color: orange;
+        }
+      }
+
+      .addsuccess {
+        color: #00a984;
+      }
+
+      .addfailure {
+        color: red;
+      }
+
+      .blankarea {
+        height: 14px;
+        width: 14px;
+      }
+
+      .addloading {
+        margin-left: 2px;
+      }
+    }
+
+    .foldererror {
+      color: red;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
