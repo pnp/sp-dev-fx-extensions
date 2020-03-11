@@ -14,6 +14,7 @@ define([], function() {
     "MessageBarTooManyCharacters": "Longueur totale de l'URL atteinte. Nombre de caractères maximum autorisé : ",
     "MessageBarMaxFoldersBatch": "Nombre maximum de dossiers pouvant être créés à la fois : ",
     "TextFieldLabel": "Nom du dossier",
+    "TextFieldDescription": "Saisir un nom de dossier puis terminer par \"Tab\" ou \"Entrée\"",
     "ButtonClearSelection": "Effacer",
     "ButtonCreateFolders": "Créer les dossiers",
     "ToggleSelectFoldersCreationMode": "Ajout hierarchique",

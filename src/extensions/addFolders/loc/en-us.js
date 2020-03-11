@@ -14,6 +14,7 @@ define([], function() {
     "MessageBarTooManyCharacters": "Total URL length too long. Maximum length of the URL: ",
     "MessageBarMaxFoldersBatch": "Maximum folders to create at once: ",
     "TextFieldLabel": "Folder name",
+    "TextFieldDescription": "Type a Folder name then press \"Tab\" or \"Enter\" key",
     "ButtonClearSelection": "Clear",
     "ButtonCreateFolders": "Create Folders",
     "ToggleSelectFoldersCreationMode": "Nested Folders",

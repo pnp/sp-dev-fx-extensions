@@ -13,7 +13,7 @@ import FolderButton  from './FolderButton';
 import { Constants } from '../../../constants/Constants';
 import * as strings from 'AddFoldersCommandSetStrings';
 
-interface ICustomBreadcrumbItem extends IBreadcrumbItem, IOverflowSetItemProps {
+interface ICustomItem extends IBreadcrumbItem, IOverflowSetItemProps {
   status: FolderStatus;
   hidden: boolean;
   value: string;
@@ -31,7 +31,7 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
   const [folderNameRegExInfo, setFolderNameRegExInfo] = useState(false);
   const [folderNameIsValid, setFolderNameIsValid] = useState(true);
   const [taskStatus, _setTaskStatus] = useState(TaskState.none);
-  const [folders, _setFolders] = useState([] as ICustomBreadcrumbItem[]);
+  const [folders, _setFolders] = useState([] as ICustomItem[]);
   const [overflowFolders, _setOverflowFolders] = useState([] as IBreadcrumbItem[]);
   const [folderName, setFolderName] = useState('');
   const [folderLengthWarn, setFolderLengthWarn] = useState(false);
@@ -176,7 +176,7 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
 
   function displayedFoldersReduceData(foldersData: IBreadCrumbData) {
     let folderStatusText = '';
-    let folderToHide = foldersData.renderedItems[0] as ICustomBreadcrumbItem;
+    let folderToHide = foldersData.renderedItems[0] as ICustomItem;
     folderToHide.hidden = true;
 
     switch (folderToHide.status) {
@@ -313,7 +313,7 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
     };
   }
 
-  function onRenderItem(item: ICustomBreadcrumbItem) {
+  function onRenderItem(item: ICustomItem) {
     let tooltipItem: string = strings.TooltipFolderDelete;
     let classIcon: string = '';
     let icon: string = '';
@@ -392,7 +392,7 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
   }
 
   function renderOverFlow(buttonProps: IButtonProps) {
-    let hiddenFolders: ICustomBreadcrumbItem[] = foldersRef.current.filter(fol => fol.hidden);
+    let hiddenFolders: ICustomItem[] = foldersRef.current.filter(fol => fol.hidden);
     let totalHiddenFoldersHandled: number = hiddenFolders.filter(fol => fol.status !== FolderStatus.none).length;
     let totalHiddenFoldersSuccess: number = hiddenFolders.filter(fol => fol.status === FolderStatus.created).length;
     let totalHiddenFoldersFailed: number = hiddenFolders.filter(fol => fol.status === FolderStatus.failed).length;
@@ -453,15 +453,18 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
       </div>
       <div className={styles.container}>
         <Stack horizontal verticalAlign="end" tokens={foldersStackTokens}>
-          <TextField
-            label={strings.TextFieldLabel}
-            styles={getTextFieldStyles}
-            onRenderLabel={folderNameErrorMessage}
-            value={folderName}
-            onKeyDown={folderTextFieldKeyDown}
-            onChange={folderTextFieldChange}
-            disabled={taskStatusRef.current === TaskState.progress}
-            autoComplete='off' />
+          <TooltipHost content={strings.TextFieldDescription}>
+            <TextField
+              label={strings.TextFieldLabel}
+              // description={strings.TextFieldDescription}
+              styles={getTextFieldStyles}
+              onRenderLabel={folderNameErrorMessage}
+              value={folderName}
+              onKeyDown={folderTextFieldKeyDown}
+              onChange={folderTextFieldChange}
+              disabled={taskStatusRef.current === TaskState.progress}
+              autoComplete='off' />
+          </TooltipHost>
           {taskStatusRef.current === TaskState.done &&
             <PrimaryButton
               split

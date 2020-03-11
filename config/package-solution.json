@@ -1,21 +1,20 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "reac-list-addfolders-client-side-solution",
+    "name": "react-list-addfolders",
     "id": "b3bc279e-8a5a-4c8c-93cb-ea487e0bcaca",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [
       {
-        "title": "Application Extension - Deployment of custom action.",
-        "description": "Deploys a custom action with ClientSideComponentId association",
+        "title": "Application Extension - Deployment of AddFolder custom action.",
+        "description": "Deploys the AddFolder custom action with ClientSideComponentId association",
         "id": "f0eb2ae4-a4e6-44b3-bdb6-3b1d72191526",
-        "version": "1.0.0.0",
+        "version": "1.1.0.0",
         "assets": {
           "elementManifests": [
-            "elements.xml",
-            "ClientSideInstance.xml"
+            "elements.xml"
           ]
         }
       }

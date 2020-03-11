@@ -18,11 +18,13 @@
     "@microsoft/sp-listview-extensibility": "1.10.0",
     "@pnp/pnpjs": "^2.0.3",
     "@types/es6-promise": "0.0.33",
-    "@types/react": "^16.8.5",
-    "@types/react-dom": "^16.8.5",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.3",
     "@types/webpack-env": "1.13.1",
     "eslint-plugin-react-hooks": "^2.5.0",
-    "office-ui-fabric-react": "^7.100.0"
+    "office-ui-fabric-react": "^7.100.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "1.10.0",

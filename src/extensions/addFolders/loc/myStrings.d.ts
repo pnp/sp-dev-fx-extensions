@@ -13,6 +13,7 @@ declare interface IAddFoldersCommandSetStrings {
   MessageBarTooManyCharacters: string;
   MessageBarMaxFoldersBatch: string;
   TextFieldLabel: string;
+  TextFieldDescription: string;
   ButtonClearSelection: string;
   ButtonCreateFolders: string;
   ToggleSelectFoldersCreationMode: string;
