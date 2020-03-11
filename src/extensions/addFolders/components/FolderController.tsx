@@ -67,7 +67,7 @@ const FolderController: React.FunctionComponent<IFolderControllerProps> = (props
   }
 
   return (
-    <FolderHierarchyGenerator handleAddFolder={_addFolders} context={props.context} batchStatus={batchFolders} />
+    <FolderHierarchyGenerator handleAddFolder={_addFolders} context={props.context} batchStatus={batchFolders} folderLocation={props.currentLocation} />
   );
 };
 

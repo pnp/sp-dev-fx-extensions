@@ -19,6 +19,7 @@ declare interface IAddFoldersCommandSetStrings {
   CalloutBannedCharacters: string;
   CalloutBannedWords: string;
   CalloutBannedPrefixCharacters: string;
+  CalloutBannedFormsWordAtRoot: string;
   CalloutBannedCharactersUrl: string;
   CalloutBannedCharactersUrlLink: string;
 }

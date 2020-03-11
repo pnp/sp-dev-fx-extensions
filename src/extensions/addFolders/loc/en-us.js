@@ -20,6 +20,7 @@ define([], function() {
     "CalloutBannedCharacters": "Following characters aren't allowed:",
     "CalloutBannedWords": "Following words aren't allowed:",
     "CalloutBannedPrefixCharacters": "Folder's name can't start with",
+    "CalloutBannedFormsWordAtRoot": "isn't supported when the folder is at the root level for a library",
     "CalloutBannedCharactersUrl": "More information:",
     "CalloutBannedCharactersUrlLink": "here"
   }

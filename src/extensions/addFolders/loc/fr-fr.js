@@ -20,6 +20,7 @@ define([], function() {
     "CalloutBannedCharacters": "Les caractères suivants sont interdits :",
     "CalloutBannedWords": "Les noms suivants ne sont pas autorisés :",
     "CalloutBannedPrefixCharacters": "Le dossier ne peut commencer par",
+    "CalloutBannedFormsWordAtRoot": "n’est pas pris en charge lorsque le dossier se trouve au niveau racine pour une bibliothèque",
     "CalloutBannedCharactersUrl": "Plus d'informations :",
     "CalloutBannedCharactersUrlLink": "ici"
   }

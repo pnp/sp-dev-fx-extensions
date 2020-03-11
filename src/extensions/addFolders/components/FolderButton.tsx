@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ActionButton, BaseButton, Button, DefaultButton, IButtonProps } from 'office-ui-fabric-react';
+import { ActionButton, BaseButton, Button, DefaultButton } from 'office-ui-fabric-react';
 
 interface IFolderButtonProps {
   onClick(ev: React.MouseEvent<HTMLElement | BaseButton | Button, MouseEvent>): void;

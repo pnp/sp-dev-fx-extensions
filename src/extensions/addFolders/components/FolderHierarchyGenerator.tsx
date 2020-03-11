@@ -289,7 +289,7 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
   }
 
   function getTextFieldStyles(stylesProps: ITextFieldStyleProps): Partial<ITextFieldStyles> {
-    let color = folderNameIsValid? stylesProps.theme.semanticColors.inputText : stylesProps.theme.semanticColors.errorText;
+    let color = folderNameIsValid ? stylesProps.theme.semanticColors.inputText : stylesProps.theme.semanticColors.errorText;
     let after = folderNameIsValid ? stylesProps.theme.semanticColors.inputBackgroundChecked : stylesProps.theme.semanticColors.errorText;
 
     return {
@@ -364,7 +364,10 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
     if (txtProps.value != '') {
       matchFolderName = txtProps.value.match(Constants.folderNameRegEx);
 
-      // TODO : test if current location is root folder of library ("forms")
+      // Reject if folder name submitted is "forms" if current location is root folder (library only)
+      if (props.folderLocation.split('/').length === 2 && props.folderLocation.indexOf('lists/') < 0) {
+        matchFolderName = txtProps.value.match(Constants.folderNameRootFolderRegEx);
+      }
     }
 
     setFolderNameIsValid(matchFolderName === null || txtProps.value == '');
@@ -492,6 +495,7 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
               <span>{strings.CalloutBannedCharacters} <b>&laquo;</b> <b>*</b> <b>:</b> <b>&lt;</b> <b>&gt;</b> <b>?</b> <b>/</b> <b>\</b> <b>|</b></span>
               <span>{strings.CalloutBannedWords} <b>con</b>, <b>PRN</b>, <b>aux</b>, <b>nul</b>, <b>com0 - COM9</b>, <b>lpt0 - LPT9</b>, <b>_vti_</b></span>
               <span>{strings.CalloutBannedPrefixCharacters} <b>~</b> <b>$</b></span>
+              <span>"<b>forms</b>" {strings.CalloutBannedFormsWordAtRoot}</span>
               <span>{strings.CalloutBannedCharactersUrl} <a target='_blank' href='https://support.office.com/en-us/article/invalid-file-names-and-file-types-in-onedrive-onedrive-for-business-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa'>{strings.CalloutBannedCharactersUrlLink}</a></span>
               <DefaultButton onClick={errorInfoIconDismiss} text={strings.ButtonGlobalClose} />
             </Stack>

@@ -8,40 +8,47 @@ import {
   IListViewCommandSetExecuteEventParameters
 } from '@microsoft/sp-listview-extensibility';
 import { sp } from '@pnp/pnpjs';
+import { IListInfo } from '@pnp/sp/lists';
+import { SPPermission } from '@microsoft/sp-page-context';
 import * as strings from 'AddFoldersCommandSetStrings';
 import AddFoldersDialog from './components/AddFoldersDialog';
 
-/**
- * If your command set uses the ClientSideComponentProperties JSON input,
- * it will be deserialized into the BaseExtension.properties object.
- * You can define an interface to describe it.
- */
-export interface IAddFoldersCommandSetProperties {
-  // This is an example; replace with your own properties
-  sampleTextOne: string;
-  sampleTextTwo: string;
-}
-
 const LOG_SOURCE: string = 'AddFoldersCommandSet';
 
-export default class AddFoldersCommandSet extends BaseListViewCommandSet<IAddFoldersCommandSetProperties> {
+export default class AddFoldersCommandSet extends BaseListViewCommandSet<{}> {
   private dialogContainer: HTMLDivElement = null;
   private commandtitle: string = '';
 
   @override
-  public onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     Log.info(LOG_SOURCE, 'Initialized AddFoldersCommandSet');
     const commandAddFolders: Command = this.tryGetCommand('ADDFOLDERS');
     if (commandAddFolders) {
-      commandAddFolders.title = strings.CommandAddFolders;
-      this.commandtitle = commandAddFolders.title;
+      if (this.context.pageContext.list.permissions.hasPermission(SPPermission.addListItems)) {
+
+        let folderEnabled: boolean = await sp.web.lists.getById(this.context.pageContext.list.id.toString()).get()
+        .then((value: IListInfo) => {
+          return value.EnableFolderCreation;
+        });
+
+        if (folderEnabled) {
+          commandAddFolders.title = strings.CommandAddFolders;
+          this.commandtitle = commandAddFolders.title;
+
+          sp.setup({
+            spfxContext: this.context
+          });
+
+          this.dialogContainer = document.body.appendChild(document.createElement("div"));
+        }
+        else {
+          commandAddFolders.visible = false;
+        }
+      }
+      else {
+        commandAddFolders.visible = false;
+      }
     }
-
-    sp.setup({
-      spfxContext: this.context
-    });
-
-    this.dialogContainer = document.body.appendChild(document.createElement("div"));
 
     return Promise.resolve();
   }
