@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="TeamsChatNotifications"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="45bc9cbc-ae08-4be4-a537-7c80f13699cf"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
