@@ -1,0 +1,35 @@
+{
+  "name": "teamsChatSubs",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@pnp/common": "^2.0.0",
+    "@pnp/graph": "^2.0.0",
+    "@pnp/logging": "^2.0.0",
+    "@pnp/nodejs": "^2.0.0",
+    "@pnp/odata": "^2.0.0",
+    "@types/node": "^13.7.1",
+    "@types/node-rsa": "^1.0.0",
+    "@types/request-promise": "^4.1.45",
+    "@types/socket.io": "^2.1.4",
+    "azure-storage-legacy": "^0.11.1",
+    "moment": "^2.24.0",
+    "node-rsa": "^1.0.7",
+    "prettier": "^1.19.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
+    "shortid": "^2.2.15",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "@azure/functions": "^1.0.2-beta2",
+    "typescript": "^3.3.3"
+  }
+}
