@@ -36,7 +36,7 @@ Azure Key Vault  - to save secrects used on Azure Functions
 - http timer trigger to renew chat message subscriptions expiration date and time
 - http trigger to connect clients to SignalR 
 
-There is a Github Repo  with all Azure Functions used by Application Customizer, [TeamsChatFunctions](https://github.com/joaojmendes/teamsChatNotificationsFunctions), please see the README.md to know how to configure each service .
+There is a Github Repo  with all Azure Functions used by Application Customizer, [TeamsChatFunctions]( [react-teamschatnotifications-functions](/samples/react-teamschatnotifications-functions), please see the README.md to know how to configure each service .
 
 
 ![signalR](./assets/teams2.png)
