@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "teamschat-notifications-client-side-solution",
+    "id": "5f31f0fd-8270-4f8f-9b48-640d7579f088",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {"resource": "Microsoft Graph",
+        "scope": "Chat.ReadWrite.All"
+      },
+      {"resource": "Microsoft Graph",
+        "scope": "User.Read"
+      },
+      {"resource": "Microsoft Graph",
+        "scope": "Directory.Read.All"
+      }
+    ],
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "7c35ef97-64b4-476f-976f-48ea29cc114f",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "clientsideinstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/teamschat-notifications.sppkg"
+  }
+}

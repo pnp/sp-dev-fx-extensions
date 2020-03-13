@@ -1,0 +1,60 @@
+{
+  "name": "teamschat-notifications",
+  "version": "0.0.1",
+  "private": true,
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "build": "gulp bundle",
+    "clean": "gulp clean",
+    "test": "gulp test",
+    "preversion": "node ./tools/pre-version.js",
+    "postversion": "gulp dist"
+  },
+  "dependencies": {
+    "@aspnet/signalr": "^1.1.4",
+    "@microsoft/decorators": "1.9.1",
+    "@microsoft/signalr": "^3.1.0",
+    "@microsoft/sp-application-base": "1.9.1",
+    "@microsoft/sp-core-library": "1.9.1",
+    "@microsoft/sp-dialog": "1.9.1",
+    "@pnp/pnpjs": "^1.3.5",
+    "@pnp/spfx-controls-react": "1.14.0",
+    "@pnp/spfx-property-controls": "1.16.0",
+    "@types/es6-promise": "0.0.33",
+    "@types/jquery": "^3.3.31",
+    "@types/lodash": "^4.14.149",
+    "@types/react": "16.8.8",
+    "@types/react-dom": "16.8.3",
+    "@types/webpack-env": "1.13.1",
+    "@uifabric/fluent-theme": "^0.16.9",
+    "jquery": "^3.4.1",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.15",
+    "office-ui-fabric-react": "^7.94.1",
+    "prettier": "^1.19.1",
+    "react": "16.8.5",
+    "react-dom": "16.8.5"
+  },
+  "resolutions": {
+    "@types/react": "16.8.8"
+  },
+  "devDependencies": {
+    "@microsoft/rush-stack-compiler-3.5": "~0.1.x",
+    "@microsoft/sp-build-web": "1.9.1",
+    "@microsoft/sp-module-interfaces": "1.9.1",
+    "@microsoft/sp-tslint-rules": "1.9.1",
+    "@microsoft/sp-webpart-workbench": "1.9.1",
+    "@types/chai": "3.4.34",
+    "@types/mocha": "2.2.38",
+    "@types/react": "^16.7.22",
+    "ajv": "~5.2.2",
+    "gulp": "~3.9.1",
+    "gulp-sequence": "1.0.0",
+    "spfx-uifabric-themes": "^0.7.1",
+    "typescript": "~3.5.x",
+    "webpack-bundle-analyzer": "^3.4.1"
+  }
+}

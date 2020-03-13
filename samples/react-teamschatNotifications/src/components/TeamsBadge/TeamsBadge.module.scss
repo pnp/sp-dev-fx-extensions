@@ -1,0 +1,37 @@
+@import "~office-ui-fabric-react/dist/sass/References.scss";
+.badge {
+  position: absolute;
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  top: 3px;
+  font-size: small;
+  font-weight: 600;
+  padding: 1px;
+  margin-left: 22px;
+  //right: 2px;
+}
+.teamsIcon {
+  display: "flex";
+}
+.teamsIcon:hover {
+  cursor: pointer;
+}
+.badgeWrapper {
+  width: 34px;
+ // float: right;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 15px;
+  position: fixed;
+  margin-left: 50%;
+  //right: 20px;
+  z-index: 100000;
+}
+.divTopContainer {
+  width: 100%;
+  background-color: $ms-color-themePrimary;
+}

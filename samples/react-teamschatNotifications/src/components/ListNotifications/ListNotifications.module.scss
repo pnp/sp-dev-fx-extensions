@@ -1,0 +1,57 @@
+@import "~office-ui-fabric-react/dist/sass/References.scss";
+
+.listMessages {
+  padding-bottom: 20px;
+}
+
+.card {
+ //background-color: rgb(255, 255, 255);
+  background-color: $ms-color-neutralLighterAlt;
+  max-width: 250px;
+  min-width: 230px;
+  position: relative;
+  user-select: none;
+  border-width: 1px;
+  border-style: solid;
+  //border-color: rgb(234, 234, 234);
+  border-color: $ms-color-neutralTertiary;
+  border-image: initial;
+
+  height: auto;
+}
+.cardWrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.card:hover {
+  border-width: 1.5px;
+  cursor: pointer;
+}
+.facepileWarapper {
+  background-color: $ms-color-neutralLight;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding: 5px;
+  border-bottom-style: "solid";
+  border-bottom-width: 1px;
+  border-bottom-color: $ms-color-neutralQuaternary;
+  height: 25px;
+
+  display: "Flex";
+  flex-direction: "column";
+  align-items: "start";
+}
+
+.attchmentFileName {
+  text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 180px;
+}
+.link {
+  text-overflow: ellipsis;
+    overflow: hidden;
+
+}

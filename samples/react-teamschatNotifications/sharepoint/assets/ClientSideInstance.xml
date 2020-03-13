@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="TeamsChatNotifications"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="45bc9cbc-ae08-4be4-a537-7c80f13699cf"
+        Properties="{&quot;functionAppUrl&quot;:&quot;https://teamschatfunctions.azurewebsites.net&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

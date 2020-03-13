@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "teams-chat-notifications-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/teamsChatNotifications/TeamsChatNotificationsApplicationCustomizer.js",
+          "manifest": "./src/extensions/teamsChatNotifications/TeamsChatNotificationsApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TeamsChatNotificationsApplicationCustomizerStrings": "lib/extensions/teamsChatNotifications/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}

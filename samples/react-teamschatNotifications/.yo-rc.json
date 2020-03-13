@@ -1,0 +1,35 @@
+{
+  "@pnp/generator-spfx": {
+    "framework": "react",
+    "pnpFramework": "reactjs.plus",
+    "pnp-libraries": [
+      "jquery@3",
+      "@pnp/pnpjs",
+      "@pnp/spfx-property-controls",
+      "spfx-uifabric-themes",
+      "@pnp/spfx-controls-react",
+      "ouifr@6fluent",
+      "rush@3.5"
+    ],
+    "pnp-ci": [
+      "azure"
+    ],
+    "pnp-vetting": [
+      "webpack-analyzer"
+    ],
+    "spfxenv": "spo",
+    "pnp-testing": []
+  },
+  "@microsoft/generator-sharepoint": {
+    "environment": "spo",
+    "framework": "react",
+    "isCreatingSolution": true,
+    "version": "1.9.1",
+    "libraryName": "teamschat-notifications",
+    "libraryId": "5f31f0fd-8270-4f8f-9b48-640d7579f088",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}
