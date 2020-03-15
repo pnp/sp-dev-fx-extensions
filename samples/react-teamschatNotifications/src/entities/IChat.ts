@@ -1,3 +1,5 @@
+
+
 /**
  *
  *
@@ -9,4 +11,5 @@ export interface IChat {
   topic: string;
   createdDateTime: Date;
   lastUpdatedDateTime: Date;
+
 }

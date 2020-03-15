@@ -160,9 +160,10 @@ export default class spservices {
         const body = await $.ajax({
           url: uri,
           method: "GET",
+          crossDomain: true,
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
           },
           xhrFields: {
             responseType: "blob"
@@ -176,7 +177,7 @@ export default class spservices {
         reader.readAsDataURL(body);
       } catch (error) {
         console.log(error);
-        rejected('Error loading hosted Content.');
+        resolve(null);
       }
     });
   }
