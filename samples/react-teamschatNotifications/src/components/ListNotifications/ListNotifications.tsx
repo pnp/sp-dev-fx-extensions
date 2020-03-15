@@ -16,7 +16,7 @@ import {
   PersonaSize,
   Persona,
   IPersonaProps
-} from "office-ui-fabric-react/lib/Persona";
+} from "office-ui-fabric-react";
 import { Label } from "office-ui-fabric-react/lib/Label";
 import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
 import {
@@ -83,7 +83,7 @@ export class ListNotifications extends React.Component<
       isLoading: true
     });
     this._loadMessages();
-  };
+  }
 
   /**
    *
@@ -240,25 +240,9 @@ export class ListNotifications extends React.Component<
         messageError: error.message
       });
     }
-  };
-
-
-
- private _checkMessageContent2 = async (
-    message: IListChatMessage
-  ): Promise<string | JSX.Element | JSX.Element[]> =>{
-
-    const htmlMessage = $.parseHTML(message.chatMessage.body.content);
-
-     const i = $(htmlMessage).find('img').removeAttr("width")
-     .removeAttr("height")
-     .width("100%")
-     .height("100%")
-     .parents()
-     .html();
-    console.log('i',i);
-    return  i;
   }
+
+
   /**
    *
    *
@@ -287,8 +271,7 @@ export class ListNotifications extends React.Component<
                 .parent()
                 .remove('img[itemtype!="http://schema.skype.com/Emoji"]')
                 .html(_img)
-                .parents().html()
-                console.log('return2',_notEmojiImage);
+                .parents().html();
 
                 if (_notEmojiImage && _notEmojiImage.length > 0){
                   _returnHtml = _notEmojiImage;
@@ -347,8 +330,7 @@ export class ListNotifications extends React.Component<
       console.log("Error getting HTML Content", error);
       return "<div>Please click to see message</div>";
     }
-  };
-
+  }
   /**
    *
    *

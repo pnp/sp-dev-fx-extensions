@@ -48,7 +48,7 @@ export const Attachment = (props: { fileUrl: string; name: string }) => {
           <div style={{width:48}}>
           <FileTypeIcon path={props.fileUrl} size={ImageSize.medium} type={IconType.image}></FileTypeIcon>
           </div>
-          <Link  href="#"  onClick={(event) => {window.open(`${props.fileUrl}`)}} >
+          <Link  href="#"  onClick={(event) => {window.open(`${props.fileUrl}`);}} >
             <div className={styles.attchmentFileName} title={props.name}>{props.name}</div>
           </Link>
         </>

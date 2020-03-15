@@ -33,7 +33,7 @@
     "jquery": "^3.4.1",
     "loadash": "^1.0.0",
     "lodash": "^4.17.15",
-    "office-ui-fabric-react": "^7.94.1",
+    "office-ui-fabric-react": "^7.103.0",
     "prettier": "^1.19.1",
     "react": "16.8.5",
     "react-dom": "16.8.5"

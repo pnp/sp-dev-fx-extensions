@@ -280,7 +280,7 @@ export default class TeamsBadge extends React.Component<
     } catch (error) {
       console.log("Error get Members ", error);
     }
-  };
+  }
 
 
 }
