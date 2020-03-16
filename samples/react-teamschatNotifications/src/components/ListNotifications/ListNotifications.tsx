@@ -16,7 +16,7 @@ import {
   PersonaSize,
   Persona,
   IPersonaProps
-} from "office-ui-fabric-react";
+} from "office-ui-fabric-react/lib/Persona";
 import { Label } from "office-ui-fabric-react/lib/Label";
 import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
 import {
@@ -40,6 +40,7 @@ import { Attachment } from "../Attachment/Attachment";
 import { PnPClientStorage } from "@pnp/pnpjs";
 import { IListChat } from "../../entities/IListChat";
 import * as lodash from "lodash";
+import * as cheerios from 'cheerio';
 
 initializeIcons();
 
@@ -83,7 +84,7 @@ export class ListNotifications extends React.Component<
       isLoading: true
     });
     this._loadMessages();
-  }
+  };
 
   /**
    *
@@ -146,7 +147,7 @@ export class ListNotifications extends React.Component<
               }}
             >
               <div className={styles.card}>
-                {facepilePersonas.length > 0 ? (
+                {facepilePersonas && facepilePersonas.length > 0 ? (
                   <div className={styles.facepileWarapper}>
                     <Facepile
                       personas={facepilePersonas}
@@ -240,11 +241,9 @@ export class ListNotifications extends React.Component<
         messageError: error.message
       });
     }
-  }
-
+  };
 
   /**
-   *
    *
    * @private
    * @memberof ListNotifications
@@ -253,84 +252,38 @@ export class ListNotifications extends React.Component<
     message: IListChatMessage
   ): Promise<string | JSX.Element | JSX.Element[]> => {
     console.log("message", message.chatMessage);
-    // return message.chatMessage.body.content;
+    //
     try {
       if (message.chatMessage.body.contentType == "html") {
-        let _returnHtml: any = "<div>Please click to see message</div>";
-        const htmlMessage = $.parseHTML(message.chatMessage.body.content);
-        // check if exists image on message
-        let _img: any = $(htmlMessage).find("img");
-        if (_img && _img.length > 0) {
-              // is a emoji ? if not change the width and height to fill de card
-             const _notEmojiImage = $(htmlMessage)
-                .find('img[itemtype!="http://schema.skype.com/Emoji"]')
-                .removeAttr("width")
-                .removeAttr("height")
-                .width("100%")
-                .height("100%")
-                .parent()
-                .remove('img[itemtype!="http://schema.skype.com/Emoji"]')
-                .html(_img)
-                .parents().html();
+      const _ch = cheerios.load(message.chatMessage.body.content);
+      _ch('a').attr('href','#').attr('onclick',`window.open('${_ch('a').attr('href')}'`).addClass(`${styles.link}`);
+      _ch('img[itemtype!="http://schema.skype.com/Emoji"]').css("width", "100%").css("height","100%");
+    // is sticker image get src to convert DataBase64
+      const _imgSrc:any = _ch('img[src*="$value"]').attr('src');
+      let  _returnHtml = '';
 
-                if (_notEmojiImage && _notEmojiImage.length > 0){
-                  _returnHtml = _notEmojiImage;
-                }else{
-                  // is a Emoji Image
-                  _returnHtml = $(htmlMessage).html();
-                }
-
-          // hmessage has achor "<a>" foirmat create new element with href
-          const _anchor: any = $(_returnHtml).find("a");
-          if (_anchor && _anchor.length > 0) {
-            const _newLink = `<a  class="${styles.link} ms-link" href="#"  onclick="window.open('${_anchor[0].href}')"  title=${_anchor[0].href} rel="noreferrer noopener" target="_blank"><div class="${styles.linkLabel}">${_anchor[0].href}</div></a>`;
-
-            let _newElementLink = $(_returnHtml)
-              .find("a")
-              .parent()
-              .remove("a")
-              .html(_newLink)
-              .html();
-
-              let _renderLink = $('<div><div>').html($(_returnHtml).remove('a').html()).append(_newElementLink);
-            return _renderLink.html();
-          }
-          // is autocolant image get image and src to render custom image
-          if (_img[0].src.indexOf("$value") !== -1) {
-            const dataURI = await services.getHostedContentImage(_img[0].src);
-            if (dataURI) {
-              _returnHtml = `<img src=${dataURI} width='100%'>`;
-            } else {
-              // if can't get image send default message to click to open
-              _returnHtml = "<div>Please click to see message</div>";
-            }
-          }
-          // Reture  new HTML Message width images
-          return _returnHtml;
+      if ( _imgSrc && _imgSrc.length > 0  ) {
+        const dataURI = await services.getHostedContentImage(_imgSrc);
+        if (dataURI) {
+          _ch('img[src*="$value"]').attr('src',dataURI);
+        } else {
+          // if can't get image send default message to click to open
+          _returnHtml = "<div>Please click to see message</div>";
+          _ch('img[src*="$value"]').replaceWith(_returnHtml);
         }
-
-        // Message has links only
-        const _anchor: any = $(htmlMessage).find("a");
-        console.log("anchor3", _anchor);
-        if (_anchor && _anchor.length > 0) {
-          const _newLink = `<a class=${styles.link} href="#"  onclick="window.open('${_anchor[0].href}')"  title=${_anchor[0].href} rel="noreferrer noopener" target="_blank">${_anchor[0].href}</a>`;
-          const _renderLink = $(htmlMessage)
-            .find("a")
-            .parent()
-            .remove("a")
-            .html(_newLink)
-            .parents()
-            .html();
-          return _renderLink;
-        }
-        // Default return if not igame or anchor content
-        return message.chatMessage.body.content;
       }
+      // Return Message!
+      return  _ch.html();
+      }else{
+        return "<div>Please click to see message</div>";
+      }
+
     } catch (error) {
       console.log("Error getting HTML Content", error);
       return "<div>Please click to see message</div>";
     }
-  }
+  };
+
   /**
    *
    *
