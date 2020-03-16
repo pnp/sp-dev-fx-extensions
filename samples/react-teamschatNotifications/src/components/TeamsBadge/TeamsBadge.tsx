@@ -207,7 +207,7 @@ export default class TeamsBadge extends React.Component<
         await this._getChats();
         this._isTimerRunning = false;
       }
-    }, 5000);
+    }, 60000);
   }
   /**
    *  get user Chats and create Chat Message Subscription
@@ -257,8 +257,10 @@ export default class TeamsBadge extends React.Component<
     chatId: string
   ): Promise<IFacepilePersona[]> => {
     try {
-      const _members: IChatMember[] = await spservices.getChatMembers(chatId);
       let _facepilePersonas: IFacepilePersona[] = [];
+      if (chatId.indexOf('meeting') > -1 ) {return [];} // idnor meeting chats
+
+      const _members: IChatMember[] = await spservices.getChatMembers(chatId);
 
       if (_members && _members.length > 2) {
         for (const _member of _members) {

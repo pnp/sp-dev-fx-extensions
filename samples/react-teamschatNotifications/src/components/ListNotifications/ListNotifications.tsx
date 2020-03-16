@@ -84,7 +84,7 @@ export class ListNotifications extends React.Component<
       isLoading: true
     });
     this._loadMessages();
-  };
+  }
 
   /**
    *
@@ -246,7 +246,7 @@ export class ListNotifications extends React.Component<
         messageError: error.message
       });
     }
-  };
+  }
 
   /**
    *
@@ -287,7 +287,7 @@ export class ListNotifications extends React.Component<
       console.log("Error getting HTML Content", error);
       return "<div>Please click to see message</div>";
     }
-  };
+  }
 
   /**
    *
