@@ -201,7 +201,12 @@ export class ListNotifications extends React.Component<
                             }}
                             variant="mediumPlus"
                           >
-                            { message.chatMessage.body.content.substr(0,message.chatMessage.body.content.indexOf('<attachment'))}
+                            {
+                            message.chatMessage.body.content.indexOf('<attachment') !== -1 ?
+                            message.chatMessage.body.content.substr(0,message.chatMessage.body.content.indexOf('<attachment'))
+                            :
+                            message.chatMessage.body.content
+                            }
                           </Text>
                         )}
                       {message.chatMessage.body.contentType == "text" &&
@@ -274,8 +279,8 @@ export class ListNotifications extends React.Component<
       }
       // Return Message!
       return  _ch.html();
-      }else{
-        return "<div>Please click to see message</div>";
+      }else{ // is text message
+        return message.chatMessage.body.content;
       }
 
     } catch (error) {

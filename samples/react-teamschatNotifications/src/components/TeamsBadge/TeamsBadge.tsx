@@ -96,14 +96,15 @@ export default class TeamsBadge extends React.Component<
         chatNotificationMessage.resourceData["@odata.id"]
       );
 
-      // teste if message is the current user, notify only for message from other users
+      /* // teste if message is the current user, notify only for message from other users
       if (
         this.props.context.pageContext.user.displayName ==
         chatMessage.from.user.displayName
       ) {
-        continue;
-      }
-     // totalNotifications++;
+
+       // continue;
+      } */
+     //
       let index: number = lodash.findIndex(this.listChats, {
         subscriptionId: chatNotificationMessage.subscriptionId
       });
@@ -262,12 +263,12 @@ export default class TeamsBadge extends React.Component<
       if (_members && _members.length > 2) {
         for (const _member of _members) {
           const userInfo: IUser = await spservices.getUser(_member.userId);
-          if (
+         /*  if (
             _member.displayName ==
             this.props.context.pageContext.user.displayName
           ) {
             continue;
-          }
+          } */
 
           _facepilePersonas.push({
             personaName: _member.displayName,
