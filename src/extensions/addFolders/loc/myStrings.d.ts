@@ -12,6 +12,7 @@ declare interface IAddFoldersCommandSetStrings {
   TooltipOverflowSuffixFoldersCreated: string;
   MessageBarTooManyCharacters: string;
   MessageBarMaxFoldersBatch: string;
+  LabelCurrentLocation: string;
   TextFieldLabel: string;
   TextFieldDescription: string;
   ButtonClearSelection: string;
@@ -21,6 +22,7 @@ declare interface IAddFoldersCommandSetStrings {
   CalloutBannedWords: string;
   CalloutBannedPrefixCharacters: string;
   CalloutBannedFormsWordAtRoot: string;
+  CalloutBannedAttachmentsWordAtRoot: string;
   CalloutBannedCharactersUrl: string;
   CalloutBannedCharactersUrlLink: string;
 }

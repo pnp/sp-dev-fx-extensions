@@ -13,15 +13,17 @@ define([], function() {
     "TooltipOverflowSuffixFoldersCreated": "dossier(s) supplémentaire(s) créés",
     "MessageBarTooManyCharacters": "Longueur totale de l'URL atteinte. Nombre de caractères maximum autorisé : ",
     "MessageBarMaxFoldersBatch": "Nombre maximum de dossiers pouvant être créés à la fois : ",
+    "LabelCurrentLocation": "Emplacement courant :",
     "TextFieldLabel": "Nom du dossier",
     "TextFieldDescription": "Saisir un nom de dossier puis terminer par \"Tab\" ou \"Entrée\"",
-    "ButtonClearSelection": "Effacer",
+    "ButtonClearSelection": "Effacer la sélection",
     "ButtonCreateFolders": "Créer les dossiers",
     "ToggleSelectFoldersCreationMode": "Ajout hierarchique",
     "CalloutBannedCharacters": "Les caractères suivants sont interdits :",
     "CalloutBannedWords": "Les noms suivants ne sont pas autorisés :",
     "CalloutBannedPrefixCharacters": "Le dossier ne peut commencer par",
     "CalloutBannedFormsWordAtRoot": "n’est pas pris en charge lorsque le dossier se trouve au niveau racine pour une bibliothèque",
+    "CalloutBannedAttachmentsWordAtRoot": "n’est pas pris en charge lorsque le dossier se trouve au niveau racine pour une liste",
     "CalloutBannedCharactersUrl": "Plus d'informations :",
     "CalloutBannedCharactersUrlLink": "ici"
   }
