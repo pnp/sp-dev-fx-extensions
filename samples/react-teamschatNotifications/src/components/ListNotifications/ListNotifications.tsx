@@ -24,6 +24,7 @@ import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { initializeIcons } from '@uifabric/icons';
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { Attachment } from '../Attachment/Attachment';
+import { AdaptiveCardAttachment } from '../attachment/AdaptiveCardAttachment';
 import { PnPClientStorage } from '@pnp/pnpjs';
 import { IListChat } from '../../entities/IListChat';
 import * as lodash from 'lodash';
@@ -150,11 +151,13 @@ export class ListNotifications extends React.Component<IListNotificationsProps, 
                       />
                       {message.chatMessage.attachments.length > 0 &&
                         message.chatMessage.attachments.map(attachment => {
-                          return attachment.contentType !== 'application/vnd.microsoft.card.adaptive' &&
-                            attachment.contentType !== 'application/vnd.microsoft.card.thumbnail' ? (
-                            <Attachment fileUrl={attachment.contentUrl} name={attachment.name} />
-                          ) : (
-                            <div>Please click to see message</div>
+                          return (
+                            // ignore adaptive cards
+                            attachment.contentUrl   ? (
+                              <Attachment fileUrl={attachment.contentUrl} name={attachment.name} />
+                            ) : (
+                              <AdaptiveCardAttachment attachment={attachment}/> // adaptive cards
+                            )
                           );
                         })}
                     </>
