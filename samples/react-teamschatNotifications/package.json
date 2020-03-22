@@ -31,6 +31,7 @@
     "@types/react-dom": "16.8.3",
     "@types/webpack-env": "1.13.1",
     "@uifabric/fluent-theme": "^0.16.9",
+    "adaptivecards": "^1.2.5",
     "cheerio": "^1.0.0-rc.3",
     "jquery": "^3.4.1",
     "loadash": "^1.0.0",
