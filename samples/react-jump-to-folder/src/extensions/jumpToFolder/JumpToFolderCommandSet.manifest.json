@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+
+  "id": "44f1a0de-5fe4-4e8f-85fb-0c451b4b30ca",
+  "alias": "JumpToFolderCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "items": {
+    "JumpTo": {
+      "title": { "default": "Jump to folder" },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABA0lEQVQ4T62SMUoDURBA3/wVNp7AEwiKWfQGae3EUuySTqw1plIkMQHBE6ignY2mEDs7L+AmpoyFjSmFFIL7R342sILoZ12nnZn3ZoYRCoYU7Eeo926AtQwkMapbdJYeQNQnEOrxLYYqreh1Utzor2C5AI1+aO7ykWxyvDx2+e+A35SNeA7L2VfhfwLKI3afthF7AhL4dp/mu9kEdmYWklMIarQXn72AvccKKjspIDE1jK1OmjrlI+/194cl3sfnqF6lABscYmwzr52wtOH+4A6RIda+5LXTjq4doJ8ezazm2d3ZOZh/c4ABqpd/sU8fqTcAFrxXzwruCcN1Z08BBaMw4BOOYn4R7hUbrQAAAABJRU5ErkJggg==",
+      "type": "command"
+    }
+  }
+}
