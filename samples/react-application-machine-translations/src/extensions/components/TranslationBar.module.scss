@@ -1,0 +1,18 @@
+.translationBar{
+  background-color: "[theme:themePrimary, default:#0078d7]";
+  color: "[theme:white, default:white]";
+
+  .loadingButton {
+    line-height: 40px;
+    padding-left: 16px;
+  }
+  .actionButton, .actionButton:hover {
+    margin-left: 8px;
+    color: "[theme:white, default:white]";
+    i {
+      color: "[theme:white, default:white]";
+    }
+  }
+}
+
+
