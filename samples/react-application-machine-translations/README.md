@@ -1,9 +1,9 @@
-# title of the sample
+# Machine Translations Extension
 
 ## Summary
 This application customizer let's you translate the text on a SharePoint page using the [Translator Text API](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/) of Microsoft Azure. 
 
-The extension will determine the language of the page using the page description. A drop-down is provide with available languages (that are configurable). All content inside Text Web parts will be translated to the specified language
+The extension will determine the language of the page using the page description. A drop-down is provided with available languages (that are configurable). All content inside Text Web parts will be translated to the specified language
 
 ![](./assets/main_screenshot.png)
 
