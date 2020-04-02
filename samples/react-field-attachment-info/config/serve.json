@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/ModernDev/Lists/Demo/AllItems.aspx",
+      "fieldCustomizers": {
+        "Attachments": {
+          "id": "dfb92428-cdef-48ae-9834-bafee3f7ffd4",
+          "properties": {
+            "showTotal": true,
+            "showAttachmentList": true,
+            "showNoAttachmentMsg": true
+          }
+        }
+      }
+    },
+    "attachmentCount": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "fieldCustomizers": {
+        "InternalFieldName": {
+          "id": "dfb92428-cdef-48ae-9834-bafee3f7ffd4",
+          "properties": {
+            "sampleText": "Value"
+          }
+        }
+      }
+    }
+  }
+}

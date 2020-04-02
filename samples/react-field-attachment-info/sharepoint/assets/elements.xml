@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <Field ID="{d40a0089-f8f3-4dcb-b9ce-f32a7d3e95fb}"
+            Name="SPFxAttachments"
+            DisplayName="Attachments"
+            Type="Attachments"
+            Min="0"
+            Required="FALSE"
+            Group="SPFx Columns"
+            ClientSideComponentId="dfb92428-cdef-48ae-9834-bafee3f7ffd4">
+    </Field>
+</Elements>
