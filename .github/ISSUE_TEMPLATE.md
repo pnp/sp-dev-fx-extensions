@@ -11,6 +11,7 @@
 - [ ] Question
 - [ ] Bug
 - [x] Enhancement
+- [ ] Sample request
 
 > For the above list, an empty checkbox is [ ] as in <kbd>[</kbd><kbd>SPACE</kbd><kbd>]</kbd>. A checked checkbox is [x] with no space between the brackets. Use the `PREVIEW` tab at the top right to preview the rendering before submitting your issue.
 > 
@@ -18,7 +19,7 @@
 
 ## Expected or Desired Behavior
 
-> _If you are reporting a bug, please describe the expected behavior. If you are suggesting an enhancement please describe thoroughly the enhancement, how it can be achieved, and expected benefit._
+> _If you are reporting a bug, please describe the expected behavior. If you are suggesting an enhancement please describe thoroughly the enhancement, how it can be achieved, and expected benefit.  For sample requests, please explain what you'd like the sample to demonstrate._
 > 
 > _(DELETE THIS PARAGRAPH AFTER READING)_
 
