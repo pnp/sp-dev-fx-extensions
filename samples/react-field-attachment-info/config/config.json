@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "attachment-count-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/attachmentCount/AttachmentCountFieldCustomizer.js",
+          "manifest": "./src/extensions/attachmentCount/AttachmentCountFieldCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AttachmentCountFieldCustomizerStrings": "lib/extensions/attachmentCount/loc/{locale}.js"
+  }
+}

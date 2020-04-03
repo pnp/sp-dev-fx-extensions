@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Field Attachment Info",
+    "id": "b0b1c493-1fcb-41fd-b113-315af53bbe0c",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "features": [
+      {
+        "title": "Field Customizer - Attachments Info",
+        "description": "Displays the attachments count, list of attachments based on the properties.",
+        "id": "7ad5655f-7cf2-4a97-9064-f920ffef9046",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-field-attachment-info.sppkg"
+  }
+}
