@@ -27,7 +27,7 @@ This field customizer will display the attachment related information for a list
 ![React-Field-Attachment-Info](./assets/react-field-attachment-info.png)
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-GA-green.svg)
+![1.10.0](https://img.shields.io/badge/version-1.10.0-green.svg)
 
 ## Applies to
 
