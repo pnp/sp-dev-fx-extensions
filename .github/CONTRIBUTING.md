@@ -21,7 +21,7 @@ If you have questions about how to use the SharePoint Framework or any of the pr
 Whenever you are submitting any changes to the SharePoint repositories, please follow these recommendations.
 
 * Always fork repository to your own account for applying modifications
-* Do not combine multiple changes to one pull request, please submit for example any samples and documentation updates using separate PRs
+* Do not combine multiple changes in one pull request. For example, please submit any samples and documentation updates using separate PRs
 * If you are submitting multiple samples, please create specific PR for each of them
 * If you are submitting typo or documentation fix, you can combine modifications to single PR where suitable
 
@@ -29,7 +29,7 @@ Whenever you are submitting any changes to the SharePoint repositories, please f
 
 When you are submitting a new sample, it has to follow up below guidelines
 
-* You will need to have a README file for your contribution, which is based on [the provided template](../samples/README-template.md) under the Samples folder. Please copy this template and update it accordingly. README has to be named as `README.md` with capital letters.
+* You will need to have a `README.md` file for your contribution, which is based on [the provided template](../samples/README-template.md) under the `samples` folder. Please copy this template and update it accordingly. Your `README.md` file _must_ be named `README.md` -- with capital letters -- as this is the information we use to make your sample public.
   * You will need to have a screenshot image demonstrating the extension in action in the README file ("pics or it didn't happen"). The preview image must be located in the `/assets/` folder in the root of your solution.
 * The README template contains a specific tracking image at the end of the file with an `img` element pointing to `https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
   * Update the image `src` attribute according with repository name and folder information. For example, if your sample is named `react-todo` in the `samples` folder, update the `src` attribute to `https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-todo`
@@ -52,7 +52,7 @@ Here's a high-level process for submitting new samples or updates to existing on
 3. Create a new branch from the `master` branch for your fork for the contribution
 4. Include your changes to your branch
 5. Commit your changes using descriptive commit message * These are used to track changes on the repositories for monthly communications
-6. Create a pull request in your own fork and target `dev` branch
+6. Create a pull request in your own fork and target `master` branch
 7. Fill up the provided PR template with the requested details
 
 Before you submit your pull request consider the following guidelines:
@@ -122,7 +122,7 @@ If the sample you wish to contribute is stored in your own GitHub repository, yo
 
     ```shell
     git remote add origin https://github.com/yourgitaccount/sp-dev-fx-extensions.git
-    git pull origin dev
+    git pull origin master
     ```
 
 * Pull your other project from GitHub into the samples folder of your local copy of `sp-dev-fx-extensions`
