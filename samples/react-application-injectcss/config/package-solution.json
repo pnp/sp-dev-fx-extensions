@@ -16,7 +16,7 @@
         "assets": {
           "elementManifests": [
             "elements.xml",
-            "clientsideinstance.xml"
+            "ClientSideInstance.xml"
           ]
         }
       }
