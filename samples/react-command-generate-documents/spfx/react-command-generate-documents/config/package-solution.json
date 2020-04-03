@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "react-command-generate-documents-client-side-solution",
+    "id": "e7657191-8142-4948-a8c1-e711af060450",
+    "version": "1.23.0.0",
+    "includeClientSideAssets": true,
+    "webApiPermissionRequests": [
+      {
+        "resource": "GenDocs",
+        "scope": "user_impersonation"
+      }
+    ],
+    "skipFeatureDeployment": false,
+    "isDomainIsolated": false,
+    "features": [
+      {
+        "title": "Document Generator.",
+        "description": "Deploys a custom action with ClientSideComponent to Generate Documents with Azure function",
+        "id": "a67a0492-0cc7-45ac-ae55-3b6cd8823242",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "clientsideinstance.xml"
+          ],
+        
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-command-generate-documents.sppkg"
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="GenerateDocuments"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="8b1494b2-3820-4797-a3d1-522fbab86854"
+        ClientSideComponentProperties="{
+            &quot;azureFunctionBaseUrl&quot;:&quot;https://generateworddocfunctionapp20191026065257.azurewebsites.net&quot;,
+            &quot;azureFunctionGenerateDocumentMethod&quot;:&quot;GenerateDocument&quot;,
+            &quot;azureFunctionGetPDFPreviewUrlMethod&quot;:&quot;GetPDFPreviewUrl&quot;,
+            &quot;templateServerRelativeUrl&quot;:&quot;/sites/GENDOCS2/Templates/testTemplate.docx&quot;,
+            &quot;destinationFolderServerRelativeUrl&quot;:&quot;/sites/GENDOCS2/Published&quot;,
+            &quot;webServerRelativeUrl&quot;:&quot;/sites/GENDOCS2&quot;,
+            &quot;temporaryFolderServerRelativeUrl&quot;:&quot;/sites/GENDOCS2/Temporary&quot;,
+            &quot;taskListId&quot;:&quot;046e363f-f37b-437a-8218-f99ba5ea91e2&quot;
+        }">
+    </CustomAction>
+</Elements>

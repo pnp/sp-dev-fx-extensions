@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "generate-documents-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/generateDocuments/GenerateDocumentsCommandSet.js",
+          "manifest": "./src/extensions/generateDocuments/GenerateDocumentsCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GenerateDocumentsCommandSetStrings": "lib/extensions/generateDocuments/loc/{locale}.js"
+  }
+}
