@@ -39,3 +39,4 @@ Version|Date|Comments
 
 Build and install instructions for both the azure function and the spfx extension  can be found in the file at misc/Gernerating a word.docx
 
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-generate-document" />
