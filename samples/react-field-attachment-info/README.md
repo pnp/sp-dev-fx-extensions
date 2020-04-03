@@ -1,8 +1,11 @@
 # React Field Attachment Info
 
 ## Summary
-> This field customizer will display the attachment related information for a listitem. The default attachment field will display only an icon, but this component will display some info of the attachments which will help the business users to access the files easily.
+
+This field customizer will display the attachment related information for a listitem. The default attachment field will display only an icon, but this component will display some info of the attachments which will help the business users to access the files easily.
+
 ### Features
+
 * Display **_Total_** count of attachments mapped to an item.
 * Display **_List of Attachments_** with **_link_** to the files.
 * Display **_No Attachments_** message with an **_icon_** for the item without the attachments
@@ -60,3 +63,5 @@ Version|Date|Comments
 
 #### Local Mode
 This solution doesn't work on local mode.
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-field-attachment-info" />
