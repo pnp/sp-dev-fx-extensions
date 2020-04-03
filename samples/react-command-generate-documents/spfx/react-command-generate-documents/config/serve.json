@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://tenant.sharepoint.com/sites/testDocGen/Lists/Tasks/AllItems.aspx",
+      "customActions": {
+        "8b1494b2-3820-4797-a3d1-522fbab86854": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "azureFunctionBaseUrl":"https://generateworddocfunctionapp20191111111111.azurewebsites.net",
+                                    
+            "azureFunctionGenerateDocumentMethod":"GenerateDocument",
+            "azureFunctionGetPDFPreviewUrlMethod":"GetPDFPreviewUrl",
+            "templateServerRelativeUrl":"/sites/TestDocGen/templates/testTemplate.docx",
+            "destinationFolderServerRelativeUrl":"/sites/TestDocGen/Published",
+            "webServerRelativeUrl":"/sites/TestDocGen",
+            "saveAsFormat":"PDF",
+            "temporaryFolderServerRelativeUrl":"/sites/TestDocGen/Temporary",
+            "taskListId":"f1d86da4-71a8-4755-bfaa-a9c1aab2fd8b"
+        
+            
+            
+        
+            
+          }
+        }
+      }
+    }
+  }
+}
