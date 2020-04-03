@@ -13,12 +13,13 @@ extensions:
   - react
   createdDate: 3/1/2018 12:00:00 AM
 ---
-# Spfx Applications Customiser Groups external links
+# Spfx Applications Customizer Groups external links
 
 ## Summary
+
 This sample shows how to render a header navbar with some external links related to the Group the site is in, i.e: Group calendar, Notebook, Inbox, People...
 
-![Group links app customiser](./assets/react-application-grouplinks.jpg)
+![Group links app customizer](./assets/react-application-grouplinks.jpg)
 
 ## Used SharePoint Framework Version
 
@@ -55,11 +56,13 @@ Version|Date|Comments
 
 ## Features
 
-Sample SharePoint Framework application customiser rendering a header nav bar with some external links related to the site group.
+Sample SharePoint Framework application customizer rendering a header nav bar with some external links related to the site group.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
-* Header customiser with React components
+* Header customizer with React components
 * Using SP.Directory.DirectorySession api to get info about the current Group
 * Using async / await for the async calls
 * Office UI fabric ActionLinks
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-grouplinks" />
