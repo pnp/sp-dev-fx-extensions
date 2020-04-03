@@ -1,0 +1,25 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "react-application-myfollowedsites",
+        "id": "bee2c587-d4e2-4c74-b337-aa2b9a2116eb",
+        "version": "1.0.0.0",
+        "includeClientSideAssets": true,
+        "isDomainIsolated": false,
+        "features": [{
+            "title": "Application Extension - My Followed Sites.",
+            "description": "Deploys a custom action with ClientSideComponentId association",
+            "id": "02e5321f-0815-4006-bae7-1f0c2c03a6f4",
+            "version": "1.0.0.0",
+            "assets": {
+                "elementManifests": [
+                    "elements.xml",
+                    "clientsideinstance.xml"
+                ]
+            }
+        }]
+    },
+    "paths": {
+        "zippedPackage": "solution/react-application-myfollowedsites.sppkg"
+    }
+}

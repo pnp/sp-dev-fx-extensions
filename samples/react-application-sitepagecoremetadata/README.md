@@ -1,4 +1,4 @@
-# Tenant Global NavBar Application Customizer
+# Site Page Core Metadata Application Customizer
 
 ## Summary
 

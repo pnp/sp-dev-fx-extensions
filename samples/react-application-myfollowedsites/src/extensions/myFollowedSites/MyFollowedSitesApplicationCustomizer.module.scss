@@ -1,0 +1,60 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/_SPFabricCore.scss';
+.app {
+    .iconstyle {
+        font-size: xx-large;
+        height: 30px;
+        width: 30px;
+        margin: 0 25px;
+        color: $ms-color-themePrimary;
+    }
+    .iconcontainer {
+        position: absolute;
+        right: 0px;
+        top: 400px;
+    }
+}
+
+.sitespanel {
+    .sitelogo {
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+        float: left;
+    }
+    .sitelogdefault {
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+        float: left;
+        font-size: 30px;
+    }
+    .sitelink {
+        @include ms-fontColor-white;
+        @include ms-fontSize-16;
+        //background-color: $ms-color-themeLight;
+        height: 48px;
+        padding: 5px;
+        margin-top: 1px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
+    .sitelink:hover {
+        box-shadow: 0 8px 16px 0 rgba(195, 158, 158, 0.2);
+    }
+}
+
+.refreshcontainer {
+    .refreshbutton {
+        position: fixed;
+        right: 0px;
+        top: 100px;
+        width: 80px;
+    }
+    .refreshbuttonstyle {
+        font-size: xx-large;
+        height: 30px;
+        width: 30px;
+        margin: 0 25px;
+        color: $ms-color-themePrimary;
+    }
+}
