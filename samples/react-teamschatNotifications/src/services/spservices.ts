@@ -160,9 +160,10 @@ export default class spservices {
         const body = await $.ajax({
           url: uri,
           method: "GET",
+          crossDomain: false,
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
           },
           xhrFields: {
             responseType: "blob"
@@ -176,7 +177,7 @@ export default class spservices {
         reader.readAsDataURL(body);
       } catch (error) {
         console.log(error);
-        rejected('Error loading hosted Content.');
+        resolve(null);
       }
     });
   }
@@ -191,8 +192,13 @@ export default class spservices {
       const user: any = await graph.users.getById(userId).get();
       return user;
     } catch (error) {
-      console.log("error get user info", error);
-      throw new Error(`error get user info, ${error.message}`);
+       if (error.status == '404') {
+        console.log("(Get User Info) Info: user dont exist in AAD:", userId);
+        throw new Error(`(Get User Info) Info: user dont exist in AAD:, ${userId}`);
+       }else{
+        console.log("error get user info", error);
+        throw new Error(`error get user info, ${error.message}`);
+       }
     }
   }
 

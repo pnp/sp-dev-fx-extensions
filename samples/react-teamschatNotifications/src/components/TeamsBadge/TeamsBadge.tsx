@@ -14,7 +14,10 @@ import { IChatMessage } from "../../entities/IChatMessage";
 import { IListChatMessage } from "../../entities/IListChatMessage";
 import { ListNotifications } from "../ListNotifications/ListNotifications";
 import { PnPClientStorage, setup } from "@pnp/common";
-import { TEAMS_IMAGE} from '../../common/constants'
+import { TEAMS_IMAGE} from '../../common/constants';
+import { IChatMember } from "../../entities/IChatMember";
+import { IFacepilePersona } from "office-ui-fabric-react";
+import { IUser } from "../../entities/IUser";
 
 const storage = new PnPClientStorage();
 
@@ -93,14 +96,15 @@ export default class TeamsBadge extends React.Component<
         chatNotificationMessage.resourceData["@odata.id"]
       );
 
-      // teste if message is the current user, notify only for message from other users
+      /* // teste if message is the current user, notify only for message from other users
       if (
         this.props.context.pageContext.user.displayName ==
         chatMessage.from.user.displayName
       ) {
-        continue;
-      }
-     // totalNotifications++;
+
+       // continue;
+      } */
+     //
       let index: number = lodash.findIndex(this.listChats, {
         subscriptionId: chatNotificationMessage.subscriptionId
       });
@@ -203,7 +207,7 @@ export default class TeamsBadge extends React.Component<
         await this._getChats();
         this._isTimerRunning = false;
       }
-    }, 5000);
+    }, 60000);
   }
   /**
    *  get user Chats and create Chat Message Subscription
@@ -225,7 +229,8 @@ export default class TeamsBadge extends React.Component<
               this.listChats.push({
                 chat: chat,
                 subscriptionId: subscriptionId,
-                hasNotification: false
+                hasNotification: false,
+                chatMembers: await this._getChatMembers(chat.id)
               });
 
             } catch (error) {
@@ -246,4 +251,39 @@ export default class TeamsBadge extends React.Component<
         });
     });
   }
+
+
+  private _getChatMembers = async (
+    chatId: string
+  ): Promise<IFacepilePersona[]> => {
+    try {
+      let _facepilePersonas: IFacepilePersona[] = [];
+      if (chatId.indexOf('meeting') > -1 ) {return [];} // idnor meeting chats
+
+      const _members: IChatMember[] = await spservices.getChatMembers(chatId);
+
+      if (_members && _members.length > 2) {
+        for (const _member of _members) {
+          const userInfo: IUser = await spservices.getUser(_member.userId);
+         /*  if (
+            _member.displayName ==
+            this.props.context.pageContext.user.displayName
+          ) {
+            continue;
+          } */
+
+          _facepilePersonas.push({
+            personaName: _member.displayName,
+            imageUrl: await spservices.getUserPhoto(userInfo.userPrincipalName)
+          });
+        }
+      }
+
+      return _facepilePersonas;
+    } catch (error) {
+      console.log("Error get Members ", error);
+    }
+  }
+
+
 }
