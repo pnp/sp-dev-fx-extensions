@@ -1,6 +1,6 @@
 # Contribution Guidance
 
-If you'd like to contribute to this repository, please read the following guidelines. Contributors are more than welcome to share your learnings with others from centralized location.
+If you'd like to contribute to this repository, please read the following guidelines. Contributors are more than welcome to share their learnings with others from a centralized location.
 
 ## Code of Conduct
 
@@ -11,7 +11,7 @@ For more information, see the [Code of Conduct FAQ](https://opensource.microsoft
 
 Please do not open GitHub issues for general support questions as the GitHub list should be used for feature requests and bug reports. This way we can more easily track actual issues or bugs from the code and keep the general discussion separate from the actual code.
 
-If you have questions about how to use SharePoint Framework or any of the provided samples, please use the following locations.
+If you have questions about how to use the SharePoint Framework or any of the provided samples, please use the following locations.
 
 * [SharePoint Developer Space](http://aka.ms/SPPnP-Community) at http://techcommunity.microsoft.com
 * [SharePoint Stack Exchange](http://sharepoint.stackexchange.com/) with 'spfx' tag
@@ -29,31 +29,31 @@ Whenever you are submitting any changes to the SharePoint repositories, please f
 
 When you are submitting a new sample, it has to follow up below guidelines
 
-* You will need to have a README file for your contribution, which is based on [provided template](../samples/README-template.md) under the Samples folder. Please copy this template and update accordingly. README has to be named as README.md with capital letters.
-  * You will need to have a picture of the web part in practice in the README file ("pics or it didn't happen"). Preview image must be located in /assets/ folder in the root your you solution.
-* README template contains specific tracking image as a final entry in the page with img tag by default to https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template. This is transparent image, which is used to track popularity of individual samples in GitHub.
-  * Updated the image src element according with repository name and folder information. If your sample is for example in samples folder and named as react-todo, src element should be updated as https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-todo
-* If you find already similar kind of sample from the existing samples, we would appreciate you to rather extend existing one, than submitting a new similar sample
-  * If you for example use Office Graph with React, please rather add new web part to already existing solution, rather than introducing completely new solution
+* You will need to have a README file for your contribution, which is based on [the provided template](../samples/README-template.md) under the Samples folder. Please copy this template and update it accordingly. README has to be named as `README.md` with capital letters.
+  * You will need to have a screenshot image demonstrating the extension in action in the README file ("pics or it didn't happen"). The preview image must be located in the `/assets/` folder in the root of your solution.
+* The README template contains a specific tracking image at the end of the file with an `img` element pointing to `https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
+  * Update the image `src` attribute according with repository name and folder information. For example, if your sample is named `react-todo` in the `samples` folder, update the `src` attribute to `https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-todo`
+* If you find that a sample similar to yours already exists in this repository, we would prefer that you add to the existing sample, rather than submitting a new  sample
+  * For example, if you use Office Graph with React, please add a new web part to the already existing solution, rather than introducing a completely new solution
   * When you update existing samples, please update also README accordingly with information on provided changes and with your author details
-* When you are submitting new sample solution, please name the sample solution folder accordingly
-  * Folder should start by identifying JS library used - like "react-", "angular-", "knockout-"
-  * If you are not using any specific JS library, please use "js-" as the prefix for your sample
+* When you are submitting a new sample solution, please name the sample solution folder accordingly
+  * Folder should start by identifying JS library used - like `react-`, `angular-`, `knockout-`
+  * If you are not using any specific JS library, please use `js-` as the prefix for your sample
   * Do not use words "sample", "extension" or "wb" in the folder or sample name - these are samples for client-side extensions repository
   * If your solution is demonstrating multiple technologies, please use functional terms as the name for the solution folder
 * Do not use period/dot in the folder name of the provided sample
 
 ## Submitting Pull Requests
 
-Here's a high level process for submitting new samples or updates to existing ones.
+Here's a high-level process for submitting new samples or updates to existing ones.
 
 1. Sign the Contributor License Agreement (see below)
-1. Fork this repository [SharePoint/sp-dev-fx-extensions](https://github.com/SharePoint/sp-dev-fx-extensions) to your GitHub account
-1. Create a new branch off the `master` branch for your fork for the contribution
-1. Include your changes to your branch
-1. Commit your changes using descriptive commit message * These are used to track changes on the repositories for monthly communications
-1. Create a pull request in your own fork and target `dev` branch
-1. Fill up the provided PR template with the requested details
+2. Fork this repository [SharePoint/sp-dev-fx-extensions](https://github.com/SharePoint/sp-dev-fx-extensions) to your GitHub account
+3. Create a new branch from the `master` branch for your fork for the contribution
+4. Include your changes to your branch
+5. Commit your changes using descriptive commit message * These are used to track changes on the repositories for monthly communications
+6. Create a pull request in your own fork and target `dev` branch
+7. Fill up the provided PR template with the requested details
 
 Before you submit your pull request consider the following guidelines:
 
@@ -105,9 +105,9 @@ Before you submit your pull request consider the following guidelines:
   git push origin react-field-slider
   ```
 
-## Merging your Existing Github Projects with this Repository
+## Merging your Existing GitHub Projects with this Repository
 
-If the sample you wish to contribute is stored in your own Github repository, you can use the following steps to merge it with the this repository:
+If the sample you wish to contribute is stored in your own GitHub repository, you can use the following steps to merge it with this repository:
 
 * Fork the `sp-dev-fx-extensions` repository from GitHub
 * Create a local git repository
@@ -125,7 +125,7 @@ If the sample you wish to contribute is stored in your own Github repository, yo
     git pull origin dev
     ```
 
-* Pull your other project from github into the samples folder of your local copy of sp-dev-fx-extensions
+* Pull your other project from GitHub into the samples folder of your local copy of `sp-dev-fx-extensions`
 
     ```shell
     git subtree add --prefix=samples/projectname https://github.com/yourgitaccount/projectname.git master
@@ -139,10 +139,10 @@ If the sample you wish to contribute is stored in your own Github repository, yo
 
 ## Signing the CLA
 
-Before we can accept your pull requests you will be asked to sign electronically Contributor License Agreement (CLA), which is prerequisite for any contributions to PnP repository. This will be one time process, so for any future contributions you will not be asked to re-sign anything. After the CLA has been signed, our PnP core team members will have a look on your submission for final verification of the submission. Please do not delete your development branch until the submission has been closed.
+Before we can accept your pull requests you will be asked to sign electronically Contributor License Agreement (CLA), which is a pre-requisite for any contributions to any PnP repository. This will be a one time process, so for any future contributions you will not be asked to re-sign anything. After the CLA has been signed, our PnP core team members will have a look on your submission for final verification of the submission. Please do not delete your development branch until the submission has been closed.
 
 You can find Microsoft CLA from the following address - https://cla.microsoft.com. 
 
 Thank you for your contribution.
 
-> Sharing is caring. 
+> Sharing is caring.
