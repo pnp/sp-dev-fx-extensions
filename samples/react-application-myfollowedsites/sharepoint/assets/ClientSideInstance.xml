@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="MyFollowedSites"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="39044f8c-dace-4780-9e90-eeb368d6a6b9"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

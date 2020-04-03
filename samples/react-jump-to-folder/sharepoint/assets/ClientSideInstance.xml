@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="JumpToFolder"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ListTemplateId="101"
+        Properties=""
+        ComponentId="44f1a0de-5fe4-4e8f-85fb-0c451b4b30ca" />
+</Elements>

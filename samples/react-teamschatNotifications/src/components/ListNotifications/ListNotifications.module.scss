@@ -53,5 +53,19 @@
 .link {
   text-overflow: ellipsis;
     overflow: hidden;
-
+    @include ms-fontSize-m;
+    @include ms-font-m;
+    color: $ms-color-themePrimary;
+    text-decoration: none;
+    outline: none;
+    padding-left: 5px;
+}
+.linkLabel {
+  text-align: left;
+  vertical-align: top;
+  display: inline-block;
+  width: 180px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

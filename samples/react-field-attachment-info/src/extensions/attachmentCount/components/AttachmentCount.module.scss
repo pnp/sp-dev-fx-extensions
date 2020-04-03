@@ -1,0 +1,16 @@
+.AttachmentCount {
+  .cell {
+    background-color: "[theme:themePrimary, default:#e5e5e5]";
+    display: 'inline-block';
+    width: 100%;    
+  }
+  .loader {
+    margin: 0px auto;
+    display: inline-flex;
+    position: absolute;
+    left: 40px;
+  }
+  .totalDiv {
+    margin-bottom: 3px;
+  }  
+}

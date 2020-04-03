@@ -1,45 +1,38 @@
-import * as React from "react";
-import styles from "./ListNotifications.module.scss";
-import * as strings from "TeamsChatNotificationsApplicationCustomizerStrings";
-import services from "../../services/spservices";
-import { IListNotificationsProps } from "./IListNotificationsProps";
-import { IListNotificationsState } from "./IListNotificationsState";
-import * as moment from "moment";
-import * as $ from "jquery";
-import { Stack, IStackTokens } from "office-ui-fabric-react/lib/Stack";
-import { getTheme } from "office-ui-fabric-react/lib/Styling";
-import * as loadash from "lodash";
-import { IListChatMessage } from "../../entities/IListChatMessage";
-import { Link } from "office-ui-fabric-react/lib/Link";
-import {
-  IPersonaSharedProps,
-  PersonaSize,
-  Persona,
-  IPersonaProps
-} from "office-ui-fabric-react/lib/Persona";
-import { Label } from "office-ui-fabric-react/lib/Label";
-import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
-import {
-  Dialog,
-  DialogType,
-  DialogFooter
-} from "office-ui-fabric-react/lib/Dialog";
-import { IUser } from "../../entities/IUser";
-import { Text } from "office-ui-fabric-react/lib/Text";
+import * as React from 'react';
+import styles from './ListNotifications.module.scss';
+import * as strings from 'TeamsChatNotificationsApplicationCustomizerStrings';
+import services from '../../services/spservices';
+import { IListNotificationsProps } from './IListNotificationsProps';
+import { IListNotificationsState } from './IListNotificationsState';
+import * as moment from 'moment';
+import * as $ from 'jquery';
+import { Stack, IStackTokens } from 'office-ui-fabric-react/lib/Stack';
+import { getTheme } from 'office-ui-fabric-react/lib/Styling';
+import * as loadash from 'lodash';
+import { IListChatMessage } from '../../entities/IListChatMessage';
+import { Link } from 'office-ui-fabric-react/lib/Link';
+import { IPersonaSharedProps, PersonaSize, Persona, IPersonaProps } from 'office-ui-fabric-react/lib/Persona';
+import { Label } from 'office-ui-fabric-react/lib/Label';
+import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
+import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib/Dialog';
+import { IUser } from '../../entities/IUser';
+import { Text } from 'office-ui-fabric-react/lib/Text';
 
-import {
-  Facepile,
-  IFacepilePersona,
-  IFacepileProps
-} from "office-ui-fabric-react/lib/Facepile";
-import { IChatMember } from "../../entities/IChatMember";
-import { Icon } from "office-ui-fabric-react/lib/Icon";
-import { initializeIcons } from "@uifabric/icons";
-import { Image } from "office-ui-fabric-react/lib/Image";
-import { Attachment } from "../Attachment/Attachment";
+import { Facepile, IFacepilePersona, IFacepileProps } from 'office-ui-fabric-react/lib/Facepile';
+import { IChatMember } from '../../entities/IChatMember';
+import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { initializeIcons } from '@uifabric/icons';
+import { Image } from 'office-ui-fabric-react/lib/Image';
+import { Attachment } from '../Attachment/Attachment';
+import { AdaptiveCardAttachment } from '../attachment/AdaptiveCardAttachment';
+import { PnPClientStorage } from '@pnp/pnpjs';
+import { IListChat } from '../../entities/IListChat';
+import * as lodash from 'lodash';
+import * as cheerios from 'cheerio';
 
 initializeIcons();
 
+const storage = new PnPClientStorage();
 const theme = getTheme();
 const { palette, fonts } = theme;
 const stackTokens: IStackTokens = { childrenGap: 20 };
@@ -51,10 +44,7 @@ const stackTokens: IStackTokens = { childrenGap: 20 };
  * @class ListNotifications
  * @extends {React.Component<IListNotificationsProps, IListNotificationsState>}
  */
-export class ListNotifications extends React.Component<
-  IListNotificationsProps,
-  IListNotificationsState
-> {
+export class ListNotifications extends React.Component<IListNotificationsProps, IListNotificationsState> {
   private _renderMessages: JSX.Element[] = [];
 
   constructor(props: IListNotificationsProps) {
@@ -88,10 +78,7 @@ export class ListNotifications extends React.Component<
    * @param {IListNotificationsState} prevState
    * @memberof ListNotifications
    */
-  public componentDidUpdate(
-    prevProps: IListNotificationsProps,
-    prevState: IListNotificationsState
-  ): void {}
+  public componentDidUpdate(prevProps: IListNotificationsProps, prevState: IListNotificationsState): void {}
 
   /**
    *
@@ -103,12 +90,16 @@ export class ListNotifications extends React.Component<
     try {
       let { listMessages } = this.props;
       this._renderMessages = [];
-
+      const listChats: IListChat[] = storage.local.get('listChats');
       for (const message of listMessages) {
-        const facepilePersonas = await this._getChatMembers(message.chat.id);
-        const userInfo: IUser = await services.getUser(
-          message.chatMessage.from.user.id
-        );
+        // totalNotifications++;
+        let index: number = lodash.findIndex(listChats, {
+          chat: { id: message.chat.id }
+        });
+
+        const chatItem = listChats && listChats.length > 0 ? listChats[index] : null;
+        const facepilePersonas = chatItem ? chatItem.chatMembers : null;
+        const userInfo: IUser = await services.getUser(message.chatMessage.from.user.id);
         let personaCardProps: IPersonaSharedProps = {} as IPersonaSharedProps;
         let photoUrl: string = undefined;
         if (userInfo) {
@@ -118,91 +109,85 @@ export class ListNotifications extends React.Component<
           text: message.chatMessage.from.user.displayName,
           imageUrl: photoUrl,
           size: PersonaSize.size40,
-          secondaryText: moment(message.chatMessage.createdDateTime).format(
-            "D, MMM YYYY HH:mm:ss"
-          )
+          secondaryText: moment(message.chatMessage.createdDateTime).format('D, MMM YYYY HH:mm:ss')
         };
 
         const _message: any = await this._checkMessageContent(message);
 
         this._renderMessages.push(
-          <div
-            className={styles.card}
-            onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-              event.preventDefault();
-              window.open(
-                `https://teams.microsoft.com/_#/conversations/${message.chat.id}?ctx=chat`
-              );
-            }}
-          >
-            {facepilePersonas.length > 0 ? (
-              <div className={styles.facepileWarapper}>
-                <Facepile
-                  personas={facepilePersonas}
-                  personaSize={PersonaSize.size24}
-                  maxDisplayablePersonas={8}
-                  styles={{ root: { marginBottom: 15 } }}
-                />
-              </div>
-            ) : null}
-            <div className={styles.cardWrapper}>
-              <Persona
-                {...personaCardProps}
-                styles={{ root: { marginBottom: 10 } }}
-              />
-              <div
-                style={{
-                  margin: 15,
-                  height: 1,
-                  borderBottomColor: palette.neutralQuaternaryAlt,
-                  borderBottomWidth: 1,
-                  borderBottomStyle: "solid"
-                }}
-              ></div>
-              {message.chatMessage.body.contentType == "html" ? (
-                <>
+          <>
+            <div
+              onClick={event => {
+                event.preventDefault();
+                window.open(`https://teams.microsoft.com/_#/conversations/${message.chat.id}?ctx=chat`);
+              }}>
+              <div className={styles.card}>
+                {facepilePersonas && facepilePersonas.length > 0 ? (
+                  <div className={styles.facepileWarapper}>
+                    <Facepile
+                      personas={facepilePersonas}
+                      personaSize={PersonaSize.size24}
+                      maxDisplayablePersonas={8}
+                      styles={{ root: { marginBottom: 15 } }}
+                    />
+                  </div>
+                ) : null}
+                <div className={styles.cardWrapper}>
+                  <Persona {...personaCardProps} styles={{ root: { marginBottom: 10 } }} />
                   <div
-                    dangerouslySetInnerHTML={{
-                      __html: _message
-                    }}
-                  />
-                  {message.chatMessage.attachments.length > 0 &&
-                    message.chatMessage.attachments.map(attachment => {
-                      return (
-                        <Attachment
-                          fileUrl={attachment.contentUrl}
-                          name={attachment.name}
-                        />
-                      );
-                    })}
-                </>
-              ) : (
-                <>
-                  {message.chatMessage.body.contentType == "text" &&
-                    message.chatMessage.attachments.length == 0 && (
-                      <Text
-                        styles={{
-                          root: { marginTop: 15, color: palette.themeDarker }
+                    style={{
+                      margin: 15,
+                      height: 1,
+                      borderBottomColor: palette.neutralQuaternaryAlt,
+                      borderBottomWidth: 1,
+                      borderBottomStyle: 'solid'
+                    }}></div>
+                  {message.chatMessage.body.contentType == 'html' ? (
+                    <>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: _message
                         }}
-                        variant="mediumPlus"
-                      >
-                        {message.chatMessage.body.content}
-                      </Text>
-                    )}
-                  {message.chatMessage.body.contentType == "text" &&
-                    message.chatMessage.attachments.length > 0 &&
-                    message.chatMessage.attachments.map(attachment => {
-                      return (
-                        <Attachment
-                          fileUrl={attachment.contentUrl}
-                          name={attachment.name}
-                        />
-                      );
-                    })}
-                </>
-              )}
+                      />
+                      {message.chatMessage.attachments.length > 0 &&
+                        message.chatMessage.attachments.map(attachment => {
+                          return (
+                            // ignore adaptive cards
+                            attachment.contentUrl   ? (
+                              <Attachment fileUrl={attachment.contentUrl} name={attachment.name} />
+                            ) : (
+                              <AdaptiveCardAttachment attachment={attachment}/> // adaptive cards
+                            )
+                          );
+                        })}
+                    </>
+                  ) : (
+                    <>
+                      {message.chatMessage.body.contentType == 'text' && (
+                        <Text
+                          styles={{
+                            root: {
+                              marginTop: 15,
+                              color: palette.themeDarker
+                            }
+                          }}
+                          variant='mediumPlus'>
+                          {message.chatMessage.body.content.indexOf('<attachment') !== -1
+                            ? message.chatMessage.body.content.substr(0, message.chatMessage.body.content.indexOf('<attachment'))
+                            : message.chatMessage.body.content}
+                        </Text>
+                      )}
+                      {message.chatMessage.body.contentType == 'text' &&
+                        message.chatMessage.attachments.length > 0 &&
+                        message.chatMessage.attachments.map(attachment => {
+                          return <Attachment fileUrl={attachment.contentUrl} name={attachment.name} />;
+                        })}
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
+          </>
         );
       }
 
@@ -210,10 +195,10 @@ export class ListNotifications extends React.Component<
         isLoading: false,
         renderMessages: this._renderMessages,
         hasError: false,
-        messageError: ""
+        messageError: ''
       });
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
       this.setState({
         isLoading: false,
         renderMessages: this._renderMessages,
@@ -225,106 +210,45 @@ export class ListNotifications extends React.Component<
 
   /**
    *
-   *
    * @private
    * @memberof ListNotifications
    */
-  private _checkMessageContent = async (
-    message: IListChatMessage
-  ): Promise<string | JSX.Element | JSX.Element[]> => {
-    console.log("message", message.chatMessage.body);
-    // return message.chatMessage.body.content;
+  private _checkMessageContent = async (message: IListChatMessage): Promise<string | JSX.Element | JSX.Element[]> => {
+    console.log('message', message.chatMessage);
+    //
     try {
-      if (message.chatMessage.body.contentType == "html") {
-        const isEmoji: number = message.chatMessage.body.content.indexOf(
-          "http://schema.skype.com/Emoji"
-        );
-        if (isEmoji !== -1) {
-          return message.chatMessage.body.content;
-        } else {
-          // test if is Gif image present
-          const _isGif = message.chatMessage.body.content.indexOf(".gif");
+      if (message.chatMessage.body.contentType == 'html') {
+        const _ch = cheerios.load(message.chatMessage.body.content);
+        _ch('a')
+          .attr('href', '#')
+          .attr('onclick', `window.open('${_ch('a').attr('href')}'`)
+          .addClass(`${styles.link}`);
+        _ch('img[itemtype!="http://schema.skype.com/Emoji"]')
+          .css('width', '100%')
+          .css('height', '100%');
+        // is sticker image get src to convert DataBase64
+        const _imgSrc: any = _ch('img[src*="$value"]').attr('src');
+        let _returnHtml = '';
 
-          if (_isGif != -1) {
-            const _imgParents = $(message.chatMessage.body.content)
-              .find("img")
-              .removeAttr("width")
-              .removeAttr("height")
-              .width("100%")
-              .height("100%")
-              .parents();
-            const _topParent = _imgParents.length - 1;
-            return $(_imgParents[_topParent]).html();
+        if (_imgSrc && _imgSrc.length > 0) {
+          const dataURI = await services.getHostedContentImage(_imgSrc);
+          if (dataURI) {
+            _ch('img[src*="$value"]').attr('src', dataURI);
+          } else {
+            // if can't get image send default message to click to open
+            _returnHtml = '<div>Please click to see message</div>';
+            _ch('img[src*="$value"]').replaceWith(_returnHtml);
           }
-          // test if have Attachments with text in HTMNL Message
-
-          const _hasAttachments = message.chatMessage.body.content.indexOf(
-            "<attachment"
-          );
-          if (_hasAttachments != -1) {
-            // find parent div that contains the  attachment information
-
-            const _imgParents = $(message.chatMessage.body.content)
-              .find("div")
-              .html();
-            return _imgParents;
-          }
-
-          // is autocolant image get image and src to render custom image
-          const _img: any = $(message.chatMessage.body.content).find("img");
-
-          if (_img && _img.length > 0) {
-            const dataURI = await services.getHostedContentImage(_img[0].src);
-            return `<img src=${dataURI} width='100%'>`;
-          }
-          // Has anchor
-          const _anchor: any = $(message.chatMessage.body.content).find("a");
-          if (_anchor && _anchor.length > 0) {
-            const _renderLink = `<div class=${styles.link}><a href=${_anchor[0].href}  onclick="event.stopPropagation();" title=${_anchor[0].href} rel="noreferrer noopener" target="_blank">${_anchor[0].href}</a></div>`;
-            return _renderLink;
-          }
-          // other content
-          return "<div>This Message has multimedia content, click to open</div>";
         }
+        // Return Message!
+        return _ch.html();
+      } else {
+        // is text message
+        return message.chatMessage.body.content;
       }
     } catch (error) {
-      throw new Error(error);
-    }
-  };
-
-  /**
-   *
-   *
-   * @private
-   * @memberof ListNotifications
-   */
-  private _getChatMembers = async (
-    chatId: string
-  ): Promise<IFacepilePersona[]> => {
-    try {
-      const _members: IChatMember[] = await services.getChatMembers(chatId);
-      let _facepilePersonas: IFacepilePersona[] = [];
-
-      if (_members && _members.length > 2) {
-        for (const _member of _members) {
-          const userInfo: IUser = await services.getUser(_member.userId);
-          if (
-            _member.displayName ==
-            this.props.context.pageContext.user.displayName
-          ) {
-            continue;
-          }
-
-          _facepilePersonas.push({
-            personaName: _member.displayName,
-            imageUrl: await services.getUserPhoto(userInfo.userPrincipalName)
-          });
-        }
-      }
-
-      return _facepilePersonas;
-    } catch (error) {
-      console.log("Error get Members ", error);
+      console.log('Error getting HTML Content', error);
+      return '<div>Please click to see message</div>';
     }
   };
 
@@ -353,31 +277,23 @@ export class ListNotifications extends React.Component<
               main: {
                 maxWidth: 400,
                 maxHeight: 650,
-                position: "absolute",
+                position: 'absolute',
                 marginLeft: 'auto',
                 top: 90
               }
             }
-          }}
-        >
+          }}>
           <div className={styles.listMessages}>
             <Stack tokens={stackTokens}>
               {this.state.isLoading ? (
                 <Spinner size={SpinnerSize.small}></Spinner>
               ) : this.state.hasError ? (
-                <Label style={{ color: "red" }}>
-                  {this.state.messageError}
-                </Label>
+                <Label style={{ color: 'red' }}>{this.state.messageError}</Label>
               ) : this.state.renderMessages.length > 0 ? (
                 this.state.renderMessages
               ) : (
-                <Stack
-                  horizontal
-                  tokens={{ childrenGap: 10 }}
-                  horizontalAlign="center"
-                  style={{ alignItems: "center" }}
-                >
-                  <Icon iconName="Info" style={{ fontSize: 22 }} />
+                <Stack horizontal tokens={{ childrenGap: 10 }} horizontalAlign='center' style={{ alignItems: 'center' }}>
+                  <Icon iconName='Info' style={{ fontSize: 22 }} />
                   <Label>{strings.NoMessages}</Label>
                 </Stack>
               )}

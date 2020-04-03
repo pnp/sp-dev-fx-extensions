@@ -69,3 +69,4 @@ samples/react-application-grouplinks/src/restQueries/yammerGroup.http
 samples/react-application-sites-hubsite-switcher/samplehubapidata.json
 samples/react-application-page-related-bing-news/private.README.md
 .DS_Store
+samples/.DS_Store

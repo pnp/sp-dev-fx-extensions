@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="JumpToFolder"
+        RegistrationId="101"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="44f1a0de-5fe4-4e8f-85fb-0c451b4b30ca"
+        ClientSideComponentProperties="">
+    </CustomAction>
+</Elements>
