@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "jump-to-folder-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/jumpToFolder/JumpToFolderCommandSet.js",
+          "manifest": "./src/extensions/jumpToFolder/JumpToFolderCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "JumpToFolderCommandSetStrings": "lib/extensions/jumpToFolder/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}
