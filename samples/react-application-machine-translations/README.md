@@ -64,4 +64,4 @@ Here's a debug URL for testing around this sample.
  - Update the supportedLanguages list with languages that you want to expose. A full list of supported languages can be found [here](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support)
 
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/v" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-machine-translations" />
