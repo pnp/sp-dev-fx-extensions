@@ -5,7 +5,7 @@ This application customizer lets you translate the text on a SharePoint page usi
 
 The extension will determine the language of the page using the page description. A drop-down is provided with available languages (that are configurable). All content inside Text Web parts will be translated to the specified language
 
-![](./assets/main_screenshot.png)
+![](./assets/sample.gif)
 
 ## Used SharePoint Framework Version 
 ![drop](https://img.shields.io/badge/SPFx-1.10.0-green.svg)
