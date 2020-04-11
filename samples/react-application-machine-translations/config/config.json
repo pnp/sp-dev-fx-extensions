@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "machine-translation-extension-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/machineTranslationExtension/MachineTranslationExtensionApplicationCustomizer.js",
+          "manifest": "./src/extensions/machineTranslationExtension/MachineTranslationExtensionApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MachineTranslationExtensionApplicationCustomizerStrings": "lib/extensions/machineTranslationExtension/loc/{locale}.js"
+  }
+}
