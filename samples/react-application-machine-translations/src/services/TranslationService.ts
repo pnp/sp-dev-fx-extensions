@@ -12,11 +12,12 @@ export class TranslationService implements ITranslationService {
   private httpClient: HttpClient;
   private apiKey: string;
   private headers: Headers;
-  private host: string = "api.cognitive.microsofttranslator.com";
+  private host: string;
 
-  constructor(httpClient: HttpClient, apiKey: string) {
+  constructor(httpClient: HttpClient, apiKey: string, regionSpecifier: string = "") {
     this.httpClient = httpClient;
     this.apiKey = apiKey;
+    this.host = `api${regionSpecifier}.cognitive.microsofttranslator.com`;
     this.headers = new Headers();
     this.headers.append("Content-type", "application/json");
     this.headers.append("Ocp-Apim-Subscription-Key", this.apiKey);

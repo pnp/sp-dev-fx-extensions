@@ -18,7 +18,6 @@ import "@pnp/sp/lists";
 import "@pnp/sp/items";
 import { ColumnControl, ClientsideText, IClientsidePage } from "@pnp/sp/clientside-pages";
 import { ITranslationResult } from "../../models/ITranslationResult";
-import { thProperties } from "office-ui-fabric-react/lib/Utilities";
 
 export class TranslationBar extends React.Component<ITranslationBarProps, ITranslationBarState> {
 
@@ -57,10 +56,35 @@ export class TranslationBar extends React.Component<ITranslationBarProps, ITrans
 
   public render(): JSX.Element {
 
-    const { availableLanguages, selectedLanguage, isLoading } = this.state;
+    const { availableLanguages, globalError, selectedLanguage, isLoading } = this.state;
 
-    if (isLoading) { return <div className={styles.translationBar}><div className={styles.loadingButton}>Loading ...</div></div>; }
-    if (!selectedLanguage) {return <div>Unable to detect language on page...</div>; }
+    if (isLoading) {
+      return (
+        <div className={styles.translationBar}>
+          <div className={styles.loadingButton}>Loading ...</div>
+        </div>
+      );
+    }
+
+    if (globalError) {
+      return (
+        <div className={styles.translationBar}>
+          <MessageBar messageBarType={MessageBarType.error}>
+            {globalError}
+          </MessageBar>
+        </div>
+      );
+    }
+
+    if (!selectedLanguage) {
+      return (
+        <div className={styles.translationBar}>
+          <MessageBar messageBarType={MessageBarType.info}>
+            {"Could not determine the language of the page. It is either not supported by the API or it is not enabled by your adminitrator."}
+          </MessageBar>
+        </div>
+      );
+    }
 
     let currentMenuItems = [...availableLanguages];
     if (currentMenuItems.length <= 0) {
@@ -99,11 +123,6 @@ export class TranslationBar extends React.Component<ITranslationBarProps, ITrans
             </span>
           </MessageBar>
         )}
-        {this.state.globalError && (
-          <MessageBar messageBarType={MessageBarType.error}>
-            {this.state.globalError}
-          </MessageBar>
-        )}
         {this.state.isTranslating && (
           <Layer>
             <Overlay isDarkThemed={true} />
@@ -114,30 +133,54 @@ export class TranslationBar extends React.Component<ITranslationBarProps, ITrans
   }
 
   private _initTranslationBar = async (): Promise<void> => {
-    const pageItem = await this._getPageItem();
+    try {
+      const pageItem = await this._getPageItem();
+      const textToDetect = pageItem["Description"] ? pageItem["Description"] : pageItem["Title"];
 
-    const detectedLanguage = await this._detectLanguage(pageItem["Description"]);
-    const availableLanguages = await this._getAvailableLanguages(detectedLanguage);
-    let selectedLanguage: ILanguage = undefined;
+      const detectedLanguage = await this._detectLanguage(textToDetect);
+      const availableLanguages = await this._getAvailableLanguages(detectedLanguage);
+      let selectedLanguage: ILanguage = undefined;
 
-    if (availableLanguages.some((l: IContextualMenuItem) => l.key === detectedLanguage.language)) {
-      const selectedLanguageMenuItem = availableLanguages.filter((l: IContextualMenuItem) => l.key === detectedLanguage.language)[0];
-      selectedLanguage = { label: selectedLanguageMenuItem.name, code: selectedLanguageMenuItem.key };
+      if (availableLanguages.some((l: IContextualMenuItem) => l.key === detectedLanguage.language)) {
+        const selectedLanguageMenuItem = availableLanguages.filter((l: IContextualMenuItem) => l.key === detectedLanguage.language)[0];
+        selectedLanguage = { label: selectedLanguageMenuItem.name, code: selectedLanguageMenuItem.key };
+      }
+
+      this.setState({
+        availableLanguages,
+        selectedLanguage,
+        pageItem,
+        isLoading: false,
+        isTranslated: false,
+        isTranslating: false,
+        globalError: undefined
+      });
+    } catch (error) {
+      console.dir(error);
+      this.setState({
+        isLoading: false,
+        isTranslated: false,
+        isTranslating: false,
+        globalError: (error as Error).message
+      });
     }
 
-    this.setState({
-      availableLanguages,
-      selectedLanguage,
-      pageItem,
-      isLoading: false,
-      isTranslated: false,
-      isTranslating: false,
-      globalError: undefined
-    });
+  }
+  private _getPageItem = async (): Promise<any> => {
+
+    const page = await sp.web.lists
+      .getById(this.props.currentListId)
+      .items
+      .getById(this.props.currentPageId)
+      .select("Title", "FileLeafRef", "FileRef", "Description").get();
+
+    return page;
+  }
+  private _detectLanguage = async (text: string): Promise<IDetectedLanguage> => {
+    return await this.props.translationService.detectLanguage(text);
   }
   private _getAvailableLanguages = async (detectedLanguage: IDetectedLanguage): Promise<IContextualMenuItem[]> => {
-    try {
-      return (await this.props.translationService.getAvailableLanguages(this.props.supportedLanguages))
+    return (await this.props.translationService.getAvailableLanguages(this.props.supportedLanguages))
       .map((language: ILanguage) => {
         return {
           key: language.code,
@@ -148,12 +191,8 @@ export class TranslationBar extends React.Component<ITranslationBarProps, ITrans
             : undefined
         };
       });
-    } catch (err) {
-      this.setState({
-        globalError: (err as Error).message
-      });
-    }
   }
+
   private _updateSelectedLanguage = (selectedLanguage: ILanguage): void => {
     const availableLanguages: IContextualMenuItem[] = [...this.state.availableLanguages].map((item: IContextualMenuItem) => {
       return {
@@ -165,15 +204,7 @@ export class TranslationBar extends React.Component<ITranslationBarProps, ITrans
     });
     this.setState({ availableLanguages, selectedLanguage });
   }
-  private _detectLanguage = async (text: string): Promise<IDetectedLanguage> => {
-    try {
-      return await this.props.translationService.detectLanguage(text);
-    } catch (err) {
-      this.setState({
-        globalError: (err as Error).message
-      });
-    }
-  }
+
   private _onTranslate = (language: ILanguage): void => {
 
     this.setState({ isTranslating: true });
@@ -182,24 +213,32 @@ export class TranslationBar extends React.Component<ITranslationBarProps, ITrans
 
     sp.web.loadClientsidePage(relativePageUrl).then( async (clientSidePage: IClientsidePage) => {
 
-      // Translate title
-      await this._translatePageTitle(clientSidePage.title, language.code);
+      try {
+        // Translate title
+        await this._translatePageTitle(clientSidePage.title, language.code);
 
-      // Get all text controls
-      var textControls: ColumnControl<any>[] = [];
-      clientSidePage.findControl((c) => {
-        if (c instanceof ClientsideText) {
-          textControls.push(c);
+        // Get all text controls
+        var textControls: ColumnControl<any>[] = [];
+        clientSidePage.findControl((c) => {
+          if (c instanceof ClientsideText) {
+            textControls.push(c);
+          }
+          return false;
+        });
+
+        for (const control of textControls) {
+          await this._translateTextControl(control as ClientsideText, language.code);
         }
-        return false;
-      });
 
-      for (const control of textControls) {
-        await this._translateTextControl(control as ClientsideText, language.code);
+        this.setState({ isTranslating: false, isTranslated: true });
+        this._updateSelectedLanguage(language);
+      } catch (error) {
+        console.dir(error);
+        this.setState({ isTranslating: false, globalError: (error as Error).message });
       }
-
-      this.setState({ isTranslating: false, isTranslated: true });
-      this._updateSelectedLanguage(language);
+    }).catch((error: Error) => {
+      console.dir(error);
+      this.setState({ isTranslating: false, globalError: error.message });
     });
   }
   private _translatePageTitle = async (title: string, languageCode): Promise<void> => {
@@ -261,14 +300,5 @@ export class TranslationBar extends React.Component<ITranslationBarProps, ITrans
   private _onReloadOriginal = () => {
     window.location.reload();
   }
-  private _getPageItem = async (): Promise<any> => {
 
-    const page = await sp.web.lists
-      .getById(this.props.currentListId)
-      .items
-      .getById(this.props.currentPageId)
-      .select("Title", "FileLeafRef", "FileRef", "Description").get();
-
-    return page;
-  }
 }
