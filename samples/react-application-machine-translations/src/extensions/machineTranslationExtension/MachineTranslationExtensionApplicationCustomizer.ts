@@ -15,6 +15,7 @@ export interface IMachineTranslationExtensionApplicationCustomizerProperties {
   // Check supported languages: https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support
   supportedLanguages: string[];
   translatorApiKey: string;
+  regionSpecifier: string;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
@@ -54,12 +55,15 @@ export default class MachineTranslationExtensionApplicationCustomizer
 
       // The extension should not assume that the expected placeholder is available.
       if (!this._topPlaceholder) {
-        console.error('The expected placeholder (Bottom) was not found.');
+        console.error('The expected placeholder (Top) was not found.');
         return;
       }
 
       // Init the translation service
-      const translationService: ITranslationService = new TranslationService(this.context.httpClient, this.properties.translatorApiKey);
+      const translationService: ITranslationService = this.properties.regionSpecifier
+        ? new TranslationService(this.context.httpClient, this.properties.translatorApiKey, `-${this.properties.regionSpecifier}`)
+        : new TranslationService(this.context.httpClient, this.properties.translatorApiKey);
+
       const props: ITranslationBarProps = {
         supportedLanguages: this.properties.supportedLanguages,
         currentPageId: this.context.pageContext.listItem.id,
@@ -74,7 +78,11 @@ export default class MachineTranslationExtensionApplicationCustomizer
 
   private startReactRender() {
     if (this._topPlaceholder && this._topPlaceholder.domElement) {
-      const translationService: ITranslationService = new TranslationService(this.context.httpClient, this.properties.translatorApiKey);
+      // Init the translation service
+      const translationService: ITranslationService = this.properties.regionSpecifier
+        ? new TranslationService(this.context.httpClient, this.properties.translatorApiKey, `-${this.properties.regionSpecifier}`)
+        : new TranslationService(this.context.httpClient, this.properties.translatorApiKey);
+
       const props: ITranslationBarProps = {
         supportedLanguages: this.properties.supportedLanguages,
         currentPageId: this.context.pageContext.listItem.id,
