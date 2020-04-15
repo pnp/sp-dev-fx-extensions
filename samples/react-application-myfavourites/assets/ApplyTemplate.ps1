@@ -24,18 +24,22 @@ Write-Host -ForegroundColor Yellow "Applying Template: $FilePath"
 
 try
 {
-    Connect-PnPOnline $TargetSiteUrl -Credentials $Credentials -ErrorAction Stop
+    # Use this next line to prompt for credentials
+    # Connect-PnPOnline $TargetSiteUrl -Credentials $Credentials -ErrorAction Stop
+
+    # Use this next line to for MFA
+    Connect-PnPOnline $TargetSiteUrl -UseWebLogin -ErrorAction Stop
 
     Apply-PnPProvisioningTemplate -Path $FilePath
 
     $favList = Get-PnPList -Identity "Lists/Favourites" -Includes ReadSecurity, WriteSecurity
     $favList.ReadSecurity = 2
     $favList.WriteSecurity = 2
-    
+
     $authorField = $favList.Fields.GetByInternalNameOrTitle("Author")
     $authorField.Indexed = $true
     $authorField.Update()
-    
+
     $favList.Update()
     $favList.Context.ExecuteQuery()
 
@@ -44,7 +48,7 @@ try
 }
 catch
 {
-    Write-Host -ForegroundColor Red "Exception occurred!" 
+    Write-Host -ForegroundColor Red "Exception occurred!"
     Write-Host -ForegroundColor Red "Exception Type: $($_.Exception.GetType().FullName)"
     Write-Host -ForegroundColor Red "Exception Message: $($_.Exception.Message)"
 }

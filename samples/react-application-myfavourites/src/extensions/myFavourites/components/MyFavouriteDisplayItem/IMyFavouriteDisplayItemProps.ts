@@ -1,7 +1,6 @@
 import { IMyFavouriteItem } from "../../../interfaces/IMyFavouriteItem";
-import { IMyFavoutitesService } from "../../../services/IMyFavouritesService";
 
-export interface IMyFavoutiteDisplayItemProps {
+export interface IMyFavouriteDisplayItemProps {
     displayItem: IMyFavouriteItem;
     deleteFavourite(favouriteItemId: number): void;
     editFavoutite(itemToBeEdited: IMyFavouriteItem): void;

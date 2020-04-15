@@ -90,22 +90,22 @@ html[dir='rtl'] .ccitemContent {
     width: 20px;
 }
 html[dir='ltr'] .ccStatus {
-    margin-left: 10px
+    margin-left: 8px
 }
 html[dir='rtl'] .ccStatus {
-    margin-right: 10px
+    margin-right: 8px
 }
 .ccButton{
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 8px;
+    margin-right: 8px;
     background-color: $themePrimary;
     color: $themeLight;
 }
-.ccButton:hover, .ccTopBarButton:hover, .ccDialogButton:hover{
+.ccButton:hover, .ccTopBarButton:hover{
     background-color: $themeSecondary;
 }
-.ccTopBarButton, .ccDialogButton{
-    margin-right: 10px;
+.ccTopBarButton {
+    margin-right: 8px;
     background-color: $themePrimary;
     color: $themeLight;
 }

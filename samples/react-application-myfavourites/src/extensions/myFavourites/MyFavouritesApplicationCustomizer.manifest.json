@@ -1,7 +1,7 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
-  "id": "5c715e3b-fb6f-43d7-a8a7-52bb5db34e50",
+  "id": "cbf00a23-cf14-4b41-9574-301259ec4a73",
   "alias": "MyFavouritesApplicationCustomizer",
   "componentType": "Extension",
   "extensionType": "ApplicationCustomizer",

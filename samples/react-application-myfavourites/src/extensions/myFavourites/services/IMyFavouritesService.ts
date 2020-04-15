@@ -1,4 +1,4 @@
-import { IMyFavouriteItem } from "../interfaces/IMyFavouriteItem";
+import { IMyFavouriteItem } from "../../interfaces/IMyFavouriteItem";
 
 export interface IMyFavouritesService {
     getMyFavourites(tryFromCache: boolean): Promise<IMyFavouriteItem[]>;

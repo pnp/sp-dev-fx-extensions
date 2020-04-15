@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <CustomAction
+    <ClientSideComponentInstance
         Title="MyFavourites"
         Location="ClientSideExtension.ApplicationCustomizer"
-        ClientSideComponentId="cbf00a23-cf14-4b41-9574-301259ec4a73"
-        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
-    </CustomAction>
+        ComponentId="cbf00a23-cf14-4b41-9574-301259ec4a73"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
 </Elements>

@@ -1,4 +1,4 @@
-export interface IMyFavoutiteDisplayItemState{
+export interface IMyFavouriteDisplayItemState{
     status: JSX.Element;
     disableButtons: boolean;
 }
