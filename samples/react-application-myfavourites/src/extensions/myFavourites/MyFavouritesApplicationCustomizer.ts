@@ -1,17 +1,14 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { override } from '@microsoft/decorators';
-import { Log } from '@microsoft/sp-core-library';
 import {
   BaseApplicationCustomizer,
   PlaceholderContent,
   PlaceholderName
 } from '@microsoft/sp-application-base';
-import { Dialog } from '@microsoft/sp-dialog';
 
-import * as strings from 'MyFavouritesApplicationCustomizerStrings';
 import { IMyFavouritesTopBarProps } from "./components/MyFavouritesTopBar/IMyFavouritesTopBarProps";
-import MyFavouritesTopBar from "./components/MyFavouritesTopBar/MyFavouritesTopBar";
+import { MyFavouritesTopBar } from "./components/MyFavouritesTopBar";
 
 const LOG_SOURCE: string = 'MyFavouritesApplicationCustomizer';
 
@@ -20,7 +17,10 @@ const LOG_SOURCE: string = 'MyFavouritesApplicationCustomizer';
  * it will be deserialized into the BaseExtension.properties object.
  * You can define an interface to describe it.
  */
-export interface IMyFavouritesApplicationCustomizerProperties {}
+export interface IMyFavouritesApplicationCustomizerProperties {
+  // This is an example; replace with your own property
+  testMessage: string;
+}
 
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class MyFavouritesApplicationCustomizer
@@ -43,5 +43,6 @@ export default class MyFavouritesApplicationCustomizer
     ReactDOM.render(element, placeholder.domElement);
 
     return Promise.resolve();
+
   }
 }

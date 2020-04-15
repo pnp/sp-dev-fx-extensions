@@ -1,14 +1,17 @@
 import * as React from "react";
 
-import { IMyFavoutiteDisplayItemProps } from "./IMyFavoutiteDisplayItemProps";
-import { IMyFavoutiteDisplayItemState } from "./IMyFavoutiteDisplayItemState";
-import { DefaultButton, PrimaryButton } from "office-ui-fabric-react/lib/Button";
+import { IMyFavouriteDisplayItemProps } from "./IMyFavouriteDisplayItemProps";
+import { IMyFavouriteDisplayItemState } from "./IMyFavouriteDisplayItemState";
+import { PrimaryButton } from "office-ui-fabric-react/lib/Button";
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
-import styles from "../MyFavourites.module.scss";
+import { css } from "@uifabric/utilities/lib/css";
 
-export default class MyFavoutiteDisplayItem extends React.Component<IMyFavoutiteDisplayItemProps, IMyFavoutiteDisplayItemState> {
-    constructor(props: IMyFavoutiteDisplayItemProps) {
+import styles from "../MyFavourites.module.scss";
+import * as strings from 'MyFavouritesApplicationCustomizerStrings';
+
+export class MyFavouriteDisplayItem extends React.Component<IMyFavouriteDisplayItemProps, IMyFavouriteDisplayItemState> {
+    constructor(props: IMyFavouriteDisplayItemProps) {
         super(props);
         this.state = {
             status: <span></span>,
@@ -16,16 +19,16 @@ export default class MyFavoutiteDisplayItem extends React.Component<IMyFavoutite
         };
     }
 
-    public render(): React.ReactElement<IMyFavoutiteDisplayItemProps> {
-        let firstLetter: string = this.props.displayItem.Title.charAt(0).toUpperCase();
+    public render(): React.ReactElement<IMyFavouriteDisplayItemProps> {
+        const firstLetter: string = this.props.displayItem.Title.charAt(0).toUpperCase();
         return (
                 <div className={`${styles.ccitemContent}`}>
                     <Link href={this.props.displayItem.ItemUrl} className={styles.ccRow}>
-                        <div className={`ms-font-su ${styles.ccInitials}`}>
+                        <div className={css('ms-font-su',styles.ccInitials)}>
                             {firstLetter}
                         </div>
                         <div className={styles.ccitemName}>
-                            <span className={`ms-font-l`}>{this.props.displayItem.Title}</span>
+                            <span className={'ms-font-l'}>{this.props.displayItem.Title}</span>
                         </div>
                         <div className={styles.ccitemDesc}>{this.props.displayItem.Description}</div>
                     </Link>
@@ -33,15 +36,15 @@ export default class MyFavoutiteDisplayItem extends React.Component<IMyFavoutite
                         <PrimaryButton
                             data-automation-id='btnEdit'
                             iconProps={{ iconName: 'Edit' }}
-                            text='Edit'
+                            text={strings.EditButtonLabel}
                             disabled={this.state.disableButtons}
-                            onClick={this._editFavourite.bind(this)}
+                            onClick={this._editFavourite}
                             className={styles.ccButton}
                         />
                         <PrimaryButton
                             data-automation-id='btnDel'
                             iconProps={{ iconName: 'ErrorBadge' }}
-                            text='Delete'
+                            text={strings.DeleteButtonLabel}
                             disabled={this.state.disableButtons}
                             onClick={this._deleteFavourite.bind(this)}
                             className={styles.ccButton}
@@ -62,18 +65,18 @@ export default class MyFavoutiteDisplayItem extends React.Component<IMyFavoutite
         await this.props.deleteFavourite(this.props.displayItem.Id);
         status = <span></span>;
         disableButtons = false;
-        this.setState({ ...this.state, status, disableButtons });
+        this.setState({ status, disableButtons });
     }
 
-    private _editFavourite(): void {
+    private _editFavourite = () => {
         let status: JSX.Element = <Spinner size={SpinnerSize.small} />;
         let disableButtons: boolean = true;
-        this.setState({ ...this.state, status, disableButtons });
+        this.setState({ status, disableButtons });
 
         this.props.editFavoutite(this.props.displayItem);
 
         status = <span></span>;
         disableButtons = false;
-        this.setState({ ...this.state, status, disableButtons });
+        this.setState({ status, disableButtons });
     }
 }

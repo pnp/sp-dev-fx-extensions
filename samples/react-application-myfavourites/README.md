@@ -16,14 +16,16 @@ extensions:
 # SPFx My Favourites Application Customizer
 
 ## Summary
-Sample SharePoint Framework application customizer extension that shows favourite links using office ui fabric panel. Fabric UI React components used include - panel, dialog, list and spinner.
 
-> Inspired from ([react-mega-menu](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-mega-menu)) by  Velin Georgiev ([@VelinGeorgiev](https://twitter.com/velingeorgiev))
+Sample SharePoint Framework application customizer extension that shows favourite links using Office UI Fabric panel. Fabric UI React components used include - panel, dialog, list and spinner.
+
+> Inspired from ([react-mega-menu](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-mega-menu)) by Velin Georgiev ([@VelinGeorgiev](https://twitter.com/velingeorgiev))
 
 ![My Favourites](./assets/spfx-myfavourites.gif)
 
-## Used SharePoint Framework Version 
-![1.3.4](https://img.shields.io/badge/version-1.3.4-green.svg)
+## Used SharePoint Framework Version
+
+![1.10.0](https://img.shields.io/badge/version-1.10.0-green.svg)
 
 ## Applies to
 
@@ -34,14 +36,17 @@ Sample SharePoint Framework application customizer extension that shows favourit
 Solution|Author(s)
 --------|---------
 react-application-myfavourites | Anoop T ([@anooptells](https://twitter.com/anooptells))
+Upgrade to SPFx 1.10.0 | Hugo Bernier ([@bernierh](https://twitter.com/bernierh))
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|November 29, 2017|Initial release
+2.0|April 14, 2020|Upgrade to SPFx 1.10.0
 
 ## Disclaimer
+
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 ---
@@ -49,10 +54,10 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
-- Update the `pageUrl` properties in the **config/serve.json** file
+- Update the `pageUrl` properties in the `config/serve.json` file
   - The `pageUrl` should be a modern page
   - This property is only used during development in conjunction with the `gulp serve` command
-- In the command line navigate to **samples/ react-application-myfavourites** and run:
+- In the command line navigate to `samples/react-application-myfavourites` and run:
   - `npm install`
   - `gulp serve`
 - In a web browser
@@ -72,7 +77,8 @@ This extension illustrates the following concepts:
 - Optionally, **PnP Remote Provisioning** PowerShell list deployment _(see below)_
 
 ## Debug URL for testing
-Here's a debug querystring for testing this sample:
+
+Here's a debug query string for testing this sample:
 
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5c715e3b-fb6f-43d7-a8a7-52bb5db34e50":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
@@ -89,7 +95,7 @@ This solution expects the site to contain a **Favourites** list. This list will 
 
 ### Option 1: Use the Included PnP Provisioning Template
 
-A PnP Remote Provisioning template has been provided ([FavouritesList.xml](./assets/FavouritesList.xml)) along with a PowerShell script to apply the template to your site ([ApplyTemplate.ps1](./assets/ApplyTemplate.ps1)). This is by far the easiest way to get a list on a site for quick testing but requires some minor setup. Here's how to do it:
+A PnP Remote Provisioning template has been provided ([./assets/FavouritesList.xml](./assets/FavouritesList.xml)) along with a PowerShell script to apply the template to your site ([./assets/ApplyTemplate.ps1](./assets/ApplyTemplate.ps1)). This is by far the easiest way to get a list on a site for quick testing but requires some minor setup. Here's how to do it:
 
 #### Prerequisites
 
@@ -99,7 +105,7 @@ You'll need the [SharePoint PnP PowerShell Cmdlets for SharePoint Online](https:
 
 > Thank you Chris Kent ([thechriskent.com](https://thechriskent.com), [@thechriskent](https://twitter.com/thechriskent))
 
-Using a PowerShell console (you can even use the powershell terminal included in Visual Studio Code), navigate to the assets folder in this sample. Run the script like this:
+Using a PowerShell console (you can even use the PowerShell terminal included in Visual Studio Code), navigate to the assets folder in this sample. Run the script like this:
 
 ```PowerShell
 .\ApplyTemplate.ps1 https://yourtenant.sharepoint.com/sites/yoursite FavouritesList.xml
@@ -136,6 +142,6 @@ ItemUrl | Multiple lines of text | No | Can be changed to Url (but needs code ch
 
 ## Improvements
 
-- The code in this sample stores data in a list. Instead of this, the data can stored as a json array in a user profile property. Vardhaman has wrriten a nice blog on [editing user profile properties](http://www.vrdmn.com/2016/08/first-spfx-webpart-getset-single-value.html) Or, if there is any other way to store data that can be added too.
+- The code in this sample stores data in a list. Instead of this, the data can stored as a JSON array in a user profile property. Vardhaman has written a nice blog on [editing user profile properties](http://www.vrdmn.com/2016/08/first-spfx-webpart-getset-single-value.html) Or, if there is any other way to store data that can be added too.
 
 ![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-myfavourites)
