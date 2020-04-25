@@ -4,7 +4,7 @@
 This commamnd-set can be used to hide other 'out-of-the-box' commands on list views.
 We were rolling out a solution that included several custom listview-commands and they we all getting displayed way off to the right of the command bar or worse yet, being buried in the ellipses. All the 
 out-of-the-box commands (Powerapps, FLow, synch) were taking up precious real estate on the command bar.
-When asked if we could just hide those othe actions, we came up with this solution.
+When asked if we could just hide those other actions, we came up with this solution.
 
 ## Used SharePoint Framework Version 
 ![drop](https://img.shields.io/badge/version-GA-green.svg)
