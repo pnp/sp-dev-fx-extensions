@@ -63,7 +63,7 @@ Note that the CSS Selector can be used to hide ANY element on the list views for
 
 This cannot be used to secure commands. The user still has access to the underlying commands, even if they are hidden on the command bar. In fact most/all commands are still available on the ECB.
 
-While it is not recommended to manipulate the SharePoint UI using it's DOM, this extension does so in a 'Future-proof' way. When Flow was renamed to Automate, we did not need to rebuild any code to hidd the new button, we just updated the CSS Selector in the 'Hidden Commands' list to hide the new Automate button.
+While it is not recommended to manipulate the SharePoint UI using it's DOM, this extension does so in a 'Future-proof' way. When Flow was renamed to Automate, we did not need to rebuild any code to hide the new button, we just updated the CSS Selector in the 'Hidden Commands' list to hide button[name="Automate"] instead of button[name="Flow"].
 
 
 
