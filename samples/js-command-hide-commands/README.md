@@ -57,7 +57,7 @@ Version|Date|Comments
 - `AllowMultipleMatches -- determines if multiple items match the CSS Selector if the rule will apply to all matched. For the most part , leave it set to No.`
 
 
-To determine the CSS Selector to be used, open the list or library in your browser of choice (i,e. Edge)abd open the debugger tools (F12). Click on the Elements tab and click the icon to select an element. Select the element in the browser. 
+To determine the CSS Selector to be used, open the list or library in your browser of choice (i,e. Edge) and open the debugger tools (F12). Click on the Elements tab and click the icon to select an element. Select the element in the browser. 
 
 Here i have selected the 'Quick Edit' button:
 ![CSS SELECTOR](./CssSelector.PNG)
