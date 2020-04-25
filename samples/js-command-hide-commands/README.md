@@ -61,6 +61,10 @@ So the CSS Selector to hide this  button would be  button[name="Quick edit"]
 
 Note that the CSS Selector can be used to hide ANY element on the list views for the selected list/library (for fun we could hide every 5th row in the view for anyone who has addListItems permission :-)). The solution sets the the style to display:none on any elements that match the CSS Selecor. Other styles could be applied with a simple code modification, or the styles to be applied could be added in the 'Hidden Commands' list.
 
+This cannot be used to secure commands. The user still has access to the underlying commands, even if they are hidden on the command bar. In fact most/all commands are still available on the ECB.
+
+While it is not recommended to manipulate the SharePoint UI using it's DOM, this extension does so in a 'Future-proof' way. When Flow was renamed to Automate, we did not need to rebuild any code to hidd the new button, we just updated the CSS Selector in the 'Hidden Commands' list to hide the new Automate button.
+
 
 
 ## Features
