@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<CustomAction Title="HideCommandsOnLibraries" 
+            RegistrationId="101" 
+            RegistrationType="List" 
+            Location="ClientSideExtension.ListViewCommandSet.CommandBar" 
+            ClientSideComponentId="3be42905-ec7a-4084-ac01-ed830916b245" 
+            ClientSideComponentProperties="{&quot;configListTitle&quot;:&quot;HiddenCommands&quot;}">
+	</CustomAction>
+      	<CustomAction Title="HideCommandsOnLists" 
+            RegistrationId="100" 
+            RegistrationType="List" 
+            Location="ClientSideExtension.ListViewCommandSet.CommandBar" 
+            ClientSideComponentId="3be42905-ec7a-4084-ac01-ed830916b245" 
+            ClientSideComponentProperties="{&quot;configListTitle&quot;:&quot;HiddenCommands&quot;}">
+	</CustomAction>
+
+	<ListInstance     
+            Title="HiddenCommands" 
+            CustomSchema="schema.xml" 
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100" 
+            Description="List of actions to be hidden from list Views."
+             TemplateType="100" 
+             Url="Lists/HiddenCommands" />
+</Elements>

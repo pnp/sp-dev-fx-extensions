@@ -1,0 +1,27 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "js-command-hide-commands-client-side-solution",
+        "id": "8bfa6b03-6f1a-4344-8825-efa925ee3179",
+        "version": "2.0.0.0",
+        "includeClientSideAssets": true,
+        "isDomainIsolated": false,
+        "features": [{
+            "title": "Application Extension - Deployment of custom action.",
+            "description": "Deploys a custom action with ClientSideComponentId association",
+            "id": "b139d0c6-a7af-4804-94e8-c8474c20e4cc",
+            "version": "1.0.0.0",
+            "assets": {
+                "elementManifests": [
+                    "elements.xml"
+                ],
+                "elementFiles": [
+                    "schema.xml"
+                ]
+            }
+        }]
+    },
+    "paths": {
+        "zippedPackage": "solution/js-command-hide-commands.sppkg"
+    }
+}
