@@ -1,9 +1,10 @@
-# title of the sample
+# js-command-hide-commands
 
 ## Summary
-Short summary on functionality and used technologies.
-
-[picture of the extension in action, if possible]
+This commamnd-set can be used to hide other 'out-of-the-box' commands on list views.
+We were rolling out a solution that included several custom listview-commands and they we all getting displayed way off to the right of the command bar or worse yet, being buried in the ellipses. All the 
+out-of-the-box commands (Powerapps, FLow, synch) were taking up precious real estate on the command bar.
+When asked if we could just hide those othe actions, we came up with this solution.
 
 ## Used SharePoint Framework Version 
 ![drop](https://img.shields.io/badge/version-GA-green.svg)
@@ -23,14 +24,14 @@ Short summary on functionality and used technologies.
 
 Solution|Author(s)
 --------|---------
-folder name | Author details
+js-command-hide-commands | Russell Gove
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|August 10, 2018|Update comment
-1.0|June 29, 2018|Initial release
+1.0|Covid 42, 2020,|Initial Release
+
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -42,25 +43,23 @@ Version|Date|Comments
 - Clone this repository
 - in the command line run:
   - `npm install`
-  - `gulp serve`
+  - `gulp bundle --ship`
+  - `gulp package-solution --ship`
+  - `install the app in an app catalog (tenant or site collection)`
+  - `add the app to your site`
+  - `add entries to the 'Hidden Commands' list that was created when the app was installed to specify which buttons shoudl be hidden in the ribbon, for which lists, and from whom`
 
-> Include any additional steps as needed.
+> The fields in the 'Hidden Commands' list are as follows:
+
 
 ## Features
 Description of the extension with possible additional details than in short summary.
 This extension illustrates the following concepts:
 
-- topic 1
-- topic 2
-- topic 3
+- Can hide commmands from specific lists or libraries
+- Can hide commands from users who lack specific permissions.
 
-## Debug URL for testing
-Here's a debug URL for testing around this sample. **Updated based on your manifest id for easy testing of the sample**.
 
-```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"7c5a85c1-8b1e-4370-8198-642908faee60":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
-```
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
