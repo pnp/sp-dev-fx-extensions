@@ -14,11 +14,6 @@ When asked if we could just hide those othe actions, we came up with this soluti
 * [SharePoint Framework](https://dev.office.com/sharepoint)
 * [Office 365 tenant](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)
 
-> Update accordingly as needed.
-
-## Prerequisites
- 
-> Any special pre-requisites?
 
 ## Solution
 
