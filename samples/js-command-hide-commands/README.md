@@ -50,8 +50,8 @@ Version|Date|Comments
   - `add entries to the 'Hidden Commands' list that was created when the app was installed to specify which buttons shoudl be hidden in the ribbon, for which lists, and from whom`
 
 > The fields in the 'Hidden Commands' list are as follows:
-List Title -- the title of the list Wher you want to hide a command
-Is Enabled -- Yes or No, should this rule be enforced
+- `List Title -- the title of the list Wher you want to hide a command`
+- `Is Enabled -- Yes or No, should this rule be enforced`
 Exlude Permission -- the name of an SPPermission (i.e. manageLists). If the user has this permission on the list the rule will not apply. The permissions can be found here: https://docs.microsoft.com/en-us/previous-versions/office/developer/sharepoint-2010/ee556747(v=office.14)
 CSS Selector -- the CSS Seelctor for the command (or actually any element) to be hidden in the list view (for example button[name="PowerApps"]	) will hide the powerapps command.
 AllowMultipleMatches -- determines if multiple items match the CSS Selector if the rule will apply to all matched. For the most part , leave it set to No.
