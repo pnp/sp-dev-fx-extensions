@@ -52,9 +52,9 @@ Version|Date|Comments
 > The fields in the 'Hidden Commands' list are as follows:
 - `List Title -- the title of the list Wher you want to hide a command`
 - `Is Enabled -- Yes or No, should this rule be enforced`
-Exlude Permission -- the name of an SPPermission (i.e. manageLists). If the user has this permission on the list the rule will not apply. The permissions can be found here: https://docs.microsoft.com/en-us/previous-versions/office/developer/sharepoint-2010/ee556747(v=office.14)
-CSS Selector -- the CSS Seelctor for the command (or actually any element) to be hidden in the list view (for example button[name="PowerApps"]	) will hide the powerapps command.
-AllowMultipleMatches -- determines if multiple items match the CSS Selector if the rule will apply to all matched. For the most part , leave it set to No.
+- `Exlude Permission -- the name of an SPPermission (i.e. manageLists). If the user has this permission on the list the rule will not apply. The permissions can be found here: https://docs.microsoft.com/en-us/previous-versions/office/developer/sharepoint-2010/ee556747(v=office.14)`
+- `CSS Selector -- the CSS Seelctor for the command (or actually any element) to be hidden in the list view (for example button[name="PowerApps"]	) will hide the powerapps command.`
+- `AllowMultipleMatches -- determines if multiple items match the CSS Selector if the rule will apply to all matched. For the most part , leave it set to No.`
 
 
 To determine the CSS Selector to be used, open the list or library in your browser of choice (i,e. Edge)abd open the debugger tools (F12). Click on the Elements tab and click the icon to select an element. Select the element in the browser. 
