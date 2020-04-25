@@ -64,7 +64,7 @@ Here i have selected the 'Quick Edit' button:
 
 So the CSS Selector to hide this  button would be  button[name="Quick edit"]
 
-Note that the CSS Selector can be used to hoed ANY element on the list views for the selected list/library (for fun we could hide every 5th row in the view for anyone who has addListItems permission :-))
+Note that the CSS Selector can be used to hide ANY element on the list views for the selected list/library (for fun we could hide every 5th row in the view for anyone who has addListItems permission :-)). The solution sets the the style to display:none on any elements that match the CSS Selecor. Other styles could be applied with a simple code modification, or the styles to be applied could be added in the 'Hidden Commands' list.
 
 
 
