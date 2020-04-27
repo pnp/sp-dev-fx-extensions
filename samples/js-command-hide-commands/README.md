@@ -1,10 +1,12 @@
 # js-command-hide-commands
 
 ## Summary
-This commamnd-set can be used to hide other 'out-of-the-box' commands on list views.
-We were rolling out a solution that included several custom listview-commands and they we all getting displayed way off to the right of the command bar or worse yet, being buried in the ellipses. All the 
-out-of-the-box commands (Powerapps, FLow, synch) were taking up precious real estate on the command bar.
-When asked if we could just hide those other actions, we came up with this solution.
+This commamnd-set can be used to hide other 'out-of-the-box' commands on list views. 
+We were rolling out a solution that included several custom listview-commands and they were all getting displayed way off to the right of the command bar or worse yet, being buried in the ellipses.  This project was to update an existing document management system from classic SharePoint to the modern UI. There were 3 or 4 commands that we had created that related specifically to the document management system and as we rolled the new system out, we wanted to draw ther users attention to the core features we had developed and not have users exploring all the cool features available in the modern UI (at least not just yet). All the 
+out-of-the-box commands (Powerapps, FLow, synch) were taking up precious real estate on the command bar, and our commands were getting burried off to the reight, or even worse , under the ellipses.  We were asked if we could 
+we could just hide those other commands, and came up with this solution. In our site this is just a temporary 'feature' to be used as we roll out the site so that users can focus on the core actions we have developed. It is NOT RECOMMENDED that developers update the Sharepoint UI using DOM maniplulation, as this solution does.
+
+It should be noted that if we could reorder the commands in the Command Bar to place our custom commands BEFORE the out of the box commands this extension would not have been required! 
 
 ## Used SharePoint Framework Version 
 ![drop](https://img.shields.io/badge/version-GA-green.svg)
