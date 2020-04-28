@@ -1,0 +1,35 @@
+<List Name="HiddenCommands" Title="HiddenCommands" BaseType="0" Direction="" Url="">
+	<MetaData>
+		<Fields>
+			<Field Type="Boolean" Required="TRUE" DisplayName="AllowMultipleMatches" Group="_HideComamndsFeature" ID="{44e39ea7-8f20-46ef-82af-531fa1e86721}" Name="AllowMultipleMatches">
+				<Default>
+					0
+				</Default>
+			</Field>
+			<Field ID="{6663d617-fc03-42a8-b78f-fb36d8f0ffc8}" Name="CssSelector" DisplayName="Css Selector" Type="Text" Required="TRUE" Group="_HideComamndsFeature" />
+			<Field ID="{22d493ff-792a-4277-b2c4-a20a0bd68d4a}" Name="ExcludePermission" DisplayName="Exclude Permission" Type="Text" Required="FALSE" />
+			<Field ID="{4485fb19-5d09-44c4-925b-f5d487bf55c0}" Name="IsEnabled" DisplayName="IsEnabled" Type="Boolean" Group="_HideComamndsFeature" Required="FALSE">
+				<Default>
+					1
+				</Default>
+			</Field>
+			<Field ID="{88c4d7d9-7f37-4955-a93f-42dcacfd79ad}" Name="ListTitle" Type="Text" DisplayName="List Title" Required="FALSE" SourceID="{df06bc4a-8609-4ee5-9235-3ddbcd5d293c}" StaticName="ListTitle" Customization="" ColName="nvarchar6" RowOrdinal="0" />
+		</Fields>
+		<Views>
+			<View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+				<ViewFields>
+					<FieldRef Name="ListTitle" />
+					<FieldRef Name="IsEnabled" />
+					<FieldRef Name="ExcludePermission" />
+					<FieldRef Name="CssSelector" />
+					<FieldRef Name="AllowMultipleMatches" />
+				</ViewFields>
+			</View>
+		</Views>
+		<Forms>
+			<Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+		</Forms>
+	</MetaData>
+</List>
