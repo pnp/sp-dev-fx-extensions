@@ -72,7 +72,7 @@ To determine the CSS Selector to be used, open the list or library in your brows
 Here I have selected the 'Quick Edit' button:
 ![CSS SELECTOR](./CssSelector.PNG)
 
-So the CSS Selector to hide this  button would be  button[name="Quick edit"]
+So the CSS Selector to hide this  button would be `button[name="Quick edit"]`.
 
 Note that the CSS Selector can be used to hide ANY element on the list views for the selected list/library (for fun we could hide every 5th row in the view for anyone who has `addListItems` permission :-)). The solution sets the style to display:none on any elements that match the CSS Selector. Other styles could be applied with a simple code modification, or the styles to be applied could be added in the **Hidden Commands** list.
 
