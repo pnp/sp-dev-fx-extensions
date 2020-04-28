@@ -61,7 +61,7 @@ The fields in the **Hidden Commands** list are as follows:
 Column | Description
 ---|---
 `List Title`|the title of the list in which you want to hide a command
-`Is Enabled|Yes or No, should this rule be enforced
+`Is Enabled`|Yes or No, should this rule be enforced
 `Exclude Permission`|the name of a `SPPermission` (i.e. `manageLists`). If the user has this permission on the list the rule will not apply. The permissions can be found here: https://docs.microsoft.com/en-us/previous-versions/office/developer/sharepoint-2010/ee556747(v=office.14)`
 `CSS Selector`|the CSS Selector for the command (or actually any element) to be hidden in the list view (for example button[name="PowerApps"]	) will hide the Power Apps command.
 `AllowMultipleMatches`|Determines if multiple items match the CSS Selector if the rule will apply to all matched. For the most part , leave it set to No.`
