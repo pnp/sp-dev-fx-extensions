@@ -2,7 +2,7 @@
 name: "❓ Question"
 about: Ask a question regarding one of the samples in this repository
 title: ''
-labels: ''
+labels: type:question
 assignees: ''
 
 ---
@@ -24,7 +24,7 @@ assignees: ''
 
 ## Authors
 
-> Because of the way this repository is setup, samples authors do not get a notification when you create an issue. *It makes it less likely for you to get your issue resolved or to get help*. For the section above **@mention any author of the sample**. Authors' github handle can be found on the main sample documentation page, under the "solution" section. Use the `PREVIEW` tab at the top right to preview the rendering before submitting your issue.
+> Because of the way this repository is configured, samples authors do not get a notification when you create an issue. *It makes it less likely for you to get your issue resolved or to get help*. For the section above **@mention any author of the sample**. The authors' GitHub handle can be found on the main sample documentation page, under the "solution" section. Use the `PREVIEW` tab at the top right to preview the rendering before submitting your issue.
 > 
 > _(DELETE THIS PARAGRAPH AFTER READING)_
 
