@@ -2,7 +2,7 @@
 name: "❓ Question"
 about: Ask a question regarding one of the samples in this repository
 title: ''
-labels: type:question
+labels: ''
 assignees: ''
 
 ---
