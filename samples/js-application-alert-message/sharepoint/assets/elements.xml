@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="GlobalAlerts"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="6ba4b6c1-ee22-421f-97d9-d2bad0a4cc57"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}"
+        HostProperties="{&quot;preAllocatedApplicationCustomizerTopHeight&quot;:&quot;50&quot;}">
+    </CustomAction>
+</Elements>

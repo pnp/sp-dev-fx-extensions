@@ -1,0 +1,11 @@
+.alertContainer {
+    height: 30px;
+    padding-left: 20px;
+    background-color: red;
+    color: white;
+    padding-top: 3px;
+    font-weight: bold;
+    &.animated {
+      display: inline-block;
+    }
+  }
