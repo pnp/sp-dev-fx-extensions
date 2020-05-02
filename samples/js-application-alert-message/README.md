@@ -1,3 +1,16 @@
+---
+page_type: sample
+products:
+- office-sp
+languages:
+- javascript
+- typescript
+extensions:
+  contentType: samples
+  technologies:
+  - SharePoint Framework
+  createdDate: 04/30/2020 12:00:00 AM
+---
 # JS Application Alert Message
 
 ## Summary
@@ -5,11 +18,11 @@
 
 ## Pre-requisites
 > Create a custom list with a name '**Alerts**' and with the fields. Maintain the **_field names_** as mentioned below and all the fields are **_mandatory_**.
-* **Title** - Default title field with the type '**Single line of Text**'
-* StartDate - '**Datetime**' field with date only option.
-* ExpiryDate - '**Datetime**' field with date only option.
-* IsActive - '**Yes or No**' field with the default set to Yes.
-* Sequence - '**Number**' field with no decimals.
+* **`Title`** - Default title field with the type '**Single line of Text**'
+* `StartDate` - '**Datetime**' field with date only option.
+* `ExpiryDate` - '**Datetime**' field with date only option.
+* `IsActive` - '**Yes or No**' field with the default set to Yes.
+* `Sequence` - '**Number**' field with no decimals.
 
 ## Properties
 
@@ -22,7 +35,7 @@
 ![JS-Application-Alert-Message](./assets/GlobalAlerts.gif)
 
 ## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-GA-green.svg)
+![1.10.0](https://img.shields.io/badge/version-1.10.0-green.svg)
 
 ## Applies to
 
@@ -31,7 +44,7 @@
 
 ## Prerequisites
  
-> **@microsoft/generator-sharepoint - 1.10.0**
+**@microsoft/generator-sharepoint - 1.10.0**
 
 ## Solution
 
@@ -54,7 +67,7 @@ Version|Date|Comments
 - in the command line run:
   - `npm install`
   - `gulp bundle --ship && gulp package-solution --ship`
-- Add the .sppkg file to the app catalog and add the **'_Quick Poll_'** web part to the page.
+- Add the `.sppkg` file to the app catalog and add the **'_Quick Poll_'** web part to the page.
 
 #### Local Mode
 This solution doesn't work on local mode.
