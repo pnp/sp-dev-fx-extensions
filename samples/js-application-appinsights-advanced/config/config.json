@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "app-insights-advanced-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/appInsightsAdvanced/AppInsightsAdvancedApplicationCustomizer.js",
+          "manifest": "./src/extensions/appInsightsAdvanced/AppInsightsAdvancedApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AppInsightsAdvancedApplicationCustomizerStrings": "lib/extensions/appInsightsAdvanced/loc/{locale}.js"
+  }
+}

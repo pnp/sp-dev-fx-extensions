@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="AppInsightsAdvanced"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="043204bb-0b30-45f1-b180-74cd0062d81e"
+        ClientSideComponentProperties="{&quot;appInsightsKey&quot;:&quot;00000000-0000-0000-0000-00000000&quot;}">
+    </CustomAction>
+</Elements>
