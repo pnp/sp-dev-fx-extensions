@@ -14,10 +14,10 @@ extensions:
 # JS Application Alert Message
 
 ## Summary
-> This application customizer will display the alert message based on the items from the list. The list items are filtered based on the '**IsActive**','**StartDate**' and '**ExpiryDate**'. The messages were displayed at the '**Top**' placeholder with an animation effect.
+This application customizer will display the alert message based on the items from the list. The list items are filtered based on the '**IsActive**','**StartDate**' and '**ExpiryDate**'. The messages were displayed at the '**Top**' placeholder with an animation effect.
 
 ## Pre-requisites
-> Create a custom list with a name '**Alerts**' and with the fields. Maintain the **_field names_** as mentioned below and all the fields are **_mandatory_**.
+Create a custom list with a name '**Alerts**' and with the fields. Maintain the **_field names_** as mentioned below and all the fields are **_mandatory_**.
 * **`Title`** - Default title field with the type '**Single line of Text**'
 * `StartDate` - '**Datetime**' field with date only option.
 * `ExpiryDate` - '**Datetime**' field with date only option.
