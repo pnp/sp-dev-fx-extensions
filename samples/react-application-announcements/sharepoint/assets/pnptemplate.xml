@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.21.2005.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-89C6471409DD4BFF94054AB1EBBE35F6">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-89C6471409DD4BFF94054AB1EBBE35F6" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+      <pnp:SiteFields>
+        <Field Type="Choice" DisplayName="Locale" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" Group="Berger" ID="{19443f06-9a1c-4100-8c5b-2ea4c12f4633}" SourceID="{67f8c253-f5cb-498f-9ddc-9f9d417a0c4c}" StaticName="Locale" Name="Locale">
+          <Default>fr-FR</Default>
+          <CHOICES>
+            <CHOICE>en-US</CHOICE>
+            <CHOICE>fr-FR</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field Type="Note" DisplayName="Announcement" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" Sortable="FALSE" Group="Berger" ID="{2f0b3b2a-dc0a-43c9-990f-0966267d68ef}" SourceID="{67f8c253-f5cb-498f-9ddc-9f9d417a0c4c}" StaticName="Announcement" Name="Announcement">
+        </Field>
+        <Field Type="URL" DisplayName="Link" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Hyperlink" Group="Berger" ID="{17afa12e-c8d8-4b8e-b82a-98cc8c745fe4}" SourceID="{67f8c253-f5cb-498f-9ddc-9f9d417a0c4c}" StaticName="Link" Name="Link">
+        </Field>
+        <Field Type="Boolean" DisplayName="Urgent" EnforceUniqueValues="FALSE" Indexed="FALSE" Group="Berger" ID="{b2509f6b-8d6b-4809-91c7-549eb3c96b16}" SourceID="{67f8c253-f5cb-498f-9ddc-9f9d417a0c4c}" StaticName="Urgent" Name="Urgent">
+          <Default>1</Default>
+        </Field>
+        <Field Type="DateTime" DisplayName="End date" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateTime" Group="Berger" FriendlyDisplayFormat="Disabled" ID="{2795c9a0-9c62-441d-9b5d-39ee81ab4c2a}" SourceID="{67f8c253-f5cb-498f-9ddc-9f9d417a0c4c}" StaticName="EndDateTime" Name="EndDateTime" CustomFormatter="" CalType="0">
+        </Field>
+        <Field Type="DateTime" DisplayName="Start date" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateTime" Group="Berger" FriendlyDisplayFormat="Disabled" ID="{7edb36f9-705c-4ad0-9a21-24847924f938}" SourceID="{67f8c253-f5cb-498f-9ddc-9f9d417a0c4c}" StaticName="StartDateTime" Name="StartDateTime" CustomFormatter="" CalType="0">
+        </Field>
+      </pnp:SiteFields>
+      <pnp:ContentTypes>
+        <pnp:ContentType ID="0x0100D64F0C0F1172A947B1CA551121244EA5" Name="Announcement" Description="" Group="Berger Content Types" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" UpdateChildren="true" />
+            <pnp:FieldRef ID="2f0b3b2a-dc0a-43c9-990f-0966267d68ef" Name="Announcement" UpdateChildren="true" />
+            <pnp:FieldRef ID="7edb36f9-705c-4ad0-9a21-24847924f938" Name="StartDateTime" UpdateChildren="true" />
+            <pnp:FieldRef ID="2795c9a0-9c62-441d-9b5d-39ee81ab4c2a" Name="EndDateTime" UpdateChildren="true" />
+            <pnp:FieldRef ID="17afa12e-c8d8-4b8e-b82a-98cc8c745fe4" Name="Link" UpdateChildren="true" />
+            <pnp:FieldRef ID="19443f06-9a1c-4100-8c5b-2ea4c12f4633" Name="Locale" UpdateChildren="true" />
+            <pnp:FieldRef ID="b2509f6b-8d6b-4809-91c7-549eb3c96b16" Name="Urgent" UpdateChildren="true" />
+            <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" UpdateChildren="true" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+      </pnp:ContentTypes>
+      <pnp:Features>
+        <pnp:SiteFeatures>
+          <pnp:Feature ID="94280101-dc63-4b83-842a-8707b1afb62d" />
+        </pnp:SiteFeatures>
+        <pnp:WebFeatures>
+          <!-- This package feature id (see config/package-solution.json) -->
+          <pnp:Feature ID="4a1305d6-a44e-45cf-928b-25621581481f" />
+        </pnp:WebFeatures>
+      </pnp:Features>
+      <pnp:ApplicationLifecycleManagement>
+        <pnp:Apps>
+          <!-- This package solution id (see config/package-solution.json) -->
+          <pnp:App AppId="59A4B1E7-4DDA-4CD9-ADBE-B3C3118C021B" Action="Install" />
+        </pnp:Apps>
+      </pnp:ApplicationLifecycleManagement>
+      <pnp:CustomActions>
+        <pnp:WebCustomActions>
+          <pnp:CustomAction Name="Annoncements" Location="ClientSideExtension.ApplicationCustomizer" Title="Annoncements" Sequence="65536" Rights="" RegistrationType="None" ClientSideComponentId="dd7ec4fd-97aa-44c5-b6ad-87535862e0bf" ClientSideComponentProperties="{&quot;listName&quot;:&quot;Annoncements&quot;, &quot;siteUrl&quot;:&quot;/sites/Contoso&quot;}" />
+        </pnp:WebCustomActions>
+      </pnp:CustomActions>
+      <pnp:Lists>
+        <pnp:ListInstance Title="Announcements" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Announcements" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Announcements/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Announcements/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Announcements/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="" RemoveExistingContentTypes="true">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0100D64F0C0F1172A947B1CA551121244EA5" Default="true" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{39FE2F7C-FC50-439E-8255-606A30D6D271}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Announcements/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="StartDateTime" Ascending="false" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Urgent" />
+                <FieldRef Name="StartDateTime" />
+                <FieldRef Name="EndDateTime" />
+                <FieldRef Name="Announcement" />
+                <FieldRef Name="Link" />
+                <FieldRef Name="Locale" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="2f0b3b2a-dc0a-43c9-990f-0966267d68ef" Name="Announcement" DisplayName="Announcement" />
+            <pnp:FieldRef ID="7edb36f9-705c-4ad0-9a21-24847924f938" Name="StartDateTime" DisplayName="Start date" />
+            <pnp:FieldRef ID="2795c9a0-9c62-441d-9b5d-39ee81ab4c2a" Name="EndDateTime" DisplayName="End date" />
+            <pnp:FieldRef ID="17afa12e-c8d8-4b8e-b82a-98cc8c745fe4" Name="Link" DisplayName="Link" />
+            <pnp:FieldRef ID="19443f06-9a1c-4100-8c5b-2ea4c12f4633" Name="Locale" DisplayName="Locale" />
+            <pnp:FieldRef ID="b2509f6b-8d6b-4809-91c7-549eb3c96b16" Name="Urgent" DisplayName="Urgent" />
+          </pnp:FieldRefs>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://1-canadacentral1.pushp.svc.ms/notifications?token=w0-fa84e915-a399-4651-abdf-7b1fbbf6e6c4" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
