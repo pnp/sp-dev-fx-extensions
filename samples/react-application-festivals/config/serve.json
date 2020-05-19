@@ -26,7 +26,7 @@
       }
     },
     "Christmas1": {
-      "pageUrl": "https://yourtenantname.sharepoint.com/sites/yoursite/SitePages/Home.aspx",
+      "pageUrl": "https://aumonline.sharepoint.com/sites/SPFx/SitePages/Festive.aspx",
       "customActions": {
         "e33e08f3-5c41-4e0b-9221-7131144f9d74": {
           "location": "ClientSideExtension.ApplicationCustomizer",
