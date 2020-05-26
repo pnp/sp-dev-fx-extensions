@@ -10,6 +10,7 @@
 
     .location {
       font-style: italic;
+      padding-bottom: 15px;
     }
 
     .labelerror {
@@ -17,7 +18,11 @@
     }
 
     .folderscontainer {
-      min-height: 35px;
+      min-height: 40px;
+
+      .folders-brdcrmb {
+        margin: 0;
+      }
 
       .dialogContainer {
         max-height: 200px;

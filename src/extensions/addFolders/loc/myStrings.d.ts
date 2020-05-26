@@ -4,6 +4,7 @@ declare interface IAddFoldersCommandSetStrings {
   FolderMenuRetry: string;
   OverflowSuffixFolderStatusSuccess: string;
   OverflowSuffixFolderStatusFailure: string;
+  TooltipFolderAdd: string;
   TooltipFolderDelete: string;
   TooltipFolderStatusSuccess: string;
   TooltipFolderStatusProgress: string;

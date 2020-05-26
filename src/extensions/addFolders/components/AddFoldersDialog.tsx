@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import FolderController from './FolderController';
+import FolderHierarchyGenerator from './FolderHierarchyGenerator';
 import { ListViewCommandSetContext } from '@microsoft/sp-listview-extensibility';
 import { useState, useEffect } from 'react';
 
@@ -26,7 +26,7 @@ const AddFoldersDialog: React.FunctionComponent<IAddFoldersDialogProps> = (props
 
   return (
     <div>
-      <FolderController
+      <FolderHierarchyGenerator
         context={props.context}
         currentLocation={props.location}
         commandTitle={props.commandTitle}

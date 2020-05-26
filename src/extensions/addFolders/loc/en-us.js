@@ -5,6 +5,7 @@ define([], function() {
     "FolderMenuRetry": "Retry folders Creation",
     "OverflowSuffixFolderStatusSuccess": " (created)",
     "OverflowSuffixFolderStatusFailure": " (not created)",
+    "TooltipFolderAdd": "Add folder",
     "TooltipFolderDelete": "Delete this folder",
     "TooltipFolderStatusSuccess": "Folder created",
     "TooltipFolderStatusProgress": "Folder creation in progress",

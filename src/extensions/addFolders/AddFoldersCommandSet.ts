@@ -5,7 +5,8 @@ import { Log, UrlQueryParameterCollection } from '@microsoft/sp-core-library';
 import {
   BaseListViewCommandSet,
   Command,
-  IListViewCommandSetExecuteEventParameters
+  IListViewCommandSetExecuteEventParameters,
+  IListViewCommandSetListViewUpdatedParameters
 } from '@microsoft/sp-listview-extensibility';
 import { sp } from '@pnp/pnpjs';
 import { IListInfo } from '@pnp/sp/lists';
@@ -23,6 +24,7 @@ export default class AddFoldersCommandSet extends BaseListViewCommandSet<{}> {
   public async onInit(): Promise<void> {
     Log.info(LOG_SOURCE, 'Initialized AddFoldersCommandSet');
     const commandAddFolders: Command = this.tryGetCommand('ADDFOLDERS');
+
     if (commandAddFolders) {
       if (this.context.pageContext.list.permissions.hasPermission(SPPermission.addListItems)) {
 
@@ -72,6 +74,14 @@ export default class AddFoldersCommandSet extends BaseListViewCommandSet<{}> {
         break;
       default:
         throw new Error('Unknown command');
+    }
+  }
+
+  @override
+  public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
+    const commandAddFolders: Command = this.tryGetCommand('ADDFOLDERS');
+    if (commandAddFolders) {
+      commandAddFolders.visible = (event.selectedRows.length === 0);
     }
   }
 
