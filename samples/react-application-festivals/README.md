@@ -1,3 +1,19 @@
+
+---
+page_type: sample
+products:
+- office-sp
+languages:
+- javascript
+- typescript
+extensions:
+  contentType: samples
+  technologies:
+  - SharePoint Framework
+  platforms:
+  - react
+  createdDate: 12/05/2018 12:00:00 AM
+---
 # SPFx Festivals Extension
 
 ## Summary
@@ -6,7 +22,7 @@ Sample SharePoint Framework application customizer adds a festival animation to 
 ![Festivals](./demo/festivals.gif)
 
 ## Used SharePoint Framework Version 
-![1.6](https://img.shields.io/badge/version-1.6-green.svg)
+![1.10.0](https://img.shields.io/badge/version-1.10.0-green.svg)
 
 ## Applies to
 
@@ -17,12 +33,14 @@ Sample SharePoint Framework application customizer adds a festival animation to 
 Solution|Author(s)
 --------|---------
 react-application-festivals | Anoop T ([@anooptells](https://twitter.com/anooptells))
+react-application-festivals | Arjun U Menon ([@arjunumenon](https://twitter.com/arjunumenon))
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|December 05, 2018|Initial release
+2.0|May 19, 2020|Upgraded to SPFx 1.10.0 (Arjun U Menon)
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -62,3 +80,5 @@ https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFil
 - [Christmas 1](https://codepen.io/tobyj/pen/QjvEex)
 - [Christmas 2](https://codepen.io/rolchau/pen/OaYXpJ)
 - [Diwali](https://codepen.io/sidthesloth92/pen/gGZRpz)
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-festivals" />
