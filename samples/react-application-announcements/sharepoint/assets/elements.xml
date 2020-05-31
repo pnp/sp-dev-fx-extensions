@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="AnnoncementNotification"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="dd7ec4fd-97aa-44c5-b6ad-87535862e0bf"
+        ClientSideComponentProperties="{&quot;listName&quot;:&quot;Announcements&quot;, &quot;siteUrl&quot;:&quot;/sites/Contoso&quot;}">
+    </CustomAction>
+</Elements>
