@@ -7,7 +7,7 @@ Sample SharePoint Framework application customizer extension that shows current 
 ![My Followed Sites](./assets/spfx-react-myFollowedSites.gif)
 
 ## Used SharePoint Framework Version 
-![1.9.1](https://img.shields.io/badge/version-1.9.1-green.svg)
+![1.10.0](https://img.shields.io/badge/version-1.10.0-green.svg)
 
 ## Applies to
 
@@ -24,7 +24,7 @@ react-application-myfollowedsites | Rahul Suryawanshi ([@rahulsuryawanshi](https
 Version|Date|Comments
 -------|----|--------
 1.0|December 02, 2019|Initial release
-
+2.0|June 12, 2020|Updated to SharePoint Framework V1.10.0
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
