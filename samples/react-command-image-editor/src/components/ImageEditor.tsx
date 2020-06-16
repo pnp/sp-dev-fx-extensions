@@ -36,7 +36,7 @@ export interface IImageEditorProps {
   themeVariant: IReadonlyTheme | undefined;
 }
 
-export const ImageEditor: React.FunctionComponent<IImageEditorProps> = (
+export const EditImage : React.FunctionComponent<IImageEditorProps> = (
   props: IImageEditorProps
 ) => {
   const [showPanel, setIsOpen] = useState(props.showPanel);

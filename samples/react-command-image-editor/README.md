@@ -1,53 +1,69 @@
-# image-editor
+# Image Editor Command View Set
 
-This project uses [React](https://reactjs.org).
+## Summary
+This command set allows  quick edit images located in Document Libray. It implement a library called Tui Image Editor  avalable on Github. https://github.com/nhn/tui.image-editor
 
-> This is where you include your project's documentation.
+The file format supported are *.jpg, *.jpeg and *.png
 
-## Global dependencies
 
-Requires Gulp globally installed:
 
-```shell
-npm install --global gulp
+![react-command-image-editor](./assets/Screenshot1.png)
+
+![react-command-image-editor](./assets/Screenshot2.png)
+
+## Used SharePoint Framework Version 
+![drop](https://img.shields.io/badge/version-1.10-green.svg)
+
+## Applies to
+
+* [SharePoint Framework](http://dev.office.com/sharepoint/docs/spfx/sharepoint-framework-overview)
+* [Office 365 tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
+
+## Solution
+
+Solution|Author(s)
+--------|---------
+React-Command-image-editor | João Mendes
+
+## Version history
+
+Version|Date|Comments
+-------|----|--------
+1.0|June 16, 2020|Initial version
+
+
+## Disclaimer
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+---
+
+## Minimal Path to Awesome
+
+- Clone this repository
+- Move to folder where this readme exists
+- In the command window run:
+  - `npm install`
+  - `gulp serve --nobrowser`
+- Use following query parameter in the SharePoint site to get extension loaded without installing it to app catalog
+
+## Debug URL for testing
+Here's a debug URL for testing around this sample. 
+
+```
+?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"1d924752-366f-4e86-b3aa-c4fa9c0805b2":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{"sampleTextOne":"One+item+is+selected+in+the+list"}}}
+```
+Full URL to request would be something like following:
+
+```
+https://contoso.sharepoint.com/Shared Documents/Forms/AllItems.aspx?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"1d924752-366f-4e86-b3aa-c4fa9c0805b2":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{"sampleTextOne":"One+item+is+selected+in+the+list"}}}
 ```
 
-## Building the code
+## Features
+This project contains SharePoint Framework extensions that illustrates:
+* Command extension
+* use @pnp/pnpjs
+* TUI-Image Editor Library
 
-Download & install all dependencies, build, bundle & package the project
+> Notice. This sample is designed to be used in debug mode and does not contain automatic packaging setup for the "production" deployment.
 
-```shell
-# download & install dependencies
-npm install
-
-# transpile all TypeScript & SCSS => JavaScript & CSS
-gulp build
-
-# create component bundle & manifest
-gulp bundle
-
-# create SharePoint package
-gulp package-solution
-```
-
-These commands produce the following:
-
-- **./lib**: intermediate-stage commonjs build artifacts
-- **./dist**: bundled script, along with other resources
-- **./temp/deploy**: all resources required by component(s) to deploy to a CDN (when `--ship` argument present)
-
-## Build options
-
-- `gulp clean`: Deletes all build output (**/dist**, **/lib**, **/temp**, etc.).
-- `gulp build`: Transpiles all TypeScript & SCSS to JavaScript & CSS, generates source map files & TypeScript type declaration files
-- `gulp bundle [--ship|-p|--production]`: Runs gulp task **build**, then uses webpack to create the JavaScript bundle(s) and component manifest(s) as defined in **./config/config.json**. The `--ship`, `-p` or `--production` argument specifies a production build that will generate minified bundles.
-- `gulp serve [--ship|-p|--production]`: Runs gulp tasks **build**, **bundle** & starts the local webserver. Depending on the project type, it opens the browser and navigates to the local workbench or specified URL (in the case of extension components). The `--ship`, `-p` or `--production` argument specifies a production build that modifies the resulting package for production hosting rather than local hosting of assets.
-- `gulp package-solution`: Creates the SharePoint Package (**.sppkg**) file.
-- `gulp dist`: Creates a production-ready SharePoint Package (**.sppkg**) file. The following gulp task gets executed in this specific order `gulp clean`, `gulp bundle`, `gulp package-solution.`
-- `gulp dev`: Creates a development-ready SharePoint Package (**.sppkg**) file. The following gulp task will be executed in this specific order `gulp clean`, `gulp bundle`, `gulp package-solution.`
-
-> View all available gulp tasks by running `gulp --tasks`
-
-More information on [SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
-
-Generated with [pnp/spfx](https://github.com/pnp/generator-spfx/).
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-image-editor" />

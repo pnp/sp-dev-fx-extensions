@@ -64,6 +64,7 @@ export default class ImageEditorCommandSet extends BaseListViewCommandSet<IImage
 
     const _imageUrl = `${this.context.pageContext.list.serverRelativeUrl}/${event.selectedRows[0].getValueByName('FileLeafRef')}`;
     const _fileName = event.selectedRows[0].getValueByName('FileLeafRef');
+    Log.info(LOG_SOURCE, `Load Image Editor for ${_fileName}`);
     switch (event.itemId) {
       case 'EditImage':
         document.body.appendChild(this._container);
