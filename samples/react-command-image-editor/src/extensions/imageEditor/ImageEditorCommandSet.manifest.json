@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+
+  "id": "1d924752-366f-4e86-b3aa-c4fa9c0805b2",
+  "alias": "ImageEditorCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "items": {
+    "EditImage": {
+      "title": { "default": "Edit Image" },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABqElEQVQ4T6XSvWsUURTG4d97B6KzVlpYmkoi2NoIYutHkUrBQisjfmAjmp1hg+6C7HB3NoVa+IFaaWEjgoVa6h8QxICVWEQRi6CiIsFi7pHZZZYlG1dhb33Pc9577hETHnnv901iKPeZTQwE3HSaph/+B8rzqzvr9cvvvPc7HGGll2AYWPTtQ5fShecbYa1Wq1bbPPX919rvrXEcbxsB8k77LqY5ZPfqycKpCtkIHUkgwhXBSYyniNkKqVCD+0namCvRZrM5FcfxjMz29ocoXmAcFJyZTxt3uj47bXAbYwUxPUAhc4EHwbEE1BAfh3/hXD1t3Kpi5z47C9w0WErSxp6ubx+3oK84HiNWMeuCbvQAiQvzSePa+sENELN2ZHoYHK/LYiMckblXoH6Ccd/Y6WQnVPCl6jwoLlMEXfwnsJhlu0Y6i9UiaH8ke9+fgelYkD4NPyGKih9mYY0QLZexVXDUHC9775fNUrgZZI/GrfJbxDLGYQUOVMUG52U8AVzZUOPWN/dZmWp77474bES7kyT5OVzzV6Bcli3xpm+INxjPTNH19cUl9AdyxuNzW+PymgAAAABJRU5ErkJggg==",
+      "type": "command"
+    }
+  }
+}
