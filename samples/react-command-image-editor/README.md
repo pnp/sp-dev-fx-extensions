@@ -1,4 +1,4 @@
-# Image Editor Command View Set
+# Image Editor Command Set
 
 ## Summary
 This command set allows  quick edit images located in Document Libray. It implement a library called Tui Image Editor  avalable on Github. https://github.com/nhn/tui.image-editor

@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://sitenanuvemdev.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx",
       "customActions": {
         "1d924752-366f-4e86-b3aa-c4fa9c0805b2": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -15,12 +15,12 @@
       }
     },
     "imageEditor": {
-      "pageUrl": "https://sitenanuvemdev.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx",
       "customActions": {
         "1d924752-366f-4e86-b3aa-c4fa9c0805b2": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
           "properties": {
-            "sampleTextOne": "One item is selected in the list"
+            "sampleTextOne": ""
           }
         }
       }
