@@ -11,7 +11,7 @@ extensions:
   - SharePoint Framework
   createdDate: 11/1/2017 12:00:00 AM
 ---
-# Uniqie Item Permissions Command Set Customizer
+# Unique Item Permissions Command Set Customizer
 
 ## Summary
 The sample illustrates creation of a shortcut command to redirect user to selected item's permission page.
