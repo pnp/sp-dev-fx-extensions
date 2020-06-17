@@ -140,7 +140,7 @@ const dataURLtoBlob = (dataurl:string) => {
 
 
 //
-  const onSave =  async (event: React.MouseEvent<HTMLButtonElement | HTMLDivElement | HTMLAnchorElement | BaseButton | Button, MouseEvent>) => {
+  const onSave =  async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
       setIsSaving(true);
       setHasError(false);
