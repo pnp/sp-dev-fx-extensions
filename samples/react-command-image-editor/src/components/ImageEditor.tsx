@@ -44,14 +44,16 @@ export const EditImage : React.FunctionComponent<IImageEditorProps> = (
   const [isSaving, setIsSaving] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [messageError, setMessageError] = useState('');
-  const dismissPanel = useConstCallback(() => {
+  const dismissPanel = () => {
+    const editorInstance = imageEditor.current.getInstance();
+    editorInstance.destroy();
     setIsOpen(false);
     // props.onDismiss();
-  });
+  };
 
   React.useEffect(() => {
     setIsOpen(true);
-    $('.ui-image-editor-header-logo').hide();
+
 
   }, [props]);
 
@@ -148,6 +150,7 @@ const dataURLtoBlob = (dataurl:string) => {
       const blob = dataURLtoBlob(file);
       await sp.web.getFileByServerRelativeUrl(props.imageUrl).setContentChunked(blob);
       setIsSaving(false);
+      editorInstance.destroy();
       setIsOpen(false);
     } catch (error) {
       console.log(Error);
@@ -171,11 +174,9 @@ const dataURLtoBlob = (dataurl:string) => {
             <IconButton
               styles={iconButtonStyles}
               iconProps={cancelIcon}
+              disabled={isSaving  ? true : false}
               ariaLabel="Close popup modal"
-              onClick={(ev) => {
-                ev.preventDefault();
-                setIsOpen(false);
-              }}
+              onClick={dismissPanel}
             />
           </div>
           <div className={contentStyles.imageContainer}>
@@ -219,7 +220,7 @@ const dataURLtoBlob = (dataurl:string) => {
           }
           <DialogFooter>
             <PrimaryButton onClick={onSave}>{isSaving ? <div style={{width:'100%',display: 'flex', justifyContent:'center'}}><Spinner size={SpinnerSize.small}></Spinner></div> : 'Save' }</PrimaryButton>
-            <DefaultButton onClick={dismissPanel} text="Cancel" />
+            <DefaultButton onClick={dismissPanel} text="Cancel"   disabled={isSaving ? true : false} />
           </DialogFooter>
         </div>
         </>
