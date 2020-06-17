@@ -1,18 +1,32 @@
+---
+page_type: sample
+products:
+- office-sp
+languages:
+- javascript
+- typescript
+extensions:
+  contentType: samples
+  technologies:
+  - SharePoint Framework
+  createdDate: 06/16/2020 12:00:00 AM
+---
 # Image Editor Command Set
 
 ## Summary
-This command set allows  quick edit images located in Document Libray. It implement a library called Tui Image Editor  avalable on Github. https://github.com/nhn/tui.image-editor
 
-The file format supported are *.jpg, *.jpeg and *.png
+This command set allows  quick edit images located in Document Library. It implement a library called Tui Image Editor  available on GitHub. https://github.com/nhn/tui.image-editor
 
+The file format supported are `*.jpg`, `*.jpeg` and `*.png`
 
 
 ![react-command-image-editor](./assets/Screenshot1.png)
 
 ![react-command-image-editor](./assets/Screenshot2.png)
 
-## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-1.10-green.svg)
+## Used SharePoint Framework Version
+
+![1.10](https://img.shields.io/badge/version-1.10-green.svg)
 
 ## Applies to
 
@@ -33,6 +47,7 @@ Version|Date|Comments
 
 
 ## Disclaimer
+
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 ---
@@ -47,11 +62,13 @@ Version|Date|Comments
 - Use following query parameter in the SharePoint site to get extension loaded without installing it to app catalog
 
 ## Debug URL for testing
+
 Here's a debug URL for testing around this sample. 
 
 ```
 ?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"1d924752-366f-4e86-b3aa-c4fa9c0805b2":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{"sampleTextOne":"One+item+is+selected+in+the+list"}}}
 ```
+
 Full URL to request would be something like following:
 
 ```
@@ -59,7 +76,9 @@ https://contoso.sharepoint.com/Shared Documents/Forms/AllItems.aspx?debugManifes
 ```
 
 ## Features
+
 This project contains SharePoint Framework extensions that illustrates:
+
 * Command extension
 * use @pnp/pnpjs
 * TUI-Image Editor Library
