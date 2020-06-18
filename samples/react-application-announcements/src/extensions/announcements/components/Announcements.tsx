@@ -40,7 +40,7 @@ export default function RenderAnnouncements(props: IAnnouncementsProps) {
         Web(props.siteUrl)
             .lists.getByTitle(props.listName)
             .items
-            .filter(`(Locale eq '${props.culture}' or Locale eq null) and (StartDateTime le datetime'${now}' and EndDateTime ge datetime'${now}')`)
+            .filter(`(Locale eq '${props.culture}' or Locale eq null) and (StartDateTime le datetime'${now}' or StartDateTime eq null) and (EndDateTime ge datetime'${now}' or EndDateTime eq null)`)
             .select("ID", "Title", "Announcement", "Urgent", "Link", "Locale", "StartDateTime", "EndDateTime")
             .get<IAnnouncementItem[]>()
             .then(setAnnouncements);

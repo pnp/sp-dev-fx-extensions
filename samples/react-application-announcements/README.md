@@ -66,7 +66,7 @@ The Announcements list must have the following columns. Also note that a PnP Pro
 
 Column|Type|Values
 ------|----|------
-Locale|Choice|`en-US`, `fr-FR`, ...
+Locale|Choice|`en-US`, `fr-FR`, `es-ES`, ...
 Announcement|Note|
 Link|URL|
 Urgent|Boolean|
