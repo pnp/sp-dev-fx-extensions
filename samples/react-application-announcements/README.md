@@ -16,6 +16,7 @@ extensions:
 # Announcements SharePoint Framework Application Customizer
 
 ## Summary
+
 SharePoint Framework application customizer displaying an information banner using office-fabric-ui MessageBar.
 
 Inspired by react-app-announcements by Waldek Mastykarz (MVP, [Rencore](https://rencore.com), @waldekm), 
@@ -25,6 +26,7 @@ the sp-starter-kit alertNotification component.
 ![Announcements shown using this application customizer](./assets/announcements-MUI.png)
 
 ## Used SharePoint Framework Version 
+
 ![1.10.0](https://img.shields.io/badge/version-1.10-green.svg)
 
 ## Applies to
@@ -37,12 +39,14 @@ the sp-starter-kit alertNotification component.
 Solution|Author(s)
 --------|---------
 react-application-announcements | Martin Cyr (martin.cyr@metalogique.com)
+react-application-announcements | Mike Myers
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 2.0|May 20th, 2020|Initial release
+2.1|June 18th, 2020|Handle empty start and end dates for announcements. (Mike Myers)
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
