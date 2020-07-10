@@ -1,0 +1,155 @@
+{
+  "title": "Extension Walkthrough",
+  "steps": [
+    {
+      "file": "src/extensions/globalAlerts/GlobalAlertsApplicationCustomizer.ts",
+      "line": 24,
+      "description": "Property declaration\n1. **animationType** - Property to hold the animation to be played for the alerts. Default is set to be '**_bounceInRight_**', if there is no property defined.\n2. **animationDelay** - Delay to be used between multiple alerts. Default is set to be '**_5000ms_**', if there is no property defined.\n3. **alertBackgoundColor** - Background color for the alert container. Default is set to be '**_Red_**' if there is no property defined.\n4. **textColor** - Text color based on the background color. Default is set to be '**_White_**', if there is no property defined.",
+      "selection": {
+        "start": {
+          "line": 21,
+          "character": 5
+        },
+        "end": {
+          "line": 24,
+          "character": 23
+        }
+      }
+    },
+    {
+      "file": "src/extensions/globalAlerts/GlobalAlertsApplicationCustomizer.ts",
+      "line": 53,
+      "description": "Render Placeholder method to render the actual alert component once the Placeholder is available in the page. We are also passing all the properties to the alert component where the actual alert fetching and redering is maintained.",
+      "selection": {
+        "start": {
+          "line": 31,
+          "character": 5
+        },
+        "end": {
+          "line": 53,
+          "character": 6
+        }
+      }
+    },
+    {
+      "file": "src/extensions/globalAlerts/GlobalAlertsApplicationCustomizer.ts",
+      "line": 59,
+      "description": "Setting up the **_spfxcontext_** for the **PnP** library. Since we get all the alerts from SharePoint list using the **PnP** library.",
+      "selection": {
+        "start": {
+          "line": 59,
+          "character": 9
+        },
+        "end": {
+          "line": 59,
+          "character": 32
+        }
+      }
+    },
+    {
+      "file": "src/extensions/globalAlerts/GlobalAlertsApplicationCustomizer.ts",
+      "line": 61,
+      "description": "Make sure the placeholders are rendered in the page and after rendering the default placeholders, we have to call our custom render method to apply the customization.\n\n**_Note_**: Without this line, the extension will not work properly. Sometimes the extension will load and sometimes not.",
+      "selection": {
+        "start": {
+          "line": 61,
+          "character": 9
+        },
+        "end": {
+          "line": 61,
+          "character": 91
+        }
+      }
+    },
+    {
+      "file": "src/extensions/globalAlerts/Alerts.tsx",
+      "line": 6,
+      "description": "Using **selective imports** from **PnP** library to reduce the package size.",
+      "selection": {
+        "start": {
+          "line": 4,
+          "character": 1
+        },
+        "end": {
+          "line": 6,
+          "character": 24
+        }
+      }
+    },
+    {
+      "file": "src/extensions/globalAlerts/Alerts.tsx",
+      "line": 55,
+      "description": "Defining the **background color** and the **forecolor** of the text based on the properties defined.",
+      "selection": {
+        "start": {
+          "line": 54,
+          "character": 5
+        },
+        "end": {
+          "line": 55,
+          "character": 73
+        }
+      }
+    },
+    {
+      "file": "src/extensions/globalAlerts/Alerts.tsx",
+      "line": 74,
+      "description": "Animation method to trigger the animation using **Morphext.js** and **Animate.css**.",
+      "selection": {
+        "start": {
+          "line": 58,
+          "character": 5
+        },
+        "end": {
+          "line": 74,
+          "character": 7
+        }
+      }
+    },
+    {
+      "file": "src/extensions/globalAlerts/Alerts.tsx",
+      "line": 86,
+      "description": "Method to hide the **Top Placeholder** if there is no alert to display.",
+      "selection": {
+        "start": {
+          "line": 75,
+          "character": 5
+        },
+        "end": {
+          "line": 86,
+          "character": 7
+        }
+      }
+    },
+    {
+      "file": "src/extensions/globalAlerts/Alerts.tsx",
+      "line": 97,
+      "description": "Method to get the active and non-expired alerts from the SharePoint list.",
+      "selection": {
+        "start": {
+          "line": 87,
+          "character": 5
+        },
+        "end": {
+          "line": 97,
+          "character": 7
+        }
+      }
+    },
+    {
+      "file": "sharepoint/assets/elements.xml",
+      "line": 8,
+      "description": "Custom properties defined. Pre-allocated height for the top placeholder is defined to reduce the page flick when the extension is deployed. For more details, please [click here](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/overview-extensions).",
+      "selection": {
+        "start": {
+          "line": 7,
+          "character": 9
+        },
+        "end": {
+          "line": 8,
+          "character": 98
+        }
+      }
+    }
+  ]
+}

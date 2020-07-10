@@ -45,9 +45,14 @@ const Qry_Alert = `<View>
 
 export interface IAlertsProps {
     animationType: string;
+    animationDelay: number;
+    alertBackgroundColor: string;
+    textColor: string;
 }
 
 export default function (props: IAlertsProps) {
+    let bgColor: string = props.alertBackgroundColor ? props.alertBackgroundColor : 'red';
+    let textColor: string = props.textColor ? props.textColor : 'white';
     const [alerts, setAlerts] = React.useState<string>('');
     const [showAlerts, setShowAlerts] = React.useState<boolean>(false);
     const _startAlertAnimation = () => {
@@ -58,7 +63,7 @@ export default function (props: IAlertsProps) {
                 // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
                 separator: "~",
                 // The delay between the changing of each phrase in milliseconds.
-                speed: 5000,
+                speed: props.animationDelay ? props.animationDelay : 5000,
                 complete: () => {
                     // Called after the entrance animation is executed.
                     jQuery("#alertMessage").find(".morphext").css("display", "inline-block");
@@ -96,7 +101,7 @@ export default function (props: IAlertsProps) {
     return (
         <>
             {alerts.length > 0 &&
-                <div className={css("ms-Grid-row", styles.alertContainer)}>
+                <div className={css("ms-Grid-row", styles.alertContainer)} style={{ backgroundColor: bgColor, color: textColor }}>
                     {showAlerts &&
                         <span id="alertMessage">{alerts}</span>
                     }
