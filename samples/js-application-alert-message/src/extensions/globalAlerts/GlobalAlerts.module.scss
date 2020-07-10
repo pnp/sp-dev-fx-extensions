@@ -1,9 +1,7 @@
 .alertContainer {
-    height: 30px;
+    height: 35px;
     padding-left: 20px;
-    background-color: red;
-    color: white;
-    padding-top: 3px;
+    padding-top: 4px;
     font-weight: bold;
     &.animated {
       display: inline-block;
