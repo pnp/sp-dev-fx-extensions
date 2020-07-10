@@ -57,6 +57,7 @@ js-application-alert-message | Sudharsan K.([@sudharsank](https://twitter.com/su
 Version|Date|Comments
 -------|----|--------
 1.0.0.0|Apr 30 2020|Initial release
+1.0.0.1|July 09 2020|Minor issue fix. Added CodeTour.
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
