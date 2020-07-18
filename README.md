@@ -25,11 +25,11 @@ Please use following logic on submitting your questions or issues to right locat
 
 ## Additional resources
 
-* [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
-* [Overview of the SharePoint Framework](http://dev.office.com/sharepoint/docs/spfx/sharepoint-framework-overview)
-* [SharePoint Framework development tools and libraries](http://dev.office.com/sharepoint/docs/spfx/tools-and-libraries)
+* [SharePoint Framework Extensions](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/overview-extensions)
+* [Overview of the SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
+* [SharePoint Framework development tools and libraries](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/tools-and-libraries)
 * [SharePoint Framework Reference](http://aka.ms/spfx-reference)
-* [Visual Studio Extension for SharePoint Framework projects](https://github.com/SharePoint/sp-dev-fx-vs-extension)
+
 
 ## Using the samples
 
@@ -38,7 +38,7 @@ To build and start using these projects, you'll need to clone and build the proj
 Clone this repo by executing the following command in your console:
 
 ```shell
-git clone https://github.com/SharePoint/sp-dev-fx-extensions.git
+git clone https://github.com/pnp/sp-dev-fx-extensions.git
 ```
 
 Navigate to the cloned repository folder which should be the same as the repository name:
@@ -76,7 +76,7 @@ gulp serve
 
 ## Contributions
 
-These samples are direct from the feature teams, SharePoint PnP core team (http://aka.ms/SharePointPnP) or shared by the community. We welcome your input on issues and suggestions for new samples. We do also welcome community contributions around the extensions. If there's any questions around that, just let us know.
+These samples are direct from the feature teams, SharePoint PnP core team (http://aka.ms/m365pnp) or shared by the community. We welcome your input on issues and suggestions for new samples. We do also welcome community contributions around the extensions. If there's any questions around that, just let us know.
 
 Please have a look on our [Contribution Guidance](./.github/CONTRIBUTING.md) before submitting your pull requests, so that we can get your contribution processed as fast as possible. Thx.
 
