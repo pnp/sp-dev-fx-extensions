@@ -3,7 +3,7 @@
 > NOTE: This sample is part of the [PnP Starter Kit](https://github.com/pnp/sp-starter-kit). You can find the source code for this sample at https://github.com/pnp/sp-starter-kit/blob/master/source/react-application-portal-footer.
 
 
-This application customizer provides you the ability to include a footer designed for communiation sites. The footer includes sets of links configured using the tenant wide deployment list at the app catalog (global links). A second set of links are personalized links, unqiue to each user, stored within each user's user profile within a user profile property. If this property does not exist in the user profile service, this capability will be hidden. 
+This application customizer provides you the ability to include a footer designed for communication sites. The footer includes sets of links configured using the tenant-wide deployment list at the app catalog (global links). A second set of links are personalized links, unique to each user, stored within each user's user profile within a user profile property. If this property does not exist in the user profile service, this capability will be hidden. 
 
 Portal footer has extending UI experience if user clicks the top arrow in the footer. 
 
