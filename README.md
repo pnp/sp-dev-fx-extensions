@@ -28,7 +28,6 @@ Please use following logic on submitting your questions or issues to right locat
 * [SharePoint Framework Extensions](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/overview-extensions)
 * [Overview of the SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
 * [SharePoint Framework development tools and libraries](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/tools-and-libraries)
-* [SharePoint Framework Reference](http://aka.ms/spfx-reference)
 
 
 ## Using the samples
