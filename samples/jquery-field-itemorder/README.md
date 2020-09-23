@@ -29,6 +29,7 @@ Version|Date|Comments
 1.1|September 28, 2017|Updated for SPFx Extensions GA 1.3.0
 1.4|February 2, 2018|Updated for SPFx 1.4.0
 1.5|October 10, 2019|Updated to SPFx 1.4.1 and enabled ordering across item paging
+1.6|Septemmber 23, 2020|Fixed issue with icons not displaying because SP changed the fabric class name to ms-SPLegacyFabricBlock
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
