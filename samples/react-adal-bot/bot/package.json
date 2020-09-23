@@ -21,7 +21,7 @@
   "dependencies": {
     "adal-node": "0.1.28",
     "botbuilder": "3.15.0",
-    "node-fetch": "^1.6.3",
+    "node-fetch": "^2.6.1",
     "restify": "7.2.1",
     "es6-promise": "4.2.4"
   }
