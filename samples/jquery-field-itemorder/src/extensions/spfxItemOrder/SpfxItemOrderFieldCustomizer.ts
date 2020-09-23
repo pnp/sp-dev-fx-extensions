@@ -67,6 +67,9 @@ export default class SpfxItemOrderFieldCustomizer
     //Provide an icon for dragging (actually, the whole row can be dragged, but a UI hint is helpful)
     event.domElement.classList.add('ms-font-l'); //increase the font-size
     event.domElement.classList.add(`${styles.SpfxItemOrder}`); //add our base CSS class
+    event.domElement.classList.add('ms-Fabric'); //Needed to show icons
+    event.domElement.classList.add('ms-SPLegacyFabricBlock'); //Need to show icons in SPO
+    event.domElement.classList.add('ms-fontColor-themePrimary'); //Shows icon using the primary theme color
 
     if(this.context.pageContext.list.permissions.hasPermission(SPPermission.editListItems)) {
       if(this._useIcons) {
