@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "field-renderer-helper-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/fieldRendererHelper/FieldRendererHelperFieldCustomizer.js",
+          "manifest": "./src/extensions/fieldRendererHelper/FieldRendererHelperFieldCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FieldRendererHelperFieldCustomizerStrings": "lib/extensions/fieldRendererHelper/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}
