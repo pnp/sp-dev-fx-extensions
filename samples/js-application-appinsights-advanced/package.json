@@ -12,8 +12,8 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "@microsoft/applicationinsights-react-js": "^2.5.4",
-    "@microsoft/applicationinsights-web": "^2.5.4",
+    "@microsoft/applicationinsights-react-js": "^3.0.3",
+    "@microsoft/applicationinsights-web": "^2.5.8",
     "@microsoft/decorators": "1.10.0",
     "@microsoft/sp-application-base": "1.10.0",
     "@microsoft/sp-core-library": "1.10.0",
