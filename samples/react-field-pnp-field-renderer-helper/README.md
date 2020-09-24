@@ -19,7 +19,7 @@ This field customizer shows how to use [PnP FieldRendererHelper](https://pnp.git
 
 ## Prerequisites
 
-> Any special pre-requisites?
+None
 
 ## Solution
 
