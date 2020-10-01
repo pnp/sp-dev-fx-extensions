@@ -1,0 +1,10 @@
+.cell {
+  background-color: "[theme:themePrimary, default:#e5e5e5]";
+  display: "inline-block";
+
+  .folderOverride {
+    left: inherit !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+}
