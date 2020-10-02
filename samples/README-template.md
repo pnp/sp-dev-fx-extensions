@@ -3,7 +3,13 @@
 ## Summary
 Short summary on functionality and used technologies.
 
-[picture of the extension in action, if possible]
+> Please provide a high-quality screenshot of your extension below. It should be stored in a folder called `assets`. 
+> If possible, use a resolution of 1920x1080. 
+> If your extension requires the user to configure it, please use a screenshot of the extension as it appears after it has been configured.
+> You can add as many screen shots as you'd like to help users understand your extension without having to download it and install it.
+> DELETE THIS PARAGRAPH BEFORE SUBMITTING
+
+![picture of the extension in action](assets/preview.png)
 
 ## Used SharePoint Framework Version 
 ![drop](https://img.shields.io/badge/version-GA-green.svg)
