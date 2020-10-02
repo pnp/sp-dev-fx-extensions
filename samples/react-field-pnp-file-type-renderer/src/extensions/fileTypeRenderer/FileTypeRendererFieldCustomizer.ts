@@ -40,7 +40,7 @@ export default class FileTypeRendererFieldCustomizer
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
 
     const path: string = event.listItem.getValueByName('FileLeafRef'); // getting the path to file or folder
-    const isFolder: boolean = event.listItem.getValueByName('FSObjType') === '1'; // getting if the item is a floder
+    const isFolder: boolean = event.listItem.getValueByName('FSObjType') === '1'; // getting if the item is a folder
 
     const fileTypeRenderer: React.ReactElement<{}> =
       React.createElement(FileTypeRenderer, {

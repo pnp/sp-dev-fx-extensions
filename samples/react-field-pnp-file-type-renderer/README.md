@@ -8,7 +8,7 @@ This field customizer shows how to use [PnP FieldFileTypeRenderer](https://pnp.g
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.11-green.svg)
+![SPFx 1.11](https://img.shields.io/badge/version-1.11-green.svg)
 
 ## Applies to
 
@@ -49,11 +49,12 @@ Version|Date|Comments
 
 ## Features
 
-`FieldFileTypeRenderer` allows to render list column similary to Type (DocIcon) column.
+`FieldFileTypeRenderer` allows to render list column similarly to Type (DocIcon) column.
 The sample shows how to get needed properties from `listItem` property of the field render event and provide them to the `FieldFileTypeRenderer`. It also shows how to apply custom CSS class and styles to the renderer.
 
 ## Debug URL for testing
-Here's a debug URL for testing this sample.
+
+Here's a debug URL for testing this sample. Make sure to replace `InternalFieldName` with the internal field name of the column you wish to display the file field renderer.
 
 ```
 ?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&fieldCustomizers={"InternalFieldName":{"id":"eb28c870-e1fc-4e0c-80be-968c314fdb8c","properties":{}}}
@@ -66,3 +67,5 @@ Here's a debug URL for testing this sample.
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-field-pnp-file-type-renderer" />
