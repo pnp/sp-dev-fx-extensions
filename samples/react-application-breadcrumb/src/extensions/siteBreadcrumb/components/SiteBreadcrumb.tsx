@@ -115,7 +115,7 @@ export default class SiteBreadcrumb extends React.Component<ISiteBreadcrumbProps
   public render(): React.ReactElement<ISiteBreadcrumbProps> {
     return (
       <div className={styles.breadcrumb} >
-        <div className="ms-bgColor-themePrimary">
+        <div className={styles.msBgColorThemePrimary}>
           <Breadcrumb
             items={this.state.breadcrumbItems}
             ariaLabel={'Website breadcrumb'}

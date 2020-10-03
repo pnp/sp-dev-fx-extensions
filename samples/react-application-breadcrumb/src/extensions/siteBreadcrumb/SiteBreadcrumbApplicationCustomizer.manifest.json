@@ -1,5 +1,5 @@
 {
-  "$schema": "../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
   "id": "57fa430d-8154-4b00-b285-679314f4f390",
   "alias": "SiteBreadcrumbApplicationCustomizer",

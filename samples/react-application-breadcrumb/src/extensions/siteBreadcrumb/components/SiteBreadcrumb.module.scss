@@ -1,6 +1,10 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
 .breadcrumb {
   >div {
     padding-left: 7px;
+  }
+  .msBgColorThemePrimary{
+    background-color: "[theme:themePrimary, default:#0078d7]";
   }
   div[role="navigation"] {
     margin-top: 0;
@@ -9,15 +13,15 @@
     ol {
       li {
         a {
-          color: #fff;
+         color: "[theme:white, default:#ffffff]" !important;
           font-size: 14px;
           padding: 4px 8px 8px 8px;
           &:hover {
-            background-color: #fff;
+            background-color: "[theme:linkHovered]";
           }
         }
         i {
-          color: #fff;
+          color: "[theme:white, default:#ffffff]";
           font-size: 10px;
           margin: 10px 0;
         }
