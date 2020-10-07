@@ -1,8 +1,13 @@
 {
   "@microsoft/generator-sharepoint": {
-    "version": "1.3.0",
-    "libraryName": "spfx-analytics",
-    "libraryId": "dd23bfa0-061d-444e-bf6c-8adbab85b29c",
-    "environment": "spo"
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.11.0",
+    "libraryName": "js-application-analytics",
+    "libraryId": "1c37f3a8-1175-4ed3-88a8-c75b70caac5c",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
   }
 }

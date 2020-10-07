@@ -1,22 +1,29 @@
 {
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
   "port": 4321,
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://giuleon.sharepoint.com/sites/demo/SitePages/Home.aspx",
+      "pageUrl": "https://ashbay16.sharepoint.com/SitePages/Woo-hoo!-A-modern-page!.aspx",
       "customActions": {
-        "68871fea-d31c-4fe1-812c-4fdf81a0a7b8": {
+        "46050d9b-6925-42e5-812a-c5218d6c85ae": {
           "location": "ClientSideExtension.ApplicationCustomizer",
-          "properties": {}
+          "properties": {
+            "trackingId": "UA-100713841-5",
+            "disableAsync": false
+          }
         }
       }
     },
-    "spfxAnalytics": {
-      "pageUrl": "https://giuleon.sharepoint.com/sites/demo/SitePages/Home.aspx",
+    "analytics": {
+      "pageUrl": "https://ashbay16.sharepoint.com/SitePages/Woo-hoo!-A-modern-page!.aspx",
       "customActions": {
-        "68871fea-d31c-4fe1-812c-4fdf81a0a7b8": {
+        "46050d9b-6925-42e5-812a-c5218d6c85ae": {
           "location": "ClientSideExtension.ApplicationCustomizer",
-          "properties": {}
+          "properties": {
+            "trackingId": "UA-100713841-5",
+            "disableAsync": false
+          }
         }
       }
     }

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-
-    <CustomAction 
-        Title="SPFxAnalytics"
+    <CustomAction
+        Title="Analytics"
         Location="ClientSideExtension.ApplicationCustomizer"
-        ClientSideComponentId="e8613642-17ee-4392-a8fd-5c0d6edcdb19"
-        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Analytics&quot;}">
-
+        ClientSideComponentId="46050d9b-6925-42e5-812a-c5218d6c85ae"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
     </CustomAction>
-
 </Elements>
