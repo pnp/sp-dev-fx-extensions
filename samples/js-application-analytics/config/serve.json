@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://ashbay16.sharepoint.com/SitePages/Woo-hoo!-A-modern-page!.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/SitePages/Woo-hoo!-A-modern-page!.aspx",
       "customActions": {
         "46050d9b-6925-42e5-812a-c5218d6c85ae": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -16,7 +16,7 @@
       }
     },
     "analytics": {
-      "pageUrl": "https://ashbay16.sharepoint.com/SitePages/Woo-hoo!-A-modern-page!.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/SitePages/Woo-hoo!-A-modern-page!.aspx",
       "customActions": {
         "46050d9b-6925-42e5-812a-c5218d6c85ae": {
           "location": "ClientSideExtension.ApplicationCustomizer",
