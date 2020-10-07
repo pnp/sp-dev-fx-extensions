@@ -1,13 +1,18 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/extensions/analytics/AnalyticsApplicationCustomizer.js",
-      "manifest": "./src/extensions/analytics/AnalyticsApplicationCustomizer.manifest.json",
-      "outputPath": "./dist/analytics.bundle.js"
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "analytics-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/analytics/AnalyticsApplicationCustomizer.js",
+          "manifest": "./src/extensions/analytics/AnalyticsApplicationCustomizer.manifest.json"
+        }
+      ]
     }
-  ],
+  },
   "externals": {},
   "localizedResources": {
-    "analyticsStrings": "extensions/analytics/loc/{locale}.js"
+    "AnalyticsApplicationCustomizerStrings": "lib/extensions/analytics/loc/{locale}.js"
   }
 }

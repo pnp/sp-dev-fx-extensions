@@ -1,8 +1,8 @@
-declare interface IAnalyticsStrings {
+declare interface IAnalyticsApplicationCustomizerStrings {
   Title: string;
 }
 
-declare module 'analyticsStrings' {
-  const strings: IAnalyticsStrings;
+declare module 'AnalyticsApplicationCustomizerStrings' {
+  const strings: IAnalyticsApplicationCustomizerStrings;
   export = strings;
 }
