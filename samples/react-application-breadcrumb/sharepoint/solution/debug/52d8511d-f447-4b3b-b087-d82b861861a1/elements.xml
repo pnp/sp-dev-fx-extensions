@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction
+      Title="PnP.SPFxBreadcrumb"
+      Location="ClientSideExtension.ApplicationCustomizer"
+      ClientSideComponentId="57fa430d-8154-4b00-b285-679314f4f390"
+      ClientSideComponentProperties="">
+  </CustomAction>
+</Elements>

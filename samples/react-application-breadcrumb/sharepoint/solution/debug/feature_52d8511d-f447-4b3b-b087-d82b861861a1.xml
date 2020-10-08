@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="SharePoint Framework Breadcrumb Extension" Description="Deploys the Breadcrumb custom action to the site" Id="52d8511d-f447-4b3b-b087-d82b861861a1" Version="2.0.0.0" Scope="Web" Hidden="FALSE"></Feature>

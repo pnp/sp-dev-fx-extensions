@@ -1,4 +1,4 @@
-import ApplicationCustomizerContext from "@microsoft/sp-application-base/lib/extensibility/ApplicationCustomizerContext";
+import {ApplicationCustomizerContext} from "@microsoft/sp-application-base";
 import { IBreadcrumbItem } from "office-ui-fabric-react/lib";
 
 export interface ISiteBreadcrumbProps {
