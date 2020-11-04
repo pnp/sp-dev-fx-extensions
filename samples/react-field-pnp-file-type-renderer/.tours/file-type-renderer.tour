@@ -1,0 +1,35 @@
+{
+  "title": "file-type-renderer",
+  "steps": [
+    {
+      "file": "src/extensions/fileTypeRenderer/components/FileTypeRenderer.tsx",
+      "line": 12,
+      "description": "We need two properties to render file type: `path` to the file or folder, and `isFolder` flag"
+    },
+    {
+      "file": "src/extensions/fileTypeRenderer/components/FileTypeRenderer.tsx",
+      "line": 41,
+      "description": "In the `render` method we can simply use `FieldFileTypeRenderer` component. Required props are `path` and `isFolder` that were passed to the Field Customizer component. And we can also provide `cssProps` and `className` to customize the look and feel of the component"
+    },
+    {
+      "file": "src/extensions/fileTypeRenderer/components/FileTypeRenderer.tsx",
+      "line": 44,
+      "description": "`styles.folderOverride` provides some styles needed to correctly align the folder icon."
+    },
+    {
+      "file": "src/extensions/fileTypeRenderer/components/FileTypeRenderer.module.scss",
+      "line": 5,
+      "description": "Here are these styles."
+    },
+    {
+      "file": "src/extensions/fileTypeRenderer/FileTypeRendererFieldCustomizer.ts",
+      "line": 42,
+      "description": "In the Field Customizer we're getting document's path from `FileLeafRef` field of the list item."
+    },
+    {
+      "file": "src/extensions/fileTypeRenderer/FileTypeRendererFieldCustomizer.ts",
+      "line": 43,
+      "description": "`isFolder` is populated from `FSObjType` field."
+    }
+  ]
+}
