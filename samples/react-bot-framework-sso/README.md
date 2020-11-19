@@ -20,7 +20,7 @@ This demo does not include any threat models and is designed for educational pur
 
 ## Used SharePoint Framework Version
 
-![drop](https://img.shields.io/badge/version-1.0-green.svg)
+![SPFx 1.10](https://img.shields.io/badge/version-1.10-green.svg)
 
 ## Applies to
 
