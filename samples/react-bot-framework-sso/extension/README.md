@@ -84,8 +84,11 @@ If you want to deploy it follow the steps [here](https://docs.microsoft.com/en-u
 ```
 
 ## Features
+
 This Extension illustrates the following concepts on top of the SharePoint Framework:
 
 - Using the Bot Framework webchat React component as some kind of flyout element in modern pages
 - Adding a bot to modern pages and let users interact with a bot hosted in the Azure Bot Service
 - Demo single sign-on for on behalf of authentication using OAuth
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-bot-framework-sso/extension" />
