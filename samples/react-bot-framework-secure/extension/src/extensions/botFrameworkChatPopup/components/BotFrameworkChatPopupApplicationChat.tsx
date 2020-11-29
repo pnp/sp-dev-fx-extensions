@@ -86,8 +86,8 @@ export default class BotFrameworkChatPopupApplicationChat extends React.Componen
       headers: {'Content-Type': 'application/json'}
     }).then(async (response: any): Promise<string> => {
         if (response.ok) {
-          var token = await response.clone().json();
-          return token.token;
+          var responseToken = await response.clone().json();
+          return responseToken.token;
         }
         return "";
       });
