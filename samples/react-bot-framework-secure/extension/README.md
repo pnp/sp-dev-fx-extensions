@@ -31,11 +31,7 @@ An extension sample that uses the [botframework-webchat module](https://www.npmj
 - Edit "BotFrameworkChatPopupApplicationChat.tsx" file to set your bot endpoint (`props.botEndpoint`) directly like `https://YOUR_BOT.azurewebsites.net` for testing purpose (instead of setting it in the Tenant Wide Extensions list):
 
     ```ts
-    generateToken(props.botEndpoint, md5(userId)).then((token: string) => { //change props.botEndpoint to the endpoint directly if you want to test it
-    if (token) {
-        setDirectLine(createDirectLine({ token }));
-    }
-    });
+    const token = await this.generateToken(this.props.botEndpoint, md5(userId));
     ```
 
 - In the command line run
@@ -67,3 +63,5 @@ This Extension illustrates the following concepts on top of the SharePoint Frame
 
 - Using the Bot Framework webchat React component as some kind of flyout element in modern pages
 - Adding a bot to modern pages and let users interact with a bot hosted in the Azure Bot Service
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-bot-framework-secure" />
