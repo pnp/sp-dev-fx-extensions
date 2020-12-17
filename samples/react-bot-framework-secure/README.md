@@ -20,7 +20,7 @@ This demo does not include any threat models and is designed for educational pur
 
 ## Used SharePoint Framework Version
 
-![1.0](https://img.shields.io/badge/version-1.0-green.svg)
+![SPFx 1.10.0](https://img.shields.io/badge/drop-1.10.0-green.svg)
 
 ## Applies to
 
@@ -41,8 +41,8 @@ This demo does not include any threat models and is designed for educational pur
 
 Solution|Author(s)
 --------|---------
-webpart | STCA BF Channel and ABS (stcabfchannel@microsoft.com) <br/> Stephan Bisser (@stephanbisser, bisser.io)
-bot | STCA BF Channel and ABS (stcabfchannel@microsoft.com)
+extension | Bot Framework Discussions (msbots@service.microsoft.com) <br/> Stephan Bisser (@stephanbisser, bisser.io)
+bot | Bot Framework Discussions (msbots@service.microsoft.com)
 
 ## Version history
 
@@ -63,16 +63,25 @@ Version|Date|Comments
 - Clone the repository
 
     ```bash
-    git clone [Placeholder]
+    git clone https://github.com/pnp/sp-dev-fx-extensions
     ```
 
-- In a terminal, navigate to `[Placeholder]`
+- In a terminal, navigate to `sp-dev-fx-extensions`
 
     ```bash
-    cd [Placeholder]
+    cd sp-dev-fx-extensions
+    ```
+
+- Navigate to the folder containing this sample
+
+    ```bash
+    cd samples
+    cd react-bot-framework-secure
     ```
 
 ### [Setup bot](./bot/README.md)
+
+- Go to `./bot`
 
 - Install modules
 
@@ -80,7 +89,7 @@ Version|Date|Comments
     npm install
     ```
 
-- Register Connections. You can get it done by [deploy your bot to Azure](https://aka.ms/azuredeployment). Save your bot service endpoint like: "https://YOUR_BOT.azurewebsites.net". Save your AAD Id as YOUR_APP_ID and secret as YOUR_APP_PSW.
+- Register Connections. You can get it done by [deploy your bot to Azure](https://aka.ms/azuredeployment). Save your bot service endpoint like: "https://YOUR_BOT.azurewebsites.net". Save your AAD Id as `YOUR_APP_ID` and secret as `YOUR_APP_PSW`.
 
 - [Connect to direct line](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-directline?view=azure-bot-service-4.0), copy one of the Secret Key values as YOUR_DIRECT_LINE_SECRET and store this for later usage. This is your ‘Direct Line Secret’.
 
@@ -96,28 +105,18 @@ Version|Date|Comments
 
 ### [Setup extension](./extension/README.md)
 
-- Install modules
-
-    ```bash
-    npm install
-    ```
-
 - Edit "BotFrameworkChatPopupApplicationChat.tsx" file to set your bot endpoint (`props.botEndpoint`) directly like `https://YOUR_BOT.azurewebsites.net` for testing purpose (instead of setting it in the Tenant Wide Extensions list):
 
     ```ts
-    generateToken(props.botEndpoint, md5(userId)).then((token: string) => { //change props.botEndpoint to the endpoint directly if you want to test it
-        if (token) {
-            setDirectLine(createDirectLine({ token }));
-        }
-    });
+    const token = await this.generateToken(this.props.botEndpoint, md5(userId));
     ```
 
 - Config CORS \
   [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) must be set on bot app service to enable SharePoint client to get resource from bot service. Follow these steps to add your workbench to bot app service CORS configration:
 
     1. Go to your azure portal
-    1. Navigate to your bot app service, search for CORS settings
-    1. Add https://localhost:4321 and https://<YOUR_SITE>.sharepoint.com to CORS origins
+    2. Navigate to your bot app service, search for CORS settings
+    3. Add https://localhost:4321 and https://<YOUR_SITE>.sharepoint.com to CORS origins
 
 - In the command line run
 

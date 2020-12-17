@@ -1,4 +1,4 @@
-# Sharepoint extension sample with SSO
+# SharePoint extension sample with SSO
 
 ## Summary
 
@@ -20,7 +20,7 @@ This demo does not include any threat models and is designed for educational pur
 
 ## Used SharePoint Framework Version
 
-![SPFx 1.10](https://img.shields.io/badge/version-1.10-green.svg)
+![SPFx 1.10.0](https://img.shields.io/badge/drop-1.10.0-green.svg)
 
 ## Applies to
 
@@ -48,8 +48,8 @@ This demo does not include any threat models and is designed for educational pur
 
 Solution|Author(s)
 --------|---------
-webpart | STCA BF Channel and ABS (stcabfchannel@microsoft.com) <br/> Stephan Bisser (@stephanbisser, bisser.io)
-bot | STCA BF Channel and ABS (stcabfchannel@microsoft.com)
+extension | Bot Framework Discussions (msbots@service.microsoft.com) <br/> Stephan Bisser (@stephanbisser, bisser.io)
+bot | Bot Framework Discussions (msbots@service.microsoft.com)
 
 ## Version history
 
@@ -70,18 +70,25 @@ Version|Date|Comments
 - Clone the repository
 
     ```bash
-    git clone [Placeholder]
+    git clone https://github.com/pnp/sp-dev-fx-extensions
+    ```
+
+- In a terminal, navigate to `sp-dev-fx-extensions`
+
+    ```bash
+    cd sp-dev-fx-extensions
+    ```
+
+- Navigate to the folder containing this sample
+
+    ```bash
+    cd samples
+    cd react-bot-framework-sso
     ```
 
 ### [Setup bot with Direct Line](./bot/README.md)
 
-This part is the same as [the extension web chat sample](Placeholder).
-
-- In a terminal, navigate to `[Placeholder]`
-
-    ```bash
-    cd [Placeholder]
-    ```
+- Go to `./bot`
 
 - Install modules
 
@@ -89,11 +96,11 @@ This part is the same as [the extension web chat sample](Placeholder).
     npm install
     ```
 
-- Register connections. You can get it done by [deploy your bot to Azure](https://aka.ms/azuredeployment). Save your bot service endpoint like: "https://YOUR_BOT.azurewebsites.net". Save your AAD Id as YOUR_APP_ID, AAD Name as YOUR_APP_Name and secret as YOUR_APP_PSW.
+- Register connections. You can get it done by [deploy your bot to Azure](https://aka.ms/azuredeployment). Save your bot service endpoint like: "https://YOUR_BOT.azurewebsites.net". Save your AAD Id as `YOUR_APP_ID`, AAD Name as `YOUR_APP_Name` and secret as `YOUR_APP_PSW`.
 
-- [Connect to direct line](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-directline?view=azure-bot-service-4.0), copy one of the Secret Key values as YOUR_DIRECT_LINE_SECRET and store this for later. This is your ‘Direct Line Secret’.
+- [Connect to direct line](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-directline?view=azure-bot-service-4.0), copy one of the Secret Key values as `YOUR_DIRECT_LINE_SECRET` and store this for later. This is your `Direct Line Secret`.
 
-- Add ‘Direct Line Secret’ to an .env config file under ./bot
+- Add `Direct Line Secret` to an .env config file under ./bot
 
     ```bash
     MicrosoftAppId=YOUR_APP_ID
@@ -110,7 +117,7 @@ application setup for use in Azure Bot Service.
 - Open your bot's application registration
 - Save the tenant ID
     - Select the "Overview" blade
-    - On the main pane, copy the content of "Directory (tenant) ID" as YOUR_APP_TENANT and store this for later
+    - On the main pane, copy the content of "Directory (tenant) ID" as `YOUR_APP_TENANT` and store this for later
 - Update Authentication
     - Select the "Authentication" blade
     - Click "Add a platform" to add web if Web is not added
@@ -122,7 +129,7 @@ application setup for use in Azure Bot Service.
     - Select the "Expose an API" blade
     - Click the "Add a scope" button under "Scopes defined by this API"
         - Click "Save and continue"
-        - Add a scope named YOUR_AAD_SCOPE_NAME
+        - Add a scope named `YOUR_AAD_SCOPE_NAME`
         - Set "Who can consent?" to "Admins and users"
         - Add an admin consent display name
         - Add an admin consent description
@@ -131,7 +138,7 @@ application setup for use in Azure Bot Service.
             - api://123a45b6-789c-01de-f23g-h4ij5k67a8bc/<YOUR_AAD_SCOPE_NAME>
 - Select API permissions
         - Click "API Permissions", select"Add a permission"
-        - Select "My APIs", YOUR_APP_ID, and enable YOUR_AAD_SCOPE_NAME scope \
+        - Select "My APIs", `YOUR_APP_ID`, and enable `YOUR_AAD_SCOPE_NAME` scope \
         Otherwise the non-admin user cannot use SSO.
 
 ### Setup Authentication via Azure Bot Services for the Bot
@@ -192,10 +199,19 @@ application setup for use in Azure Bot Service.
         ],
     ```
 
-- [Publish and host webpart](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/hosting-webpart-from-office-365-cdn), prepare for approving permissions
+- Install modules
+
+    ```bash
+    cd ../extension
+    npm install
+    ```
+
+- [Publish and host extension](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/hosting-extension-from-office365-cdn), prepare for approving permissions
 
 - Refer [Connect to Azure AD-secured APIs](https://docs.microsoft.com/en-us/sharepoint/api-access) to publish and approve permissions from admin site
-    - Go to sharepoint admin center
+    - Please ensure your service principal had been enabled for your AAD account.
+        - Check "Managed application in local directory" in your AAD overview blade in Azure Portal
+    - Go to SharePoint admin center
     - Find "API Access", approve "<YOUR_APP_Name>"
 
 - (Opt. for hosted bot service) Config CORS \
@@ -204,11 +220,32 @@ application setup for use in Azure Bot Service.
     2. Navigate to your bot app service, search for CORS settings
     3. Add https://localhost:4321 and https://<YOUR_SITE>.sharepoint.com to CORS origins
 
-- In the command line run
+### Setup OAuth via Azure Active Directory for the SharePoint
+
+The following operations will need an admin account.
+
+- Go to your [Azure Active Directory](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview)
+- Open "App registrations", find "SharePoint Online Client Extensibility Web Application Principal"
+- Save the client ID
+    - Select the "Overview" blade
+    - On the main pane, copy the content of "Application ID" as `YOUR_SHAREPOINT_ID` and store this for later usage
+- Update App Registration Manifest
+    - Select the "Manifest" blade
+        - Set `accessTokenAcceptedVersion` to `2`
+
+### Add a client application to the OAuth for the Bot
+
+- Open your bot's application registration
+- Select the "Expose an API" blade
+- Click the "Add a client application" under "Authorized client applications"
+    - Set the client id to the `YOUR_SHAREPOINT_ID`
+    - Check the box next to the scope we added in the previous step under "Authorized scopes"
+    - Click "Add application"
+
+### Test extension
+- Go to `extension` folder, in the command line run
 
     ```bash
-    cd ../extension
-    npm install
     gulp serve --nobrowser
     ```
 
@@ -219,28 +256,6 @@ application setup for use in Azure Bot Service.
     ```
 
     If you want to deploy it follow the steps [here](./extension/README.md#deploy).
-
-### Setup OAuth via Azure Active Directory for the SharePoint
-
-The following operations will need an admin account.
-
-- Go to your [Azure Active Directory](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview)
-- Open "App registrations", find "SharePoint Online Client Extensibility Web Application Principal"
-- Save the client ID
-    - Select the "Overview" blade
-    - On the main pane, copy the content of "Application ID" as YOUR_SHAREPOINT_ID and store this for later usage
-- Update App Registration Manifest
-    - Select the "Manifest" blade
-        - Set `accessTokenAcceptedVersion` to `2`
-
-### Add a client application to the OAuth for the Bot
-
-- Open your bot's application registration
-- Select the "Expose an API" blade
-- Click the "Add a client application" under "Authorized client applications"
-    - Set the client id to the YOUR_SHAREPOINT_ID
-    - Check the box next to the scope we added in the previous step under "Authorized scopes"
-    - Click "Add application"
 
 ## Features
 
@@ -335,7 +350,7 @@ const handleClick = useCallback(() => {
 
 Note: The first time users try SSO, users may be presented with an OAuth card to log in. This is because users have not yet given consent to the bot's Azure AD app. To avoid this, users can grant admin consent for any graph permissions requested by the Azure AD app.
 
-Note: due to a SDK bug [here](https://github.com/microsoft/botbuilder-js/issues/3006), the consent card could not be shown properly yet. Granting admin consent may be necessary to workaround this.
+Note: due to a [SDK bug](https://github.com/microsoft/botbuilder-js/issues/3006), the consent card could not be shown properly yet. Granting admin consent may be necessary to workaround this.
 
 ## Debug URL for testing
 
