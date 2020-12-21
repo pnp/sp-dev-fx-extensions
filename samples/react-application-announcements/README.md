@@ -61,7 +61,7 @@ Version|Date|Comments
 - `gulp serve`
 - Open a browser on a SharePoint site having the appropriate announcements list and append this query string to the URL (remember to change the `siteUrl` and `listName`!)
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"dd7ec4fd-97aa-44c5-b6ad-87535862e0bf":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"listName":"Annoncements","siteUrl": "/sites/Contoso"}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"dd7ec4fd-97aa-44c5-b6ad-87535862e0bf":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"listName":"Site Announcements","siteUrl": "/sites/Contoso"}}}
 ```
 
 ### Announcements list columns
@@ -79,10 +79,12 @@ EndDateTime|DateTime|
 
 ### Build and deploy
 
-  - `gulp build --ship`
+  - `npm i`
+  - `gulp clean`
   - `gulp bundle --ship`
+  - `gulp build --ship`
   - `gulp package-solution --ship`
-  - Deploy the app package (`sharepoint/solution/package.spkg`) to your tenant AppCatalog
+  - Deploy the app package (`sharepoint/solution/react-application-announcements.spkg`) to your tenant AppCatalog
   - Deploy a list with the appropriate fields
   - Add the extension custom action with the appropriate settings
 
@@ -93,7 +95,7 @@ To deploy the announcements list and add the custom action to your desired site,
 1. Install PnPPowerShell `Install-Module SharePointPnPPowerShellOnline`
 1. Connect to your site `Connect-PnPOnline https://MyTenant.sharepoint.com/sites/MySite`
 1. Deploy the PnP Provisioning template `Apply-PnPProvisioningTemplate sharepoint\assets\pnptemplate.xml -Handlers Fields,ContentTypes,Lists`
-1. Add the custom action (remember to replace Contoso in the ClientSideComponentProperties by your site name) `Add-PnPCustomAction -Name "Announcements" -Title "Announcements" -Location "ClientSideExtension.ApplicationCustomizer" -ClientSideComponentId "dd7ec4fd-97aa-44c5-b6ad-87535862e0bf" -ClientSideComponentProperties="{&quot;listName&quot;:&quot;Announcements&quot;, &quot;siteUrl&quot;:&quot;/sites/Contoso&quot;}"`
+1. Add the custom action (remember to replace Contoso in the ClientSideComponentProperties by your site name) `Add-PnPCustomAction -Name "Announcements" -Title "Announcements" -Location "ClientSideExtension.ApplicationCustomizer" -ClientSideComponentId "dd7ec4fd-97aa-44c5-b6ad-87535862e0bf" -ClientSideComponentProperties="{&quot;listName&quot;:&quot;Site Announcements&quot;, &quot;siteUrl&quot;:&quot;/sites/Contoso&quot;}"`
 
 Also, note that the template file also includes an example on how to deploy an extension on a site. This requires the app to be deployed to the app catalog
 
