@@ -7,7 +7,7 @@ Sample SharePoint Framework list view command set extension that copies the clas
 ![Copy Classic Link](./demo/copy-classic-link.gif)
 
 ## Used SharePoint Framework Version 
-![1.6](https://img.shields.io/badge/version-1.6-green.svg)
+![1.11](https://img.shields.io/badge/version-1.11-green.svg)
 
 ## Applies to
 
@@ -18,12 +18,14 @@ Sample SharePoint Framework list view command set extension that copies the clas
 Solution|Author(s)
 --------|---------
 js-command-copy-classic-link | Anoop T ([@anooptells](https://twitter.com/anooptells))
+js-command-copy-classic-link | Aakash Bhardwaj ([@aakash_316](https://twitter.com/aakash_316))
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|October 11, 2018|Initial release
+1.1|January 3, 2021|Upgraded to SPFx 1.11.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**

@@ -3,15 +3,23 @@
   "solution": {
     "name": "js-command-copy-classic-link-client-side-solution",
     "id": "c37fb320-54ad-4118-b4ad-2abe9267fcc8",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
+    "developer": {
+      "name": "Contoso",
+      "privacyUrl": "https://contoso.com/privacy",
+      "termsOfUseUrl": "https://contoso.com/terms-of-use",
+      "websiteUrl": "https://contoso.com/my-app",
+      "mpnId": "000000"
+    },
+    "isDomainIsolated": false,
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "f5d2c11c-c6c5-4cbc-882c-5241b54c8e29",
-        "version": "1.0.0.0",
+        "version": "1.1.0.0",
         "assets": {
           "elementManifests": [
             "elements.xml",

@@ -2,7 +2,8 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.6.0",
+    "version": "1.11.0",
+    "isDomainIsolated": false,
     "libraryName": "js-command-copy-classic-link",
     "libraryId": "c37fb320-54ad-4118-b4ad-2abe9267fcc8",
     "packageManager": "npm",
