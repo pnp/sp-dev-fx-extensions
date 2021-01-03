@@ -1,13 +1,14 @@
 # SPFx Copy Classic Link Extension
 
 ## Summary
-Sample SharePoint Framework list view command set extension that copies the classic link (path) of a selected item. Uses copy-to-clipboard library, toastr and sweet alert for notifications.
 
+Sample SharePoint Framework list view command set extension that copies the classic link (path) of a selected item. Uses copy-to-clipboard library, toastr and sweet alert for notifications.
 
 ![Copy Classic Link](./demo/copy-classic-link.gif)
 
-## Used SharePoint Framework Version 
-![1.11](https://img.shields.io/badge/version-1.11-green.svg)
+## Used SharePoint Framework Version
+ 
+![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11-green.svg)
 
 ## Applies to
 
@@ -28,6 +29,7 @@ Version|Date|Comments
 1.1|January 3, 2021|Upgraded to SPFx 1.11.0
 
 ## Disclaimer
+
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 ---
@@ -38,7 +40,7 @@ Version|Date|Comments
 - Update the `pageUrl` properties in the **config/serve.json** file
   - The `pageUrl` should be a modern page
   - This property is only used during development in conjunction with the `gulp serve` command
-- In the command line navigate to the js-command-copy-classic-link folder and run:
+- In the command line navigate to the `js-command-copy-classic-link` folder and run:
   - `npm install`
   - `gulp serve --config=copyClassicLinkToastr` or `gulp serve --config=copyClassicLinkSwal`
 
@@ -51,7 +53,8 @@ This extension illustrates the following concepts:
 - Using **Code splitting** to load packages only when needed. [Code Splitting in SharePoint Framework (SPFx)](https://www.vrdmn.com/2018/10/code-splitting-in-sharepoint-framework.html)  
 
 ## Debug URL for testing
-Here's a debug querystring for testing this sample:
+
+Here's a debug query string for testing this sample:
 
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"57ecbfd1-fb14-4bc8-b4d6-fa2701ba532f":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"showToastr":"no"}}}
