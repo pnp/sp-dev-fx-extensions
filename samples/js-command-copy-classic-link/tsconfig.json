@@ -1,6 +1,10 @@
 {
+  "extends": "./node_modules/@microsoft/rush-stack-compiler-3.3/includes/tsconfig-web.json",
   "compilerOptions": {
     "target": "es5",
+    "inlineSources": false,
+    "strictNullChecks": false,
+    "noUnusedLocals": false,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -25,7 +29,8 @@
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

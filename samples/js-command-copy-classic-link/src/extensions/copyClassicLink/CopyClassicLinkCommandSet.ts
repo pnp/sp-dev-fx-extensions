@@ -63,16 +63,16 @@ export default class CopyClassicLinkCommandSet extends BaseListViewCommandSet<IC
   }
 
   private async showSwal(fullItemUrl: string) {
-    let imageExtensions: Array<string> = ["jpg", "jpeg", "png"]
+    let imageExtensions: Array<string> = ["jpg", "jpeg", "png"];
     let re = /(?:\.([^.]+))?$/;
     let ext = re.exec(fullItemUrl);
 
     let swal: any = await import(
       /* webpackChunkName: 'sweetalert2' */
       'sweetalert2'
-    )
+    );
     if (imageExtensions.indexOf(ext[1]) > -1) {
-      swal({
+      swal.default({
         title: 'Link copied.',
         text: 'Press Ctrl+V to use it.',
         type: 'success',
@@ -82,7 +82,7 @@ export default class CopyClassicLinkCommandSet extends BaseListViewCommandSet<IC
       });
     }
     else {
-      swal(
+      swal.default(
         'Link copied.',
         'Press Ctrl+V to use it.',
         'success'
