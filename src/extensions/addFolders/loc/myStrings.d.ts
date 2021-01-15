@@ -2,18 +2,19 @@ declare interface IAddFoldersCommandSetStrings {
   CommandAddFolders: string;
   ButtonGlobalClose: string;
   FolderMenuRetry: string;
-  OverflowSuffixFolderStatusSuccess: string;
-  OverflowSuffixFolderStatusFailure: string;
+  TooltipFolderAdd: string;
   TooltipFolderDelete: string;
   TooltipFolderStatusSuccess: string;
   TooltipFolderStatusProgress: string;
   TooltipFolderStatusFailure: string;
-  TooltipOverflowSuffixFoldersToCreate: string;
-  TooltipOverflowSuffixFoldersCreated: string;
   MessageBarTooManyCharacters: string;
   MessageBarMaxFoldersBatch: string;
+  LabelCurrentLocation: string;
   TextFieldLabel: string;
   TextFieldDescription: string;
+  CoachmarkTutorial: string;
+  TeachingBubbleHeadline: string;
+  TeachingBubblePrimaryButton: string;
   ButtonClearSelection: string;
   ButtonCreateFolders: string;
   ToggleSelectFoldersCreationMode: string;
@@ -21,7 +22,9 @@ declare interface IAddFoldersCommandSetStrings {
   CalloutBannedWords: string;
   CalloutBannedPrefixCharacters: string;
   CalloutBannedFormsWordAtRoot: string;
+  CalloutBannedAttachmentsWordAtRoot: string;
   CalloutBannedCharactersUrl: string;
+  CalloutBannedCharactersUrlInfo: string;
   CalloutBannedCharactersUrlLink: string;
 }
 

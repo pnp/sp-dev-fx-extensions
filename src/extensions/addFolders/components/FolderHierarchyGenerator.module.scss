@@ -1,4 +1,4 @@
-@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import '~@fluentui/react/dist/sass/References.scss';
 
 .folderHierarchyGenerator {
   .messages {
@@ -8,12 +8,32 @@
   .container {
     padding-left: 5px;
 
+    .location {
+      font-style: italic;
+      padding-bottom: 15px;
+    }
+
     .labelerror {
       min-height: 32px;
     }
 
     .folderscontainer {
-      min-height: 35px;
+      min-height: 45px;
+
+      .folders-brdcrmb {
+        margin: 0;
+
+        &__button {
+          font-weight: initial;
+          margin-bottom: 10px;
+        }
+
+        .folder-separator {
+          margin-top: 8px;
+          font-size: 12px;
+          color: #605E5C;
+        }
+      }
 
       .dialogContainer {
         max-height: 200px;

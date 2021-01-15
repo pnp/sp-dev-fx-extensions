@@ -1,75 +1,88 @@
 import * as React from 'react';
-import styles from './FolderHierarchyGenerator.module.scss';
-import { IFolderHierarchyGeneratorProps } from './IFolderHierarchyGeneratorProps';
-import { Breadcrumb, TextField, IBreadcrumbItem, DefaultButton, KeyCodes, TooltipHost,
-  MessageBar, MessageBarType, BaseButton, Button, OverflowSet, IBreadCrumbData, Toggle,
-  IButtonProps, Spinner, SpinnerSize, Icon, IContextualMenuProps, ITextFieldProps, Stack,
-  IconButton, Callout, IStackTokens, DirectionalHint, getId, ITextFieldStyleProps,
-  ITextFieldStyles, IOverflowSetItemProps, PrimaryButton } from 'office-ui-fabric-react';
-import { useState, useEffect } from 'react';
-import IFolder from '../../../interfaces/IFolder';
+import { useState, useReducer, useEffect } from 'react';
+import { sp } from '@pnp/sp';
+import "@pnp/sp/webs";
+import "@pnp/sp/folders";
+import { HttpRequestError } from "@pnp/odata";
+import { IFolder } from '@pnp/sp/folders';
+import { ListViewCommandSetContext } from '@microsoft/sp-listview-extensibility';
+import { Dialog, DialogType, DialogFooter, DefaultButton, PrimaryButton,
+  IContextualMenuProps, getId, IStackTokens,
+  KeyCodes, ITextFieldStyleProps, ITextFieldStyles, TooltipHost,
+  Spinner, SpinnerSize, Icon, ITextFieldProps, Stack, IconButton,
+  MessageBar, MessageBarType, Label, TextField, Toggle, Callout, DirectionalHint,
+  OverflowSet, Separator, Coachmark, TeachingBubbleContent
+} from '@fluentui/react';
+import { useBoolean } from '@uifabric/react-hooks';
 import { FolderStatus } from '../../../constants/FolderStatus';
-import FolderButton  from './FolderButton';
+import { TaskState } from '../../../constants/TaskState';
+import ICustomItem from '../../../interfaces/ICustomItem';
 import { Constants } from '../../../constants/Constants';
+import FolderButton from './FolderButton';
+import IProcessFolder from '../../../interfaces/IProcessFolder';
 import * as strings from 'AddFoldersCommandSetStrings';
+import styles from './FolderHierarchyGenerator.module.scss';
 
-interface ICustomItem extends IBreadcrumbItem, IOverflowSetItemProps {
-  status: FolderStatus;
-  hidden: boolean;
-  value: string;
+interface IFolderControllerProps {
+  context: ListViewCommandSetContext;
+  currentLocation: string;
+  commandTitle: string;
+  hideDialog: boolean;
+  closeDialog: () => void;
 }
 
-enum TaskState {
-  none,
-  progress,
-  done
-}
+const FolderController: React.FunctionComponent<IFolderControllerProps> = (props) => {
+  type FolderDispatchAction =
+  | { type: 'add'; value: any }
+  | { type: 'remove'; value: any }
+  | { type: 'replace'; value: any }
+  | { type: 'reset'; }
 
-const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGeneratorProps> = (props) => {
-  let _iconButtonId: string = getId('iconButton');
+  const _errorInfoId: string = getId('errorInfo');
+  const _folderTextFieldId: string = getId('folderTextField');
+  const _localStorageCoachmark: string = 'react-list-addfolders-coachmark';
 
-  const [folderNameRegExInfo, setFolderNameRegExInfo] = useState(false);
+  const [isCoachmarkVisible, { setFalse: hideCoachmark, setTrue: showCoachmark }] = useBoolean(false);
+  const [batchFolders, setBatchFolders] = useState([]);
+  const [folderNameRegExInfo, {setFalse: hideFolderNameRegExInfo, setTrue: showFolderNameRegExInfo}] = useBoolean(false);
   const [folderNameIsValid, setFolderNameIsValid] = useState(true);
-  const [taskStatus, _setTaskStatus] = useState(TaskState.none);
-  const [folders, _setFolders] = useState([] as ICustomItem[]);
-  const [overflowFolders, _setOverflowFolders] = useState([] as IBreadcrumbItem[]);
+  const [taskStatus, setTaskStatus] = useState(TaskState.none);
   const [folderName, setFolderName] = useState('');
   const [folderLengthWarn, setFolderLengthWarn] = useState(false);
   const [parallelFoldersWarn, setParallelFoldersWarn] = useState(false);
-  const [nestedFolders, _setNestedFolders] = useState(true);
-
-  const foldersRef = React.useRef(folders);
-  const overflowFoldersRef = React.useRef(overflowFolders);
-  const taskStatusRef = React.useRef(taskStatus);
-  const nestedFoldersRef = React.useRef(nestedFolders);
-
-  const setFolders = f => {
-    foldersRef.current = f;
-    _setFolders(f);
-  };
-
-  const setOverflowFolders = f => {
-    overflowFoldersRef.current = f;
-    _setOverflowFolders(f);
-  };
-
-  const setTaskStatus = f => {
-    taskStatusRef.current = f;
-    _setTaskStatus(f);
-  };
-
-  const setNestedFolders = f => {
-    nestedFoldersRef.current = f;
-    _setNestedFolders(f);
-  };
+  const [nestedFolders, setNestedFolders] = useState(true);
+  const [folders, dispatchFolders] = useReducer((fldrs, action: FolderDispatchAction) => {
+    switch (action.type) {
+      case "add":
+        return [...fldrs, action.value];
+      case "remove":
+        return fldrs.filter(_ => _ !== action.value);
+      case "replace":
+        return action.value;
+      case "reset":
+        return [];
+      default:
+        throw new Error();
+    }
+  }, [] as ICustomItem[]);
 
   useEffect(() => {
-    let keepLoading:boolean = true;
+    if (!window.localStorage.getItem(_localStorageCoachmark)) {
+      showCoachmark();
+    }
 
-    if (props.batchStatus.length > 0 && foldersRef.current.length > 0) {
-      let _folders = foldersRef.current.slice();
+    return () => {
+      dispatchFolders({type: "reset"});
+    }
+  }, [])
 
-      let lastTask = props.batchStatus[props.batchStatus.length-1];
+  useEffect(() => {
+    let keepLoading: boolean = true;
+
+    if (batchFolders.length > 0 && folders.length > 0) {
+      let _folders = [...folders];
+
+      let lastTask = batchFolders[batchFolders.length - 1];
       let _folderToUpdate = _folders.filter(_fol => _fol.key === lastTask.key)[0];
       let indexFolderToUpdate = _folders.indexOf(_folderToUpdate);
 
@@ -78,7 +91,7 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
         keepLoading = _folders.filter(fol => fol.status === FolderStatus.none).length > 0;
       }
       else {
-        if (nestedFoldersRef.current) {
+        if (nestedFolders) {
           _folders = _folders.map((fol) => {
             if (fol.status === FolderStatus.none) {
               fol.status = FolderStatus.failed;
@@ -95,7 +108,8 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
         }
       }
 
-      setFolders(_folders);
+      dispatchFolders({type: "replace", value: _folders});
+
 
       if (keepLoading) {
         setTaskStatus(TaskState.progress);
@@ -105,7 +119,28 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
       }
     }
 
-  }, [props.batchStatus]);
+  }, [batchFolders]);
+
+  useEffect(() => {
+    setFolderLengthWarn(isTotalUrlTooLong());
+    setParallelFoldersWarn(!nestedFolders && folders.length > Constants.maxParallelFolders);
+
+  }, [nestedFolders, folders]);
+
+  const calloutStackTokens: IStackTokens = {
+    childrenGap: 20,
+    maxWidth: 400
+  };
+
+  const foldersStackTokens: IStackTokens = {
+    childrenGap: 20
+  };
+
+  const btnCreateFoldersDisabled =
+    taskStatus === TaskState.progress
+    || folderLengthWarn
+    || parallelFoldersWarn
+    || folders.length === 0;
 
   const folderMenuProps: IContextualMenuProps = {
     items: [
@@ -117,35 +152,114 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
     ]
   };
 
-  const calloutStackTokens: IStackTokens = {
-    childrenGap: 20,
-    maxWidth: 400
-  };
+  async function _addFolders(foldersToAdd: IProcessFolder[]) {
+    let currentFolderRelativeUrl = props.currentLocation;
+    let batchAddFolders = null;
+    let newFolder: IFolder;
 
-  const foldersStackTokens: IStackTokens = {
-    childrenGap: 20,
-    padding: 10
-  };
+    if (!nestedFolders) {
+      batchAddFolders = sp.web.createBatch();
+    }
 
-  const btnCreateFoldersDisabled =
-    taskStatusRef.current === TaskState.progress
-    || folderLengthWarn
-    || parallelFoldersWarn
-    || foldersRef.current.length === 0;
+    setBatchFolders([] as IProcessFolder[]);
+
+    try {
+      for (let fol of foldersToAdd) {
+        if (nestedFolders) {
+          try {
+            if (currentFolderRelativeUrl) {
+              newFolder = await sp.web.getFolderByServerRelativePath("!@p1::" + currentFolderRelativeUrl).addSubFolderUsingPath(fol.value);
+              currentFolderRelativeUrl = await newFolder.serverRelativeUrl.get();
+              setBatchFolders(oldBatchFolders => [...oldBatchFolders, { key: fol.key, value: fol.value, created: true }]);
+            }
+            else {
+              throw new Error("Current folder URL is empty");
+            }
+          } catch (nestedError) {
+            if(await raiseException(nestedError)) {
+              console.error(`Error during the creation of the folder [${fol.value}]`);
+              setBatchFolders(oldBatchFolders => [...oldBatchFolders, { key: fol.key, value: fol.value, created: false }]);
+
+              throw nestedError;
+            }
+            else {
+              currentFolderRelativeUrl += "/" + fol.value;
+              setBatchFolders(oldBatchFolders => [...oldBatchFolders, { key: fol.key, value: fol.value, created: true }]);
+            }
+          }
+        }
+        else {
+          sp.web.getFolderByServerRelativePath("!@p1::" + currentFolderRelativeUrl).inBatch(batchAddFolders).addSubFolderUsingPath(fol.value)
+          .then(_ => {
+            console.log(`Folder [${fol.value}] created`);
+            setBatchFolders(oldBatchFolders => [...oldBatchFolders, { key: fol.key, value: fol.value, created: true }]);
+          })
+          .catch(async(nestedError: HttpRequestError) => {
+            if(await raiseException(nestedError)) {
+              console.error(`Error during the creation of the folder [${fol.value}]`);
+              setBatchFolders(oldBatchFolders => [...oldBatchFolders, { key: fol.key, value: fol.value, created: false }]);
+
+              throw nestedError;
+            }
+            else {
+              currentFolderRelativeUrl += "/" + fol.value;
+              setBatchFolders(oldBatchFolders => [...oldBatchFolders, { key: fol.key, value: fol.value, created: true }]);
+            }
+          });
+        }
+      }
+
+      if (!nestedFolders) {
+        await batchAddFolders.execute();
+      }
+
+    } catch (globalError) {
+      console.log('Global error');
+      console.log(globalError);
+    }
+  }
+
+  async function raiseException(nestedError: HttpRequestError): Promise<boolean> {
+    let raiseError: boolean = true;
+    return new Promise<boolean>(async(resolve, reject) => {
+      if (nestedError.isHttpRequestError) {
+        try {
+          const errorJson = await (nestedError).response.json();
+          console.error(typeof errorJson["odata.error"] === "object" ? errorJson["odata.error"].message.value : nestedError.message);
+
+          if (nestedError.status === 500) {
+            // Don't raise an error if the folder already exists
+            if (nestedError.message.indexOf('exist') > 0) {
+              raiseError = false;
+            }
+
+            console.error(nestedError.statusText);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+
+      } else {
+        console.log(nestedError.message);
+      }
+
+      resolve(raiseError);
+    })
+  }
 
   function isTotalUrlTooLong() {
     let _foldersPath = '';
     let isUrlTooLong: boolean = false;
 
-    if (nestedFoldersRef.current) {
-      foldersRef.current.forEach((fol, i) => {
-        _foldersPath += fol.value + (i < foldersRef.current.length - 1 ? '/' : '');
+    if (nestedFolders) {
+      folders.forEach((fol, i) => {
+        _foldersPath += fol.value + (i < folders.length - 1 ? '/' : '');
       });
 
       isUrlTooLong = props.context.pageContext.web.absoluteUrl.length + _foldersPath.length >= Constants.maxTotalUrlLength;
     }
     else {
-      isUrlTooLong = foldersRef.current.some((fol) => props.context.pageContext.web.absoluteUrl.length + ('/' + fol.value).length >= Constants.maxTotalUrlLength);
+      isUrlTooLong = folders.some((fol) => props.context.pageContext.web.absoluteUrl.length + ('/' + fol.value).length >= Constants.maxTotalUrlLength);
     }
 
     return isUrlTooLong;
@@ -153,64 +267,52 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
 
   function addFolderToHierarchy() {
     if (folderName.trim() != '' && folderNameIsValid) {
-      let _folders = foldersRef.current.slice();
+      let folderToAdd: ICustomItem = {
+        key: folderName + '_' + Math.random().toString(36).substr(2, 9),
+        text: folderName,
+        onClick: selectFolderClick,
+        status: FolderStatus.none,
+        hidden: false,
+        value: folderName
+      };
 
-      _folders.push(
-        {
-          key: folderName + '_' + Math.random().toString(36).substr(2, 9),
-          text: folderName,
-          onClick: selectFolderClick,
-          status: FolderStatus.none,
-          hidden: false,
-          value: folderName
-        });
-
-      setFolders(_folders);
+      dispatchFolders({type: "add", value: folderToAdd});
       setFolderName('');
-
-      setFolderLengthWarn(isTotalUrlTooLong());
-
-      setParallelFoldersWarn(!nestedFoldersRef.current && _folders.length > Constants.maxParallelFolders);
     }
   }
 
-  function displayedFoldersReduceData(foldersData: IBreadCrumbData) {
-    let folderStatusText = '';
-    let folderToHide = foldersData.renderedItems[0] as ICustomItem;
-    folderToHide.hidden = true;
+  function selectFolderClick(ev: React.MouseEvent<any, MouseEvent>, selectedFolder: ICustomItem) {
+    if (taskStatus !== TaskState.progress) {
+      if (selectedFolder.status === FolderStatus.created) {
+        let newLocation: string = props.currentLocation;
+        if (nestedFolders) {
+          for (let folder of folders) {
+            newLocation += "/" + folder.value;
 
-    switch (folderToHide.status) {
-      case FolderStatus.created:
-        folderStatusText = strings.OverflowSuffixFolderStatusSuccess;
-        break;
+            if (folder.key === selectedFolder.key) {
+              break;
+            }
+          }
+        }
+        else {
+          newLocation += "/" + selectedFolder.value;
+        }
 
-      case FolderStatus.failed:
-        folderStatusText = strings.OverflowSuffixFolderStatusFailure;
-        break;
-    }
+        if ('URLSearchParams' in window) {
+          let searchParams: URLSearchParams = new URLSearchParams(window.location.search)
 
-    if (folderToHide.text.indexOf(folderStatusText) < 0) {
-      folderToHide.text += folderStatusText;
-    }
+          if (searchParams.has('id')) {
+            searchParams.set('id', decodeURIComponent(newLocation));
+          }
+          else {
+            searchParams.append('id', decodeURIComponent(newLocation));
+          }
 
-    foldersData.renderedOverflowItems.push(folderToHide);
-    setOverflowFolders(foldersData.renderedOverflowItems);
-    foldersData.renderedItems = foldersData.renderedItems.slice(1, foldersData.renderedItems.length);
-
-    return foldersData;
-  }
-
-  function selectFolderClick(ev: React.MouseEvent<HTMLElement | BaseButton | Button, MouseEvent>, folderToRemove: IBreadcrumbItem | IOverflowSetItemProps) {
-    if (taskStatusRef.current !== TaskState.progress) {
-      let _folders = foldersRef.current.filter(fol => fol != folderToRemove);
-
-      if (_folders.length === 0 && taskStatusRef.current === TaskState.done) {
-        eraseFoldersClick();
+          window.location.search = searchParams.toString();
+        }
       }
       else {
-        setFolders(_folders);
-        setFolderLengthWarn(isTotalUrlTooLong());
-        setParallelFoldersWarn(!nestedFoldersRef.current && _folders.length > Constants.maxParallelFolders);
+        dispatchFolders({type: "remove", value: selectedFolder});
       }
     }
   }
@@ -237,32 +339,22 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
   function createFoldersClick() {
     setTaskStatus(TaskState.progress);
 
-    let _folds = foldersRef.current.map((fol) => {
-      return {key: fol.key, value: fol.value};
-    }) as IFolder[];
+    let _folds = folders.map((fol) => {
+      return { key: fol.key, value: fol.value };
+    }) as IProcessFolder[];
 
-    props.handleAddFolder(_folds, nestedFoldersRef.current);
+    _addFolders(_folds);
   }
 
   function eraseFoldersClick() {
-    setFolders([]);
+    dispatchFolders({type: "reset"});
     setTaskStatus(TaskState.none);
-
-    if (nestedFoldersRef.current) {
-      setOverflowFolders([]);
-    }
-
-    setFolderLengthWarn(isTotalUrlTooLong());
   }
 
   function retryFailedFoldersClick() {
     setTaskStatus(TaskState.progress);
 
-    let foldersToRetry = foldersRef.current.map((fol) => {
-      return {key: fol.key, value: fol.value};
-    }) as IFolder[];
-
-    let _folders = foldersRef.current.map((fol) => {
+    let _folders = folders.map((fol) => {
       if (fol.status === FolderStatus.failed) {
         fol.status = FolderStatus.none;
       }
@@ -270,22 +362,18 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
       return fol;
     });
 
-    setFolders(_folders);
+    dispatchFolders({type: "replace", value: _folders});
 
-    props.handleAddFolder(foldersToRetry, nestedFoldersRef.current);
-  }
-
-  function errorInfoIconClick() {
-    setFolderNameRegExInfo(true);
-  }
-
-  function errorInfoIconDismiss() {
-    setFolderNameRegExInfo(false);
+    _addFolders(_folders);
   }
 
   function changeFolderCreationDirectionClick(event: React.MouseEvent<HTMLElement>, checked?: boolean) {
     setNestedFolders(checked);
-    setFolderLengthWarn(isTotalUrlTooLong());
+  }
+
+  function teachingBubbleButtonClick() {
+    window.localStorage.setItem(_localStorageCoachmark, 'hide');
+    hideCoachmark();
   }
 
   function getTextFieldStyles(stylesProps: ITextFieldStyleProps): Partial<ITextFieldStyles> {
@@ -295,17 +383,16 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
     return {
       fieldGroup: [
         {
-          borderColor: color,
+          borderColor: stylesProps.disabled ? 'rgb(243, 242, 241)' : color,
           selectors: {
             '&:hover': {
               borderColor: color
-            }
-          }
-        },
-        {
-          selectors: {
+            },
             ':after': {
               borderColor: after
+            },
+            '[disabled]': {
+              backgroundColor: 'rgb(243, 242, 241)'
             }
           }
         }
@@ -313,60 +400,22 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
     };
   }
 
-  function onRenderItem(item: ICustomItem) {
-    let tooltipItem: string = strings.TooltipFolderDelete;
-    let classIcon: string = '';
-    let icon: string = '';
-    let isInProgress: boolean = taskStatusRef.current === TaskState.progress && item.status === FolderStatus.none;
-
-    switch (item.status) {
-      case FolderStatus.created:
-        classIcon=styles.addsuccess;
-        icon='StatusCircleCheckmark';
-        tooltipItem=strings.TooltipFolderStatusSuccess;
-        break;
-
-      case FolderStatus.failed:
-        classIcon=styles.addfailure;
-        icon='StatusCircleErrorX';
-        tooltipItem=strings.TooltipFolderStatusFailure;
-        break;
-    }
-
-    if (isInProgress) {
-      tooltipItem=strings.TooltipFolderStatusProgress;
-    }
-
-    return (
-      <TooltipHost content={tooltipItem}>
-        <FolderButton onClick={(ev) => selectFolderClick(ev, item)} isNested={nestedFoldersRef.current}
-        render={
-          <>
-            {`${item.value} `}
-            {taskStatusRef.current === TaskState.none && item.status === FolderStatus.none &&
-              <div className={styles.blankarea}></div>
-            }
-            {isInProgress &&
-              <Spinner className={styles.addloading} size={SpinnerSize.xSmall} />
-            }
-            {item.status !== FolderStatus.none &&
-              <Icon className={classIcon} iconName={icon} />
-            }
-          </>
-        } />
-      </TooltipHost>
-    );
-  }
-
   function folderNameErrorMessage(txtProps: ITextFieldProps) {
     let matchFolderName: RegExpMatchArray = null;
 
     if (txtProps.value != '') {
+      // usual folder name check
       matchFolderName = txtProps.value.match(Constants.folderNameRegEx);
 
-      // Reject if folder name submitted is "forms" if current location is root folder (library only)
-      if (props.folderLocation.split('/').length === 2 && props.folderLocation.indexOf('lists/') < 0) {
-        matchFolderName = txtProps.value.match(Constants.folderNameRootFolderRegEx);
+      if (matchFolderName === null) {
+        const isLibraryContext = props.currentLocation.split('/').length === 2 && props.currentLocation.indexOf('/Lists/') < 0;
+        const isListContext = props.currentLocation.split('/').length === 3 && props.currentLocation.indexOf('/Lists/') >= 0;
+
+        // Reject if folder name submitted is "forms" if current location is root folder (library only)
+        // Reject if folder name submitted is "attachments" if current location is root folder (list only)
+        matchFolderName =
+          (isLibraryContext && txtProps.value.match(Constants.folderNameRootLibraryRegEx) || isListContext && txtProps.value.match(Constants.folderNameRootListRegEx))
+          || null;
       }
     }
 
@@ -379,10 +428,10 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
           <div>
             {matchFolderName !== null &&
               <IconButton
-                id={_iconButtonId}
+                id={_errorInfoId}
                 iconProps={{ iconName: 'Error' }}
                 title="Error"
-                onClick={errorInfoIconClick}
+                onClick={showFolderNameRegExInfo}
                 className={styles.foldererror}
               />
             }
@@ -391,135 +440,241 @@ const FolderHierarchyGenerator: React.FunctionComponent<IFolderHierarchyGenerato
       </>);
   }
 
-  function renderOverFlow(buttonProps: IButtonProps) {
-    let hiddenFolders: ICustomItem[] = foldersRef.current.filter(fol => fol.hidden);
-    let totalHiddenFoldersHandled: number = hiddenFolders.filter(fol => fol.status !== FolderStatus.none).length;
-    let totalHiddenFoldersSuccess: number = hiddenFolders.filter(fol => fol.status === FolderStatus.created).length;
-    let totalHiddenFoldersFailed: number = hiddenFolders.filter(fol => fol.status === FolderStatus.failed).length;
-    let overflowText: string = '...';
+  function renderCustomBreadcrumb(item: ICustomItem, itemIndex: number) {
+    let tooltipItem: string = strings.TooltipFolderDelete;
+    let classIcon: string = '';
+    let icon: string = '';
+    let isInProgress: boolean = taskStatus === TaskState.progress && item.status === FolderStatus.none;
 
-    let uploadOccurred: boolean = taskStatusRef.current !== TaskState.none && (totalHiddenFoldersSuccess > 0 || totalHiddenFoldersFailed > 0);
+    switch (item.status) {
+      case FolderStatus.created:
+        classIcon = styles.addsuccess;
+        icon = 'StatusCircleCheckmark';
+        tooltipItem = strings.TooltipFolderStatusSuccess;
+        break;
 
-    if(taskStatusRef.current === TaskState.progress && totalHiddenFoldersHandled !== hiddenFolders.length
-    || uploadOccurred) {
-      overflowText =`${totalHiddenFoldersSuccess}/${hiddenFolders.length}`;
+      case FolderStatus.failed:
+        classIcon = styles.addfailure;
+        icon = 'StatusCircleErrorX';
+        tooltipItem = strings.TooltipFolderStatusFailure;
+        break;
     }
 
-    let nbFoldersOverflowText = 0;
-
-    if (totalHiddenFoldersFailed > 0) {
-      nbFoldersOverflowText = totalHiddenFoldersSuccess;
+    if (isInProgress) {
+      tooltipItem = strings.TooltipFolderStatusProgress;
     }
-    else if (totalHiddenFoldersHandled === hiddenFolders.length) {
-      nbFoldersOverflowText = hiddenFolders.length;
-    }
-    else {
-      nbFoldersOverflowText = overflowFoldersRef.current.length;
-    }
-
-    let tooltipOverflowText: string = `${nbFoldersOverflowText} ${(taskStatusRef.current !== TaskState.done && !uploadOccurred ?
-    strings.TooltipOverflowSuffixFoldersToCreate:
-    strings.TooltipOverflowSuffixFoldersCreated)}`;
 
     return (
-      <div>
-        <TooltipHost content={`${tooltipOverflowText}`}>
-          <DefaultButton className={styles.overflow}>
-            {`${overflowText} `}
-            {taskStatusRef.current === TaskState.progress && totalHiddenFoldersHandled !== hiddenFolders.length &&
-              <Spinner className={styles.addoverflowloading} size={SpinnerSize.xSmall} />
-            }
-            {totalHiddenFoldersSuccess === hiddenFolders.length &&
-              <Icon className={styles.addoverflowsuccess} iconName='StatusCircleCheckmark' />
-            }
-            {taskStatusRef.current === TaskState.done && hiddenFolders.filter(fol => fol.status === FolderStatus.failed).length > 0 &&
-              <Icon className={styles.addoverflowwarning} iconName='StatusCircleExclamation' />
-            }
-          </DefaultButton>
+      <>
+        <TooltipHost content={tooltipItem}>
+          <FolderButton onClick={(ev) => selectFolderClick(ev, item)} isNested={nestedFolders}
+            render={
+              <>
+                {`${item.value} `}
+                {taskStatus === TaskState.none && item.status === FolderStatus.none &&
+                  <div className={styles.blankarea}></div>
+                }
+                {isInProgress &&
+                  <Spinner className={styles.addloading} size={SpinnerSize.xSmall} />
+                }
+                {item.status !== FolderStatus.none &&
+                  <Icon className={classIcon} iconName={icon} />
+                }
+              </>
+            } />
         </TooltipHost>
-      </div>
+        {itemIndex !== folders.length - 1 &&
+          <Icon iconName="ChevronRight" className={styles['folder-separator']} />
+        }
+      </>
     );
   }
 
-  return (
-    <div className={styles.folderHierarchyGenerator}>
-      <div className={styles.messages}>
-        {folderLengthWarn &&
-          <MessageBar messageBarType={MessageBarType.severeWarning}>{`${strings.MessageBarTooManyCharacters} ${Constants.maxTotalUrlLength}`}</MessageBar>
-        }
-        {parallelFoldersWarn &&
-          <MessageBar messageBarType={MessageBarType.severeWarning}>{`${strings.MessageBarMaxFoldersBatch} ${Constants.maxParallelFolders}`}</MessageBar>
-        }
-      </div>
-      <div className={styles.container}>
-        <Stack horizontal verticalAlign="end" tokens={foldersStackTokens}>
-          <TooltipHost content={strings.TextFieldDescription}>
-            <TextField
-              label={strings.TextFieldLabel}
-              // description={strings.TextFieldDescription}
-              styles={getTextFieldStyles}
-              onRenderLabel={folderNameErrorMessage}
-              value={folderName}
-              onKeyDown={folderTextFieldKeyDown}
-              onChange={folderTextFieldChange}
-              disabled={taskStatusRef.current === TaskState.progress}
-              autoComplete='off' />
-          </TooltipHost>
-          {taskStatusRef.current === TaskState.done &&
-            <PrimaryButton
-              split
-              menuProps={
-                foldersRef.current.filter(fol => fol.status === FolderStatus.failed).length > 0 && folderMenuProps
+  function onRenderItem(item: ICustomItem) {
+    let tooltipItem: string = strings.TooltipFolderDelete;
+    let classIcon: string = '';
+    let icon: string = '';
+    let isInProgress: boolean = taskStatus === TaskState.progress && item.status === FolderStatus.none;
+
+    switch (item.status) {
+      case FolderStatus.created:
+        classIcon = styles.addsuccess;
+        icon = 'StatusCircleCheckmark';
+        tooltipItem = strings.TooltipFolderStatusSuccess;
+        break;
+
+      case FolderStatus.failed:
+        classIcon = styles.addfailure;
+        icon = 'StatusCircleErrorX';
+        tooltipItem = strings.TooltipFolderStatusFailure;
+        break;
+    }
+
+    if (isInProgress) {
+      tooltipItem = strings.TooltipFolderStatusProgress;
+    }
+
+    return (
+      <TooltipHost content={tooltipItem}>
+        <FolderButton onClick={(ev) => selectFolderClick(ev, item)} isNested={nestedFolders}
+          render={
+            <>
+              {`${item.value} `}
+              {taskStatus === TaskState.none && item.status === FolderStatus.none &&
+                <div className={styles.blankarea}></div>
               }
-              text={strings.ButtonClearSelection}
-              onClick={eraseFoldersClick} />
+              {isInProgress &&
+                <Spinner className={styles.addloading} size={SpinnerSize.xSmall} />
+              }
+              {item.status !== FolderStatus.none &&
+                <Icon className={classIcon} iconName={icon} />
+              }
+            </>
+          } />
+      </TooltipHost>
+    );
+  }
+
+  function closeDialog(ev?: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    if (taskStatus === TaskState.progress) {
+      // Prevent pop-up from closing during the creation process
+      return;
+    }
+
+    setFolderName('');
+    setNestedFolders(true);
+    eraseFoldersClick();
+    props.closeDialog();
+  }
+
+  return (
+    <Dialog
+      hidden={props.hideDialog}
+      minWidth={700}
+      dialogContentProps={{
+        type: DialogType.normal,
+        title: props.commandTitle
+      }}
+
+      modalProps={{
+        isBlocking: true,
+      }}
+      onDismiss={closeDialog}>
+      <div className={styles.folderHierarchyGenerator}>
+        <div className={styles.messages}>
+          {folderLengthWarn &&
+            <MessageBar messageBarType={MessageBarType.severeWarning}>{`${strings.MessageBarTooManyCharacters} ${Constants.maxTotalUrlLength}`}</MessageBar>
           }
-          {(taskStatusRef.current === TaskState.none || taskStatusRef.current === TaskState.progress) &&
-            <PrimaryButton
-              text={strings.ButtonCreateFolders}
-              onClick={createFoldersClick}
-              disabled={btnCreateFoldersDisabled} />
-          }
-        </Stack>
-        <Toggle
-          defaultChecked={nestedFoldersRef.current}
-          inlineLabel
-          label={strings.ToggleSelectFoldersCreationMode}
-          onChange={changeFolderCreationDirectionClick}
-          disabled={taskStatusRef.current === TaskState.progress} />
-        {folderNameRegExInfo &&
-          <Callout
-            target={'#' + _iconButtonId}
-            setInitialFocus={true}
-            onDismiss={errorInfoIconDismiss}
-            role="alertdialog"
-            directionalHint={DirectionalHint.bottomCenter}>
-            <Stack tokens={calloutStackTokens} horizontalAlign='start' styles={{ root: { padding: 20 } }}>
-              <span>{strings.CalloutBannedCharacters} <b>&laquo;</b> <b>*</b> <b>:</b> <b>&lt;</b> <b>&gt;</b> <b>?</b> <b>/</b> <b>\</b> <b>|</b></span>
-              <span>{strings.CalloutBannedWords} <b>con</b>, <b>PRN</b>, <b>aux</b>, <b>nul</b>, <b>com0 - COM9</b>, <b>lpt0 - LPT9</b>, <b>_vti_</b></span>
-              <span>{strings.CalloutBannedPrefixCharacters} <b>~</b> <b>$</b></span>
-              <span>"<b>forms</b>" {strings.CalloutBannedFormsWordAtRoot}</span>
-              <span>{strings.CalloutBannedCharactersUrl} <a target='_blank' href='https://support.office.com/en-us/article/invalid-file-names-and-file-types-in-onedrive-onedrive-for-business-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa'>{strings.CalloutBannedCharactersUrlLink}</a></span>
-              <DefaultButton onClick={errorInfoIconDismiss} text={strings.ButtonGlobalClose} />
-            </Stack>
-          </Callout>
-        }
-        <div className={styles.folderscontainer}>
-          {nestedFoldersRef.current ?
-            <Breadcrumb items={foldersRef.current} onRenderOverflowIcon={renderOverFlow} onRenderItem={onRenderItem} onReduceData={displayedFoldersReduceData} />
-            :
-            <div className={styles.dialogContainer}>
-              <OverflowSet
-                vertical
-                items={foldersRef.current}
-                onRenderItem={onRenderItem}
-                onRenderOverflowButton={null} />
-            </div>
+          {parallelFoldersWarn &&
+            <MessageBar messageBarType={MessageBarType.severeWarning}>{`${strings.MessageBarMaxFoldersBatch} ${Constants.maxParallelFolders}`}</MessageBar>
           }
         </div>
+        <div className={styles.container}>
+          <Label className={styles.location}>{`${strings.LabelCurrentLocation} ${props.currentLocation.replace('/Lists', '')}`}</Label>
+          <Stack horizontal verticalAlign="end" tokens={foldersStackTokens}>
+            <TooltipHost content={strings.TextFieldDescription}>
+              <TextField
+                id={_folderTextFieldId}
+                label={strings.TextFieldLabel}
+                styles={getTextFieldStyles}
+                onRenderLabel={folderNameErrorMessage}
+                value={folderName}
+                onKeyDown={folderTextFieldKeyDown}
+                onChange={folderTextFieldChange}
+                disabled={taskStatus === TaskState.progress || taskStatus === TaskState.done && folders.filter(fol => fol.status === FolderStatus.failed).length === 0}
+                autoComplete='off'
+                maxLength={255} />
+            </TooltipHost>
+            <TooltipHost
+              content={strings.TooltipFolderAdd}>
+              <IconButton onClick={addFolderToHierarchy} iconProps={{iconName: "NewFolder"}} disabled={!folderNameIsValid || folderName == ''} />
+            </TooltipHost>
+          </Stack>
+          <Toggle
+            defaultChecked={nestedFolders}
+            inlineLabel
+            label={strings.ToggleSelectFoldersCreationMode}
+            onChange={changeFolderCreationDirectionClick}
+            disabled={taskStatus !== TaskState.none} />
+          {folderNameRegExInfo &&
+            <Callout
+              target={'#' + _errorInfoId}
+              setInitialFocus={true}
+              onDismiss={hideFolderNameRegExInfo}
+              role="alertdialog"
+              directionalHint={DirectionalHint.bottomCenter}>
+              <Stack tokens={calloutStackTokens} horizontalAlign='start' styles={{ root: { padding: 20 } }}>
+                <span>{strings.CalloutBannedCharacters} <b>&laquo;</b> <b>*</b> <b>:</b> <b>&lt;</b> <b>&gt;</b> <b>?</b> <b>/</b> <b>\</b> <b>|</b></span>
+                <span>{strings.CalloutBannedWords} <b>con</b>, <b>PRN</b>, <b>aux</b>, <b>nul</b>, <b>com0 - COM9</b>, <b>lpt0 - LPT9</b>, <b>_vti_</b></span>
+                <span>{strings.CalloutBannedPrefixCharacters} <b>~</b> <b>$</b></span>
+                <span>"<b>forms</b>" {strings.CalloutBannedFormsWordAtRoot}</span>
+                <span>"<b>attachments</b>" {strings.CalloutBannedAttachmentsWordAtRoot}</span>
+                <span>{strings.CalloutBannedCharactersUrlInfo} <a target='_blank' href={strings.CalloutBannedCharactersUrl}>{strings.CalloutBannedCharactersUrlLink}</a></span>
+                <DefaultButton onClick={hideFolderNameRegExInfo} text={strings.ButtonGlobalClose} />
+              </Stack>
+            </Callout>
+          }
+          {isCoachmarkVisible && (
+            <Coachmark
+              target={'#' + _folderTextFieldId}
+              positioningContainerProps={{
+                directionalHint: DirectionalHint.topRightEdge,
+                doNotLayer: false,
+              }}
+            >
+              <TeachingBubbleContent
+                headline={strings.TeachingBubbleHeadline}
+                hasCloseButton
+                primaryButtonProps={{
+                  text: strings.TeachingBubblePrimaryButton,
+                  onClick: teachingBubbleButtonClick
+                }}
+                onDismiss={hideCoachmark}
+              >
+                {strings.CoachmarkTutorial} <Icon iconName="NewFolder" />
+              </TeachingBubbleContent>
+            </Coachmark>
+          )}
+          <Separator />
+          <div className={styles.folderscontainer}>
+            {nestedFolders ?
+              <Stack horizontal wrap className={styles['folders-brdcrmb']}>
+                {folders.map((item, itemIndex) => {
+                  return renderCustomBreadcrumb(item, itemIndex);
+                })}
+              </Stack>
+              :
+              <div className={styles.dialogContainer}>
+                <OverflowSet
+                  vertical
+                  items={folders}
+                  onRenderItem={onRenderItem}
+                  onRenderOverflowButton={null} />
+              </div>
+            }
+          </div>
+        </div>
       </div>
-    </div>
+      <DialogFooter>
+        {taskStatus === TaskState.done &&
+          <PrimaryButton
+            split
+            menuProps={
+              folders.filter(fol => fol.status === FolderStatus.failed).length > 0 && folderMenuProps
+            }
+            text={strings.ButtonClearSelection}
+            onClick={eraseFoldersClick} />
+        }
+        {taskStatus !== TaskState.done &&
+          <PrimaryButton
+            text={strings.ButtonCreateFolders}
+            onClick={createFoldersClick}
+            disabled={btnCreateFoldersDisabled} />
+        }
+        <DefaultButton onClick={closeDialog} text={strings.ButtonGlobalClose} />
+      </DialogFooter>
+    </Dialog>
   );
 };
 
-export default FolderHierarchyGenerator;
+export default FolderController;
