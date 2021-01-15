@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="AddFolders"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="5c2a88cb-baf3-4e91-bfc2-4c6add795219"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+    <CustomAction
+        Title="AddFolders"
+        RegistrationId="101"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="5c2a88cb-baf3-4e91-bfc2-4c6add795219"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>

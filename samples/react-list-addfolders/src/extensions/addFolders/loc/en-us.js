@@ -1,0 +1,31 @@
+define([], function() {
+  return {
+    "CommandAddFolders": "Add folders",
+    "ButtonGlobalClose": "Close",
+    "FolderMenuRetry": "Retry folders Creation",
+    "TooltipFolderAdd": "Add folder",
+    "TooltipFolderDelete": "Delete this folder",
+    "TooltipFolderStatusSuccess": "Folder created - click here to reach this folder",
+    "TooltipFolderStatusProgress": "Folder creation in progress",
+    "TooltipFolderStatusFailure": "Folder not created - check browser console",
+    "MessageBarTooManyCharacters": "Total URL length too long. Maximum length of the URL: ",
+    "MessageBarMaxFoldersBatch": "Maximum folders to create at once: ",
+    "LabelCurrentLocation": "Current location:",
+    "TextFieldLabel": "Folder name",
+    "TextFieldDescription": "Type a folder name then press \"Tab\" or \"Enter\" key",
+    "CoachmarkTutorial": "Type a folder name then press \"Tab\" or \"Enter\" key, or click on the icon ",
+    "TeachingBubbleHeadline": "How does it works?",
+    "TeachingBubblePrimaryButton": "Got it, don't remind me!",
+    "ButtonClearSelection": "Clear selection",
+    "ButtonCreateFolders": "Create folders",
+    "ToggleSelectFoldersCreationMode": "Nested folders",
+    "CalloutBannedCharacters": "Following characters aren't allowed:",
+    "CalloutBannedWords": "Following words aren't allowed:",
+    "CalloutBannedPrefixCharacters": "Folder's name can't start with",
+    "CalloutBannedFormsWordAtRoot": "isn't supported when the folder is at the root level for a library",
+    "CalloutBannedAttachmentsWordAtRoot": "isn't supported when the folder is at the root level for a list",
+    "CalloutBannedCharactersUrl": "https://support.office.com/en-us/article/invalid-file-names-and-file-types-in-onedrive-onedrive-for-business-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa",
+    "CalloutBannedCharactersUrlInfo": "More information:",
+    "CalloutBannedCharactersUrlLink": "here"
+  }
+});
