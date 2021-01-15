@@ -1,4 +1,4 @@
-import { IBreadcrumbItem, IOverflowSetItemProps } from "office-ui-fabric-react";
+import { IBreadcrumbItem, IOverflowSetItemProps } from "@fluentui/react";
 import { FolderStatus } from "../constants/FolderStatus";
 
 export default interface ICustomItem extends IBreadcrumbItem, IOverflowSetItemProps {

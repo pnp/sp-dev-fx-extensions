@@ -1,8 +1,8 @@
 
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import FolderHierarchyGenerator from './FolderHierarchyGenerator';
 import { ListViewCommandSetContext } from '@microsoft/sp-listview-extensibility';
-import { useState, useEffect } from 'react';
 
 export interface IAddFoldersDialogProps {
   context: ListViewCommandSetContext;
@@ -25,14 +25,12 @@ const AddFoldersDialog: React.FunctionComponent<IAddFoldersDialogProps> = (props
   }, [props.displayDialog]);
 
   return (
-    <div>
-      <FolderHierarchyGenerator
-        context={props.context}
-        currentLocation={props.location}
-        commandTitle={props.commandTitle}
-        hideDialog={dialogState}
-        closeDialog={props.closeDialog} />
-    </div>
+    <FolderHierarchyGenerator
+      context={props.context}
+      currentLocation={props.location}
+      commandTitle={props.commandTitle}
+      hideDialog={dialogState}
+      closeDialog={props.closeDialog} />
   );
 };
 

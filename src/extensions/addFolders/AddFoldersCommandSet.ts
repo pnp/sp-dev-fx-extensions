@@ -1,14 +1,14 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { override } from '@microsoft/decorators';
-import { Log, UrlQueryParameterCollection } from '@microsoft/sp-core-library';
+import { Log } from '@microsoft/sp-core-library';
 import {
   BaseListViewCommandSet,
   Command,
   IListViewCommandSetExecuteEventParameters,
   IListViewCommandSetListViewUpdatedParameters
 } from '@microsoft/sp-listview-extensibility';
-import { sp } from '@pnp/pnpjs';
+import { sp } from '@pnp/sp/presets/all';
 import { IListInfo } from '@pnp/sp/lists';
 import { SPPermission } from '@microsoft/sp-page-context';
 import * as strings from 'AddFoldersCommandSetStrings';
@@ -19,6 +19,7 @@ const LOG_SOURCE: string = 'AddFoldersCommandSet';
 export default class AddFoldersCommandSet extends BaseListViewCommandSet<{}> {
   private dialogContainer: HTMLDivElement = null;
   private commandtitle: string = '';
+  private displayCommand: boolean = false;
 
   @override
   public async onInit(): Promise<void> {
@@ -42,13 +43,8 @@ export default class AddFoldersCommandSet extends BaseListViewCommandSet<{}> {
           });
 
           this.dialogContainer = document.body.appendChild(document.createElement("div"));
+          this.displayCommand = true;
         }
-        else {
-          commandAddFolders.visible = false;
-        }
-      }
-      else {
-        commandAddFolders.visible = false;
       }
     }
 
@@ -59,11 +55,11 @@ export default class AddFoldersCommandSet extends BaseListViewCommandSet<{}> {
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
     switch (event.itemId) {
       case 'ADDFOLDERS':
-        var queryParameters = new UrlQueryParameterCollection(window.location.href);
-        var currentFolderPath = queryParameters.getValue("Id") || queryParameters.getValue("RootFolder");
-        var folderUrl;
+        var queryParameters = new URLSearchParams(location.href);
+        var currentFolderPath = queryParameters.get("id") || queryParameters.get("Id") || queryParameters.get("RootFolder");
+        var folderUrl: string;
 
-        if (queryParameters.getValue("Id")) {
+        if (queryParameters.has("Id") || queryParameters.has("id")) {
           folderUrl = decodeURIComponent(currentFolderPath);
         }
         else {
@@ -81,7 +77,7 @@ export default class AddFoldersCommandSet extends BaseListViewCommandSet<{}> {
   public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
     const commandAddFolders: Command = this.tryGetCommand('ADDFOLDERS');
     if (commandAddFolders) {
-      commandAddFolders.visible = (event.selectedRows.length === 0);
+      commandAddFolders.visible = event.selectedRows.length === 0 && this.displayCommand;
     }
   }
 
