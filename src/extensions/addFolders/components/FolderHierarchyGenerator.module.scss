@@ -40,23 +40,6 @@
         overflow-y: scroll;
       }
 
-      .overflow {
-        margin-right: -4px;
-        margin-left: -4px;
-
-        .addoverflowloading {
-          @extend .addloading;
-        }
-
-        .addoverflowsuccess {
-          @extend .addsuccess;
-        }
-
-        .addoverflowwarning {
-          color: orange;
-        }
-      }
-
       .addsuccess {
         color: #00a984;
       }
