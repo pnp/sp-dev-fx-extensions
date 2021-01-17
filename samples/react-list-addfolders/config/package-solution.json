@@ -3,7 +3,7 @@
   "solution": {
     "name": "react-list-addfolders",
     "id": "b3bc279e-8a5a-4c8c-93cb-ea487e0bcaca",
-    "version": "1.2.0.0",
+    "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [
@@ -20,7 +20,7 @@
       }
     ],
     "developer": {
-      "name": "Michaël Maillot",
+      "name": "Contoso",
       "privacyUrl": "https://contoso.com/privacy",
       "termsOfUseUrl": "https://contoso.com/terms-of-use",
       "websiteUrl": "https://contoso.com/my-app",

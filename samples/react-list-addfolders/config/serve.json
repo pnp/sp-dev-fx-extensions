@@ -4,15 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://onepointdev365.sharepoint.com/testBib/Forms/AllItems.aspx",
-      "customActions": {
-        "5c2a88cb-baf3-4e91-bfc2-4c6add795219": {
-          "location": "ClientSideExtension.ListViewCommandSet.CommandBar"
-        }
-      }
-    },
-    "addFolders": {
-      "pageUrl": "https://onepointdev365.sharepoint.com/testBib/Forms/AllItems.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/library/Forms/AllItems.aspx",
       "customActions": {
         "5c2a88cb-baf3-4e91-bfc2-4c6add795219": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar"

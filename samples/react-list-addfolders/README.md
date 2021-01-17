@@ -1,26 +1,66 @@
-## reac-list-addfolders
+# react-list-addfolders
 
-This is where you include your WebPart documentation.
+## Summary
 
-### Building the code
+Sample SharePoint Framework list view command set extension to create folders that can be all at the current location (parallel) or nested (one after another).
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
+![preview](assets/preview.gif)
+
+## Used SharePoint Framework Version
+
+![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11-green.svg)
+
+## Applies to
+
+* [SharePoint Framework Extensions](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/overview-extensions)
+
+## Solution
+
+Solution|Author(s)
+--------|---------
+react-list-addfolders | Michaël Maillot ([@michaelmaillot](https://twitter.com/michaelmaillot))
+
+## Version history
+
+Version|Date|Comments
+-------|----|--------
+1.0|January 17, 2020|Initial release
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+---
+
+## Minimal Path to Awesome
+
+- Clone this repository
+- Update the `pageUrl` properties in the **config/serve.json** file
+  - The `pageUrl` should be a modern page
+  - This property is only used during development in conjunction with the `gulp serve` command
+- In the command line navigate to the `react-list-addfolders` folder and run:
+  - `npm install`
+  - `gulp serve`
+- If you have `spfx-fast-serve` already installed, run `npm run serve` instead of `gulp serve`
+
+## Features
+
+This extension illustrates the following concepts:
+
+- Adding folders nested or not (batching process if not)
+- Working on both libraries and lists
+- Checking permissions and enable folder creation option
+- Checking folder name regarding SharePoint / OneDrive specs
+- Including a disposable Coachmark for guidance
+- Available in English and French
+- Developing the sample using React Hooks, Fluent UI and [spfx-fast-serve](https://github.com/s-KaiNet/spfx-fast-serve)
+
+## Debug URL for testing
+
+Here's a debug URL for testing around this sample.
+
+```
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5c2a88cb-baf3-4e91-bfc2-4c6add795219":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
-This package produces the following:
-
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
-
-### Build options
-
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-list-addfolders" />
