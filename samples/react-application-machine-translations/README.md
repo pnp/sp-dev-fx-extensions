@@ -63,5 +63,13 @@ Here's a debug URL for testing around this sample.
  - Replace \_TRANSLATOR_API_KEY_ with your API key
  - Update the supportedLanguages list with languages that you want to expose. A full list of supported languages can be found [here](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support)
 
+ ## Package and deploy
+  - Update the following properties in the `elements.xml` and `ClientSideInstance.xml` file under `sharepoint/assets` (See debug url for more info):
+    - supportedLanguages
+    - translatorApiKey
+  - Run `gulp bundle --ship`
+  - Run `gulp package-solution --ship`
+  - Upload the `machine-translation-extension.sppkg` file under `sharepoint/solution` to the app catalog of your tenant
+
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-machine-translations" />
