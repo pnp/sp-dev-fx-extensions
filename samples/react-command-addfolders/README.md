@@ -1,4 +1,4 @@
-# react-list-addfolders
+# Add Folders Command
 
 ## Summary
 
@@ -6,9 +6,16 @@ Sample SharePoint Framework list view command set extension to create folders th
 
 ![preview](assets/preview.gif)
 
-## Used SharePoint Framework Version
+## Compatibility
 
-![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11-green.svg)
+![SPFx 1.11](https://img.shields.io/badge/spfx-1.11.0-green.svg)
+
+![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg)
+
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg)
+
+![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-yellow.svg)
+
 
 ## Applies to
 
@@ -38,7 +45,7 @@ Version|Date|Comments
 - Update the `pageUrl` properties in the **config/serve.json** file
   - The `pageUrl` should be a modern page
   - This property is only used during development in conjunction with the `gulp serve` command
-- In the command line navigate to the `react-list-addfolders` folder and run:
+- In the command line navigate to the `react-command-addfolders` folder and run:
   - `npm install`
   - `gulp serve`
 - If you have `spfx-fast-serve` already installed, run `npm run serve` instead of `gulp serve`
@@ -63,4 +70,4 @@ Here's a debug URL for testing around this sample.
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5c2a88cb-baf3-4e91-bfc2-4c6add795219":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-list-addfolders" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-addfolders" />

@@ -1,7 +1,7 @@
 {
   "@microsoft/generator-sharepoint": {
     "version": "1.11.0",
-    "libraryName": "reac-list-addfolders",
+    "libraryName": "react-command-addfolders",
     "libraryId": "b3bc279e-8a5a-4c8c-93cb-ea487e0bcaca",
     "environment": "spo",
     "packageManager": "npm",

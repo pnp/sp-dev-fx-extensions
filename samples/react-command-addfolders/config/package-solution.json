@@ -28,6 +28,6 @@
     }
   },
   "paths": {
-    "zippedPackage": "solution/reac-list-addfolders.sppkg"
+    "zippedPackage": "solution/react-command-addfolders.sppkg"
   }
 }

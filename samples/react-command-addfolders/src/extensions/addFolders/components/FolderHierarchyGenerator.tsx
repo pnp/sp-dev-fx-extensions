@@ -36,7 +36,7 @@ const FolderController: React.FunctionComponent<IFolderControllerProps> = (props
   | { type: 'add'; value: any }
   | { type: 'remove'; value: any }
   | { type: 'replace'; value: any }
-  | { type: 'reset'; }
+  | { type: 'reset'; };
 
   const _errorInfoId: string = getId('errorInfo');
   const _folderTextFieldId: string = getId('folderTextField');
@@ -73,8 +73,8 @@ const FolderController: React.FunctionComponent<IFolderControllerProps> = (props
 
     return () => {
       dispatchFolders({type: "reset"});
-    }
-  }, [])
+    };
+  }, []);
 
   useEffect(() => {
     let keepLoading: boolean = true;
@@ -244,7 +244,7 @@ const FolderController: React.FunctionComponent<IFolderControllerProps> = (props
       }
 
       resolve(raiseError);
-    })
+    });
   }
 
   function isTotalUrlTooLong() {
@@ -299,7 +299,7 @@ const FolderController: React.FunctionComponent<IFolderControllerProps> = (props
         }
 
         if ('URLSearchParams' in window) {
-          let searchParams: URLSearchParams = new URLSearchParams(window.location.search)
+          let searchParams: URLSearchParams = new URLSearchParams(window.location.search);
 
           if (searchParams.has('id')) {
             searchParams.set('id', decodeURIComponent(newLocation));

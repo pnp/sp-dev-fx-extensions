@@ -2,6 +2,6 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/deploy-azure-storage.schema.json",
   "workingDir": "./temp/deploy/",
   "account": "<!-- STORAGE ACCOUNT NAME -->",
-  "container": "reac-list-addfolders",
+  "container": "react-command-addfolders",
   "accessKey": "<!-- ACCESS KEY -->"
 }
