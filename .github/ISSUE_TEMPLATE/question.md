@@ -35,5 +35,9 @@ DELETE EVERYTHING ABOVE AFTER READING - THANKS!
 > _(DELETE THIS PARAGRAPH AFTER READING)_
 
 
-## Question (the more details, the better)
+## Question
+
+> The more details, the better
+>
+> _(DELETE THIS PARAGRAPH AFTER READING)_
 
