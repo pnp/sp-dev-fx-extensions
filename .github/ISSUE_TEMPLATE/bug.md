@@ -25,13 +25,25 @@ DELETE EVERYTHING ABOVE AFTER READING - THANKS!
 
 > Because of the way this repository is configured, samples authors do not get a notification when you create an issue. *It makes it less likely for you to get your issue resolved or to get help*. For the section above **@mention any author of the sample**. Authors' GitHub handle can be found on the main sample documentation page, under the "solution" section. Use the `PREVIEW` tab at the top right to preview the rendering before submitting your issue.
 > 
+> Issues without an author will be closed automatically 
+>
 > _(DELETE THIS PARAGRAPH AFTER READING)_
 
 ## Expected or Desired Behavior
 
+> What did you expect the sample to do 
+>
+> Issues without a desired behavior will be closed automatically 
+>
+> _(DELETE THIS PARAGRAPH AFTER READING)_
 
 ## Observed Behavior
 
+> What did the sample do instead?
+>
+> Issues without the observed behavior will be closed automatically 
+>
+> _(DELETE THIS PARAGRAPH AFTER READING)_
 
 ## Steps to Reproduce
 
@@ -41,6 +53,10 @@ Steps to reproduce the behavior:
 3. Scroll down to '....'
 4. See error
 
+> Issues without steps to reproduce will be closed automatically 
+>
+> _(DELETE THIS PARAGRAPH AFTER READING)_
+
 # Environment Details (*Development & Target environment*)
 
 - **OS**: [e.g. Windows 10 | MacOS 10.15.x]
@@ -49,5 +65,10 @@ Steps to reproduce the behavior:
 - **Browser(s)**: [e.g. Chrome v79 | Safari v22 | FireFox v31 | IE v11 | Edge | Chromium Edge v79]
 - **Tooling**: [e.g. VS Code | SPFx v1.10.0 | Visual Studio 2019]
 - **Additional details**: *The more context you can provide, the easier it is (and therefore quicker) to help.*
+
+> Issues without environment details will be closed automatically 
+>
+> _(DELETE THIS PARAGRAPH AFTER READING)_
+
 
 ## Additional context
