@@ -1,7 +1,7 @@
 ---
 name: "❓ Question"
 about: Ask a question about one of our extension samples
-title: ''
+title: '[Web Part Name]: [Question Title]'
 labels: type:question
 assignees: ''
 
@@ -19,8 +19,9 @@ Thank you for asking a question! Use the sections below to submit a question ONL
 
 DELETE EVERYTHING ABOVE AFTER READING - THANKS!
 
-## Sample (which sample are you talking about)
-
+## Sample 
+> Which sample are you talking about?
+>
 > Questions without a sample name will be rejected automatically 
 >
 > _(DELETE THIS PARAGRAPH AFTER READING)_
