@@ -25,7 +25,7 @@ Short summary on functionality and used technologies.
 ![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg)
 ![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
-![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg)
+![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
 > Don't worry if you're unsure about the compatibility matrix above. We'll verify it when we approve the PR
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
@@ -40,7 +40,7 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
  
-> Any special pre-requisites? Include any lists, permissions, or whatever else needs to be done for this extension to work.
+> Any special pre-requisites? Include any lists, permissions, or whatever else needs to be done for this extension to work. 
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
 ## Solution
