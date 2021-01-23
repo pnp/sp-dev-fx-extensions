@@ -1,8 +1,8 @@
 ---
 name: "\U0001F4A1 Enhancement"
 about: Suggest an enhancement to this repository or one of the samples
-title: ''
-labels: ''
+title: '[Web Part Name]: [Enhancement Title]'
+labels: 'type:enhancement'
 assignees: ''
 
 ---
@@ -27,15 +27,20 @@ assignees: ''
 
 > Because of the way this repository is configured, samples authors do not get a notification when you create an issue. *It makes it less likely for you to get your issue resolved or to get help*. For the section above **@mention any author of the sample**. Authors' GitHub handle can be found on the main sample documentation page, under the "solution" section. Use the `PREVIEW` tab at the top right to preview the rendering before submitting your issue.
 > 
+> Issues without an author will be closed automatically 
+>
 > _(DELETE THIS PARAGRAPH AFTER READING)_
 
 ## Expected or Desired Behavior
 
 > _Please describe thoroughly the enhancement, how it can be achieved, and the expected benefit. For sample requests, please explain what you'd like the sample to demonstrate._
 > 
+> Issues without expected behavior will be closed automatically 
+>
 > _(DELETE THIS PARAGRAPH AFTER READING)_
 
 ## Is your feature request related to a problem? Please describe.
+
 > _A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]_
 > 
 > _(DELETE THIS PARAGRAPH AFTER READING)_
@@ -43,6 +48,8 @@ assignees: ''
 ## Describe the solution you'd like
 > _A clear and concise description of what you want to happen._
 > 
+> Issues without a described solution will be closed automatically 
+>
 > _(DELETE THIS PARAGRAPH AFTER READING)_
 
 
