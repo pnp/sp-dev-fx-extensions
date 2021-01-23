@@ -1,8 +1,8 @@
 ---
 name: "\U0001F41E Bug"
 about: Report an anomaly or unexpected behavior with a sample from this repository.
-title: ''
-labels: ''
+title: '[Sample Name]: [Issue Title]'
+labels: 'type:bug'
 assignees: ''
 
 ---
