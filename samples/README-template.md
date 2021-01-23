@@ -22,13 +22,10 @@ Short summary on functionality and used technologies.
 
 ## Compatibility
 
-![SPFx 1.11](https://img.shields.io/badge/spfx-1.11.0-green.svg)
-
+![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg)
 ![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg)
-
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
-
-![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-yellow.svg)
+![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg)
 
 > Don't worry if you're unsure about the compatibility matrix above. We'll verify it when we approve the PR
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
