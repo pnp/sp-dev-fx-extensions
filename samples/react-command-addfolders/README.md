@@ -31,7 +31,7 @@ react-list-addfolders | Michaël Maillot ([@michaelmaillot](https://twitter.com/
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 17, 2020|Initial release
+1.0|January 17, 2021|Initial release
 
 ## Disclaimer
 
