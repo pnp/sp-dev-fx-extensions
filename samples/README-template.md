@@ -1,7 +1,18 @@
 # title of the sample
 
+> Use the human-friendly title here. No need to repeat the words `React`, `SPFx`, `extension` or `SharePoint` unless it is absolutely necessary. The name of the sample should already provide that information.
+> GOOD 👍:
+>     Kitten Video Injection
+> BAD 👎:
+>     react-command-kittenvideoinjection
+>     SPFx Kitten Videos Command Extension for SharePoint using React
+>
+> DELETE THIS PARAGRAPH BEFORE SUBMITTING
+
 ## Summary
 Short summary on functionality and used technologies.
+
+![picture of the extension in action](assets/preview.png)
 
 > Please provide a high-quality screenshot of your extension below. It should be stored in a folder called `assets`. 
 > If possible, use a resolution of 1920x1080. 
@@ -9,21 +20,31 @@ Short summary on functionality and used technologies.
 > You can add as many screen shots as you'd like to help users understand your extension without having to download it and install it.
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
-![picture of the extension in action](assets/preview.png)
+## Compatibility
 
-## Used SharePoint Framework Version 
-![drop](https://img.shields.io/badge/version-GA-green.svg)
+![SPFx 1.11](https://img.shields.io/badge/spfx-1.11.0-green.svg)
+
+![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg)
+
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg)
+
+![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-yellow.svg)
+
+> Don't worry if you're unsure about the compatibility matrix above. We'll verify it when we approve the PR
+> DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
 ## Applies to
 
-* [SharePoint Framework](https://dev.office.com/sharepoint)
-* [Office 365 tenant](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)
+* [SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
+* [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
 > Update accordingly as needed.
+> DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
 ## Prerequisites
  
-> Any special pre-requisites?
+> Any special pre-requisites? Include any lists, permissions, or whatever else needs to be done for this extension to work.
+> DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
 ## Solution
 
@@ -35,8 +56,8 @@ folder name | Author details
 
 Version|Date|Comments
 -------|----|--------
-1.1|August 10, 2018|Update comment
-1.0|June 29, 2018|Initial release
+1.1|August 10, 2021|Update comment
+1.0|June 29, 2021|Initial release
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -51,8 +72,10 @@ Version|Date|Comments
   - `gulp serve`
 
 > Include any additional steps as needed.
+> DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
 ## Features
+
 Description of the extension with possible additional details than in short summary.
 This extension illustrates the following concepts:
 
@@ -61,12 +84,13 @@ This extension illustrates the following concepts:
 - topic 3
 
 ## Debug URL for testing
-Here's a debug URL for testing around this sample. **Updated based on your manifest id for easy testing of the sample**.
+Here's a debug URL for testing around this sample. 
 
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"7c5a85c1-8b1e-4370-8198-642908faee60":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
 ```
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+> Update based on your manifest id for easy testing of the sample
+> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance ❤.
+> DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
