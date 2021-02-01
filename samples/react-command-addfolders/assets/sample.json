@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/pnp/samples/v1.0/metadata-schema.json",
+  "name": "pnp-sp-dev-spfx-extensions-react-command-addfolders",
+  "version": "1.4.2.0",
+  "source": "pnp",
+  "title": "Add Folders Command",
+  "shortDescription": "Sample SharePoint Framework list view command set extension to create folders that can be all at the current location (parallel) or nested (one after another).",
+  "longDescription":
+    [
+      "Sample SharePoint Framework list view command set extension to create folders that can be all at the current location (parallel) or nested (one after another)."
+    ],
+  "products": [
+    "SharePoint", "Office"
+  ],
+  "categories": [
+    "SPFXCOMMAND"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value":"React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value":"1.11"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-addfolders/assets/preview.gif",
+      "alt": "The command in action, adding multiple folders to a library"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "michaelmaillot",
+      "company": "onepoint",
+      "pictureUrl": "https://avatars.githubusercontent.com/u/44271458?s=460&u=a3ad0e7efcf0478031cfe6e0f0871fb93736769b&v=4"
+    }
+  ]
+}

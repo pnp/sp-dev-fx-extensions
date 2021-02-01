@@ -25,7 +25,7 @@ Sample SharePoint Framework list view command set extension to create folders th
 
 Solution|Author(s)
 --------|---------
-react-list-addfolders | Michaël Maillot ([@michaelmaillot](https://twitter.com/michaelmaillot))
+react-list-addfolders | Michaël Maillot ([@michael_maillot](https://twitter.com/michael_maillot))
 
 ## Version history
 
