@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-item-History",
+  "source": "pnp",
+  "title": "Item History",
+  "shortDescription": "This listview command is used to show the past versions of the selected list item in a grid.",
+  "longDescription": [
+    "This listview command is used to show the past versions of the selected list item in a grid."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.4.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-item-History/Capture.PNG",
+      "alt": "Item History"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "russgove",
+      "pictureUrl": "https://github.com/russgove.png"
+    }
+  ],
+  "references": []
+}

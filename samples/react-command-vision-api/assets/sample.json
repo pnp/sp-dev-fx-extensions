@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-command-vision-api",
+  "source": "pnp",
+  "title": "Image Metadata from Cognitive Services Vision API List View Command Set",
+  "shortDescription": "Custom Command Set that gets metadata information from MS Cognitive Services Vision API for the selected Image",
+  "longDescription": [
+    "Custom Command Set that gets metadata information from MS Cognitive Services Vision API for the selected Image"
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.9.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-vision-api/assets/react-command-vision-api.png",
+      "alt": "Image Metadata from Cognitive Services Vision API List View Command Set"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "luismanez",
+      "pictureUrl": "https://github.com/luismanez.png"
+    }
+  ],
+  "references": []
+}

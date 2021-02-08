@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-application-sites-hubsite-switcher",
+  "source": "pnp",
+  "title": "Sites in Hub site switcher",
+  "shortDescription": "This sample shows how to get the sites that are part of a Hub Site, and renders a drop down to jump directly into a site. The customiser only renders if the site is a Hub site.",
+  "longDescription": [
+    "This sample shows how to get the sites that are part of a Hub Site, and renders a drop down to jump directly into a site. The customiser only renders if the site is a Hub site."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.4.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-sites-hubsite-switcher/assets/react-application-sites-hubsite-switcher.png",
+      "alt": "Sites in Hub site switcher"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "luismanez",
+      "pictureUrl": "https://github.com/luismanez.png"
+    }
+  ],
+  "references": []
+}

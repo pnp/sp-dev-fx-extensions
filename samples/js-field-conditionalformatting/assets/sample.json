@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-js-field-conditionalformatting",
+  "source": "pnp",
+  "title": "Conditional formatting SharePoint Framework field customizer",
+  "shortDescription": "Sample SharePoint Framework field customizer that applies Excel-like conditional formatting to numeric fields based on their values.",
+  "longDescription": [
+    "Sample SharePoint Framework field customizer that applies Excel-like conditional formatting to numeric fields based on their values."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "Javascript"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.1.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-field-conditionalformatting/assets/conditionalformatting-preview.png",
+      "alt": "Conditional formatting SharePoint Framework field customizer"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "waldekmastykarz",
+      "pictureUrl": "https://github.com/waldekmastykarz.png"
+    }
+  ],
+  "references": []
+}

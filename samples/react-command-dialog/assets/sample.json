@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-command-dialog",
+  "source": "pnp",
+  "title": "Custom Dialog Sample with Command View Set",
+  "shortDescription": "This sample shows how to create Custom Dialogs using @microsoft/sp-dialog package in the context of Command View Set. You can use also custom dialogs with client-side web parts or with any SharePoint Framework component types.",
+  "longDescription": [
+    "This sample shows how to create Custom Dialogs using @microsoft/sp-dialog package in the context of Command View Set. You can use also custom dialogs with client-side web parts or with any SharePoint Framework component types."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.2"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-dialog/assets/screenshot.png",
+      "alt": "Custom Dialog Sample with Command View Set"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "msekkappan",
+      "pictureUrl": "https://github.com/msekkappan.png"
+    }
+  ],
+  "references": []
+}

@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-application-duetasks",
+  "source": "pnp",
+  "title": "Overdue Tasks Application Customizer",
+  "shortDescription": "The sample illustrates how to display a warning message that current user has overdue tasks.",
+  "longDescription": [
+    "The sample illustrates how to display a warning message that current user has overdue tasks."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.4"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-duetasks/assets/app-customizer.png",
+      "alt": "Overdue Tasks Application Customizer"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "AJIXuMuK",
+      "pictureUrl": "https://github.com/AJIXuMuK.png"
+    }
+  ],
+  "references": []
+}

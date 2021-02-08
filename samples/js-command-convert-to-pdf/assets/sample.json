@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-js-command-convert-to-pdf",
+  "source": "pnp",
+  "title": "Convert documents to PDF using Azure function",
+  "shortDescription": "Sample SPFx list view command set extension that converts the selected documents to PDF using Microsoft Graph.",
+  "longDescription": [
+    "Sample SPFx list view command set extension that converts the selected documents to PDF using Microsoft Graph."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "Javascript"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.6"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-command-convert-to-pdf/demo/convert-docs-to-pdf.gif",
+      "alt": "Convert documents to PDF using Azure function"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "anoopt",
+      "pictureUrl": "https://github.com/anoopt.png"
+    }
+  ],
+  "references": []
+}

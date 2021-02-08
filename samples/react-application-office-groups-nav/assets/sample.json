@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-application-office-groups-nav",
+  "source": "pnp",
+  "title": "Modern Team Sites (Office Groups) Navigation",
+  "shortDescription": "The sample illustrates how to use AadHttpClient to request Groups information from Microsoft Graph",
+  "longDescription": [
+    "The sample illustrates how to use AadHttpClient to request Groups information from Microsoft Graph"
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.4.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-office-groups-nav/assets/office-groups-nav.png",
+      "alt": "Modern Team Sites (Office Groups) Navigation"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "AJIXuMuK",
+      "pictureUrl": "https://github.com/AJIXuMuK.png"
+    }
+  ],
+  "references": []
+}

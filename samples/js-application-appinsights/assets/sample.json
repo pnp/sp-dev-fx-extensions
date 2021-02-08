@@ -1,0 +1,44 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-js-application-appinsights",
+  "source": "pnp",
+  "title": "Injecting Javascript with Sharepoint Framework Extensions - Azure Application Insights",
+  "shortDescription": "Sample SharePoint Framework extension project injecting Javascript code to enable Azure App Insights monitoring and statistics.",
+  "longDescription": [
+    "Sample SharePoint Framework extension project injecting Javascript code to enable Azure App Insights monitoring and statistics."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "Javascript"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.9.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-application-appinsights/assets/appinsights-1.png",
+      "alt": "Injecting Javascript with Sharepoint Framework Extensions - Azure Application Insights"
+    }
+  ],
+  "authors": [
+    {
+      "pictureUrl": "https://github.com/.png"
+    },
+    {
+      "gitHubAccount": "levalencia",
+      "pictureUrl": "https://github.com/levalencia.png"
+    },
+    {
+      "pictureUrl": "https://github.com/.png"
+    }
+  ],
+  "references": []
+}

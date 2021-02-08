@@ -1,0 +1,37 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-send-document",
+  "source": "pnp",
+  "title": "Send Document With E-Mail",
+  "shortDescription": "This sample shows how to create Custom Dialogs using @microsoft/sp-dialog package in the context of Command View Set and send selected document with e-mail.",
+  "longDescription": [
+    "This sample shows how to create Custom Dialogs using @microsoft/sp-dialog package in the context of Command View Set and send selected document with e-mail."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.7"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-send-document/assets/preview.PNG",
+      "alt": "Send Document With E-Mail"
+    }
+  ],
+  "authors": [
+    {
+      "pictureUrl": "https://github.com/.png"
+    }
+  ],
+  "references": []
+}

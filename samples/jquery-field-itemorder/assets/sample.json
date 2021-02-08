@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-jquery-field-itemorder",
+  "source": "pnp",
+  "title": "Item Order",
+  "shortDescription": "Sample SharePoint Framework field customizer extension that enables reordering of list items through intuitive drag and drop directly in your list view. Demonstrates the use of jQuery and jQuery UI, custom property JSON, and PnPJS Batching.",
+  "longDescription": [
+    "Sample SharePoint Framework field customizer extension that enables reordering of list items through intuitive drag and drop directly in your list view. Demonstrates the use of jQuery and jQuery UI, custom property JSON, and PnPJS Batching."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "jQuery"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.4.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/jquery-field-itemorder/assets/spfxItemOrder-Animation.gif",
+      "alt": "Item Order"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "thechriskent",
+      "pictureUrl": "https://github.com/thechriskent.png"
+    }
+  ],
+  "references": []
+}

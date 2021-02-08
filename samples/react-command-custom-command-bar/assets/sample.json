@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-command-custom-command-bar",
+  "source": "pnp",
+  "title": "Custom Command Bar Command Set Customizer",
+  "shortDescription": "The sample illustrates how to display custom Command Bar when Command Set Button is pressed.",
+  "longDescription": [
+    "The sample illustrates how to display custom Command Bar when Command Set Button is pressed."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.2.0"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-custom-command-bar/assets/command-bar.png",
+      "alt": "Custom Command Bar Command Set Customizer"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "AJIXuMuK",
+      "pictureUrl": "https://github.com/AJIXuMuK.png"
+    }
+  ],
+  "references": []
+}

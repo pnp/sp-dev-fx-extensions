@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-application-injectcss",
+  "source": "pnp",
+  "title": "CSS Injection",
+  "shortDescription": "This sample shows how to inject a custom Cascading Style Sheet (CSS) on modern pages.",
+  "longDescription": [
+    "This sample shows how to inject a custom Cascading Style Sheet (CSS) on modern pages."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.8"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-injectcss/assets/sampleresults.png",
+      "alt": "CSS Injection"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "hugoabernier",
+      "pictureUrl": "https://github.com/hugoabernier.png"
+    }
+  ],
+  "references": []
+}

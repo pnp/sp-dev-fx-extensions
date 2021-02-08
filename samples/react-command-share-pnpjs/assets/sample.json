@@ -1,0 +1,37 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-command-share-pnpjs",
+  "source": "pnp",
+  "title": "Multishare Command Extension with PnPJs",
+  "shortDescription": "The sample is an custom action only active when multiple items are selected.",
+  "longDescription": [
+    "The sample is an custom action only active when multiple items are selected."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.6"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-share-pnpjs/assets/share.png",
+      "alt": "Multishare Command Extension with PnPJs"
+    }
+  ],
+  "authors": [
+    {
+      "pictureUrl": "https://github.com/.png"
+    }
+  ],
+  "references": []
+}

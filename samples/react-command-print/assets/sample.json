@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-command-print",
+  "source": "pnp",
+  "title": "Print List Item Command View Set",
+  "shortDescription": "This sample shows how you can print list items using different templates, site admin can add, edit or remove templates and users can print items based on those templates.",
+  "longDescription": [
+    "This sample shows how you can print list items using different templates, site admin can add, edit or remove templates and users can print items based on those templates."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.7"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-print/assets/screenshot.gif",
+      "alt": "Print List Item Command View Set"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "AhmadiRamin",
+      "pictureUrl": "https://github.com/AhmadiRamin.png"
+    }
+  ],
+  "references": []
+}
