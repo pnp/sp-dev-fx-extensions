@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-command-file-size-viewer",
+  "source": "pnp",
+  "title": "File Size Viewer sample with Command View Set",
+  "shortDescription": "This sample shows how to create Command View Set working with single and multiple files selection. Once selected some files, it will show file sizes representation using a React D3 TreeMap component. This sample also shows how to integrate D3.js third party components within SharePoint Framework.",
+  "longDescription": [
+    "This sample shows how to create Command View Set working with single and multiple files selection. Once selected some files, it will show file sizes representation using a React D3 TreeMap component. This sample also shows how to integrate D3.js third party components within SharePoint Framework."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-file-size-viewer/assets/FileSizeViewer.gif",
+      "alt": "File Size Viewer sample with Command View Set"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "jquinzamora",
+      "pictureUrl": "https://github.com/jquinzamora.png"
+    }
+  ],
+  "references": []
+}

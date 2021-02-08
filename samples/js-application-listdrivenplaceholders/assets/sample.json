@@ -1,0 +1,37 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-js-application-listdrivenplaceholders",
+  "source": "pnp",
+  "title": "List-Driven Placeholders",
+  "shortDescription": "This solution deploys a list that allows end users to manage content that will appear in placeholders, via a SharePoint Framework application customizer extension.",
+  "longDescription": [
+    "This solution deploys a list that allows end users to manage content that will appear in placeholders, via a SharePoint Framework application customizer extension."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "Javascript"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.2.0"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-application-listdrivenplaceholders/assets/placeholders.jpg",
+      "alt": "List-Driven Placeholders"
+    }
+  ],
+  "authors": [
+    {
+      "pictureUrl": "https://github.com/.png"
+    }
+  ],
+  "references": []
+}

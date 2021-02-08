@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-js-command-lock-item",
+  "source": "pnp",
+  "title": "Lock Item Command Set Customizer",
+  "shortDescription": "The sample illustrates the ability to lock/unlock selected item/document for the current user. The lock is implemented as item\u0027s unique permissions set to Full Control for current user only. The lock is available only for items that inherit permissions from the parent. Items with unique permissions can\u0027t be locked as we can\u0027t unlock them correctly later on. All other permissions are deleted. The Command is available only for users who have \u0022Manage Permissions\u0022 permissions for the list/document library.",
+  "longDescription": [
+    "The sample illustrates the ability to lock/unlock selected item/document for the current user. The lock is implemented as item\u0027s unique permissions set to Full Control for current user only. The lock is available only for items that inherit permissions from the parent. Items with unique permissions can\u0027t be locked as we can\u0027t unlock them correctly later on. All other permissions are deleted. The Command is available only for users who have \u0022Manage Permissions\u0022 permissions for the list/document library."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "Javascript"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.4"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-command-lock-item/assets/lock-item.png",
+      "alt": "Lock Item Command Set Customizer"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "AJIXuMuK",
+      "pictureUrl": "https://github.com/AJIXuMuK.png"
+    }
+  ],
+  "references": []
+}

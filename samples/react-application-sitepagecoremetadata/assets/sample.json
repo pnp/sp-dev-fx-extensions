@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-application-sitepagecoremetadata",
+  "source": "pnp",
+  "title": "Tenant Global NavBar",
+  "shortDescription": "Sample SharePoint Framework application customizer to display the core metadata of a Site Page such as Author,Editor, Created date and Modified date in the footer of the page.",
+  "longDescription": [
+    "Sample SharePoint Framework application customizer to display the core metadata of a Site Page such as Author,Editor, Created date and Modified date in the footer of the page."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.5"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-sitepagecoremetadata/assets/SitePageMetadataExtension.png",
+      "alt": "Tenant Global NavBar"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "vipulkelkar",
+      "pictureUrl": "https://github.com/vipulkelkar.png"
+    }
+  ],
+  "references": []
+}

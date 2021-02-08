@@ -1,0 +1,37 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-field-user-permission",
+  "source": "pnp",
+  "title": "Displaying the current user permission with PNPJs",
+  "shortDescription": "This sample shows how to use PNPJs to get the current users permission on the specific list item. Then a corresponding icon and text is shown in the field. For this sample I\u0027m using simplified roles, so the code is is only checking for edit or read permissions.",
+  "longDescription": [
+    "This sample shows how to use PNPJs to get the current users permission on the specific list item. Then a corresponding icon and text is shown in the field. For this sample I\u0027m using simplified roles, so the code is is only checking for edit or read permissions."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.6"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-field-user-permission/assets/react-field-user-permission.png",
+      "alt": "Displaying the current user permission with PNPJs"
+    }
+  ],
+  "authors": [
+    {
+      "pictureUrl": "https://github.com/.png"
+    }
+  ],
+  "references": []
+}

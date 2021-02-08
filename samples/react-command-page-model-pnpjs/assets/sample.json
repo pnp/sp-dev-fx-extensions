@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-command-page-model-pnpjs",
+  "source": "pnp",
+  "title": "Modern Page Model with PnP/PnPjs",
+  "shortDescription": "A SPFx extension using @pnp/sp that allow creating Modern Pages based on prefilled modern pages marked as \u0022Page Model\u0022, inside the Site Pages Library, and code defined pages. Users can select a Modern page as Model just setting a custom property page named \u0022Is Model\u0022 to \u0022Yes\u0022. People often need to create periodically editorial pages with the same composition, sections structure and webpart configuration, in order to give users the same users experience between pages with different contents but with the same communicative purpose",
+  "longDescription": [
+    "A SPFx extension using @pnp/sp that allow creating Modern Pages based on prefilled modern pages marked as \u0022Page Model\u0022, inside the Site Pages Library, and code defined pages. Users can select a Modern page as Model just setting a custom property page named \u0022Is Model\u0022 to \u0022Yes\u0022. People often need to create periodically editorial pages with the same composition, sections structure and webpart configuration, in order to give users the same users experience between pages with different contents but with the same communicative purpose"
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.7.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-page-model-pnpjs/assets/use-Modern-Page-Template-extension.gif",
+      "alt": "Modern Page Model with PnP/PnPjs"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "fredupstair",
+      "pictureUrl": "https://github.com/fredupstair.png"
+    }
+  ],
+  "references": []
+}

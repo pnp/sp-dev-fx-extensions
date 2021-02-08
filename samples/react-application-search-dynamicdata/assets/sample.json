@@ -1,0 +1,37 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-application-search-dynamicdata",
+  "source": "pnp",
+  "title": "Connecting SPFx Extensions with Web Parts using Dynamic Data",
+  "shortDescription": "This example shows how to connect Spfx extensions with Spfx Webparts using Dynamic Data Feature",
+  "longDescription": [
+    "This example shows how to connect Spfx extensions with Spfx Webparts using Dynamic Data Feature"
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.5.0"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-search-dynamicdata/assets/samplepnpExtensions.gif",
+      "alt": "Connecting SPFx Extensions with Web Parts using Dynamic Data"
+    }
+  ],
+  "authors": [
+    {
+      "pictureUrl": "https://github.com/.png"
+    }
+  ],
+  "references": []
+}

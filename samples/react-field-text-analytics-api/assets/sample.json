@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-field-text-analytics-api",
+  "source": "pnp",
+  "title": "Field Customiser sample using Text Analytics API",
+  "shortDescription": "This sample shows how to use the Text Analytics API (Cognitive Services) to render a sentiment icon based on the text of a field in the List. The language is also auto-detected using the API, so it works with text based in any language supported by the API.",
+  "longDescription": [
+    "This sample shows how to use the Text Analytics API (Cognitive Services) to render a sentiment icon based on the text of a field in the List. The language is also auto-detected using the API, so it works with text based in any language supported by the API."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.4.0"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-field-text-analytics-api/assets/react-field-text-analytics-api.png",
+      "alt": "Field Customiser sample using Text Analytics API"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "luismanez",
+      "pictureUrl": "https://github.com/luismanez.png"
+    }
+  ],
+  "references": []
+}

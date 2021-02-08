@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-js-field-weather",
+  "source": "pnp",
+  "title": "Weather SharePoint Framework field customizer",
+  "shortDescription": "Sample SharePoint Framework field customizer showing weather conditions for the given location.",
+  "longDescription": [
+    "Sample SharePoint Framework field customizer showing weather conditions for the given location."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "Javascript"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.4"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-field-weather/assets/weather-preview.png",
+      "alt": "Weather SharePoint Framework field customizer"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "waldekmastykarz",
+      "pictureUrl": "https://github.com/waldekmastykarz.png"
+    }
+  ],
+  "references": []
+}

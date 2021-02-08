@@ -1,0 +1,37 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-application-festivals",
+  "source": "pnp",
+  "title": "Festivals Extension",
+  "shortDescription": "Sample SharePoint Framework application customizer adds a festival animation to the pages. At the moment this extension has capability of display 2 festivals (Christmas and Diwali) however, more can be added very easily.",
+  "longDescription": [
+    "Sample SharePoint Framework application customizer adds a festival animation to the pages. At the moment this extension has capability of display 2 festivals (Christmas and Diwali) however, more can be added very easily."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.10.0"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-festivals/demo/festivals.gif",
+      "alt": "Festivals Extension"
+    }
+  ],
+  "authors": [
+    {
+      "pictureUrl": "https://github.com/.png"
+    }
+  ],
+  "references": []
+}

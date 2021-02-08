@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-app-announcements",
+  "source": "pnp",
+  "title": "Announcements SharePoint Framework application customizer",
+  "shortDescription": "Sample SharePoint Framework application customizer showing urgent organizational announcements.",
+  "longDescription": [
+    "Sample SharePoint Framework application customizer showing urgent organizational announcements."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.1.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-app-announcements/assets/announcements-preview.png",
+      "alt": "Announcements SharePoint Framework application customizer"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "waldekmastykarz",
+      "pictureUrl": "https://github.com/waldekmastykarz.png"
+    }
+  ],
+  "references": []
+}

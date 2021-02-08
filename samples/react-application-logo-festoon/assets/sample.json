@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-application-logo-festoon",
+  "source": "pnp",
+  "title": "Logo Festoon",
+  "shortDescription": "This simple SPFx extension can be used to decorate you SPO site logo with a festoon image of your choice. Keep users engaged by adding a personal touch to your site.",
+  "longDescription": [
+    "This simple SPFx extension can be used to decorate you SPO site logo with a festoon image of your choice. Keep users engaged by adding a personal touch to your site."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.8.0"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-logo-festoon/assets/festoon-shot.png",
+      "alt": "Logo Festoon"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "rabwill",
+      "pictureUrl": "https://github.com/rabwill.png"
+    }
+  ],
+  "references": []
+}

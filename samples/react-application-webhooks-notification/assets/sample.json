@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-application-webhooks-notification",
+  "source": "pnp",
+  "title": "Webhooks Notification Application Customizer",
+  "shortDescription": "Sample SharePoint Framework application customizer showing how to leverage the SharePoint webhooks capabilities, in order to show toast notifications. The libraries used by this solution are Socket.io, sp pnp js, moment.",
+  "longDescription": [
+    "Sample SharePoint Framework application customizer showing how to leverage the SharePoint webhooks capabilities, in order to show toast notifications. The libraries used by this solution are Socket.io, sp pnp js, moment."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.3"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-webhooks-notification/assets/spfx-react-webhooks-notification.gif",
+      "alt": "Webhooks Notification Application Customizer"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "giuleon",
+      "pictureUrl": "https://github.com/giuleon.png"
+    }
+  ],
+  "references": []
+}

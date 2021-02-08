@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-menu-footer-classic-modern",
+  "source": "pnp",
+  "title": "Menu Footer Classic Modern",
+  "shortDescription": "This is a sample showing how to create custom headers and footers that work on classic pages using JavaScript injection, and on modern pages using a SharePoint Framework Application Customizer extension.",
+  "longDescription": [
+    "This is a sample showing how to create custom headers and footers that work on classic pages using JavaScript injection, and on modern pages using a SharePoint Framework Application Customizer extension."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.4.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-menu-footer-classic-modern/Documentation/images/ClassicFullHeaderFooter.png",
+      "alt": "Menu Footer Classic Modern"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "BobGerman",
+      "pictureUrl": "https://github.com/BobGerman.png"
+    }
+  ],
+  "references": []
+}

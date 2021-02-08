@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-command-directions",
+  "source": "pnp",
+  "title": "Directions SharePoint Framework list view command set",
+  "shortDescription": "Sample SharePoint Framework list view command set showing travel directions to the given location using Google Maps.",
+  "longDescription": [
+    "Sample SharePoint Framework list view command set showing travel directions to the given location using Google Maps."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.1.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-directions/assets/directions-preview.png",
+      "alt": "Directions SharePoint Framework list view command set"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "waldekmastykarz",
+      "pictureUrl": "https://github.com/waldekmastykarz.png"
+    }
+  ],
+  "references": []
+}

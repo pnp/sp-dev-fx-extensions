@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-msal-bot",
+  "source": "pnp",
+  "title": "MSAL Bot Extension",
+  "shortDescription": "This sample demonstrates how to integrate a bot within a SharePoint Online portal supporting authentication to access Azure AD protected APIs like Microsoft graph resources. Behind the scenes, this sample implements the OAuth2 implicit grant flow using the MSAL JavaScript library.",
+  "longDescription": [
+    "This sample demonstrates how to integrate a bot within a SharePoint Online portal supporting authentication to access Azure AD protected APIs like Microsoft graph resources. Behind the scenes, this sample implements the OAuth2 implicit grant flow using the MSAL JavaScript library."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.5.1"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-msal-bot/images/react-msal-bot.gif",
+      "alt": "MSAL Bot Extension"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "FranckyC",
+      "pictureUrl": "https://github.com/FranckyC.png"
+    }
+  ],
+  "references": []
+}

@@ -1,0 +1,38 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-aadtokenprovider-bot",
+  "source": "pnp",
+  "title": "AAD Token Provider Bot Extension",
+  "shortDescription": "This sample demonstrates how to integrate a bot within a SharePoint Online portal supporting authentication to access Azure AD protected APIs like Microsoft graph resources. Behind the scenes, this sample uses the AADTokenProvider utility class provided with SPFx \u003E 1.6.0 to seamlessly get an access token for the current user and send it to the bot. This way, the user is not prompted anymore for login to interact with the bot, improving overall experience.",
+  "longDescription": [
+    "This sample demonstrates how to integrate a bot within a SharePoint Online portal supporting authentication to access Azure AD protected APIs like Microsoft graph resources. Behind the scenes, this sample uses the AADTokenProvider utility class provided with SPFx \u003E 1.6.0 to seamlessly get an access token for the current user and send it to the bot. This way, the user is not prompted anymore for login to interact with the bot, improving overall experience."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.6.0"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-aadtokenprovider-bot/images/react-aadtokenprovider-bot.gif",
+      "alt": "AAD Token Provider Bot Extension"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "FranckyC",
+      "pictureUrl": "https://github.com/FranckyC.png"
+    }
+  ],
+  "references": []
+}
