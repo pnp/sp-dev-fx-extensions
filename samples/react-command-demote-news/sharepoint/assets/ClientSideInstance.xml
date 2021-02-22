@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="DemoteNews"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ListTemplateId="119"
+        Properties="{}"
+        ComponentId="24cdd3e2-07e4-4a93-becf-5f39071a8497" />
+</Elements>

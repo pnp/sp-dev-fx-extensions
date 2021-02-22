@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="DemoteNewsApplicationCustomizer"
+        RegistrationId="119"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        Rights="AddListItems"
+        ClientSideComponentId="24cdd3e2-07e4-4a93-becf-5f39071a8497"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>
