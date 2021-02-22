@@ -25,7 +25,7 @@ Sample SharePoint Framework list view command set extension to demote a previous
 
 Solution|Author(s)
 --------|---------
-react-command-demote-news| Mikael Svenson ([@mikaelsvenson](https://twitter.com/mikaelsvenson))
+pnp-demote-news| Mikael Svenson ([@mikaelsvenson](https://twitter.com/mikaelsvenson))
 
 ## Version history
 
