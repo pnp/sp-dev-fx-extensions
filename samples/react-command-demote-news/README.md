@@ -57,7 +57,7 @@ This extension illustrates the following concepts:
 ## Debug URL for testing
 
 Here's a debug URL for testing around this sample.
-//https://techmikael.sharepoint.com/teams/comm3/SitePages/Forms/ByAuthor.aspx?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%2224cdd3e2-07e4-4a93-becf-5f39071a8497%22%3A%7B%22location%22%3A%22ClientSideExtension.ListViewCommandSet.CommandBar%22%2C%22properties%22%3A%7B%7D%7D%7D
+
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"24cdd3e2-07e4-4a93-becf-5f39071a8497":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{}}
 ```
