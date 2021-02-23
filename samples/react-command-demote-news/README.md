@@ -4,16 +4,13 @@
 
 Sample SharePoint Framework list view command set extension to demote a previously promoted News page.
 
-![preview](preview.gif)
+![preview](assets/preview.gif)
 
 ## Compatibility
 
-![SPFx 1.11](https://img.shields.io/badge/spfx-1.11.0-green.svg)
-
-![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg)
-
-![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg)
-
+![SPFx 1.11](https://img.shields.io/badge/spfx-1.11.0-green.svg) 
+![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg) 
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg) 
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-yellow.svg)
 
 
