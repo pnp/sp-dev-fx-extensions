@@ -1,0 +1,13 @@
+{
+    "@microsoft/generator-sharepoint": {
+        "isCreatingSolution": true,
+        "environment": "spo",
+        "version": "1.11.0",
+        "libraryName": "pnp-demote-news",
+        "libraryId": "460dd6b9-adb8-4a70-8e7e-bd0107cecea4",
+        "packageManager": "npm",
+        "isDomainIsolated": false,
+        "componentType": "extension",
+        "extensionType": "ListViewCommandSet"
+    }
+}
