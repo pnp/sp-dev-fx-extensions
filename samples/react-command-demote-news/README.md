@@ -31,7 +31,7 @@ pnp-demote-news| Mikael Svenson ([@mikaelsvenson](https://twitter.com/mikaelsven
 
 Version|Date|Comments
 -------|----|--------
-1.0|_February_ 22, 2021|Initial release
+1.0| February 22, 2021|Initial release
 
 ## Disclaimer
 
@@ -54,7 +54,7 @@ Version|Date|Comments
 
 This extension illustrates the following concepts:
 
-- How to demote a previously promoted News oage
+- How to demote a previously promoted News page
 - Available in English
 
 ## Debug URL for testing
