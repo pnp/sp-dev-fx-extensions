@@ -6,6 +6,7 @@ import {
     IListViewCommandSetListViewUpdatedParameters,
     IListViewCommandSetExecuteEventParameters
 } from '@microsoft/sp-listview-extensibility';
+import { SPPermission } from '@microsoft/sp-page-context';
 import { Dialog } from '@microsoft/sp-dialog';
 import { sp } from "@pnp/sp";
 import { IItem } from "@pnp/sp/items";
@@ -44,6 +45,7 @@ export default class DemoteNewsCommandSet extends BaseListViewCommandSet<IDemote
 
     @override
     public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
+        const hasPermission = this.context.pageContext.list.permissions.hasPermission(SPPermission.addListItems);
         const compareOneCommand: Command = this.tryGetCommand('DEMOTE_PAGE');
 
         const fillColor = this.getThemeColor("themeDarkAlt").replace('#', '%23');
@@ -51,7 +53,7 @@ export default class DemoteNewsCommandSet extends BaseListViewCommandSet<IDemote
         compareOneCommand.iconImageUrl = iconSvg;
 
         if (compareOneCommand) {
-            compareOneCommand.visible = event.selectedRows.length === 1;
+            compareOneCommand.visible = event.selectedRows.length === 1 && hasPermission;
         }
     }
 
