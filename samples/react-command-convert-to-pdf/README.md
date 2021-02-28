@@ -9,9 +9,9 @@ A global list customizer which adds functionality to all document libraries in S
 ## Compatibility
 
 ![SPFx 1.10](https://img.shields.io/badge/spfx-1.10.0-green.svg) 
-![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg) 
-![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg) 
-![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-yellow.svg)
+![Node.js LTS 6.x | LTS 8.x](https://img.shields.io/badge/Node.js-LTS%206.x%20%7C%20LTS%208.x-green.svg)
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg)
+![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
 ## Applies to
 
@@ -44,6 +44,7 @@ Version|Date|Comments
 _Note: It may take a little while before it shows the first time after install._
 
 ## Supported file formats
+
 csv, doc, docx, odp, ods, odt, pot, potm, potx, pps, ppsx, ppsxm, ppt, pptm, pptx, rtf, xls, xlsx, html
 
 ## Debug URL for testing
