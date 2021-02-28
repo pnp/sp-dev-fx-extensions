@@ -1,10 +1,20 @@
 {
-  "solution": {
-    "name": "react-command-files-size-client-side-solution",
-    "id": "993edf84-1f31-42fa-b385-561ca2a0f766",
-    "version": "1.0.0.0"
-  },
-  "paths": {
-    "zippedPackage": "solution/react-command-files-size.sppkg"
-  }
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "react-command-files-size-client-side-solution",
+        "id": "993edf84-1f31-42fa-b385-561ca2a0f766",
+        "version": "1.1.0.0",
+        "isDomainIsolated": false,
+        "includeClientSideAssets": true,
+        "developer": {
+            "name": "",
+            "privacyUrl": "",
+            "termsOfUseUrl": "",
+            "websiteUrl": "",
+            "mpnId": "000000"
+        }
+    },
+    "paths": {
+        "zippedPackage": "solution/react-command-files-size.sppkg"
+    }
 }

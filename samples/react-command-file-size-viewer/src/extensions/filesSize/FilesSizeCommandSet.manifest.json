@@ -1,18 +1,19 @@
 {
-  "$schema": "../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
-
-  "id": "5f509a36-9998-4a5f-a5f4-b7d02d4f90b4",
-  "alias": "FilesSizeCommandSet",
-  "componentType": "Extension",
-  "extensionType": "ListViewCommandSet",
-  "version": "*", // The "*" signifies that the version should be taken from the package.json
-  "manifestVersion": 2,
-  "safeWithCustomScriptDisabled": true,
-
-  "commands": {
-    "FilesSize": {
-      "title": "File Size Viewer",
-      "iconImageUrl": "icons/request.png"
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+    "id": "5f509a36-9998-4a5f-a5f4-b7d02d4f90b4",
+    "alias": "FilesSizeCommandSet",
+    "componentType": "Extension",
+    "extensionType": "ListViewCommandSet",
+    "version": "*", // The "*" signifies that the version should be taken from the package.json
+    "manifestVersion": 2,
+    "requiresCustomScript": false,
+    "items": {
+        "FilesSize": {
+            "title": {
+                "default": "File Size Viewer"
+            },
+            "iconImageUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNDYuMjU5IDQ2LjI1OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDYuMjU5IDQ2LjI1OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM1LjA0MywxMy41MTRjLTMuNDA1LDAtNi4xNjQtMi43NDktNi4xNjQtNi4xNTNWMC43OTdjMC0wLjQ0LTAuMzU2LTAuNzk3LTAuNzk3LTAuNzk3SDguMjc4ICAgIGMtMi41NCwwLTQuNjA3LDIuMDYtNC42MDcsNC42djM3LjA1OWMwLDIuNTQsMi4wNjcsNC42LDQuNjA3LDQuNmgyOS43YzIuNTQxLDAsNC42MDktMi4wNiw0LjYwOS00LjZWMTQuMzExICAgIGMwLTAuNDQtMC4zNTUtMC43OTctMC43OTctMC43OTdIMzUuMDQzeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgZmlsbD0iIzUyMUQ3RiIvPgoJCTxwYXRoIGQ9Ik0zNS4wNDMsMTAuMzk1aDUuNTE5YzAuMzIxLDAsMC42MTItMC4xOTQsMC43MzUtMC40OTNjMC4xMjMtMC4yOTgsMC4wNTQtMC42NDEtMC4xNzUtMC44NjggICAgYy0yLjAxNi0yLjAwNC01Ljc2Mi01LjcyNC03Ljc3LTcuNzA3Yy0wLjIyOS0wLjIyNi0wLjU3LTAuMjkyLTAuODY3LTAuMTY4Yy0wLjI5NSwwLjEyMy0wLjQ4OCwwLjQxMy0wLjQ4OCwwLjczNHY1LjQ2OCAgICBDMzEuOTk4LDkuMDI2LDMzLjM3NywxMC4zOTUsMzUuMDQzLDEwLjM5NXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIGZpbGw9IiM1MjFEN0YiLz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+Cg==",
+            "type": "command"
+        }
     }
-  }
 }
