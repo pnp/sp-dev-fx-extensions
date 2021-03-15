@@ -9,7 +9,8 @@
         "44f1a0de-5fe4-4e8f-85fb-0c451b4b30ca": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
           "properties": {
-
+            "orderBy": "Name",
+            "orderAscending": true
           }
         }
       }
@@ -20,7 +21,8 @@
         "44f1a0de-5fe4-4e8f-85fb-0c451b4b30ca": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
           "properties": {
-
+            "orderBy": "Name",
+            "orderAscending": true
           }
         }
       }

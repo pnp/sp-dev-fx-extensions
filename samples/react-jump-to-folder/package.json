@@ -20,7 +20,7 @@
     "@microsoft/sp-dialog": "1.10.0",
     "@microsoft/sp-extension-base": "1.10.0",
     "@microsoft/sp-listview-extensibility": "1.10.0",
-    "@pnp/spfx-controls-react": "1.17.0",
+    "@pnp/spfx-controls-react": "2.5.0",
     "@types/es6-promise": "0.0.33",
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.3",

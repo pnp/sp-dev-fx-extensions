@@ -21,4 +21,12 @@ export interface ICustomPanelProps {
    * The default folder to be explored
    */
   defaultFolder?: IFolder;
+  /**
+   * The field to order by when querying the library
+   */
+  orderBy: string;
+  /**
+   * Specify order direction
+   */
+  orderAscending: boolean;
 }

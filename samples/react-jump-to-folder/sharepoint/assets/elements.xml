@@ -6,6 +6,6 @@
         RegistrationType="List"
         Location="ClientSideExtension.ListViewCommandSet.CommandBar"
         ClientSideComponentId="44f1a0de-5fe4-4e8f-85fb-0c451b4b30ca"
-        ClientSideComponentProperties="">
+        ClientSideComponentProperties="{&quot;orderBy&quot;:&quot;Name&quot;,&quot;orderAscending&quot;:true}">
     </CustomAction>
 </Elements>

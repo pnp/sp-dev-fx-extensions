@@ -41,6 +41,8 @@ export class CustomPanel extends React.Component<ICustomPanelProps, ICustomPanel
             rootFolder={this.props.rootFolder}
             defaultFolder={this.props.defaultFolder}
             onSelect={this._onFolderSelect}
+            orderby={this.props.orderBy}
+            orderAscending={this.props.orderAscending}
           />
         </div>
 
