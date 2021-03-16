@@ -36,13 +36,14 @@ The solution uses the [FolderExplorer](https://sharepoint.github.io/sp-dev-fx-co
 
 | Solution             | Author(s)                                                        |
 | -------------------- | ---------------------------------------------------------------- |
-| react-jump-to-folder | Joel Rodrigues ([@JoelFMRodrigues](https://twitter.com/giuleon)) |
+| react-jump-to-folder | [Joel Rodrigues](https://github.com/joelfmrodrigues) ([@JoelFMRodrigues](https://twitter.com/JoelFMRodrigues)) |
 
 ## Version history
 
 | Version | Date           | Comments        |
 | ------- | -------------- | --------------- |
 | 1.0     | March 24, 2020 | Initial release |
+| 1.1     | March 15, 2021 | Adding sorting capability via properties |
 
 ## Disclaimer
 

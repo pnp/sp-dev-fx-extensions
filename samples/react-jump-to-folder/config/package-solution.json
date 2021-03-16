@@ -3,7 +3,7 @@
   "solution": {
     "name": "Jump to folder",
     "id": "0de58bf3-c54a-4664-b4fc-a04decc0b9cf",
-    "version": "1.0.1.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
