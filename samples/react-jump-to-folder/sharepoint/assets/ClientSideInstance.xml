@@ -4,6 +4,6 @@
         Title="JumpToFolder"
         Location="ClientSideExtension.ListViewCommandSet.CommandBar"
         ListTemplateId="101"
-        Properties=""
+        Properties="{&quot;orderBy&quot;:&quot;Name&quot;,&quot;orderAscending&quot;:true}"
         ComponentId="44f1a0de-5fe4-4e8f-85fb-0c451b4b30ca" />
 </Elements>

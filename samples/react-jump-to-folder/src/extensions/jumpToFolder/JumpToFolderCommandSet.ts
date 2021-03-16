@@ -19,8 +19,8 @@ import { ICustomPanelProps, CustomPanel } from './components/CustomPanel';
  * You can define an interface to describe it.
  */
 export interface IJumpToFolderCommandSetProperties {
-  // This is an example; replace with your own properties
-  sampleTextOne: string;
+  orderBy: string;
+  orderAscending: boolean;
 }
 
 const LOG_SOURCE: string = 'JumpToFolderCommandSet';
@@ -71,6 +71,8 @@ export default class JumpToFolderCommandSet extends BaseListViewCommandSet<IJump
         Name: this.context.pageContext.list.title,
         ServerRelativeUrl: this.context.pageContext.list.serverRelativeUrl,
       },
+      orderBy: this.properties.orderBy,
+      orderAscending: this.properties.orderAscending,
     });
   }
 
