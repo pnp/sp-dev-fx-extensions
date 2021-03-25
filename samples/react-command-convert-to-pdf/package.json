@@ -23,7 +23,6 @@
         "@pnp/polyfill-ie11": "^2.0.2",
         "@pnp/sp": "^2.2.0",
         "@types/es6-promise": "0.0.33",
-        "@types/jszip": "^3.4.1",
         "@types/react": "16.8.8",
         "@types/react-dom": "16.8.3",
         "@types/webpack-env": "1.13.1",
