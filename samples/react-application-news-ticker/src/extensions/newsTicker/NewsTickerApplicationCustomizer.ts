@@ -1,13 +1,17 @@
-import { override } from '@microsoft/decorators';
-import { Log } from '@microsoft/sp-core-library';
+import { override } from "@microsoft/decorators";
+import { Log } from "@microsoft/sp-core-library";
 import {
-  BaseApplicationCustomizer
-} from '@microsoft/sp-application-base';
-import { Dialog } from '@microsoft/sp-dialog';
+  BaseApplicationCustomizer,
+  PlaceholderContent,
+  PlaceholderName,
+} from "@microsoft/sp-application-base";
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
 
-import * as strings from 'NewsTickerApplicationCustomizerStrings';
+import * as strings from "NewsTickerApplicationCustomizerStrings";
+import NewsTicker from "./components/NewsTicker";
 
-const LOG_SOURCE: string = 'NewsTickerApplicationCustomizer';
+const LOG_SOURCE: string = "NewsTickerApplicationCustomizer";
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
@@ -20,20 +24,57 @@ export interface INewsTickerApplicationCustomizerProperties {
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
-export default class NewsTickerApplicationCustomizer
-  extends BaseApplicationCustomizer<INewsTickerApplicationCustomizerProperties> {
+export default class NewsTickerApplicationCustomizer extends BaseApplicationCustomizer<INewsTickerApplicationCustomizerProperties> {
+  private _topPlaceholder: PlaceholderContent | undefined;
 
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-    let message: string = this.properties.testMessage;
-    if (!message) {
-      message = '(No properties were provided.)';
+    // Wait for the placeholders to be created (or handle them being changed) and then
+    // render.
+    this.context.placeholderProvider.changedEvent.add(
+      this,
+      this._renderPlaceHolders
+    );
+
+    return Promise.resolve<void>();
+  }
+
+  private _renderPlaceHolders(): void {
+    console.log("HelloWorldApplicationCustomizer._renderPlaceHolders()");
+    console.log(
+      "Available placeholders: ",
+      this.context.placeholderProvider.placeholderNames
+        .map((name) => PlaceholderName[name])
+        .join(", ")
+    );
+
+    // Handling the top placeholder
+    if (!this._topPlaceholder) {
+      this._topPlaceholder = this.context.placeholderProvider.tryCreateContent(
+        PlaceholderName.Top,
+        { onDispose: this._onDispose }
+      );
+
+      // The extension should not assume that the expected placeholder is available.
+      if (!this._topPlaceholder) {
+        console.error("The expected placeholder (Top) was not found.");
+        return;
+      }
+
+      if (this.properties) {
+        if (this._topPlaceholder.domElement) {
+          const element = React.createElement(NewsTicker, {});
+          ReactDom.render(element, this._topPlaceholder.domElement)
+        }
+      }
     }
+  }
 
-    Dialog.alert(`Hello from ${strings.Title}:\n\n${message}`);
-
-    return Promise.resolve();
+  private _onDispose(): void {
+    console.log(
+      "[HelloWorldApplicationCustomizer._onDispose] Disposed custom top placeholders."
+    );
   }
 }
