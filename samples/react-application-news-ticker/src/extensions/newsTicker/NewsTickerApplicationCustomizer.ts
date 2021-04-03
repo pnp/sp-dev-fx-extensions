@@ -20,7 +20,7 @@ const LOG_SOURCE: string = "NewsTickerApplicationCustomizer";
  */
 export interface INewsTickerApplicationCustomizerProperties {
   // This is an example; replace with your own property
-  testMessage: string;
+  listTitle: string;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
