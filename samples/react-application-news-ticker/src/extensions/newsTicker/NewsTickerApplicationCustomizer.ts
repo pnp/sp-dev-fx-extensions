@@ -5,11 +5,14 @@ import {
   PlaceholderContent,
   PlaceholderName,
 } from "@microsoft/sp-application-base";
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
+import * as React from "react";
+import * as ReactDom from "react-dom";
+import { sp } from "@pnp/sp/presets/all";
 
 import * as strings from "NewsTickerApplicationCustomizerStrings";
 import NewsTicker from "./components/NewsTicker";
+import SpService from "./service/SpService";
+import INewsTickerProps from "./components/INewsTickerProps";
 
 const LOG_SOURCE: string = "NewsTickerApplicationCustomizer";
 
@@ -19,37 +22,34 @@ const LOG_SOURCE: string = "NewsTickerApplicationCustomizer";
  * You can define an interface to describe it.
  */
 export interface INewsTickerApplicationCustomizerProperties {
-  // This is an example; replace with your own property
   listTitle: string;
+  listViewTitle: string;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class NewsTickerApplicationCustomizer extends BaseApplicationCustomizer<INewsTickerApplicationCustomizerProperties> {
   private _topPlaceholder: PlaceholderContent | undefined;
+  private _spService = new SpService();
 
   @override
-  public onInit(): Promise<void> {
-    Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+  public async onInit(): Promise<void> {
+    return super.onInit().then((_) => {
+      Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-    // Wait for the placeholders to be created (or handle them being changed) and then
-    // render.
-    this.context.placeholderProvider.changedEvent.add(
-      this,
-      this._renderPlaceHolders
-    );
+      sp.setup({
+        spfxContext: this.context,
+      });
 
-    return Promise.resolve<void>();
+      // Wait for the placeholders to be created (or handle them being changed) and then
+      // render.
+      this.context.placeholderProvider.changedEvent.add(
+        this,
+        this._renderPlaceHolders
+      );
+    });
   }
 
-  private _renderPlaceHolders(): void {
-    console.log("HelloWorldApplicationCustomizer._renderPlaceHolders()");
-    console.log(
-      "Available placeholders: ",
-      this.context.placeholderProvider.placeholderNames
-        .map((name) => PlaceholderName[name])
-        .join(", ")
-    );
-
+  private async _renderPlaceHolders(): Promise<void> {
     // Handling the top placeholder
     if (!this._topPlaceholder) {
       this._topPlaceholder = this.context.placeholderProvider.tryCreateContent(
@@ -63,11 +63,24 @@ export default class NewsTickerApplicationCustomizer extends BaseApplicationCust
         return;
       }
 
-      if (this.properties) {
-        if (this._topPlaceholder.domElement) {
-          const element = React.createElement(NewsTicker, {});
-          ReactDom.render(element, this._topPlaceholder.domElement)
-        }
+      if (!this.properties || !this.properties.listTitle || !this.properties.listViewTitle) {
+        console.error("listTitle or listViewTitle properties value was not found or empty");
+      }
+
+      if (this._topPlaceholder.domElement) {
+        // Get news items
+        const newsItems = await this._spService.getNewsItems(
+          this.properties.listTitle,
+          this.properties.listViewTitle
+        );
+
+        // Doesn't need to show news ticker if there is no news for now
+        if (!newsItems || newsItems.length == 0) return;
+
+        const element = React.createElement(NewsTicker, <INewsTickerProps>{
+          items: newsItems,
+        });
+        ReactDom.render(element, this._topPlaceholder.domElement);
       }
     }
   }
