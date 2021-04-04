@@ -18,10 +18,10 @@ An SPFx Extension that displays news as a running text at the top of every moder
 ## Prerequisites
 
 Create list as the data source for the app with below details:
-1. Title: **News**
+1. List title: **News**
 2. Required Columns: 
    - **Title**: single line text
-   - **Content**: multiline text
+   - **Content**: multiline text (plain text)
    - **PublishDate**: date
 3. Required View:
    - Title: **Published News**
@@ -62,7 +62,7 @@ This extension illustrates the following concepts:
 
 - Display news as a running text at the top of every modern page where the app installed
 - Get news items from a SharePoint list view using PnPJS
-- The running text will be stopped when user hover it
+- Stop the running text when user hover it
 
 ## References
 
