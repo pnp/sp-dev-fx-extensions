@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "react-application-news-ticker-client-side-solution",
+    "name": "React News Ticker",
     "id": "65603ca8-004c-469c-8b6f-b24ef5f2e794",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
@@ -30,6 +30,6 @@
     ]
   },
   "paths": {
-    "zippedPackage": "solution/react-application-news-ticker.sppkg"
+    "zippedPackage": "solution/React News Ticker.sppkg"
   }
 }
