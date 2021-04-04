@@ -25,7 +25,7 @@ export default function NewsTicker(props: INewsTickerProps) {
       }}
       className={styles.newsTicker}
     >
-      <Ticker move={isMove} speed={3}>
+      <Ticker move={isMove} speed={5}>
         {({ index }) => (
           <>
             {props.items &&
