@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="SendToTeams"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ListTemplateId="100"
+        ComponentId="4146ff27-c464-43d7-8848-14ca7820bf3f" />
+</Elements>
