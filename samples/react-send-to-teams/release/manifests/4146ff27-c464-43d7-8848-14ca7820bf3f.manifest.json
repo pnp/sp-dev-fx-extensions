@@ -23,7 +23,7 @@
     "scriptResources": {
       "send-to-teams-command-set": {
         "type": "path",
-        "path": "send-to-teams-command-set_37d12b3c137609f15f06.js"
+        "path": "send-to-teams-command-set_f3230cbf225eb77ad102.js"
       },
       "tslib": {
         "type": "component",
@@ -43,9 +43,9 @@
       "SendToTeamsCommandSetStrings": {
         "type": "localizedPath",
         "paths": {
-          "en-US": "SendToTeamsCommandSetStrings_en-us_42e0c5816599b54f2152fb5b70cca420.js"
+          "en-US": "SendToTeamsCommandSetStrings_en-us_0a2cc4b53050516eaa7e35b0fdb210f7.js"
         },
-        "defaultPath": "SendToTeamsCommandSetStrings_en-us_42e0c5816599b54f2152fb5b70cca420.js"
+        "defaultPath": "SendToTeamsCommandSetStrings_en-us_0a2cc4b53050516eaa7e35b0fdb210f7.js"
       },
       "@microsoft/sp-core-library": {
         "type": "component",

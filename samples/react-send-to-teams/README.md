@@ -1,13 +1,9 @@
 # Send-To-Teams - Command Set
 
- 
-
 ## Summary
+
 This Command Set allows to create an adaptive card based on list data and send to microsoft teams chanel,
-The user can select the list fields that will show on the card.   
-
-
-
+The user can select the list fields that will show on the card.
 
 ![picture of the extension in action](./assets/SendToTeams.gif)
 ![picture of the extension in action](./assets/sendToTeams01.png)
@@ -37,14 +33,14 @@ The user can select the list fields that will show on the card.
         "resource": "Microsoft Graph", "scope": "Channel.ReadBasic.All" 
         "resource": "Microsoft Graph", "scope": "ChannelMessage.Send"
 
-After deployed to the AppCatalog this permissions need to be approved in SharePoint Central Admin.   
-       
+After deployed to the AppCatalog this permissions need to be approved in SharePoint Central Admin.
+      
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-react-send-to-teams | João Mendes
+react-send-to-teams | [João Mendes](https://github.com/joaojmendes) ([@joaojmendes](https://twitter.com/joaojmendes))
 
 ## Version history
 
