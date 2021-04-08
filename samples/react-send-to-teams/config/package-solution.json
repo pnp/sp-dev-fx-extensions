@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "react-send-to-teams-extension-client-side-solution",
+    "id": "28ef2520-dbd9-4ac4-8543-6fc2d5df7daf",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph", "scope": "Team.ReadBasic.All"
+      },
+      {
+        "resource": "Microsoft Graph", "scope": "Channel.ReadBasic.All"
+      },
+      {
+        "resource": "Microsoft Graph", "scope": "ChannelMessage.Send"
+      }
+    ],
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+    "features": [
+      {
+        "title": "Send to teams CommandSet",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "bbec492f-7c4a-416b-895a-070be34580f3",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-send-to-teams-extension.sppkg"
+  }
+}

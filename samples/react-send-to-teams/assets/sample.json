@@ -1,0 +1,41 @@
+{
+  "name": "pnp-sp-dev-spfx-extensions-react-send-to-teams",
+  "source": "pnp",
+  "title": "Send to Teams",
+  "shortDescription": "This Command Set allows to create an adaptive card based on list data and send to microsoft teams chanel",
+  "longDescription": [
+    "This Command Set allows to create an adaptive card based on list data and send to microsoft teams chanel",
+    "The user can select the list fields that will show on the card."
+  ],
+  "products": [
+    "SharePoint",
+    "Office"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "Javascript"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.11.0"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-send-to-teams/assets/SendToTeams.gif",
+      "alt": "Extension in action"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "joaojmendes",
+      "pictureUrl": "https://github.com/joaojmendes.png",
+      "name": "João Mendes",
+      "twitter": "joaojmendes"
+    }
+  ],
+  "references": []
+}
