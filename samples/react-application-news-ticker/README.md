@@ -4,6 +4,8 @@
 
 An SPFx Extension that displays news as a running text at the top of every modern page.
 
+![News Ticker](./assets/react-application-news-ticker.gif)
+
 ## Compatibility
 
 ![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg)
