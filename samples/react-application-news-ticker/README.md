@@ -1,12 +1,15 @@
-# react-application-news-ticker
+# News Ticker
 
 ## Summary
 
 An SPFx Extension that displays news as a running text at the top of every modern page.
 
-## Used SharePoint Framework Version
+## Compatibility
 
-![version](https://img.shields.io/badge/version-1.11-green.svg)
+![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg)
+![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg)
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
+![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
 ## Applies to
 
@@ -25,7 +28,7 @@ Create list as the data source for the app with below details:
    - **PublishDate**: date
 3. Required View:
    - Title: **Published News**
-   - Configure the view as you like. The app will get the data based on the view. Below is the example of the configuration for the view:
+   - Configure the view as you like. The app will get the data based on the view. Below is the example:
       - Filter: PublishDate <= [TODAY] AND ExpiryDate > [TODAY]
       - Sort: PublishDate Ascending
       - Limit: 10
@@ -40,7 +43,7 @@ react-application-news-ticker | Ari Gunawan ([@arigunawan3023](https://twitter.c
 
 Version|Date|Comments
 -------|----|--------
-1.0|April 04, 2021|Initial release
+1.0|April 19, 2021|Initial release
 
 ## Disclaimer
 
@@ -66,4 +69,16 @@ This extension illustrates the following concepts:
 
 ## References
 
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- [SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
+- [PnP JS](https://pnp.github.io/pnpjs/)
+- [react-ticker](https://github.com/AndreasFaust/react-ticker)
+
+
+## Debug URL for testing
+Here's a debug URL for testing around this sample. 
+
+```
+?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"4358e70e-ec3c-4713-beb6-39c88f7621d1":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"listTitle":"News","listViewTitle":"Published News"}}}
+```
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-news-ticker" />

@@ -1,9 +1,9 @@
 import * as React from "react";
 import Ticker from "react-ticker";
 
-import { News } from "../models/News";
 import INewsTickerProps from "./INewsTickerProps";
 import styles from "./NewsTicker.module.scss";
+import Constants from "../helpers/Constants";
 
 export default function NewsTicker(props: INewsTickerProps) {
   const [isMove, setIsMove] = React.useState(true);
@@ -17,6 +17,7 @@ export default function NewsTicker(props: INewsTickerProps) {
   };
   return (
     <div
+      id={Constants.ROOT_ID}
       onMouseEnter={() => {
         setIsMove(false);
       }}

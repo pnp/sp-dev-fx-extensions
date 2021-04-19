@@ -13,6 +13,7 @@ import * as strings from "NewsTickerApplicationCustomizerStrings";
 import NewsTicker from "./components/NewsTicker";
 import SpService from "./service/SpService";
 import INewsTickerProps from "./components/INewsTickerProps";
+import Constants from "./helpers/Constants";
 
 const LOG_SOURCE: string = "NewsTickerApplicationCustomizer";
 
@@ -76,6 +77,12 @@ export default class NewsTickerApplicationCustomizer extends BaseApplicationCust
 
         // Doesn't need to show news ticker if there is no news for now
         if (!newsItems || newsItems.length == 0) return;
+
+        // Find existing element
+        const existingElement = document.getElementById(Constants.ROOT_ID);
+        
+        // Stop if another news ticker found
+        if (document.body.contains(existingElement)) return;
 
         const element = React.createElement(NewsTicker, <INewsTickerProps>{
           items: newsItems,
