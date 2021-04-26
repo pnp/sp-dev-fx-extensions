@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-mail-view-as-image/demo/Mail_this_view.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-mail-view-as-image/demo/Mail_this_view.gif",
       "alt": "Mail Current View as Image"
     }
   ],

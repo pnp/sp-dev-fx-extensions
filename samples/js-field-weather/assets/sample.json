@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-field-weather/assets/weather-preview.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-field-weather/assets/weather-preview.png",
       "alt": "Weather SharePoint Framework field customizer"
     }
   ],

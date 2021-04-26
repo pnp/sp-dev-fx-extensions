@@ -2,7 +2,7 @@
   "name": "pnp-sp-dev-spfx-extensions-react-application-news-ticker",
   "source": "pnp",
   "title": "News Ticker",
-  "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/master/samples/react-application-news-ticker",
+  "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-news-ticker",
   "shortDescription": "An SPFx Extension that displays news as a running text at the top of every modern page.",
   "longDescription": [
     "An SPFx Extension that displays news as a running text at the top of every modern page."
@@ -25,13 +25,13 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-news-ticker/assets/react-application-news-ticker.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-news-ticker/assets/react-application-news-ticker.gif",
       "alt": "Extension in action"
     },
     {
       "type": "image",
       "order": 101,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-news-ticker/assets/react-application-news-ticker.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-news-ticker/assets/react-application-news-ticker.png",
       "alt": "Extension in action"
     }
   ],

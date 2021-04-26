@@ -31,7 +31,7 @@ In v2 release repackaged as it's own solution to provide more flexibility from d
 
 ## Prerequisites
 
-The shared links are retrieved from a list called `PnP-PortalFooter-Links`. The webpart will first look to see if the site is part of a hub site and get the data from the list from that hub site. If no hub site is available it falls back to the local site as the source. If you have not applied the starterkit.pnp package you can find the xml used to provision the list [here](../../provisioning/starterkit.xml)
+The shared links are retrieved from a list called `PnP-PortalFooter-Links`. The web part will first look to see if the site is part of a hub site and get the data from the list from that hub site. If no hub site is available it falls back to the local site as the source. If you have not applied the starterkit.pnp package you can find the xml used to provision the list [here](../../provisioning/starterkit.xml)
 
 Personalized links only works if a custom property called `PnP-CollabFooter-MyLinks` has been added on the user profile service. This is string based property with maximum lenght. As there's no APIs to automate the property creation to the user profile service, this property will need to be manually created to enable the personalized links capability. Instructions to set up the custom property can be found [here](../../documentation/tenant-settings.md#create-a-custom-property-in-the-user-profile-service).
 

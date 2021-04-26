@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-directions/assets/directions-preview.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-directions/assets/directions-preview.png",
       "alt": "Directions SharePoint Framework list view command set"
     }
   ],

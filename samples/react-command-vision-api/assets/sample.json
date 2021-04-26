@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-vision-api/assets/react-command-vision-api.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-vision-api/assets/react-command-vision-api.png",
       "alt": "Image Metadata from Cognitive Services Vision API List View Command Set"
     }
   ],

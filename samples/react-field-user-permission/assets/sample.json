@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-field-user-permission/assets/react-field-user-permission.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-user-permission/assets/react-field-user-permission.png",
       "alt": "Displaying the current user permission with PNPJs"
     }
   ],

@@ -29,7 +29,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-addfolders/assets/preview.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-addfolders/assets/preview.gif",
       "alt": "The command in action, adding multiple folders to a library"
     }
   ],

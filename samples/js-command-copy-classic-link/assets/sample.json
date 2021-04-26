@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-command-copy-classic-link/demo/copy-classic-link.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-command-copy-classic-link/demo/copy-classic-link.gif",
       "alt": "Copy Classic Link Extension"
     }
   ],

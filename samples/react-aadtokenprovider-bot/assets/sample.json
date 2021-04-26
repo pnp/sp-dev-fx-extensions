@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-aadtokenprovider-bot/images/react-aadtokenprovider-bot.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-aadtokenprovider-bot/images/react-aadtokenprovider-bot.gif",
       "alt": "AAD Token Provider Bot Extension"
     }
   ],

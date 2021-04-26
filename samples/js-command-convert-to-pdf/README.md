@@ -80,11 +80,12 @@ Navigate to the local.settings.json file and add the following
   }
 }
 ```
+
 #### Run Azure Function
 
 Open the Azure function project [ConvertToPDFRequest](./ConvertToPDFRequest) in Visual Studio and press F5.
 
-### Run the SPFx webpart Web Part
+### Run the SPFx Web Part
 
 - Clone this repository
 - Update the `pageUrl` properties in the **config/serve.json** file
@@ -95,6 +96,7 @@ Open the Azure function project [ConvertToPDFRequest](./ConvertToPDFRequest) in 
   - `gulp serve --config=convertToPdf`
 
 ## Debug URL for testing
+
 Here's a debug querystring for testing this sample:
 
 ```

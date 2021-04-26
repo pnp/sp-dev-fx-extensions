@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-search-dynamicdata/assets/samplepnpExtensions.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-search-dynamicdata/assets/samplepnpExtensions.gif",
       "alt": "Connecting SPFx Extensions with Web Parts using Dynamic Data"
     }
   ],

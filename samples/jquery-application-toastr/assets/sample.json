@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/jquery-application-toastr/assets/spfxToastr-Preview.PNG",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/jquery-application-toastr/assets/spfxToastr-Preview.PNG",
       "alt": "Toastr Application Customizer"
     }
   ],

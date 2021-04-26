@@ -6,13 +6,13 @@ This sample demonstrates how to integrate a bot within a SharePoint Online porta
 
 ### When to use this pattern? ###
 This sample is suitable when you want to create a bot using the web chat channel for a SharePoint site **only**.
-However, if you need to access protected APIs in your bot but also want mutliple channels (like, Microsoft Teams, Skype, etc.), you might use in combination the OAuth2 authorization grant flow implementation for Node.js instead. You can refer to this sample [https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-adal-bot](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-adal-bot) to get started.
+However, if you need to access protected APIs in your bot but also want mutliple channels (like, Microsoft Teams, Skype, etc.), you might use in combination the OAuth2 authorization grant flow implementation for Node.js instead. You can refer to this sample [https://github.com/SharePoint/sp-dev-fx-extensions/tree/main/samples/react-adal-bot](https://github.com/SharePoint/sp-dev-fx-extensions/tree/main/samples/react-adal-bot) to get started.
 
 <p align="center">
   <img src="./images/react-aadtokenprovider-bot.gif"/>
 </p>
 
-The bot code is exactly the same as the [MSAL Bot sample](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-msal-bot)
+The bot code is exactly the same as the [MSAL Bot sample](https://github.com/SharePoint/sp-dev-fx-extensions/tree/main/samples/react-msal-bot)
 
 ## Used SharePoint Framework Version 
 ![drop](https://img.shields.io/badge/drop-1.6.0-green.svg)

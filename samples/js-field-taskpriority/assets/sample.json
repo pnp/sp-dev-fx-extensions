@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-field-taskpriority/assets/js-field-taskpriority-preview.jpg",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-field-taskpriority/assets/js-field-taskpriority-preview.jpg",
       "alt": "Priority Field SharePoint Framework field customizer"
     }
   ],

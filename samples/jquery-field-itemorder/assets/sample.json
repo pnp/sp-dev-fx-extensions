@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/jquery-field-itemorder/assets/spfxItemOrder-Animation.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/jquery-field-itemorder/assets/spfxItemOrder-Animation.gif",
       "alt": "Item Order"
     }
   ],

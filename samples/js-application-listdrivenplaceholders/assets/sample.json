@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-application-listdrivenplaceholders/assets/placeholders.jpg",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-application-listdrivenplaceholders/assets/placeholders.jpg",
       "alt": "List-Driven Placeholders"
     }
   ],

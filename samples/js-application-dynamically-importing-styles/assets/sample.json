@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-application-dynamically-importing-styles/assets/DynamicImportingResultsInBrwoser.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-application-dynamically-importing-styles/assets/DynamicImportingResultsInBrwoser.png",
       "alt": "Optimize CSS/SCSS Style Bundling and Dynamic Loading of Styles"
     }
   ],

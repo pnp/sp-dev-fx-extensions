@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-application-graph-client/assets/screenshot.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-application-graph-client/assets/screenshot.png",
       "alt": "GraphClient from Modern Teamsite"
     }
   ],

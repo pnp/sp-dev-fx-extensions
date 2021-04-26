@@ -19,7 +19,7 @@ extensions:
 
 Sample SharePoint Framework application customizer extension that shows favourite links using Office UI Fabric panel. Fabric UI React components used include - panel, dialog, list and spinner.
 
-> Inspired from ([react-mega-menu](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-mega-menu)) by Velin Georgiev ([@VelinGeorgiev](https://twitter.com/velingeorgiev))
+> Inspired from ([react-mega-menu](https://github.com/SharePoint/sp-dev-fx-extensions/tree/main/samples/react-mega-menu)) by Velin Georgiev ([@VelinGeorgiev](https://twitter.com/velingeorgiev))
 
 ![My Favourites](./assets/spfx-myfavourites.gif)
 

@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-field-slider/assets/slider.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-slider/assets/slider.png",
       "alt": "Slider Field Customizer"
     }
   ],

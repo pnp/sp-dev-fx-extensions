@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-menu-footer-classic-modern/Documentation/images/ClassicFullHeaderFooter.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-menu-footer-classic-modern/Documentation/images/ClassicFullHeaderFooter.png",
       "alt": "Menu Footer Classic Modern"
     }
   ],

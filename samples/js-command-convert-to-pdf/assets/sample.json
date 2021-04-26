@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-command-convert-to-pdf/demo/convert-docs-to-pdf.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-command-convert-to-pdf/demo/convert-docs-to-pdf.gif",
       "alt": "Convert documents to PDF using Azure function"
     }
   ],

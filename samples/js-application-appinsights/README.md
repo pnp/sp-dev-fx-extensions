@@ -11,15 +11,17 @@ extensions:
   - SharePoint Framework
   createdDate: 6/1/2017 12:00:00 AM
 ---
-# Injecting Javascript with Sharepoint Framework Extensions - Azure Application Insights
+# Injecting Javascript with SharePoint Framework Extensions - Azure Application Insights
 
 ## Summary
+
 Sample SharePoint Framework extension project injecting Javascript code to enable Azure App Insights monitoring and statistics.
 This sample implements the code needed for browser usage analysis, as described here: https://docs.microsoft.com/azure/azure-monitor/app/usage-overview
 
-![Application Insights Customizer Customizer](https://github.com/SharePoint/sp-dev-fx-extensions/blob/master/samples/js-application-appinsights/assets/appinsights-1.png)
+![Application Insights Customizer Customizer](https://github.com/SharePoint/sp-dev-fx-extensions/blob/main/samples/js-application-appinsights/assets/appinsights-1.png)
 
-## Used SharePoint Framework Version 
+## Used SharePoint Framework Version
+
 ![drop](https://img.shields.io/badge/SPFx-1.9.1-green.svg)
 
 ## Applies to

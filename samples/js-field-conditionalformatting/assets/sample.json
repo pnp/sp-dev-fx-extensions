@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-field-conditionalformatting/assets/conditionalformatting-preview.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-field-conditionalformatting/assets/conditionalformatting-preview.png",
       "alt": "Conditional formatting SharePoint Framework field customizer"
     }
   ],

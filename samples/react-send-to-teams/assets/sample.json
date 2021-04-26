@@ -25,7 +25,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-send-to-teams/assets/SendToTeams.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-send-to-teams/assets/SendToTeams.gif",
       "alt": "Extension in action"
     }
   ],

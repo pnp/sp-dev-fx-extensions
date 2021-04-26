@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-myfavourites/assets/spfx-myfavourites.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-myfavourites/assets/spfx-myfavourites.gif",
       "alt": "My Favourites Application Customizer"
     }
   ],

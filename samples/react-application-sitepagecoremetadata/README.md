@@ -4,7 +4,7 @@
 
 Sample SharePoint Framework application customizer to display the core metadata of a Site Page such as Author,Editor, Created date and Modified date in the footer of the page.
 
-Support for the page metadata was announced recently for the SharePoint modern pages. With this, a "Page Properties" webpart was also released that can be used to display the metadata of the site page on the page itself. [More details](https://support.office.com/en-us/article/use-the-page-properties-web-part-1a99cb9c-a5f1-441b-8e5d-643b0f0ff736?ui=en-US&rs=en-US&ad=US). However, at the time of writing this sample, the core metadata of the page such as Author, Created Date, Modified Date, Edited by etc is not available in the webpart.
+Support for the page metadata was announced recently for the SharePoint modern pages. With this, a "Page Properties" web part was also released that can be used to display the metadata of the site page on the page itself. [More details](https://support.office.com/en-us/article/use-the-page-properties-web-part-1a99cb9c-a5f1-441b-8e5d-643b0f0ff736?ui=en-US&rs=en-US&ad=US). However, at the time of writing this sample, the core metadata of the page such as Author, Created Date, Modified Date, Edited by etc is not available in the webpart.
 
 This sample extension renders only on the site pages and displays this core metadata in the footer section of the page.
 

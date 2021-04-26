@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-field-text-analytics-api/assets/react-field-text-analytics-api.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-text-analytics-api/assets/react-field-text-analytics-api.png",
       "alt": "Field Customiser sample using Text Analytics API"
     }
   ],

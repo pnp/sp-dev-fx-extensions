@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-hidefrom-externalusers/assets/SharePoint-hidefrom-guest-user.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-hidefrom-externalusers/assets/SharePoint-hidefrom-guest-user.gif",
       "alt": "Application Customizer Extension that is hidden from tenant guest users"
     }
   ],

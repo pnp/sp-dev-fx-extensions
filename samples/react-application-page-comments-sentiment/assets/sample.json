@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-page-comments-sentiment/assets/react-application-page-comments-sentiment.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-page-comments-sentiment/assets/react-application-page-comments-sentiment.png",
       "alt": "Application Customiser sample using Text Analytics API"
     }
   ],

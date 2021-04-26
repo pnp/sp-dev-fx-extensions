@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-injectcss/assets/sampleresults.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-injectcss/assets/sampleresults.png",
       "alt": "CSS Injection"
     }
   ],

@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-application-sites-hubsite-switcher/assets/react-application-sites-hubsite-switcher.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-sites-hubsite-switcher/assets/react-application-sites-hubsite-switcher.png",
       "alt": "Sites in Hub site switcher"
     }
   ],

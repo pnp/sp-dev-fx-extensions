@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-discuss-now/assets/Discuss-Now-Command-Set.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-discuss-now/assets/Discuss-Now-Command-Set.png",
       "alt": "Discuss Now Command Set"
     }
   ],

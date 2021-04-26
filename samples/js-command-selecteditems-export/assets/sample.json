@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-command-selecteditems-export/assets/excel-export-preview.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-command-selecteditems-export/assets/excel-export-preview.png",
       "alt": "Export Selected Items to Excel"
     }
   ],

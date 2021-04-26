@@ -69,5 +69,5 @@ Sample SharePoint Framework application extension.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
-* using the Bot Framework webchat React component as some kind of flyout webpart in modern pages
+* using the Bot Framework webchat React component as some kind of flyout web part in modern pages
 * adding a bot to modern pages and let users interact with a bot hosted in the Azure Bot Service

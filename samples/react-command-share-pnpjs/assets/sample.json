@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-share-pnpjs/assets/share.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-pnpjs/assets/share.png",
       "alt": "Multishare Command Extension with PnPJs"
     }
   ],

@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-command-singlepartapppage/assets/demo.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-singlepartapppage/assets/demo.gif",
       "alt": "configure a Page as Single App Part page"
     }
   ],

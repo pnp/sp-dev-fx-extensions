@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/react-app-announcements/assets/announcements-preview.png",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-app-announcements/assets/announcements-preview.png",
       "alt": "Announcements SharePoint Framework application customizer"
     }
   ],

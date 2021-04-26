@@ -24,7 +24,7 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/master/samples/js-application-analytics/assets/js-application-google-analytics.gif",
+      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-application-analytics/assets/js-application-google-analytics.gif",
       "alt": "Google Analytics Application Customizer"
     }
   ],
