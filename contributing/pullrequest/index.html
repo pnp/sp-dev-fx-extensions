@@ -535,7 +535,7 @@
 <ol>
 <li>Sign the Contributor License Agreement (see below)</li>
 <li>Fork this repository <a href="https://github.com/SharePoint/sp-dev-fx-extensions">SharePoint/sp-dev-fx-extensions</a> to your GitHub account</li>
-<li>Create a new branch off the <code>master</code> branch for your fork for the contribution</li>
+<li>Create a new branch off the <code>main</code> branch for your fork for the contribution</li>
 <li>Include your changes to your branch</li>
 <li>Commit your changes using descriptive commit message * These are used to track changes on the repositories for monthly communications</li>
 <li>Create a pull request in your own fork and target <code>dev</code> branch</li>
@@ -558,7 +558,7 @@
 <li>Make your changes in a new git branch:</li>
 </ul>
 <p><code>shell
-  git checkout -b react-field-slider master</code></p>
+  git checkout -b react-field-slider main</code></p>
 <ul>
 <li>Ensure your fork is updated and not behind the upstream <strong>sp-dev-fx-extensions</strong> repo. Refer to these resources for more information on syncing your repo:</li>
 <li><a href="https://help.github.com/articles/syncing-a-fork/">GitHub Help: Syncing a Fork</a></li>
@@ -567,15 +567,15 @@
 <p>For a quick cheat sheet:</p>
 <p>```shell</p>
 <h1 id="assuming-you-are-in-the-folder-of-your-locally-cloned-fork">assuming you are in the folder of your locally cloned fork....<a class="headerlink" href="#assuming-you-are-in-the-folder-of-your-locally-cloned-fork" title="Permanent link">&para;</a></h1>
-<p>git checkout master</p>
+<p>git checkout main</p>
 <h1 id="assuming-you-have-a-remote-named-upstream-pointing-official-sp-dev-fx-extensions-repo">assuming you have a remote named <code>upstream</code> pointing official <strong>sp-dev-fx-extensions</strong> repo<a class="headerlink" href="#assuming-you-have-a-remote-named-upstream-pointing-official-sp-dev-fx-extensions-repo" title="Permanent link">&para;</a></h1>
 <p>git fetch upstream</p>
-<h1 id="update-your-local-master-to-be-a-mirror-of-whats-in-the-main-repo">update your local master to be a mirror of what's in the main repo<a class="headerlink" href="#update-your-local-master-to-be-a-mirror-of-whats-in-the-main-repo" title="Permanent link">&para;</a></h1>
-<p>git pull --rebase upstream master</p>
+<h1 id="update-your-local-main-to-be-a-mirror-of-whats-in-the-main-repo">update your local main to be a mirror of what's in the main repo<a class="headerlink" href="#update-your-local-main-to-be-a-mirror-of-whats-in-the-main-repo" title="Permanent link">&para;</a></h1>
+<p>git pull --rebase upstream main</p>
 <h1 id="switch-to-your-branch-where-you-are-working-say-react-field-slider">switch to your branch where you are working, say "react-field-slider"<a class="headerlink" href="#switch-to-your-branch-where-you-are-working-say-react-field-slider" title="Permanent link">&para;</a></h1>
 <p>git checkout react-field-slider</p>
-<h1 id="update-your-branch-to-update-its-fork-point-to-the-current-tip-of-master-put-your-changes-on-top-of-it">update your branch to update it's fork point to the current tip of master &amp; put your changes on top of it<a class="headerlink" href="#update-your-branch-to-update-its-fork-point-to-the-current-tip-of-master-put-your-changes-on-top-of-it" title="Permanent link">&para;</a></h1>
-<p>git rebase master
+<h1 id="update-your-branch-to-update-its-fork-point-to-the-current-tip-of-main-put-your-changes-on-top-of-it">update your branch to update it's fork point to the current tip of main &amp; put your changes on top of it<a class="headerlink" href="#update-your-branch-to-update-its-fork-point-to-the-current-tip-of-main-put-your-changes-on-top-of-it" title="Permanent link">&para;</a></h1>
+<p>git rebase main
 ```</p>
 </li>
 <li>
@@ -604,7 +604,7 @@ git pull origin dev</code></p>
 <li>
 <p>Pull your other project from GitHub into the samples folder of your local copy of sp-dev-fx-extensions</p>
 <p><code>shell
-git subtree add --prefix=samples/projectname https://github.com/yourgitaccount/projectname.git master</code></p>
+git subtree add --prefix=samples/projectname https://github.com/yourgitaccount/projectname.git main</code></p>
 </li>
 <li>
 <p>Push the changes up to your forked repository</p>
