@@ -14,6 +14,8 @@ extensions:
 
 This repository contains the samples that demonstrate different usage patterns for the SharePoint Framework extensions.
 
+> We do welcome community contributions to the samples folder in this repository for demonstrating different use cases with SharePoint Framework. Notice that if you use 3rd party libraries, please make sure that library license allows distributions of it as part of your sample.
+
 SharePoint extensions are controls that appear inside a SharePoint page but run locally in the browser. They're the building blocks of pages that appear on a SharePoint site. You can build extensions using modern script development tools and you can deploy your extensions to modern pages in Office 365 tenants. In addition to plain JavaScript projects, you can build extensions alongside common scripting frameworks, such as AngularJS and React. For example, you can use React along with components from [Fluent UI](https://developer.microsoft.com/en-us/fluentui#/) to quickly create experiences based on the same components used in Office 365 natively.
 
 ## Have issues or questions?
