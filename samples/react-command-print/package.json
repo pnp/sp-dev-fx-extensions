@@ -25,7 +25,6 @@
     "react-element-to-string": "^1.0.2",
     "react-html-parser": "^2.0.2",
     "react-quill": "^1.4.0-beta.5",
-    "typestyle": "^2.0.1",
     "react-to-print": "^2.0.0-alpha-4"
   },
   "devDependencies": {

@@ -8,10 +8,7 @@
       "customActions": {
         "83a96197-2c0f-4966-8532-de37b0624ef0": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
-          "properties": {
-            "sampleTextOne": "One item is selected in the list",
-            "sampleTextTwo": "This command is always visible."
-          }
+          "properties": {}
         }
       }
     },
@@ -20,10 +17,7 @@
       "customActions": {
         "83a96197-2c0f-4966-8532-de37b0624ef0": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
-          "properties": {
-            "sampleTextOne": "One item is selected in the list",
-            "sampleTextTwo": "This command is always visible."
-          }
+          "properties": {}
         }
       }
     }
