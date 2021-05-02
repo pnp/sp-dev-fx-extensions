@@ -1,12 +1,14 @@
 # Print List Item Command View Set
 
 ## Summary
+
 This sample shows how you can print list items using different templates, site admin can add, edit or remove templates and users can print items based on those templates.
 
 ![react-command-print](./assets/screenshot.gif)
 
 ## Compatibility
-![drop](https://img.shields.io/badge/version-1.7-green.svg)
+
+![SPFx 1.7](https://img.shields.io/badge/version-1.7-green.svg)
 ![Node.js 8.x](https://img.shields.io/badge/Node.js-8.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
@@ -30,11 +32,6 @@ Version|Date|Comments
 1.0|Dec 05, 2018|Initial release
 1.1|May 02, 2021|Replace typestyle with mergeStyles (Ari Gunawan)
 
-## Disclaimer
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
-
 ## Minimal Path to Awesome
 
 - Clone this repository
@@ -52,6 +49,7 @@ Version|Date|Comments
   - `gulp serve`
 
 ## Features
+
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
 * Add/Update/Remove print templates
@@ -66,10 +64,16 @@ Next version features:
 * Print multiple items.
 
 ## Debug URL for testing
+
 Here's a debug URL for testing around this sample. **Updated based on your manifest id for easy testing of the sample**.
 
 ```
 ?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"83a96197-2c0f-4966-8532-de37b0624ef0":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{}}} 
 ```
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-print" />
