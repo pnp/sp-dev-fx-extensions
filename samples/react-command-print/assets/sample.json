@@ -6,6 +6,8 @@
   "longDescription": [
     "This sample shows how you can print list items using different templates, site admin can add, edit or remove templates and users can print items based on those templates."
   ],
+  "creationDateTime": "2018-12-05",
+  "updateDateTime": "2021-05-02",
   "products": [
     "SharePoint",
     "Office"
@@ -32,6 +34,11 @@
     {
       "gitHubAccount": "AhmadiRamin",
       "pictureUrl": "https://github.com/AhmadiRamin.png"
+    },
+    {
+      "gitHubAccount": "AriGunawan",
+      "name": "Ari Gunawan",
+      "pictureUrl": "https://github.com/AriGunawan.png"
     }
   ],
   "references": []

@@ -17,7 +17,7 @@ import ListService from '../../services/list-service';
 import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib/Dialog';
 import { IconButton } from 'office-ui-fabric-react/lib/Button';
 import { ColorPicker } from 'office-ui-fabric-react/lib/ColorPicker';
-import { style } from "typestyle";
+import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
 
 let _draggedItem: any = null;
@@ -360,7 +360,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
     private _renderRow = (props: IDetailsRowProps, defaultRender?: any) => {
         if (props.item.Type === 'Section') {
             const { BackgroundColor, FontColor } = props.item;
-            const className = style({ backgroundColor: BackgroundColor, color: FontColor });
+            const className = mergeStyles({ backgroundColor: BackgroundColor, color: FontColor });
             return <DetailsRow {...props} className={className} />;
         }
         return <DetailsRow {...props} />;
