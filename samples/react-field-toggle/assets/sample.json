@@ -1,38 +1,61 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-react-field-toggle",
-  "source": "pnp",
-  "title": "Toggle Field Customizer",
-  "shortDescription": "In this sample is possible to see how to implement Office UI Fabric React Toggle for the field yes/no through SPFx Extensions Field Customizers to modify in a quick way (inline editing) a list without opening the list item.",
-  "longDescription": [
-    "In this sample is possible to see how to implement Office UI Fabric React Toggle for the field yes/no through SPFx Extensions Field Customizers to modify in a quick way (inline editing) a list without opening the list item."
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "React"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.3.0"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-toggle/assets/react-field-toggle.gif",
-      "alt": "Toggle Field Customizer"
-    }
-  ],
-  "authors": [
-    {
-      "gitHubAccount": "giuleon",
-      "pictureUrl": "https://github.com/giuleon.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-field-toggle",
+    "source": "pnp",
+    "title": "Toggle Field Customizer",
+    "shortDescription": "In this sample is possible to see how to implement Office UI Fabric React Toggle for the field yes/no through SPFx Extensions Field Customizers to modify in a quick way (inline editing) a list without opening the list item.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-field-toggle",
+    "longDescription": [
+      "In this sample is possible to see how to implement Office UI Fabric React Toggle for the field yes/no through SPFx Extensions Field Customizers to modify in a quick way (inline editing) a list without opening the list item."
+    ],
+    "creationDateTime": "2017-10-04",
+    "updateDateTime": "2017-10-04",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.3.0"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SFPX-FIELD-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-toggle/assets/react-field-toggle.gif",
+        "alt": "Toggle Field Customizer"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "giuleon",
+        "company": "",
+        "pictureUrl": "https://github.com/giuleon.png",
+        "name": "Giuliano De Luca",
+        "twitter": "delucagiulian"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Build your first Field Customizer extension",
+        "description": "Extensions are client-side components that run inside the context of a SharePoint page. Extensions can be deployed to SharePoint Online, and you can use modern JavaScript tools and libraries to build them.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-field-customizer?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

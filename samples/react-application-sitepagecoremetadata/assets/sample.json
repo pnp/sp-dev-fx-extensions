@@ -1,38 +1,60 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-react-application-sitepagecoremetadata",
-  "source": "pnp",
-  "title": "Tenant Global NavBar",
-  "shortDescription": "Sample SharePoint Framework application customizer to display the core metadata of a Site Page such as Author,Editor, Created date and Modified date in the footer of the page.",
-  "longDescription": [
-    "Sample SharePoint Framework application customizer to display the core metadata of a Site Page such as Author,Editor, Created date and Modified date in the footer of the page."
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "React"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.5"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-sitepagecoremetadata/assets/SitePageMetadataExtension.png",
-      "alt": "Tenant Global NavBar"
-    }
-  ],
-  "authors": [
-    {
-      "gitHubAccount": "vipulkelkar",
-      "pictureUrl": "https://github.com/vipulkelkar.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-application-sitepagecoremetadata",
+    "source": "pnp",
+    "title": "Tenant Global NavBar",
+    "shortDescription": "Sample SharePoint Framework application customizer to display the core metadata of a Site Page such as Author,Editor, Created date and Modified date in the footer of the page.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-sitepagecoremetadata",
+    "longDescription": [
+      "Sample SharePoint Framework application customizer to display the core metadata of a Site Page such as Author,Editor, Created date and Modified date in the footer of the page."
+    ],
+    "creationDateTime": "2018-08-15",
+    "updateDateTime": "2018-08-15",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.5"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SFPX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-sitepagecoremetadata/assets/SitePageMetadataExtension.png",
+        "alt": "Tenant Global NavBar"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "vipulkelkar",
+        "company": "Rapid Circle",
+        "pictureUrl": "https://github.com/vipulkelkar.png",
+        "name": "Vipul Kelkar"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

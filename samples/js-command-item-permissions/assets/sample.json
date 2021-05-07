@@ -1,38 +1,61 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-js-command-item-permissions",
-  "source": "pnp",
-  "title": "Unique Item Permissions Command Set Customizer",
-  "shortDescription": "The sample illustrates creation of a shortcut command to redirect user to selected item\u0027s permission page.",
-  "longDescription": [
-    "The sample illustrates creation of a shortcut command to redirect user to selected item\u0027s permission page."
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "Javascript"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.3"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-command-item-permissions/assets/item-permissions.png",
-      "alt": "Unique Item Permissions Command Set Customizer"
-    }
-  ],
-  "authors": [
-    {
-      "gitHubAccount": "AJIXuMuK",
-      "pictureUrl": "https://github.com/AJIXuMuK.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-js-command-item-permissions",
+    "source": "pnp",
+    "title": "Unique Item Permissions Command Set Customizer",
+    "shortDescription": "The sample illustrates creation of a shortcut command to redirect user to selected item\u0027s permission page.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/js-command-item-permissions",
+    "longDescription": [
+      "The sample illustrates creation of a shortcut command to redirect user to selected item\u0027s permission page."
+    ],
+    "creationDateTime": "2017-10-15",
+    "updateDateTime": "2017-10-15",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "Javascript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.3"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SFPX-COMMAND-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-command-item-permissions/assets/item-permissions.png",
+        "alt": "Unique Item Permissions Command Set Customizer"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "AJIXuMuK",
+        "company": "Sharepointalist",
+        "pictureUrl": "https://avatars.githubusercontent.com/u/17036219?s=460\u0026u=b8e83fb70a90eae0c0e0078c206990785e1a5b6f\u0026v=4",
+        "name": "Alex Terentiev",
+        "twitter": "alexaterentiev"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Build your first ListView Command Set extension",
+        "description": "Extensions are client-side components that run inside the context of a SharePoint page. Extensions can be deployed to SharePoint Online, and you can use modern JavaScript tools and libraries to build them.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

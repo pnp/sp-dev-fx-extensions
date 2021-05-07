@@ -1,38 +1,85 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-js-command-clone",
-  "source": "pnp",
-  "title": "Clone ListView Command Set",
-  "shortDescription": "Sample SharePoint Framework listview command set extension that allows users to clone one or more list items. Demonstrates conditional visibility, PnPJS requests, PnPJS Batching, and field specific formats for rest operations.",
-  "longDescription": [
-    "Sample SharePoint Framework listview command set extension that allows users to clone one or more list items. Demonstrates conditional visibility, PnPJS requests, PnPJS Batching, and field specific formats for rest operations."
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "Javascript"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.4.0"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-command-clone/assets/spfxClone-Animation.gif",
-      "alt": "Clone ListView Command Set"
-    }
-  ],
-  "authors": [
-    {
-      "gitHubAccount": "thechriskent",
-      "pictureUrl": "https://github.com/thechriskent.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-js-command-clone",
+    "source": "pnp",
+    "title": "Clone ListView Command Set",
+    "shortDescription": "Sample SharePoint Framework listview command set extension that allows users to clone one or more list items. Demonstrates conditional visibility, PnPJS requests, PnPJS Batching, and field specific formats for rest operations.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/js-command-clone",
+    "longDescription": [
+      "Sample SharePoint Framework listview command set extension that allows users to clone one or more list items. Demonstrates conditional visibility, PnPJS requests, PnPJS Batching, and field specific formats for rest operations."
+    ],
+    "creationDateTime": "2019-05-27",
+    "updateDateTime": "2019-05-27",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "Javascript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.4.0"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SFPX-COMMAND-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-command-clone/assets/spfxClone-Animation.gif",
+        "alt": "Clone ListView Command Set"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-command-clone/assets/CommandIcon.png?raw=true",
+        "alt": "Clone ListView Command Set"
+      },
+      {
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-command-clone/assets/DeployToCatalog.png?raw=true",
+        "alt": "Clone ListView Command Set"
+      },
+      {
+        "type": "image",
+        "order": 103,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-command-clone/assets/Dolly.png?raw=true",
+        "alt": "Clone ListView Command Set"
+      },
+      {
+        "type": "image",
+        "order": 104,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-command-clone/assets/spfxClone-Preview.png?raw=true",
+        "alt": "Clone ListView Command Set"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "thechriskent",
+        "company": "DMI",
+        "pictureUrl": "https://avatars.githubusercontent.com/u/8364109?s=460\u0026v=4",
+        "name": "Chris Kent",
+        "twitter": "thechriskent"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Build your first ListView Command Set extension",
+        "description": "Extensions are client-side components that run inside the context of a SharePoint page. Extensions can be deployed to SharePoint Online, and you can use modern JavaScript tools and libraries to build them.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

@@ -1,38 +1,67 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-react-app-announcements",
-  "source": "pnp",
-  "title": "Announcements SharePoint Framework application customizer",
-  "shortDescription": "Sample SharePoint Framework application customizer showing urgent organizational announcements.",
-  "longDescription": [
-    "Sample SharePoint Framework application customizer showing urgent organizational announcements."
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "React"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.1.1"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-app-announcements/assets/announcements-preview.png",
-      "alt": "Announcements SharePoint Framework application customizer"
-    }
-  ],
-  "authors": [
-    {
-      "gitHubAccount": "waldekmastykarz",
-      "pictureUrl": "https://github.com/waldekmastykarz.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-app-announcements",
+    "source": "pnp",
+    "title": "Announcements SharePoint Framework application customizer",
+    "shortDescription": "Sample SharePoint Framework application customizer showing urgent organizational announcements.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-app-announcements",
+    "longDescription": [
+      "Sample SharePoint Framework application customizer showing urgent organizational announcements."
+    ],
+    "creationDateTime": "2017-06-30",
+    "updateDateTime": "2017-06-30",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.1.1"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SFPX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-app-announcements/assets/announcements-preview.png",
+        "alt": "Announcements SharePoint Framework application customizer"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/react-app-announcements/assets/announcements-announcements.png?raw=true",
+        "alt": "Announcements SharePoint Framework application customizer"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz",
+        "twitter": "waldekm"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

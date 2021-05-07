@@ -1,38 +1,79 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-js-field-conditionalformatting",
-  "source": "pnp",
-  "title": "Conditional formatting SharePoint Framework field customizer",
-  "shortDescription": "Sample SharePoint Framework field customizer that applies Excel-like conditional formatting to numeric fields based on their values.",
-  "longDescription": [
-    "Sample SharePoint Framework field customizer that applies Excel-like conditional formatting to numeric fields based on their values."
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "Javascript"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.1.1"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-field-conditionalformatting/assets/conditionalformatting-preview.png",
-      "alt": "Conditional formatting SharePoint Framework field customizer"
-    }
-  ],
-  "authors": [
-    {
-      "gitHubAccount": "waldekmastykarz",
-      "pictureUrl": "https://github.com/waldekmastykarz.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-js-field-conditionalformatting",
+    "source": "pnp",
+    "title": "Conditional formatting SharePoint Framework field customizer",
+    "shortDescription": "Sample SharePoint Framework field customizer that applies Excel-like conditional formatting to numeric fields based on their values.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/js-field-conditionalformatting",
+    "longDescription": [
+      "Sample SharePoint Framework field customizer that applies Excel-like conditional formatting to numeric fields based on their values."
+    ],
+    "creationDateTime": "2017-06-29",
+    "updateDateTime": "2017-06-29",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "Javascript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.1.1"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SFPX-FIELD-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-field-conditionalformatting/assets/conditionalformatting-preview.png",
+        "alt": "Conditional formatting SharePoint Framework field customizer"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-field-conditionalformatting/assets/conditionalformatting-25-95.png?raw=true",
+        "alt": "Conditional formatting SharePoint Framework field customizer"
+      },
+      {
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-field-conditionalformatting/assets/conditionalformatting-log-level.png?raw=true",
+        "alt": "Conditional formatting SharePoint Framework field customizer"
+      },
+      {
+        "type": "image",
+        "order": 103,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-field-conditionalformatting/assets/conditionalformatting-verbose-logging.png?raw=true",
+        "alt": "Conditional formatting SharePoint Framework field customizer"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz",
+        "twitter": "waldekm"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Build your first Field Customizer extension",
+        "description": "Extensions are client-side components that run inside the context of a SharePoint page. Extensions can be deployed to SharePoint Online, and you can use modern JavaScript tools and libraries to build them.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-field-customizer?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

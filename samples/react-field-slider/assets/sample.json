@@ -1,38 +1,61 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-react-field-slider",
-  "source": "pnp",
-  "title": "Slider Field Customizer",
-  "shortDescription": "The sample illustrates how to use Office UI Fabric React Slider in Field Customizer with permissions-base inline editing",
-  "longDescription": [
-    "The sample illustrates how to use Office UI Fabric React Slider in Field Customizer with permissions-base inline editing"
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "React"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.2.0"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-slider/assets/slider.png",
-      "alt": "Slider Field Customizer"
-    }
-  ],
-  "authors": [
-    {
-      "gitHubAccount": "AJIXuMuK",
-      "pictureUrl": "https://github.com/AJIXuMuK.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-field-slider",
+    "source": "pnp",
+    "title": "Slider Field Customizer",
+    "shortDescription": "The sample illustrates how to use Office UI Fabric React Slider in Field Customizer with permissions-base inline editing",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-field-slider",
+    "longDescription": [
+      "The sample illustrates how to use Office UI Fabric React Slider in Field Customizer with permissions-base inline editing"
+    ],
+    "creationDateTime": "2017-08-30",
+    "updateDateTime": "2017-08-30",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.2.0"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SFPX-FIELD-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-slider/assets/slider.png",
+        "alt": "Slider Field Customizer"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "AJIXuMuK",
+        "company": "Sharepointalist",
+        "pictureUrl": "https://avatars.githubusercontent.com/u/17036219?s=460\u0026u=b8e83fb70a90eae0c0e0078c206990785e1a5b6f\u0026v=4",
+        "name": "Alex Terentiev",
+        "twitter": "alexaterentiev"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Build your first Field Customizer extension",
+        "description": "Extensions are client-side components that run inside the context of a SharePoint page. Extensions can be deployed to SharePoint Online, and you can use modern JavaScript tools and libraries to build them.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-field-customizer?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

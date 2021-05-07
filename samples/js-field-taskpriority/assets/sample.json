@@ -1,37 +1,72 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-js-field-taskpriority",
-  "source": "pnp",
-  "title": "Priority Field SharePoint Framework field customizer",
-  "shortDescription": "Sample SharePoint Framework field customizer that shows how to apply conditional color formatting to the values in a Priority field based on their value.",
-  "longDescription": [
-    "Sample SharePoint Framework field customizer that shows how to apply conditional color formatting to the values in a Priority field based on their value."
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "Javascript"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.1.1"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-field-taskpriority/assets/js-field-taskpriority-preview.jpg",
-      "alt": "Priority Field SharePoint Framework field customizer"
-    }
-  ],
-  "authors": [
-    {
-      "pictureUrl": "https://github.com/.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-js-field-taskpriority",
+    "source": "pnp",
+    "title": "Priority Field SharePoint Framework field customizer",
+    "shortDescription": "Sample SharePoint Framework field customizer that shows how to apply conditional color formatting to the values in a Priority field based on their value.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/js-field-taskpriority",
+    "longDescription": [
+      "Sample SharePoint Framework field customizer that shows how to apply conditional color formatting to the values in a Priority field based on their value."
+    ],
+    "creationDateTime": "2017-08-24",
+    "updateDateTime": "2017-08-24",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "Javascript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.1.1"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SFPX-FIELD-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-field-taskpriority/assets/js-field-taskpriority-preview.jpg",
+        "alt": "Priority Field SharePoint Framework field customizer"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-field-taskpriority/assets/CSS.jpg?raw=true",
+        "alt": "Priority Field SharePoint Framework field customizer"
+      },
+      {
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-field-taskpriority/assets/Querystring-Parameters.jpg?raw=true",
+        "alt": "Priority Field SharePoint Framework field customizer"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "TBag",
+        "company": "Canviz LLC",
+        "pictureUrl": "https://github.com/TBag.png",
+        "name": "Todd Baginski"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Build your first Field Customizer extension",
+        "description": "Extensions are client-side components that run inside the context of a SharePoint page. Extensions can be deployed to SharePoint Online, and you can use modern JavaScript tools and libraries to build them.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-field-customizer?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]
