@@ -1,120 +1,126 @@
 // external js: isotope.pkgd.js
+
+/***
+ * This is a generic isotope filter for samples
+ */
+
 $(document).ready(function () {
+  var filterText = $('#sample-listing').data("filter");
+  var qsRegex;
+  var buttonFilter;
 
   // init Isotope
-  var $grid = $('.grid').isotope({
-    itemSelector: '.sample-item',
+  var $grid = $('#sample-listing').isotope({
+    itemSelector: '.sample-thumbnail',
     layoutMode: 'fitRows',
-    sortAscending: false,
     sortBy: 'modified',
+    sortAscending: false,
     getSortData: {
-      title: '[data-title]',
-      // number: '.number parseInt',
-      modified: '[data-modified]'
+      modified: '[data-modified]',
+      title: '.sample-title'
+    },
+    filter: function () {
+      var searchResult = qsRegex ? $(this).data("keywords").match(qsRegex) : true;
+      var buttonResult = buttonFilter ? $(this).is(buttonFilter) : true;
+      return searchResult && buttonResult;
     }
   });
 
-  // bind filter button click
-  $('.filters-button-group').on('click', 'button', function () {
-    var filterValue = $(this).attr('data-filter');
-    // use filterFn if matches value
-    //filterValue = filterFns[filterValue] || filterValue;
-    $grid.isotope({ filter: filterValue });
+  // Display/hide a message when there are no results
+  $grid.on('arrangeComplete', function (_event, filteredItems) {
+    if (filteredItems.length > 0) {
+      // hide message 
+      $("#noresults").hide();
+    } else {
+      // show message; 
+      $("#noresults").show();
+    }
   });
-  // change is-checked class on buttons
-  $('.button-group').each(function (i, buttonGroup) {
+
+  // Get the JSON
+  $.getJSON(jsonPath, function (data) {
+    var asc = true;
+    var prop = "updateDateTime";
+
+    // Sort data descending order
+    data = data.sort(function (a, b) {
+      try {
+        if (asc) return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
+        else return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+      } catch (error) {
+        return 0;
+      }
+    });
+
+    $.each(data, function (_u, sample) {
+
+      var item = loadSample(sample, filterText);
+
+      if (item !== null) {
+        $grid.append(item)
+          // add and lay out newly appended items
+          .isotope('appended', item);
+      }
+
+    });
+
+    // Update the sort
+    $grid.isotope('updateSortData').isotope();
+  });
+
+  // Get the list of filters to use
+  var filter = $('#filters .filter-choice');
+
+  // Get the search box
+  var search = $('#post-search-input');
+
+  $('.filter-list').each(function (_i, buttonGroup) {
     var $buttonGroup = $(buttonGroup);
-    $buttonGroup.on('click', 'button', function () {
-      $buttonGroup.find('.is-checked').removeClass('is-checked');
-      $(this).addClass('is-checked');
+    $buttonGroup.on('click', '.filter-choice', function () {
+      $buttonGroup.find('.active').removeClass('active');
+      $(this).addClass('active');
+      var filters = [];
+
+      filter.filter('.active').each(function () {
+        filters.push($(this).data("filter"));
+      });
+      //filters = filters.join(', ');    //OR
+      filters = filters.join('');         //AND
+      buttonFilter = filters;
+      $grid.isotope();
+
     });
   });
 
-  // bind sort button click
-  $('.sort-button-group').on('click', 'button', function () {
+  search.on('change keyup paste', debounce(function () {
+    qsRegex = new RegExp(search.val(), 'gi');
+    $grid.isotope();
+  }, 200));
 
-    /* Get the element name to sort */
-    var sortValue = $(this).attr('data-sort-value');
+  // debounce so filtering doesn't happen every millisecond
+  function debounce(fn, threshold) {
+    var timeout;
+    return function debounced() {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      function delayed() {
+        fn();
+        timeout = null;
+      }
+      timeout = setTimeout(delayed, threshold || 100);
+    };
+  }
 
-    /* Get the sorting direction: asc||desc */
-    var direction = $(this).attr('data-sort-direction');
-
-    /* convert it to a boolean */
-    var isAscending = (direction == 'asc');
-    var newDirection = (isAscending) ? 'desc' : 'asc';
-
-    /* pass it to isotope */
-    $grid.isotope({ sortBy: sortValue, sortAscending: isAscending });
-
-    $(this).attr('data-sort-direction', newDirection);
-  });
-
-
-  // Trigger animation on GIF hover
-  $("a img[data-fullsize$='.gif']").hover((e) => {
-    // on mouse enter
-    var img = e.target;
-    var customdata = $(img).data('fullsize');
-    $(img).attr('src', customdata);
-  }, (e) => {
-    // on mouse leave
-    var img = e.target;
-    var customdata = $(img).data('orig');
-    $(img).attr('src', customdata);
-  });
-
-  $("#author").on('change keyup paste', function () {
-    var selection = $('#author').val();
-    if (selection !== "") {
-      $grid.isotope({ filter: `[data-author*='${selection}']` });
-    } else {
-      $grid.isotope({ filter: '*' });
+  // See if there are any passed parameters
+  try {
+    var urlParams = new URLSearchParams(window.location.search);
+    var query = urlParams.get('query');
+    if (query !== "") {
+      search.val(query).change();
     }
 
-  });
-
-  $("#keyword").on('change keyup paste', function () {
-    var selection = $('#keyword').val();
-    if (selection !== "") {
-      $grid.isotope({ filter: `[data-keywords*='${selection}']` });
-    } else {
-      $grid.isotope({ filter: '*' });
-    }
-
-  });
-
-
-// Make samples data sortal
-  $('#samplestable th').each(function (col) {
-    $(this).hover(
-      function () { $(this).addClass('focus'); },
-      function () { $(this).removeClass('focus'); }
-    );
-    $(this).click(function () {
-      if ($(this).is('.asc')) {
-        $(this).removeClass('asc');
-        $(this).addClass('desc selected');
-        sortOrder = -1;
-      }
-      else {
-        $(this).addClass('asc selected');
-        $(this).removeClass('desc');
-        sortOrder = 1;
-      }
-      $(this).siblings().removeClass('asc selected');
-      $(this).siblings().removeClass('desc selected');
-      var arrData = $('table').find('tbody >tr:has(td)').get();
-      arrData.sort(function (a, b) {
-        var val1 = $(a).children('td').eq(col).text().toUpperCase();
-        var val2 = $(b).children('td').eq(col).text().toUpperCase();
-        if ($.isNumeric(val1) && $.isNumeric(val2))
-          return sortOrder == 1 ? val1 - val2 : val2 - val1;
-        else
-          return (val1 < val2) ? -sortOrder : (val1 > val2) ? sortOrder : 0;
-      });
-      $.each(arrData, function (index, row) {
-        $('tbody').append(row);
-      });
-    });
-  });
+  } catch (error) {
+    // Be vewy vewy quiet
+  }
 });

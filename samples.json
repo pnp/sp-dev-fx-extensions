@@ -4798,7 +4798,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-pnp-field-renderer-helper/assets/FieldRendererHelper.gif",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/react-field-pnp-field-renderer-helper/assets/FieldRendererHelper.gif?raw=true",
         "alt": "PnP Field Renderer Helper"
       }
     ],
