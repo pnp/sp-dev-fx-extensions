@@ -1,0 +1,46 @@
+/* Site-specific styles */
+
+.sampletype-item.jquery {
+    background-image: url(../img/frameworks/jquery.svg);
+}
+
+.sampletype-item.javascript {
+    background-image: url(../img/frameworks/javascript.svg);
+}
+
+.sampletype-item.react {
+    background-image: url(../img/frameworks/react.svg);
+}
+
+.sampletype-item.application {
+    background-image: url(../img/types/application.svg);
+}
+
+.sampletype-item.command {
+    background-image: url(../img/types/toolbar.svg);
+}
+
+.sampletype-item.field {
+    background-image: url(../img/types/field.svg);
+}
+
+.sampletype-item.search {
+    background-image: url(../img/types/search.svg);
+}
+
+
+.sample-details .producttype-item.application {
+    background-image: url(../img/types/application.svg);
+}
+
+.sample-details .producttype-item.command {
+    background-image: url(../img/types/toolbar.svg);
+}
+
+.sample-details .producttype-item.field {
+    background-image: url(../img/types/field.svg);
+}
+
+.sample-details .producttype-item.search {
+    background-image: url(../img/items/search.svg);
+}

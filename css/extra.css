@@ -1,3 +1,5 @@
+/* Extra CSS used for the sample browser */
+
 @media screen and (max-width: 44.9375em) {
     .md-footer__link--prev {
         width: 25%;
@@ -584,35 +586,6 @@ li.md-nav__item .md-nav__link:active, li.md-nav__item .md-nav__link:hover {
     background-position: center;
 }
 
-
-.sampletype-item.jquery {
-    background-image: url(../img/frameworks/jquery.svg);
-}
-
-.sampletype-item.javascript {
-    background-image: url(../img/frameworks/javascript.svg);
-}
-
-.sampletype-item.react {
-    background-image: url(../img/frameworks/react.svg);
-}
-
-.sampletype-item.application {
-    background-image: url(../img/types/application.svg);
-}
-
-.sampletype-item.command {
-    background-image: url(../img/types/toolbar.svg);
-}
-
-.sampletype-item.field {
-    background-image: url(../img/types/field.svg);
-}
-
-.sampletype-item.search {
-    background-image: url(../img/types/search.svg);
-}
-
 .tag-filter-panel {
     right: -120%;
     height: 110%;
@@ -1000,23 +973,6 @@ TODO: Move styles
     background-repeat: no-repeat;
     background-position: center;
 }
-
-.sample-details .producttype-item.application {
-    background-image: url(../img/types/application.svg);
-}
-
-.sample-details .producttype-item.command {
-    background-image: url(../img/types/toolbar.svg);
-}
-
-.sample-details .producttype-item.field {
-    background-image: url(../img/types/field.svg);
-}
-
-.sample-details .producttype-item.search {
-    background-image: url(../img/items/search.svg);
-}
-
 
 @media only screen and (max-width: 1020px) {
     .tag-filter-panel {
