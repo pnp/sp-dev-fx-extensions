@@ -2883,7 +2883,13 @@
         "alt": "QnA Chatbot"
       }
     ],
-    "authors": [],
+    "authors": [
+      {
+        "gitHubAccount": "na",
+        "pictureUrl": "https://githob.com/Rodrigo Silva.png",
+        "name": "Rodrigo Silva"
+      }
+    ],
     "references": [
       {
         "name": "Overview of SharePoint Framework Extensions",
