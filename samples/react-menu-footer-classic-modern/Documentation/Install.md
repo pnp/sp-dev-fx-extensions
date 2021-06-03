@@ -19,7 +19,7 @@ You will need a location to store your webpack bundle (that contains the code) a
 ### STEP 3: Modify files for your tenant.
 
 * In Classic\client\bootHeaderFooter.ts, modify the `url` constant to point to the location where you will upload JSON file that contains the menu and footer content
-* In Classic\install\Add-HeaderFooter.ps1, modify the 3rd `Add-PnPJavaScriptLink` command to point to the location where you will upload the 
+* In Classic\install\Add-HeaderFooter.ps1, modify the 3rd `Add-PnPJavaScriptLink` command to point to the location where you will upload the packages.
 * If you have set up gulp to upload the bundle, as in Julie's article, you'll need to update settings.json and settings_security.json with values for your tenant.
 
 ### STEP 4: Set up your JSON data file
