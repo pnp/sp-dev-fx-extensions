@@ -22,13 +22,23 @@ Short summary on functionality and used technologies.
 
 ## Compatibility
 
-![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg)
-![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg)
+![SPFx 1.12.1](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
-> Don't worry if you're unsure about the compatibility matrix above. We'll verify it when we approve the PR
-> DELETE THIS PARAGRAPH BEFORE SUBMITTING
+> Don't worry if you're unsure about the compatibility matrix above. We'll verify it when we approve the PR. 
+>
+> If using an older version of SPFx, update the SPFx and Node.js compatibility tag accordingly:
+> SPFx 1.11
+>    ![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg) 
+>    ![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg) 
+>
+> SPFx 1.4.1
+>    ![SPFx 1.4.1](https://img.shields.io/badge/SPFx-1.4.1-green.svg)
+>    ![Node.js LTS 6.x | LTS 8.x](https://img.shields.io/badge/Node.js-LTS%206.x%20%7C%20LTS%208.x-green.svg)
+>
+
 
 ## Applies to
 
