@@ -3,7 +3,7 @@
     "name": "pnp-sp-dev-spfx-extensions-react-application-pva-bot",
     "source": "pnp",
     "title": "Power Virtual Agents Bot Host",
-    "shortDescription": "Adds footer to launch a Power Virtual Agents chatbot window from any page.",
+    "shortDescription": "Adds a footer to launch a Power Virtual Agents chatbot window from any page.",
     "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-pva-bot",
     "longDescription": [
       "Sample SharePoint Framework application customizer showing urgent organizational announcements."
