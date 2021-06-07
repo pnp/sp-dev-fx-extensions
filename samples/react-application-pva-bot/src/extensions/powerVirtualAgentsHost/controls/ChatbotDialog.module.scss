@@ -1,0 +1,15 @@
+.chatcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.webchat {
+    width: 100%;
+    height: 0rem;
+}
+
+.spinner {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
