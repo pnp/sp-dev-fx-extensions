@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="PowerVirtualAgentsHost"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="651e5ed0-c115-4301-beca-b36a6678d7bb"
+        ClientSideComponentProperties="{&quot;botId&quot;: &quot;YOUR-BOT-GUID&quot;,&quot;botFriendlyName&quot;: &quot;Contoso Bot&quot;,&quot;buttonLabel&quot;: &quot;Chat with Contoso Bot&quot;,&quot;tenantId&quot;: &quot;YOUR-TENANT-GUID&quot;,&quot;botAvatarImage&quot;: &quot;https://your-bot-avatar-image-url&quot;,&quot;botAvatarInitials&quot;: &quot;CB&quot;,&quot;greet&quot;: false}">
+    </CustomAction>
+</Elements>
