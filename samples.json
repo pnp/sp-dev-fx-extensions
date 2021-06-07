@@ -51,13 +51,6 @@
     ],
     "authors": [
       {
-        "gitHubAccount": "hugoabernier",
-        "company": "Microsoft",
-        "pictureUrl": "https://github.com/hugoabernier.png",
-        "name": "Hugo Bernier",
-        "twitter": "bernierh"
-      },
-      {
         "gitHubAccount": "DmitryVorobyov",
         "company": "Microsoft",
         "pictureUrl": "https://github.com/DmitryVorobyov.png",
@@ -68,6 +61,13 @@
         "gitHubAccount":"renatoromao",
         "pictureUrl":"https://github.com/renatoromao.png",
         "name": "Renato Romão"
+      },
+      {
+        "gitHubAccount": "hugoabernier",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/hugoabernier.png",
+        "name": "Hugo Bernier",
+        "twitter": "bernierh"
       }
     ],
     "references": [
