@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="CopyPnPSearchWebpartSettings"
+        RegistrationId="119"
+        RegistrationType="List"
+        Rights="EditListItems"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="dc7732fc-dbe5-4995-be53-d25ddec8a2c9"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>
