@@ -4,12 +4,12 @@
 
 This solution has the goal to easily identify/follow user key documents from all Tenant and easily access them in Modern Pages. This solution uses the Out of Box Social feature **"Follow document"** with combination of MSGraph queries and MGT FileList/File components.
 
-Avaliable features:
-- Follow documents (individualy or multiple at same time)
+Available features:
+- Follow documents (individually or multiple at same time)
 - Manage followed documents (Follow/unfollow)
 - List of all followed documents and option to unfollow if needed
 
-Usage of following Tecnologies:
+Usage of following Technologies:
 - Usage of Social Feature **"Follow" documents** and associated REST "[/_api/social.following/](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2)"
 - Usage of MGT (Microsoft Graph Toolkit) [FileList](https://docs.microsoft.com/en-us/graph/toolkit/components/file-list) and [File](https://docs.microsoft.com/en-us/graph/toolkit/components/file)
 
