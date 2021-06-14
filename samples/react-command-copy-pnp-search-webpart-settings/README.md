@@ -67,7 +67,7 @@ This extension illustrates the following concepts:
 Here's a debug URL for testing around this sample. 
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"dc7732fc-dbe5-4995-be53-d25ddec8a2c9":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"dc7732fc-dbe5-4995-be53-d25ddec8a2c9":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{}}}
 ```
 
 ## References
