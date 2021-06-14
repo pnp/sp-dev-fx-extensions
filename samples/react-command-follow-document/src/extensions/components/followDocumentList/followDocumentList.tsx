@@ -3,6 +3,7 @@ import styles from './followDocumentList.module.scss';
 import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
 import { Text } from "office-ui-fabric-react/lib/Text";
 import { Link } from 'office-ui-fabric-react/lib/Link';
+import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 import { DefaultButton } from "office-ui-fabric-react/lib/Button";
 import Graph from "../../Services/GraphService";
 import { FileList, File, ViewType, MgtTemplateProps } from '@microsoft/mgt-react';
@@ -130,6 +131,14 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
       return <div>{displayFollowStatusFiles(Item)}</div>;
     };
 
+    const Loading = (props: MgtTemplateProps) => {
+      return <Spinner size={SpinnerSize.large} />;
+    };
+    
+    const NoData = (props: MgtTemplateProps) => {
+      return <div>No follow documents.</div>;
+    };
+
     return (
       <Panel isOpen={this.state.isOpen}
         type={PanelType.smallFixedFar}
@@ -147,6 +156,8 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
             pageSize={1000}
           >
             <MyFile template="default"></MyFile>
+            <Loading template="loading"></Loading>
+            <NoData template="no-data"></NoData>
           </FileList>
         </div>
       </Panel>
