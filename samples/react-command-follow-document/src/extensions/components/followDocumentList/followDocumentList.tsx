@@ -108,7 +108,7 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
     const displayFollowStatusFiles = (Items: MicrosoftGraph.DriveItem[]) => {
       var listItems = Items.map(item => {
         return <div>
-          <Link href={item.webUrl} target="_alt" >
+          <Link href={item.webUrl} target="_blank" >
             <File view={ViewType.oneline} fileDetails={item}></File>
           </Link>
           <div><Text variant="small">{item.webUrl}</Text></div>
