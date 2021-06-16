@@ -67,12 +67,20 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
 
     private getFollowDocuments = async (siteId: string, listId: string): Promise<MicrosoftGraph.DriveItem[]> => {
         const GraphService: Graph = new Graph();
-        let graphData: any = await GraphService.getGraphContent(`https://graph.microsoft.com/v1.0/sites/${siteId}/Lists/${listId}/items?expand=fields(select=ItemId,ListId,SiteId,webId,Title,Url,ServerUrlProgid,IconUrl)&$filter=fields/ItemId gt -1`, this.props.context);
+        let graphData: any = await GraphService.getGraphContent(`https://graph.microsoft.com/v1.0/sites/${siteId}/Lists/${listId}/items?expand=fields(select=ItemId,ListId,SiteId,webId,Title,Url,ServerUrlProgid,IconUrl,File_x0020_Type.progid)&$filter=fields/ItemId gt -1`, this.props.context);
         let Item: MicrosoftGraph.DriveItem[] = [];
+
         graphData.value.forEach(element => {
+            let fileprogedid;
+            if (element.fields.ServerUrlProgid === undefined) {
+                fileprogedid = element.fields.Url;
+            } else {
+                fileprogedid = element.fields.ServerUrlProgid.substring(1);
+            }
             Item.push({
                 webUrl: element.fields.Url,
                 name: element.fields.Title,
+                webDavUrl: fileprogedid,
             });
         });
         return Item;
@@ -108,7 +116,7 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
         const displayFollowStatusFiles = (Items: MicrosoftGraph.DriveItem[]) => {
             var listItems = Items.map(item => {
                 return <div>
-                    <Link href={item.webUrl} target="_blank" >
+                    <Link href={item.webDavUrl} target="_blank" >
                         <File view={ViewType.oneline} fileDetails={item}></File>
                     </Link>
                     <div><Text variant="small">{item.webUrl}</Text></div>
@@ -125,6 +133,7 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
                 Item.push({
                     webUrl: element.webUrl,
                     name: element.name,
+                    webDavUrl: element.webDavUrl,
                 });
             });
 
