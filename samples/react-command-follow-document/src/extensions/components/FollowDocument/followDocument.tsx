@@ -2,16 +2,17 @@ import * as React from 'react';
 
 import { DialogContent } from 'office-ui-fabric-react/lib/Dialog';
 import { Link } from 'office-ui-fabric-react/lib/Link';
-import { File, ViewType } from '@microsoft/mgt-react';
+import { File, ViewType, MgtTemplateProps } from '@microsoft/mgt-react';
 import RestService from "../../Services/RestService";
 import { IfollowDocumentProps } from "./IfollowDocumentProps";
 import { IfollowDocumentState } from "./IfollowDocumentState";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 
 const linkClass = mergeStyles({
     paddingLeft: 5,
-  });
+});
 
 export class FollowDocument extends React.Component<IfollowDocumentProps, IfollowDocumentState> {
 
@@ -26,13 +27,13 @@ export class FollowDocument extends React.Component<IfollowDocumentProps, Ifollo
         const restService: RestService = new RestService();
         const followDocumentExist = await restService.isfollowed(this.props.fileInfo[0].context.spHttpClient, this.props.fileInfo[0].fileUrl, this.props.fileInfo[0].context.pageContext.site.absoluteUrl);
         this.setState({
-            followStatus:followDocumentExist,
+            followStatus: followDocumentExist,
         });
     }
 
     public render(): React.ReactElement<IfollowDocumentProps> {
         const { fileInfo, followStatus } = this.state;
-        
+
         const followSocialDocument = () => {
             const restService: RestService = new RestService();
             const Status = restService.follow(
@@ -60,6 +61,10 @@ export class FollowDocument extends React.Component<IfollowDocumentProps, Ifollo
 
         };
 
+        const Loading = (props: MgtTemplateProps) => {
+            return <Spinner size={SpinnerSize.large} />;
+        };
+
         return (
             <DialogContent
                 title="Follow Status"
@@ -67,7 +72,9 @@ export class FollowDocument extends React.Component<IfollowDocumentProps, Ifollo
                 onDismiss={this.props.close}
             >
                 <div>
-                    <File view={ViewType.threelines} driveId={this.props.fileInfo[0].DriveId} itemId={this.props.fileInfo[0].ItemID}></File>
+                    <File view={ViewType.threelines} driveId={this.props.fileInfo[0].DriveId} itemId={this.props.fileInfo[0].ItemID}>
+                        <Loading template="loading"></Loading>
+                    </File>
                     <div>
                         {(followStatus === true) &&
                             <div>
