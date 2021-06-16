@@ -67,7 +67,7 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
 
     private getFollowDocuments = async (siteId: string, listId: string): Promise<MicrosoftGraph.DriveItem[]> => {
         const GraphService: Graph = new Graph();
-        let graphData: any = await GraphService.getGraphContent(`https://graph.microsoft.com/v1.0/sites/${siteId}/Lists/${listId}/items?expand=fields(select=ItemId,ListId,SiteId,webId,Title,Url,ServerUrlProgid,IconUrl,File_x0020_Type.progid)&$filter=fields/ItemId gt -1`, this.props.context);
+        let graphData: any = await GraphService.getGraphContent(`https://graph.microsoft.com/v1.0/sites/${siteId}/Lists/${listId}/items?expand=fields(select=ItemId,ListId,SiteId,webId,Title,Url,ServerUrlProgid,IconUrl)&$filter=fields/ItemId gt -1`, this.props.context);
         let Item: MicrosoftGraph.DriveItem[] = [];
 
         graphData.value.forEach(element => {
