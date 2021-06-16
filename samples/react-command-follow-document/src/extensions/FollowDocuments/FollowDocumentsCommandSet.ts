@@ -63,7 +63,7 @@ export default class FollowDocumentsCommandSet extends BaseListViewCommandSet<IF
           this.context.pageContext.site.serverRelativeUrl,
           ""
         );
-        
+
         let DriveID = event.selectedRows[0].getValueByName(".spItemUrl");
         DriveID = DriveID.substring(
           DriveID.indexOf("/drives/") + 8,
@@ -75,23 +75,24 @@ export default class FollowDocumentsCommandSet extends BaseListViewCommandSet<IF
           ItemID.lastIndexOf("?")
         );
         this.fileInfo = [];
-        event.selectedRows.forEach(element => {
-          this.fileInfo.push({
-            TenantUrl: TenantUrl,
-            fileUrl: TenantUrl + element.getValueByName("FileRef"),
-            fileIcon:
-              this.context.pageContext.site.absoluteUrl +
-              "/_layouts/15/images/" +
-              element.getValueByName(
-                "HTML_x0020_File_x0020_Type.File_x0020_Type.mapico"
-              ),
-            DriveId: DriveID,
-            ItemID: ItemID,
-            fileLeafRef: element.getValueByName("FileLeafRef"),
-            context: this.context,
-          });
+        event.selectedRows.forEach((element) => {
+          if (element.getValueByName("FSObjType") == "0") {
+            this.fileInfo.push({
+              TenantUrl: TenantUrl,
+              fileUrl: TenantUrl + element.getValueByName("FileRef"),
+              fileIcon:
+                this.context.pageContext.site.absoluteUrl +
+                "/_layouts/15/images/" +
+                element.getValueByName(
+                  "HTML_x0020_File_x0020_Type.File_x0020_Type.mapico"
+                ),
+              DriveId: DriveID,
+              ItemID: ItemID,
+              fileLeafRef: element.getValueByName("FileLeafRef"),
+              context: this.context,
+            });
+          }
         });
-        
       }
       compareBulkCommand.visible = event.selectedRows.length > 1;
       compareOneCommand.visible = event.selectedRows.length === 1;
