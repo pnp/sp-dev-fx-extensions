@@ -13,7 +13,7 @@ Usage of following Technologies:
 - Usage of Social Feature **"Follow" documents** and associated REST "[/_api/social.following/](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2)"
 - Usage of MGT (Microsoft Graph Toolkit) [FileList](https://docs.microsoft.com/en-us/graph/toolkit/components/file-list) and [File](https://docs.microsoft.com/en-us/graph/toolkit/components/file)
 
-![image](./assets/FollowDocumentSample1.gif)
+![image](./Assets/FollowDocumentSample1.gif)
 
 ## Compatibility
 
