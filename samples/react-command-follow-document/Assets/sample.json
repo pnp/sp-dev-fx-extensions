@@ -33,7 +33,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-follow-document/assets/FollowDocumentSample1.gif",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/react-command-follow-document/Assets/FollowDocumentSample1.gif?raw=true",
         "alt": "Preview"
       }
     ],
