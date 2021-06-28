@@ -49,15 +49,15 @@ function loadSample(sample, filter) {
         var sampleType = "";
         var sampleTypeName = "";
         switch (categories) {
-          case "SFPX-FIELD-EXTENSION":
+          case "SPFX-FIELD-EXTENSION":
             sampleType = "field";
             sampleTypeName = "Field customizer";
             break;
-          case "SFPX-COMMAND-EXTENSION":
+          case "SPFX-COMMAND-EXTENSION":
               sampleType = "command";
               sampleTypeName = "ListView command set";
               break;
-          case "SFPX-SEARCHQUERY-EXTENSION":
+          case "SPFX-SEARCHQUERY-EXTENSION":
               sampleType = "search";
               sampleTypeName = "Search query extension";
               break;
