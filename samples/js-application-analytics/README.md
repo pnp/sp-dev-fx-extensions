@@ -88,6 +88,7 @@ to:
 ```json
 "disableAsync": true
 ```
+Doing so will revert the Google Analytics embedded tag to the legacy method.
 
 If your organization is using Google Analytics V4 you must change the extension's configuration from:
 
@@ -99,7 +100,6 @@ to:
 "googleAnalyticsV4": true
 ```
 
-Doing so will revert the Google Analytics embedded tag to the legacy method.
 
 ## Debug URL for testing
 
