@@ -34,6 +34,7 @@ Solution|Author(s)
 --------|---------
 js-application-analytics | Giuliano De Luca ([@giuleon](https://twitter.com/giuleon) , [www.delucagiuliano.com](http://www.delucagiuliano.com))
 js-application-analytics | Hugo Bernier ([@bernierh](https://twitter.com/bernierh) , [tahoeninjas.blog](https://tahoeninjas.blog))
+js-application-analytics | João Ferreira ([@joao12ferreira](https://twitter.com/joao12ferreira) , [HANDS ON tek](https://sharepoint.handsontek.net))
 
 ## Version history
 
@@ -42,6 +43,7 @@ Version|Date|Comments
 1.0|June 09, 2017|Initial release
 1.1|September 29, 2017|Updated for SPFx GA 1.3.0
 1.2|October 7, 2020|Refactored for SPFx 1.11; Added support for async/legacy modes
+1.3|July 1, 2021|Added support for Google Analytics V4
 
 ## Disclaimer
 
@@ -87,6 +89,16 @@ to:
 "disableAsync": true
 ```
 
+If your organization is using Google Analytics V4 you must change the extension's configuration from:
+
+```json
+"googleAnalyticsV4": false
+```
+to:
+```json
+"googleAnalyticsV4": true
+```
+
 Doing so will revert the Google Analytics embedded tag to the legacy method.
 
 ## Debug URL for testing
@@ -94,7 +106,7 @@ Doing so will revert the Google Analytics embedded tag to the legacy method.
 Here's a debug URL for testing around this sample.
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"46050d9b-6925-42e5-812a-c5218d6c85ae":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"trackingId":"UA-100713841-5","disableAsync":true}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"46050d9b-6925-42e5-812a-c5218d6c85ae":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"trackingId":"UA-100713841-5","disableAsync":true,"googleAnalyticsV4":true}}}
 ```
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-application-analytics" />
