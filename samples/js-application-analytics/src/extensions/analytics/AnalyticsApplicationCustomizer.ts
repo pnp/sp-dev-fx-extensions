@@ -17,6 +17,7 @@ export interface IAnalyticsApplicationCustomizerProperties {
   // This is an example; replace with your own property
   trackingId: string;
   disableAsync: boolean;
+  googleAnalyticsV4: boolean;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
@@ -25,10 +26,10 @@ export default class AnalyticsApplicationCustomizer
 
   @override
   public onInit(): Promise<void> {
-    Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+
 
     // Retrieve properties to configure the extension
-    const { trackingId, disableAsync } = this.properties;
+    const { trackingId, disableAsync, googleAnalyticsV4 } = this.properties;
 
     // Check that we have the mandatory tracking ID
     if (!trackingId) {
@@ -42,24 +43,36 @@ export default class AnalyticsApplicationCustomizer
     // Google supports an async and sync approach to calling Google Analytics
     // Async is more efficient, but isn't supported on -- ahem -- legacy browsers.
 
-    // If your organization still supports legacy browsers (and, most likely, faxes) you can disable
-    // async support in the extension's configuration, by passing disableAsync: true
-    if (disableAsync === true) {
-      // Using legacy mode
+    // If your organization is using Google Analytics V4 you can enable it in the extension's configuration
+    if(googleAnalyticsV4 === true){
+      //using google analytics v4
       html += `
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', '${trackingId}', 'auto');
-        ga('send', 'pageview');`;
-    } else {
-      // Using modern browser async approach
-      html = `window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', '${trackingId}', 'auto');
-        ga('send', 'pageview');`;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VKYDHTZN3Z');`;
+    }else{
+      // If your organization still supports legacy browsers (and, most likely, faxes) you can disable
+      // async support in the extension's configuration, by passing disableAsync: true
+      if (disableAsync === true) {
+        // Using legacy mode
+        html += `
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+          ga('create', '${trackingId}', 'auto');
+          ga('send', 'pageview');`;
+      } else {
+        // Using modern browser async approach
+        html += `window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+          ga('create', '${trackingId}', 'auto');
+          ga('send', 'pageview');`;
+      }
     }
+
+    
 
     // Create an element at the end of the document
     const body: HTMLElement = document.documentElement;
@@ -77,12 +90,21 @@ export default class AnalyticsApplicationCustomizer
     // If we're using the async method, we also want to refer to the Google Analytics JavaScript file
     // asynchronously -- of course
     if (disableAsync !== true) {
-      // Create an async script link
-      let scriptLink = document.createElement("script");
-      scriptLink.type = "text/javascript";
-      scriptLink.async = true;
-      scriptLink.src = "https://www.google-analytics.com/analytics.js";
-      body.insertAdjacentElement("beforeend", scriptLink);
+      if(googleAnalyticsV4===true){
+        // Create an async script link for Analytics V4
+        let scriptLink = document.createElement("script");
+        scriptLink.type = "text/javascript";
+        scriptLink.async = true;
+        scriptLink.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
+        body.insertAdjacentElement("beforeend", scriptLink);
+      }else{
+        // Create an async script link for Classic Analytics
+        let scriptLink = document.createElement("script");
+        scriptLink.type = "text/javascript";
+        scriptLink.async = true;
+        scriptLink.src = "https://www.google-analytics.com/analytics.js";
+        body.insertAdjacentElement("beforeend", scriptLink);
+      }      
     }
 
     return Promise.resolve();
