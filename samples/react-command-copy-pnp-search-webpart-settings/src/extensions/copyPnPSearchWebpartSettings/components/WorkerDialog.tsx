@@ -686,7 +686,7 @@ Start-Copying;
                             }} />
                     }
 
-                    <Toggle label="Show PnP PoweShell code" onText="Yes" offText="No" onChange={onShowPnPPSCodeChange} checked={showPnPPSCode} disabled={!allDataOk} />
+                    <Toggle label="Show PnP PowerShell code" onText="Yes" offText="No" onChange={onShowPnPPSCodeChange} checked={showPnPPSCode} disabled={!allDataOk} />
                     {
                         showPnPPSCode && allDataOk &&
 
