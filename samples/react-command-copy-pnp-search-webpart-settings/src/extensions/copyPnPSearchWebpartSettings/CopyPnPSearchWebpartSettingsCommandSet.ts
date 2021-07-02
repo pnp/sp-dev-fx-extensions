@@ -79,6 +79,7 @@ export default class CopyPnPSearchWebpartSettingsCommandSet extends BaseListView
         hidden: hidden,
         fileRefs: fileRefs,
         folderUrl: folderUrl,
+        siteUrl: this.context.pageContext.site.absoluteUrl,
         close: this.closeDialog
       }
     );
