@@ -50,7 +50,7 @@ export default class AnalyticsApplicationCustomizer
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-VKYDHTZN3Z');`;
+      gtag('config', '${trackingId}');`;
     }else{
       // If your organization still supports legacy browsers (and, most likely, faxes) you can disable
       // async support in the extension's configuration, by passing disableAsync: true
