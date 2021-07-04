@@ -452,7 +452,7 @@ function Update-DestinationWebpartSettings {
 
         $destinationPageUrl = $_;
         $destinationPage = Get-PnPPage $destinationPageUrl;
-        $destinationWebpart = $destinationPage.Sections[0].Columns[0].Controls[0];
+        $destinationWebpart = $destinationPage.Sections[$sectionNumber].Columns[$columnNumber].Controls[$controlNumber];
         
         if ($null -ne $destinationWebpart -and $destinationWebpart.WebPartId -eq $partId -and $null -ne $sourceWebPartProps) {
             $destinationPage.Sections[$sectionNumber].Columns[$columnNumber].Controls[$controlNumber].PropertiesJson = $sourceWebPartProps;
