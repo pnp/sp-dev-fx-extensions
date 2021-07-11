@@ -1,0 +1,1 @@
+{"version":3,"file":"IActiveConnection.d.ts","sourceRoot":"","sources":["../../src/models/IActiveConnection.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,kBAAkB,CAAC;AAC1C,MAAM,WAAW,iBAAiB;IAChC,MAAM,EAAE,MAAM,CAAC;IACf,MAAM,EAAE,MAAM,GAAG,MAAM,CAAC;CACzB"}

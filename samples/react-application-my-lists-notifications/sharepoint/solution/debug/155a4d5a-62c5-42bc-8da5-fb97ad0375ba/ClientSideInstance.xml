@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="MyListsNotifications"
+
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="c1a3cdb7-6581-4966-832a-49952eb1feb7"
+        Properties="{&quot;right&quot;:&quot;&quot;}">
+    </ClientSideComponentInstance>
+</Elements>
