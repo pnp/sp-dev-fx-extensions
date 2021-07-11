@@ -9,8 +9,9 @@
         "46050d9b-6925-42e5-812a-c5218d6c85ae": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "trackingId": "UA-100713841-5",
-            "disableAsync": false
+            "trackingId": "YOUR-ID",
+            "disableAsync": false,
+            "googleAnalyticsV4": false
           }
         }
       }
@@ -21,8 +22,9 @@
         "46050d9b-6925-42e5-812a-c5218d6c85ae": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "trackingId": "UA-100713841-5",
-            "disableAsync": false
+            "trackingId": "YOUR-ID",
+            "disableAsync": false, 
+            "googleAnalyticsV4": false
           }
         }
       }
