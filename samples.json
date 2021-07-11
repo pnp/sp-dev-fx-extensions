@@ -68,7 +68,7 @@
       "LONG DESCRIPTION"
     ],
     "creationDateTime": "2021-06-11",
-    "updateDateTime": "2021-06-11",
+    "updateDateTime": "2021-07-02",
     "products": [
       "SharePoint",
       "Office"
@@ -423,15 +423,11 @@
       "In this sample is possible to see how to implement Google Analytics through SPFx Extensions Application Customizers"
     ],
     "creationDateTime": "2020-10-07",
-    "updateDateTime": "2020-10-07",
+    "updateDateTime": "2021-07-01",
     "products": [
       "SharePoint",
       "Office"
     ],
-    "categories": [
-      "SPFX-APPLICATION-EXTENSION"
-    ],
-    "tags": [],
     "metadata": [
       {
         "key": "CLIENT-SIDE-DEV",
@@ -441,6 +437,10 @@
         "key": "SPFX-VERSION",
         "value": "1.11.0"
       }
+    ],
+"tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
     ],
     "thumbnails": [
       {
