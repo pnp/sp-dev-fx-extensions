@@ -49,30 +49,6 @@ export const ConfigurationList: React.FunctionComponent<IConfigurationListProps>
     })();
   }, [isOpen]);
 
-  const addSelectedItemsToList = useCallback(
-    (selectedItems: ITag[]): void => {
-      const newList: IConfigurationListItem[] = [];
-      for (const itemInfo of selectedItems) {
-        const item: List = JSON.parse(itemInfo.name) as List;
-        const exists = find(lists, ["listUrl", item.webUrl]);
-        if (!exists) {
-          newList.push({
-            listName: item.name,
-            key: item?.id,
-            list: item?.displayName,
-            site: item?.webUrl,
-            siteId: item.parentReference.siteId,
-            listUrl: item.webUrl,
-          });
-        }
-      }
-      setGlobalState({
-        type: EGlobalStateTypes.SET_LISTS,
-        payload: [...lists, ...newList],
-      });
-    },
-    [lists]
-  );
 
   const deleteSelectedItemsFromList = useCallback(
     (item): void => {
@@ -103,7 +79,7 @@ export const ConfigurationList: React.FunctionComponent<IConfigurationListProps>
         <Separator></Separator>
         <ErrorInfo error={errorInfo?.error} showError={errorInfo?.showError}></ErrorInfo>
         <Stack tokens={{ childrenGap: 10 }}>
-          <AddItem onAdd={addSelectedItemsToList}></AddItem>
+          <AddItem ></AddItem>
           <Stack tokens={{ childrenGap: 5 }} styles={stackItemsContainer}>
             <Label>Selected Lists</Label>
             {lists.length ? (
@@ -119,7 +95,7 @@ export const ConfigurationList: React.FunctionComponent<IConfigurationListProps>
             <Separator></Separator>
             <DialogFooter>
               <PrimaryButton
-                disabled={!lists.length}
+
                 onClick={async () => {
                   setIsUpdating(true);
                   await saveSettings(JSON.stringify(lists));

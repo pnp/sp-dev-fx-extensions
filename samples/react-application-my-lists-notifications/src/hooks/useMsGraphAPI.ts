@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect } from "react";
 
-import { DriveItem, List, ListItem, Subscription } from "@microsoft/microsoft-graph-types";
+import { DriveItem, List, ListItem, Site, Subscription } from "@microsoft/microsoft-graph-types";
 import { HttpClient, HttpClientResponse, MSGraphClientFactory } from "@microsoft/sp-http";
 
 import { AppContext } from "../common";
@@ -77,6 +77,26 @@ export const useMsGraphAPI = () => {
     },
     [context.serviceScope]
   );
+
+
+
+  const getSiteInfoByRelativeUrl = useCallback(
+    async (url: string):Promise<Site> => {
+      const hostName = location.hostname;
+      try {
+        const msGraphClient = await context.serviceScope.consume(MSGraphClientFactory.serviceKey).getClient();
+        if (!msGraphClient) return;
+        const siteResults = await msGraphClient.api(`/sites/${hostName}:/${url}`)
+        .select("sharepointIds, id, webUrl,displayName,parentReference")
+        .get();
+        return siteResults;
+      } catch (error) {
+        throw error;
+      }
+    },
+    [context.serviceScope]
+  );
+
 
   const getListInfo = useCallback(
     async (siteId: string, listId: string) => {
@@ -217,5 +237,6 @@ export const useMsGraphAPI = () => {
     getListSockectIo,
     getListActivities,
     getListItem,
+    getSiteInfoByRelativeUrl
   };
 };

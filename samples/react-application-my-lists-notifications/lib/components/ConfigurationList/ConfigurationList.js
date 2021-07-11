@@ -43,7 +43,6 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 };
 import * as React from "react";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
-import find from "lodash/find";
 import pullAllBy from "lodash/pullAllBy";
 import strings from "MyListsNotificationsApplicationCustomizerStrings";
 import { DefaultButton, DialogFooter, Label, Panel, PrimaryButton, Separator, Spinner, SpinnerSize, Stack, Text, } from "@fluentui/react";
@@ -78,29 +77,6 @@ export var ConfigurationList = function (props) {
             });
         }); })();
     }, [isOpen]);
-    var addSelectedItemsToList = useCallback(function (selectedItems) {
-        var _a, _b, _c;
-        var newList = [];
-        for (var _i = 0, selectedItems_1 = selectedItems; _i < selectedItems_1.length; _i++) {
-            var itemInfo = selectedItems_1[_i];
-            var item = JSON.parse(itemInfo.name);
-            var exists = find(lists, ["listUrl", item.webUrl]);
-            if (!exists) {
-                newList.push({
-                    listName: item.name,
-                    key: (_a = item) === null || _a === void 0 ? void 0 : _a.id,
-                    list: (_b = item) === null || _b === void 0 ? void 0 : _b.displayName,
-                    site: (_c = item) === null || _c === void 0 ? void 0 : _c.webUrl,
-                    siteId: item.parentReference.siteId,
-                    listUrl: item.webUrl,
-                });
-            }
-        }
-        setGlobalState({
-            type: EGlobalStateTypes.SET_LISTS,
-            payload: __spreadArrays(lists, newList),
-        });
-    }, [lists]);
     var deleteSelectedItemsFromList = useCallback(function (item) {
         var copyLists = lists;
         var newList = pullAllBy(copyLists, [item]);
@@ -116,7 +92,7 @@ export var ConfigurationList = function (props) {
             React.createElement(Separator, null),
             React.createElement(ErrorInfo, { error: (_a = errorInfo) === null || _a === void 0 ? void 0 : _a.error, showError: (_b = errorInfo) === null || _b === void 0 ? void 0 : _b.showError }),
             React.createElement(Stack, { tokens: { childrenGap: 10 } },
-                React.createElement(AddItem, { onAdd: addSelectedItemsToList }),
+                React.createElement(AddItem, null),
                 React.createElement(Stack, { tokens: { childrenGap: 5 }, styles: stackItemsContainer },
                     React.createElement(Label, null, "Selected Lists"),
                     lists.length ? (lists.map(function (item) {
@@ -125,7 +101,7 @@ export var ConfigurationList = function (props) {
                 React.createElement(Stack, { styles: { root: { paddingTop: 20 } }, tokens: { childrenGap: 5 } },
                     React.createElement(Separator, null),
                     React.createElement(DialogFooter, null,
-                        React.createElement(PrimaryButton, { disabled: !lists.length, onClick: function () { return __awaiter(void 0, void 0, void 0, function () {
+                        React.createElement(PrimaryButton, { onClick: function () { return __awaiter(void 0, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     switch (_a.label) {
                                         case 0:

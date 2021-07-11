@@ -103,7 +103,7 @@ export var ListPicker = function (props) {
                         for (_i = 0, listData_1 = listData; _i < listData_1.length; _i++) {
                             list = listData_1[_i];
                             listInfo = list.resource;
-                            checkExists = find(listsList, { key: listInfo.id });
+                            checkExists = find(listsList, { key: listInfo.id, name: JSON.stringify(listInfo) });
                             if (checkExists)
                                 continue;
                             tags.push({ key: listInfo.id, name: JSON.stringify(listInfo) });

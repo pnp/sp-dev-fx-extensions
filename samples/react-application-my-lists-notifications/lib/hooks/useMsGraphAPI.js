@@ -129,8 +129,35 @@ export var useMsGraphAPI = function () {
             }
         });
     }); }, [context.serviceScope]);
+    var getSiteInfoByRelativeUrl = useCallback(function (url) { return __awaiter(void 0, void 0, void 0, function () {
+        var hostName, msGraphClient, siteResults, error_4;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    hostName = location.hostname;
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, context.serviceScope.consume(MSGraphClientFactory.serviceKey).getClient()];
+                case 2:
+                    msGraphClient = _a.sent();
+                    if (!msGraphClient)
+                        return [2 /*return*/];
+                    return [4 /*yield*/, msGraphClient.api("/sites/" + hostName + ":/" + url)
+                            .select("sharepointIds, id, webUrl,displayName,parentReference")
+                            .get()];
+                case 3:
+                    siteResults = _a.sent();
+                    return [2 /*return*/, siteResults];
+                case 4:
+                    error_4 = _a.sent();
+                    throw error_4;
+                case 5: return [2 /*return*/];
+            }
+        });
+    }); }, [context.serviceScope]);
     var getListInfo = useCallback(function (siteId, listId) { return __awaiter(void 0, void 0, void 0, function () {
-        var msGraphClient, siteResults, error_4;
+        var msGraphClient, siteResults, error_5;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -145,14 +172,14 @@ export var useMsGraphAPI = function () {
                     siteResults = _a.sent();
                     return [2 /*return*/, siteResults];
                 case 3:
-                    error_4 = _a.sent();
-                    throw error_4;
+                    error_5 = _a.sent();
+                    throw error_5;
                 case 4: return [2 /*return*/];
             }
         });
     }); }, [context.serviceScope]);
     var getListItem = useCallback(function (siteId, listId, activity) { return __awaiter(void 0, void 0, void 0, function () {
-        var msGraphClient, graphUrl, itemId, listItemResults, type, _a, driveId, error_5, error_6, lItemResults;
+        var msGraphClient, graphUrl, itemId, listItemResults, type, _a, driveId, error_6, error_7, lItemResults;
         var _b, _c;
         return __generator(this, function (_d) {
             switch (_d.label) {
@@ -180,7 +207,7 @@ export var useMsGraphAPI = function () {
                     listItemResults = (_d.sent());
                     return [2 /*return*/, { itemInfo: listItemResults, type: type }];
                 case 4:
-                    error_5 = _d.sent();
+                    error_6 = _d.sent();
                     return [2 /*return*/, { itemInfo: undefined, type: type }];
                 case 5:
                     _d.trys.push([5, 7, , 8]);
@@ -191,7 +218,7 @@ export var useMsGraphAPI = function () {
                     listItemResults = (_d.sent());
                     return [2 /*return*/, { itemInfo: listItemResults, type: type }];
                 case 7:
-                    error_6 = _d.sent();
+                    error_7 = _d.sent();
                     return [2 /*return*/, { itemInfo: undefined, type: type }];
                 case 8:
                     graphUrl = "/sites/" + siteId + "/lists/" + listId;
@@ -204,7 +231,7 @@ export var useMsGraphAPI = function () {
         });
     }); }, [context.serviceScope]);
     var getListSockectIo = useCallback(function (siteId, listId) { return __awaiter(void 0, void 0, void 0, function () {
-        var msGraphClient, listSubscription, error_7;
+        var msGraphClient, listSubscription, error_8;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -221,14 +248,14 @@ export var useMsGraphAPI = function () {
                     listSubscription = (_a.sent());
                     return [2 /*return*/, listSubscription];
                 case 3:
-                    error_7 = _a.sent();
-                    throw error_7;
+                    error_8 = _a.sent();
+                    throw error_8;
                 case 4: return [2 /*return*/];
             }
         });
     }); }, [context.serviceScope]);
     var createAppFolder = useCallback(function (folderName) { return __awaiter(void 0, void 0, void 0, function () {
-        var msGraphClient, error_8;
+        var msGraphClient, error_9;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -246,10 +273,11 @@ export var useMsGraphAPI = function () {
                     _a.sent();
                     return [3 /*break*/, 4];
                 case 3:
-                    error_8 = _a.sent();
-                    console.log("er", error_8);
-                    if (error_8.code !== "nameAlreadyExists") {
-                        throw error_8;
+                    error_9 = _a.sent();
+                    console.log("er", error_9);
+                    // Ignore if folder exists
+                    if (error_9.code !== "nameAlreadyExists") {
+                        throw error_9;
                     }
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
@@ -257,7 +285,7 @@ export var useMsGraphAPI = function () {
         });
     }); }, [context.serviceScope]);
     var saveSettings = useCallback(function (settings) { return __awaiter(void 0, void 0, void 0, function () {
-        var msGraphClient, error_9;
+        var msGraphClient, error_10;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -275,14 +303,14 @@ export var useMsGraphAPI = function () {
                     _a.sent();
                     return [3 /*break*/, 4];
                 case 3:
-                    error_9 = _a.sent();
-                    throw error_9;
+                    error_10 = _a.sent();
+                    throw error_10;
                 case 4: return [2 /*return*/];
             }
         });
     }); }, [context.serviceScope]);
     var getSettings = useCallback(function () { return __awaiter(void 0, void 0, void 0, function () {
-        var msGraphClient, downLoadUrlResponse, fileSettings, data, _a, _b, error_10;
+        var msGraphClient, downLoadUrlResponse, fileSettings, data, _a, _b, error_11;
         return __generator(this, function (_c) {
             switch (_c.label) {
                 case 0:
@@ -306,12 +334,12 @@ export var useMsGraphAPI = function () {
                     data = _b.apply(_a, [_c.sent()]);
                     return [2 /*return*/, data];
                 case 5:
-                    error_10 = _c.sent();
-                    throw error_10;
+                    error_11 = _c.sent();
+                    throw error_11;
                 case 6: return [2 /*return*/];
             }
         });
-    }); }, [context.serviceScope]);
+    }); }, [context.serviceScope, context.httpClient]);
     return {
         getSiteInfo: getSiteInfo,
         getLists: getLists,
@@ -322,6 +350,7 @@ export var useMsGraphAPI = function () {
         getListSockectIo: getListSockectIo,
         getListActivities: getListActivities,
         getListItem: getListItem,
+        getSiteInfoByRelativeUrl: getSiteInfoByRelativeUrl
     };
 };
 //# sourceMappingURL=useMsGraphAPI.js.map

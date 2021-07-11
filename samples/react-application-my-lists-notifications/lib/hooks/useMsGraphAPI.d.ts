@@ -1,4 +1,4 @@
-import { DriveItem, ListItem, Subscription } from "@microsoft/microsoft-graph-types";
+import { DriveItem, ListItem, Site, Subscription } from "@microsoft/microsoft-graph-types";
 import { IConfigurationListItem } from "../components";
 import { IActivity } from "../models/IActivities";
 export declare enum EListType {
@@ -18,5 +18,6 @@ export declare const useMsGraphAPI: () => {
         itemInfo: ListItem | DriveItem;
         type: string;
     }>;
+    getSiteInfoByRelativeUrl: (url: string) => Promise<Site>;
 };
 //# sourceMappingURL=useMsGraphAPI.d.ts.map

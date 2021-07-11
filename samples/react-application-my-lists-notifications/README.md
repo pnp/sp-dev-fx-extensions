@@ -4,21 +4,21 @@
 
 This application extension alows user receive notifications from selected lists or libraries
 
+![myListNotifications](./assets/myListsNotifications.gif))
+<br/><br/><br/>
 
-![MyListsNotifications](./assets/myListsNotifications.gif)
-<br/>
-<br/><br/>
-![MyListsNotifications](./assets/myListsNotifications0.png)
-<br/>
-![MyListsNotifications](./assets/myListsNotifications1.png)
-<br/>
-![MyListsNotifications](./assets/myListsNotifications2.png)
-<br/>
-![MyListsNotifications](./assets/myListsNotifications3.png)
-<br/>
-![MyListsNotifications](./assets/myListsNotifications4.png)
-<br/>
+ ![myListNotifications](./assets/myListsNotifications0.png))
+ <br/><br/><br/>
+  ![myListNotifications](./assets/myListsNotifications1.png))
+<br/><br/><br/>
 
+  ![myListNotifications](./assets/myListsNotifications2.png))
+  <br/><br/><br/>
+
+  ![myListNotifications](./assets/myListsNotifications3.png))
+  <br/><br/><br/>
+  
+  ![myListNotifications](./assets/myListsNotifications4.png))
 ## Used SharePoint Framework Version
 
 ![SPFx 1.12](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
@@ -78,10 +78,10 @@ Description of the extension that expands upon high-level summary above.
 
 This extension illustrates the following concepts:
 
-- Use Miscrosoft Grapg API's to get Activities from lists / Library
-- Use Microsoft Graph Search to Lists/Lib
+- Use Miscrosoft Grapg API's to get activities from lists / Library
+- Use Microsoft Graph Search to search lists / Library
 - Save custom settings on Apps OnDrive folder
-- Use SockectIO server of Lists to get real time notifications
+- Use SockectIO server of lists to get real time notifications
 
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.

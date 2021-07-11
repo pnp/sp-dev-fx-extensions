@@ -16,22 +16,28 @@ import { IConfigurationListItem } from "../ConfigurationList";
 import { EGlobalStateTypes, GlobalStateContext } from "../GlobalStateProvider";
 import { IActiveConnection } from "../../models/IActiveConnection";
 import { useSocketIO } from "../../hooks/useSocketIO";
+import { INotification } from "../../models/INotification";
 export interface IMyNotificationsProps {
   context: ApplicationCustomizerContext;
-  right?:number;
+  right?: number;
 }
 
-export const MyNotifications: React.FunctionComponent<IMyNotificationsProps> = (props:IMyNotificationsProps) => {
+export const MyNotifications: React.FunctionComponent<IMyNotificationsProps> = (props: IMyNotificationsProps) => {
   const { state, setGlobalState } = useContext(GlobalStateContext);
   const wLists = useRef<IConfigurationListItem[]>([]);
-  const { getListSockectIo, getSettings, getListActivities } = useMsGraphAPI();
+  const { getListSockectIo, getSettings, getListActivities, getSiteInfoByRelativeUrl } = useMsGraphAPI();
   const wNumberOfNotifications = useRef<number>(0);
   const wListActivities = useRef<IListLastActivity[]>([]);
   const { context, right } = props;
   const siteTemplate = context.pageContext.legacyPageContext.webTemplateConfiguration;
   const COMUNICATION_SITE_ICON_POSITION = 143;
   const TEAM_SITE_ICON_POSITION = 190;
-  const rightPosition = right && right > 0  ? right :  (siteTemplate === "SITEPAGEPUBLISHING#0" ? COMUNICATION_SITE_ICON_POSITION : TEAM_SITE_ICON_POSITION);
+  const rightPosition =
+    right && right > 0
+      ? right
+      : siteTemplate === "SITEPAGEPUBLISHING#0"
+      ? COMUNICATION_SITE_ICON_POSITION
+      : TEAM_SITE_ICON_POSITION;
   const containerStyles: IStackStyles = {
     root: {
       width: 48,
@@ -77,16 +83,20 @@ export const MyNotifications: React.FunctionComponent<IMyNotificationsProps> = (
 
   const handleNotifications = useCallback(async (data: string): Promise<void> => {
     wNumberOfNotifications.current++;
-    const notification: Subscription[] = JSON.parse(data).value;
-    // get siteID from lists
-    const listInfo = find(wLists.current, ["key", notification[0].resource]);
-    if (!listInfo) return;
-    const { siteId, key } = listInfo || {};
-    const activities: IActivity[] = await getListActivities(siteId, key as string);
-    wListActivities.current.push({
-      listInfo: listInfo,
-      activitity: activities[0],
-    });
+    const notifications: INotification[] = JSON.parse(data).value;
+    for (const notification of notifications) {
+      // get siteID from lists
+      const siteInfo = await getSiteInfoByRelativeUrl(notification.siteUrl);
+      const listInfo = find(wLists.current, { key: notification.resource, siteId: siteInfo.id });
+      if (!listInfo) continue;
+      const { siteId, key } = listInfo || {};
+      const activities: IActivity[] = await getListActivities(siteId, key as string);
+      wListActivities.current.push({
+        listInfo: listInfo,
+        activitity: activities[0],
+      });
+    }
+
     const copyListActivities = state.listActivities;
     setGlobalState({
       type: EGlobalStateTypes.SET_LIST_ACTIVITY,

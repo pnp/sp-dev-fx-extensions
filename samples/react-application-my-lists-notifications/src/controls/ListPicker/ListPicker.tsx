@@ -68,7 +68,7 @@ export const ListPicker: React.FunctionComponent<IListPickerProps> = (props: ILi
       if (listData?.length) {
         for (const list of listData) {
           const listInfo = list.resource as List;
-          const checkExists = find(listsList, { key: listInfo.id });
+          const checkExists = find(listsList, { key: listInfo.id, name: JSON.stringify(listInfo) });
           if (checkExists) continue;
           tags.push({ key: listInfo.id, name: JSON.stringify(listInfo) });
         }

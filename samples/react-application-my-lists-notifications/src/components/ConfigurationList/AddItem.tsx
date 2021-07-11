@@ -15,7 +15,6 @@ import { EGlobalStateTypes, GlobalStateContext, IConfigurationListItem } from ".
 import { ListPicker } from "../../controls/ListPicker";
 
 export interface IAddItemProps {
-  onAdd?: (selectedItems: ITag[]) => void;
 }
 
 export const AddItem: React.FunctionComponent<IAddItemProps> = (props: React.PropsWithChildren<IAddItemProps>) => {
@@ -40,6 +39,7 @@ export const AddItem: React.FunctionComponent<IAddItemProps> = (props: React.Pro
             site: item?.webUrl,
             siteId: item.parentReference.siteId,
             listUrl: item.webUrl,
+
           });
         }
       }

@@ -52,14 +52,18 @@ import { useSocketIO } from "../../hooks/useSocketIO";
 export var MyNotifications = function (props) {
     var _a = useContext(GlobalStateContext), state = _a.state, setGlobalState = _a.setGlobalState;
     var wLists = useRef([]);
-    var _b = useMsGraphAPI(), getListSockectIo = _b.getListSockectIo, getSettings = _b.getSettings, getListActivities = _b.getListActivities;
+    var _b = useMsGraphAPI(), getListSockectIo = _b.getListSockectIo, getSettings = _b.getSettings, getListActivities = _b.getListActivities, getSiteInfoByRelativeUrl = _b.getSiteInfoByRelativeUrl;
     var wNumberOfNotifications = useRef(0);
     var wListActivities = useRef([]);
     var context = props.context, right = props.right;
     var siteTemplate = context.pageContext.legacyPageContext.webTemplateConfiguration;
     var COMUNICATION_SITE_ICON_POSITION = 143;
     var TEAM_SITE_ICON_POSITION = 190;
-    var rightPosition = right && right > 0 ? right : (siteTemplate === "SITEPAGEPUBLISHING#0" ? COMUNICATION_SITE_ICON_POSITION : TEAM_SITE_ICON_POSITION);
+    var rightPosition = right && right > 0
+        ? right
+        : siteTemplate === "SITEPAGEPUBLISHING#0"
+            ? COMUNICATION_SITE_ICON_POSITION
+            : TEAM_SITE_ICON_POSITION;
     var containerStyles = {
         root: {
             width: 48,
@@ -111,23 +115,36 @@ export var MyNotifications = function (props) {
         }); })();
     }, [state.lists]);
     var handleNotifications = useCallback(function (data) { return __awaiter(void 0, void 0, void 0, function () {
-        var notification, listInfo, _a, siteId, key, activities, copyListActivities;
+        var notifications, _i, notifications_1, notification, siteInfo, listInfo, _a, siteId, key, activities, copyListActivities;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     wNumberOfNotifications.current++;
-                    notification = JSON.parse(data).value;
-                    listInfo = find(wLists.current, ["key", notification[0].resource]);
+                    notifications = JSON.parse(data).value;
+                    _i = 0, notifications_1 = notifications;
+                    _b.label = 1;
+                case 1:
+                    if (!(_i < notifications_1.length)) return [3 /*break*/, 5];
+                    notification = notifications_1[_i];
+                    return [4 /*yield*/, getSiteInfoByRelativeUrl(notification.siteUrl)];
+                case 2:
+                    siteInfo = _b.sent();
+                    listInfo = find(wLists.current, { key: notification.resource, siteId: siteInfo.id });
                     if (!listInfo)
-                        return [2 /*return*/];
+                        return [3 /*break*/, 4];
                     _a = listInfo || {}, siteId = _a.siteId, key = _a.key;
                     return [4 /*yield*/, getListActivities(siteId, key)];
-                case 1:
+                case 3:
                     activities = _b.sent();
                     wListActivities.current.push({
                         listInfo: listInfo,
                         activitity: activities[0],
                     });
+                    _b.label = 4;
+                case 4:
+                    _i++;
+                    return [3 /*break*/, 1];
+                case 5:
                     copyListActivities = state.listActivities;
                     setGlobalState({
                         type: EGlobalStateTypes.SET_LIST_ACTIVITY,
