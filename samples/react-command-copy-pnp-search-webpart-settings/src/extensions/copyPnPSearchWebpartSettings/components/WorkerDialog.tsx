@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import {
-    Dialog, DialogType, DialogFooter, 
+    Dialog, DialogType, DialogFooter,
     DefaultButton, PrimaryButton,
     Dropdown, IDropdownOption,
-    Stack, IStackTokens, IStackItemStyles, IStackStyles, 
+    Stack, IStackTokens, IStackItemStyles, IStackStyles,
     Spinner, SpinnerSize,
     MessageBar, MessageBarType, List, TextField, Toggle,
     Label, ILabelStyles
@@ -16,13 +16,15 @@ import { sp } from "@pnp/sp";
 import "@pnp/sp/webs";
 import "@pnp/sp/clientside-pages/web";
 import AceEditor from "react-ace";
-import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/mode-typescript";
+import "ace-builds/src-noconflict/mode-ruby";
 import "ace-builds/src-noconflict/theme-monokai";
 
 interface IWorkerDialogProps {
     hidden: boolean;
     fileRefs: string[];
     folderUrl: string;
+    siteUrl: string;
     close: () => void;
 }
 
@@ -48,8 +50,10 @@ const WorkerDialog: React.FunctionComponent<IWorkerDialogProps> = (props) => {
     const [destinationPagesSuccessful, setDestinationPagesSuccessful] = useState<string[]>([]);
     const [destinationPagesUnsuccessful, setDestinationPagesUnsuccessful] = useState<string[]>([]);
 
-    const [showCode, setShowCode] = useState<boolean>(false);
+    const [showPnPJSCode, setShowPnPJSCode] = useState<boolean>(false);
+    const [showPnPPSCode, setShowPnPPSCode] = useState<boolean>(false);
     const [pnpjsCode, setPnPJSCode] = useState<string>(null);
+    const [pnpPSCode, setPnPPSCode] = useState<string>(null);
     const [allDataOk, setAllDataOk] = useState<boolean>(false);
 
 
@@ -264,8 +268,12 @@ const WorkerDialog: React.FunctionComponent<IWorkerDialogProps> = (props) => {
         );
     };
 
-    const onShowCodeChange = (ev: React.MouseEvent<HTMLElement>, checked?: boolean) => {
-        setShowCode(checked);
+    const onShowPnPJSCodeChange = (ev: React.MouseEvent<HTMLElement>, checked?: boolean) => {
+        setShowPnPJSCode(checked);
+    };
+
+    const onShowPnPPSCodeChange = (ev: React.MouseEvent<HTMLElement>, checked?: boolean) => {
+        setShowPnPPSCode(checked);
     };
 
     const onSourceSectionVerticalChange = (ev: React.MouseEvent<HTMLElement>, checked?: boolean) => {
@@ -324,80 +332,172 @@ import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
 
-let webpartProps;
-let ddv;
-let pagesSaved = [];
-let skippedPages = [];
+class CopySettings {
+    sourcePage: string;
+    destinationPages: string[];
+    sourceWebPartProps: any;
+    dynamicDataValues: any;
+    savedPages: string[];
+    skippedPages: string[];
 
-const setVariables = async (fileRef) => {
-    const page = await sp.web.loadClientsidePage(fileRef);
-    // const section = page.verticalSection;
-    const section = ${sourceWebpartSectionVertical ? `page.verticalSection` : `page.sections[${sourceWebpartSectionNumber}]`};
-
-    const column = section && section.columns[${sourceWebpartColumnNumber}];
-    const part = column && column.getControl(${sourceWebpartControlNumber});
-
-    webpartProps = part && part.json && part.json.webPartData && part.json.webPartData.properties;
-    ddv = part && part.json && part.json.webPartData && part.json.webPartData.dynamicDataValues;
-}
-
-const updateWebpartSettings = async (fileRef, pageNumber, sectionNumber, columnNumber, partNumber, partId) => {
-    const page = await sp.web.loadClientsidePage(fileRef);
-    const thumbnailUrl = page.thumbnailUrl;
-    // const section = page.verticalSection;
-    const section = ${destinationWebpartSectionVertical ? `page.verticalSection` : `page.sections[sectionNumber]`};
-    const column = section && section.columns[columnNumber];
-    const part = column && column.getControl(partNumber);
-
-    const webPartId = part?.json?.webPartId;
-
-    if (webPartId === partId && webpartProps && ddv) {
-        part.json.webPartData.properties = webpartProps;
-        part.json.webPartData.dynamicDataValues = ddv;
-        
-        console.log("Saving %s", fileRef);
-        await page.save();
-
-        page.thumbnailUrl = thumbnailUrl;
-        await page.save();
-
-        pagesSaved.push(fileRef);
-        console.log("🚀 ~ Done Page number", pageNumber);
-        console.log("🚀 ~ Fileref", fileRef);
-    } else {
-        console.log("Skipping %s", fileRef);
-        console.log("Skipping Page number", pageNumber);
-        skippedPages.push(fileRef);
+    constructor(sourcePage: string, destinationPages: string[]) {
+        this.sourcePage = sourcePage;
+        this.destinationPages = destinationPages;
+        this.savedPages = [];
+        this.skippedPages = [];
     }
-}
 
-const getWebpartDetails = async (fileRef) => {
+    getSourceWebpartSettings = async (fileRef: string) => {
+        const page = await sp.web.loadClientsidePage(fileRef);
+        const section = ${sourceWebpartSectionVertical ? `page.verticalSection` : `page.sections[${sourceWebpartSectionNumber}]`};
 
-    const page = await sp.web.loadClientsidePage(fileRef);
-    const section = page.sections[0];
-    const column = section && section.columns[0];
-    const part = column && column.getControl(0);
-    console.log(part);
-    
+        const column = section && section.columns[${sourceWebpartColumnNumber}];
+        const part = column && column.getControl(${sourceWebpartControlNumber});
+
+        this.sourceWebPartProps = part && part.json && part.json.webPartData && part.json.webPartData.properties;
+        this.dynamicDataValues = part && part.json && part.json.webPartData && part.json.webPartData.dynamicDataValues;
+    };
+
+    updateDestinationWebpartSettings =
+        async (fileRef: string, pageNumber: number,
+            sectionNumber: number, columnNumber: number, partNumber: number,
+            partId: string) => {
+            const page = await sp.web.loadClientsidePage(fileRef);
+            const thumbnailUrl = page.thumbnailUrl;
+
+            const section = ${destinationWebpartSectionVertical ? `page.verticalSection` : `page.sections[sectionNumber]`};
+            const column = section && section.columns[columnNumber];
+            const part = column && column.getControl(partNumber);
+
+            const webPartId = part?.json?.webPartId;
+
+            if (webPartId === partId && this.sourceWebPartProps && this.dynamicDataValues) {
+                part.json.webPartData.properties = this.sourceWebPartProps;
+                part.json.webPartData.dynamicDataValues = this.dynamicDataValues;
+
+                console.info("Saving %s", fileRef);
+                await page.save();
+
+                page.thumbnailUrl = thumbnailUrl;
+                await page.save();
+
+                this.savedPages.push(fileRef);
+                console.log("🚀 Completed page number", pageNumber);
+                console.log("🚀 Fileref", fileRef);
+            } else {
+                this.skippedPages.push(fileRef);
+                console.warn("Skipping %s", fileRef);
+                console.warn("Skipping Page number", pageNumber);
+            }
+        };
+
+    startCopying = async () => {
+
+        await this.getSourceWebpartSettings(this.sourcePage);
+
+        for (let index = 0; index < this.destinationPages.length; index++) {
+            const pageLink = this.destinationPages[index];
+            await this.updateDestinationWebpartSettings(pageLink, index + 1, ${destinationWebpartSectionNumber}, ${destinationWebpartColumnNumber}, ${destinationWebpartControlNumber}, "${sourceWebpartType?.key}");
+        }
+
+        console.log("Saved Pages %o", this.savedPages);
+        console.warn("Skipped Pages %o", this.skippedPages);
+    }
 }
 
 (async () => {
 
-    await setVariables("${props.folderUrl + sourcePageLink}");
+    const sourcePage: string = "${props.folderUrl + sourcePageLink}";
 
-    const allPagesLinks = [${props.fileRefs.map(f => `\n            "${f}"`)}\n     ]
+    const destinationPages: string[] = [${props.fileRefs.map(f => `\n            "${f}"`)}\n     ];
 
-    for (let index = 0; index < allPagesLinks.length; index++) {
-        const pageLink = allPagesLinks[index];
-        await updateWebpartSettings(pageLink, index + 1, ${destinationWebpartSectionNumber}, ${destinationWebpartColumnNumber}, ${destinationWebpartControlNumber}, "${sourceWebpartType?.key}");
-    }
+    const copySettings = new CopySettings(
+        sourcePage,
+        destinationPages
+    );
 
-    console.log(pagesSaved);
-    console.log(skippedPages);
-    console.log("Done");
+    await copySettings.startCopying();
 
+    console.log("🚀 Script completed");
 
 })().catch(console.log)
+            `);
+            setPnPPSCode(`
+$sourcePageUrl = "${sourcePageLink}";
+$destinationPagesUrls = @(${props.fileRefs.map(f => `\n            "${/[^/]*$/.exec(f)[0]}"`)}\n     );
+function Get-SourceWebpartSettings {
+    param(
+        [int]$sectionNumber,
+        [int]$columnNumber,
+        [int]$controlNumber
+    )
+    $sourcePage = Get-PnPPage $sourcePageUrl;
+    return $sourcePage.Sections[$sectionNumber].Columns[$columnNumber].Controls[$controlNumber].PropertiesJson;
+};
+
+function Update-DestinationWebpartSettings {
+    param(
+        [int]$sectionNumber,
+        [int]$columnNumber,
+        [int]$controlNumber,
+        [string]$partId,
+        $sourceWebPartProps
+    )
+
+    $savedPages = @();
+    $skippedPages = @();
+
+    $destinationPagesUrls | ForEach-Object {
+        Write-Host "    --------------------------      " -ForegroundColor White;
+
+        $destinationPageUrl = $_;
+        $destinationPage = Get-PnPPage $destinationPageUrl;
+        $destinationWebpart = $destinationPage.Sections[$sectionNumber].Columns[$columnNumber].Controls[$controlNumber];
+        
+        if ($null -ne $destinationWebpart -and $destinationWebpart.WebPartId -eq $partId -and $null -ne $sourceWebPartProps) {
+            $destinationPage.Sections[$sectionNumber].Columns[$columnNumber].Controls[$controlNumber].PropertiesJson = $sourceWebPartProps;
+            Write-Host "    Saving $destinationPageUrl" -ForegroundColor White;
+
+            $destinationPage.Save() | Out-Null;
+            $destinationPage.Publish();
+
+            $savedPages += $destinationPageUrl;
+            Write-Host "    Completed $destinationPageUrl" -ForegroundColor Green;
+        }
+        else {
+            $skippedPages += $destinationPageUrl;
+            Write-Host "    Skipped $destinationPageUrl" -ForegroundColor Yellow;
+        }
+
+        Write-Host "    --------------------------      " -ForegroundColor White;
+    }
+
+    Write-Host "    Saved pages:" -ForegroundColor Green;
+    $savedPages | ForEach-Object {
+        Write-Host "    $_" -ForegroundColor Green;
+    };
+
+    Write-Host "    Skipped pages:" -ForegroundColor Yellow;
+    $skippedPages | ForEach-Object {
+        Write-Host "    $_" -ForegroundColor Yellow;
+    };
+
+    Write-Host "    --------------------------      " -ForegroundColor White;
+}
+
+function Start-Copying {
+    $sourceSectionNumber = ${sourceWebpartSectionVertical ? `0` : `${sourceWebpartSectionNumber}`};
+    $sourceColumnNumber = ${sourceWebpartSectionVertical ? `1` : `${sourceWebpartColumnNumber}`};
+    $sourceWebPartProps = Get-SourceWebpartSettings -sectionNumber $sourceSectionNumber -columnNumber $sourceColumnNumber -controlNumber ${sourceWebpartControlNumber};
+
+    $destinationSectionNumber = ${destinationWebpartSectionVertical ? `0` : `${destinationWebpartSectionNumber}`};
+    $destinationColumnNumber = ${destinationWebpartSectionVertical ? `1` : `${destinationWebpartColumnNumber}`};
+
+    Update-DestinationWebpartSettings -sectionNumber $destinationSectionNumber -columnNumber $destinationColumnNumber -controlNumber ${destinationWebpartControlNumber} -partId "${sourceWebpartType?.key}" -sourceWebPartProps $sourceWebPartProps;    
+}
+
+Connect-PnPOnline "${props.siteUrl}" -UseWebLogin;
+Start-Copying;
             `);
         }
 
@@ -561,13 +661,13 @@ const getWebpartDetails = async (fileRef) => {
                 </Stack>
 
                 <Stack styles={stackStyles} tokens={stackTokens} >
-                    <Toggle label="Show PnP JS code" onText="Yes" offText="No" onChange={onShowCodeChange} checked={showCode} disabled={!allDataOk} />
+                    <Toggle label="Show PnP JS code" onText="Yes" offText="No" onChange={onShowPnPJSCodeChange} checked={showPnPJSCode} disabled={!allDataOk} />
                     {
-                        showCode && allDataOk &&
+                        showPnPJSCode && allDataOk &&
 
                         <AceEditor
                             placeholder="Copy search results settings code"
-                            mode="javascript"
+                            mode="typescript"
                             theme="monokai"
                             name="pnpJSCodeEditor"
                             fontSize={14}
@@ -577,6 +677,31 @@ const getWebpartDetails = async (fileRef) => {
                             width={"740px"}
                             height={"300px"}
                             value={pnpjsCode}
+                            setOptions={{
+                                enableBasicAutocompletion: false,
+                                enableLiveAutocompletion: false,
+                                enableSnippets: false,
+                                showLineNumbers: true,
+                                tabSize: 2,
+                            }} />
+                    }
+
+                    <Toggle label="Show PnP PowerShell code" onText="Yes" offText="No" onChange={onShowPnPPSCodeChange} checked={showPnPPSCode} disabled={!allDataOk} />
+                    {
+                        showPnPPSCode && allDataOk &&
+
+                        <AceEditor
+                            placeholder="Copy search results settings code"
+                            mode="ruby"
+                            theme="monokai"
+                            name="pnpPSCodeEditor"
+                            fontSize={14}
+                            showPrintMargin={true}
+                            showGutter={true}
+                            highlightActiveLine={true}
+                            width={"740px"}
+                            height={"300px"}
+                            value={pnpPSCode}
                             setOptions={{
                                 enableBasicAutocompletion: false,
                                 enableLiveAutocompletion: false,
@@ -596,7 +721,7 @@ const getWebpartDetails = async (fileRef) => {
                 <DefaultButton onClick={() => { props.close(); reset(); }} text="Cancel" />
             </DialogFooter>
 
-        </Dialog >
+        </Dialog>
 
     );
 

@@ -37,6 +37,7 @@ react-command-copy-pnp-search-webpart-settings | [Anoop Tatti](https://github.co
 Version|Date|Comments
 -------|----|--------
 1.0|June 12, 2021|Initial release
+1.1|July 2, 2021|Added support PnP PoSH and updated PnP JS code 
 
 
 ## Features
