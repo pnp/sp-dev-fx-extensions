@@ -44,7 +44,7 @@ export const useMsGraphAPI = () => {
   );
 
   const getListActivities = useCallback(
-    async (siteId: string, listId: string):Promise<IActivity[]> => {
+    async (siteId: string, listId: string): Promise<IActivity[]> => {
       try {
         const msGraphClient = await context.serviceScope.consume(MSGraphClientFactory.serviceKey).getClient();
         if (!msGraphClient) return;
@@ -78,17 +78,16 @@ export const useMsGraphAPI = () => {
     [context.serviceScope]
   );
 
-
-
   const getSiteInfoByRelativeUrl = useCallback(
-    async (url: string):Promise<Site> => {
+    async (url: string): Promise<Site> => {
       const hostName = location.hostname;
       try {
         const msGraphClient = await context.serviceScope.consume(MSGraphClientFactory.serviceKey).getClient();
         if (!msGraphClient) return;
-        const siteResults = await msGraphClient.api(`/sites/${hostName}:/${url}`)
-        .select("sharepointIds, id, webUrl,displayName,parentReference")
-        .get();
+        const siteResults = await msGraphClient
+          .api(`/sites/${hostName}:/${url}`)
+          .select("sharepointIds, id, webUrl,displayName,parentReference")
+          .get();
         return siteResults;
       } catch (error) {
         throw error;
@@ -96,7 +95,6 @@ export const useMsGraphAPI = () => {
     },
     [context.serviceScope]
   );
-
 
   const getListInfo = useCallback(
     async (siteId: string, listId: string) => {
@@ -237,6 +235,6 @@ export const useMsGraphAPI = () => {
     getListSockectIo,
     getListActivities,
     getListItem,
-    getSiteInfoByRelativeUrl
+    getSiteInfoByRelativeUrl,
   };
 };
