@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 
-import find from "lodash/find";
 import pullAllBy from "lodash/pullAllBy";
 import strings from "MyListsNotificationsApplicationCustomizerStrings";
 

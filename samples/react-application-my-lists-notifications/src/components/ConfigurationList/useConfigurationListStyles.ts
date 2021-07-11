@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import {
   IDocumentCardStyles,
   IStackStyles,
@@ -7,10 +6,7 @@ import {
   mergeStyles,
   mergeStyleSets,
 } from '@fluentui/react';
-
 import { AppContext } from '../../common/AppContext';
-
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const useConfigurationListStyles = () => {
 
   const { theme , context } = React.useContext(AppContext);

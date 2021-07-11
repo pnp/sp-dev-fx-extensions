@@ -2,10 +2,7 @@ import * as React from "react";
 
 import { IIconStyles, IStackStyles } from "@fluentui/react";
 
-import { AppContext } from "../../common/AppContext";
-
 export const useBadgeStyles = () => {
-  const { theme, context } = React.useContext(AppContext);
 
   const panelTitleStyles: IStackStyles = {
     root: {

@@ -1,13 +1,13 @@
 import { io, Socket } from "socket.io-client";
 import { GlobalStateContext } from "../components/GlobalStateProvider";
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import find from "lodash/find";
 import { IActiveConnection } from "../models/IActiveConnection";
 
 export const useSocketIO = (handleNotifications?: any) => {
   const { state } = useContext(GlobalStateContext);
 
-  const connectToSocketListServer = (notificationUrl: string): Socket => {
+  const connectToSocketListServer = useCallback( (notificationUrl: string): Socket => {
     const split = notificationUrl.split("/callback?");
     const socket = io(split[0], { query: split[1] as any, transports: ["websocket"] });
     socket.on("connect", () => {
@@ -21,28 +21,11 @@ export const useSocketIO = (handleNotifications?: any) => {
       console.log("error", reason);
     });
     return socket;
-  };
+  },[]);
 
-  const checkIfListHasActiveConnection = (listId: string): boolean => {
-    const { activeConnections } = state;
-    const activeConnection: IActiveConnection = find(activeConnections, ["listId", listId]);
-    return !activeConnection ? false : true;
-  };
 
-  const closeActiveConnection = (listId: string): boolean => {
-    const { activeConnections } = state;
-    const activeConnection: IActiveConnection = find(activeConnections, ["listId", listId]);
-    if (activeConnection) {
-      activeConnection.socket.disconnect();
-      activeConnection.socket.offAny();
-      activeConnection.socket.close();
-      console.log("connection close for listId", listId);
-      return true;
-    }
-    return false;
-  };
 
-  const closeActiveConnections = async () => {
+  const closeActiveConnections = useCallback( async () => {
     const { activeConnections } = state;
     for (const activeConnection of activeConnections) {
       const { socket, listId } = activeConnection;
@@ -51,12 +34,10 @@ export const useSocketIO = (handleNotifications?: any) => {
       socket.close();
       console.log("connection close for listId", listId);
     }
-  };
+  },[state]);
 
   return {
     connectToSocketListServer,
-    checkIfListHasActiveConnection,
-    closeActiveConnection,
     closeActiveConnections,
   };
 };

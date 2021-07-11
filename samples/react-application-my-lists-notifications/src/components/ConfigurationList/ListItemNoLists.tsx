@@ -3,12 +3,8 @@ import * as React from "react";
 import strings from "MyListsNotificationsApplicationCustomizerStrings";
 import { FontIcon } from "office-ui-fabric-react/lib/Icon";
 import { Stack } from "office-ui-fabric-react/lib/Stack";
-
 import { Text } from "@fluentui/react";
-
-import { AppContext } from "../../common/AppContext";
 import { useConfigurationListStyles } from "./useConfigurationListStyles";
-
 export const ListItemNoLists: React.FunctionComponent = () => {
   const { configurationListClasses } = useConfigurationListStyles();
 
