@@ -1,1 +1,0 @@
-{"version":3,"file":"IConfigurationListItem.d.ts","sourceRoot":"","sources":["../../../src/components/ConfigurationList/IConfigurationListItem.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,sBAAsB;IACrC,GAAG,EAAE,MAAM,GAAG,MAAM,CAAC;IACrB,IAAI,EAAE,MAAM,CAAC;IACb,QAAQ,CAAC,EAAC,MAAM,CAAC;IACjB,IAAI,EAAE,MAAM,CAAC;IACb,MAAM,EAAE,MAAM,CAAC;IACf,OAAO,EAAC,MAAM,CAAC;CAChB"}

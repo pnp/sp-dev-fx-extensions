@@ -1,1 +1,0 @@
-{"version":3,"file":"IGlobalStateContext.d.ts","sourceRoot":"","sources":["../../../src/components/GlobalStateProvider/IGlobalStateContext.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,gBAAgB,CAAC;AAE9C,MAAM,WAAW,mBAAmB;IAClC,KAAK,EAAE,YAAY,CAAC;IACpB,cAAc,EAAE,KAAK,CAAC,QAAQ,CAAC,GAAG,CAAC,CAAC;CACrC"}
