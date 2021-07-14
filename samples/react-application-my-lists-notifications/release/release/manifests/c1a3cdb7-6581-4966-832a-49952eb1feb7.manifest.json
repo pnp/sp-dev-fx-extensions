@@ -14,7 +14,7 @@
     "scriptResources": {
       "my-lists-notifications-application-customizer": {
         "type": "path",
-        "path": "my-lists-notifications-application-customizer_dedfd78a8c0eb6526c1e.js"
+        "path": "my-lists-notifications-application-customizer_ba950cec72d4cfff6b87.js"
       },
       "@microsoft/sp-application-base": {
         "type": "component",
@@ -43,7 +43,7 @@
       },
       "MyListsNotificationsApplicationCustomizerStrings": {
         "type": "path",
-        "path": "MyListsNotificationsApplicationCustomizerStrings_en-us_f40e9d8f16425c3069e4c6998aa3fc70.js"
+        "path": "MyListsNotificationsApplicationCustomizerStrings_en-us_245c96274333e556aa433d0c241e423b.js"
       },
       "@microsoft/sp-http": {
         "type": "component",

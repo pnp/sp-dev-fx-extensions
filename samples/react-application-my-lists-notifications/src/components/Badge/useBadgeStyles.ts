@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as  React from "react";
 
 import { IIconStyles, IStackStyles } from "@fluentui/react";
 
-export const useBadgeStyles = () => {
+export const useBadgeStyles = ():any => {
 
   const panelTitleStyles: IStackStyles = {
     root: {

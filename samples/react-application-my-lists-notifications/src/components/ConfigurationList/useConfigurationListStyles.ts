@@ -7,7 +7,7 @@ import {
   mergeStyleSets,
 } from '@fluentui/react';
 import { AppContext } from '../../common/AppContext';
-export const useConfigurationListStyles = () => {
+export const useConfigurationListStyles = ():any => {
 
   const { theme , context } = React.useContext(AppContext);
 

@@ -4,7 +4,7 @@ import { IDocumentCardStyles, IStackStyles, IStyle, mergeStyles, mergeStyleSets 
 
 import { AppContext } from "../../common/AppContext";
 
-export const useRenderNotificationStyles = () => {
+export const useRenderNotificationStyles = (): any => {
   const { theme, context } = React.useContext(AppContext);
 
   const itemContainerStyles: IStackStyles = {

@@ -1,24 +1,24 @@
-# react-my-lists-notifications
+# My Lists Notifications
 
 ## Summary
 
 This application extension alows user receive notifications from selected lists or libraries
 
-![myListNotifications](./assets/myListsNotifications.gif))
-<br/><br/><br/>
+![myListNotifications](./assets/myListsNotifications.gif)
+<br/>
 
- ![myListNotifications](./assets/myListsNotifications0.png))
- <br/><br/><br/>
-  ![myListNotifications](./assets/myListsNotifications1.png))
-<br/><br/><br/>
+ ![myListNotifications](./assets/myListsNotifications0.png)
+ <br/>
+  ![myListNotifications](./assets/myListsNotifications1.png)
+<br/>
 
-  ![myListNotifications](./assets/myListsNotifications2.png))
-  <br/><br/><br/>
+  ![myListNotifications](./assets/myListsNotifications2.png)
+  <br/>
 
-  ![myListNotifications](./assets/myListsNotifications3.png))
-  <br/><br/><br/>
+  ![myListNotifications](./assets/myListsNotifications3.png)
+  <br/>
   
-  ![myListNotifications](./assets/myListsNotifications4.png))
+  ![myListNotifications](./assets/myListsNotifications4.png)
 ## Used SharePoint Framework Version
 
 ![SPFx 1.12](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
@@ -32,12 +32,6 @@ This application extension alows user receive notifications from selected lists 
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-Microsoft Graph permissions required:
-
-        "resource": "Microsoft Graph", "scope": "Sites.ReadWrite.All"
-
-After deployed to the AppCatalog this permissions need to be approved in SharePoint Central Admin.
       
 
 ## Solution
@@ -52,15 +46,19 @@ Version|Date|Comments
 -------|----|--------
 1.0|July 8, 2021|Initial release
 
-## Disclaimer
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+## Pre-requisites
 
+Microsoft Graph permissions required:
 
-## Disclaimer
+```json
+  {
+    "resource": "Microsoft Graph", 
+    "scope": "Sites.ReadWrite.All"
+  }      
+```
 
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+After deployed to the AppCatalog this permissions need to be approved in SharePoint Central Admin.
 
----
 
 ## Minimal Path to Awesome
 
@@ -70,7 +68,6 @@ Version|Date|Comments
   - **npm install**
   - **gulp serve**
 
-> Include any additional steps as needed.
 
 ## Features
 
@@ -81,12 +78,7 @@ This extension illustrates the following concepts:
 - Use Miscrosoft Grapg API's to get activities from lists / Library
 - Use Microsoft Graph Search to search lists / Library
 - Save custom settings on Apps OnDrive folder
-- Use SockectIO server of lists to get real time notifications
-
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+- Use SocketIO server of lists to get real time notifications
 
 ## References
 
@@ -95,3 +87,20 @@ This extension illustrates the following concepts:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+
+## Help
+
+We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=react-application-my-lists-notifications&authors=@joaojmendes&title=react-application-my-lists-notifications%20-%20).
+
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=react-application-my-lists-notifications&authors=@joaojmendes&title=react-application-my-lists-notifications%20-%20).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-my-lists-notifications&authors=@joaojmendes&title=react-application-my-lists-notifications%20-%20).
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-my-lists-notifications" />
