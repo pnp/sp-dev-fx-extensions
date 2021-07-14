@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://spteck.sharepoint.com/sites/ThePerspective/SitePages/Home.aspx",
+      "customActions": {
+        "c1a3cdb7-6581-4966-832a-49952eb1feb7": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "myListsNotifications": {
+      "pageUrl": "https://spteck.sharepoint.com/sites/ThePerspective/SitePages/Home.aspx",
+      "customActions": {
+        "c1a3cdb7-6581-4966-832a-49952eb1feb7": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}
