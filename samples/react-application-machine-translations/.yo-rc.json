@@ -1,6 +1,6 @@
 {
   "@microsoft/generator-sharepoint": {
-    "version": "1.10.0",
+    "version": "1.12.1",
     "libraryName": "machine-translation-extension",
     "libraryId": "87cc9434-00c1-4c88-b50c-dd8a7888f9b8",
     "environment": "spo",

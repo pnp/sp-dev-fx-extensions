@@ -10,9 +10,9 @@ The extension will determine the language of the page using the page description
 
 ## Compatibility
 
-![SPFx 1.10](https://img.shields.io/badge/spfx-1.10.0-green.svg)
+![SPFx 1.12.1](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
 
-![Node.js LTS 8.x | LTS 10.x](https://img.shields.io/badge/Node.js-LTS%208.x%20%7C%0A%20LTS%2010.x-green.svg)
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
 
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg)
 
@@ -40,7 +40,7 @@ react-application-machine-translations | [Michal Romiszewski](https://twitter.co
 
 Version|Date|Comments
 -------|----|--------
-1.1|July 22, 2020|Updated TranslationService
+1.1|July 23, 2020|Update TranslationService, SPFx to 1.12.1 and PnPjs to 2.7.0
 1.0|March 28, 2020|Initial release
 
 ## Disclaimer
@@ -64,7 +64,7 @@ This extension illustrates the following concepts:
 
 - Configurable available languages
 - Uses Microsoft Azure Translator Text API
-- Uses [PnPjs V2.0](https://pnp.github.io/pnpjs/) to get page web parts
+- Uses [PnPjs 2.7.0](https://pnp.github.io/pnpjs/) to get page web parts
 
 ## Debug URL for testing
 
