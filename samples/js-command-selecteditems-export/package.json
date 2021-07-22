@@ -17,7 +17,7 @@
     "@microsoft/sp-listview-extensibility": "~1.4.1",
     "@types/webpack-env": ">=1.12.1 <1.14.0",
     "@types/xlsx": "0.0.36",
-    "xlsx": "^0.12.1"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.4.1",
