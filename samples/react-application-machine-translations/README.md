@@ -34,11 +34,13 @@ To make this sample work, you will need a valid API key for the Translator Text 
 Solution|Author(s)
 --------|---------
 react-application-machine-translations | [Robin Agten](https://twitter.com/AgtenRobin)
+react-application-machine-translations | [Michal Romiszewski](https://twitter.com/romiszewski) -- Update
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
+1.1|July 22, 2020|Updated TranslationService
 1.0|March 28, 2020|Initial release
 
 ## Disclaimer
@@ -66,7 +68,7 @@ This extension illustrates the following concepts:
 
 ## Debug URL for testing
 
-Here's a debug URL for testing around this sample. 
+Here's a debug URL for testing around this sample (global translator resource).
 
 ```
 ?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"aa40cc51-6498-4c01-91d4-b5f8d2fe1e8b":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"supportedLanguages":["en","nl","fr"],"translatorApiKey":"_TRANSLATOR_API_KEY_"}}}
@@ -74,11 +76,21 @@ Here's a debug URL for testing around this sample.
  - Replace \_TRANSLATOR_API_KEY_ with your API key
  - Update the supportedLanguages list with languages that you want to expose. A full list of supported languages can be found [here](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support)
 
+Here's a debug URL for testing around this sample (regional translator resource).
+
+```
+?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"aa40cc51-6498-4c01-91d4-b5f8d2fe1e8b":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"supportedLanguages":["en","nl","fr"],"translatorApiKey":"_TRANSLATOR_API_KEY_","translatorApiRegion":"_TRANSLATOR_API_REGION_"}}}
+```
+- Replace \_TRANSLATOR_API_REGION_ with the region of the translator resource eg.: "westeurope", "eastus", "eastasia" etc.
+
+![](./assets/azure_translator_service.png)
+
  ## Package and deploy
 
   - Update the following properties in the `elements.xml` and `ClientSideInstance.xml` file under `sharepoint/assets` (See debug url for more info):
     - supportedLanguages
     - translatorApiKey
+    - (optional) translatorApiRegion
   - Run `gulp bundle --ship`
   - Run `gulp package-solution --ship`
   - Upload the `machine-translation-extension.sppkg` file under `sharepoint/solution` to the app catalog of your tenant
