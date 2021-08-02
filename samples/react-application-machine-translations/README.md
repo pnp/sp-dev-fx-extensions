@@ -40,7 +40,7 @@ react-application-machine-translations | [Michal Romiszewski](https://twitter.co
 
 Version|Date|Comments
 -------|----|--------
-1.1|July 23, 2020|Update TranslationService, SPFx to 1.12.1 and PnPjs to 2.7.0
+1.1|July 23, 2021|Update TranslationService, SPFx to 1.12.1 and PnPjs to 2.7.0
 1.0|March 28, 2020|Initial release
 
 ## Disclaimer
@@ -94,6 +94,19 @@ Here's a debug URL for testing around this sample (regional translator resource)
   - Run `gulp bundle --ship`
   - Run `gulp package-solution --ship`
   - Upload the `machine-translation-extension.sppkg` file under `sharepoint/solution` to the app catalog of your tenant
+
+## Disclaimer
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+## Help
+
+We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=react-application-machine-translations&authors=@mromiszewski%20@agtenr&title=react-application-machine-translations%20-%20).
+
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=react-application-machine-translations&authors=@mromiszewski%20@agtenr&title=react-application-machine-translations%20-%20).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-machine-translations&authors=@mromiszewski%20@agtenr&title=react-application-machine-translations%20-%20).
 
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-machine-translations" />
