@@ -9,7 +9,7 @@
       "This application customizer lets you translate the text on a SharePoint page using the Translator Text API of Microsoft Azure."
     ],
     "creationDateTime": "2021-01-20",
-    "updateDateTime": "2021-01-20",
+    "updateDateTime": "2021-07-22",
     "products": [
       "SharePoint",
       "Office"
@@ -48,6 +48,11 @@
         "company": "",
         "pictureUrl": "https://github.com/agtenr.png",
         "name": "Robin Agten"
+      },
+      {
+        "gitHubAccount": "mromiszewski",
+        "pictureUrl": "https://github.com/mromiszewski.png",
+        "name": "Michał Romiszewski"
       }
     ],
     "references": [

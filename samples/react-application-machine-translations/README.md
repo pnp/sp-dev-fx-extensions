@@ -10,9 +10,9 @@ The extension will determine the language of the page using the page description
 
 ## Compatibility
 
-![SPFx 1.10](https://img.shields.io/badge/spfx-1.10.0-green.svg)
+![SPFx 1.12.1](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
 
-![Node.js LTS 8.x | LTS 10.x](https://img.shields.io/badge/Node.js-LTS%208.x%20%7C%0A%20LTS%2010.x-green.svg)
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
 
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg)
 
@@ -34,11 +34,13 @@ To make this sample work, you will need a valid API key for the Translator Text 
 Solution|Author(s)
 --------|---------
 react-application-machine-translations | [Robin Agten](https://twitter.com/AgtenRobin)
+react-application-machine-translations | [Michal Romiszewski](https://twitter.com/romiszewski) -- Update
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
+1.1|July 23, 2021|Update TranslationService, SPFx to 1.12.1 and PnPjs to 2.7.0
 1.0|March 28, 2020|Initial release
 
 ## Disclaimer
@@ -62,11 +64,11 @@ This extension illustrates the following concepts:
 
 - Configurable available languages
 - Uses Microsoft Azure Translator Text API
-- Uses [PnPjs V2.0](https://pnp.github.io/pnpjs/) to get page web parts
+- Uses [PnPjs 2.7.0](https://pnp.github.io/pnpjs/) to get page web parts
 
 ## Debug URL for testing
 
-Here's a debug URL for testing around this sample. 
+Here's a debug URL for testing around this sample (global translator resource).
 
 ```
 ?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"aa40cc51-6498-4c01-91d4-b5f8d2fe1e8b":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"supportedLanguages":["en","nl","fr"],"translatorApiKey":"_TRANSLATOR_API_KEY_"}}}
@@ -74,14 +76,37 @@ Here's a debug URL for testing around this sample.
  - Replace \_TRANSLATOR_API_KEY_ with your API key
  - Update the supportedLanguages list with languages that you want to expose. A full list of supported languages can be found [here](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support)
 
+Here's a debug URL for testing around this sample (regional translator resource).
+
+```
+?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"aa40cc51-6498-4c01-91d4-b5f8d2fe1e8b":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"supportedLanguages":["en","nl","fr"],"translatorApiKey":"_TRANSLATOR_API_KEY_","translatorApiRegion":"_TRANSLATOR_API_REGION_"}}}
+```
+- Replace \_TRANSLATOR_API_REGION_ with the region of the translator resource eg.: "westeurope", "eastus", "eastasia" etc.
+
+![](./assets/azure_translator_service.png)
+
  ## Package and deploy
 
   - Update the following properties in the `elements.xml` and `ClientSideInstance.xml` file under `sharepoint/assets` (See debug url for more info):
     - supportedLanguages
     - translatorApiKey
+    - (optional) translatorApiRegion
   - Run `gulp bundle --ship`
   - Run `gulp package-solution --ship`
   - Upload the `machine-translation-extension.sppkg` file under `sharepoint/solution` to the app catalog of your tenant
+
+## Disclaimer
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+## Help
+
+We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=react-application-machine-translations&authors=@mromiszewski%20@agtenr&title=react-application-machine-translations%20-%20).
+
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=react-application-machine-translations&authors=@mromiszewski%20@agtenr&title=react-application-machine-translations%20-%20).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-machine-translations&authors=@mromiszewski%20@agtenr&title=react-application-machine-translations%20-%20).
 
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-machine-translations" />

@@ -15,6 +15,7 @@ export interface IMachineTranslationExtensionApplicationCustomizerProperties {
   // Check supported languages: https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support
   supportedLanguages: string[];
   translatorApiKey: string;
+  translatorApiRegion: string;
   regionSpecifier: string;
 }
 
@@ -60,9 +61,12 @@ export default class MachineTranslationExtensionApplicationCustomizer
       }
 
       // Init the translation service
-      const translationService: ITranslationService = this.properties.regionSpecifier
-        ? new TranslationService(this.context.httpClient, this.properties.translatorApiKey, `-${this.properties.regionSpecifier}`)
-        : new TranslationService(this.context.httpClient, this.properties.translatorApiKey);
+      const translationService: ITranslationService =
+        new TranslationService(
+          this.context.httpClient,
+          this.properties.translatorApiKey,
+          this.properties.translatorApiRegion,
+          this.properties.regionSpecifier);
 
       const props: ITranslationBarProps = {
         supportedLanguages: this.properties.supportedLanguages,
@@ -79,9 +83,12 @@ export default class MachineTranslationExtensionApplicationCustomizer
   private startReactRender() {
     if (this._topPlaceholder && this._topPlaceholder.domElement) {
       // Init the translation service
-      const translationService: ITranslationService = this.properties.regionSpecifier
-        ? new TranslationService(this.context.httpClient, this.properties.translatorApiKey, `-${this.properties.regionSpecifier}`)
-        : new TranslationService(this.context.httpClient, this.properties.translatorApiKey);
+      const translationService: ITranslationService =
+        new TranslationService(
+          this.context.httpClient,
+          this.properties.translatorApiKey,
+          this.properties.translatorApiRegion,
+          this.properties.regionSpecifier);
 
       const props: ITranslationBarProps = {
         supportedLanguages: this.properties.supportedLanguages,
