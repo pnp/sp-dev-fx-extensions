@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as strings from 'CopyMoveItemsCommandSetStrings';
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { ProgressIndicator } from '@fluentui/react/lib/ProgressIndicator';
 import { LoaderType } from '../Models/IModel';
@@ -22,7 +23,7 @@ const ContentLoader: React.FunctionComponent<IContentLoaderProps> = (props) => {
 							<Spinner label={props.loaderMsg} size={props.spinSize ? props.spinSize : SpinnerSize.large} ariaLive="assertive" labelPosition="top" />
 						}
 						{props.loaderType == LoaderType.Indicator &&
-							<ProgressIndicator label={props.loaderMsg} description="Please wait..." />
+							<ProgressIndicator label={props.loaderMsg} description={strings.Msg_Wait} />
 						}
 					</div>
 				)}

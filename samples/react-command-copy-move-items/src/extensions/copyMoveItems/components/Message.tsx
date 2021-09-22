@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
 import styles from './components.module.scss';
+import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
 import { MessageScope } from '../Models/IModel';
 import { css } from '@fluentui/react/lib/Utilities';
 

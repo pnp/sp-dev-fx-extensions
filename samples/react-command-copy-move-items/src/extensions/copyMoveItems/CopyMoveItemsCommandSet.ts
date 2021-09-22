@@ -1,4 +1,5 @@
 import * as ReactDOM from 'react-dom';
+import * as string from 'CopyMoveItemsCommandSetStrings';
 import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
 import {
@@ -8,9 +9,9 @@ import {
     IListViewCommandSetExecuteEventParameters
 } from '@microsoft/sp-listview-extensibility';
 import * as strings from 'CopyMoveItemsCommandSetStrings';
-import AppBaseDialog, { IAppDialogProps } from './components/AppBaseDialog';
 import { ICommandInfo } from './Models/ICommandInfo';
 import { sp } from "@pnp/sp";
+import AppBaseDialog, { IAppDialogProps } from './components/AppBaseDialog';
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
@@ -19,8 +20,6 @@ import { sp } from "@pnp/sp";
  */
 export interface ICopyMoveItemsCommandSetProperties {
     // This is an example; replace with your own properties
-    sampleTextOne: string;
-    sampleTextTwo: string;
 }
 
 const LOG_SOURCE: string = 'CopyMoveItemsCommandSet';
@@ -37,7 +36,7 @@ export default class CopyMoveItemsCommandSet extends BaseListViewCommandSet<ICop
 
     @override
     public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
-        const commandOne: Command = this.tryGetCommand('COMMAND_COPYMOVE');
+        const commandOne: Command = this.tryGetCommand(strings.CopyMoveCommand);
         commandOne.visible = true;
     }
 
@@ -47,9 +46,8 @@ export default class CopyMoveItemsCommandSet extends BaseListViewCommandSet<ICop
 
     @override
     public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
-        console.log(event.selectedRows, this.context);
         switch (event.itemId) {
-            case 'COMMAND_COPYMOVE':
+            case strings.CopyMoveCommand:
                 let itemIds: string[] = [];
                 if(event.selectedRows.length > 0) {
                     event.selectedRows.map(row => {
@@ -86,7 +84,7 @@ export default class CopyMoveItemsCommandSet extends BaseListViewCommandSet<ICop
                 this.appDialog.closeDialog = this._closeDialog.bind(this);
                 break;
             default:
-                throw new Error('Unknown command');
+                throw new Error(strings.UnkCmd);
         }
     }
 }

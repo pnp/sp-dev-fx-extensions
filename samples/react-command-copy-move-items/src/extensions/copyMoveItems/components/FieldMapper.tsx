@@ -1,18 +1,19 @@
 import * as React from 'react';
+import * as strings from 'CopyMoveItemsCommandSetStrings';
 import styles from './components.module.scss';
 import { Dropdown, IDropdownOption } from '@fluentui/react/lib/Dropdown';
 import { SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { FC, useState, useEffect } from 'react';
-import CommandHelper from '../Helpers/CommandHelper';
 import { ICommandHelper } from '../Helpers/ICommandHelper';
 import { IFieldInfo, IMappingFieldInfo, IMessageInfo, LoaderType, MessageScope } from '../Models/IModel';
-import ContentLoader from './ContentLoader';
 import { css } from '@fluentui/utilities';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { Icon, IIconStyles } from '@fluentui/react/lib/Icon';
-import MessageContainer from './Message';
 import { Checkbox, PrimaryButton } from '@fluentui/react';
 import { find, uniqBy } from 'lodash';
+import CommandHelper from '../Helpers/CommandHelper';
+import ContentLoader from './ContentLoader';
+import MessageContainer from './Message';
 
 interface IFieldMapperProps {
     sourceListID: string;
@@ -43,9 +44,9 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
     const _loadListFields = async () => {
         setFMMessage(undefined);
         setDisabled(false);
+        setDisConfirmFM(false);
         setLoading(true);
         let listFields = await _helper.getListFields(props.destListID.toString());
-        console.log("Destination Fields: ", listFields);
         let ddlDestOptions: IDropdownOption[] = [];
         listFields.map(destField => {
             ddlDestOptions.push({ key: destField.InternalName, text: destField.Title, data: destField });
@@ -56,7 +57,6 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
         listFields = listFields.filter(f => f.TypeAsString.toLowerCase() === "text" || f.TypeAsString.toLowerCase() === "choice"
             || f.TypeAsString.toLowerCase() === "datetime" || f.TypeAsString.toLowerCase() === "boolean"
             || f.TypeAsString.toLowerCase() === "number");
-        console.log("Source list fields: ", listFields);
         let ddlOptions: IDropdownOption[] = [];
         let _mappedFields: IMappingFieldInfo[] = [];
         listFields.map(srcField => {
@@ -91,7 +91,7 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
         setSourceFields(ddlOptions);
         setMappedFields(_mappedFields);
         if (_mappedFields.filter(f => f.Enabled).length <= 0) {
-            setFMMessage({ msg: "Destination fields doesn't match. Please select a different list!", scope: MessageScope.Warning });
+            setFMMessage({ msg: strings.Msg_Fld_No_Match, scope: MessageScope.Warning });
             setDisabled(true);
         }
         setLoading(false);
@@ -120,7 +120,7 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
             if (mappedFields) {
                 let _mapfields = mappedFields;
                 if (_mapfields.filter(f => f.DFId === option.data.Id).length > 0) {
-                    setFMMessage({ msg: "Field already mapped!", scope: MessageScope.Warning });
+                    setFMMessage({ msg: strings.Msg_Fld_Map_Twce, scope: MessageScope.Warning });
                 }
                 let fil = _mapfields.filter(f => f.SFId === srcFieldId.toString());
                 if (fil && fil.length > 0) {
@@ -136,12 +136,11 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
     };
 
     const _confirmFieldMapping = () => {
-        console.log("Confirmed Field mapping", mappedFields);
         let enabFields = mappedFields.filter(f => f.Enabled);
         if (enabFields.length > 0) {
             let inCompleteMF = enabFields.filter(f => f.DFInternalName == undefined || f.DFInternalName == "");
             if (inCompleteMF.length > 0) {
-                setFMMessage({ msg: "Please select the mapping field for the selected source field!", scope: MessageScope.Failure });
+                setFMMessage({ msg: strings.Msg_Fld_No_Map, scope: MessageScope.Failure });
                 props.confirmFieldMapping([]);
             } else {
                 let duplicates = uniqBy(enabFields, 'DFId').length !== enabFields.length;
@@ -149,10 +148,10 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
                     setDisConfirmFM(true);
                     props.confirmFieldMapping(enabFields);
                 }
-                else setFMMessage({ msg: "Multiple mappings found for the same field!", scope: MessageScope.Failure });
+                else setFMMessage({ msg: strings.Msg_Fld_Mul_Map, scope: MessageScope.Failure });
             }
         } else {
-            setFMMessage({ msg: "Atleast one field should be mapped!", scope: MessageScope.Warning });
+            setFMMessage({ msg: strings.Msg_Fld_Atl_One, scope: MessageScope.Warning });
             props.confirmFieldMapping([]);
         }
     };
@@ -168,7 +167,7 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
     return (
         <div className={styles.fieldMapping}>
             {loading ? (
-                <ContentLoader loaderType={LoaderType.Spinner} loaderMsg={"Loading fields..."} spinSize={SpinnerSize.small} />
+                <ContentLoader loaderType={LoaderType.Spinner} loaderMsg={strings.Msg_Load_Flds} spinSize={SpinnerSize.small} />
             ) : (
                 <>
                     {sourceFields && destFields ? (
@@ -176,11 +175,11 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
                             <div className={styles.fieldContainer}>
                                 <div style={{ marginTop: '7px' }} />
                                 <div className={css(styles.srcFieldContainer)}>
-                                    <b>Source Field(s)</b>
+                                    <b>{strings.Lbl_FldMap_Src_Header}</b>
                                 </div>
                                 <Separator className={css(styles.fieldSeparator, styles.fieldSeparatorHeader)}><Icon iconName={"DoubleChevronRight8"} styles={iconStyles} /></Separator>
                                 <div className={css(styles.destFieldContainer, styles.destFieldContainerHeader)}>
-                                    <b>Destination Field(s)</b>
+                                    <b>{strings.Lbl_FldMap_Dest_Header}</b>
                                 </div>
                             </div>
                             {sourceFields.map(srcField => {
@@ -197,7 +196,7 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
                                         </div>
                                         <Separator className={styles.fieldSeparator}><Icon iconName={"DoubleChevronRight8"} styles={iconStyles} /></Separator>
                                         <div className={css(styles.destFieldContainer)}>
-                                            <Dropdown placeholder="Map the field" options={dFields} selectedKey={mapField ? mapField.DFInternalName : undefined}
+                                            <Dropdown placeholder={strings.Msg_Fld_Map_Req} options={dFields} selectedKey={mapField ? mapField.DFInternalName : undefined}
                                                 className={styles.fieldDDL} disabled={dFields.length <= 0 || disabled}
                                                 onChange={(ev, option: IDropdownOption<any>) => { _handleOnFieldDropdownChange(srcField.data.Id, option); }} />
                                         </div>
@@ -209,12 +208,13 @@ const FieldMapper: FC<IFieldMapperProps> = (props) => {
                                     <MessageContainer MessageScope={fmMessage.scope} Message={fmMessage.msg} />
                                 }
                                 <div className={styles.btnConfirmMapping}>
-                                    <PrimaryButton onClick={_confirmFieldMapping} text="Confirm the mapping?" disabled={disabled || disConfirmFM} />
+                                    <PrimaryButton onClick={_confirmFieldMapping} text={strings.Btn_Conf_Name} disabled={disabled || disConfirmFM}
+                                        iconProps={{ iconName: 'WaitlistConfirm' }} />
                                 </div>
                             </div>
                         </>
                     ) : (
-                        <MessageContainer MessageScope={MessageScope.Info} Message="Please select a destination list!" />
+                        <MessageContainer MessageScope={MessageScope.Info} Message={strings.Msg_Fld_Dest_Req} />
                     )}
                 </>
             )}

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import * as strings from 'CopyMoveItemsCommandSetStrings';
 import { BaseDialog, IDialogConfiguration } from '@microsoft/sp-dialog';
 import { Dialog, DialogType } from '@fluentui/react/lib/Dialog';
 import { useBoolean } from '@fluentui/react-hooks';
@@ -11,7 +12,7 @@ const modelProps = {
 };
 const dialogContentProps = {
     type: DialogType.largeHeader,
-    title: 'Copy / Move Items',
+    title: strings.DialogTitle,
     subText: '',
     showCloseButton: true
 };
@@ -35,7 +36,7 @@ export const AppDialog: React.FunctionComponent<IAppDialogProps> = (props) => {
                 onDismiss={toggleHideDialog}
                 dialogContentProps={dialogContentProps}
                 modalProps={modelProps}
-                closeButtonAriaLabel="Close"                
+                closeButtonAriaLabel={strings.CloseAL}                
                 minWidth="900px"
                 responsiveMode={ResponsiveMode.large}>
                 <CMContainer Info={props.data} closeDialog={_closeDialog} />

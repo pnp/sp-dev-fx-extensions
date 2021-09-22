@@ -63,8 +63,8 @@ export default class CommandHelper implements ICommandHelper {
         fields.push('ID');
         if (!listid && !listtitle) throw 'Atleast one argument is required';
         else {
-            if (listid) return await this._web.lists.getById(listid).items.select(...fields).orderBy("ID", true).get();
-            else if (listtitle) return await this._web.lists.getByTitle(listtitle).items.select(...fields).orderBy("ID", true).get();
+            if (listid) return await this._web.lists.getById(listid).items.select(...fields).orderBy("ID", true).getAll();
+            else if (listtitle) return await this._web.lists.getByTitle(listtitle).items.select(...fields).orderBy("ID", true).getAll();
         }
     }
 

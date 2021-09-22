@@ -1,19 +1,20 @@
 import * as React from 'react';
+import * as strings from 'CopyMoveItemsCommandSetStrings';
 import styles from './components.module.scss';
 import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
 import { Separator } from '@fluentui/react/lib/Separator';
 import { Dropdown, IDropdownOption } from '@fluentui/react/lib/Dropdown';
 import { Stack, IStackTokens, IStackStyles, IStackItemStyles } from '@fluentui/react/lib/Stack';
 import { useEffect, useState, FC } from 'react';
-import CommandHelper from '../Helpers/CommandHelper';
 import { ICommandHelper } from '../Helpers/ICommandHelper';
 import { ICommandInfo } from '../Models/ICommandInfo';
 import { css } from '@fluentui/utilities';
 import { IListInfo, IMappingFieldInfo, IMessageInfo, ISiteListInfo, LoaderType, MessageScope } from '../Models/IModel';
 import { Icon, IStyle, SpinnerSize } from '@fluentui/react';
+import { map } from 'lodash';
+import CommandHelper from '../Helpers/CommandHelper';
 import ContentLoader from './ContentLoader';
 import FieldMapper from './FieldMapper';
-import { map } from 'lodash';
 import MessageContainer from './Message';
 
 const stackTokens: IStackTokens = { childrenGap: 10 };
@@ -83,12 +84,13 @@ const CMContainer: FC<ICMContainerProps> = (props) => {
         lists.map(lst => {
             ddlLists.push({ key: lst.Id, text: lst.Title, data: lst });
         });
-        ddlLists.unshift({ key: '0', text: 'Select a list', data: null });
+        ddlLists.unshift({ key: '0', text: strings.DDLListLabel, data: null });
         setDestLists(ddlLists);
     };
 
     const _handleDestListChange = (event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption<any>, index?: number) => {
         setShowActionButtons(false);
+        setActionMsg(undefined);
         if (option.key && option.key.toString() !== '0') {
             setSelList(option.key.toString());
             setDestListInfo(option.data);
@@ -101,7 +103,6 @@ const CMContainer: FC<ICMContainerProps> = (props) => {
 
     const _handleConfirmFieldMapping = (_mappedFields: IMappingFieldInfo[]) => {
         setMappedFields([..._mappedFields]);
-        console.log("Mapped Fields: ", _mappedFields);
         if (_mappedFields.length > 0) {
             showOrHideActionButtons(true);
         } else {
@@ -125,8 +126,8 @@ const CMContainer: FC<ICMContainerProps> = (props) => {
             setShowActionLoading(false);
             setDisableForSubmission(false);
             if (copyStatus) {
-                setActionMsg({ msg: 'Item(s) copied successfully!', scope: MessageScope.Success });
-            } else setActionMsg({ msg: 'Copy item(s) failed!', scope: MessageScope.Failure });
+                setActionMsg({ msg: strings.Msg_Cpy_Success, scope: MessageScope.Success });
+            } else setActionMsg({ msg: strings.Msg_Cpy_Failed, scope: MessageScope.Failure });
         }
     };
 
@@ -135,13 +136,20 @@ const CMContainer: FC<ICMContainerProps> = (props) => {
         setDisableForSubmission(true);
         setShowActionLoading(true);
         let srcFields: string[] = map(mappedFields, 'SFInternalName');
-        let srcItems: any[] = await _helper.getListItems(srcFields, props.Info.List.Id, '');
-        let copyStatus = await _helper.moveItems(srcItems, props.Info.List.Id.toString(), mappedFields, destListInfo.Id, destListInfo.EntityTypeName);
-        setShowActionLoading(false);
-        setDisableForSubmission(false);
-        if (copyStatus) {
-            setActionMsg({ msg: 'Items moved successfully!', scope: MessageScope.Success });
-        } else setActionMsg({ msg: 'Move items failed!', scope: MessageScope.Failure });
+        let srcItems: any[] = [];
+        if (selItems.length > 0) {
+            srcItems = await _helper.getListItemsByIds(srcFields, selItems, props.Info.List.Id);
+        } else {
+            srcItems = await _helper.getListItems(srcFields, props.Info.List.Id);
+        }
+        if (srcItems.length > 0) {
+            let moveStatus = await _helper.moveItems(srcItems, props.Info.List.Id.toString(), mappedFields, destListInfo.Id, destListInfo.EntityTypeName);
+            setShowActionLoading(false);
+            setDisableForSubmission(false);
+            if (moveStatus) {
+                setActionMsg({ msg: strings.Msg_Mve_Success, scope: MessageScope.Success });
+            } else setActionMsg({ msg: strings.Msg_Mve_Failed, scope: MessageScope.Failure });
+        }
     };
 
     const _loadSelectedItems = () => {
@@ -153,7 +161,6 @@ const CMContainer: FC<ICMContainerProps> = (props) => {
     useEffect(() => {
         _loadSourceInfo();
         _loadDestInfo();
-        console.log("CM Container load: ", props);
         if (props.Info.ItemIds.length > 0) {
             _loadSelectedItems();
         }
@@ -165,18 +172,18 @@ const CMContainer: FC<ICMContainerProps> = (props) => {
             <Stack tokens={stackTokens}>
                 <Stack horizontal horizontalAlign={"space-between"} styles={stackStyles}>
                     <div className={css(styles.sectionContainer, styles.sectionContainer_left)}>
-                        <div className={styles.sectionTitle}>Source Info</div>
+                        <div className={styles.sectionTitle}>{strings.Lbl_Src_Header}</div>
                         {sourceListInfo ? (
                             <>
                                 <div className={styles.div_itemCount}>
-                                    <span className={styles.spn_label}>Item Count:</span>
+                                    <span className={styles.spn_label}>{strings.Lbl_Src_Item_Cnt}</span>
                                     <span className={css(styles.spn_value, sourceItemCountStyle)}>
                                         {sourceListInfo ? sourceListInfo.ItemCount.toString() : ' 0 '}
                                     </span>
                                 </div>
                                 {selItems.length > 0 &&
                                     <div className={styles.div_itemCount} style={{ marginTop: '10px' }}>
-                                        <span className={styles.spn_label}>Selected Item Count:</span>
+                                        <span className={styles.spn_label}>{strings.Lbl_Src_Sel_Item_Cnt}</span>
                                         <span className={css(styles.spn_value, sourceSelItemCountStyle)}>
                                             {selItems.length.toString()}
                                         </span>
@@ -184,21 +191,21 @@ const CMContainer: FC<ICMContainerProps> = (props) => {
                                 }
                             </>
                         ) : (
-                            <ContentLoader loaderType={LoaderType.Spinner} loaderMsg={"Loading..."} spinSize={SpinnerSize.small} />
+                            <ContentLoader loaderType={LoaderType.Spinner} loaderMsg={strings.Msg_Loading} spinSize={SpinnerSize.small} />
                         )}
                     </div>
                     <Separator vertical />
                     <div className={css(styles.sectionContainer, styles.sectionContainer_right)}>
-                        <div className={styles.sectionTitle}>Destination Info</div>
+                        <div className={styles.sectionTitle}>{strings.Lbl_Dest_Header}</div>
                         {destLists ? (
                             <>
                                 <div className={css(styles.destListContainer)}>
-                                    <Dropdown placeholder="Select a list" options={destLists} className={styles.listDDL}
+                                    <Dropdown placeholder={strings.DDLListLabel} options={destLists} className={styles.listDDL}
                                         selectedKey={selList} onChange={_handleDestListChange} disabled={disableForSubmission} />
                                 </div>
                                 {destListInfo &&
                                     <div className={styles.div_itemCount} style={{ marginTop: '10px' }}>
-                                        <span className={styles.spn_label}>Item Count:</span>
+                                        <span className={styles.spn_label}>{strings.Lbl_Dest_Item_Cnt}</span>
                                         <span className={css(styles.spn_value, destItemCountStyle)}>
                                             {destListInfo ? destListInfo.ItemCount.toString() : ' 0 '}
                                         </span>
@@ -206,7 +213,7 @@ const CMContainer: FC<ICMContainerProps> = (props) => {
                                 }
                             </>
                         ) : (
-                            <ContentLoader loaderType={LoaderType.Spinner} loaderMsg={"Loading..."} spinSize={SpinnerSize.small} />
+                            <ContentLoader loaderType={LoaderType.Spinner} loaderMsg={strings.Msg_Loading} spinSize={SpinnerSize.small} />
                         )}
                     </div>
                 </Stack>
@@ -234,19 +241,20 @@ const CMContainer: FC<ICMContainerProps> = (props) => {
                     {showActionButtons &&
                         <>
                             <Stack.Item styles={footerItemStyles}>
-                                <PrimaryButton onClick={_handleCopyItems} disabled={disableForSubmission}>
-                                    <Icon iconName={"Copy"} />&nbsp;Copy
+                                <PrimaryButton onClick={_handleCopyItems} disabled={disableForSubmission}
+                                    iconProps={{ iconName: 'Copy' }} text={strings.Btn_Cpy_Name}>
                                 </PrimaryButton>
                             </Stack.Item>
                             <Stack.Item styles={footerItemStyles}>
-                                <PrimaryButton onClick={_handleMoveItems} disabled={disableForSubmission}>
-                                    <Icon iconName={"MoveToFolder"} />&nbsp;Move
+                                <PrimaryButton onClick={_handleMoveItems} disabled={disableForSubmission}
+                                    iconProps={{ iconName: 'MoveToFolder' }} text={strings.Btn_Mve_Name}>
                                 </PrimaryButton>
                             </Stack.Item>
                         </>
                     }
                     <Stack.Item>
-                        <DefaultButton onClick={props.closeDialog} text="Cancel" disabled={disableForSubmission} />
+                        <DefaultButton onClick={props.closeDialog} text={strings.Btn_Can_Name} disabled={disableForSubmission}
+                            iconProps={{ iconName: 'Blocked' }} />
                     </Stack.Item>
                 </Stack>
             </Stack>
