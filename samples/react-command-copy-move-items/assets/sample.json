@@ -1,15 +1,15 @@
 [
   {
-    "name": "pnp-sp-dev-spfx-extensions-react-YOUR-SOLUTION-NAME-GOES-HERE",
+    "name": "pnp-sp-dev-spfx-extensions-react-react-command-copy-move-items",
     "source": "pnp",
-    "title": "TODO: TITLE-GOES-HERE",
-    "shortDescription": "DESCRIPTION-GOES-HERE",
-    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
+    "title": "Copy/Move Item(s)",
+    "shortDescription": "Displays a command button named **Copy/Move Item(s)** in all the custom lists",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-copy-move-items",
     "longDescription": [
-      "TODO: LONG-DESCRIPTION-GOES-HERE"
+      "This application customizer will display a command button named **Copy/Move Item(s)** in all the custom lists. Using this option, the items can be copied or moved from one list to another within the site."
     ],
-    "creationDateTime": "2021-06-06",
-    "updateDateTime": "2021-06-06",
+    "creationDateTime": "2021-09-13",
+    "updateDateTime": "2021-09-13",
     "products": [
       "SharePoint",
       "Office"
@@ -21,30 +21,28 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.12.1"
+        "value": "1.11.1"
       }
     ],
 "tags": [],
     "categories": [
-      /* SELECT THE RIGHT ONE */
       "SPFX-APPLICATION-EXTENSION"
-      "SPFX-COMMAND-EXTENSION"
-      "SPFX-FIELD-EXTENSION"      
     ],
     "thumbnails": [
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/YOUR-SOLUTION-NAME-GOES-HERE/assets/preview.gif",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-copy-move-items/assets/CopyMoveItems.png",
         "alt": "Preview"
       }
     ],
     "authors": [
       {
-        "gitHubAccount": "TODO: YOUR-GITHUB-USERNAME",
-        "company": "TODO: YOUR-EMPLOYER",
-        "pictureUrl": "https://github.com/TODO:YOUR-GITHUB-USERNAME.png",
-        "name": "TODO: YOUR-DISPLAY-NAME"
+        "gitHubAccount": "sudharsank",
+        "company": "NTT Digital Business Solutions",
+        "pictureUrl": "https://github.com/sudharsank.png",
+        "name": "Sudharsan Kesavanarayanan",
+        "twitter": "sudharsank"
       }
     ],
     "references": [
