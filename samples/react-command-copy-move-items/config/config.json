@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "copy-move-items-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/copyMoveItems/CopyMoveItemsCommandSet.js",
+          "manifest": "./src/extensions/copyMoveItems/CopyMoveItemsCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CopyMoveItemsCommandSetStrings": "lib/extensions/copyMoveItems/loc/{locale}.js"
+  }
+}
