@@ -1,0 +1,62 @@
+@import "~office-ui-fabric-react/dist/sass/References.scss";
+@import "../../styles/Variables.module.scss";
+
+.opacity {
+    opacity: 0.5;
+}
+
+.icon {
+    @include ms-font-l;
+    cursor: default;
+}
+
+.compactCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.expandedCard {
+    padding: 16px 24px;
+
+    .row {
+        margin-top: 10px;
+
+        label {
+            display: inline;
+        }
+
+        .property {
+            font-weight: bold;
+        } 
+    }
+
+    .details {
+        padding-top: 30px;
+        text-align: right;
+    } 
+}
+
+.content {
+    .grid {
+        @include ms-Grid;
+
+        .row {
+            @include ms-Grid-row;
+
+            .columnFullWidth {
+                @include ms-Grid-col;
+                @include ms-sm12;
+
+                .topBarControls {
+                    background-color: $neutralLight;
+                    text-align: right;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+}
