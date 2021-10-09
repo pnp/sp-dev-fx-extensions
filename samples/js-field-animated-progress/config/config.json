@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "animated-progress-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/animatedProgress/AnimatedProgressFieldCustomizer.js",
+          "manifest": "./src/extensions/animatedProgress/AnimatedProgressFieldCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AnimatedProgressFieldCustomizerStrings": "lib/extensions/animatedProgress/loc/{locale}.js"
+  }
+}
