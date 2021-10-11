@@ -1,73 +1,77 @@
-# js-field-animated-progress
+# Animated Progress Field
 
 ## Summary
+Display animated progress bar component.
 
-Short summary on functionality and used technologies.
+![Preview](./assets/preview.gif)
 
-[picture of the solution in action, if possible]
+## Compatibility
 
-## Used SharePoint Framework Version
-
-![version](https://img.shields.io/npm/v/@microsoft/sp-component-base/latest?color=green)
+![SPFx 1.12.1](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
+![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
 ## Applies to
 
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-## Prerequisites
-
-> Any special pre-requisites?
+* [SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
+* [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-folder name | Author details (name, company, twitter alias with link)
+js-field-animated-progress | [Ari Gunawan](https://github.com/AriGunawan) ([@arigunawan3023](https://twitter.com/arigunawan3023))
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
+1.0|October 10, 2022|Initial release
 
-## Disclaimer
 
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+## Prerequisites
 
----
+List column with below specification:
+- InternalName: **Progress**
+- Type: number
+- Minimum value: 0
+- Maximum value: 1
 
 ## Minimal Path to Awesome
 
 - Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
-
-> Include any additional steps as needed.
+- in the command line run:
+  - `npm install`
+  - `gulp serve`
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+Display animated progress bar component.
 
-This extension illustrates the following concepts:
+It also displays different color based on the value.
+- Red for value <= 0.3
+- Yellow for 0.3 < value < 1
+- Green fro value = 1
 
-- topic 1
-- topic 2
-- topic 3
+## Debug URL for testing
+Here's a debug URL for testing around this sample. 
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+```
+?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&fieldCustomizers={"Progress":{"id":"b85447cc-92fd-4f8c-a395-af13f38a3b83","properties":{}}}
+```
 
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+## Disclaimer
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-## References
+## Help
 
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=js-field-animation-progress&authors=@AriGunawan&title=js-field-animation-progress%20-%20).
+
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=js-field-animation-progress&authors=@AriGunawan&title=js-field-animation-progress%20-%20).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=js-field-animation-progress&authors=@AriGunawan&title=js-field-animation-progress%20-%20).
+
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-animated-progress" />
