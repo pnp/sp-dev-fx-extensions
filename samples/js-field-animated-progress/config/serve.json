@@ -6,10 +6,10 @@
     "default": {
       "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
       "fieldCustomizers": {
-        "InternalFieldName": {
+        "Progress": {
           "id": "b85447cc-92fd-4f8c-a395-af13f38a3b83",
           "properties": {
-            "sampleText": "Value"
+            
           }
         }
       }
@@ -17,10 +17,10 @@
     "animatedProgress": {
       "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
       "fieldCustomizers": {
-        "InternalFieldName": {
+        "Progress": {
           "id": "b85447cc-92fd-4f8c-a395-af13f38a3b83",
           "properties": {
-            "sampleText": "Value"
+            
           }
         }
       }
