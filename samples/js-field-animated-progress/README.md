@@ -74,4 +74,4 @@ For questions regarding this sample, [create a new question](https://github.com/
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=js-field-animation-progress&authors=@AriGunawan&title=js-field-animation-progress%20-%20).
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-animated-progress" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-field-animated-progress" />
