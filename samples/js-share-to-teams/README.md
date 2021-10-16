@@ -6,7 +6,7 @@ Share to teams helps us to share files along with folders in document library it
 
 To achieve this we have taken help of the js file provided by microsoft for creating share to teams button for third-party websites. For more details check this [link](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/share-to-teams)
 
-![picture of the extension in action](./assets/SendToTeams.gif)
+![picture of the extension in action](https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/js-share-to-teams/assets/sendToTeams.gif)
 ![picture of the extension in action](./assets/sendToTeams1.png)
 ![picture of the extension in action](./assets/sendToTeams2.png)
 ![picture of the extension in action](./assets/sendToTeams3.png)
