@@ -4,7 +4,8 @@
 
 Listview command extension that is available only for the **Site Pages** library to change the layout type. If the page is **Article**, it can be changed to **Home** which will remove the page title placeholder and vice versa.
 
-![Change Modern Page LayoutType](./assets/Change-Layouttype.gif "Preview")
+![File selection](./assets/FileSelection.png "Preview")
+![Change dialog](./assets/ChangeLayout-Dialog.png "Preview")
 
 ## Compatibility
 
