@@ -1,47 +1,50 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-react-application-news-ticker",
-  "source": "pnp",
-  "title": "News Ticker",
-  "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-news-ticker",
-  "shortDescription": "An SPFx Extension that displays news as a running text at the top of every modern page.",
-  "longDescription": [
-    "An SPFx Extension that displays news as a running text at the top of every modern page."
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "Javascript"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.11.0"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-news-ticker/assets/react-application-news-ticker.gif",
-      "alt": "Extension in action"
-    },
-    {
-      "type": "image",
-      "order": 101,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-news-ticker/assets/react-application-news-ticker.png",
-      "alt": "Extension in action"
-    }
-  ],
-  "authors": [
-    {
-      "gitHubAccount": "joaojmendes",
-      "pictureUrl": "https://github.com/joaojmendes.png",
-      "name": "João Mendes",
-      "twitter": "joaojmendes"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-application-news-ticker",
+    "source": "pnp",
+    "title": "News Ticker",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-news-ticker",
+    "shortDescription": "An SPFx Extension that displays news as a running text at the top of every modern page.",
+    "longDescription": [
+      "An SPFx Extension that displays news as a running text at the top of every modern page."
+    ],
+    "creationDateTime": "2021-04-19",
+    "updateDateTime": "2021-10-17",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "Javascript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.12.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-news-ticker/assets/react-application-news-ticker.gif",
+        "alt": "Extension in action"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-news-ticker/assets/react-application-news-ticker.png",
+        "alt": "Extension in action"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "AriGunawan",
+        "pictureUrl": "https://github.com/AriGunawan.png",
+        "name": "Ari Gunawan"
+      }
+    ],
+    "references": []
+  }
+]
