@@ -6,7 +6,7 @@ Share to teams helps us to share files along with folders in document library it
 
 To achieve this we have taken help of the js file provided by microsoft for creating share to teams button for third-party websites. For more details check this [link](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/share-to-teams)
 
-![picture of the extension in action](./assets/SendToTeams.gif)
+![picture of the extension in action](./assets/sendToTeams.gif)
 ![picture of the extension in action](./assets/sendToTeams1.png)
 ![picture of the extension in action](./assets/sendToTeams2.png)
 ![picture of the extension in action](./assets/sendToTeams3.png)
@@ -16,8 +16,11 @@ To achieve this we have taken help of the js file provided by microsoft for crea
 
 ![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg) 
 ![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg) 
-![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
-![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
+![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
+![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
+![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
+![Hosted Workbench Incompatible](https://img.shields.io/badge/Hosted%20Workbench-Incompatible-red.svg "Does not work with hosted workbench")
 
 ## Applies to
 
@@ -90,10 +93,14 @@ Here's a debug URL for testing around this sample.
 
 We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
+You can try looking at [issues related to this sample](https://github.com/pnp/sp-dev-fx-extensions/issues?q=label%3Ajs-share-to-teams) to see if anybody else is having the same issues.
+
+You can also try looking at [discussions related to this sample](https://github.com/pnp/sp-dev-fx-extensions/discussions?discussions_q=label%3Ajs-share-to-teams) and see what the community is saying.
+
 If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=JS-SHARE-TO-TEAMS&authors=@YOURGITHUBUSERNAME&title=JS-SHARE-TO-TEAMS%20-%20).
 
 For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=JS-SHARE-TO-TEAMS&authors=@YOURGITHUBUSERNAME&title=JS-SHARE-TO-TEAMS%20-%20).
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=JS-SHARE-TO-TEAMS&authors=@YOURGITHUBUSERNAME&title=JS-SHARE-TO-TEAMS%20-%20).
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-send-to-teams" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-share-to-teams" />
