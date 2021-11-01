@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="ShowHidePageTitle"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet"
+        ClientSideComponentId="6cf5be8e-2ad4-46bb-a7f9-e8152093891e"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>
