@@ -1,4 +1,4 @@
-# react-application-my-flows-list
+# My Flows List
 
 ## Summary
 
@@ -18,10 +18,15 @@ The second one (not recommended approach as it uses HTML as API) presents the fl
 
 ![optionNotRecomended](./assets/optionNotRecomended.jpg)
 
-## Used SharePoint Framework Version
 
-![version](https://img.shields.io/npm/v/@microsoft/sp-component-base/latest?color=green)
-![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
+## Compatibility
+
+![SPFx 1.12.1](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
+![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
+![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Local Workbench Incompatible](https://img.shields.io/badge/Local%20Workbench-Incompatible-red.svg)
+![Hosted Workbench Incompatible](https://img.shields.io/badge/Hosted%20Workbench-Incompatible-red.svg)
 
 ## Applies to
 
@@ -33,12 +38,12 @@ The second one (not recommended approach as it uses HTML as API) presents the fl
 ## Prerequisites
 
 This extensions uses power automate API which needs additional permissions to be added (and approved) for the Extensibility Web Application in AAD. In Order to add that please fallow those steps:
-1. Go to the portal.azure.com -> App registrations,
-2. Open the "SharePoint Online Client Extensibility Web Application Principal" app 
-3. select API permissions,
-4. Add new permission and switch tab to "APIs my organization uses",
-5. Find "Microsoft Flow Service",
-6. Add Flows.Read.All
+1. Go to the **portal.azure.com** -> **App registrations**,
+2. Open the **SharePoint Online Client Extensibility Web Application Principal** app 
+3. select **API permissions**,
+4. Add new permission and switch tab to **APIs my organization uses**,
+5. Find **Microsoft Flow Service**,
+6. Add `Flows.Read.All`
 7. Grant admin consent and you are ready to go.
 
 ## Solution
@@ -58,8 +63,8 @@ Version|Date|Comments
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  - **npm install**
-  - **gulp serve**
+  - `npm install`
+  - `gulp serve`
 
 ## Features
 
@@ -71,7 +76,20 @@ This extension illustrates the following concepts:
 - use office-ui-fabric-react controls when possible
 
 ## Disclaimer
-
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
----
+## Help
+
+We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+You can try looking at [issues related to this sample](https://github.com/pnp/sp-dev-fx-extensions/issues?q=label%3Areact-application-my-flows-list) to see if anybody else is having the same issues.
+
+You can also try looking at [discussions related to this sample](https://github.com/pnp/sp-dev-fx-extensions/discussions?discussions_q=label%3Areact-application-my-flows-list) and see what the community is saying.
+
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=react-application-my-flows-list&authors=@Adam-it&title=react-application-my-flows-list%20-%20).
+
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=react-application-my-flows-list&authors=@Adam-it&title=react-application-my-flows-list%20-%20).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-my-flows-list&authors=@Adam-it&title=react-application-my-flows-list%20-%20).
+
+react-application-my-flows-list
