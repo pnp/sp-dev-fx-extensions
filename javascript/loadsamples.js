@@ -67,7 +67,8 @@ function loadSample(sample, filter) {
             break;
         }
 
-        var modified = new Date(sample.updateDateTime).toString().substr(4).substr(0, 12);
+        const dtModified = new Date(sample.updateDateTime)
+        var modified = moment(dtModified).toISOString();
         var authors = sample.authors;
         var authorsList = "";
         var authorAvatars = "";
@@ -117,7 +118,7 @@ function loadSample(sample, filter) {
 
         // Build the HTML to insert
         var $items = $(`
-<a class="sample-thumbnail" href="${sample.url}" data-modified="${sample.modified}" data-title="${title}" data-keywords="${keywords}" data-tags="${tags}" data-framework="${framework}" data-spfx="${SPFxVersion}"  data-pnpcontrols="${pnpControls}" data-type="${sampleType}"
+<a class="sample-thumbnail" href="${sample.url}" data-modified="${modified}" data-title="${title}" data-keywords="${keywords}" data-tags="${tags}" data-framework="${framework}" data-spfx="${SPFxVersion}"  data-pnpcontrols="${pnpControls}" data-type="${sampleType}"
 >
   <div class="sample-inner">
     <div class="sample-preview">
@@ -131,7 +132,7 @@ function loadSample(sample, filter) {
         ${authorAvatars}
         <div class="activity-details">
           <span class="sample-author" title="${authorsList}">${authorName}</span>
-          <span class="sample-date">Modified ${modified}</span>
+          <span class="sample-date">Modified ${dtModified.toDateString()}</span>
         </div>
       </div>
     </div>
