@@ -1,0 +1,60 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-command-folder-select",
+    "source": "pnp",
+    "title": "Folder Selection",
+    "shortDescription": "This extension creates a callout with a dropdown that allows users to select from a list of top level folders in a document library. After selecting the folder they can use the button to navigate to that folder.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-folder-select",
+    "longDescription": [
+      "This extension creates a callout with a dropdown that allows users to select from a list of top level folders in a document library. After selecting the folder they can use the button to navigate to that folder."
+    ],
+    "creationDateTime": "2020-01-03",
+    "updateDateTime": "2020-01-03",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.9.1"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SPFX-COMMAND-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-folder-select/assets/folderselect.gif",
+        "alt": "Folder Selection"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "zachroberts8668",
+        "company": "",
+        "pictureUrl": "https://github.com/zachroberts8668.png",
+        "name": "Zach Roberts"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Build your first ListView Command Set extension",
+        "description": "Extensions are client-side components that run inside the context of a SharePoint page. Extensions can be deployed to SharePoint Online, and you can use modern JavaScript tools and libraries to build them.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

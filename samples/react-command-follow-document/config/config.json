@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "hello-world-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/FollowDocuments/FollowDocumentsCommandSet.js",
+          "manifest": "./src/extensions/FollowDocuments/FollowDocumentsCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FollowDocumentsCommandSetStrings": "lib/extensions/FollowDocuments/loc/{locale}.js"
+  }
+}

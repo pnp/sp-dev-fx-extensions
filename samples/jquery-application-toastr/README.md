@@ -195,4 +195,5 @@ Remember, that you'll also need the list with some configured notifications in o
 - UI Fabric Icons are not currently displaying in SPFx Extensions: 
   - [Issue 1279](https://github.com/SharePoint/sp-dev-docs/issues/1279) - Solution has been found, but fix has not yet been implemented
 
+
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/jquery-application-toastr" />

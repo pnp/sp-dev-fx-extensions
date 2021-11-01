@@ -1,37 +1,60 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-react-field-user-permission",
-  "source": "pnp",
-  "title": "Displaying the current user permission with PNPJs",
-  "shortDescription": "This sample shows how to use PNPJs to get the current users permission on the specific list item. Then a corresponding icon and text is shown in the field. For this sample I\u0027m using simplified roles, so the code is is only checking for edit or read permissions.",
-  "longDescription": [
-    "This sample shows how to use PNPJs to get the current users permission on the specific list item. Then a corresponding icon and text is shown in the field. For this sample I\u0027m using simplified roles, so the code is is only checking for edit or read permissions."
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "React"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.6"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-user-permission/assets/react-field-user-permission.png",
-      "alt": "Displaying the current user permission with PNPJs"
-    }
-  ],
-  "authors": [
-    {
-      "pictureUrl": "https://github.com/.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-field-user-permission",
+    "source": "pnp",
+    "title": "Displaying the current user permission with PNPJs",
+    "shortDescription": "This sample shows how to use PNPJs to get the current users permission on the specific list item. Then a corresponding icon and text is shown in the field. For this sample I\u0027m using simplified roles, so the code is is only checking for edit or read permissions.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-field-user-permission",
+    "longDescription": [
+      "This sample shows how to use PNPJs to get the current users permission on the specific list item. Then a corresponding icon and text is shown in the field. For this sample I\u0027m using simplified roles, so the code is is only checking for edit or read permissions."
+    ],
+    "creationDateTime": "2018-10-12",
+    "updateDateTime": "2018-10-12",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.6"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SPFX-FIELD-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-user-permission/assets/react-field-user-permission.png",
+        "alt": "Displaying the current user permission with PNPJs"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "simonagren",
+        "company": "Sogeti",
+        "pictureUrl": "https://github.com/simonagren.png",
+        "name": "Simon \u00C5gren"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Build your first Field Customizer extension",
+        "description": "Extensions are client-side components that run inside the context of a SharePoint page. Extensions can be deployed to SharePoint Online, and you can use modern JavaScript tools and libraries to build them.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-field-customizer?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

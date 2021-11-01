@@ -51,7 +51,7 @@ Version|Date|Comments
 
 ## Prerequisites
 
-* Office 365 Developer tenant First Release (this sample uses [sfpx Tenant Properties](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/tenant-properties))
+* Office 365 Developer tenant First Release (this sample uses [spfx Tenant Properties](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/tenant-properties))
 * Library with Images
 * Cognitive Services Vision API Key (more info [https://azure.microsoft.com/en-us/services/cognitive-services/](https://azure.microsoft.com/en-us/services/cognitive-services/))
 

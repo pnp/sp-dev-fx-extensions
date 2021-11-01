@@ -19,9 +19,11 @@ This sample demonstrates how to implement Google Analytics in Modern SharePoint 
 
 ![Google Analytics Application Customizer](./assets/js-application-google-analytics.gif)
 
-## Used SharePoint Framework Version
+## Compatibility
 
-![SPFx 1.11.0](https://img.shields.io/badge/version-1.11.0-green.svg)
+![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg) 
+![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg) ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
+![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
 ## Applies to
 
@@ -32,8 +34,9 @@ This sample demonstrates how to implement Google Analytics in Modern SharePoint 
 
 Solution|Author(s)
 --------|---------
-js-application-analytics | Giuliano De Luca ([@giuleon](https://twitter.com/giuleon) , [www.delucagiuliano.com](http://www.delucagiuliano.com))
-js-application-analytics | Hugo Bernier ([@bernierh](https://twitter.com/bernierh) , [tahoeninjas.blog](https://tahoeninjas.blog))
+js-application-analytics | [Giuliano De Luca](https://github.com/giuleon) ([@giuleon](https://twitter.com/giuleon) , [www.delucagiuliano.com](http://www.delucagiuliano.com))
+js-application-analytics | [Hugo Bernier](https://github.com/hugoabernier) ([@bernierh](https://twitter.com/bernierh) , [tahoeninjas.blog](https://tahoeninjas.blog))
+js-application-analytics | [João Ferreira](https://github.com/joaoferreira) ([@joao12ferreira](https://twitter.com/joao12ferreira) , [HANDS ON tek](https://sharepoint.handsontek.net))
 
 ## Version history
 
@@ -42,6 +45,7 @@ Version|Date|Comments
 1.0|June 09, 2017|Initial release
 1.1|September 29, 2017|Updated for SPFx GA 1.3.0
 1.2|October 7, 2020|Refactored for SPFx 1.11; Added support for async/legacy modes
+1.3|July 1, 2021|Added support for Google Analytics V4
 
 ## Disclaimer
 
@@ -86,15 +90,40 @@ to:
 ```json
 "disableAsync": true
 ```
-
 Doing so will revert the Google Analytics embedded tag to the legacy method.
+
+If your organization is using Google Analytics V4 you must change the extension's configuration from:
+
+```json
+"googleAnalyticsV4": false
+```
+to:
+```json
+"googleAnalyticsV4": true
+```
+
 
 ## Debug URL for testing
 
 Here's a debug URL for testing around this sample.
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"46050d9b-6925-42e5-812a-c5218d6c85ae":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"trackingId":"UA-100713841-5","disableAsync":true}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"46050d9b-6925-42e5-812a-c5218d6c85ae":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"trackingId":"UA-100713841-5","disableAsync":true,"googleAnalyticsV4":true}}}
 ```
+
+## Disclaimer
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+## Help
+
+We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=js-application-analytics&authors=@giuleon%20@hugoabernier%20@joaoferreira&title=js-application-analytics%20-%20).
+
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=js-application-analytics&authors=@giuleon%20@hugoabernier%20@joaoferreira&title=js-application-analytics%20-%20).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=js-application-analytics&authors=@giuleon%20@hugoabernier%20@joaoferreira&title=js-application-analytics%20-%20).
+
+
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-application-analytics" />

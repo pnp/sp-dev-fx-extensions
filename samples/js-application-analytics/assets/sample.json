@@ -1,42 +1,68 @@
-{
-  "name": "pnp-sp-dev-spfx-extensions-js-application-analytics",
-  "source": "pnp",
-  "title": "Google Analytics Application Customizer",
-  "shortDescription": "In this sample is possible to see how to implement Google Analytics through SPFx Extensions Application Customizers",
-  "longDescription": [
-    "In this sample is possible to see how to implement Google Analytics through SPFx Extensions Application Customizers"
-  ],
-  "products": [
-    "SharePoint",
-    "Office"
-  ],
-  "metadata": [
-    {
-      "key": "CLIENT-SIDE-DEV",
-      "value": "Javascript"
-    },
-    {
-      "key": "SPFX-VERSION",
-      "value": "1.11.0"
-    }
-  ],
-  "thumbnails": [
-    {
-      "type": "image",
-      "order": 100,
-      "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-application-analytics/assets/js-application-google-analytics.gif",
-      "alt": "Google Analytics Application Customizer"
-    }
-  ],
-  "authors": [
-    {
-      "gitHubAccount": "giuleon",
-      "pictureUrl": "https://github.com/giuleon.png"
-    },
-    {
-      "gitHubAccount": "hugoabernier",
-      "pictureUrl": "https://github.com/hugoabernier.png"
-    }
-  ],
-  "references": []
-}
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-js-application-analytics",
+    "source": "pnp",
+    "title": "Google Analytics Application Customizer",
+    "shortDescription": "In this sample is possible to see how to implement Google Analytics through SPFx Extensions Application Customizers",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/js-application-analytics",
+    "longDescription": [
+      "In this sample is possible to see how to implement Google Analytics through SPFx Extensions Application Customizers"
+    ],
+    "creationDateTime": "2020-10-07",
+    "updateDateTime": "2021-07-01",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "Javascript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.11.0"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-application-analytics/assets/js-application-google-analytics.gif",
+        "alt": "Google Analytics Application Customizer"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "giuleon",
+        "company": "",
+        "pictureUrl": "https://github.com/giuleon.png",
+        "name": "Giuliano De Luca",
+        "twitter": "delucagiulian"
+      },
+      {
+        "gitHubAccount": "hugoabernier",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/hugoabernier.png",
+        "name": "Hugo Bernier",
+        "twitter": "bernierh"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]

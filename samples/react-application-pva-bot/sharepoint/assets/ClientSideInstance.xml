@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="PowerVirtualAgentsHost"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="651e5ed0-c115-4301-beca-b36a6678d7bb"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

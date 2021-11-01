@@ -19,7 +19,7 @@ import { IconButton } from 'office-ui-fabric-react/lib/Button';
 import ListService from '../../services/list-service';
 import { isArray } from '@pnp/common';
 import ITemplateItem from '../../models/template-item';
-import { style } from 'typestyle';
+import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import printStyles from '../print-dialog-template-content/print-template-content.module.scss';
 import { sp, EmailProperties } from '@pnp/sp';
 import reactElementToJSXString from 'react-element-to-jsx-string';
@@ -230,7 +230,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
                     // Adding the section to the content with customized background and font color
                     const { BackgroundColor, FontColor } = item;
                     const sectionStyles = { backgroundColor: BackgroundColor, color: FontColor };
-                    const className = style(sectionStyles);
+                    const className = mergeStyles(sectionStyles);
                     content.push(<div className={`${styles.templateSection} ${className}`} style={sectionStyles}><span>{item.Title}</span></div>);
 
                     // Reset the table array for upcoming fields

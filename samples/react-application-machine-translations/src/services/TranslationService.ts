@@ -14,13 +14,25 @@ export class TranslationService implements ITranslationService {
   private headers: Headers;
   private host: string;
 
-  constructor(httpClient: HttpClient, apiKey: string, regionSpecifier: string = "") {
+  /**
+   * @param httpClient HttpClient instance
+   * @param apiKey Azure secret key for your subscription to Translator
+   * @param apiRegion (optional when using a global translator resource) region of the translator resource
+   * @param regionSpecifier (optional) To force the request to be handled by a specific geography: 
+   *        "nam", "eur", "apc" default is Global (non-regional)
+   *        https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference#base-urls
+   */
+  constructor(httpClient: HttpClient, apiKey: string, apiRegion: string | undefined = undefined, regionSpecifier: string | undefined = undefined) {
     this.httpClient = httpClient;
     this.apiKey = apiKey;
-    this.host = `api${regionSpecifier}.cognitive.microsofttranslator.com`;
+    this.host = regionSpecifier ?
+      `api-${regionSpecifier}.cognitive.microsofttranslator.com` : "api.cognitive.microsofttranslator.com";
     this.headers = new Headers();
     this.headers.append("Content-type", "application/json");
     this.headers.append("Ocp-Apim-Subscription-Key", this.apiKey);
+    if (apiRegion) {
+      this.headers.append("Ocp-Apim-Subscription-Region", apiRegion);
+    }
   }
 
   public async getAvailableLanguages(supportedLanguages: string[]): Promise<ILanguage[]> {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <Field ID="{95c6d5b4-4eb5-4967-8e58-9cb13ff03fe9}"
+            Name="SPFxProgress"
+            DisplayName="Progress"
+            Type="Number"
+            Min="0"
+            Max="1"
+            Required="FALSE"
+            Group="SPFx Columns"
+            ClientSideComponentId="b85447cc-92fd-4f8c-a395-af13f38a3b83">
+    </Field>
+</Elements>

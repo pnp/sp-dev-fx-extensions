@@ -22,12 +22,29 @@ Short summary on functionality and used technologies.
 
 ## Compatibility
 
-![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg)
-![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg)
-![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
-![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
+![SPFx 1.13.0](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
+![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
+![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
+![Hosted Workbench Incompatible](https://img.shields.io/badge/Hosted%20Workbench-Incompatible-red.svg "Does not work with hosted workbench")
 
-> Don't worry if you're unsure about the compatibility matrix above. We'll verify it when we approve the PR
+> Don't worry if you're unsure about the compatibility matrix above. We'll verify it when we approve the PR. 
+>
+> If using SPFx 1.12.1, update the SPFx and Node.js tags accordingly:
+> ![SPFx 1.12.1](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
+> ![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+>
+> If using an older version of SPFx, update the SPFx and Node.js compatibility tag accordingly:
+> SPFx 1.11
+>    ![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg) 
+>    ![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg) 
+>
+> SPFx 1.4.1
+>    ![SPFx 1.4.1](https://img.shields.io/badge/SPFx-1.4.1-green.svg)
+>    ![Node.js LTS 6.x | LTS 8.x](https://img.shields.io/badge/Node.js-LTS%206.x%20%7C%20LTS%208.x-green.svg)
+>
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
 ## Applies to
@@ -37,16 +54,6 @@ Short summary on functionality and used technologies.
 
 > Update accordingly as needed.
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
-
-
-## Prerequisites
-
-> Any special pre-requisites? Include any lists, permissions, offerings to the demo gods, or whatever else needs to be done for this web part to work.
-> 
-> Please describe the steps to configure the pre-requisites. Feel free to add screen shots, but make sure that there is a text description of the steps to perform.
-> 
-> DELETE THE TEXT ABOVE BEFORE SUBMITTING
-
 
 ## Solution
 
@@ -68,10 +75,14 @@ Version|Date|Comments
 1.1|August 10, 2021|Update comment
 1.0|June 29, 2021|Initial release
 
-## Disclaimer
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
----
+## Prerequisites
+
+> Any special pre-requisites? Include any lists, permissions, offerings to the demo gods, or whatever else needs to be done for this web part to work.
+> 
+> Please describe the steps to configure the pre-requisites. Feel free to add screen shots, but make sure that there is a text description of the steps to perform.
+> 
+> DELETE THE TEXT ABOVE BEFORE SUBMITTING
 
 ## Minimal Path to Awesome
 
@@ -101,5 +112,22 @@ Here's a debug URL for testing around this sample.
 > Update based on your manifest id for easy testing of the sample
 > Note that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions inadvance! You rock ❤.
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
+
+## Disclaimer
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+## Help
+
+We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+You can try looking at [issues related to this sample](https://github.com/pnp/sp-dev-fx-extensions/issues?q=label%3AYOUR-SOLUTION-NAME) to see if anybody else is having the same issues.
+
+You can also try looking at [discussions related to this sample](https://github.com/pnp/sp-dev-fx-extensions/discussions?discussions_q=label%3AYOUR-SOLUTION-NAME) and see what the community is saying.
+
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=YOUR-SOLUTION-NAME&authors=@YOURGITHUBUSERNAME&title=YOUR-SOLUTION-NAME%20-%20).
+
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=YOUR-SOLUTION-NAME&authors=@YOURGITHUBUSERNAME&title=YOUR-SOLUTION-NAME%20-%20).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=YOUR-SOLUTION-NAME&authors=@YOURGITHUBUSERNAME&title=YOUR-SOLUTION-NAME%20-%20).
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/readme-template" />
