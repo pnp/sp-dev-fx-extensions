@@ -1,0 +1,29 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+    "port": 4321,
+    "https": true,
+    "serveConfigurations": {
+        "default": {
+            "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+            "customActions": {
+                "7f8fd1f2-9d26-4a4a-a607-bf4622d7ec11": {
+                    "location": "ClientSideExtension.ApplicationCustomizer",
+                    "properties": {
+                        "clarityID": ""
+                    }
+                }
+            }
+        },
+        "microsoftClarity": {
+            "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+            "customActions": {
+                "7f8fd1f2-9d26-4a4a-a607-bf4622d7ec11": {
+                    "location": "ClientSideExtension.ApplicationCustomizer",
+                    "properties": {
+                        "clarityID": ""
+                    }
+                }
+            }
+        }
+    }
+}
