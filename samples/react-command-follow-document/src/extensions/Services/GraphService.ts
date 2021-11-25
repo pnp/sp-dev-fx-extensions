@@ -1,7 +1,20 @@
-import { AadHttpClient } from "@microsoft/sp-http";
+import { AadHttpClient, MSGraphClientFactory, MSGraphClient } from "@microsoft/sp-http";
 import { ListViewCommandSetContext } from "@microsoft/sp-listview-extensibility";
 
 export default class Graph {
+  private client: MSGraphClient;
+
+  public async initialize(serviceScope): Promise<boolean> {
+    const graphFactory: MSGraphClientFactory = serviceScope.consume(
+      MSGraphClientFactory.serviceKey
+    );
+
+    return graphFactory.getClient().then((client) => {
+      this.client = client;
+      return true;
+    });
+  }
+
   public async getGraphContent(
     graphQuery: string,
     context: ListViewCommandSetContext
@@ -25,5 +38,12 @@ export default class Graph {
           reject(error);
         });
     });
+  }
+  public async postGraphContent(graphQuery: string, Header) {
+    // Using Graph here, but any 1st or 3rd party REST API that requires Azure AD auth can be used here.
+    const saveResult = await this.client
+      .api(graphQuery)
+      .post(JSON.stringify(Header));
+    return saveResult;
   }
 }

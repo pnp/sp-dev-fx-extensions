@@ -5,7 +5,7 @@ import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 
 import { IfollowDocumentBulkProps } from "./IfollowDocumentBulkProps";
 import { IfollowDocumentBulkState } from "./IfollowDocumentBulkState";
-import RestService from "../../Services/RestService";
+import Graph from "../../Services/GraphService";
 
 export class FollowDocumentBulk extends React.Component<IfollowDocumentBulkProps, IfollowDocumentBulkState> {
     constructor(props) {
@@ -17,18 +17,34 @@ export class FollowDocumentBulk extends React.Component<IfollowDocumentBulkProps
         };
     }
     private isfollowed = async () => {
+        const graphService: Graph = new Graph();
+        const initialized = await graphService.initialize(this.props.context.serviceScope);
         const result = [];
-        const restService: RestService = new RestService();
-        for (let index = 0; index < this.props.fileInfo.length; index++) {
-            const FollowDocumentExist = await restService.follow(this.props.fileInfo[index].context.spHttpClient, this.props.fileInfo[index].fileUrl, this.props.fileInfo[index].context.pageContext.site.absoluteUrl);
-            if (FollowDocumentExist) {
-                result.push(<div key={index.toString()}>Following <b>"{this.props.fileInfo[index].fileLeafRef}"</b>.</div>);
-            } else { result.push(<div key={index.toString()}>Already following <b>"{this.props.fileInfo[index].fileLeafRef}"</b>.</div>); }
+        if (initialized) {
+            let graphFollowedData: any = await graphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference", this.props.context);
+            
+            for (let index = 0; index < this.props.fileInfo.length; index++) {
+                const itemFollowed = graphFollowedData.value.map((item) => {
+                    return item.id ===this.props.fileInfo[index].ItemID && item.parentReference.driveId === this.props.fileInfo[index].DriveId;
+                });
+                console.log(itemFollowed);
+                if(itemFollowed[0]===true)
+                {
+                    result.push(<div key={index.toString()}>Already following <b>"{this.props.fileInfo[index].fileLeafRef}"</b>.</div>);
+                }else{
+                    const graphData: any = await graphService.postGraphContent(`https://graph.microsoft.com/v1.0/drives/${this.props.fileInfo[index].DriveId}/items/${this.props.fileInfo[index].ItemID}/follow`, "");
+                    if (graphData !== undefined) {
+                        result.push(<div key={index.toString()}>Following <b>"{this.props.fileInfo[index].fileLeafRef}"</b>.</div>);
+                    }
+                }
+            }
+            this.setState({
+                outPutResult: result,
+                followStatus: false,
+            });
         }
-        this.setState({
-            outPutResult: result,
-            followStatus: false,
-        });
+
+
     }
     public render(): React.ReactElement<IfollowDocumentBulkProps> {
         const { followStatus } = this.state;
