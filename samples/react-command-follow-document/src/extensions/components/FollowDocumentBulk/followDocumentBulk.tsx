@@ -21,14 +21,14 @@ export class FollowDocumentBulk extends React.Component<IfollowDocumentBulkProps
         const initialized = await graphService.initialize(this.props.context.serviceScope);
         const result = [];
         if (initialized) {
-            let graphFollowedData: any = await graphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference", this.props.context);
+            let graphFollowedData: any = await graphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference&Top=1000", this.props.context);
             
             for (let index = 0; index < this.props.fileInfo.length; index++) {
                 const itemFollowed = graphFollowedData.value.filter((item) => {
                     return item.id ===this.props.fileInfo[index].ItemID && item.parentReference.driveId === this.props.fileInfo[index].DriveId;
                 });
                 console.log(itemFollowed);
-                if (itemFollowed.length > 0)
+                if(itemFollowed.length > 0)
                 {
                     result.push(<div key={index.toString()}>Already following <b>"{this.props.fileInfo[index].fileLeafRef}"</b>.</div>);
                 }else{
