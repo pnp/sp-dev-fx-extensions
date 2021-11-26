@@ -50,18 +50,22 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
     private getGraphFollowedDocs = async () => {
         const GraphService: Graph = new Graph();
         let DriveItem: MicrosoftGraph.DriveItem[] = [];
-        let graphData: any = await GraphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference&Top=1000", this.props.context);
+        let graphData: any = await GraphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed&Top=1000", this.props.context);
         graphData.value.forEach(data => {
             DriveItem.push({
                 id: data.id,
                 webUrl: data.webUrl,
                 webDavUrl: data.webUrl,
                 name: data.name,
+                lastModifiedDateTime:data.followed.followedDateTime,
                 parentReference:{
                     driveId: data.parentReference.driveId,
                 },
             });
         });
+        DriveItem = DriveItem.sort((a, b) => {
+            return (new Date(b.lastModifiedDateTime)).getTime() -  (new Date(a.lastModifiedDateTime)).getTime();
+          });
         this.setState({
             fileList: DriveItem,
             visible: true,

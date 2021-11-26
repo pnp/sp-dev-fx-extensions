@@ -26,7 +26,7 @@ export class FollowDocument extends React.Component<IfollowDocumentProps, Ifollo
     }
     private isfollowed = async () => {
         const GraphService: Graph = new Graph();
-        let graphData: any = await GraphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference&Top=1000", this.props.context);
+        let graphData: any = await GraphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed&Top=1000", this.props.context);
         const state = graphData.value.filter((data) => {
             return data.id === this.props.fileInfo[0].ItemID && data.parentReference.driveId === this.props.fileInfo[0].DriveId;
         });

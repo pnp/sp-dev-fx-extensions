@@ -21,7 +21,7 @@ export class FollowDocumentBulk extends React.Component<IfollowDocumentBulkProps
         const initialized = await graphService.initialize(this.props.context.serviceScope);
         const result = [];
         if (initialized) {
-            let graphFollowedData: any = await graphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference&Top=1000", this.props.context);
+            let graphFollowedData: any = await graphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed&Top=1000", this.props.context);
             
             for (let index = 0; index < this.props.fileInfo.length; index++) {
                 const itemFollowed = graphFollowedData.value.filter((item) => {
