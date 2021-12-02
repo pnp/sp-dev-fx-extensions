@@ -1,14 +1,13 @@
 import * as React from 'react';
 import styles from './followDocumentList.module.scss';
 import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
-import { Text } from "office-ui-fabric-react/lib/Text";
+import { TextField } from "office-ui-fabric-react/lib/TextField";
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 import { DefaultButton } from "office-ui-fabric-react/lib/Button";
 import Graph from "../../Services/GraphService";
 import { FileList, File, ViewType, MgtTemplateProps } from '@microsoft/mgt-react';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
-import RestService from "../../Services/RestService";
 
 import { IfollowDocumentListProps } from './IfollowDocumentListProps';
 import { IfollowDocumentListState } from './IfollowDocumentListState';
@@ -30,13 +29,12 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
     private getDriveItems = () => {
         //Load using Graph
         this.getGraphFollowedDocs();
-        //Load using REST
-        //this.getRestFollowedDocs();
     }
 
     /**
      * 
      */
+    /*
     private getRestFollowedDocs = async () => {
         const restService: RestService = new RestService();
         const followedData = await restService.followed(
@@ -47,43 +45,32 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
             fileList: followedData,
         });
     }
+    */
 
     private getGraphFollowedDocs = async () => {
         const GraphService: Graph = new Graph();
-        let graphData: any = await GraphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/list", this.props.context);
-        const DriveItem: MicrosoftGraph.DriveItem[] = await this.getListID(graphData.parentReference.siteId);
+        let DriveItem: MicrosoftGraph.DriveItem[] = [];
+        let graphData: any = await GraphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed&Top=1000", this.props.context);
+        graphData.value.forEach(data => {
+            DriveItem.push({
+                id: data.id,
+                webUrl: data.webUrl,
+                webDavUrl: data.webUrl,
+                name: data.name,
+                lastModifiedDateTime:data.followed.followedDateTime,
+                parentReference:{
+                    driveId: data.parentReference.driveId,
+                },
+            });
+        });
+        DriveItem = DriveItem.sort((a, b) => {
+            return (new Date(b.lastModifiedDateTime)).getTime() -  (new Date(a.lastModifiedDateTime)).getTime();
+          });
         this.setState({
             fileList: DriveItem,
             visible: true,
         });
 
-    }
-    private getListID = async (siteId: string): Promise<MicrosoftGraph.DriveItem[]> => {
-        const GraphService: Graph = new Graph();
-        let graphData: any = await GraphService.getGraphContent(`https://graph.microsoft.com/v1.0/sites/${siteId}/lists?$select=id&$filter=displayName eq 'Social'`, this.props.context);
-        const DriveItem: MicrosoftGraph.DriveItem[] = await this.getFollowDocuments(siteId, graphData.value[0].id);
-        return DriveItem;
-    }
-
-    private getFollowDocuments = async (siteId: string, listId: string): Promise<MicrosoftGraph.DriveItem[]> => {
-        const GraphService: Graph = new Graph();
-        let graphData: any = await GraphService.getGraphContent(`https://graph.microsoft.com/v1.0/sites/${siteId}/Lists/${listId}/items?expand=fields(select=ItemId,ListId,SiteId,webId,Title,Url,ServerUrlProgid,IconUrl)&$filter=fields/ItemId gt -1`, this.props.context);
-        let Item: MicrosoftGraph.DriveItem[] = [];
-
-        graphData.value.forEach(element => {
-            let fileprogedid;
-            if (element.fields.ServerUrlProgid === undefined) {
-                fileprogedid = element.fields.Url;
-            } else {
-                fileprogedid = element.fields.ServerUrlProgid.substring(1);
-            }
-            Item.push({
-                webUrl: element.fields.Url,
-                name: element.fields.Title,
-                webDavUrl: fileprogedid,
-            });
-        });
-        return Item;
     }
 
     public async componentWillReceiveProps(nextProps: IfollowDocumentListProps): Promise<void> {
@@ -98,15 +85,13 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
     }
 
     private stopfollowingDocument = async (Item: MicrosoftGraph.DriveItem) => {
-        const restService: RestService = new RestService();
-        const Status = await restService.stopfollowing(
-            this.props.context.spHttpClient,
-            Item.webUrl,
-            this.props.context.pageContext.web.absoluteUrl,
-        );
-        if (Status) {
-            //Get MicrosoftGraph.DriveItems
+        const graphService: Graph = new Graph();
+        const initialized = await graphService.initialize(this.props.context.serviceScope);
+        if (initialized) {
+          const graphData: any = await graphService.postGraphContent(`https://graph.microsoft.com/v1.0/drives/${Item.parentReference.driveId}/items/${Item.id}/unfollow`, "");
+          if (graphData === undefined) {
             this.getDriveItems();
+          }
         }
     }
 
@@ -119,7 +104,7 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
                     <Link href={item.webDavUrl} target="_blank" >
                         <File view={ViewType.oneline} fileDetails={item}></File>
                     </Link>
-                    <div><Text variant="small">{item.webUrl}</Text></div>
+                    <div><TextField  defaultValue={item.webUrl}></TextField></div>
                     <Link onClick={e => this.stopfollowingDocument(item)}>Stop following</Link>
                 </div>;
             });
@@ -134,6 +119,8 @@ export class followDocumentListPanel extends React.Component<IfollowDocumentList
                     webUrl: element.webUrl,
                     name: element.name,
                     webDavUrl: element.webDavUrl,
+                    id: element.id,
+                    parentReference:element.parentReference,
                 });
             });
 

@@ -3,12 +3,12 @@ import * as React from 'react';
 import { DialogContent } from 'office-ui-fabric-react/lib/Dialog';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { File, ViewType, MgtTemplateProps } from '@microsoft/mgt-react';
-import RestService from "../../Services/RestService";
 import { IfollowDocumentProps } from "./IfollowDocumentProps";
 import { IfollowDocumentState } from "./IfollowDocumentState";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
+import Graph from "../../Services/GraphService";
 
 const linkClass = mergeStyles({
     paddingLeft: 5,
@@ -21,44 +21,47 @@ export class FollowDocument extends React.Component<IfollowDocumentProps, Ifollo
         this.isfollowed();
         this.state = {
             fileInfo: this.props.fileInfo,
+            context: this.props.context,
         };
     }
     private isfollowed = async () => {
-        const restService: RestService = new RestService();
-        const followDocumentExist = await restService.isfollowed(this.props.fileInfo[0].context.spHttpClient, this.props.fileInfo[0].fileUrl, this.props.fileInfo[0].context.pageContext.site.absoluteUrl);
+        const GraphService: Graph = new Graph();
+        let graphData: any = await GraphService.getGraphContent("https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed&Top=1000", this.props.context);
+        const state = graphData.value.filter((data) => {
+            return data.id === this.props.fileInfo[0].ItemID && data.parentReference.driveId === this.props.fileInfo[0].DriveId;
+        });
         this.setState({
-            followStatus: followDocumentExist,
+            followStatus: state.length > 0 ? true : false,
         });
     }
 
     public render(): React.ReactElement<IfollowDocumentProps> {
         const { fileInfo, followStatus } = this.state;
 
-        const followSocialDocument = () => {
-            const restService: RestService = new RestService();
-            const Status = restService.follow(
-                fileInfo[0].context.spHttpClient,
-                fileInfo[0].fileUrl,
-                fileInfo[0].context.pageContext.web.absoluteUrl
-            );
-            if (Status)
-                this.setState({
-                    followStatus: true,
-                });
-        };
-        const stopfollowingDocument = () => {
-            const restService: RestService = new RestService();
-            const Status = restService.stopfollowing(
-                fileInfo[0].context.spHttpClient,
-                fileInfo[0].fileUrl,
-                fileInfo[0].context.pageContext.web.absoluteUrl
-            );
-            if (Status) {
-                this.setState({
-                    followStatus: false,
-                });
+        const followSocialDocument = async () => {
+            const graphService: Graph = new Graph();
+            const initialized = await graphService.initialize(this.props.context.serviceScope);
+            if (initialized) {
+                const graphData: any = await graphService.postGraphContent(`https://graph.microsoft.com/v1.0/drives/${fileInfo[0].DriveId}/items/${fileInfo[0].ItemID}/follow`, "");
+                if (graphData.followed !== undefined) {
+                    this.setState({
+                        followStatus: true,
+                    });
+                }
+                
             }
-
+        };
+        const stopfollowingDocument = async () => {
+            const graphService: Graph = new Graph();
+            const initialized = await graphService.initialize(this.props.context.serviceScope);
+            if (initialized) {
+                const graphData: any = await graphService.postGraphContent(`https://graph.microsoft.com/v1.0/drives/${fileInfo[0].DriveId}/items/${fileInfo[0].ItemID}/unfollow`, "");
+                if (graphData === undefined) {
+                    this.setState({
+                        followStatus: false,
+                    });
+                }
+            }
         };
 
         const Loading = (props: MgtTemplateProps) => {

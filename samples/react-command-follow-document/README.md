@@ -2,15 +2,19 @@
 
 ## Summary
 
-This solution has the goal to easily identify/follow user key documents from all Tenant and easily access them in Modern Pages. This solution uses the Out of Box Social feature **"Follow document"** with combination of MSGraph queries and MGT FileList/File components.
+This solution has the goal to easily identify/follow user key documents from all Tenant and easily access them in Modern Pages. This solution uses the Out of Box Office 365 Tab Favorites with combination of MSGraph queries and MGT FileList/File components.
 
 Available features:
 - Follow documents (individually or multiple at same time)
 - Manage followed documents (Follow/unfollow)
 - List of all followed documents and option to unfollow if needed
 
+After follow document access to Office page > Tab "Favorites" and validate document was included.
+
 Usage of following Technologies:
-- Usage of Social Feature **"Follow" documents** and associated REST "[/_api/social.following/](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2)"
+- Usage of Microsoft Graph API "[Follow drive item](https://docs.microsoft.com/en-us/graph/api/driveitem-follow?view=graph-rest-1.0&tabs=http)"
+- Usage of Microsoft Graph API "[Unfollow drive item](https://docs.microsoft.com/en-us/graph/api/driveitem-unfollow?view=graph-rest-1.0&tabs=http)"
+- Usage of Microsoft Graph API "[List followed items](https://docs.microsoft.com/en-us/graph/api/drive-list-following?view=graph-rest-1.0&tabs=http)"
 - Usage of MGT (Microsoft Graph Toolkit) [FileList](https://docs.microsoft.com/en-us/graph/toolkit/components/file-list) and [File](https://docs.microsoft.com/en-us/graph/toolkit/components/file)
 
 ![image](./Assets/FollowDocumentSample1.gif)
@@ -41,6 +45,8 @@ o365 spo login https://contoso-admin.sharepoint.com
 o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Files.Read'
 o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Files.Read.All'
 o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Sites.Read.All'
+o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Files.ReadWrite.All'
+o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope '"Sites.ReadWrite.All'
 ```
 
 ## Solution
@@ -54,16 +60,17 @@ react-follow-document | [André Lage](https://github.com/aaclage) (http://aaclag
 Version|Date|Comments
 -------|----|--------
 1.0|June 14, 2021|Initial release
+2.0|November 25, 2021|update to use Microsoft Graph Query "Follow" service
 
 ## Minimal Path to Awesome
 
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  - **npm install**
-  - **gulp serve**
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - `npm install`
+  - `gulp serve`
+  - `gulp bundle --ship`
+  - `gulp package-solution --ship`
   - Add to AppCatalog and deploy
 
 ## Features

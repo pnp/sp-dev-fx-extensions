@@ -86,8 +86,8 @@ export default class FollowDocumentsCommandSet extends BaseListViewCommandSet<IF
                 element.getValueByName(
                   "HTML_x0020_File_x0020_Type.File_x0020_Type.mapico"
                 ),
-              DriveId: DriveID,
-              ItemID: ItemID,
+              DriveId: (element.getValueByName(".spItemUrl")).substring(element.getValueByName(".spItemUrl").lastIndexOf("/drives/") + 8,element.getValueByName(".spItemUrl").lastIndexOf("/items")),
+              ItemID: (element.getValueByName(".spItemUrl")).substring(element.getValueByName(".spItemUrl").lastIndexOf("/items/") + 7,element.getValueByName(".spItemUrl").lastIndexOf("?")),
               fileLeafRef: element.getValueByName("FileLeafRef"),
               context: this.context,
             });
@@ -103,13 +103,13 @@ export default class FollowDocumentsCommandSet extends BaseListViewCommandSet<IF
     const dialog: followDocumentDialog = new followDocumentDialog();
     switch (event.itemId) {
       case "COMMAND_1":
-        dialog.initialize(this.fileInfo, followType.FOLLOW);
+        dialog.initialize(this.fileInfo, this.context, followType.FOLLOW);
         break;
       case "COMMAND_2":
         this._showPanel();
         break;
       case "BULKFOLLOW":
-        dialog.initialize(this.fileInfo, followType.BULKFOLLOW);
+        dialog.initialize(this.fileInfo, this.context, followType.BULKFOLLOW);
         break;
       default:
         throw new Error("Unknown command");
