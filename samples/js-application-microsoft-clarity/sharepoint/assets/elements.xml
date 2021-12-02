@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="MicrosoftClarity"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="7f8fd1f2-9d26-4a4a-a607-bf4622d7ec11"
+        ClientSideComponentProperties="{&quot;clarityID&quot;:&quot;&quot;}">
+    </CustomAction>
+</Elements>
