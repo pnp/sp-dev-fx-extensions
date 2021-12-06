@@ -1,20 +1,18 @@
 import { override } from '@microsoft/decorators';
-import { Log } from '@microsoft/sp-core-library';
 import {
   BaseApplicationCustomizer
 } from '@microsoft/sp-application-base';
-
-import * as strings from 'SpfxToastrApplicationCustomizerStrings';
-
+import { Log } from '@microsoft/sp-core-library';
 //Needed to reference external CSS files
 import { SPComponentLoader } from '@microsoft/sp-loader';
-
+import { getIconClassName } from '@uifabric/styling';
 import * as $ from 'jquery';
+import * as strings from 'SpfxToastrApplicationCustomizerStrings';
 import * as toastr from 'toastr';
-import styles from './SpfxToastr.module.scss';
 //import { IToast, ToastService } from '../../services/toastService'; //loaded from the toastService barrel - temporarily disabled due to issue with WebPack
 import { IToast } from '../../services/toastService/IToast';
 import { ToastService } from '../../services/toastService/ToastService';
+import styles from './SpfxToastr.module.scss';
 
 const LOG_SOURCE: string = 'SpfxToastrApplicationCustomizer';
 
@@ -43,6 +41,9 @@ export default class SpfxToastrApplicationCustomizer
     //Go ahead and request the toasts, but we can't use them until jQuery and Toastr are ready
     this.toastsPromise = ToastService.getToasts(this.context.spHttpClient, this.context.pageContext.web.absoluteUrl, this.context.pageContext.web.id);
 
+    function getClass(){
+      return "css-147";
+    }
    
     //jQuery document ready
     $(document).ready(() => {
@@ -72,11 +73,12 @@ export default class SpfxToastrApplicationCustomizer
       toastr.options.titleClass = 'ms-font-m ms-fontWeight-semibold';
       toastr.options.messageClass = 'ms-font-s';
       toastr.options.iconClasses = {
-        info: `${styles.info} ${styles.fabricIcon} ms-Icon--Info`,
-        warning: `${styles.warning} ${styles.fabricIcon} ms-Icon--Warning`,
-        error: `${styles.error} ${styles.fabricIcon} ms-Icon--Error`,
-        success: `${styles.success} ${styles.fabricIcon} ms-Icon--Completed`
+        info: `${styles.info} ${styles.fabricIcon} ${getIconClassName('Info')}`,
+        warning: `${styles.warning} ${styles.fabricIcon} ${getIconClassName('Warning')}`,
+        error: `${styles.error} ${styles.fabricIcon} ${getIconClassName('Error')}`,
+        success: `${styles.success} ${styles.fabricIcon} ${getIconClassName('Completed')}`
       };
+      debugger;
 
 
       //***********************
