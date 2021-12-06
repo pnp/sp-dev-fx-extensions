@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/wowee/SitePages/Home.aspx",
+      "pageUrl": "https://thechriskent.sharepoint.com/sites/WarriorHorses",
       "customActions": {
         "a861c815-e425-416d-9520-04bcdf557e27": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -13,7 +13,7 @@
       }
     },
     "spfxToastr": {
-      "pageUrl": "https://ihatetimemachines.sharepoint.com/sites/wowee/SitePages/Home.aspx",
+      "pageUrl": "https://thechriskent.sharepoint.com/sites/WarriorHorses",
       "customActions": {
         "a861c815-e425-416d-9520-04bcdf557e27": {
           "location": "ClientSideExtension.ApplicationCustomizer",
