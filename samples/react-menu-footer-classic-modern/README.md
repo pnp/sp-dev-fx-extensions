@@ -81,5 +81,5 @@ This sample demonstrates:
 
 
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-menu-footer-classic-modern" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-menu-footer-classic-modern" />
 

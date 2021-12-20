@@ -197,4 +197,4 @@ Remember, that you'll also need the list with some configured notifications in o
   - [Issue 1279](https://github.com/SharePoint/sp-dev-docs/issues/1279) - Solution has been found, but fix has not yet been implemented
 
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/jquery-application-toastr" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/jquery-application-toastr" />

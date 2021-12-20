@@ -371,4 +371,4 @@ Here's a debug URL for testing around this sample. **Updated based on your manif
 - [Add single sign on to a bot](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication-sso?view=azure-bot-service-4.0&tabs=csharp%2Ceml)
 - [Web Chat with SSO using MSAL](https://github.com/microsoft/BotFramework-WebChat/tree/master/samples/07.advanced-web-chat-apps/e.sso-on-behalf-of-authentication)
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-bot-framework-sso" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-bot-framework-sso" />

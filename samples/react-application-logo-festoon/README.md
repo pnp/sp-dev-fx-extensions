@@ -69,4 +69,4 @@ The possible directions you can choose are:
 * bottom-left
 
 You can use any transparent image as the festoon.
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-logo-festoon" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-logo-festoon" />

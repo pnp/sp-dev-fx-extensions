@@ -90,4 +90,4 @@ This extension illustrates the following concepts:
 - Can hide commands from users who lack specific permissions.
 
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-command-hide-commands" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-command-hide-commands" />

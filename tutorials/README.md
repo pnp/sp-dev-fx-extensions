@@ -80,4 +80,4 @@ Once the npm packages are installed, run the command to start debugging extensio
 ```
 gulp serve --nobrowser
 ```
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/tutorials" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/tutorials" />

@@ -55,4 +55,4 @@ Here's a debug URL for testing around this sample.
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"ea401ac9-3abc-4e27-b93b-09c9a0587ee9":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{}}
 ```
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-convert-to-pdf)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-convert-to-pdf)

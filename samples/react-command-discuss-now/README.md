@@ -92,4 +92,4 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * creating new objects (event in a calendar) using the Microsoft Graph and the _graphHttpClient_ from the SharePoint Framework _context_
 * using the SPFx Dialog Framework
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-discuss-now)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-discuss-now)

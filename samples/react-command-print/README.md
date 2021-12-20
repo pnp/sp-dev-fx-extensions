@@ -76,4 +76,4 @@ Here's a debug URL for testing around this sample. **Updated based on your manif
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-print" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-print" />

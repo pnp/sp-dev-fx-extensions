@@ -102,4 +102,4 @@ window.LOG_LEVEL = 1
 
 ![Verbose logging from the field customizer](./assets/conditionalformatting-verbose-logging.png)
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-field-conditionalformatting)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-field-conditionalformatting)

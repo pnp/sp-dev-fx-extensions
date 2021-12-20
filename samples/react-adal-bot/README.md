@@ -215,5 +215,5 @@ This Web Part illustrates the following concepts on top of the SharePoint Framew
     - Handle the authorization flow to access protected resources
     - Store and use private conversation data for the current using in the ["in memory"](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-state) bot storage
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-adal-bot" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-adal-bot" />
 

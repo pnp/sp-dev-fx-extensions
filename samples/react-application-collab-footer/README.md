@@ -69,4 +69,4 @@ Key features demostrated by this solution:
 * PnPjs usage in the solution
 * Dynamic creation of the list if it's missing
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-collab-footer" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-collab-footer" />

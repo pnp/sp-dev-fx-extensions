@@ -114,4 +114,4 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * using the SPFx Dialog Framework
 * consuming the SharePoint Online taxonomy service using REST requests against the _client.svc/ProcessQuery_ service of CSOM
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-regions-footer)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-regions-footer)

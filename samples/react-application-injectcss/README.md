@@ -128,4 +128,4 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 
 * HTML manipulation
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-injectcss" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-injectcss" />

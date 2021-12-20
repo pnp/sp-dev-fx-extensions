@@ -73,4 +73,4 @@ On your SharePoint tenant:
 ```
 where ```"tasksListTitle"``` value should contain a title of Tasks list.
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-duetasks)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-duetasks)

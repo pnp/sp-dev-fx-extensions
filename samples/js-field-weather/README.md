@@ -84,4 +84,4 @@ Show weather information for locations stored in the **Location** column, displa
 
 ![Weather information for locations from the Location column, temperature displayed in Fahrenheit](./assets/weather-location-f.png)
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-field-weather)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-field-weather)

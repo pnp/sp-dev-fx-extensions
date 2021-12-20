@@ -102,4 +102,4 @@ Show organizational announcements stored in the **Announcements** list in the ro
 
 ![Organizational announcements displayed using the Announcements SharePoint Framework application customizer](./assets/announcements-announcements.png)
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-app-announcements)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-app-announcements)

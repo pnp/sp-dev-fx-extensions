@@ -69,4 +69,4 @@ This Web Part illustrates the following concepts on top of the SharePoint Framew
 - Using the Microsoft Graph client, a built in feature of the SharePoint Framework.
 - How to hide web part or extension from guest users
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-hidefrom-externalusers" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-hidefrom-externalusers" />

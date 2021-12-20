@@ -72,4 +72,4 @@ Here's a sample debug URL for easy testing of this sample.
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"41033513-c4ad-4a2b-939f-176213702ae6":{"location":"ClientSideExtension.ApplicationCustomizer"}}
 ```
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-application-intranet-searchbox" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-intranet-searchbox" />

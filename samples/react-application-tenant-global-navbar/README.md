@@ -91,4 +91,4 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * logging information to console using a custom SharePoint Framework log handler
 * consuming the SharePoint Online taxonomy service using REST requests against the _client.svc/ProcessQuery_ service of CSOM
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-tenant-global-navbar)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-tenant-global-navbar)

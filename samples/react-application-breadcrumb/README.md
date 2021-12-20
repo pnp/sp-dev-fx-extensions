@@ -77,4 +77,4 @@ This project contains SharePoint Framework extensions that illustrates next feat
 * Using React components in SharePoint Framework application customizer extensions
 * Using an Office UI Fabric component to built the site breadcrumb component
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-breadcrumb" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-breadcrumb" />

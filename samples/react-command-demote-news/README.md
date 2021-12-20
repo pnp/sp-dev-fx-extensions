@@ -76,4 +76,4 @@ Here's a debug URL for testing around this sample.
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"24cdd3e2-07e4-4a93-becf-5f39071a8497":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{}}
 ```
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-command-demote-news)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-demote-news)

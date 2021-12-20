@@ -101,4 +101,4 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * how to leverage the webhooks capabilities in order to display toast notifications
 * using React to build SharePoint Framework application customizers
 
-![](https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/react-application-webhooks-notification)
+![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-webhooks-notification)

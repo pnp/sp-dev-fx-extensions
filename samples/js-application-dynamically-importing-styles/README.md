@@ -69,4 +69,4 @@ This Web Part illustrates the following concepts on top of the SharePoint Framew
 - Patterns and Practices video demonstration:<br>
 https://www.youtube.com/watch?v=kaZiQjDUaH8
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-extensions/samples/js-application-dynamically-importing-styles/readme-template" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-dynamically-importing-styles/readme-template" />
