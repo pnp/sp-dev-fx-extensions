@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "panel-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/panel/PanelCommandSet.js",
+          "manifest": "./src/extensions/panel/PanelCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PanelCommandSetStrings": "lib/extensions/panel/loc/{locale}.js"
+  }
+}

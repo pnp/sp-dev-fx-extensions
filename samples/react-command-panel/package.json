@@ -1,0 +1,34 @@
+{
+  "name": "spfx-panel",
+  "version": "1.0.0",
+  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "gulp bundle",
+    "clean": "gulp clean",
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "@fluentui/react-hooks": "^8.3.9",
+    "@microsoft/decorators": "1.13.1",
+    "@microsoft/sp-core-library": "1.13.1",
+    "@microsoft/sp-listview-extensibility": "1.13.1",
+    "@pnp/sp": "^2.11.0",
+    "lodash": "^4.17.21",
+    "office-ui-fabric-react": "^7.180.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-error-boundary": "^3.1.4"
+  },
+  "devDependencies": {
+    "@microsoft/sp-build-web": "1.13.1",
+    "@microsoft/sp-tslint-rules": "1.13.1",
+    "@microsoft/sp-module-interfaces": "1.13.1",
+    "@microsoft/rush-stack-compiler-3.9": "0.4.47",
+    "gulp": "~4.0.2",
+    "ajv": "~5.2.2",
+    "@types/webpack-env": "1.13.1",
+    "@types/react": "16.9.51",
+    "@types/react-dom": "16.9.8"
+  }
+}

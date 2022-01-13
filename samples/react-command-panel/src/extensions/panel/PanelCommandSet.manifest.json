@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+
+  "id": "03a2395f-4448-4d30-a540-6b22c79c255a",
+  "alias": "PanelCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+
+  "version": "*",
+  "manifestVersion": 2,
+
+  "requiresCustomScript": false,
+
+  "items": {
+    "COMMAND_1": {
+      "title": { "default": "Travel guidelines" },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAapJREFUOE+lkrFLI0EYxd/bXYgcaKWI4l3hmZWY9LaxEMTOgMUZiKiF/gVXiJ1gaSfYCGo2hQiCIKKoJO3BgSCX4yIWKcRK7izujpBk95NowGVlZwedcr43P9775hEhx7FTUwD2ATRImcxWysUwrf+eYaKdwZFPlsUzAW0AB4363+xctVqLgoYCi+m0dXt3v0lgAUBN12UosOXEF9vUdakEBmJruVQCA7FbpiN3SWc4WYCwy0B9bub6+j649EDsSJcsxJMrQq4CckhhNQgUQ3ogzADoeJ6xTJFzv06IJslvNdRPuBsfGTVonAHojKqExnyP+USiz3CNUrtvGm+Ukl/MDycnKDwC0KrGe44LYp2OndoAsCiQebPB0yDRjeEzPRwA6G3PHDHdr2bN9Pxa64M0psvlP8zbqWVSml7M3MhdXf17/cvJWYDb7fsHjxjPVX58D4ui7OHx0FDst9GRBzDdAgiwNdDfvTRWKjXfBCwkEnFxzQsAHwFEunsqleoXHPslro47JTAQV8udEuiPq+tODYynMkKsCfjf8tyFLzc/L3VKqtyhDiCoeQTnR7n5bOFbGwAAAABJRU5ErkJggg==",
+      "type": "command"
+    },
+    "COMMAND_2": {
+      "title": { "default": "File trip report" },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAcFJREFUOE/N1U1LG0EYB/D/80wSSKkQoSJ6UupLsTnEj1DFo4eeijE99apWbx57SD9ATXvOoUWweJBSBQWpUO1Z0wRSX8BDzwXRLsjuzlM2zUo6u5u3U+e2zO5v5pn/zA4BwPpwul/HcQDgkffctBEsEnmRPa1sECDmu2SAr9iuweFN6QeaeQuEwSj0H5BYluerld0or6GSEoApgiyaM+0KFJIVFqQEVDDRrkCvkmy1src+9viZiQZAuDQuhDdm2QLsMGhRINuB8AiWEGaeV8vfAqCbUIexa33fBGP3xEZl4soZO+mFnVB3/fWgiGXBW/8AKFo5JHq21e7x+jXRuXbcTyrGu36gISXzgJCstgNCcKSZ8yx6JxJstm3CBvG3UpMZhocShjUGFQlGhRIGekH9BhJxm75Egv9LKJ8BXsqdlvY7OilhZX8cmey7VfaTix/lzYej6em2T0oDdqw49nSuenzZOMD70fQMET60fVL8j50evmHLUqKSL8mlYu689NPHIMh3VXJxKJOKJ5wCgLRA3hHotYfNn5XfdvaDrU/TnyU4uQZIDoKVOiYm2PoK+IvW1tF1bn4RJTPZs+9f/evgD2DlUJ5JJQCjAAAAAElFTkSuQmCC",
+      "type": "command"
+    }
+  }
+}

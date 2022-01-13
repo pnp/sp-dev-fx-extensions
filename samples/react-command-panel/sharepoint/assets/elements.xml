@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="Panel"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="03a2395f-4448-4d30-a540-6b22c79c255a"
+        ClientSideComponentProperties="{&quot;sampleTextOne&quot;:&quot;Travel guidelines&quot;, &quot;sampleTextTwo&quot;:&quot;Travel report&quot;, &quot;logLevel&quot;:&quot;3&quot;}">
+    </CustomAction>
+</Elements>
