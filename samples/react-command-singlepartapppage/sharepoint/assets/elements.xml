@@ -2,7 +2,7 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
     <CustomAction
         Title="MakeSinglePartAppPage"
-        RegistrationId="100"
+        RegistrationId="119"
         RegistrationType="List"
         Location="ClientSideExtension.ListViewCommandSet.CommandBar"
         ClientSideComponentId="f376321d-95fe-4796-bf5d-ca4b8f64529d"
