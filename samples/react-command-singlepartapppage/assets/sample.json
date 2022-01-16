@@ -9,7 +9,7 @@
       "Custom Command Set that set a Page layout to use the Single App Part page Layout"
     ],
     "creationDateTime": "2019-01-29",
-    "updateDateTime": "2019-01-29",
+    "updateDateTime": "2022-01-12",
     "products": [
       "SharePoint"
     ],
@@ -20,10 +20,10 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.7.1"
+        "value": "1.14.0"
       }
     ],
-"tags": [],
+    "tags": [],
     "categories": [
       "SPFX-COMMAND-EXTENSION"
     ],
