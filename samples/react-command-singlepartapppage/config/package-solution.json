@@ -3,14 +3,34 @@
   "solution": {
     "name": "react-command-singlepartapppage-client-side-solution",
     "id": "aeffa018-896c-491b-ba95-9d3372b31268",
-    "version": "1.0.0.0",
+    "version": "1.0.2.0",
     "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Luis Mañez",
+      "websiteUrl": "https://github.com/luismanez",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0-beta.4"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-cmd-ext description"
+      },
+      "longDescription": {
+        "default": "spfx-cmd-ext description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "c8110d1e-cfc2-4f38-9be8-34473225994b",
-        "version": "1.0.0.0",
+        "version": "1.0.2.0",
         "assets": {
           "elementManifests": [
             "elements.xml",

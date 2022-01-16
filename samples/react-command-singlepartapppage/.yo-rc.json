@@ -1,11 +1,14 @@
 {
   "@microsoft/generator-sharepoint": {
+    "plusBeta": true,
     "isCreatingSolution": true,
     "environment": "spo",
     "version": "1.7.1",
     "libraryName": "react-command-singlepartapppage",
     "libraryId": "aeffa018-896c-491b-ba95-9d3372b31268",
     "packageManager": "npm",
+    "solutionShortDescription": "Custom Command Set that set a Page layout to use the Single App Part page Layout",
+    "isDomainIsolated": false,
     "componentType": "extension",
     "extensionType": "ListViewCommandSet"
   }
