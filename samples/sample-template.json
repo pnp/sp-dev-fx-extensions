@@ -8,8 +8,8 @@
     "longDescription": [
       "TODO: LONG-DESCRIPTION-GOES-HERE"
     ],
-    "creationDateTime": "2021-06-06",
-    "updateDateTime": "2021-06-06",
+    "creationDateTime": "2022-12-25",
+    "updateDateTime": "2022-12-31",
     "products": [
       "SharePoint"
     ],
@@ -20,7 +20,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.12.1"
+        "value": "1.13.1"
       }
     ],
 "tags": [],
