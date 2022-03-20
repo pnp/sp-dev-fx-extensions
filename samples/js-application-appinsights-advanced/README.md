@@ -56,7 +56,7 @@ This application customizer will track the pageviews using Azure App Insights. T
 
 ## Used SharePoint Framework Version 
 
-![1.10.0](https://img.shields.io/badge/version-1.10.0-green.svg)
+![1.12.1](https://img.shields.io/badge/version-1.12.1-green.svg)
 
 ## Applies to
 
@@ -65,7 +65,7 @@ This application customizer will track the pageviews using Azure App Insights. T
 
 ## Prerequisites
  
-**@microsoft/generator-sharepoint - 1.10.0**
+**@microsoft/generator-sharepoint - 1.12.1**
 
 ## Solution
 
@@ -77,6 +77,7 @@ js-application-appinsights-advanced | Sudharsan K.([@sudharsank](https://twitter
 
 Version|Date|Comments
 -------|----|--------
+2.0.0.0|Mar 20 2022|Version Upgrade.Minor issue fix.
 1.0.0.0|May 02 2020|Initial release
 
 ## Disclaimer
