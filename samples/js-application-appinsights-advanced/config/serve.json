@@ -4,12 +4,12 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://o365practice.sharepoint.com/sites/moderndev",
       "customActions": {
         "043204bb-0b30-45f1-b180-74cd0062d81e": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "appInsightsKey": "00000000-0000-0000-0000-00000000"
+            "appInsightsKey": "3c4c379a-2537-4ec4-8d46-0664a9f70c4c"
           }
         }
       }
