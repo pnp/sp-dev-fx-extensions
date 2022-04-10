@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "React News Ticker",
-    "id": "65603ca8-004c-469c-8b6f-b24ef5f2e794",
-    "version": "1.1.0.0",
+    "name": "react-application-news-ticker-client-side-solution",
+    "id": "b5d9ad1f-5198-4647-a5b6-5dbc17bf1608",
+    "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -12,13 +12,24 @@
       "websiteUrl": "",
       "privacyUrl": "",
       "termsOfUseUrl": "",
-      "mpnId": ""
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "react-application-news-ticker description"
+      },
+      "longDescription": {
+        "default": "react-application-news-ticker description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
     },
     "features": [
       {
-        "title": "Application Extension - Deployment of custom action.",
+        "title": "Application Extension - Deployment of custom action",
         "description": "Deploys a custom action with ClientSideComponentId association",
-        "id": "632826fc-01ff-49ce-b6c1-90c48e4b513a",
+        "id": "73d57e47-1fd2-4f03-81d9-b2ecccd76c51",
         "version": "1.0.0.0",
         "assets": {
           "elementManifests": [
@@ -30,6 +41,6 @@
     ]
   },
   "paths": {
-    "zippedPackage": "solution/React News Ticker.sppkg"
+    "zippedPackage": "solution/react-application-news-ticker.sppkg"
   }
 }
