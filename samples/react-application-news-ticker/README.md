@@ -1,15 +1,15 @@
-# News Ticker
+# react-application-news-ticker
 
 ## Summary
 
-An SPFx Extension that displays news as a running text at the top of every modern page.
+Short summary on functionality and used technologies.
 
-![News Ticker](./assets/react-application-news-ticker.gif)
+[picture of the solution in action, if possible]
 
 ## Compatibility
 
-![SPFx 1.12.1](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
-![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+![SPFx 1.14](https://img.shields.io/badge/SPFx-1.14-green.svg)
+![Node.js v14 | v12](https://img.shields.io/badge/Node.js-v14%20%7C%20v12-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -25,63 +25,57 @@ An SPFx Extension that displays news as a running text at the top of every moder
 
 ## Prerequisites
 
-Create list as the data source for the app with below details:
-1. List title: `News`
-2. Required Columns: 
-   - `Title`: single line text
-   - `Content`: multiline text (plain text)
-   - `PublishDate`: date
-3. Required View:
-   - Title: `Published News`
-   - Configure the view as you like. The app will get the data based on the view. Below is the example:
-      - Filter: `PublishDate <= [TODAY] AND ExpiryDate > [TODAY]`
-      - Sort: `PublishDate Ascending`
-      - Limit: `10`
+> Any special pre-requisites?
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-react-application-news-ticker | [Ari Gunawan](https://github.com/AriGunawan) ([@arigunawan3023](https://twitter.com/arigunawan3023))
+react-application-news-ticker | [Sudharsan Kesavanarayanan](https://github.com/sudharsank) (NTT Ltd, [@sudharsank](https://twitter.com/sudharsank))
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|April 19, 2021|Initial release
-1.1|October 17, 2021|Update SPFx version to 1.12.1
+1.1|March 10, 2021|Update comment
+1.0|January 29, 2021|Initial release
+1.1|April 10, 2022|Upgraded to SPFx 1.14.0
+
 
 ## Minimal Path to Awesome
 
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  - **npm install**
-  - **gulp serve**
+  - `npm install`
+  - `gulp serve`
+
+> Include any additional steps as needed.
 
 ## Features
 
+Description of the extension that expands upon high-level summary above.
+
 This extension illustrates the following concepts:
 
-- Display news as a running text at the top of every modern page where the app installed
-- Get news items from a SharePoint list view using PnPJS
-- Stop the running text when user hover it
+- topic 1
+- topic 2
+- topic 3
+
+> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+
+> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
 
-- [SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
-- [PnP JS](https://pnp.github.io/pnpjs/)
-- [react-ticker](https://github.com/AndreasFaust/react-ticker)
-
-
-## Debug URL for testing
-Here's a debug URL for testing around this sample. 
-
-```
-?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"4358e70e-ec3c-4713-beb6-39c88f7621d1":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"listTitle":"News","listViewTitle":"Published News"}}}
-```
+- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
+- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
+- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
+- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
 ## Disclaimer
+
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 ## Help
@@ -92,10 +86,8 @@ You can try looking at [issues related to this sample](https://github.com/pnp/sp
 
 You can also try looking at [discussions related to this sample](https://github.com/pnp/sp-dev-fx-extensions/discussions?discussions_q=label%3Areact-application-news-ticker) and see what the community is saying.
 
-If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=react-application-news-ticker&authors=@AriGunawan&title=react-application-news-ticker%20-%20).
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=react-application-news-ticker&authors=@YOURGITHUBUSERNAME&title=react-application-news-ticker%20-%20).
 
-For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=react-application-news-ticker&authors=@AriGunawan&title=react-application-news-ticker%20-%20).
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=react-application-news-ticker&authors=@YOURGITHUBUSERNAME&title=react-application-news-ticker%20-%20).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-news-ticker&authors=@AriGunawan&title=react-application-news-ticker%20-%20).
-
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-news-ticker" />
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-news-ticker&authors=@YOURGITHUBUSERNAME&title=react-application-news-ticker%20-%20).
