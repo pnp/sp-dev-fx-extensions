@@ -10,11 +10,13 @@
     "serve": "gulp bundle --custom-serve --max_old_space_size=4096 && fast-serve"
   },
   "dependencies": {
-    "tslib": "2.3.1",
-    "@microsoft/sp-core-library": "1.15.2",
     "@microsoft/decorators": "1.15.2",
+    "@microsoft/sp-application-base": "1.15.2",
+    "@microsoft/sp-core-library": "1.15.2",
     "@microsoft/sp-dialog": "1.15.2",
-    "@microsoft/sp-application-base": "1.15.2"
+    "@pnp/sp": "^3.6.0",
+    "react-ticker": "^1.3.2",
+    "tslib": "2.3.1"
   },
   "devDependencies": {
     "@microsoft/rush-stack-compiler-4.5": "0.2.2",
