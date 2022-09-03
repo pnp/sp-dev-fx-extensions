@@ -6,13 +6,14 @@ npm-debug.log*
 # Dependency directories
 node_modules
 
+
 # Build generated files
 dist
 lib
 debug
 temp
 release
-
+sharepoint
 .heft
 
 # Coverage directory used by tools like istanbul
