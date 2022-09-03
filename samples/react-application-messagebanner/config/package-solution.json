@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Message Banner",
+    "id": "004b6d5e-aee8-499b-9fe8-06757cfd043b",
+    "version": "1.4.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "websiteUrl": "",
+      "mpnId": ""
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Displays a configurable banner at Site or Web"
+      },
+      "longDescription": {
+        "default": "Add a custom banner message to your SharePoint Online modern sites. Allows a site owner to modify the text, font size, colors and height of the banner. Specify a start date to control when the banner is visible to members of a site. Experimental support for setting the custom action host property 'preAllocatedApplicationCustomizerTopHeight' to avoid the page shifting upon load. Built using a SharePoint Framework Application Customizer Extension with the Top placeholder. Customization settings are saved into the ClientSideComponentProperties of the host custom action. Supports adding at the site-scope or web-scope."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "message-banner Feature",
+        "description": "The feature that activates elements of the message-banner solution.",
+        "id": "2f5235b8-a888-46a5-9b30-eaf8cfdae04e",
+        "version": "1.4.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-application-messagebanner.sppkg"
+  }
+}
