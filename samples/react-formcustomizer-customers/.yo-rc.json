@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.0",
+    "libraryName": "cc-formcustomizer-playground",
+    "libraryId": "865425da-4023-4db9-b357-7eedd66dfba9",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "cc-formcustomizer-playground",
+    "solutionShortDescription": "cc-formcustomizer-playground description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "FormCustomizer"
+  }
+}

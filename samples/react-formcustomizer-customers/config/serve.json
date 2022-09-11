@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://ejazhussain.sharepoint.com/sites/dev/_layouts/15/SPListForm.aspx",
+      "formCustomizer": {
+        "componentId": "61d237b3-a18d-4a84-a9e3-31085547d19a",
+        "PageType": 8,        
+        "RootFolder": "/sites/dev/Lists/Customers",
+        "properties": {
+          "sampleText": "Value"
+        }
+      }
+    },
+    "Customers_NewForm": {
+      "pageUrl": "https://ejazhussain.sharepoint.com/sites/dev/_layouts/15/SPListForm.aspx",
+      "formCustomizer": {
+        "componentId": "61d237b3-a18d-4a84-a9e3-31085547d19a",
+        "PageType": 8,
+        "RootFolder": "/sites/dev/Lists/Customers",
+        "properties": {
+          "sampleText": "Value"
+        }
+      }
+    },
+    "Customers_EditForm": {
+      "pageUrl": "https://ejazhussain.sharepoint.com/sites/dev/_layouts/15/SPListForm.aspx",
+      "formCustomizer": {
+        "componentId": "61d237b3-a18d-4a84-a9e3-31085547d19a",
+        "PageType": 6,
+        "RootFolder": "/sites/dev/Lists/Customers",
+        "ID": 1,
+        "properties": {
+          "sampleText": "Value"
+        }
+      }
+    },
+    "Customers_ViewForm": {
+      "pageUrl": "https://ejazhussain.sharepoint.com/sites/dev/_layouts/15/SPListForm.aspx",
+      "formCustomizer": {
+        "componentId": "61d237b3-a18d-4a84-a9e3-31085547d19a",
+        "PageType": 4,
+        "RootFolder": "/sites/dev/Lists/Customers",
+        "ID": 217,
+        "properties": {
+          "sampleText": "Value"
+        }
+      }
+    }
+  }
+}
