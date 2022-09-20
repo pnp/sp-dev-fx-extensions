@@ -1,0 +1,13 @@
+{
+    "@microsoft/generator-sharepoint": {
+        "isCreatingSolution": true,
+        "environment": "spo",
+        "version": "1.14.0",
+        "libraryName": "react-command-share-to-teams",
+        "libraryId": "98fc8351-80c6-4dd8-9593-aa1127531ef2",
+        "packageManager": "npm",
+        "isDomainIsolated": false,
+        "componentType": "extension",
+        "extensionType": "ListViewCommandSet"
+    }
+}
