@@ -98,6 +98,11 @@ Also, if you select a team that you do not hape permissions to add tabs to you w
 ![library displayed in native mode](assets/noPermissions.png)
 
 
+Notes: 
+1. If the SharePint site does not allow external Sharing, team members outsied your domain (guests) will not be able to view the items shared.
+
+2. If you share something with a Teams Private Channel, all members of the Team are granted access to the item.
+
 ## Debug URL for testing
 
 Here's a debug URL for testing around this sample.
