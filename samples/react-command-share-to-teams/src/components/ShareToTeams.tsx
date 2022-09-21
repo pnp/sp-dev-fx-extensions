@@ -201,7 +201,7 @@ debugger;
         }
         await channelTabs.add('Tab', appUrl, teamsTab)
           .then((t) => {
-            channel.messages({ body: { content: `I added a new tab named (${tabName}) to this channel that points to the ${ShareType[shareType]} at ` } });
+            channel.messages({ body: { content: `I added a new tab named '${tabName}' to this channel.` } });
           })
           .catch((e) => {
             debugger;
