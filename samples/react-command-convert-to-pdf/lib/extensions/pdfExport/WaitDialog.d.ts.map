@@ -1,1 +1,0 @@
-{"version":3,"file":"WaitDialog.d.ts","sourceRoot":"","sources":["../../../src/extensions/pdfExport/WaitDialog.tsx"],"names":[],"mappings":"AAyDA,MAAM,CAAC,OAAO,OAAO,UAAU;IACpB,OAAO,EAAE,MAAM,CAAC;IAChB,KAAK,EAAE,MAAM,CAAC;IACd,KAAK,EAAE,MAAM,CAAC;IACd,SAAS,EAAE,OAAO,CAAS;IAC3B,MAAM,EAAE,OAAO,CAAQ;gBAElB,KAAK,KAAA;IAIV,MAAM,IAAI,IAAI;IAYd,IAAI;IAKJ,KAAK;CAIf"}

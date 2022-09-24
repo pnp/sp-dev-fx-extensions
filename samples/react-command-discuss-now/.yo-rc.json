@@ -1,8 +1,0 @@
-{
-  "@microsoft/generator-sharepoint": {
-    "version": "1.4.1",
-    "libraryName": "react-command-discuss-now",
-    "libraryId": "b37832e8-0196-400a-904d-857dbf94b432",
-    "environment": "spo"
-  }
-}

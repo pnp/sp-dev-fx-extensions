@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <ClientSideComponentInstance
-        Title="MachineTranslationExtension"
-        Location="ClientSideExtension.ApplicationCustomizer"
-        ComponentId="aa40cc51-6498-4c01-91d4-b5f8d2fe1e8b"
-        Properties="{&quot;preAllocatedApplicationCustomizerTopHeight&quot;:&quot;40&quot;,&quot;supportedLanguages&quot;:[&quot;en&quot;,&quot;nl&quot;,&quot;fr&quot;],&quot;translatorApiKey&quot;:&quot;_TRANSLATOR_API_KEY_&quot;}">
-    </ClientSideComponentInstance>
-</Elements>

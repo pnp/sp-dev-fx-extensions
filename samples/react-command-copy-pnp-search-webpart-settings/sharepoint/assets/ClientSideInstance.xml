@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <ClientSideComponentInstance
-        Title="CopyPnPSearchWebpartSettings"
-        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
-        ListTemplateId="119"
-        Properties=""
-        ComponentId="dc7732fc-dbe5-4995-be53-d25ddec8a2c9" />
-</Elements>

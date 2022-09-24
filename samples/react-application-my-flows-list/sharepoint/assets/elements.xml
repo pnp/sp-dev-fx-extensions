@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <CustomAction
-        Title="MyFlowsList"
-        Location="ClientSideExtension.ApplicationCustomizer"
-        ClientSideComponentId="802dbc84-01c6-4e17-ae9b-5acb4d0f5726"
-        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
-    </CustomAction>
-</Elements>
