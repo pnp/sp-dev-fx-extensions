@@ -1,28 +1,31 @@
-import { Log } from '@microsoft/sp-core-library';
-import * as React from 'react';
+import { Icon } from "office-ui-fabric-react/lib/Icon";
+import * as React from "react";
 
-import styles from './ReactFieldVotes.module.scss';
+import styles from "./ReactFieldVotes.module.scss";
 
-export interface IReactFieldVotesProps {
-  text: string;
+interface IReactFieldVotesProps {
+  totalVoters: number;
+  isVoted: boolean;
+  loginName: string;
 }
 
-const LOG_SOURCE: string = 'ReactFieldVotes';
+const ReactFieldVotes = (props: IReactFieldVotesProps) => {
+  return (
+    <div className={styles.reactFieldVotes}>
+      <div>{props.totalVoters}</div>
+      {props.isVoted ? (
+        <button className={styles.voted} type="button">
+          <Icon iconName="Like" />
+          <span>Voted</span>
+        </button>
+      ) : (
+        <button type="button">
+          <Icon iconName="LikeSolid" />
+          <span>Vote</span>
+        </button>
+      )}
+    </div>
+  );
+};
 
-export default class ReactFieldVotes extends React.Component<IReactFieldVotesProps, {}> {
-  public componentDidMount(): void {
-    Log.info(LOG_SOURCE, 'React Element: ReactFieldVotes mounted');
-  }
-
-  public componentWillUnmount(): void {
-    Log.info(LOG_SOURCE, 'React Element: ReactFieldVotes unmounted');
-  }
-
-  public render(): React.ReactElement<{}> {
-    return (
-      <div className={styles.reactFieldVotes}>
-        { this.props.text }
-      </div>
-    );
-  }
-}
+export { IReactFieldVotesProps, ReactFieldVotes };
