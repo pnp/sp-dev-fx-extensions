@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "react-field-votes-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/reactFieldVotes/ReactFieldVotesFieldCustomizer.js",
+          "manifest": "./src/extensions/reactFieldVotes/ReactFieldVotesFieldCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReactFieldVotesFieldCustomizerStrings": "lib/extensions/reactFieldVotes/loc/{locale}.js"
+  }
+}
