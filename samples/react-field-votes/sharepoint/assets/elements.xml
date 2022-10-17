@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
     <Field ID="{9ef94a83-ef20-4908-b9ed-c46e4f7b6810}"
-            Name="SPFxPercentage"
-            DisplayName="Percentage"
-            Type="Number"
-            Min="0"
+            Name="SPFxVotes"
+            DisplayName="Votes"
+            Type="Note"
             Required="FALSE"
             Group="SPFx Columns"
             ClientSideComponentId="cfd41b03-0507-48c5-9fc8-e3dba6facfcd">
