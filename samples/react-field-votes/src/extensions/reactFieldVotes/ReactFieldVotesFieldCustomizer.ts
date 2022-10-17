@@ -5,11 +5,14 @@ import {
   BaseFieldCustomizer,
   IFieldCustomizerCellEventParameters,
 } from "@microsoft/sp-listview-extensibility";
+import { SPFI, spfi, SPFx } from "@pnp/sp";
 
 import {
   IReactFieldVotesProps,
   ReactFieldVotes,
 } from "./components/ReactFieldVotes";
+import { Constants } from "./utils/Constants";
+import { SharePointService } from "./utils/SharePointService";
 
 /**
  * If your field customizer uses the ClientSideComponentProperties JSON input,
@@ -19,17 +22,28 @@ import {
 export interface IReactFieldVotesFieldCustomizerProperties {}
 
 export default class ReactFieldVotesFieldCustomizer extends BaseFieldCustomizer<IReactFieldVotesFieldCustomizerProperties> {
+  private _sp: SPFI;
+
   public onInit(): Promise<void> {
     // Add your custom initialization to this method.  The framework will wait
     // for the returned promise to resolve before firing any BaseFieldCustomizer events.
+    this._sp = spfi().using(SPFx(this.context));
     return Promise.resolve();
   }
 
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
-    const voters = this.processValue(event.fieldValue);
+    const voters = this.processValue(
+      event.listItem.getValueByName(Constants.DISPLAY_COLUMN_NAME)
+    );
     const loginName = this.context.pageContext.user.loginName;
+    const sharePointService = new SharePointService(
+      this._sp,
+      this.context.pageContext.list.title,
+      event.listItem.getValueByName("ID"),
+      this.context.pageContext.user.loginName
+    );
     const componentProperties: IReactFieldVotesProps = {
-      loginName,
+      sharePointService: sharePointService,
       totalVoters: voters.length,
       isVoted: voters.indexOf(loginName) !== -1,
     };
