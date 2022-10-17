@@ -14,17 +14,17 @@ interface IReactFieldVotesProps {
   sharePointService: SharePointService;
 }
 
-const ReactFieldVotes = (props: IReactFieldVotesProps) => {
+const ReactFieldVotes = (props: IReactFieldVotesProps): JSX.Element => {
   const [totalVoters, setTotalVoters] = React.useState(props.totalVoters);
   const [isVoted, setIsVoted] = React.useState(props.isVoted);
 
-  async function onVote() {
+  async function onVote(): Promise<void> {
     await props.sharePointService.addVote();
     setIsVoted(true);
     setTotalVoters((prevValue) => prevValue + 1);
   }
 
-  async function onUnVote() {
+  async function onUnVote(): Promise<void> {
     await props.sharePointService.removeVote();
     setIsVoted(false);
     setTotalVoters((prevValue) => prevValue - 1);

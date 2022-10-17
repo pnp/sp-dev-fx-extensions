@@ -16,7 +16,7 @@ export class SharePointService {
 
   public async getVoters(): Promise<string[]> {
     try {
-      const item: any = await this._sp.web.lists
+      const item = await this._sp.web.lists
         .getByTitle(this._listTitle)
         .items.getById(this._itemId)
         .select(Constants.DISPLAY_COLUMN_NAME)();
@@ -30,11 +30,11 @@ export class SharePointService {
 
   public async addVote(): Promise<void> {
     try {
-      let voters = await this.getVoters();
+      const voters = await this.getVoters();
       // Ensure current user is not voted yet;
       if (voters.indexOf(this._loginName) !== -1) return;
 
-      let newVoters = [...voters, this._loginName];
+      const newVoters = [...voters, this._loginName];
       await this._sp.web.lists
         .getByTitle(this._listTitle)
         .items.getById(this._itemId)
@@ -46,11 +46,11 @@ export class SharePointService {
 
   public async removeVote(): Promise<void> {
     try {
-      let voters = await this.getVoters();
+      const voters = await this.getVoters();
       // Ensure current user is voted;
       if (voters.indexOf(this._loginName) === -1) return;
 
-      let newVoters = voters.filter((voter) => voter !== this._loginName);
+      const newVoters = voters.filter((voter) => voter !== this._loginName);
       await this._sp.web.lists
         .getByTitle(this._listTitle)
         .items.getById(this._itemId)
