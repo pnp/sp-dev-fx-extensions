@@ -19,8 +19,8 @@ export class SharePointService {
       const item = await this._sp.web.lists
         .getByTitle(this._listTitle)
         .items.getById(this._itemId)
-        .select(Constants.DISPLAY_COLUMN_NAME)();
-      const voters = item[Constants.DISPLAY_COLUMN_NAME];
+        .select(Constants.INTERNAL_COLUMN_NAME)();
+      const voters = item[Constants.INTERNAL_COLUMN_NAME];
       return JSON.parse(voters);
     } catch (error) {
       alert("Failed to get voters value.");
@@ -38,7 +38,9 @@ export class SharePointService {
       await this._sp.web.lists
         .getByTitle(this._listTitle)
         .items.getById(this._itemId)
-        .update({ Votes: JSON.stringify(newVoters) });
+        .update({
+          [Constants.INTERNAL_COLUMN_NAME]: JSON.stringify(newVoters),
+        });
     } catch (error) {
       alert("Failed to add vote.");
     }
@@ -54,7 +56,9 @@ export class SharePointService {
       await this._sp.web.lists
         .getByTitle(this._listTitle)
         .items.getById(this._itemId)
-        .update({ Votes: JSON.stringify(newVoters) });
+        .update({
+          [Constants.INTERNAL_COLUMN_NAME]: JSON.stringify(newVoters),
+        });
     } catch (error) {
       alert("Failed to remove vote.");
     }

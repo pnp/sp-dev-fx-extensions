@@ -6,7 +6,7 @@
     "default": {
       "pageUrl": "https://contoso.sharepoint.com/sites/ReactVotes/Lists/Ideas/AllItems.aspx",
       "fieldCustomizers": {
-        "Votes": {
+        "SPFxVotes": {
           "id": "cfd41b03-0507-48c5-9fc8-e3dba6facfcd"
         }
       }
@@ -14,7 +14,7 @@
     "reactFieldVotes": {
       "pageUrl": "https://contoso.sharepoint.com/sites/ReactVotes/Lists/Ideas/AllItems.aspx",
       "fieldCustomizers": {
-        "Votes": {
+        "SPFxVotes": {
           "id": "cfd41b03-0507-48c5-9fc8-e3dba6facfcd"
         }
       }

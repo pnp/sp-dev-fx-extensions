@@ -33,7 +33,7 @@ export default class ReactFieldVotesFieldCustomizer extends BaseFieldCustomizer<
 
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
     const voters = this.processValue(
-      event.listItem.getValueByName(Constants.DISPLAY_COLUMN_NAME)
+      event.listItem.getValueByName(Constants.INTERNAL_COLUMN_NAME)
     );
     const loginName = this.context.pageContext.user.loginName;
     const sharePointService = new SharePointService(

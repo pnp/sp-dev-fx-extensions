@@ -1,3 +1,3 @@
 export const Constants = {
-  DISPLAY_COLUMN_NAME: "Votes",
+  INTERNAL_COLUMN_NAME: "SPFxVotes",
 };
