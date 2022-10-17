@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://arigunawan.sharepoint.com/sites/ReactVotes/Lists/Ideas/AllItems.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/sites/ReactVotes/Lists/Ideas/AllItems.aspx",
       "fieldCustomizers": {
         "Votes": {
           "id": "cfd41b03-0507-48c5-9fc8-e3dba6facfcd"
@@ -12,7 +12,7 @@
       }
     },
     "reactFieldVotes": {
-      "pageUrl": "https://arigunawan.sharepoint.com/sites/ReactVotes/Lists/Ideas/AllItems.aspx",
+      "pageUrl": "https://contoso.sharepoint.com/sites/ReactVotes/Lists/Ideas/AllItems.aspx",
       "fieldCustomizers": {
         "Votes": {
           "id": "cfd41b03-0507-48c5-9fc8-e3dba6facfcd"
