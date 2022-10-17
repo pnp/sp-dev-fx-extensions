@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "react-field-votes-client-side-solution",
+    "name": "React Field Votes",
     "id": "2a2ccbf6-44a6-44a5-8129-068602b64e19",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
@@ -40,6 +40,6 @@
     ]
   },
   "paths": {
-    "zippedPackage": "solution/react-field-votes.sppkg"
+    "zippedPackage": "solution/React Field Votes.sppkg"
   }
 }
