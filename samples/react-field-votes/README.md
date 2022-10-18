@@ -2,11 +2,11 @@
 
 ## Summary
 
-An extension that display Vote counter and button to vote or unvote.
+An extension that displays Vote counter and button to vote or unvote.
 If the current user hasn't been voted, the button will become Vote button
 but if the current user has been voted, it will become Unvote button.
 
-The underlaying value is an array of voter's login name in JSON format.
+The underlying value is an array of voter's login name in JSON format.
 
 ![picture of the extension in action](assets/preview.gif)
 
@@ -43,7 +43,7 @@ Version|Date|Comments
     - Internal Name: `SPFxVotes`
     - Display Name: Anything you want. e.g. Votes, Action, etc.
     - Type: `Multiple lines of text`
-- My suggestion to prevent users manually update underlaying votes data:
+- My suggestion to prevent users manually update underlying votes data:
    - Disable `Edit in grid view` feature on the list view
       - Go to `List settings`
       - Go to `Advanced settings`
@@ -65,7 +65,7 @@ This extension illustrates the following concepts:
 
 * Use [React](https://reactjs.org/) for displaying vote count on list view
 * Use [React](https://reactjs.org/) for displaying vote/unvote button on list view
-* Use [PnPJS](https://pnp.github.io/pnpjs/) for updating underlaying data
+* Use [PnPJS](https://pnp.github.io/pnpjs/) for updating underlying data
 * Use [SPFx Fast Serve](https://github.com/s-KaiNet/spfx-fast-serve) for increasing development productivity
 
 ## Debug URL for testing
