@@ -1,73 +1,98 @@
-# react-field-votes
+# Field Votes
 
 ## Summary
 
-Short summary on functionality and used technologies.
+An extension that display Vote counter and button to vote or unvote.
+If the current user hasn't been voted, the button will become Vote button
+but if the current user has been voted, it will become Unvote button.
 
-[picture of the solution in action, if possible]
+The underlaying value is an array of voter's login name in JSON format.
 
-## Used SharePoint Framework Version
+![picture of the extension in action](assets/preview.gif)
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+## Compatibility
+
+![SPFx 1.15.2](https://img.shields.io/badge/SPFx-1.15.2-green.svg)
+![Node.js v14 | v16](https://img.shields.io/badge/Node.js-v14%20%7C%20v16-green.svg)
+![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
+![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
+
 
 ## Applies to
 
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+* [SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
+* [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-## Prerequisites
-
-> Any special pre-requisites?
 
 ## Solution
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+Solution|Author(s)
+--------|---------
+react-field-votes | [Ari Gunawan](https://github.com/AriGunawan) ([@AriGunawan3023](https://twitter.com/arigunawan3023))
 
 ## Version history
 
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+Version|Date|Comments
+-------|----|--------
+1.2|October 18, 2022|Initial version
 
-## Disclaimer
+## Prerequisites
 
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
+- Create a list that will have the vote button
+- Create a new column: 
+    - Internal Name: `SPFxVotes`
+    - Display Name: Anything you want. e.g. Votes, Action, etc.
+    - Type: `Multiple lines of text`
+- My suggestion to prevent users manually update underlaying votes data:
+   - Disable `Edit in grid view` feature on the list view
+      - Go to `List settings`
+      - Go to `Advanced settings`
+      - Disable quick edit
+        ![disable quick edit](/assets/disable%20quick%20edit.png)
+   - Remove `SPFxVotes` column from the form
+     ![edit form](/assets/edit-form.gif)
 
 ## Minimal Path to Awesome
 
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
-
-> Include any additional steps as needed.
+* Clone this repository
+* in the command line run:
+  * `npm install`
+  * `gulp serve`
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
-
 This extension illustrates the following concepts:
 
-- topic 1
-- topic 2
-- topic 3
+* Use [React](https://reactjs.org/) for displaying vote count on list view
+* Use [React](https://reactjs.org/) for displaying vote/unvote button on list view
+* Use [PnPJS](https://pnp.github.io/pnpjs/) for updating underlaying data
+* Use [SPFx Fast Serve](https://github.com/s-KaiNet/spfx-fast-serve) for increasing development productivity
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+## Debug URL for testing
 
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+Here's a debug URL for testing around this sample.
 
-## References
+```
+?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&fieldCustomizers={"SPFxVotes":{"id":"cfd41b03-0507-48c5-9fc8-e3dba6facfcd"}}
+```
 
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+## Help
+
+We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+You can try looking at [issues related to this sample](https://github.com/pnp/sp-dev-fx-extensions/issues?q=label%3Areact-field-votes) to see if anybody else is having the same issues.
+
+You can also try looking at [discussions related to this sample](https://github.com/pnp/sp-dev-fx-extensions/discussions?discussions_q=label%3Areact-field-votes) and see what the community is saying.
+
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=react-field-votes&authors=@AriGunawan&title=react-field-votes%20-%20).
+
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=react-field-votes&authors=@AriGunawan&title=react-field-votes%20-%20).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-field-votes&authors=@AriGunawan&title=react-field-votes%20-%20).
+
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-field-votes" />
