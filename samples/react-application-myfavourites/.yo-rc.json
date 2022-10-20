@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.10.0",
+    "version": "1.12.1",
     "libraryName": "react-application-myfavourites",
     "libraryId": "67748851-94cf-4840-94f2-882d6d813efa",
     "packageManager": "npm",
