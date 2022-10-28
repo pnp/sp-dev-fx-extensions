@@ -1,6 +1,6 @@
 {
   "@microsoft/generator-sharepoint": {
-    "version": "1.7.0",
+    "version": "1.12.1",
     "libraryName": "react-mega-menu",
     "libraryId": "466eb049-ab57-4a5d-ae51-0a8221cdb984",
     "environment": "spo",

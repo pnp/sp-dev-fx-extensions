@@ -1,14 +1,11 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import { Logger } from "@pnp/logging";
 import { override } from "@microsoft/decorators";
 import {
   BaseApplicationCustomizer,
   PlaceholderContent,
   PlaceholderName
 } from "@microsoft/sp-application-base";
-
-import * as strings from "ReactMegaMenuApplicationCustomizerStrings";
 
 import MegaMenuComponent from "./components/MegaMenuComponent";
 import { IMegaMenuProps } from "./components/IMegaMenuProps";
@@ -56,8 +53,7 @@ export default class ReactMegaMenuApplicationCustomizer
   @override
   public onInit(): Promise<void> {
 
-    let placeholder: PlaceholderContent;
-    placeholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
+    let placeholder: PlaceholderContent | any = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
 
     // init the react mega menu component.
     const element: React.ReactElement<IMegaMenuProps> = React.createElement(

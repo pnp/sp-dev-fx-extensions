@@ -27,5 +27,5 @@
     "variable-name": false,
     "whitespace": false
   },
-  "extends": "@microsoft/sp-tslint-rules/base-tslint.json"
+  "extends": "./node_modules/@microsoft/sp-tslint-rules/base-tslint.json"
 }
