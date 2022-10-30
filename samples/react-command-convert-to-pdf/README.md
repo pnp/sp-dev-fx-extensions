@@ -29,6 +29,7 @@ Version|Date|Comments
 -------|----|--------
 1.0| 2019| Initial release by Puzzlepart
 1.1| February 23, 2021| Moved and rebranded to PnP
+1.2| Octobar 30, 2022| Upgrade SPFx to version 1.12.1
 
 ## Disclaimer
 
