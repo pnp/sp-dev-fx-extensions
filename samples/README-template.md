@@ -123,6 +123,26 @@ Here's a debug URL for testing around this sample.
 
 ## Help
 
+<!--
+You can just search and replace this page with the following values:
+
+Search for:
+YOUR-SOLUTION-NAME
+
+Replace with your sample folder name. E.g.: react-my-cool-sample
+
+Search for:
+@YOURGITHUBUSERNAME
+
+Replace with your GitHub username, prefixed with an "@". If you have more than one author, use %20 to separate them, making sure to prefix everyone's username individually with an "@".
+
+Example:
+@hugoabernier
+
+Or:
+@hugoabernier%20@VesaJuvonen%20@PopWarner
+-->
+
 We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
 You can try looking at [issues related to this sample](https://github.com/pnp/sp-dev-fx-extensions/issues?q=label%3AYOUR-SOLUTION-NAME) to see if anybody else is having the same issues.
@@ -135,4 +155,4 @@ For questions regarding this sample, [create a new question](https://github.com/
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=YOUR-SOLUTION-NAME&authors=@YOURGITHUBUSERNAME&title=YOUR-SOLUTION-NAME%20-%20).
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/readme-template" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/YOUR-SOLUTION-NAME" />
