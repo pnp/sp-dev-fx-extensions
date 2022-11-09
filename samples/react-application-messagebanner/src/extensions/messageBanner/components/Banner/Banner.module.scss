@@ -1,0 +1,38 @@
+.BannerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  transition: all 250ms;
+  font-weight: 600;
+  cursor: default;
+  border-bottom: 1px solid #eaeaea;
+  height: 0px;
+
+  a, a:link, a:visited, a:hover, a:active {
+    color: inherit;
+  }
+
+  .EditButtonIcon {
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    transform: translate(-1%,-50%);
+  }
+
+  .AdminUserVisibilityBadge {
+    display: flex;
+    align-items: center;
+    height: 18px;
+    padding: 2px 10px;
+    font-size: 12px;
+    border-radius: 16px;
+    background-color: rgb(240, 144, 106);
+    color: black;
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    transform: translate(-1%,-50%);
+  }
+}
