@@ -24,11 +24,11 @@
     "@types/webpack-env": "1.13.1"
   },
   "devDependencies": {
-    "@microsoft/sp-build-web": "1.6.0",
+    "@microsoft/sp-build-web": "1.15.2",
     "@microsoft/sp-module-interfaces": "1.6.0",
-    "@microsoft/sp-webpart-workbench": "1.6.0",
+    "@microsoft/sp-webpart-workbench": "1.12.1",
     "tslint-microsoft-contrib": "~5.0.0",
-    "gulp": "~3.9.1",
+    "gulp": "~4.0.2",
     "@types/chai": "3.4.34",
     "@types/mocha": "2.2.38",
     "ajv": "~5.2.2"
