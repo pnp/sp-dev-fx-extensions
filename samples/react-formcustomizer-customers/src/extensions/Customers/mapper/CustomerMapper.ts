@@ -9,7 +9,7 @@ export default class CustomerMapper {
         return {
             Title: item.title,
             Email: item.email,
-            Address: item.address ? item.address : "",
+            WorkAddress: item.workaddress ? item.workaddress : "",
             Interests: item.interests && item.interests.length > 0 ? item.interests : [],
             ProjectsId: item.projects && item.projects.length > 0 ? item.projects : []            
         } as IFormData;
@@ -20,7 +20,7 @@ export default class CustomerMapper {
             ID: item.ID,
             Title: item.Title,
             Email: item.Email,
-            Address: item.Address ? item.Address : "",
+            WorkAddress: item.WorkAddress ? item.WorkAddress : "",
             Interests: item.Interests && item.Interests.length > 0 ? item.Interests : [],
             ProjectsId: item.ProjectsId && item.ProjectsId.length > 0 ? item.ProjectsId.map(i => i.toString()) : [],
             Projects: item.Projects && item.Projects.length > 0 ? item.Projects : [],
@@ -57,14 +57,9 @@ export default class CustomerMapper {
     }
 
     public static getManagedMetadataFieldValue = (terms: ITermData[]): string => {
-        let termValue = "";
-        if (terms.length > 1) {
-            for (const term of terms) {
-
-                termValue += `${term.labels[0].name}|${term.id};`;
-            }
-        } else {
-            termValue += `${terms[0].labels[0].name}|${terms[0].id}`;
+        let termValue = terms.map(t => `-1#;${t.labels[0].name}|${t.id};`).join('#');
+        if (terms.length === 1) {
+            termValue = termValue.substring(0, termValue.length - 1);
         }
         return termValue;
     };

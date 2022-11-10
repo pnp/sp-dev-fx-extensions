@@ -1,7 +1,7 @@
 export interface IFormData {
     Title: string;
     Email: string;
-    Address?: string;
+    WorkAddress?: string;
     Interests?: string[];
-    ProjectsId?: string[];
+    ProjectsId?: number[];
 }

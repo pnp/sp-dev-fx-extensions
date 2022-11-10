@@ -62,7 +62,6 @@ export default class CustomersFormCustomizer
 
   public render(): void {
     // Use this method to perform your custom rendering.
-
     const FCPlayground: React.ReactElement<{}> =
       React.createElement(FormContainer, {
         context: this.context,

@@ -1,14 +1,13 @@
 # SPFx form customizer to override the default list behaviour. 
 
 ## Summary
-This SPFx form customizer build custom New, Edit and View list forms for a Customer List. This solution implements the following types of fields
+This SPFx form customizer build custom New, Edit and View list forms for a Customers List. This solution implements the following types of fields
 
 1. Single line of text
 2. Multiple lines of text
 3. Managed Metadata
-4. Managed Metadata
-5. Choice
-6. Lookup
+4. Choice
+5. Lookup
 
 
 > View List Form
@@ -55,9 +54,14 @@ Version|Date|Comments
 
 ## Minimal Path to Awesome
 
+Provision the lists needed by the sample through the [SiteTemplate.xml](./provisioning/SiteTemplate.xml) PnP Provisioning template, using the following PnP PowerShell syntax executed from the *Provisioning* folder:
 
->Create a Project list with the following fields. The project list used for a lookup column **Projects** in the **Customers** list
+```PowerShell
+Connect-PnPOnline https://[your tenant].sharepoint.com/sites/[your site colleciton]
+Invoke-PnPSiteTemplate -Path .\SiteTemplate.xml
+```
 
+The provisioning will create a list with name **Projects** with the following fields:
  
    | Name | Type | Settings |
    |------------|---------------------|-----------------------------------------|
@@ -66,28 +70,23 @@ Version|Date|Comments
    | Members | Person or Group | |
    | StartDate | DateTime | |
 
-_Populate the project list with some sample data. So that the projects will be available to select when we create a new item in the **Customers** list_
-
-
-> Create a Customer conten type with the following fields
-
+and it will populate it with 3 sample items.
+The script wil also create a list with name **Customers** based on a custom content type defined with the following site columns:
 
  | Name | Type | Settings |
  |-----------|-----------------------|------------------------------------------------------|
  | Title | Single Line of text | |
  | Email | Single Line of text | |
- | Address | Multiple lines of text | |
- | Projects | Lookup | Lookup to Projects list |
- | Customer Locations | Metadata | Mapped to Locations term set |
- | Interests | Choices | Decorating, Diving, Livestreaming, Drawing, Kung fu,
+ | Address | Multiple lines of text | Native WorkAddress field |
+ | Projects | Lookup Multi | Lookup to Projects list |
+ | Customer Locations | Metadata Multivalue | Mapped to Locations term set |
+ | Interests | Multi-Choices | Decorating, Diving, Livestreaming, Drawing, Kung fu |
 
-> Create a **Customers** list based on Customer content type created in the above step.
+Update pageUrl and Rootfolder properties under the serve.json file 
 
-> Update pageUrl and Rootfolder properties under the serve.json file 
+1. pageUrl : https://[your tenant].sharepoint.com/_layouts/15/SPListForm.aspx
 
-1. pageUrl : https://[yourtenantname].sharepoint.com/_layouts/15/SPListForm.aspx
-
-2. RootFolder : /sites/dev/Lists/Customers
+2. RootFolder : /sites/[your site collection]/Lists/Customers
 
 * clone this repo
 * update file "./config/serve.json pointing to your tenant and site collection

@@ -8,8 +8,11 @@ import { ICustomer } from "../model/ICustomer";
 import { IFormData } from "../model/IFormData";
 import { IProject } from "../model/IProject";
 import { getSP } from "../pnpjsConfig";
-import { IField, IFieldInfo } from "@pnp/sp/fields/types";
-import { ITermData } from "../model/ITermData";
+import { IField } from "@pnp/sp/fields/types";
+import { IContentTypeInfo } from "@pnp/sp/content-types";
+import { Guid } from "@microsoft/sp-core-library";
+import "@pnp/sp/content-types";
+import "@pnp/sp/lists"
 
 class SharePointService {
 
@@ -46,16 +49,6 @@ class SharePointService {
     }
     public static async UpdateCustomer(formData: IFormData, itemId: number) {
 
-        //c00faac3ebe2497e84715f981b035dcd: 
-
-        //const taxFieldData = locationData && locationData.length > 0 ? CustomerMapper.getManagedMetadataFieldValue(locationData) : null;
-
-        // const response1: IItemAddResult = await this._sp.web.lists.getByTitle("Customers").items.getById(itemId).update({
-        //     // update hidden note fields associated with the managed metadata fields
-        //     'c00faac3ebe2497e84715f981b035dcd': taxFieldData
-        // });
-
-
         const response: IItemAddResult = await this._sp.web.lists
             .getByTitle("Customers").items
             .getById(itemId)
@@ -69,7 +62,7 @@ class SharePointService {
             const customerResponse: ICustomer = await this._sp.web.lists
                 .getByTitle(listTitle)
                 .items.getById(itemId)
-                .select("*", "ID", "Title", "Email", "Address", "Interests", "Projects/Title", "Projects/ID", "TaxCatchAll/ID", "TaxCatchAll/Term").expand("Projects", "TaxCatchAll")();
+                .select("*", "ID", "Title", "Email", "WorkAddress", "Interests", "Projects/Title", "Projects/ID", "TaxCatchAll/ID", "TaxCatchAll/Term").expand("Projects", "TaxCatchAll")();
 
             if (customerResponse != null && customerResponse != undefined) {
                 cResult = CustomerMapper.mapCustomerInfo(customerResponse);
@@ -119,5 +112,19 @@ class SharePointService {
         }
     }
 
+    public static getLocationsFieldDetails = async (listId: Guid): Promise<{TermSetId: string, TextField: string}> => {
+        const locationsField: IField = await this._sp.web.lists.getById(listId.toString()).fields.getByTitle('Customer Locations').select('ID','TermSetId','TextField')();
+        const locationsTextField: IField = await this._sp.web.lists.getById(listId.toString()).fields.getById(locationsField['TextField']).select('ID','InternalName')();
+
+        return { 
+            TermSetId: locationsField['TermSetId'],
+            TextField: locationsTextField['InternalName']
+        };
+    }
+
+    public static getCustomerContentTypeId = async (listId: Guid): Promise<string> => {
+        const listContentTypes: IContentTypeInfo[] = await this._sp.web.lists.getById(listId.toString()).contentTypes();        
+        return listContentTypes[0].Id.StringValue;
+    }
 }
 export default SharePointService;

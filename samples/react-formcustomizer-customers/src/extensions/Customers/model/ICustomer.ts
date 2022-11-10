@@ -4,7 +4,7 @@ export interface ICustomer {
     ID: string
     Title: string;
     Email: string;
-    Address?: string;
+    WorkAddress?: string;
     Interests?: string[];
     ProjectsId?: string[];
     Projects?: any[];

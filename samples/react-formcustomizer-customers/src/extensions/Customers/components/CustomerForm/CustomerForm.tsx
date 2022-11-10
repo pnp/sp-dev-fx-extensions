@@ -13,13 +13,12 @@ import SharePointService from '../../services/SharePointService';
 import { IItemAddResult } from '@pnp/sp/items';
 import { StatusMessage } from '../Result/StatusMessage';
 import { LogHelper } from '../../helpers/LogHelper';
-import { DisplayMode, FormDisplayMode } from '@microsoft/sp-core-library';
+import { DisplayMode, FormDisplayMode, Guid } from '@microsoft/sp-core-library';
 import { IProject } from '../../model/IProject';
 import styled from 'styled-components';
 import styles from '../FormContainer/FormContainer.module.scss';
 import { TaxonomyPicker, IPickerTerms } from "@pnp/spfx-controls-react/lib/TaxonomyPicker";
 import { ModernTaxonomyPicker } from "@pnp/spfx-controls-react/lib/ModernTaxonomyPicker";
-import Application from '../../common/constants';
 import { Icon } from '@fluentui/react/lib/Icon';
 
 const MapIcon = () => <Icon iconName="MapPin" />;
@@ -123,7 +122,9 @@ export const CustomerForm: React.FunctionComponent<ICustomerFormProps> = (props)
     const [isError, setIsError] = useState(false);
     const [mockData, setMockData] = useState([]);
     const [projects, setProjects] = useState([]);
-
+    const [locationsTermSetId, setLocationsTermSetId] = useState<string>(Guid.empty.toString());
+    const [locationsTextField, setLocationsTextField] = useState<string>('');
+    const [customerContentTypeId, setCustomerContentTypeId] = useState<string>('');
 
     const popoverInnerContainer: React.CSSProperties = {
         display: 'flex',
@@ -149,9 +150,20 @@ export const CustomerForm: React.FunctionComponent<ICustomerFormProps> = (props)
 
     useEffect(() => {
         getProjectListItems();
+        getLocationsFieldDetails(props.listGuid);
+        getCustomerContentTypeId(props.listGuid);
     }, []);
 
+    const getLocationsFieldDetails = async (listId: Guid) => {
+        const locationsDetails: {TermSetId: string, TextField: string} = await SharePointService.getLocationsFieldDetails(listId);
+        setLocationsTermSetId(locationsDetails.TermSetId);
+        setLocationsTextField(locationsDetails.TextField);
+    }
 
+    const getCustomerContentTypeId = async (listId: Guid) => {
+        const customerContentTypeId = await SharePointService.getCustomerContentTypeId(listId);
+        setCustomerContentTypeId(customerContentTypeId);
+    }
 
     const delay = ms => new Promise(res => setTimeout(res, ms));
 
@@ -165,7 +177,8 @@ export const CustomerForm: React.FunctionComponent<ICustomerFormProps> = (props)
             const formData: IFormData = CustomerMapper.mapRequestFormData(values);
             const locationTaxFieldData = values.customerslocations && values.customerslocations.length > 0
                 ? CustomerMapper.getManagedMetadataFieldValue(values.customerslocations) : null;
-            formData[Application.LocationTaxFieldInternalName] = locationTaxFieldData;
+            formData[locationsTextField] = locationTaxFieldData;
+            formData['ContentTypeId'] = customerContentTypeId;
 
             if (props.displayMode == FormDisplayMode.New) {
                 response = await SharePointService.AddCustomer(formData);
@@ -325,13 +338,9 @@ export const CustomerForm: React.FunctionComponent<ICustomerFormProps> = (props)
         return <Option key={index}>{item}</Option>
     });
 
-    const onTaxPickerChange1 = (terms: IPickerTerms) => {
-        console.log("Terms", terms);
-    }
     const onTaxPickerChange = (terms: any[]) => {
         console.log("Terms", terms);
     }
-
 
     return (
         <>
@@ -343,7 +352,7 @@ export const CustomerForm: React.FunctionComponent<ICustomerFormProps> = (props)
                     form={form}
                     name="basic"
                     layout="vertical"
-                    initialValues={{ title: props.listItem.Title, email: props.listItem.Email, address: props.listItem.Address, interests: selectedInterests, projects: targetKeys, customerslocations: props.listItem.CustomerLocations }}
+                    initialValues={{ title: props.listItem.Title, email: props.listItem.Email, workaddress: props.listItem.WorkAddress, interests: selectedInterests, projects: targetKeys, customerslocations: props.listItem.CustomerLocations }}
                     size={"large"}
                     onFinish={onFinish}
                     onFinishFailed={onFinishFailed}
@@ -399,7 +408,7 @@ export const CustomerForm: React.FunctionComponent<ICustomerFormProps> = (props)
                     <Row>
                         <Col span={11}>      <Form.Item
                             label="Address"
-                            name="address"
+                            name="workaddress"
                             rules={[{ required: false, message: 'Please input your address!' }]}
                         >
                             <Input.TextArea
@@ -432,30 +441,32 @@ export const CustomerForm: React.FunctionComponent<ICustomerFormProps> = (props)
                             }
                         </Form.Item></Col>
                     </Row>
-                    <Row>
-                        <Col span={11}>
-                            <Form.Item
-                                label="Office Location"
-                                name="customerslocations"
-                                rules={[{ required: false, message: '' }]}
-                            >
-                                {props.displayMode !== FormDisplayMode.Display ?
-                                    <ModernTaxonomyPicker allowMultipleSelections={true}
-                                        termSetId="24d74c9d-f10e-4e34-8c89-49deb596664b"
-                                        panelTitle="Select location"
-                                        label=""
-                                        initialValues={props.listItem.CustomerLocations}
-                                        context={props.context as any}
-                                        onChange={onTaxPickerChange}
-                                    />
-                                    : props.listItem.CustomerLocations && props.listItem.CustomerLocations.length > 0 && renderLocationTags()
-                                }
-                            </Form.Item>
-                        </Col>
-                        <Col offset={1} span={11}>
+                    { locationsTermSetId !== Guid.empty.toString() ? 
+                        <Row>
+                                <Col span={11}>
+                                    <Form.Item
+                                        label="Office Location"
+                                        name="customerslocations"
+                                        rules={[{ required: false, message: '' }]}
+                                    >
+                                        {props.displayMode !== FormDisplayMode.Display ?
+                                            <ModernTaxonomyPicker allowMultipleSelections={true}
+                                                termSetId={locationsTermSetId}
+                                                panelTitle="Select location"
+                                                label=""
+                                                initialValues={props.listItem.CustomerLocations}
+                                                context={props.context as any}
+                                                onChange={onTaxPickerChange}
+                                            />
+                                            : props.listItem.CustomerLocations && props.listItem.CustomerLocations.length > 0 && renderLocationTags()
+                                        }
+                                    </Form.Item>
+                                </Col>
+                                <Col offset={1} span={11}>
 
-                        </Col>
-                    </Row>
+                                </Col>
+                        </Row>
+                    : null }
 
                     <Row>
                         <Col span={24}>
