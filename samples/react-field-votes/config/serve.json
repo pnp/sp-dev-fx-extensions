@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/ReactVotes/Lists/Ideas/AllItems.aspx",
+      "fieldCustomizers": {
+        "SPFxVotes": {
+          "id": "cfd41b03-0507-48c5-9fc8-e3dba6facfcd"
+        }
+      }
+    },
+    "reactFieldVotes": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/ReactVotes/Lists/Ideas/AllItems.aspx",
+      "fieldCustomizers": {
+        "SPFxVotes": {
+          "id": "cfd41b03-0507-48c5-9fc8-e3dba6facfcd"
+        }
+      }
+    }
+  }
+}
