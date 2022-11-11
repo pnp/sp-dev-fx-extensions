@@ -73,12 +73,12 @@ This extension illustrates the following concepts:
 Here's a debug querystring for testing this sample:
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"bee2c587-d4e2-4c74-b337-aa2b9a2116eb":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"39044f8c-dace-4780-9e90-eeb368d6a6b9":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
 ```
 
 Your URL will look similar to the following (replace with your domain and site address):
 ```
-https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"bee2c587-d4e2-4c74-b337-aa2b9a2116eb":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
+https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"39044f8c-dace-4780-9e90-eeb368d6a6b9":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
 ```
 
 #### Prerequisites
