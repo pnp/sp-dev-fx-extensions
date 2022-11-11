@@ -77,7 +77,7 @@ export class MenuSPListProvider implements IMenuProvider {
         let result: MenuCategory[] = [];
 
         // get the list items from the session storage if available.
-        let stringResult: string = window.sessionStorage.getItem(this._sessionStorageKey);
+        let stringResult: string | any = window.sessionStorage.getItem(this._sessionStorageKey);
         if (stringResult) {
             try {
                 result = JSON.parse(stringResult);
