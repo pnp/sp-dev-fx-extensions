@@ -1,0 +1,17 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+    "version": "2.0",
+    "bundles": {
+        "share-to-teams-command-set": {
+            "components": [{
+                "entrypoint": "./lib/extensions/shareToTeams/ShareToTeamsCommandSet.js",
+                "manifest": "./src/extensions/shareToTeams/ShareToTeamsCommandSet.manifest.json"
+            }]
+        }
+    },
+    "externals": {},
+    "localizedResources": {
+        "ShareToTeamsCommandSetStrings": "lib/extensions/shareToTeams/loc/{locale}.js",
+        "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+    }
+}

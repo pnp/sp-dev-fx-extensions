@@ -1,0 +1,41 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+    "port": 4321,
+    "https": true,
+    "serveConfigurations": {
+        "default": {
+            "pageUrl": "https://contoso.sharepoint.com/sites/mySite/Shared%20Documents/",
+            "customActions": {
+                "02b09893-193a-47bb-85e6-0280fbfd41dc": {
+                    "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+                    "properties": {
+                        "supportedFileTypes": "csv, doc, docx, pdf, ppsx, ppt, pptx, jpg, jpeg, png, xls, xlsx, txt, html, gif, aspx",
+                        "allowListSharing": true,
+                        "allowFolderSharing": true,
+                        "allowFileSharing": true,
+                        "librarySharingMethod": "page",
+                        "folderSharingMethod": "page",
+                        "fileSharingMethod": "native"
+                    }
+                }
+            }
+        },
+        "shareToTeams": {
+            "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+            "customActions": {
+                "02b09893-193a-47bb-85e6-0280fbfd41dc": {
+                    "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+                    "properties": {
+                        "supportedFileTypes": "csv, doc, docx, pdf, ppsx, ppt, pptx, jpg, jpeg, png, xls, xlsx, txt, html, gif",
+                        "allowListSharing": true,
+                        "allowFolderSharing": true,
+                        "allowFileSharing": true,
+                        "librarySharingMethod": "page",
+                        "folderSharingMethod": "native"
+
+                    }
+                }
+            }
+        }
+    }
+}
