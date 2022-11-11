@@ -1,0 +1,171 @@
+$default-color: #00594c;
+$ms-color-gray10: #ddd;
+
+.formContainer {
+  // color: "[theme:neutralLighter, default:##f3f2f1]";
+  padding: 0.5rem;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: "[theme:neutralLighter, default:#f3f2f1]"; //#00594C
+  // background-size: 300px 300px;
+  // background-repeat: no-repeat;
+  // background-position-x: left;
+  .formHeader {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: block;
+    height: 180px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    background-position: 50% 50%;
+    background-size: cover;
+
+    &::after {
+      height: 200px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      content: "";
+      background-image: linear-gradient(
+        transparent,
+        "[theme:neutralLighter, default:#f3f2f1]"
+      );
+    }
+    img {
+      width: 100%;
+      max-height: 220px;
+    }
+  }
+
+  .card {
+    min-width: 450px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .cardTitle {
+      text-align: center;
+      color: "[theme: themePrimary, default: #0078d7]";
+    }
+    form {
+      margin: 0;
+      max-width: 700px;
+    }
+    .viewForm {
+      padding: auto;
+
+      :global {
+        .ant-input-affix-wrapper-lg {
+          background-color: #eee;
+        }
+        .ant-input-affix-wrapper > input.ant-input {
+          background: #eee;
+        }
+        .ant-input-textarea-show-count > .ant-input {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+
+  :global {
+    .ant-page-header {
+      .ant-page-header-heading {
+        justify-content: center;
+      }
+    }
+    .ant-form-item {
+      margin-bottom: 1rem;
+      .ant-form-item-label {
+        font-weight: 500;
+      }
+      .ant-form-item-label > label {
+        height: auto;
+        padding: 0;
+        color: "[theme: themePrimary, default: #0078d7]";
+      }
+    }
+    .ant-form-item-control {
+      .ant-btn-primary {
+        color: white;
+        border-color: "[theme: themePrimary, default: #0078d7]";
+        background: "[theme: themePrimary, default: #0078d7]";
+        text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+        box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+      }
+      .ant-btn-primary:focus,
+      .ant-btn-primary:hover {
+        color: white;
+        border-color: "[theme: themeDarker, default: #0078d7]";
+        background: "[theme: themeDarker, default: #0078d7]";
+      }
+      .ant-btn-default:focus,
+      .ant-btn-default:hover {
+        color: "[theme: themeSecondary, default: #0078d7]";
+        border-color: "[theme: themeSecondary, default: #0078d7]";
+        background: white;
+      }
+    }
+    .ant-page-header {
+      .ant-page-header-heading-title,
+      .ant-page-header-heading-sub-title,
+      .ant-page-header-back-button {
+        color: "[theme: themePrimary, default: #0078d7]";
+        font-size: 1.6rem;
+      }
+    }
+    .ant-checkbox-checked .ant-checkbox-inner {
+      border-color: "[theme: themeDarker, default: #0078d7]";
+      background: "[theme: themeDarker, default: #0078d7]";
+    }
+    .ant-transfer-list-content-item-remove:hover {
+      color: "[theme: themeDarker, default: #0078d7]";
+    }
+    .ant-tag {
+      margin: 3px 4px;
+      padding: 3px 7px;
+    }
+    .ant-select-item-option-selected:not(.ant-select-item-option-disabled)
+      .ant-select-item-option-state {
+      color: "[theme: themeDarker, default: #0078d7]";
+    }
+    .ant-page-header-heading-extra {
+      position: absolute;
+      right: 0;
+    }
+    .anticon-plus-circle {
+      color: "[theme: themeDarker, default: #0078d7]";
+    }
+    .anticon-edit {
+      color: "[theme: themeDarker, default: #0078d7]";
+    }
+    .ant-btn:focus,
+    .ant-btn:hover {
+      color: "[theme: themeDarker, default: #0078d7]";
+      border-color: "[theme: themeDarker, default: #0078d7]";
+    }
+    .ant-popover-inner-content {
+      min-width: 400px;
+    }
+    .ant-page-header-back {
+      position: absolute;
+      left: 0;
+    }
+    .ant-statistic-content {
+      font-size: 14px;
+    }
+    .ant-avatar-group .ant-avatar {
+      margin: 0 20px;
+    }
+    .ms-BasePicker-text{
+      border: 1px solid #d9d9d9;
+      border-radius: 2px; 
+    }
+  }
+}

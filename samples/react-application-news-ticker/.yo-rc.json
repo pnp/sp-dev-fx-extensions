@@ -2,9 +2,9 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "version": "1.14.0",
+    "version": "1.15.2",
     "libraryName": "react-application-news-ticker",
-    "libraryId": "b5d9ad1f-5198-4647-a5b6-5dbc17bf1608",
+    "libraryId": "bae26017-8238-4422-8a72-e052d8cd1bd9",
     "environment": "spo",
     "packageManager": "npm",
     "solutionName": "react-application-news-ticker",
