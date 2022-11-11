@@ -1,0 +1,86 @@
+[
+  {
+    "name": "pnp-sp-dev-fx-extensions-react-application-messagebanner",
+    "source": "pnp",
+    "title": "React Message Banner",
+    "shortDescription": "A react Message Banner sample, allows to add a custom banner message to your SharePoint Online modern sites.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-messagebanner",
+    "longDescription": [
+      "A react Message Banner sample, allows to add a custom banner message to your SharePoint Online modern sites. Can target either Site or Web Scoped. Allows a site owner to modify the text, font size, colours and height of the banner. Specify a start date to control when the banner is visible to members of a site. Uses the latest v1.15.2 of SPFX framework."
+    ],
+    "creationDateTime": "2022-11-09",
+    "updateDateTime": "2022-11-09",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "TypeScript,React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.15.2"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-messagebanner/assets/BannerMessageAdminView.png",
+        "alt": "Admin View"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-messagebanner/assets/BannerMessageAdminViewScheduled.png",
+        "alt": "Admin View Scheduled"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-messagebanner/assets/BannerMessageUserView.png",
+        "alt": "User View"
+      },
+      {
+        "type": "image",
+        "order": 400,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-messagebanner/assets/BannerSettingsPanel.png",
+        "alt": "Banner Settings Panel"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "pmatthews05",
+        "company": "CF Code",
+        "pictureUrl": "https://github.com/pmatthews05.png",
+        "name": "Paul Matthews",
+        "twitter": "cann0nf0dder"
+      },
+      {
+        "gitHubAccount": "bschlintz",
+        "company": "Digital Nomad",
+        "pictureUrl": "https://github.com/bschlintz.png",
+        "name": "Brad Schlintz",
+        "twitter": "bschlintz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Getting started with SharePoint Framework",
+        "description": "Introduction about how to develop Microsoft 365 extensions using SharePoint Framework.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+      },
+      {
+        "name": "Build your first SharePoint Framework Extension",
+        "description": "Introduction about how to develop SharePoint Online extensions using SharePoint Framework.",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension"
+      },
+      {
+        "name": "Microsoft 365 Patterns and Practices",
+        "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+        "url": "https://aka.ms/m365pnp"
+      }
+    ]
+  }
+]
