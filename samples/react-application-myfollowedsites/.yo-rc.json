@@ -1,13 +1,13 @@
 {
     "@microsoft/generator-sharepoint": {
-        "isCreatingSolution": true,
-        "environment": "spo",
-        "version": "1.10.0",
-        "libraryName": "my-followed-sites",
-        "libraryId": "bee2c587-d4e2-4c74-b337-aa2b9a2116eb",
-        "packageManager": "npm",
-        "isDomainIsolated": false,
-        "componentType": "extension",
-        "extensionType": "ApplicationCustomizer"
+      "isCreatingSolution": true,
+      "environment": "spo",
+      "version": "1.12.1",
+      "libraryName": "my-followed-sites",
+      "libraryId": "bee2c587-d4e2-4c74-b337-aa2b9a2116eb",
+      "packageManager": "npm",
+      "isDomainIsolated": false,
+      "componentType": "extension",
+      "extensionType": "ApplicationCustomizer"
     }
-}
+  }
