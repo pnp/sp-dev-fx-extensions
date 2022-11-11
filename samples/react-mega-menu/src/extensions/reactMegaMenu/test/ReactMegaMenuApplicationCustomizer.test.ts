@@ -8,7 +8,7 @@ import { mount, ReactWrapper } from "enzyme";
 import MegaMenuComponent from "../components/MegaMenuComponent";
 import { IMegaMenuState } from "../components/IMegaMenuState";
 import { IMegaMenuProps } from "../components/IMegaMenuProps";
-import { IMenuProvider, MenuItem, MenuCategory, MenuSPListProvider } from "../menuProvider";
+import { MenuCategory, MenuSPListProvider } from "../menuProvider";
 
 declare const sinon: sinon.SinonStatic;
 
@@ -75,9 +75,7 @@ describe("ReactMegaMenuApplicationCustomizer menu closed", () => {
   });
 
   it("should menu element be null", () => {
-
-    let menu: Element = document.querySelector("div[data-id='menuPanel']");
-
+    let menu: Element | any = document.querySelector("div[data-id='menuPanel']");
     expect(menu).to.be.equal(null);
   });
 
@@ -163,14 +161,11 @@ describe("ReactMegaMenuApplicationCustomizer menu opened", () => {
    * therefore go back to vanila JavaScript element selectors.
    */
   it("should menu be visible", () => {
-
-    let menu: Element = document.querySelector("div[data-id='menuPanel']");
-
+    let menu: Element | any = document.querySelector("div[data-id='menuPanel']");
     expect(menu).to.not.be.equal(null);
   });
 
   it("should showPanel state changed to true", () => {
-
     expect(reactComponent.state().showPanel).to.be.equal(true);
   });
 
@@ -192,8 +187,7 @@ describe("ReactMegaMenuApplicationCustomizer menu opened", () => {
 
   it("verify Department of Finance category and items", () => {
 
-    let category: Element;
-    category = document.querySelector("[data-id='Department of Finance']");
+    let category: Element | any = document.querySelector("[data-id='Department of Finance']");
 
     let categoryText: string = category.querySelector("[class*='categoryItem']").innerHTML;
     let economicText: string = (category.querySelector("[data-id='1'] a") as HTMLAnchorElement).text;
@@ -206,13 +200,16 @@ describe("ReactMegaMenuApplicationCustomizer menu opened", () => {
 
   it("verify Department of Education and Skills category and items", () => {
 
-    let category: Element;
-    category = document.querySelector("[data-id='Department of Education and Skills']");
+    let category: Element | any= document.querySelector("[data-id='Department of Education and Skills']");
 
     let categoryText: string = category.querySelector("[class*='categoryItem']").innerHTML;
     let holidaysText: string = (category.querySelector("[data-id='3'] a") as HTMLAnchorElement).text;
 
     expect(categoryText).to.be.equal("Department of Education and Skills");
     expect(holidaysText).to.be.equal("School Holidays");
+  });
+
+  after(() => {
+    menuProviderStub.restore();
   });
 });

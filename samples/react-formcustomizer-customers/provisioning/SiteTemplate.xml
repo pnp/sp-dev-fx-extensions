@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+    <pnp:Preferences Generator="PnP.Framework, Version=1.10.0.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+    <pnp:Templates ID="CONTAINER-TEMPLATE-B1A7062747D042EEB3F148B663A38C13">
+        <pnp:ProvisioningTemplate ID="TEMPLATE-B1A7062747D042EEB3F148B663A38C13" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+            <pnp:SiteFields>
+                <Field Type="Note" DisplayName="CustomerLocations_0" StaticName="h25eb3a70ee141de9d447e1f2c9e6170" Name="h25eb3a70ee141de9d447e1f2c9e6170" ID="{20cc0199-d9d3-4da0-a826-d21f4df8da12}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" SourceID="{e0c4f842-d65c-4d47-a829-49d10b674777}" />
+                <Field ID="{9889a80f-c9ec-41d8-a359-ac5fb5c4cfa2}" Name="_SPCallToAction" StaticName="_SPCallToAction" DisplayName="Call To Action" Type="Note" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" />
+                <Field ID="{cb19284a-cde7-4570-a980-1dab8bd74470}" Name="_ExtendedDescription" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ExtendedDescription" DisplayName="Description" Group="Extended Columns" RichText="TRUE" ShowInEditForm="FALSE" RichTextMode="Compatible" CanToggleHidden="TRUE" Type="Note" />
+                <Field ID="{AC9CE95B-F081-4B8A-BB19-2F4427D44674}" Name="_ExpirationDate" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ExpirationDate" Hidden="TRUE" Group="_Hidden" ReadOnly="TRUE" Type="Lookup" List="Docs" ShowField="ExpirationDate" DisplayName="Expiration Date" FromBaseType="TRUE" DisplaceOnUpgrade="TRUE" FieldRef="ID" JoinColName="DoclibRowId" JoinRowOrdinal="0" JoinType="INNER" />
+                <Field ID="{08D89A66-4634-42B8-9D5A-0C27395A48B3}" Name="TriggerFlowInfo" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" ShowInFileDlg="FALSE" Hidden="TRUE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ReadOnlyEnforced="FALSE" ReadOnly="TRUE" DisplaceOnUpgrade="TRUE" StaticName="TriggerFlowInfo" Type="Text" DisplayName="Trigger Flow Info" Sortable="FALSE" />
+                <Field ID="{ff41708b-e251-4237-a060-bea44657e8dc}" Name="_SPAssetFolderId" StaticName="_SPAssetFolderId" DisplayName="Asset Folder Id" Type="Number" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" ReadOnly="TRUE" AllowDeletion="FALSE" Hidden="TRUE" />
+                <Field Type="MultiChoice" DisplayName="Interests" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" FillInChoice="FALSE" Group="Custom Columns" ID="{388fc1a3-4296-460e-aecc-cf9c166b63b1}" SourceID="{e0c4f842-d65c-4d47-a829-49d10b674777}" StaticName="Interests" Name="Interests">
+                    <Default>Decorating</Default>
+                    <CHOICES>
+                        <CHOICE>Decorating</CHOICE>
+                        <CHOICE>Diving</CHOICE>
+                        <CHOICE>Livestreaming</CHOICE>
+                        <CHOICE>Drawing</CHOICE>
+                        <CHOICE>Kung fu</CHOICE>
+                    </CHOICES>
+                </Field>
+                <Field Type="TaxonomyFieldTypeMulti" DisplayName="Customer Locations" List="{{listid:TaxonomyHiddenList}}" WebId="{siteid}" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" Mult="TRUE" Sortable="FALSE" Group="Custom Columns" ID="{125eb3a7-0ee1-41de-9d44-7e1f2c9e6170}" SourceID="{{siteid}}" StaticName="CustomerLocations" Name="CustomerLocations">
+                    <Default></Default>
+                    <Customization>
+                        <ArrayOfProperty>
+                            <Property>
+                                <Name>SspId</Name>
+                                <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                            </Property>
+                            <Property>
+                                <Name>GroupId</Name>
+                            </Property>
+                            <Property>
+                                <Name>TermSetId</Name>
+                                <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:People:Location}</Value>
+                            </Property>
+                            <Property>
+                                <Name>AnchorId</Name>
+                                <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+                            </Property>
+                            <Property>
+                                <Name>UserCreated</Name>
+                                <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                            </Property>
+                            <Property>
+                                <Name>Open</Name>
+                                <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+                            </Property>
+                            <Property>
+                                <Name>TextField</Name>
+                                <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{20cc0199-d9d3-4da0-a826-d21f4df8da12}</Value>
+                            </Property>
+                            <Property>
+                                <Name>IsPathRendered</Name>
+                                <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                            </Property>
+                            <Property>
+                                <Name>IsKeyword</Name>
+                                <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                            </Property>
+                            <Property>
+                                <Name>TargetTemplate</Name>
+                            </Property>
+                            <Property>
+                                <Name>CreateValuesInEditForm</Name>
+                                <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                            </Property>
+                            <Property>
+                                <Name>IsDocTagsEnabled</Name>
+                            </Property>
+                            <Property>
+                                <Name>FilterAssemblyStrongName</Name>
+                                <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+                            </Property>
+                            <Property>
+                                <Name>FilterClassName</Name>
+                                <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+                            </Property>
+                            <Property>
+                                <Name>FilterMethodName</Name>
+                                <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+                            </Property>
+                            <Property>
+                                <Name>FilterJavascriptProperty</Name>
+                                <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+                            </Property>
+                        </ArrayOfProperty>
+                    </Customization>
+                </Field>
+                <Field Type="Text" DisplayName="Email" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="Custom Columns" ID="{a3c3efb1-1660-4274-bb28-4c8efa1daf61}" SourceID="{e0c4f842-d65c-4d47-a829-49d10b674777}" StaticName="Email" Name="Email"></Field>
+                <Field Type="LookupMulti" DisplayName="Projects" Required="FALSE" EnforceUniqueValues="FALSE" List="{{listid:Projects}}" WebId="{siteid}" ShowField="Title" Mult="TRUE" Sortable="FALSE" UnlimitedLengthInDocumentLibrary="FALSE" Group="Custom Columns" ID="{c4845ab3-06b3-47ca-a644-add5088c8001}" SourceID="{{siteid}}" StaticName="Projects" Name="Projects" />
+                <Field Name="HostType" ID="{7C8702DF-A33C-4E20-8B8B-FBBC603FAEB5}" Type="Text" DisplayName="Host Type" Group="_Hidden" Sealed="TRUE" ReadOnly="FALSE" ShowInEditForm="TRUE" ShowInDisplayForm="TRUE" ShowInNewForm="TRUE" />
+                <Field ID="{3A8EE3F8-166B-4394-B3E2-E98DCF86A847}" Name="A2ODMountCount" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="A2ODMountCount" Hidden="TRUE" Group="_Hidden" ReadOnly="TRUE" Type="Lookup" List="Docs" ShowField="A2ODMountCount" DisplayName="A2OD Mount Count" FromBaseType="TRUE" DisplaceOnUpgrade="TRUE" FieldRef="ID" JoinColName="DoclibRowId" JoinRowOrdinal="0" JoinType="INNER" />
+            </pnp:SiteFields>
+            <pnp:ContentTypes>
+                <pnp:ContentType DisplayFormClientSideComponentId="" DisplayFormClientSideComponentProperties="" NewFormClientSideComponentProperties="" EditFormClientSideComponentId="" EditFormClientSideComponentProperties="" ID="0x01004897112BD6D5914E8B2387ACB6DBD558" Name="Customer" Description="" Group="Custom Content Types" NewFormUrl="" EditFormUrl="" DisplayFormUrl="" UpdateChildren="false">
+                    <pnp:FieldRefs>
+                        <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" UpdateChildren="true" />
+                        <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" UpdateChildren="true" />
+                        <pnp:FieldRef ID="a3c3efb1-1660-4274-bb28-4c8efa1daf61" Name="Email" UpdateChildren="true" />
+                        <pnp:FieldRef ID="fc2e188e-ba91-48c9-9dd3-16431afddd50" Name="WorkAddress" UpdateChildren="true" />
+                        <pnp:FieldRef ID="c4845ab3-06b3-47ca-a644-add5088c8001" Name="Projects" UpdateChildren="true" />
+                        <pnp:FieldRef ID="20cc0199-d9d3-4da0-a826-d21f4df8da12" Name="h25eb3a70ee141de9d447e1f2c9e6170" Hidden="true" UpdateChildren="true" />
+                        <pnp:FieldRef ID="f3b0adf9-c1a2-4b02-920d-943fba4b3611" Name="TaxCatchAll" Hidden="true" UpdateChildren="true" />
+                        <pnp:FieldRef ID="8f6b6dd8-9357-4019-8172-966fcd502ed2" Name="TaxCatchAllLabel" Hidden="true" UpdateChildren="true" />
+                        <pnp:FieldRef ID="125eb3a7-0ee1-41de-9d44-7e1f2c9e6170" Name="CustomerLocations" UpdateChildren="true" />
+                        <pnp:FieldRef ID="388fc1a3-4296-460e-aecc-cf9c166b63b1" Name="Interests" UpdateChildren="true" />
+                    </pnp:FieldRefs>
+                </pnp:ContentType>
+            </pnp:ContentTypes>
+            <pnp:Lists>
+                <pnp:ListInstance Title="Customers" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Customers" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Customers/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Customers/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Customers/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x01004897112BD6D5914E8B2387ACB6DBD558" Default="true" />
+                        <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views>
+                        <View Name="{3C9AB49D-A73F-4A2E-9042-B36570154628}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Customers/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+                            <Query />
+                            <ViewFields>
+                                <FieldRef Name="LinkTitle" />
+                            </ViewFields>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <JSLink>clienttemplates.js</JSLink>
+                        </View>
+                    </pnp:Views>
+                    <pnp:FieldRefs>
+                        <pnp:FieldRef ID="20cc0199-d9d3-4da0-a826-d21f4df8da12" Name="h25eb3a70ee141de9d447e1f2c9e6170" Hidden="true" DisplayName="CustomerLocations_0" />
+                        <pnp:FieldRef ID="a3c3efb1-1660-4274-bb28-4c8efa1daf61" Name="Email" DisplayName="Email" />
+                        <pnp:FieldRef ID="fc2e188e-ba91-48c9-9dd3-16431afddd50" Name="WorkAddress" DisplayName="Address" />
+                        <pnp:FieldRef ID="c4845ab3-06b3-47ca-a644-add5088c8001" Name="Projects" DisplayName="Projects" />
+                        <pnp:FieldRef ID="125eb3a7-0ee1-41de-9d44-7e1f2c9e6170" Name="CustomerLocations" DisplayName="Customer Locations" />
+                        <pnp:FieldRef ID="388fc1a3-4296-460e-aecc-cf9c166b63b1" Name="Interests" DisplayName="Interests" />
+                    </pnp:FieldRefs>
+                </pnp:ListInstance>
+                <pnp:ListInstance Title="Projects" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Projects" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Projects/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Projects/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Projects/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+                        <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views>
+                        <View Name="{1DA3CD68-34D6-4646-8A93-F5162C69B134}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Projects/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+                            <Query />
+                            <ViewFields>
+                                <FieldRef Name="LinkTitle" />
+                                <FieldRef Name="Status" />
+                                <FieldRef Name="Members" />
+                                <FieldRef Name="StartDate" />
+                            </ViewFields>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <CustomFormatter />
+                        </View>
+                    </pnp:Views>
+                    <pnp:Fields>
+                        <Field CustomFormatter="{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;flex-wrap&quot;:&quot;wrap&quot;,&quot;display&quot;:&quot;flex&quot;},&quot;children&quot;:[{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;box-sizing&quot;:&quot;border-box&quot;,&quot;padding&quot;:&quot;4px 8px 5px 8px&quot;,&quot;overflow&quot;:&quot;hidden&quot;,&quot;text-overflow&quot;:&quot;ellipsis&quot;,&quot;display&quot;:&quot;flex&quot;,&quot;border-radius&quot;:&quot;16px&quot;,&quot;height&quot;:&quot;24px&quot;,&quot;align-items&quot;:&quot;center&quot;,&quot;white-space&quot;:&quot;nowrap&quot;,&quot;margin&quot;:&quot;4px 4px 4px 4px&quot;},&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;In Progress&quot;]},&quot;sp-css-backgroundColor-BgCornflowerBlue sp-field-fontSizeSmall sp-css-color-CornflowerBlueFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Completed&quot;]},&quot;sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;On Hold&quot;]},&quot;sp-css-backgroundColor-BgGold sp-field-fontSizeSmall sp-css-color-GoldFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,&quot;sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary&quot;]}]}]}]}},&quot;txtContent&quot;:&quot;@currentField&quot;}],&quot;templateId&quot;:&quot;BgColorChoicePill&quot;}" DisplayName="Status" FillInChoice="FALSE" Format="Dropdown" IsModern="TRUE" Name="Status" Title="Status" Type="Choice" ID="{a706570f-d857-45c6-8cd8-0aad90fe4ce3}" SourceID="{{listid:Projects}}" StaticName="Status" ColName="nvarchar4" RowOrdinal="0">
+                            <CHOICES>
+                                <CHOICE>In Progress</CHOICE>
+                                <CHOICE>Completed</CHOICE>
+                                <CHOICE>On Hold</CHOICE>
+                            </CHOICES>
+                        </Field>
+                        <Field DisplayName="Members" Format="Dropdown" IsModern="TRUE" List="UserInfo" Name="Members" Title="Members" Type="User" UserSelectionMode="0" UserSelectionScope="0" ID="{bb1e50ed-f761-4b15-adf4-367d02176012}" SourceID="{{listid:Projects}}" StaticName="Members" ColName="int1" RowOrdinal="0" />
+                        <Field DisplayName="StartDate" FriendlyDisplayFormat="Disabled" Format="DateOnly" IsModern="TRUE" Name="StartDate" Title="StartDate" Type="DateTime" ID="{6b151a60-5ca1-497e-ab90-7f05e7624fec}" SourceID="{{listid:Projects}}" StaticName="StartDate" ColName="datetime1" RowOrdinal="0" />
+                    </pnp:Fields>
+                    <pnp:DataRows KeyColumn="Title" UpdateBehavior="Overwrite">
+                        <pnp:DataRow>
+                          <pnp:DataValue FieldName="Title">Project 01</pnp:DataValue>
+                          <pnp:DataValue FieldName="Status">In Progress</pnp:DataValue>
+                        </pnp:DataRow>
+                        <pnp:DataRow>
+                          <pnp:DataValue FieldName="Title">Project 02</pnp:DataValue>
+                          <pnp:DataValue FieldName="Status">On Hold</pnp:DataValue>
+                        </pnp:DataRow>
+                        <pnp:DataRow>
+                          <pnp:DataValue FieldName="Title">Project 03</pnp:DataValue>
+                          <pnp:DataValue FieldName="Status">Completed</pnp:DataValue>
+                        </pnp:DataRow>
+                    </pnp:DataRows>
+                </pnp:ListInstance>
+            </pnp:Lists>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>
