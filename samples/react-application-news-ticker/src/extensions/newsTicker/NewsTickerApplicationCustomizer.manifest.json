@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
-  "id": "31a709b3-310f-4e85-bf46-b2bdd17af44d",
+  "id": "4358e70e-ec3c-4713-beb6-39c88f7621d1",
   "alias": "NewsTickerApplicationCustomizer",
   "componentType": "Extension",
   "extensionType": "ApplicationCustomizer",

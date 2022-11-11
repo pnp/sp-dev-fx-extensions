@@ -3,7 +3,7 @@
   "solution": {
     "name": "react-mega-menu-client-side-solution",
     "id": "466eb049-ab57-4a5d-ae51-0a8221cdb984",
-    "version": "0.1.0",
+    "version": "0.1.3",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [

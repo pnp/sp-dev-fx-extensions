@@ -1,0 +1,79 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "Share to Teams",
+        "id": "98fc8351-80c6-4dd8-9593-aa1127531ef2",
+        "version": "28.0.0.0",
+        "includeClientSideAssets": true,
+        "iconPath": "images/teamsicon.png",
+        "skipFeatureDeployment": true,
+        "isDomainIsolated": false,
+        "webApiPermissionRequests": [
+            {
+                "resource": "Microsoft Graph",
+                "scope": "ChannelMessage.Send"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "Team.ReadBasic.All"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "Channel.ReadBasic.All"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "TeamsTab.ReadWriteForTeam"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "TeamsTab.ReadWriteSelfForTeam"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "TeamsTab.ReadWrite.All"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "Sites.Read.All"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "Files.Read"
+            }
+        ],
+        "metadata": {
+            "shortDescription": {
+                "default": "Allows people to Share items with Teams"
+            },
+            "longDescription": {
+                "default": "This component allows users to share SharePoint Lists and Librares, Folders and FIles with members of a team. Permisions to the Lists and Librares, Folders and Files are granted to the Teams members, and a Chat Message or Tab is added to the selected Teams Channel"
+            },
+            "screenshotPaths": [],
+            "videoUrl": "",
+            "categories": []
+        },
+        "developer": {
+            "name": "",
+            "websiteUrl": "",
+            "privacyUrl": "",
+            "termsOfUseUrl": "",
+            "mpnId": ""
+        },
+        "features": [{
+            "title": "Application Extension - Share to Teams.",
+            "description": "Deploys a custom action to let users share FIles and Folders to Teams",
+            "id": "b1814e4d-46eb-4aab-9cc4-df952d0a4b56",
+            "version": "1.0.0.0",
+            "assets": {
+                "elementManifests": [
+                    "elements.xml",
+                    "ClientSideInstance.xml"
+                ]
+            }
+        }]
+    },
+    "paths": {
+        "zippedPackage": "solution/react-command-share-to-teams.sppkg"
+    }
+}

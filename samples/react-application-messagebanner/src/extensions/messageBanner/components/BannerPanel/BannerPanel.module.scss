@@ -1,0 +1,47 @@
+.BannerPanelContainer {
+  display: block;
+
+  .FieldContainer {
+    display: block;
+  }
+
+  .FieldSection {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    .FieldLabel {
+      font-weight: 500;
+    }
+
+    .FieldDescription {
+      font-size: 14px;
+      color: #333
+    }
+
+    .SwatchColorPicker {
+      & > table {
+        margin: 0 0 4px 0;
+      }
+    }
+  }
+
+  .FooterButtons {
+    display: flex;
+
+    & > * {
+      margin-right: 8px;
+    }
+
+    .ResetToDefaults {
+      font-size: 12px;
+      text-align: right;
+
+      &:hover {
+        cursor: pointer;
+        color: #999;
+        text-decoration: underline;
+      }
+    }
+  }
+}

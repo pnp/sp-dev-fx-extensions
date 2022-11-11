@@ -91,6 +91,7 @@ Version|Date|Comments
 0.1.0|August 3, 2018  | Updated to SPFx 1.5.1 and @pnp 5.6.0
 0.1.1|October 10, 2018  | Updated to SPFx 1.6.0 and @pnp 1.2.2
 0.1.2|December 10, 2018  | Updated to SPFx 1.7.0 and @pnp 1.2.7
+0.1.3|October 28, 2022  | Upgrade to SPFx 1.12.1
 
 
 ## Disclaimer
