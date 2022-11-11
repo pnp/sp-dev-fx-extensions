@@ -21,7 +21,7 @@ export class SharePointService {
         .items.getById(this._itemId)
         .select(Constants.INTERNAL_COLUMN_NAME)();
       const voters = item[Constants.INTERNAL_COLUMN_NAME];
-      return JSON.parse(voters);
+      return voters ? JSON.parse(voters) : [];
     } catch (error) {
       alert("Failed to get voters value.");
       return [];
@@ -32,7 +32,7 @@ export class SharePointService {
     try {
       const voters = await this.getVoters();
       // Ensure current user is not voted yet;
-      if (voters.indexOf(this._loginName) !== -1) return;
+      if (voters && voters.indexOf(this._loginName) !== -1) return;
 
       const newVoters = [...voters, this._loginName];
       await this._sp.web.lists
@@ -42,6 +42,7 @@ export class SharePointService {
           [Constants.INTERNAL_COLUMN_NAME]: JSON.stringify(newVoters),
         });
     } catch (error) {
+      console.log(error);
       alert("Failed to add vote.");
     }
   }
@@ -50,7 +51,7 @@ export class SharePointService {
     try {
       const voters = await this.getVoters();
       // Ensure current user is voted;
-      if (voters.indexOf(this._loginName) === -1) return;
+      if (voters && voters.indexOf(this._loginName) === -1) return;
 
       const newVoters = voters.filter((voter) => voter !== this._loginName);
       await this._sp.web.lists
