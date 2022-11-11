@@ -4,7 +4,7 @@
     "https": true,
     "serveConfigurations": {
         "default": {
-            "pageUrl": "https://russellwgove.sharepoint.com/sites/reactjsonschemaform/deleteme/Shared%20Documents/",
+            "pageUrl": "https://contoso.sharepoint.com/sites/mySite/Shared%20Documents/",
             "customActions": {
                 "02b09893-193a-47bb-85e6-0280fbfd41dc": {
                     "location": "ClientSideExtension.ListViewCommandSet.CommandBar",

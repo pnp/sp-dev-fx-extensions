@@ -47,8 +47,8 @@ This app requires access to the following Graph APIs:
  * TeamsTab.ReadWriteForTeam
  * TeamsTab.ReadWriteSelfForTeam
  * TeamsTab.ReadWrite.All
- 
-
+ * Sites.Read.All
+ * Files.Read
 
 ## Minimal Path to Awesome
 

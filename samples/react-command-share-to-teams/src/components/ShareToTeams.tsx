@@ -386,7 +386,7 @@ debugger;
   //   }
   //   return chatMessage;
   // }
-  function hasPermissions(existingPermissions: any, requiredPermissions: any) { // hig and low are strings , not numbers!
+  function hasPermissions(existingPermissions: any, requiredPermissions: any) { // high and low are strings , not numbers!
     // see : https://www.w3schools.com/js/js_bitwise.asp
     // and  : https://www.darraghoriordan.com/2019/07/29/bitwise-mask-typescript/
     const eHi = parseInt(existingPermissions["High"], 10);
@@ -557,8 +557,8 @@ debugger;
           onSelectedTeams={async (tagList: ITag[]) => {
             setSelectedTeam(tagList);
             setTeamPermissions(null);
-            setSelectedTeamChannels([]); // deselec any channel;s from old team
-            setCanManageTabs(true); // avoid flahing message that appears until we figure out id he has permissions
+            setSelectedTeamChannels([]); // deselect any channel;s from old team
+            setCanManageTabs(true); // avoid flashing message that appears until we figure out if he has permissions
             graph.teams.getById(tagList[0].key.toString())()
               .then(team => {
 

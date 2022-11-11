@@ -8,7 +8,8 @@
         "iconPath": "images/teamsicon.png",
         "skipFeatureDeployment": true,
         "isDomainIsolated": false,
-        "webApiPermissionRequests": [{
+        "webApiPermissionRequests": [
+            {
                 "resource": "Microsoft Graph",
                 "scope": "ChannelMessage.Send"
             },
