@@ -52,6 +52,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|March 16, 2019|Initial release
 1.1|March 23, 2019|Added pnp ps script for field provisioning
+1.2|February 11, 2023| Upgrade SPFx to version 1.12.1
 
 ## Disclaimer
 
