@@ -215,7 +215,7 @@ application setup for use in Azure Bot Service.
     - Find "API Access", approve "<YOUR_APP_Name>"
 
 - (Opt. for hosted bot service) Config CORS \
-  [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) must be set on bot app service to enable SharePoint client to get resource from bot service. Follow these steps to add your workbench to bot app service CORS configration:
+  [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) must be set on bot app service to enable SharePoint client to get resource from bot service. Follow these steps to add your workbench to bot app service CORS configuration:
     1. Go to your azure portal
     2. Navigate to your bot app service, search for CORS settings
     3. Add https://localhost:4321 and https://<YOUR_SITE>.sharepoint.com to CORS origins

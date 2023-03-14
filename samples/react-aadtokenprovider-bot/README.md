@@ -6,7 +6,7 @@ This sample demonstrates how to integrate a bot within a SharePoint Online porta
 
 ### When to use this pattern? ###
 This sample is suitable when you want to create a bot using the web chat channel for a SharePoint site **only**.
-However, if you need to access protected APIs in your bot but also want mutliple channels (like, Microsoft Teams, Skype, etc.), you might use in combination the OAuth2 authorization grant flow implementation for Node.js instead. You can refer to this sample [https://github.com/SharePoint/sp-dev-fx-extensions/tree/main/samples/react-adal-bot](https://github.com/SharePoint/sp-dev-fx-extensions/tree/main/samples/react-adal-bot) to get started.
+However, if you need to access protected APIs in your bot but also want multiple channels (like, Microsoft Teams, Skype, etc.), you might use in combination the OAuth2 authorization grant flow implementation for Node.js instead. You can refer to this sample [https://github.com/SharePoint/sp-dev-fx-extensions/tree/main/samples/react-adal-bot](https://github.com/SharePoint/sp-dev-fx-extensions/tree/main/samples/react-adal-bot) to get started.
 
 <p align="center">
   <img src="./images/react-aadtokenprovider-bot.gif"/>
@@ -58,7 +58,7 @@ Version|Date|Comments
  
 ### 1- Setup the web API permissions ###
 
-To access the Microsoft Graph API, you will need to register new API persmissions in the SPFx `package-solution.json` file:
+To access the Microsoft Graph API, you will need to register new API permissions in the SPFx `package-solution.json` file:
 
 ```
 "webApiPermissionRequests": [

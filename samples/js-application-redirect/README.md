@@ -55,7 +55,7 @@ Version|Date|Comments
 
 ## Features
 
-Key features demostrated by this solution:
+Key features demonstrated by this solution:
 
 * PnPjs usage in the solution
 * Dynamic creation of the list if it's missing

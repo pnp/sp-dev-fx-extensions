@@ -1,10 +1,10 @@
-# Spfx Applications Customiser Sites in Hub site switcher
+# Spfx Applications Customizer Sites in Hub site switcher
 
 ## Summary
 This sample shows how to get the sites that are part of a Hub Site, and renders a drop down to jump directly into a site. The customiser only 
 renders if the site is a Hub site.
 
-![Sites in Hub site switcher app customiser](./assets/react-application-sites-hubsite-switcher.png)
+![Sites in Hub site switcher app customizer](./assets/react-application-sites-hubsite-switcher.png)
 
 __Note__: The interesting part is that Microsoft is offering an API to get information about the sites that are part of the HubSite, but that API is out of SharePoint (_westeurope3-sphomep.svc.ms/api/v1/sites/hub_). 
 
@@ -46,11 +46,11 @@ Version|Date|Comments
 
 ## Features
 
-Sample SharePoint Framework application customiser rendering a drop down in header showing the sites in the Hub site, and a direct link to jump into them.
+Sample SharePoint Framework application customizer rendering a drop down in header showing the sites in the Hub site, and a direct link to jump into them.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
-* Header customiser with React components
+* Header customizer with React components
 * Using _sphomeservice/context_ api to get a valid Bearer token for the Hub Api
 * Using the Hub Api that is out of SharePoint (_{locaiton}-sphomep.svc.ms/api/v1/sites/hub_)
 * Using async / await for the async calls

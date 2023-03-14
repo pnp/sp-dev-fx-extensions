@@ -1,4 +1,4 @@
-# SPFx Applications Customiser CSS Injection
+# SPFx Applications Customizer CSS Injection
 
 ## Summary
 
@@ -6,7 +6,7 @@ This sample shows how to inject a custom Cascading Style Sheet (CSS) on modern p
 
 ![Sample super ugly CSS to illustrate custom CSS injection](./assets/sampleresults.png)
 
-> **Note**: This code is provided as a sample only. Keep in mind that Microsoft may change page elements and styles at any time, rendering your custom CSS useless. It is preferrable to use well-known HTML element placeholders.
+> **Note**: This code is provided as a sample only. Keep in mind that Microsoft may change page elements and styles at any time, rendering your custom CSS useless. It is preferable to use well-known HTML element placeholders.
 
 When you need to make minor cosmetic changes to modern pages (e.g.:  match your corporate branding guidelines) and cannot use placeholders,you can create a custom CSS and inject on every modern page.
 
@@ -122,7 +122,7 @@ If you wish to do so, you can remove the solution package from your tenant's app
 
 ## Features
 
-Sample SharePoint Framework Application Customiser which injects a custom CSS in the HTML header.
+Sample SharePoint Framework Application Customizer which injects a custom CSS in the HTML header.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
