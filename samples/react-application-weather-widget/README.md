@@ -30,11 +30,9 @@ The App require API Key to call the Weather API. Please go to [openweathermap](h
 ```
 
 
-## Solution
+## Contributors
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| react-application-weather-widget |  [Rishabh Shukla](https://github.com/rishabhshukla12)
+- [Rishabh Shukla](https://github.com/rishabhshukla12)
 
 ## Version history
 
@@ -47,8 +45,8 @@ The App require API Key to call the Weather API. Please go to [openweathermap](h
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  - **npm install**
-  - **gulp serve**
+  - `npm install`
+  - `gulp serve`
 
 
 
