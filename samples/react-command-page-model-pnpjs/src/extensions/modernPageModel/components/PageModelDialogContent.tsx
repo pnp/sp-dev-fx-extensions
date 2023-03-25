@@ -14,7 +14,7 @@ import {
 }
   from 'office-ui-fabric-react';
 
-import * as strings from 'ModernPageModelCommandSetStrings';
+//import * as strings from 'ModernPageModelCommandSetStrings';
 import { PageModelHelper } from './PageModelHelper';
 import { sp as sp } from "@pnp/sp";
 import "./PageModelDialog.module.scss";
@@ -43,9 +43,9 @@ export default class PageModelDialogContent extends React.Component<IPageModelDi
       hideDialog: false,
       optionSelected: 'A',
       newPageName: "",
-      selectedItem: null,
-      selectedItems: null,
-      allItems: null,
+      selectedItem: { key: "" },
+      selectedItems: [],
+      allItems: [],
       isLoading: false,
       creationDone: false
     };
@@ -103,7 +103,7 @@ export default class PageModelDialogContent extends React.Component<IPageModelDi
                 required={true}
                 disabled={this.state.isLoading}
               />
-              <TextField label="Page name" value={this.state.newPageName} onChanged={this._onChangeNewPageName} placeholder="Insert page name"
+              <TextField label="Page name" value={this.state.newPageName} onChange={this._onChangeNewPageName} placeholder="Insert page name"
                 readOnly={this.state.isLoading}
               />
 
@@ -165,7 +165,7 @@ export default class PageModelDialogContent extends React.Component<IPageModelDi
 
   private _executeAction = (): void => {
     this.setState({ isLoading: true });
-    let selected = this.state.selectedItem ? this.state.selectedItem.key : "";
+    let selected = (this.state.selectedItem && this.state.selectedItem != undefined)? this.state.selectedItem.key : "";
     var resu: Promise<string> = PageModelHelper.createCustomPage(this.state.newPageName, this.state.optionSelected, selected);
     resu.then(ss => {
       console.log(ss);
@@ -183,9 +183,9 @@ export default class PageModelDialogContent extends React.Component<IPageModelDi
     this.setState({ optionSelected: option.key });
   }
 
-  private _showDialog = (): void => {
-    this.setState({ hideDialog: false });
-  }
+  // private _showDialog = (): void => {
+  //   this.setState({ hideDialog: false });
+  // }
 
   private _closeDialog = (): void => {
     this.props.close();

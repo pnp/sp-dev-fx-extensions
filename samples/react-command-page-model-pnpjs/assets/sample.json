@@ -9,7 +9,7 @@
       "A SPFx extension using @pnp/sp that allow creating Modern Pages based on prefilled modern pages marked as \u0022Page Model\u0022, inside the Site Pages Library, and code defined pages. Users can select a Modern page as Model just setting a custom property page named \u0022Is Model\u0022 to \u0022Yes\u0022. People often need to create periodically editorial pages with the same composition, sections structure and webpart configuration, in order to give users the same users experience between pages with different contents but with the same communicative purpose"
     ],
     "creationDateTime": "2019-03-23",
-    "updateDateTime": "2019-03-23",
+    "updateDateTime": "2023-02-15",
     "products": [
       "SharePoint"
     ],
@@ -20,10 +20,10 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.7.1"
+        "value": "1.12.1"
       }
     ],
-"tags": [],
+    "tags": [],
     "categories": [
       "SPFX-COMMAND-EXTENSION"
     ],
@@ -47,6 +47,11 @@
         "company": "Avanade Italy",
         "pictureUrl": "https://github.com/fredupstair.png",
         "name": "Federico Porceddu"
+      },
+      {
+        "gitHubAccount": "mohammadamer",
+        "name": "Mohammad Amer",
+        "pictureUrl": "https://github.com/mohammadamer.png"
       }
     ],
     "references": [
