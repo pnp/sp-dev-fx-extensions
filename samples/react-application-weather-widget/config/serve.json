@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "70b3e3d6-b25e-42af-8e95-841e87355635": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "location": "Toronto"
+          }
+        }
+      }
+    },
+    "weatherWidget": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "70b3e3d6-b25e-42af-8e95-841e87355635": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "location": "Toronto"
+          }
+        }
+      }
+    }
+  }
+}
