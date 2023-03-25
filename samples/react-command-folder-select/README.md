@@ -33,7 +33,7 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
-- Open the reposistory in VS Code or an editor of your choice.
+- Open the repository in VS Code or an editor of your choice.
 - Update the pageUrl in 'config/serve.json' to the URL of a document library you want to test against.
 - in the command line run:
   - `npm install`
@@ -45,7 +45,7 @@ Version|Date|Comments
 ## Features
 This extension illustrates the following concepts:
 
-- Retrieiving top level folders of a document library using [PnP Js](https://pnp.github.io/pnpjs/).
+- Retrieving top level folders of a document library using [PnP Js](https://pnp.github.io/pnpjs/).
 
 
 <img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-folder-select" />

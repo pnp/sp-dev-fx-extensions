@@ -2,7 +2,7 @@
 
 ## Summary
 
-With the Modern Pages, majority of the screen's viewport is occupied by the Suite Bar and Header, which doesnt show the actual content of any intranet site.
+With the Modern Pages, majority of the screen's viewport is occupied by the Suite Bar and Header, which doesn't show the actual content of any intranet site.
 
 This application customizer adds a toggle button on all the Modern Pages which will toggle (show/hide) the Site Header, pulling the content to the top and giving more reading space for the users.
 ![react-command-print](./assets/screenshot.gif)

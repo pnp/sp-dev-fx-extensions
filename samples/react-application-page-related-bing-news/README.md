@@ -13,7 +13,7 @@ This sample shows how to use the Bing Search API (Cognitive Services) to get new
 
 You can find the supported categories per market in this link: [https://docs.microsoft.com/en-us/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news-categories-by-market](https://docs.microsoft.com/en-us/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news-categories-by-market)
 
-![Application Customiser using Bing Search API](./assets/related-bing-news.png)
+![Application Customizer using Bing Search API](./assets/related-bing-news.png)
 
 ## Used SharePoint Framework Version
 
@@ -66,7 +66,7 @@ Version|Date|Comments
 
 ## Features
 
-Sample SharePoint Framework application customiser calling the Cognitive Services Bing Search API and bringing back related news articles based in a value in a page field.
+Sample SharePoint Framework application customizer calling the Cognitive Services Bing Search API and bringing back related news articles based in a value in a page field.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 

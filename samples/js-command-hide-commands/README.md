@@ -86,7 +86,7 @@ While it is not recommended to manipulate the SharePoint UI using it's DOM, this
 Description of the extension with possible additional details than in short summary.
 This extension illustrates the following concepts:
 
-- Can hide commmands from specific lists or libraries
+- Can hide commands from specific lists or libraries
 - Can hide commands from users who lack specific permissions.
 
 

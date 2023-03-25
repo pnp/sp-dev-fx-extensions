@@ -20,7 +20,7 @@
         "@pnp/polyfill-ie11": "^2.0.2",
         "@pnp/sp": "^2.2.0",
         "file-saver": "^2.0.5",
-        "jszip": "^3.6.0",
+        "jszip": "^3.8.0",
         "office-ui-fabric-react": "6.214.1",
         "react": "16.8.5",
         "react-dom": "16.8.5"

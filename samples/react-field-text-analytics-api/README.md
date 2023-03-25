@@ -57,12 +57,12 @@ Version|Date|Comments
 * register a Cognitive Services Vision API in your Azure subscription
 * create a List and add a Field called "SPFxSentimentIcon" (type: Number)
 * clone repo
-* update serve.json pointing to your List URL, Text Analytics API Key, and Field name to analyse
+* update serve.json pointing to your List URL, Text Analytics API Key, and Field name to analyze
 * run _gulp serve --configuration=sentimentAnalytics_
 
 ## Features
 
-Sample SharePoint Framework list field customiser calling the Cognitive Services Text Analytics API and showing the _sentiment_ of the Text with an Icon.
+Sample SharePoint Framework list field customizer calling the Cognitive Services Text Analytics API and showing the _sentiment_ of the Text with an Icon.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 

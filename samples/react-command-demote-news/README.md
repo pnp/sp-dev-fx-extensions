@@ -49,7 +49,7 @@ Version|Date|Comments
 
 ## More Complete Path to Awesome
 
-The requirements to get the command in this repository up and running need care and attemtion. Prepare the device to be used as follows (Windows 10 VM recommended)
+The requirements to get the command in this repository up and running need care and attention. Prepare the device to be used as follows (Windows 10 VM recommended)
 - Install Node.js LTS 10.x from https://nodejs.org/download/release/v10.24.1/.
 - Install Python 2.7.18 (or later version of Python 2.7). Version 2.7.18 can be downloaded from https://www.python.org/downloads/release/python-2718/
 - Install Chocolatey using the PowerShell command  

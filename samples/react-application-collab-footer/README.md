@@ -7,7 +7,7 @@ This application customizer provides you the ability to include a footer designe
 
 ![Collaboration Footer](https://github.com/pnp/sp-starter-kit/raw/master/assets/images/components/ext-collab-footer.gif)
 
-Screenshot is from the v1 version, which worked using taxonomy term set (updated when v2 avaialble). Taxonomy dependency is removed from the v2 implementation.
+Screenshot is from the v1 version, which worked using taxonomy term set (updated when v2 available). Taxonomy dependency is removed from the v2 implementation.
 
 Details on v1 implementation at https://github.com/SharePoint/sp-starter-kit/blob/master/documentation/components/ext-collab-footer.md
 
@@ -27,9 +27,9 @@ In v2 release repackaged as it's own solution to provide more flexibility from d
 
 ## Prerequisites
 
-The shared links are retrieved from a term set called `PnP-CollabFooter-SharedLinks`. This termset's intended use must be set for to be used for site navigation. The url is set in the terms property "simple link or header". The termset is created when applying the pnp tenant template found in the instructrions. The xml used to provision the termset can be found [here](../../provisioning/starterkit.xml).
+The shared links are retrieved from a term set called `PnP-CollabFooter-SharedLinks`. This termset's intended use must be set for to be used for site navigation. The url is set in the terms property "simple link or header". The termset is created when applying the pnp tenant template found in the instructions. The xml used to provision the termset can be found [here](../../provisioning/starterkit.xml).
 
-Personalized links only works if a custom property called `PnP-CollabFooter-MyLinks` has been added on the user profile service. This is string based property with maximum lenght. As there's no APIs to automate the property creation to the user profile service, this property will need to be manually created to enable the personalized links capability. Instructions to set up the custom property can be found [here](../../documentation/tenant-settings.md#create-a-custom-property-in-the-user-profile-service).
+Personalized links only works if a custom property called `PnP-CollabFooter-MyLinks` has been added on the user profile service. This is string based property with maximum length. As there's no APIs to automate the property creation to the user profile service, this property will need to be manually created to enable the personalized links capability. Instructions to set up the custom property can be found [here](../../documentation/tenant-settings.md#create-a-custom-property-in-the-user-profile-service).
 
 Both property names can be changed in the SPFx extension properties. 
 
@@ -64,7 +64,7 @@ Version|Date|Comments
 
 ## Features
 
-Key features demostrated by this solution:
+Key features demonstrated by this solution:
 
 * PnPjs usage in the solution
 * Dynamic creation of the list if it's missing

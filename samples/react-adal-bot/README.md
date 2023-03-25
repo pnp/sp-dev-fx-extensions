@@ -126,7 +126,7 @@ LUIS_API_KEY | The LUIS api key | "e26d277b6c8b4d02b549d5088045e3c3". You can ge
 
 The SharePoint extension does not store any settings directly in the code. They are fetched from the tenant property bag using the REST APIs. Once read, they are stored in the browser local storage to improve performances. 
 
-- In the solution, modifiy the **Set-TenantProperties.ps1** PowerShell script to add your own values as follow: 
+- In the solution, modify the **Set-TenantProperties.ps1** PowerShell script to add your own values as follow: 
 
   | Setting                   | Value
   | --------------------------| -------------------------------------------------------------|

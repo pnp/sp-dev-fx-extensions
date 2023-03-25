@@ -74,7 +74,7 @@ In order to deploy the sample solution in a real environment, or at least in ord
   * `gulp bundle --ship`
   * `gulp package-solution --ship`
 * upload the content of the ./temp/deploy subfolder of the sample root folder into the target hosting environment
-* add to the "Apps for SharePoint" library of the AppCatalog in your tenant the spfx-discuss-now.spppkg file that you will find under the ./sharepoint/solution subfolder of the sample root folder
+* add to the "Apps for SharePoint" library of the AppCatalog in your tenant the spfx-discuss-now.sppkg file that you will find under the ./sharepoint/solution subfolder of the sample root folder
 * add the spfx-discuss-now app to any target site where you want to use the extension
 
 The sample solution will use the SharePoint Feature Framework to automatically provision the command set extension to all the document libraries (List Type 101) of the target site. If you want to manually bind the extension to any other custom library, please refer to the PowerShell script [DiscussNowProvisionCommandSet.ps1](./DiscussNowProvisionCommandSet.ps1), which is available in the root folder of this sample. Please, notice that the PowerShell script provides a sample code excerpt to bind the command set to all the document libraries of the target site using PnP PowerShell, as well 

@@ -17,7 +17,7 @@ A sample SPFX list view command set is also included to demonstrate how to call 
 
 ## Prerequisites
  
-Solution requires azure subscription. Installer must have tenant admin priveleges to approve the application request/
+Solution requires azure subscription. Installer must have tenant admin privileges to approve the application request/
 
 ## Solution
 
@@ -37,6 +37,6 @@ Version|Date|Comments
 
 ## Minimal Path to Awesome
 
-Build and install instructions for both the azure function and the spfx extension  can be found in the file at misc/Gernerating a word.docx
+Build and install instructions for both the azure function and the spfx extension  can be found in the file at misc/Generating a word.docx
 
 <img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-generate-document" />

@@ -51,7 +51,7 @@ Version|Date|Comments
 
 ## Features
 
-This example contains an SPFX Extension the type of Application Customizerso, with a Webpart to show the capabilities of the dynamic types.
+This example contains an SPFX Extension the type of Application Customizer, with a Webpart to show the capabilities of the dynamic types.
 
 Web parts in this solution illustrate the following concepts on top of the SharePoint Framework:
 

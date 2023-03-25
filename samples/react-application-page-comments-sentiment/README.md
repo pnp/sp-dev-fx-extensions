@@ -3,7 +3,7 @@
 ## Summary
 This sample shows how to use the Text Analytics API (Cognitive Services) to render a rating icon based on the different comments in page.
 
-![Application Customiser using Text Analytics API](./assets/react-application-page-comments-sentiment.png)
+![Application Customizer using Text Analytics API](./assets/react-application-page-comments-sentiment.png)
 
 ## Used SharePoint Framework Version
 
@@ -47,7 +47,7 @@ Version|Date|Comments
 
 ## Features
 
-Sample SharePoint Framework application customiser calling the Cognitive Services Text Analytics API and showing the _sentiment_ based on the top 3 page comments.
+Sample SharePoint Framework application customizer calling the Cognitive Services Text Analytics API and showing the _sentiment_ based on the top 3 page comments.
 The sentiment is rendered using a rating component.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
