@@ -3,7 +3,7 @@
   "solution": {
     "name": "react-command-modern-page-pnpjs-client-side-solution",
     "id": "66c2f511-65c7-4aed-9af5-ce68c7a7b69b",
-    "version": "1.0.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "features": [
       {

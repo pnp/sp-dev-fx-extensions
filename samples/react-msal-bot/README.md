@@ -23,7 +23,7 @@ This sample demonstrates how to integrate a bot within a SharePoint Online porta
 
 ### When to use this pattern? ###
 This sample is suitable when you want to create a bot using the web chat channel **only**, for instance to integrate a bot assistant in your SharePoint intranet portal. 
-However, if you need to access protected APIs in your bot but also want mutliple channels (like, Microsoft Teams, Skype, etc.), you might use the OAuth2 authorization grant flow implementation for Node.js instead. You can refer to this sample [https://github.com/FranckyC/SharePointBot](https://github.com/FranckyC/SharePointBot) to get started.
+However, if you need to access protected APIs in your bot but also want multiple channels (like, Microsoft Teams, Skype, etc.), you might use the OAuth2 authorization grant flow implementation for Node.js instead. You can refer to this sample [https://github.com/FranckyC/SharePointBot](https://github.com/FranckyC/SharePointBot) to get started.
 
 <p align="center">
   <img src="./images/react-msal-bot.gif"/>
@@ -80,7 +80,7 @@ To access the Microsoft Graph API, you will need to register a new app in the Az
   <img width="70%" src="./images/aad_app_setup.png"/>
 </p>
 
-- Keep the permissions as is. They will determined at the runtime by the application. Refer to the **GraphBot.tsx** file to modifiy them according to your Microsoft graph queries.
+- Keep the permissions as is. They will determined at the runtime by the application. Refer to the **GraphBot.tsx** file to modify them according to your Microsoft graph queries.
 
 ### 2- Create the LUIS Model ###
 
@@ -139,11 +139,11 @@ To access the Microsoft Graph API, you will need to register a new app in the Az
     <img width="70%" src="./images/direct_line.png"/>
   </p>  
 
-### 4- Store your environement settings in the tenant property bag ###
+### 4- Store your environnement settings in the tenant property bag ### ###
 
 The SharePoint extension does not store any settings directly in the code. They are fetched from the tenant property bag using the REST APIs. Once read, they are stored in the browser local storage to improve performances. 
 
-- In the solution, modifiy the **Set-TenantProperties.ps1** PowerShell script to add your own values as follow: 
+- In the solution, modify the **Set-TenantProperties.ps1** PowerShell script to add your own values as follow: 
 
   | Setting                   | Value
   | --------------------------| -------------------------------------------------------------|

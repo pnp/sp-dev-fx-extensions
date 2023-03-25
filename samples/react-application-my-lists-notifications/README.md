@@ -2,7 +2,7 @@
 
 ## Summary
 
-This application extension alows user receive notifications from selected lists or libraries
+This application extension alow user receive notifications from selected lists or libraries
 
 ![myListNotifications](./assets/myListsNotifications.gif)
 <br/>
@@ -75,7 +75,7 @@ Description of the extension that expands upon high-level summary above.
 
 This extension illustrates the following concepts:
 
-- Use Miscrosoft Grapg API's to get activities from lists / Library
+- Use Microsoft Graph API's to get activities from lists / Library
 - Use Microsoft Graph Search to search lists / Library
 - Save custom settings on Apps OnDrive folder
 - Use SocketIO server of lists to get real time notifications

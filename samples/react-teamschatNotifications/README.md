@@ -14,7 +14,7 @@ On a message can click to open teams and see all conversation.
 ![signalR](./assets/diagram.png)
  
 
-### The SPFx Teams Notifications Application Customizer use the folowing services:
+### The SPFx Teams Notifications Application Customizer use the following services:
 
 #### MSGraph
 
@@ -27,7 +27,7 @@ Azure SignalR - to receive new messages from chat message Webhook and send it to
 
 Azure Table Storage - To save information about subscriptions expiration date and time 
 
-Azure Key Vault  - to save secrects used on Azure Functions
+Azure Key Vault  - to save secrets used on Azure Functions
 
 ### Azure Functions 
     
@@ -88,7 +88,7 @@ These commands produce the following:
 
 ##  Deploy to App Catalog
 
-Add the packahe to Tenant App Catalog and global Deploy de Solution.  After goto SharePoint Admin Center and approve the required permisstions. 
+Add the package to Tenant App Catalog and global Deploy de Solution.  After goto SharePoint Admin Center and approve the required permissions. 
 
 The Application Customizer is installed globally (tenant-wide), and an entry was added in the list "Tenant Wide Extensions" located in Tenant App Catalog Site. 
 

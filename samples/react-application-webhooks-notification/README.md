@@ -56,7 +56,7 @@ Version|Date|Comments
 ## Prerequisites
 
 > In order to use properly this solution is necessary follow these steps:
-> * Istall a webserver that will receive the webhooks, for this PoC I created a NodeJs Application hosted on Azure take a look on my solution [https://github.com/giuleon/SharePoint-Webhooks-Broadcaster](https://github.com/giuleon/SharePoint-Webhooks-Broadcaster)
+> * Install a webserver that will receive the webhooks, for this PoC I created a NodeJs Application hosted on Azure take a look on my solution [https://github.com/giuleon/SharePoint-Webhooks-Broadcaster](https://github.com/giuleon/SharePoint-Webhooks-Broadcaster)
 > * run the Powershell script **ProvisionList.ps1** in order to provision the list Events which is required for this SPFx extension
 > * Create a new webhooks subscription for the SharePoint List **Events** (that will be installed by running the script **ProvisionList.ps1**), as you prefer, across your solution or Postman, please read the following guideline to achieve this goal [https://docs.microsoft.com/en-us/sharepoint/dev/apis/webhooks/overview-sharepoint-webhooks](https://docs.microsoft.com/en-us/sharepoint/dev/apis/webhooks/overview-sharepoint-webhooks)
 > * The SPFx extension has been developed (GetChanges API) to notify new items added in the **Events** list
@@ -67,7 +67,7 @@ Version|Date|Comments
 * in the command line run
   * `npm i`
   * `gulp serve --nobrowser`
-* If you want to debug the solution append the following query string parameters to a moder page URL
+* If you want to debug the solution append the following query string parameters to a mode page URL
   * Insert your Node JS app URL for the property **WebhooksSocketServer**
 ```text
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"c0c009bd-5299-4c13-9826-9068022ce804":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"WebhooksSocketServer":"https://webhooksbroadcaster.azurewebsites.net"}}}

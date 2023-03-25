@@ -68,9 +68,9 @@ Teams has multiple ways to add Tabs for  content that resides in SharePoint with
 
 This command set enables each of the above  options from within SharePoint.
 
-As noted in the artice above, when adding a file tab you have the option of using the Teams Word, Excel, PowerPoint, and PDF built-in tabs (com.microsoft.teamspace.tab.file.staticviewer.word, .excel, .powerpoint, .pdf) or we can use the built in  'SharePoint page and list tabs'(2a527703-1f6f-4559-a332-d8a7d288cd88) to show a SharePoint page that shows the document.
+As noted in the article above, when adding a file tab you have the option of using the Teams Word, Excel, PowerPoint, and PDF built-in tabs (com.microsoft.teamspace.tab.file.staticviewer.word, .excel, .powerpoint, .pdf) or we can use the built in  'SharePoint page and list tabs'(2a527703-1f6f-4559-a332-d8a7d288cd88) to show a SharePoint page that shows the document.
 
-The configuation parameter called 'fileSharingMethod' controls which type of tab is added for files. Setting fileSharingMethod to 'page' causes the app to add file tabs using the 'SharePoint page and list tabs'(teamsAppId 2a527703-1f6f-4559-a332-d8a7d288cd88).A sample is shown here:
+The configuration parameter called 'fileSharingMethod' controls which type of tab is added for files. Setting fileSharingMethod to 'page' causes the app to add file tabs using the 'SharePoint page and list tabs'(teamsAppId 2a527703-1f6f-4559-a332-d8a7d288cd88).A sample is shown here:
 ![file displayed in page mode](assets/filepage.png)
 
 Setting fileSharingMethod to 'native' causes the app to add file tabs using the Teams Word, Excel, PowerPoint, and PDF built-in tabs (teamsAppId com.microsoft.teamspace.tab.file.staticviewer.word, .excel, .powerpoint, .pdf). A sample is shown here:
@@ -80,9 +80,9 @@ For non-Office documents, the app will revert to showing the file using the 'Sha
 
 You can also disable file sharing completely by setting allowFileSharing to false. You can also set the specific file extensions you want to allow sharing be setting the supportedFileTypes property.
 
-The configuation parameters called 'librarySharingMethod' and 'folderSharingMethod' control which type of tab is added for libraries and folders. Setting librarySharingMethod to 'page' causes the app to add library tabs using the 'SharePoint page and list tabs'(teamsAppId 2a527703-1f6f-4559-a332-d8a7d288cd88). A sample is shown here:
+The configuration parameters called 'librarySharingMethod' and 'folderSharingMethod' control which type of tab is added for libraries and folders. Setting librarySharingMethod to 'page' causes the app to add library tabs using the 'SharePoint page and list tabs'(teamsAppId 2a527703-1f6f-4559-a332-d8a7d288cd88). A sample is shown here:
 ![library displayed in page mode](assets/librarypage.png)
-Note that in 'page' mode, a limited header bar is shown with the SharePoint commands and the columns can be sorted and filtered and grouped. You can also select which view you would like to show in the Teams Tab. No Open in SharePoint button is shown when viewerd in teams.
+Note that in 'page' mode, a limited header bar is shown with the SharePoint commands and the columns can be sorted and filtered and grouped. You can also select which view you would like to show in the Teams Tab. No Open in SharePoint button is shown when viewers in teams.
 
 Setting librarySharingMethod to 'native' causes the app to add file tabs using the Document library tabs built-in tabs (teamsAppId com.microsoft.teamspace.tab.files.sharepoint). The same setup works for folders as well using 'folderSharingMethod'  A sample is shown here:
 ![library displayed in native mode](assets/libraryNative.png)
@@ -92,14 +92,14 @@ view when sharing using this method.
 
 You can also disable library and folder sharing completely by setting allowLibrarySharing and allowFolderSharing to false.
 
-If you do not have permissions to share the selected library, folder, or file, the Share To Teams commmand will be unavailable because you do not have permission to alter permissions. When you share a library, folder, or file the the app breaks role inheritance on the object and grants the O365 Group backing the Team the permission you selected on the given object,
+If you do not have permissions to share the selected library, folder, or file, the Share To Teams command will be unavailable because you do not have permission to alter permissions. When you share a library, folder, or file the the app breaks role inheritance on the object and grants the O365 Group backing the Team the permission you selected on the given object,
 
-Also, if you select a team that you do not hape permissions to add tabs to you will get an error message stating so:
+Also, if you select a team that you do not have permissions to add tabs to you will get an error message stating so:
 ![library displayed in native mode](assets/noPermissions.png)
 
 
 Notes: 
-1. If the SharePint site does not allow external Sharing, team members outsied your domain (guests) will not be able to view the items shared.
+1. If the SharePint site does not allow external Sharing, team members outside your domain (guests) will not be able to view the items shared.
 
 2. If you share something with a Teams Private Channel, all members of the Team are granted access to the item.
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="WeatherWidget"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="70b3e3d6-b25e-42af-8e95-841e87355635"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

@@ -58,7 +58,7 @@ contoso.sharepoint.com/Lists/Orders/AllItems.aspx?debugManifestsFile=https://loc
 
 ## Features
 
-Sample SharePoint Framework list field customiser using PNPJs to get the current user permission and displaying a corresponding icon and text.
+Sample SharePoint Framework list field customizer using PNPJs to get the current user permission and displaying a corresponding icon and text.
 
 This sample illustrates the following concepts on top of the SharePoint Framework:
 
