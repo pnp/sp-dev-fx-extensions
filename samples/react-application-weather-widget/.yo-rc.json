@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.18.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "mx-weather-widget",
+    "libraryId": "4fc46d64-fe2b-478e-8f56-57012ec39bf5",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "mx-weather-widget",
+    "solutionShortDescription": "mx-weather-widget description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}
