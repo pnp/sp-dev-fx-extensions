@@ -73,7 +73,7 @@ This extension illustrates the following concepts:
 * No need for additional plugins
 * No browser dependency
 * No IQY files
-* No additional signin required to render rows in spreadsheet
+* No additional signing required to render rows in spreadsheet
 * Exports only columns you see in the view
 
 ## Debug URL for testing

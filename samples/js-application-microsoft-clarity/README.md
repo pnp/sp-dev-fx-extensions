@@ -6,7 +6,7 @@ Creating engagement and measuring the success of any intranet is always a challe
 
 Microsoft Clarity will gives you the recording of the sessions and heat maps of the user interaction with the site, this will help to find and fix the areas of your pages that are not working as you expect.
 
-Have a look to article [How to add Microsoft Clarity to modern SharePoint](https://sharepoint.handsontek.net/2020/12/06/add-microsoft-clarity-modern-sharepoint/) to get detailed intructions on how to deploy this solution to SharePoint.
+Have a look to article [How to add Microsoft Clarity to modern SharePoint](https://sharepoint.handsontek.net/2020/12/06/add-microsoft-clarity-modern-sharepoint/) to get detailed instructions on how to deploy this solution to SharePoint.
 
 ![Clarity](./assets/dashboard.gif)
 

@@ -1,7 +1,7 @@
 # SPFx Application Customizer for displaying notification if a team is set as archived
 
 ## Summary
-This sample demonstrates how to check is current team linked to team site set as archived from Microsoft Graph API. If team is archived, notification is diplayed to end-user on header placeholder. 
+This sample demonstrates how to check is current team linked to team site set as archived from Microsoft Graph API. If team is archived, notification is displayed to end-user on header placeholder. 
 
 ![picture of the extension in action, if possible](./assets/screenshot.png)
 

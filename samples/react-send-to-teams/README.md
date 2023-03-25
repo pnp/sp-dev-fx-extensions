@@ -66,8 +66,8 @@ Please see the pre-requisites
 
 SHow how to create an adaptive card using the adaptive card library and how to send to use Microsoft Graph API to send it
 
-- Create Adative Card using adaptivecard jscript library
-- Use Microsoft Grap API to send Adapative Card
+- Create Adaptive Card using adaptivecard jscript library
+- Use Microsoft Graph API to send Adaptive Card
 
 ## Debug URL for testing
 Here's a debug URL for testing around this sample. 

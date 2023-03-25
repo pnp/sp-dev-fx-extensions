@@ -1,7 +1,7 @@
 # Application Intranet Search Box
 
 ## Summary
-This demonstrates how to use an SPFx Application Customiser to inject an additional search box into the header of each page, which uses the "Search Settings" (at either the Site Collection or Sub-Site level) to determine the redirect page.
+This demonstrates how to use an SPFx Application Customizer to inject an additional search box into the header of each page, which uses the "Search Settings" (at either the Site Collection or Sub-Site level) to determine the redirect page.
 
 This allows you to provide an integrated and branded search box to send users to a "classic" Search Center, or custom page, rather than the OOTB "modern search" page.  
 
@@ -56,13 +56,13 @@ Version|Date|Comments
   - `gulp serve`
 
 ## Features
-This example includes an SPFx "Application Customiser" extension using placeholders to inject content into the page header.
+This example includes an SPFx "Application Customizer" extension using placeholders to inject content into the page header.
 
 This also makes use of:
 
-- Use of localised strings for multi-lingual support
+- Use of localized strings for multi-lingual support
 - Use of compiled SCSS modules for branding and setting dynamic identifiers in JS code
-- SP Fabric Core - For using theme colour "variables" in SCSS styles
+- SP Fabric Core - For using theme color "variables" in SCSS styles
 - SPHttpClient library to retrieve search settings for the site it is running on
 
 ## Debug URL for testing

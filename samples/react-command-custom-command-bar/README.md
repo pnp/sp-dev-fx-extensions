@@ -46,7 +46,7 @@ This project contains SharePoint Framework extensions that illustrates next feat
 * command set customizer
 * usage of Office UI Fabric React
 * rendering custom Office UI Fabric command bar items
-* rendering custom Office UI Fabric Buttom icons
+* rendering custom Office UI Fabric Button icons
 
 ## Building and debugging the code
 

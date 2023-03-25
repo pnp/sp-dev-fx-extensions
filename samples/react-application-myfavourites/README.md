@@ -91,7 +91,7 @@ https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFil
 
 ## List Deployment
 
-This solution expects the site to contain a **Favourites** list. This list will hold all the favourites and hence everyone will have write permissions on this list. Here are 2 options to ensure this list exists:
+This solution expects the site to contain a **Favorites** list. This list will hold all the favorites and hence everyone will have write permissions on this list. Here are 2 options to ensure this list exists:
 
 ### Option 1: Use the Included PnP Provisioning Template
 
@@ -114,8 +114,8 @@ Using a PowerShell console (you can even use the PowerShell terminal included in
 You'll be prompted for your credentials and then the list will be created. You may receive a warning about the site template not matching but this can be safely ignored since the custom list definition is supported everywhere.
 
 Things included in the template are
-- The Favourites list
-- Updating the security of the Favourites list so that users will have access to items only they create
+- The Favorites list
+- Updating the security of the Favorites list so that users will have access to items only they create
 - Adding "Created By (Author)" as an indexed column
 
 > Read More Here: [Introducing the PnP Provisioning Engine](https://github.com/SharePoint/PnP-Guidance/blob/551b9f6a66cf94058ba5497e310d519647afb20c/articles/Introducing-the-PnP-Provisioning-Engine.md)
@@ -125,7 +125,7 @@ Things included in the template are
 You can always manually create the list using the SharePoint UI:
 
 1. Navigate to the Site Contents page and choose **New** > **List**
-2. Name the list _**Favourites**_ and click **Create**
+2. Name the list _**Favorites**_ and click **Create**
 3. Add and configure the columns as listed below:
 
 Column | Type | Required | Details

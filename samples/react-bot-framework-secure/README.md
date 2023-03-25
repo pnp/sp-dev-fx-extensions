@@ -112,7 +112,7 @@ Version|Date|Comments
     ```
 
 - Config CORS \
-  [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) must be set on bot app service to enable SharePoint client to get resource from bot service. Follow these steps to add your workbench to bot app service CORS configration:
+  [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) must be set on bot app service to enable SharePoint client to get resource from bot service. Follow these steps to add your workbench to bot app service CORS configuration:
 
     1. Go to your azure portal
     2. Navigate to your bot app service, search for CORS settings
@@ -152,7 +152,7 @@ public render(): React.ReactElement<IBotFrameworkChatv4Props> {
 
  Inside Web Chat, direct line will be used to connect to Bot Service. On Bot Service side, one more endpoint "directline/token" will be added besides "api/messages", which will accept userId passed from client side and return back direct line token.
 
- For production, this endpoint should also verify if the incoming request is authroized.
+ For production, this endpoint should also verify if the incoming request is authorized.
 
 ```tsx
 server.post('/directline/token', (req, res) => {
