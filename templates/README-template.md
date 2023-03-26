@@ -1,6 +1,5 @@
 # title of the sample
 
-![Views](https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-webparts?&labelText=Visitors&labelFont=Segoeui,%20sans-serif&labelTextColor=0f797d&labelBackgroundColor=ffffff&counterFont=Segoeui,%20sans-serif&counterTextColor=ffffff&counterBackgroundColor=0f797d)
 > Use the human-friendly title here. No need to repeat the words `React`, `SPFx`, `extension` or `SharePoint` unless it is absolutely necessary. The name of the sample should already provide that information.
 > GOOD 👍:
 > Kitten Video Injection
