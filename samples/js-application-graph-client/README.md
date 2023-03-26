@@ -77,4 +77,4 @@ npm i -g gulp
 gulp
 ```
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-graph-client" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-graph-client" />

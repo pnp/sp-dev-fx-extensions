@@ -1,5 +1,6 @@
 # title of the sample
 
+![Views](https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-webparts?&labelText=Visitors&labelFont=Segoeui,%20sans-serif&labelTextColor=0f797d&labelBackgroundColor=ffffff&counterFont=Segoeui,%20sans-serif&counterTextColor=ffffff&counterBackgroundColor=0f797d)
 > Use the human-friendly title here. No need to repeat the words `React`, `SPFx`, `extension` or `SharePoint` unless it is absolutely necessary. The name of the sample should already provide that information.
 > GOOD 👍:
 > Kitten Video Injection
@@ -55,40 +56,58 @@ Short summary on functionality and used technologies.
 * [SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
 * [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
+> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/m365devprogram)
+
 > Update accordingly as needed.
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
-## Solution
+## Contributors
+<!--
+We use this section to recognize and promote your contributions. Please provide one author per line -- even if you worked together on it.
 
-> We use this section to recognize and promote your contributions. Please provide one author per line -- even if you worked together on it.
-> We'll only use the info you provided here. Make sure to include your full name, not just your GitHub username.
-> Provide a link to your GitHub profile to help others find more cool things you have done.
-> If you provide a link to your Twitter profile, we'll promote your contribution on social media.
->
-> DELETE THE TEXT ABOVE BEFORE SUBMITTING
+We'll only use the info you provided here. Make sure to include your full name, not just your GitHub username.
 
-Solution|Author(s)
---------|---------
-folder name | [Author Name](LinkToYourGitHubProfile) ([@yourtwitterhandle](https://twitter.com/yourtwitterhandle)), Company
+Provide a link to your GitHub profile to help others find more cool things you have done.
+
+If you provide a link to your Twitter profile, we'll promote your contribution on social media.
+
+If you do not update this information, you will not be listed 😞
+-->
+
+* [Author Name](LinkToYourGitHubProfile)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|August 10, 2022|Update comment
-1.0|June 29, 2022|Initial release
+1.1|August 10, 2023|Update comment
+1.0|June 29, 2023|Initial release
 
 ## Prerequisites
 
-> Any special pre-requisites? Include any lists, permissions, offerings to the demo gods, or whatever else needs to be done for this web part to work.
->
-> Please describe the steps to configure the pre-requisites. Feel free to add screen shots, but make sure that there is a text description of the steps to perform.
->
-> DELETE THE TEXT ABOVE BEFORE SUBMITTING
+<!--
+Any special pre-requisites? Include any lists, permissions, offerings to the demo gods, or whatever else needs to be done for this web part to work.
+
+Please describe the steps to configure the pre-requisites. Feel free to add screen shots, but make sure that there is a text description of the steps to perform.
+ 
+-->
 
 ## Minimal Path to Awesome
 
-* Clone this repository
+<!-- 
+PRO TIP:
+
+For commands, use the `code syntax`
+
+For button labels, page names, dialog names, etc. as they appear on the screen, use **Bold**
+
+Don't use "click", use "select" or "use"
+
+As tempting as it may be, don't just use images to describe the steps. Let's be as inclusive as possible and think about accessibility.
+
+-->
+
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME) then unzip it)
 * in the command line run:
   * `npm install`
   * `gulp serve`
@@ -155,4 +174,4 @@ For questions regarding this sample, [create a new question](https://github.com/
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=YOUR-SOLUTION-NAME&authors=@YOURGITHUBUSERNAME&title=YOUR-SOLUTION-NAME%20-%20).
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/YOUR-SOLUTION-NAME" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/YOUR-SOLUTION-NAME" />

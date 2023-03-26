@@ -95,4 +95,4 @@ Version|Date|Comments
 
 This solution doesn't work on local mode.
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-appinsights-advanced" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-appinsights-advanced" />

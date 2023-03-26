@@ -16,4 +16,4 @@ This folder contains following assets
 * spocustomui.css - CSS file used by the solution
 * spocustomui.js - JavaScript file associated as UserCustomAction to site scope
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/tutorial-migrate-usercustomaction/01" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/tutorial-migrate-usercustomaction/01" />

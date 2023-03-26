@@ -70,4 +70,4 @@ Here's a debug URL for testing around this sample. Notice that this sample is de
 ?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"44f1a0de-5fe4-4e8f-85fb-0c451b4b30ca":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{}}}
 ```
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-jump-to-folder" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-jump-to-folder" />

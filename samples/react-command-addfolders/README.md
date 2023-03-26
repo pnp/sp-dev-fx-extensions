@@ -70,4 +70,4 @@ Here's a debug URL for testing around this sample.
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5c2a88cb-baf3-4e91-bfc2-4c6add795219":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-addfolders" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-addfolders" />

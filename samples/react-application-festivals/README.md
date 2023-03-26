@@ -81,4 +81,4 @@ https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFil
 - [Christmas 2](https://codepen.io/rolchau/pen/OaYXpJ)
 - [Diwali](https://codepen.io/sidthesloth92/pen/gGZRpz)
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-festivals" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-festivals" />

@@ -144,4 +144,4 @@ ItemUrl | Multiple lines of text | No | Can be changed to Url (but needs code ch
 
 - The code in this sample stores data in a list. Instead of this, the data can stored as a JSON array in a user profile property. Vardhaman has written a nice blog on [editing user profile properties](http://www.vrdmn.com/2016/08/first-spfx-webpart-getset-single-value.html) Or, if there is any other way to store data that can be added too.
 
-![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-myfavourites)
+![](https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-myfavourites)

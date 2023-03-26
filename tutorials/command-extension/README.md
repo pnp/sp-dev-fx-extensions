@@ -57,4 +57,4 @@ Full URL to request would be something like following:
 contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"f482fa3c-0720-4936-a0dd-6e6941ef8945":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/tutorials/command-extension" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/tutorials/command-extension" />

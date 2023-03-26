@@ -8,4 +8,4 @@ More information about the solution is available at [https://docs.microsoft.com/
 
 [More information](../README.md)
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/tutorial-migrate-ecbmenu/01" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/tutorial-migrate-ecbmenu/01" />

@@ -86,4 +86,4 @@ https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFil
 None
 
 
-![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-myfollowedsites)
+![](https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-myfollowedsites)

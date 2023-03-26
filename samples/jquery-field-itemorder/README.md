@@ -227,4 +227,4 @@ You'll be prompted for your credentials and then the field will be added. You'll
   - [Issue 1279](https://github.com/SharePoint/sp-dev-docs/issues/1279) - Solution has been found, but fix has not yet been implemented
   - This issue can be avoided by providing the `ShowIcons` property and setting it to false (see the _Use text indicators_ section above)
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/jquery-field-itemorder" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/jquery-field-itemorder" />

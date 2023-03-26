@@ -48,4 +48,4 @@ This extension illustrates the following concepts:
 - Retrieving top level folders of a document library using [PnP Js](https://pnp.github.io/pnpjs/).
 
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-folder-select" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-folder-select" />

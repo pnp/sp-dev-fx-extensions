@@ -126,4 +126,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-analytics" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-analytics" />

@@ -81,5 +81,5 @@ This sample demonstrates:
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-menu-footer-classic-modern" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-menu-footer-classic-modern" />
 

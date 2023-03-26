@@ -83,4 +83,4 @@ Notes :
 
 * The code can be easily extended to render the extension for site pages of a specific content type.
 
-![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-tenant-global-navbar)
+![](https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-tenant-global-navbar)

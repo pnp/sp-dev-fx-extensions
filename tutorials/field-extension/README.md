@@ -56,4 +56,4 @@ Full URL to request would be something like following:
 contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"86345a8a-6697-4dd8-a295-2ecd2f8994d9","properties":{"sampleText":"Hello!"}}}
 ```
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/tutorials/field-extension" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/tutorials/field-extension" />

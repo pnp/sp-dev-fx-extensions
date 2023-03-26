@@ -77,4 +77,4 @@ Here's a debug URL for testing around this sample.
 ```
 
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-send-to-teams" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-send-to-teams" />

@@ -131,4 +131,4 @@ For questions regarding this sample, [create a new question](https://github.com/
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-command-share-to-teams&authors=@russgove&title=react-command-share-to-teams%20-%20).
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/readme-template" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/readme-template" />

@@ -113,4 +113,4 @@ This extension illustrates the following concepts:
 - PnPPowerShell
 
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-announcements" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-announcements" />

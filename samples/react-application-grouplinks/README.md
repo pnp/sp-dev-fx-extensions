@@ -65,4 +65,4 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * Using async / await for the async calls
 * Office UI fabric ActionLinks
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-grouplinks" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-grouplinks" />

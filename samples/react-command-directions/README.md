@@ -98,4 +98,4 @@ Show driving directions from the Microsoft campus on One Microsoft Way, Redmond,
 
 ![Driving directions from the Microsoft campus](./assets/directions-driving-microsoft.png)
 
-![](https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-directions)
+![](https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-directions)

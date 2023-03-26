@@ -91,4 +91,4 @@ This Extension illustrates the following concepts on top of the SharePoint Frame
 - Adding a bot to modern pages and let users interact with a bot hosted in the Azure Bot Service
 - Demo single sign-on for on behalf of authentication using OAuth
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-bot-framework-sso/extension" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-bot-framework-sso/extension" />

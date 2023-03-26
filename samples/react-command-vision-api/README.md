@@ -95,4 +95,4 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * get a tenant property using SP REST API (**_api/web/GetStorageEntity('key')**)
 * custom Dialog component
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-command-vision-api" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-command-vision-api" />

@@ -77,4 +77,4 @@ Key features demonstrated by this solution:
 * PnPjs usage in the solution
 * Dynamic creation of the list if it's missing
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-alerts" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-alerts" />

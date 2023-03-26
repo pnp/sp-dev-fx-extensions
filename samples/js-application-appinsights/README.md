@@ -81,4 +81,4 @@ The instrumentation key of the Azure Application Insights resource to use is sto
 ## Features
 This extension injects javascript needed to track pages in SharePoint Online with Azure Application Insights
  
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-appinsights" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-appinsights" />

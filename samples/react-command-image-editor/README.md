@@ -85,4 +85,4 @@ This project contains SharePoint Framework extensions that illustrates:
 
 > Notice. This sample is designed to be used in debug mode and does not contain automatic packaging setup for the "production" deployment.
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-image-editor" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-image-editor" />

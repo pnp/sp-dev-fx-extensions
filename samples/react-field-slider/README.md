@@ -73,4 +73,4 @@ Here's a debug URL for testing around this sample. Notice that this sample is de
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"f2f6825c-fd37-43f7-a99c-5fe6b39dd7fd","properties":{"sampleText":"Hello!"}}}
 ```
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-field-slider" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-field-slider" />

@@ -51,4 +51,4 @@ Here's a debug URL for testing around this sample.
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"205392f2-f511-49b0-a698-a976a8f8028a":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"property":"this is data"}}}
 ```
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-run-once" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-run-once" />

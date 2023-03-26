@@ -55,4 +55,4 @@ Full URL to request would be something like following:
 contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"151002e5-1c8f-4553-a91c-c57784b3cf38":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Top":"Top area of the page","Bottom":"Bottom area in the page"}}}
 ```
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/tutorials/app-extension" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/tutorials/app-extension" />

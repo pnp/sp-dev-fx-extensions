@@ -157,4 +157,4 @@ Add the extension (be sure to replace the listtitle parameter with the name of y
 - UI Fabric Icons are not currently displaying in SPFx Extensions: 
   - [Issue 1279](https://github.com/SharePoint/sp-dev-docs/issues/1279) - Solution has been found, but fix has not yet been implemented
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-command-clone" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-command-clone" />

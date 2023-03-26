@@ -64,4 +64,4 @@ This Extension illustrates the following concepts on top of the SharePoint Frame
 - Using the Bot Framework webchat React component as some kind of flyout element in modern pages
 - Adding a bot to modern pages and let users interact with a bot hosted in the Azure Bot Service
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-bot-framework-secure" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-bot-framework-secure" />

@@ -238,4 +238,4 @@ For questions regarding this sample, [create a new question](https://github.com/
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-pva-bot&authors=@bernierh%20@dmitryvorobyov%20@renatooromao&title=react-application-pva-bot%20-%20).
 
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-pva-bot" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-pva-bot" />

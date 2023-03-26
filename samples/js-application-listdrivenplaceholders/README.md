@@ -92,4 +92,4 @@ https://yourtenant.sharepoint.com/yourlist/AllItems.aspx?loadSPFX=true&debugMani
 ## Features
 This solution declaratively deploys a new content type and list that allows an end user to easily add entries that correlate to the available placeholders the SharePoint Framework supports. The application customizer then loads this data (caching with localStorage when available) and injects the content into the page. This solution will allow you to add new placeholders into the 'SPFx Placeholders' list as they become available from Microsoft, without having to make any updates to the actual code.
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-listdrivenplaceholders" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-listdrivenplaceholders" />
