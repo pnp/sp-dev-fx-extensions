@@ -31,7 +31,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-starter-kit/raw/master/assets/images/components/ext-redirects.gif?raw=true",
+        "url": "https://github.com/pnp/sp-starter-kit/raw/main/assets/images/components/ext-redirects.gif?raw=true",
         "alt": "Redirect Application Customizers"
       }
     ],
