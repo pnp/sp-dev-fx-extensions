@@ -31,7 +31,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-starter-kit/raw/master/assets/images/components/ext-collab-footer.gif",
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-collab-footer/assets/ext-collab-footer.gif",
         "alt": "Collaboration Footer Application Customizers"
       }
     ],
