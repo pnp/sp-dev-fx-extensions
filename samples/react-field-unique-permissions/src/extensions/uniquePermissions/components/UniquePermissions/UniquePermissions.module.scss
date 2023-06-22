@@ -1,0 +1,17 @@
+.uniquePermissions {
+  color: "[theme:themePrimary, default:#0078d4]";
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  span {
+    min-width: 12px;
+  }
+  
+  button {
+    margin-top: -6px;
+  }
+
+  .itemIcon {
+    padding-top: 4px;
+  }
+}
