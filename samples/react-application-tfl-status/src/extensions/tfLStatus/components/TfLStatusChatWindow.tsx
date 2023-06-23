@@ -9,6 +9,7 @@ import { getStyles, chatButtonStyles, sendChatTextFiledStyles, chatMinimiseButto
 import { IChatMessage, ILine } from '../interfaces';
 import { useOpenAI, useTfL } from '../hooks';
 import { FUNCTIONS, TRY_LATER_MESSAGE, SYSTEM_MESSAGE } from '../constants/constants';
+import { getUserMessage, getSystemMessage, getAssistantMessage, getFunctionMessage } from '../helpers/openaiHelpers';
 
 const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
 
@@ -20,11 +21,13 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
         date: null,
         focus: true
     };
+    const systemMessage = getSystemMessage(SYSTEM_MESSAGE);
 
     const [loading, setLoading] = React.useState<boolean>(false);
     const [query, setQuery] = React.useState<string>("");
     const [showChatWindow, setShowChatWindow] = React.useState<boolean>(false);
     const [chatMessages, setChatMessages] = React.useState<IChatMessage[]>([firstChatMessage]);
+    const [openaiMessages, setOpenaiMessages] = React.useState<any[]>([systemMessage]);
 
     const { httpClient } = props;
     const { callOpenAI } = useOpenAI(httpClient);
@@ -32,20 +35,12 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
 
     const styles = getStyles();
 
-    // function to scroll to the bottom of the chat window
-    const scrollToBottom = () => {
-        const chatWindow = document.getElementsByClassName('rce-mlist')[0];
-        if (chatWindow) {
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }
-    }
-
     // function to show generic message
-    const showGenericMessage = (genericMessage: string) => {
+    const showMessage = (genericMessage: string) => {
         let newChatMessage = {
             position: 'left',
             type: 'text',
-            title: 'Personal Assistant',
+            title: 'TfL Status Bot',
             text: <span dangerouslySetInnerHTML={{ __html: genericMessage }}>{ }</span>,
             date: null,
             className: styles.chatMessage,
@@ -57,9 +52,7 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
             [...prevChatMessages.map(chatMessage => ({
                 ...chatMessage,
                 focus: false
-            })), newChatMessage])
-
-        setLoading(false);
+            })), newChatMessage]);
     }
 
     // function to extract relevant information from TfL API response
@@ -99,7 +92,7 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
         return relevantInformation;
     }
 
-    async function callFunction(functionName: string, functionArguments: any, messages: any[]) {
+    async function callFunction(functionName: string, functionArguments: any) {
         let functionResult;
 
         if (functionName === "getLineStatus") {
@@ -107,39 +100,17 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
             functionResult = extractRelevantInformation(lineStatus);
         }
 
-        const assistantMessage = {
-            role: 'assistant',
-            content: "",
-            function_call: {
-                name: functionName,
-                arguments: JSON.stringify(functionArguments)
-            }
-        };
-
-        // add the assistant message to the messages array
-        messages.push(assistantMessage);
-
-        const functionMessage = {
-            role: 'function',
-            name: functionName,
-            content: JSON.stringify(functionResult)
-        };
-
-        // add the function message to the messages array
-        messages.push(functionMessage);
-
-        return messages;
+        return functionResult;
     }
 
-
     // function to process the response from OpenAI
-    const processResponse = async (response: any, openaiMessages: any[]) => {
+    const processResponse = async (response: any) => {
 
         console.log(response);
 
         // if response is null or undefined then show an error message
         if (response === null || response === undefined) {
-            showGenericMessage(TRY_LATER_MESSAGE);
+            showMessage(TRY_LATER_MESSAGE);
             return;
         }
 
@@ -150,7 +121,7 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
             switch (response_finish_reason) {
                 case "stop": {
                     const responseText = response["choices"][0]["message"]["content"];
-                    showGenericMessage(responseText);
+                    showMessage(responseText);
                     break;
                 }
                 case "function_call": {
@@ -160,30 +131,30 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
 
                     switch (function_name) {
                         case "getLineStatus": {
-                            openaiMessages = await callFunction(function_name, function_arguments_json, openaiMessages);
-                            const secondResponse = await callOpenAI(openaiMessages, FUNCTIONS);
-                            await processResponse(secondResponse, openaiMessages);
+                            const functionResult = await callFunction(function_name, function_arguments_json);
+                            const assistantMessage = getAssistantMessage(function_name, function_arguments_json);
+                            const functionMessage = getFunctionMessage(function_name, functionResult);
+                            setOpenaiMessages(prevOpenaiMessages => [...prevOpenaiMessages, assistantMessage, functionMessage]);
                             break;
                         }
                         case "showFunnyMessage": {
                             const funnyMessage = function_arguments_json.funnyMessage;
-                            showGenericMessage(funnyMessage);
+                            showMessage(funnyMessage);
                             break;
                         }
                         default:
-                            showGenericMessage(TRY_LATER_MESSAGE);
+                            showMessage(TRY_LATER_MESSAGE);
                             break;
                     }
                     break;
                 }
                 default:
-                    showGenericMessage(TRY_LATER_MESSAGE);
+                    showMessage(TRY_LATER_MESSAGE);
             }
 
         } catch (error) {
             console.log(error);
-            showGenericMessage(TRY_LATER_MESSAGE);
-            setLoading(false);
+            showMessage(TRY_LATER_MESSAGE);
         }
 
     }
@@ -199,49 +170,16 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
             title: 'You',
             text: query,
             date: null,
-            status: 'received'
+            status: 'read'
         };
 
         setChatMessages(prevChatMessages => [...prevChatMessages, newChatMessage]);
 
-        // messages array to send to OpenAI
-        let openaiMessages: any[] = [
-            {
-                role: 'system',
-                content: SYSTEM_MESSAGE
-            }
-        ];
-
-        // add the user message to the messages array
-        const userMessage = {
-            role: 'user',
-            content: query
-        };
-
-        openaiMessages.push(userMessage);
+        const userMessage = getUserMessage(query);
+        setOpenaiMessages(prevMessages => [...prevMessages, userMessage]);
 
         // clear the text field
         setQuery("");
-
-        // call OpenAI
-        const response = await callOpenAI(openaiMessages, FUNCTIONS);
-
-        // set status of the last message to read
-        setChatMessages(prevChatMessages => {
-            const lastChatMessageIndex = prevChatMessages.length - 1;
-            const lastChatMessage = prevChatMessages[lastChatMessageIndex];
-            const updatedLastChatMessage = {
-                ...lastChatMessage,
-                status: 'read'
-            };
-            const updatedChatMessages = [
-                ...prevChatMessages.slice(0, lastChatMessageIndex),
-                updatedLastChatMessage
-            ];
-            return updatedChatMessages as IChatMessage[];
-        });
-
-        await processResponse(response, openaiMessages);
     }
 
     // function to handle the text change in the text field
@@ -260,11 +198,42 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
         }
     }
 
+    // function to scroll to the bottom of the chat window
+    const scrollToBottom = () => {
+        const chatWindow = document.getElementsByClassName('rce-mlist')[0];
+        if (chatWindow) {
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+    }
+
 
     // useEffect scroll to the bottom of the chat window when messages change
     React.useEffect(() => {
         scrollToBottom();
     }, [chatMessages]);
+
+    // useEffect to call OpenAI when openaiMessages change
+    React.useEffect(() => {
+
+        // if openaiMessages is empty or has only one message, then return
+        if (openaiMessages.length === 0 || openaiMessages.length === 1) {
+            return;
+        }
+
+        const handleOpenAIResponse = async () => {
+            setLoading(true);
+            const response = await callOpenAI(openaiMessages, FUNCTIONS);
+            await processResponse(response);
+            setLoading(false);
+        };
+
+        handleOpenAIResponse()
+            .catch((error) => {
+                console.log(error);
+                setLoading(false);
+                showMessage(TRY_LATER_MESSAGE);
+            });
+    }, [openaiMessages]);
 
 
     return (
