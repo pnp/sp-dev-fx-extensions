@@ -60,5 +60,76 @@ export const useMicrosoftGraph = (msGraphClientFactory: MSGraphClientFactory) =>
         [getClient]
     );
 
-    return { callMicrosoftGraphAPI };
+    const getMyDetails = async (nameOnly: boolean) => {
+        const userDetails = await callMicrosoftGraphAPI(
+            "get",
+            "/me",
+            "v1.0"
+        );
+        if (nameOnly) {
+            return {
+                displayName: userDetails.displayName
+            }
+        } else {
+            return userDetails;
+        }
+    }
+
+    const getMyTasks = async (getIncompleteTasksOnly: boolean) => {
+
+        // if getIncompleteTasksOnly is true, then get only incomplete tasks
+        if (getIncompleteTasksOnly) {
+            console.log("getIncompleteTasksOnly is true");
+            // get incomplete tasks
+        }
+
+        const myTasks = await callMicrosoftGraphAPI(
+            "get",
+            "/me/planner/tasks",
+            "v1.0",
+            null,
+            ["title", "startDateTime", "dueDateTime", "percentComplete"],
+            [],
+            "percentComplete ne 100"
+        );
+
+        return myTasks.value.map((task: any) => {
+            return {
+                title: task.title,
+                start: task.startDateTime,
+                end: task.dueDateTime,
+                percentComplete: task.percentComplete
+            };
+        });
+    }
+
+    const getMyEvents = async (futureEventsOnly: boolean) => {
+
+        // if futureEventsOnly is true, then get only future events
+        if (futureEventsOnly) {
+            console.log("futureEventsOnly is true");
+            // get future events
+        }
+
+        const userEvents = await callMicrosoftGraphAPI(
+            "get",
+            "/me/events",
+            "v1.0",
+            null,
+            ["subject", "start", "end", "attendees", "location"]
+        );
+
+
+        return userEvents.value.map((event: any) => {
+            return {
+                title: event.subject,
+                start: event.start.dateTime,
+                end: event.end.dateTime,
+                attendees: event.attendees,
+                location: event.location
+            };
+        });
+    };
+
+    return { getMyDetails, getMyTasks, getMyEvents };
 };

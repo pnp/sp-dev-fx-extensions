@@ -10,49 +10,62 @@ import { getStyles, chatButtonStyles, sendChatTextFiledStyles, chatMinimiseButto
 import { IChatMessage } from '../interfaces';
 import { useOpenAI, useMicrosoftGraph } from '../hooks';
 import { FUNCTIONS, BOT_AVATAR_URL, TRY_LATER_MESSAGE, SYSTEM_MESSAGE, CHAT_TEXT_PLACEHOLDER } from '../constants/constants';
+import { getUserMessage, getSystemMessage, getAssistantMessage, getFunctionMessage } from '../helpers/openaiHelpers';
 
 const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
 
     const avatar: string = BOT_AVATAR_URL;
-
     const firstChatMessage: IChatMessage = {
         position: 'left',
         type: 'text',
         title: 'Personal Assistant',
         text: <>Hi, I am your <b>personal assistant</b>. How can I help you today?</>,
         date: null,
-        focus: true,
         avatar
     };
+    const systemMessage = getSystemMessage(SYSTEM_MESSAGE);
 
     const [loading, setLoading] = React.useState<boolean>(false);
     const [query, setQuery] = React.useState<string>("");
     const [showChatWindow, setShowChatWindow] = React.useState<boolean>(false);
     const [chatMessages, setChatMessages] = React.useState<IChatMessage[]>([firstChatMessage]);
+    const [openaiMessages, setOpenaiMessages] = React.useState<any[]>([systemMessage]);
 
     const { httpClient, msGraphClientFactory, currentUserEmail } = props;
     const { callOpenAI } = useOpenAI(httpClient);
-    const { callMicrosoftGraphAPI } = useMicrosoftGraph(msGraphClientFactory);
+    const { getMyDetails, getMyEvents, getMyTasks } = useMicrosoftGraph(msGraphClientFactory);
 
     const styles = getStyles();
 
-
     // function to show generic message
-    const showGenericMessage = (genericMessage: string) => {
+    const showMessage = (genericMessage: string, replaceLastMessage: boolean = true) => {
 
-        // replace the last message's text with genericMessage
-        // set the focus to false of all the messages except the last one
-        setChatMessages(prevChatMessages => {
-            let lastChatMessage = prevChatMessages[prevChatMessages.length - 1];
-            lastChatMessage.text = <span dangerouslySetInnerHTML={{ __html: genericMessage }}>{ }</span>;
-            lastChatMessage.focus = true;
+        if (replaceLastMessage) {
 
-            return [...prevChatMessages.slice(0, prevChatMessages.length - 1), lastChatMessage];
-        });
+            // replace the last message's text with genericMessage
+            setChatMessages(prevChatMessages => {
+                let lastChatMessage = prevChatMessages[prevChatMessages.length - 1];
+                lastChatMessage.text = <span dangerouslySetInnerHTML={{ __html: genericMessage }}>{ }</span>;
 
-        setLoading(false);
+                return [...prevChatMessages.slice(0, prevChatMessages.length - 1), lastChatMessage];
+            });
+        } else {
+
+            // add a new message with genericMessage
+            let newChatMessage: IChatMessage = {
+                position: 'left',
+                type: 'text',
+                title: 'Personal Assistant',
+                text: <span dangerouslySetInnerHTML={{ __html: genericMessage }}>{ }</span>,
+                date: null,
+                className: styles.chatMessage,
+                avatar
+            };
+            setChatMessages(prevChatMessages => [...prevChatMessages, newChatMessage]);
+        }
     }
 
+    // function to show loading message
     const showLoadingMessage = () => {
         let newChatMessage: IChatMessage = {
             position: 'left',
@@ -61,89 +74,13 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
             text: <ProgressIndicator description="Thinking..." />,
             date: null,
             className: styles.chatMessage,
-            focus: true,
             avatar
         };
 
-        setChatMessages(prevChatMessages =>
-            [...prevChatMessages.map(chatMessage => ({
-                ...chatMessage,
-                focus: false
-            })), newChatMessage])
+        setChatMessages(prevChatMessages => [...prevChatMessages, newChatMessage]);
     }
 
-    const getMyDetails = async (nameOnly: boolean) => {
-        const userDetails = await callMicrosoftGraphAPI(
-            "get",
-            "/me",
-            "v1.0"
-        );
-        if (nameOnly) {
-            return {
-                displayName: userDetails.displayName
-            }
-        } else {
-            return userDetails;
-        }
-    }
-
-    const getMyTasks = async (getIncompleteTasksOnly: boolean) => {
-
-        // if getIncompleteTasksOnly is true, then get only incomplete tasks
-        if (getIncompleteTasksOnly) {
-            console.log("getIncompleteTasksOnly is true");
-            // get incomplete tasks
-        }
-
-        const myTasks = await callMicrosoftGraphAPI(
-            "get",
-            "/me/planner/tasks",
-            "v1.0",
-            null,
-            ["title", "startDateTime", "dueDateTime", "percentComplete"],
-            [],
-            "percentComplete ne 100"
-        );
-
-        return myTasks.value.map((task: any) => {
-            return {
-                title: task.title,
-                start: task.startDateTime,
-                end: task.dueDateTime,
-                percentComplete: task.percentComplete
-            };
-        });
-    }
-
-    const getMyEvents = async (futureEventsOnly: boolean) => {
-
-        // if futureEventsOnly is true, then get only future events
-        if (futureEventsOnly) {
-            console.log("futureEventsOnly is true");
-            // get future events
-        }
-
-        const userEvents = await callMicrosoftGraphAPI(
-            "get",
-            "/me/events",
-            "v1.0",
-            null,
-            ["subject", "start", "end", "attendees", "location"]
-        );
-
-
-        return userEvents.value.map((event: any) => {
-            return {
-                title: event.subject,
-                start: event.start.dateTime,
-                end: event.end.dateTime,
-                attendees: event.attendees,
-                location: event.location
-            };
-        });
-    };
-
-    async function callFunction(functionName: string, functionArguments: any, messages: any[]) {
+    async function callFunction(functionName: string, functionArguments: any) {
         let functionResult;
 
         if (functionName === "getMyDetails") {
@@ -154,49 +91,26 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
             functionResult = await getMyTasks(functionArguments.getIncompleteTasksOnly);
         }
 
-        const assistantMessage = {
-            role: 'assistant',
-            content: "",
-            function_call: {
-                name: functionName,
-                arguments: JSON.stringify(functionArguments)
-            }
-        };
-
-        // add the assistant message to the messages array
-        messages.push(assistantMessage);
-
-        const functionMessage = {
-            role: 'function',
-            name: functionName,
-            content: JSON.stringify(functionResult)
-        };
-
-        // add the function message to the messages array
-        messages.push(functionMessage);
-
-        return messages;
+        return functionResult;
     }
 
     // function to process the response from OpenAI
-    const processResponse = async (response: any, openaiMessages: any[]) => {
+    const processResponse = async (response: any) => {
 
         console.log(response);
 
         // if response is null or undefined then show an error message
         if (response === null || response === undefined) {
-            showGenericMessage(TRY_LATER_MESSAGE);
+            showMessage(TRY_LATER_MESSAGE);
             return;
         }
 
         try {
-
             const response_finish_reason = response["choices"][0]["finish_reason"];
-
             switch (response_finish_reason) {
                 case "stop": {
                     const responseText = response["choices"][0]["message"]["content"];
-                    showGenericMessage(responseText);
+                    showMessage(responseText);
                     break;
                 }
                 case "function_call": {
@@ -208,38 +122,37 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
                         case "getMyDetails":
                         case "getMyEvents":
                         case "getMyTasks": {
-                            openaiMessages = await callFunction(function_name, function_arguments_json, openaiMessages);
-                            const secondResponse = await callOpenAI(openaiMessages, FUNCTIONS);
-                            await processResponse(secondResponse, openaiMessages);
+
+                            const functionResult = await callFunction(function_name, function_arguments_json);
+                            const assistantMessage = getAssistantMessage(function_name, function_arguments_json);
+                            const functionMessage = getFunctionMessage(function_name, functionResult);
+                            setOpenaiMessages(prevOpenaiMessages => [...prevOpenaiMessages, assistantMessage, functionMessage]);
                             break;
                         }
                         case "showFunnyMessage": {
                             const funnyMessage = function_arguments_json.funnyMessage;
-                            showGenericMessage(funnyMessage);
+                            showMessage(funnyMessage);
                             break;
                         }
                         default:
-                            showGenericMessage(TRY_LATER_MESSAGE);
+                            showMessage(TRY_LATER_MESSAGE);
                             break;
                     }
                     break;
                 }
                 default:
-                    showGenericMessage(TRY_LATER_MESSAGE);
+                    showMessage(TRY_LATER_MESSAGE);
             }
 
         } catch (error) {
             console.log(error);
-            showGenericMessage(TRY_LATER_MESSAGE);
-            setLoading(false);
+            showMessage(TRY_LATER_MESSAGE);
         }
 
     }
 
     // function to send a message to OpenAI and get a response
     const onSendClick = async () => {
-        setLoading(true);
-
         // add the user message to the chatMessages array
         let newChatMessage: IChatMessage = {
             position: 'right',
@@ -247,52 +160,20 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
             title: 'You',
             text: query,
             date: null,
-            status: 'received',
+            status: 'read',
             avatar: `/_layouts/15/userphoto.aspx?size=S&username=${currentUserEmail}`,
         };
-
         setChatMessages(prevChatMessages => [...prevChatMessages, newChatMessage]);
 
-        // messages array to send to OpenAI
-        let openaiMessages: any[] = [
-            {
-                role: 'system',
-                content: SYSTEM_MESSAGE
-            }
-        ];
+        // add the user message to the openaiMessages array
+        const userMessage = getUserMessage(query);
+        setOpenaiMessages(prevMessages => [...prevMessages, userMessage]);
 
-        // add the user message to the messages array
-        const userMessage = {
-            role: 'user',
-            content: query
-        };
-
-        openaiMessages.push(userMessage);
+        // show the loading message
+        showLoadingMessage();
 
         // clear the text field
         setQuery("");
-
-        // call OpenAI
-        const response = await callOpenAI(openaiMessages, FUNCTIONS);
-
-        // set status of the last message to read
-        setChatMessages(prevChatMessages => {
-            const lastChatMessageIndex = prevChatMessages.length - 1;
-            const lastChatMessage = prevChatMessages[lastChatMessageIndex];
-            const updatedLastChatMessage = {
-                ...lastChatMessage,
-                status: 'read'
-            };
-            const updatedChatMessages = [
-                ...prevChatMessages.slice(0, lastChatMessageIndex),
-                updatedLastChatMessage
-            ];
-            return updatedChatMessages as IChatMessage[];
-        });
-
-        showLoadingMessage();
-
-        await processResponse(response, openaiMessages);
     }
 
     // function to handle the text change in the text field
@@ -323,6 +204,29 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
     React.useEffect(() => {
         scrollToBottom();
     }, [chatMessages]);
+
+    // useEffect to call OpenAI when openaiMessages change
+    React.useEffect(() => {
+
+        // if openaiMessages is empty or has only one message, then return
+        if (openaiMessages.length === 0 || openaiMessages.length === 1) {
+            return;
+        }
+
+        const handleOpenAIResponse = async () => {
+            setLoading(true);
+            const response = await callOpenAI(openaiMessages, FUNCTIONS);
+            await processResponse(response);
+            setLoading(false);
+        };
+
+        handleOpenAIResponse()
+            .catch((error) => {
+                console.log(error);
+                setLoading(false);
+                showMessage(TRY_LATER_MESSAGE);
+            });
+    }, [openaiMessages]);
 
 
     return (
