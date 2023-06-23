@@ -1,4 +1,4 @@
-# Transport for London (TfL) Status - OpenAI Function Calling with Microsoft Graph
+# Transport for London (TfL) Status - OpenAI Function Calling with TfL API
 
 ## Summary
 
