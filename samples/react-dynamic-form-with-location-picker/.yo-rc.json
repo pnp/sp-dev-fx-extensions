@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "16.15.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.3",
+    "libraryName": "react-dynamic-form-with-location-picker",
+    "libraryId": "1ef8efab-1523-4382-8e66-d2340e5e2bb7",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "react-dynamic-form-with-location-picker",
+    "solutionShortDescription": "react-dynamic-form-with-location-picker description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "FormCustomizer"
+  }
+}
