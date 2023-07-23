@@ -30,7 +30,7 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
     const [openaiMessages, setOpenaiMessages] = React.useState<any[]>([systemMessage]);
 
     const { httpClient } = props;
-    const { callOpenAI } = useOpenAI(httpClient);
+    const { callOpenAI, callOpenAIStream } = useOpenAI(httpClient);
     const { getLineStatus } = useTfL(httpClient);
 
     const styles = getStyles();
@@ -53,6 +53,48 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
                 ...chatMessage,
                 focus: false
             })), newChatMessage]);
+    }
+
+    // function to show message as a stream
+    const showMessageAsStream = (message: string, messageCount: number) => {
+
+        // if messageCount is 0, then create a new message and add it to the chatMessages array
+        // else update the last message in the chatMessages array
+        if (messageCount === 0) {
+            let newChatMessage: IChatMessage = {
+                position: 'left',
+                type: 'text',
+                title: 'TfL Status Bot',
+                text: <span dangerouslySetInnerHTML={{ __html: message }}>{ }</span>,
+                date: null,
+                className: styles.chatMessage,
+                focus: true
+            };
+
+            setChatMessages(prevChatMessages =>
+                [...prevChatMessages.map(chatMessage => ({
+                    ...chatMessage,
+                    focus: false
+                })), newChatMessage]);
+        }
+        else {
+            setChatMessages(prevChatMessages =>
+                [...prevChatMessages.map((chatMessage, index) => {
+                    if (index === prevChatMessages.length - 1) {
+                        return {
+                            ...chatMessage,
+                            text: <span dangerouslySetInnerHTML={{ __html: message }}>{ }</span>,
+                            focus: true
+                        }
+                    }
+                    else {
+                        return {
+                            ...chatMessage,
+                            focus: false
+                        }
+                    }
+                })]);
+        }
     }
 
     // function to extract relevant information from TfL API response
@@ -103,11 +145,31 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
         return functionResult;
     }
 
+    const processFunctionCall = async (functionName: string, functionArguments: any) => {
+
+        const functionArgumentsJson = JSON.parse(functionArguments)
+
+        switch (functionName) {
+            case "getLineStatus": {
+                const functionResult = await callFunction(functionName, functionArgumentsJson);
+                const assistantMessage = getAssistantMessage(functionName, functionArgumentsJson);
+                const functionMessage = getFunctionMessage(functionName, functionResult);
+                setOpenaiMessages(prevOpenaiMessages => [...prevOpenaiMessages, assistantMessage, functionMessage]);
+                break;
+            }
+            /* case "showFunnyMessage": {
+                const funnyMessage = functionArgumentsJson.funnyMessage;
+                showMessage(funnyMessage);
+                break;
+            } */
+            default:
+                showMessage(TRY_LATER_MESSAGE);
+                break;
+        }
+    }
+
     // function to process the response from OpenAI
     const processResponse = async (response: any) => {
-
-        console.log(response);
-
         // if response is null or undefined then show an error message
         if (response === null || response === undefined) {
             showMessage(TRY_LATER_MESSAGE);
@@ -125,27 +187,9 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
                     break;
                 }
                 case "function_call": {
-                    const function_name = response["choices"][0]["message"]["function_call"]["name"];
-                    const function_arguments = response["choices"][0]["message"]["function_call"]["arguments"];
-                    const function_arguments_json = JSON.parse(function_arguments);
-
-                    switch (function_name) {
-                        case "getLineStatus": {
-                            const functionResult = await callFunction(function_name, function_arguments_json);
-                            const assistantMessage = getAssistantMessage(function_name, function_arguments_json);
-                            const functionMessage = getFunctionMessage(function_name, functionResult);
-                            setOpenaiMessages(prevOpenaiMessages => [...prevOpenaiMessages, assistantMessage, functionMessage]);
-                            break;
-                        }
-                        case "showFunnyMessage": {
-                            const funnyMessage = function_arguments_json.funnyMessage;
-                            showMessage(funnyMessage);
-                            break;
-                        }
-                        default:
-                            showMessage(TRY_LATER_MESSAGE);
-                            break;
-                    }
+                    const functionName = response["choices"][0]["message"]["function_call"]["name"];
+                    const functionArguments = response["choices"][0]["message"]["function_call"]["arguments"];
+                    await processFunctionCall(functionName, functionArguments);
                     break;
                 }
                 default:
@@ -222,9 +266,30 @@ const TfLStatusChatWindow: React.FC<ITfLStatusChatWindowProps> = (props) => {
 
         const handleOpenAIResponse = async () => {
             setLoading(true);
-            const response = await callOpenAI(openaiMessages, FUNCTIONS);
-            await processResponse(response);
-            setLoading(false);
+
+            if (props.stream) {
+
+                let message: string = "";
+                await callOpenAIStream(
+                    openaiMessages,
+                    FUNCTIONS,
+                    async (functionName: string, functionArguments: any) => {
+                        await processFunctionCall(functionName, functionArguments);
+                    },
+                    (response: string, messageCount: number) => {
+                        if (response) {
+                            message += response;
+                            showMessageAsStream(message, messageCount);
+                        } else {
+                            setLoading(false);
+                        }
+                    }
+                );
+            } else {
+                const response = await callOpenAI(openaiMessages, FUNCTIONS);
+                await processResponse(response);
+                setLoading(false);
+            }
         };
 
         handleOpenAIResponse()

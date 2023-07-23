@@ -1,8 +1,89 @@
 import * as React from 'react';
 import { HttpClient } from "@microsoft/sp-http";
 import { OPENAI_API_KEY, OPENAI_API_ENDPOINT, GPT_MODELTO_USE } from '../constants/constants';
+import { fetchEventSource } from '@microsoft/fetch-event-source';
 
 export const useOpenAI = (httpClient: HttpClient) => {
+
+    // function to call OpenAI API with stream
+    const callOpenAIStream = React.useCallback(
+        async (messages: any[], functions: any[], processFunctionCall: any, processContent: any) => {
+            try {
+                let functionName: string = "";
+                let functionArguments: string = "";
+                let messageCount: number = 0;
+                await fetchEventSource(
+                    OPENAI_API_ENDPOINT,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'text/event-stream',
+                            'Authorization': `Bearer ${OPENAI_API_KEY}`
+                        },
+                        body: JSON.stringify({
+                            model: GPT_MODELTO_USE,
+                            messages: messages,
+                            functions: functions,
+                            temperature: 0,
+                            max_tokens: 256,
+                            top_p: 1.0,
+                            frequency_penalty: 0.0,
+                            presence_penalty: 0.0,
+                            stream: true
+                        }),
+
+                        async onopen(response) {
+                            console.log('onopen', response);
+                        },
+
+                        async onmessage(response) {
+                            if (response.data !== '[DONE]') {
+                                const data = JSON.parse(response.data);
+                                
+                                const delta = data.choices[0].delta;
+                                const finishReason = data.choices[0].finish_reason;
+
+                                if (delta.function_call) {
+                                    if (delta.function_call.name) {
+                                        functionName = delta.function_call.name;
+                                    }
+
+                                    if (delta.function_call.arguments) {
+                                        functionArguments += delta.function_call.arguments;
+                                    }
+                                }
+
+                                if (finishReason === 'function_call') {
+                                    if (functionName && functionArguments) {
+                                        processFunctionCall(functionName, functionArguments);
+                                    }
+                                }
+
+                                if (finishReason === 'stop') {
+                                    messageCount = 0;
+                                    processContent(null, messageCount);
+                                }
+
+                                if (delta.content) {
+                                    processContent(delta.content, messageCount);
+                                    messageCount++;
+                                }
+                            }
+                        },
+
+                        onclose() {
+                            console.log('Connection closed');
+                        },
+
+                        onerror(error) {
+                            console.log('Error:', error);
+                        }
+                    });
+            } catch (error) {
+                console.log('Error:', error);
+            }
+        }, []);
 
     const callOpenAI = React.useCallback(
         async (messages: any[], functions: any[]) => {
@@ -43,7 +124,7 @@ export const useOpenAI = (httpClient: HttpClient) => {
 
                 console.log('response', response);
 
-                if(!response.ok) {
+                if (!response.ok) {
                     console.error('Error:', response);
                     return undefined;
                 }
@@ -61,19 +142,5 @@ export const useOpenAI = (httpClient: HttpClient) => {
         [httpClient]
     );
 
-    /* const callOpenAI_GPT35 = React.useCallback(
-        async (messages: any[], functions: any[]) => {
-            return await callOpenAI(messages, functions, "gpt-3.5-turbo-0613");
-        },
-        [callOpenAI]
-    );
-
-    const callOpenAI_GPT4 = React.useCallback(
-        async (messages: any[], functions: any[]) => {
-            return await callOpenAI(messages, functions, "gpt-4-0613");
-        },
-        [callOpenAI]
-    ); */
-
-    return { callOpenAI };
+    return { callOpenAIStream, callOpenAI };
 };

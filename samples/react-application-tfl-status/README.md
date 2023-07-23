@@ -54,12 +54,14 @@
 ## Minimal Path to Awesome
 
 - Clone this repository
-- Ensure that you are at the solution folder
-- In the command-line run:
+- Edit the constants file at `src\extensions\tflStatus\constants\constants.ts` and update the following values:
+  - `OPENAI_API_KEY` - Your OpenAI API key
+  - `GPT_MODELTO_USE` - either `gpt-4-0613` or `gpt-3.5-turbo-0613` based on which one you have access to
+- In the command-line (ensure that you are at the solution folder) run:
   - **npm install**
   - **gulp serve --nobrowser**
 - Open your SharePoint Online site
-- Append the following query string parameters to the URL: `?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"09b36981-a90f-47ea-a866-627912567524":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"show":true}}}`
+- Append the following query string parameters to the URL: `?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"09b36981-a90f-47ea-a866-627912567524":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"show":true, "stream":true}}}`
 - You should now see the chatbot in the bottom right corner of the page
 
 ## Features

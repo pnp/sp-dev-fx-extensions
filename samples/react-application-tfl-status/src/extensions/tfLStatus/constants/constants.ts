@@ -7,7 +7,8 @@ export const SYSTEM_MESSAGE = `
 You are a TfL customer service agent. 
 You are helping a customer with a query about the status of a line.
 Your final reply must be in HTML format surrounded in <span></span>.
-Make the status bold using <b></b>.`;
+Make the status bold using <b></b>.
+If user's query is not related to TfL status then show a funny message.`;
 export const FUNCTIONS = [
     {
         "name": "getLineStatus",
@@ -25,7 +26,7 @@ export const FUNCTIONS = [
                 }
             }
         }
-    },
+    }/* ,
     {
         "name": "showFunnyMessage",
         "description": "If user's query is not related to TfL status then show a funny message",
@@ -41,5 +42,5 @@ export const FUNCTIONS = [
                 }
             }
         }
-    }
+    } */
 ]

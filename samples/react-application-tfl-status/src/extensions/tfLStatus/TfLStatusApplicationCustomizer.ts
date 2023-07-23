@@ -18,6 +18,7 @@ const LOG_SOURCE: string = 'TfLStatusApplicationCustomizer';
  */
 export interface ITfLStatusApplicationCustomizerProperties {
   show: boolean;
+  stream: boolean;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
@@ -48,7 +49,8 @@ export default class TfLStatusApplicationCustomizer
     const element: React.ReactElement<ITfLStatusChatWindowProps> = React.createElement(
       TfLStatusChatWindow,
       {
-        httpClient: this.context.httpClient
+        httpClient: this.context.httpClient,
+        stream: this.properties.stream
       }
     );
 
