@@ -15,12 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Join samples  
         run: |
           jq -s '[.[][]]' samples/**/assets/sample.json > .metadata/samples.json
       - name: Commit samples.json to main
-        uses: EndBug/add-and-commit@v6
+        uses: EndBug/add-and-commit@v9
         with:
           add: '.metadata/samples.json --force'
           push: true
