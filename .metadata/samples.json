@@ -5890,6 +5890,9 @@
         "value": "1.15.2"
       }
     ],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
     "thumbnails": [
       {
         "type": "image",
