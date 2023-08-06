@@ -23,6 +23,9 @@
         "value": "1.15.0"
       }
     ],
+    "categories": [
+      "SPFX-FORM-EXTENSION"
+    ],
     "thumbnails": [
       {
         "type": "image",
