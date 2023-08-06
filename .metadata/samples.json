@@ -5899,6 +5899,13 @@
     "categories": [
       "SPFX-APPLICATION-EXTENSION"
     ],
+    "authors": [
+      {
+        "gitHubAccount": "AriGunawan",
+        "pictureUrl": "https://github.com/AriGunawan.png",
+        "name": "Ari Gunawan"
+      }
+    ],
     "thumbnails": [
       {
         "type": "image",
