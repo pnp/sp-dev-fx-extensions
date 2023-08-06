@@ -35,7 +35,13 @@
         "alt": "Get a direct link to a document or folder"
       }
     ],
-    "authors": [],
+    "authors": [
+      {
+        "gitHubAccount": "JonasBjerke89",
+        "pictureUrl": "https://github.com/JonasBjerke89.png",
+        "name": "Jonas Bjerke Hansen"
+      }
+    ],
     "references": [
       {
         "name": "Overview of SharePoint Framework Extensions",
