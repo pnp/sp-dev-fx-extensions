@@ -2596,7 +2596,7 @@
     "metadata": [
       {
         "key": "CLIENT-SIDE-DEV",
-        "value": "TypeScript,React"
+        "value": "React"
       },
       {
         "key": "SPFX-VERSION",
@@ -5933,7 +5933,7 @@
     "metadata": [
       {
         "key": "CLIENT-SIDE-DEV",
-        "value": "TypeScript,React"
+        "value": "React"
       },
       {
         "key": "SPFX-VERSION",
