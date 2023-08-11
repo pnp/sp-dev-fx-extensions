@@ -1,0 +1,35 @@
+.sharingLinks {
+    .oddRow {
+        background-color: "[theme: neutralQuarternary, default: #d0d0d0]";
+        padding: 4px;
+    }
+    .evenRow {
+        background-color: inherit;
+        padding: 4px;
+    }
+    .itemName {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        a {
+            text-decoration: none;
+            color: "[theme: neutralPrimary, default: #333333]";
+        }        
+    }
+    .itemPerson {
+        font-size: x-small;
+        color: "[theme: neutralSecondary, default: #666666]";  
+    }
+    .itemPermission {
+        font-size: smaller;
+        display: flex;
+        justify-content: space-between;
+        color: "[theme: neutralSecondary, default: #666666]";
+    }
+    .txtPermission {
+        margin-top: 8px;
+    }
+    .sharingBtn {
+        cursor: pointer;
+    }
+}
