@@ -1,7 +1,8 @@
 # SPFx Field Customiser sample to handle unique permissions on list items
 
-> This sample demonstrates how to use field customizer to handle unique permissions on list items. 
-> With this solution, users with manage permission can review and manage permissions for themselves and other users.
+This sample demonstrates how to use field customizer to handle unique permissions on list items. 
+
+With this solution, users with manage permission can review and manage permissions for themselves and other users.
 
 
 
@@ -11,17 +12,16 @@
 This sample shows how to use field customiser to handle unique permissions on list items.
 
 ![react-field-unique-permissions](./assets/checkUserPermission.gif)
-</br>
-</br>
+
 
 ### **Show items with unique permissions**
-</br>
+
 
 ![unique-permissions](./assets/uniquePermissions.png)
 
 
 ### **Show current user permissions**
-</br>
+
 
 ![current-user-permissions](./assets/currentUserPermissions.png)
 
@@ -49,28 +49,22 @@ This sample shows how to use field customiser to handle unique permissions on li
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 ![Hosted Workbench Incompatible](https://img.shields.io/badge/Hosted%20Workbench-Incompatible-red.svg "Does not work with hosted workbench")
 
+Tested on Node version:v16.13.0
+
 ## Applies to
 
 * [SharePoint Framework Extensions](https://dev.office.com/sharepoint/docs/spfx/extensions/overview-extensions)
 * [Office 365 tenant](http://dev.office.com/sharepoint/docs/spfx/set-up-your-developer-tenant)
 
-## Solution
+## Contributors
 
-Solution|Author(s)
---------|---------
-react-field-unique-permissions|Michał Kornet([@kornetmichal](https://twitter.com/kornetmichal)), [GitHub](https://github.com/mkm17) , [Blog](https://michalkornet.com)
+* [Michał Kornet](https://github.com/mkm17)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0.49|June 21, 2023|Initial release
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
 
 ## Minimal Path to Awesome
 
@@ -82,6 +76,7 @@ Version|Date|Comments
 - Use following query parameter in the SharePoint site to get extension loaded without installing it to app catalog
 
 ## Debug URL for testing
+
 Here's a debug URL for testing around this sample. Notice that this sample is designed to be used with **Text** field type. In below debug URL sample we define the field internal name as **UniquePermissions**.
 
 ```
