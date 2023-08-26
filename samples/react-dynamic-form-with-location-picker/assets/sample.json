@@ -1,6 +1,6 @@
 [
   {
-    "name": "react-dynamic-form-with-location-picker",
+    "name": "pnp-sp-dev-spfx-extensions-react-dynamic-form-with-location-picker",
     "source": "pnp",
     "title": "Dynamic Form with location picker",
     "shortDescription": "This solution implements a simple Form Customizer with a Dynamic Form with a location picker, to demonstrate the many usages of a Dynamic Form.",
@@ -44,10 +44,8 @@
     "authors": [
       {
         "gitHubAccount": "martinlingstuyl",
-        "company": "I4-YOU Business Solutions b.v.",
-        "pictureUrl": "https://avatars.githubusercontent.com/u/5267487?v=4",
-        "name": "Martin Lingstuyl",
-        "twitter": "martinlingstuyl"
+        "pictureUrl": "https://github.com/martinlingstuyl.png",
+        "name": "Martin Lingstuyl"
       }
     ],
     "references": [
