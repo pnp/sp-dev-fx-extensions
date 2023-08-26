@@ -1,6 +1,6 @@
 [
   {
-    "name": "react-dynamic-site-form",
+    "name": "pnp-sp-dev-spfx-extensions-react-dynamic-site-form",
     "source": "pnp",
     "title": "Dynamic Site Form",
     "shortDescription": "The Dynamic Site Form solution implements a Form Customizer with a Dynamic Form with field overrides to look like the default SharePoint new site form.",
@@ -44,10 +44,8 @@
     "authors": [
       {
         "gitHubAccount": "martinlingstuyl",
-        "company": "I4-YOU Business Solutions b.v.",
-        "pictureUrl": "https://avatars.githubusercontent.com/u/5267487?v=4",
-        "name": "Martin Lingstuyl",
-        "twitter": "martinlingstuyl"
+        "pictureUrl": "https://github.com/martinlingstuyl.png",
+        "name": "Martin Lingstuyl"
       }
     ],
     "references": [
