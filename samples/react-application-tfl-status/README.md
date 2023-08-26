@@ -6,19 +6,21 @@
 - The information is based on the response from TfL API. 
 - The information exchanged between the user and the chatbot is in natural language. 
 - The chatbot uses [OpenAI's function calling feature](https://openai.com/blog/function-calling-and-other-api-updates) to understand whether a function in the code needs to be called based on user's query. 
-- The chatbot OpenAI API which transforms the JSON reponse from TfL API to natural language.
+- The chatbot OpenAI API which transforms the JSON response from TfL API to natural language.
 
 ![Chatbot](./assets/demo.gif)
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.17.3-green.svg)
+![SPFx 1.17.3](https://img.shields.io/badge/version-1.17.3-green.svg)
 ![Node.js v16 | v14 | v12](https://img.shields.io/badge/Node.js-v16%20%7C%20v14%20%7C%20v12-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 ![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
+
+Tested with Node.js v16.13.0
 
 ## Applies to
 
@@ -31,25 +33,15 @@
 
 > Open AI API key. You can get a key from <https://platform.openai.com/account/api-keys>
 
-## Solution
+## Contributors
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| react-application-tfl-status | [Anoop Tatti](https://github.com/anoopt) |
+* [Anoop Tatti](https://github.com/anoopt)
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | June 23, 2023 | Initial release |
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
-> This sample calls OpenAI API from client side code. This is not recommended. You should call OpenAI API from server side code. This sample is only for demonstration purposes.
-
----
 
 ## Minimal Path to Awesome
 
@@ -58,8 +50,8 @@
   - `OPENAI_API_KEY` - Your OpenAI API key
   - `GPT_MODELTO_USE` - either `gpt-4-0613` or `gpt-3.5-turbo-0613` based on which one you have access to
 - In the command-line (ensure that you are at the solution folder) run:
-  - **npm install**
-  - **gulp serve --nobrowser**
+  - `npm install``
+  - `gulp serve --nobrowser``
 - Open your SharePoint Online site
 - Append the following query string parameters to the URL: `?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"09b36981-a90f-47ea-a866-627912567524":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"show":true, "stream":true}}}`
 - You should now see the chatbot in the bottom right corner of the page
@@ -90,4 +82,11 @@ For questions regarding this sample, [create a new question](https://github.com/
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-tfl-status&authors=@anoopt&title=react-application-tfl-status%20-%20).
 
+## Disclaimer
+
+**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+> This sample calls OpenAI API from client side code. This is not recommended. You should call OpenAI API from server side code. This sample is only for demonstration purposes.
+
+---
 <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-tfl-status" />
