@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <Field ID="{1f113293-04fe-4d94-9130-2bee259c6f64}"
+            Name="UniquePermissions"
+            DisplayName="UniquePermissions"
+            Type="Text"
+            Required="FALSE"
+            Group="SPFx Columns"
+            ClientSideComponentId="e0424f4f-5973-492b-aa7c-b8d00fc1a6a0">
+    </Field>
+</Elements>

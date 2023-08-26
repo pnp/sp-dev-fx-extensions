@@ -1,0 +1,49 @@
+{
+    "rootDir": "..",
+    "transform": {
+        "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testEnvironment": "jsdom",
+    "testMatch": [
+        "**/src/**/*.(spec|test).+(ts|js)?(x)",
+        "**/__tests__/**/*.(spec|test).+(ts|js)?(x)",
+        "**/tests/**/*.(spec|test).+(ts|js)?(x)",
+        "**/src/**/*.test.+(ts|tsx|js)"
+    ],
+    "transformIgnorePatterns": [
+        "node_modules/(?!(@pnp|@uifabric|office-ui-fabric-react|@microsoft/sp-core-library|@microsoft/sp-http|@microsoft/sp-diagnostics|@microsoft/decorators|@microsoft/sp-page-context|@microsoft/sp-dynamic-data)/)"
+    ],
+    "moduleNameMapper": {
+        "\\.(css|scss)$": "identity-obj-proxy",
+        "@microsoft/sp-webpart-base": "identity-obj-proxy",
+        "@microsoft/sp-core-library": "identity-obj-proxy",
+        "@pnp/spfx-controls-react/lib/PeoplePicker": "identity-obj-proxy",
+        "@microsoft/sp-http": "identity-obj-proxy",
+        "^resx-strings/en-us.json": "<rootDir>/node_modules/@microsoft/sp-core-library/lib/resx-strings/en-us.json",
+        "UniquePermissionsFieldCustomizerStrings": "lib/extensions/uniquePermissions/loc/{locale}.js",
+        "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+    },
+    "reporters": [
+        "default",
+        [
+            "jest-junit",
+            {
+                "outputDirectory": "temp/test",
+                "outputName": "junit.xml"
+            }
+        ]
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/../temp/test",
+    "collectCoverageFrom": [
+        "<rootDir>/**/*.{ts,tsx}",
+        "!<rootDir>/**/*.scss.*",
+        "!<rootDir>/**/webparts/**/*.ts",
+        "!<rootDir>/loc/**/*.*"
+    ],
+    "coverageReporters": [
+        "json",
+        "lcov",
+        "text-summary"
+    ]
+}
