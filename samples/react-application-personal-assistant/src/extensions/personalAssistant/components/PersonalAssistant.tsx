@@ -1,3 +1,4 @@
+/* eslint-disable dot-notation */
 import * as React from 'react';
 import { IPersonalAssistantProps } from './IPersonalAssistantProps';
 import 'react-chat-elements/dist/main.css';
@@ -29,6 +30,7 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
     const [query, setQuery] = React.useState<string>("");
     const [showChatWindow, setShowChatWindow] = React.useState<boolean>(false);
     const [chatMessages, setChatMessages] = React.useState<IChatMessage[]>([firstChatMessage]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [openaiMessages, setOpenaiMessages] = React.useState<any[]>([systemMessage]);
 
     const { httpClient, msGraphClientFactory, currentUserEmail } = props;
@@ -38,13 +40,14 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
     const styles = getStyles();
 
     // function to show generic message
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     const showMessage = (genericMessage: string, replaceLastMessage: boolean = true) => {
 
         if (replaceLastMessage) {
 
             // replace the last message's text with genericMessage
             setChatMessages(prevChatMessages => {
-                let lastChatMessage = prevChatMessages[prevChatMessages.length - 1];
+                const lastChatMessage = prevChatMessages[prevChatMessages.length - 1];
                 lastChatMessage.text = <span dangerouslySetInnerHTML={{ __html: genericMessage }}>{ }</span>;
 
                 return [...prevChatMessages.slice(0, prevChatMessages.length - 1), lastChatMessage];
@@ -52,7 +55,7 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
         } else {
 
             // add a new message with genericMessage
-            let newChatMessage: IChatMessage = {
+            const newChatMessage: IChatMessage = {
                 position: 'left',
                 type: 'text',
                 title: 'Personal Assistant',
@@ -66,8 +69,9 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
     }
 
     // function to show loading message
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     const showLoadingMessage = () => {
-        let newChatMessage: IChatMessage = {
+        const newChatMessage: IChatMessage = {
             position: 'left',
             type: 'text',
             title: 'Personal Assistant',
@@ -80,6 +84,7 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
         setChatMessages(prevChatMessages => [...prevChatMessages, newChatMessage]);
     }
 
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-explicit-any
     async function callFunction(functionName: string, functionArguments: any) {
         let functionResult;
 
@@ -95,6 +100,7 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
     }
 
     // function to process the response from OpenAI
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-explicit-any
     const processResponse = async (response: any) => {
 
         console.log(response);
@@ -114,6 +120,7 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
                     break;
                 }
                 case "function_call": {
+                    // eslint-disable-next-line dot-notation
                     const function_name = response["choices"][0]["message"]["function_call"]["name"];
                     const function_arguments = response["choices"][0]["message"]["function_call"]["arguments"];
                     const function_arguments_json = JSON.parse(function_arguments);
@@ -152,9 +159,10 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
     }
 
     // function to send a message to OpenAI and get a response
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     const onSendClick = async () => {
         // add the user message to the chatMessages array
-        let newChatMessage: IChatMessage = {
+        const newChatMessage: IChatMessage = {
             position: 'right',
             type: 'text',
             title: 'You',
@@ -177,11 +185,13 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
     }
 
     // function to handle the text change in the text field
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     const onTextChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => {
         setQuery(newValue || "");
     }
 
     // function to handle the key press in the text field
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     const onKeyDown = async (event: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         if (event.key === 'Enter') {
             // if query is empty, then return
@@ -193,6 +203,7 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
     }
 
     // function to scroll to the bottom of the chat window
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     const scrollToBottom = () => {
         const chatWindow = document.getElementsByClassName('rce-mlist')[0];
         if (chatWindow) {
@@ -213,6 +224,7 @@ const PersonalAssistant: React.FC<IPersonalAssistantProps> = (props) => {
             return;
         }
 
+        // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
         const handleOpenAIResponse = async () => {
             setLoading(true);
             const response = await callOpenAI(openaiMessages, FUNCTIONS);

@@ -2,7 +2,7 @@
 
 ## Summary
 
-- This sample is chatbot that provides information to the current logged in user. 
+- This sample is chatbot that provides information to the current logged in user.
 - The information can be the user's basic details or user's calendar details or user's tasks. - The information exchanged between the user and the chatbot is in natural language. 
 - The chatbot uses [OpenAI's function calling feature](https://openai.com/blog/function-calling-and-other-api-updates) to understand whether a function in the code needs to be called based on user's query. 
 - The chatbot uses Microsoft Graph API to get the user's details or details from calendar or tasks.
@@ -12,13 +12,15 @@
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.17.3-green.svg)
-![Node.js v16 | v14 | v12](https://img.shields.io/badge/Node.js-v16%20%7C%20v14%20%7C%20v12-green.svg)
+![SPFx 1.17.3](https://img.shields.io/badge/version-1.17.3-green.svg)
+16.13.0![Node.js v16 | v14 | v12](https://img.shields.io/badge/Node.js-v16%20%7C%20v14%20%7C%20v12-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 ![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
+
+Tested with Node.js v16.13.0
 
 ## Applies to
 
@@ -31,11 +33,9 @@
 
 > Open AI API key. You can get a key from <https://platform.openai.com/account/api-keys>
 
-## Solution
+## Contributors
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| react-application-personal-assistant | [Anoop Tatti](https://github.com/anoopt) |
+* [Anoop Tatti](https://github.com/anoopt)
 
 ## Version history
 

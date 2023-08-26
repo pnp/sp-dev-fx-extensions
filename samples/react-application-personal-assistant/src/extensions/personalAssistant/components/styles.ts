@@ -20,7 +20,9 @@ export interface ITfLStatusChatWindowStyles {
 }
 
 const theme = getTheme();
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ThemeState = (<any>window).__themeState__;
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function getThemeColor(slot: string) {
     if (ThemeState && ThemeState.theme && ThemeState.theme[slot]) {
         return ThemeState.theme[slot];

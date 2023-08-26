@@ -2,19 +2,24 @@ import * as React from 'react';
 import { HttpClient } from "@microsoft/sp-http";
 import { OPENAI_API_KEY, OPENAI_API_ENDPOINT, GPT_MODELTO_USE } from '../constants/constants';
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const useOpenAI = (httpClient: HttpClient) => {
 
     const callOpenAI = React.useCallback(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         async (messages: any[], functions: any[]) => {
             try {
 
-                let endpoint: string = OPENAI_API_ENDPOINT;
+                const endpoint: string = OPENAI_API_ENDPOINT;
 
-                let requestHeaders: any = {};
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                const requestHeaders: any = {};
                 requestHeaders['Content-Type'] = 'application/json';
+                // eslint-disable-next-line dot-notation
                 requestHeaders['Authorization'] = `Bearer ${OPENAI_API_KEY}`;
 
-                let request: any = {};
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                const request: any = {};
                 request.model = GPT_MODELTO_USE;
                 request.messages = messages;
                 request.functions = functions;

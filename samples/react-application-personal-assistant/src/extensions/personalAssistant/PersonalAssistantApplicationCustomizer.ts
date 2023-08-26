@@ -44,7 +44,7 @@ export default class PersonalAssistantApplicationCustomizer
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-    let show: boolean = this.properties.show;
+    const show: boolean = this.properties.show;
     if (show) {
       this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
     }
@@ -68,6 +68,7 @@ export default class PersonalAssistantApplicationCustomizer
       }
     );
 
+    // eslint-disable-next-line @microsoft/spfx/pair-react-dom-render-unmount
     ReactDom.render(element, this._bottomPlaceholder.domElement);
   }
 }
