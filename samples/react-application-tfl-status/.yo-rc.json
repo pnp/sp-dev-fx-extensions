@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.20.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.3",
+    "libraryName": "tfl-status-extension",
+    "libraryId": "fe262d7c-d228-4e33-8674-6985bf6f0c5f",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "tfl-status-extension",
+    "solutionShortDescription": "tfl-status-extension description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}
