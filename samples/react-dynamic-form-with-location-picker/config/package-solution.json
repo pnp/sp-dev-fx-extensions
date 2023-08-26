@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "react-dynamic-form-with-location-picker-client-side-solution",
+    "id": "1ef8efab-1523-4382-8e66-d2340e5e2bb7",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Martin Lingstuyl",
+      "websiteUrl": "https://www.blimped.nl",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "This solution implements a simple Form Customizer with a Dynamic Form with a location picker, to demonstrate the many usages of a Dynamic Form."
+      },
+      "longDescription": {
+        "default": "This solution implements a simple Form Customizer with a Dynamic Form with a location picker, to demonstrate the many usages of a Dynamic Form."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "react-dynamic-form-with-location-picker Feature",
+        "description": "The feature that activates elements of the react-dynamic-form-with-location-picker solution.",
+        "id": "a4eb427f-4c85-4466-aa10-824c3c1a3b34",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-dynamic-form-with-location-picker.sppkg"
+  }
+}
