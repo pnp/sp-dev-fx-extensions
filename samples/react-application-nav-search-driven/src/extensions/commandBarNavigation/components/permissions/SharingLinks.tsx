@@ -31,10 +31,13 @@ export const SharingLinks: React.FC<ISharingLinksProps> = (props) => {
     setItems(respItems);
   };
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const deleteSharingLink = async (docId: string, shareId: string) => { 
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define
     hideDialog();   
     const response = await graphService.deleteSharingLink(props.siteId, docId, shareId);
     if (response) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       getSharingLinks();
     }
   };
@@ -58,6 +61,7 @@ export const SharingLinks: React.FC<ISharingLinksProps> = (props) => {
   }, [items]);
 
   const copyShareLinkToClipboard = React.useCallback((shareLink: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     navigator.clipboard.writeText(shareLink);
     setIsShareCalloutVisible(true);
   }, [items]);
@@ -92,6 +96,7 @@ export const SharingLinks: React.FC<ISharingLinksProps> = (props) => {
   };
 
   React.useEffect((): void => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     getSharingLinks();
   }, []);
 

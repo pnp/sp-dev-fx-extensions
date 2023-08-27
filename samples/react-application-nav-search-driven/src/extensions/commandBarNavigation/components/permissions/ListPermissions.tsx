@@ -27,6 +27,7 @@ export const ListPermissions: React.FC<IListPermissionsProps> = (props) => {
     setItems(respItems);
   };
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const hideDialog = () => {
     setDialog(<React.Fragment></React.Fragment>);
   };
@@ -35,6 +36,7 @@ export const ListPermissions: React.FC<IListPermissionsProps> = (props) => {
     hideDialog();   
     const response = await spService.breakInheritListPermissions(props.currentSiteUrl, listID);
     if (response) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       evalListPermissions();
     }
     else {
@@ -60,6 +62,7 @@ export const ListPermissions: React.FC<IListPermissionsProps> = (props) => {
     hideDialog();
     const response = await spService.reInheritListPermissions(props.currentSiteUrl, listID);
     if (response) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       evalListPermissions();
     }
     else {
@@ -98,6 +101,7 @@ export const ListPermissions: React.FC<IListPermissionsProps> = (props) => {
   };
 
   React.useEffect((): void => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     evalListPermissions();
   }, []);
 

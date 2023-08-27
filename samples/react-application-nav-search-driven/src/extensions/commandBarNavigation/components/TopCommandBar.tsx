@@ -111,6 +111,7 @@ export const TopCommandBar: React.FC<ITopCommandBarProps> = (props) => {
   }, [teamsites, commsites, hubites, teams, homesite]);
 
   React.useEffect((): void => {
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define
     const rightItems = evaluateFarItems(externalSharingEnabled, togglePermissions);
     setFarItems(rightItems);
   }, [externalSharingEnabled]);
@@ -128,17 +129,22 @@ export const TopCommandBar: React.FC<ITopCommandBarProps> = (props) => {
 
   React.useEffect((): void => {
     if (props.useTeamsites) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       getTeamsites('');
     }
     if (props.useCommsites) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       getCommsites('');
     }
     if (props.useHubsites) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       getHubsites('');
     }
     if (props.useTeams) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       getTeams();
     }    
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     evalSharing();
   }, []);
 

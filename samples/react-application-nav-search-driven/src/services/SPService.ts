@@ -48,6 +48,7 @@ export class SPService implements ISPService {
     const relevantResults: ISharePointSearchResultsTable | null = (response.PrimaryQueryResult !== null) ? response.PrimaryQueryResult.RelevantResults.Table : null;     
     const items: Array<IMenuItem> = new Array<IMenuItem>();
     if (relevantResults !== null){
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       relevantResults.Rows.forEach((r: any) => {          
         items.push({ displayName: r.Cells[0].Value, url: r.Cells[1].Value, iconUrl: r.Cells[2].Value, description: r.Cells[3].Value, key: r.Cells[4].Value });        
       });
@@ -91,12 +92,14 @@ export class SPService implements ISPService {
    * This function evaluates if the given site belongs to a hub site and if so returns the HubSiteId ales null
    * @returns string|
    */
+  // eslint-disable-next-line @rushstack/no-new-null
   public getHubSiteId(currentSiteUrl: string): Promise<string|null> {
     const requestUrl = `${currentSiteUrl}/_api/site/HubSiteId`;
     return this._spHttpClient.get(requestUrl, SPHttpClient.configurations.v1)
       .then((response) => {
         return response.json();
       })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .then((jsonResponse: any): string|null => {
         const hubSiteId: string = jsonResponse.value;
         if (hubSiteId !== '00000000-0000-0000-0000-000000000000') {
@@ -118,6 +121,7 @@ export class SPService implements ISPService {
       .then((response: SPHttpClientResponse) => {
         return response.json();
       })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .then((jsonResponse: any): boolean => {
         return jsonResponse.ShareByEmailEnabled;
       });
@@ -130,8 +134,10 @@ export class SPService implements ISPService {
       .then((response: SPHttpClientResponse) => {
         return response.json();
       })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .then((jsonResponse: any) => {
         const permissionItems: IPermissionItem[] = [];        
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         jsonResponse.value.forEach((l: any) => {
           let isDefault: boolean = false;
           defaultGroups.forEach((g) => {
@@ -185,8 +191,10 @@ export class SPService implements ISPService {
       .then((response: SPHttpClientResponse) => {
         return response.json();
       })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .then((jsonResponse: any) => {
         const permissionItems: IPermissionItem[] = [];
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         jsonResponse.value.forEach((l: any) => {
           permissionItems.push({ key: l.Id, name: l.Title, permission: l.HasUniqueRoleAssignments ? 'Unique':'Inherits', isDefault: false, description: '', url: l.RootFolder.ServerRelativeUrl });
         });
@@ -206,6 +214,7 @@ export class SPService implements ISPService {
         return false;
       }
     })
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .catch((err: any) => {
       console.log(err);
       return false;
@@ -224,6 +233,7 @@ export class SPService implements ISPService {
         return false;
       }
     })
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .catch((err: any) => {
       console.log(err);
       return false;
@@ -238,12 +248,14 @@ export class SPService implements ISPService {
       const itemsResponse = await this._spHttpClient.get(requestUrl, SPHttpClient.configurations.v1);
       const itemsResponseJson = await itemsResponse.json();
       const sharingLinks: ISharingLink[] = [];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       itemsResponseJson.value.forEach((l: any) => {        
         const lJson = JSON.parse(l.AvailableLinks);
         if (Array.isArray(lJson) && lJson.length > 0) {
           const currLink = parseInt(l.CurrentLink);
           const docUrl = `${currentSiteUrl}/_layouts/15/Doc.aspx?sourcedoc={${l.SharingDocId}}`;
           const emails: string[] = [];
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           lJson[currLink].Invitees.forEach((i: any) => emails.push(i.Email));
           sharingLinks.push({ key: lJson[currLink].ShareId, docId: l.SharingDocId, name: l.SharingDocId, description: emails.join(), roleid: lJson[currLink].RoleDefinitionId, url: docUrl })
         }        
