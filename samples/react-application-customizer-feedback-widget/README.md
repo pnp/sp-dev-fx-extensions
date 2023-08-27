@@ -4,9 +4,9 @@
 
 An SPFx Application Customizer Extension placed in the bottom placeholder which allows users to input their feedbacks without scrolling down to the end of the page.
 
-![Screenshot 1](assets/Feedback_Widget%231.png)
-![Screenshot 2](assets/Feedback_Widget%232.png)
-![Screenshot 3](assets/Feedback_Widget%233.png)
+![Screenshot 1](assets/Feedback_Widget1.png)
+![Screenshot 2](assets/Feedback_Widget2.png)
+![Screenshot 3](assets/Feedback_Widget3.png)
 
 ## Compatibility
 
@@ -16,8 +16,6 @@ An SPFx Application Customizer Extension placed in the bottom placeholder which 
 |Refer to <https://aka.ms/spfx-matrix> for more information on SPFx compatibility.   |
 
 ## Used SharePoint Framework Version
-
-![version](https://img.shields.io/badge/version-1.16.1-green.svg)
 
 This sample is optimally compatible with the following environment configuration:
 
@@ -48,12 +46,6 @@ Create a SharePoint custom list Feedbacks in the SPO site where this application
 | Comment | Multi-line Text |
 
 > **Optional:** Unhide the default column `Created` to capture the submitted date.
-
-## Solution
-
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| react-feedback-widget | Sandeep P S ( [Linkedin](https://www.linkedin.com/in/sandeepps1299/) ) / Quadrasystems.net ( [Twitter](https://www.linkedin.com/company/quadrasystems.net-india-pvt-ltd) / [Linkedin](https://www.linkedin.com/company/quadrasystems.net-india-pvt-ltd) ) |
 
 ## Contributors🧑‍💻
 
