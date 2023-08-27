@@ -1,0 +1,11 @@
+.app {
+    .top {
+      border-bottom: 1px solid lightgrey;
+    }
+    .top, .top > div {
+        background-color: #fff;      
+    }
+    .commandItem {
+      border: none;
+    }
+}

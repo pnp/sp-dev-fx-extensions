@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "command-bar-navigation-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/commandBarNavigation/CommandBarNavigationApplicationCustomizer.js",
+          "manifest": "./src/extensions/commandBarNavigation/CommandBarNavigationApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CommandBarNavigationApplicationCustomizerStrings": "lib/extensions/commandBarNavigation/loc/{locale}.js"
+  }
+}
