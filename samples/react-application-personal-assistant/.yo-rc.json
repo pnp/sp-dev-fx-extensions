@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.20.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.3",
+    "libraryName": "personal-assistant",
+    "libraryId": "e6fe279b-a2f3-4047-8d2c-8702c8274991",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "PersonalAssistant",
+    "solutionShortDescription": "PersonalAssistant description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}

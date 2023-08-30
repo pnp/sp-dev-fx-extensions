@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="TfLStatus"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="09b36981-a90f-47ea-a866-627912567524"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

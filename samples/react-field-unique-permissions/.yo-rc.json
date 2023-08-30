@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.13.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.2",
+    "libraryName": "react-field-unique-permissions",
+    "libraryId": "ceb55727-743e-413d-828a-ee9edf0d2465",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "react-field-unique-permissions",
+    "solutionShortDescription": "react-field-unique-permissions description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "FieldCustomizer"
+  }
+}

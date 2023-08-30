@@ -1,0 +1,24 @@
+.sitePermissions {
+    .oddRow {
+        background-color: "[theme: neutralQuarternary, default: #d0d0d0]";
+    }
+    .evenRow {
+        background-color: inherit;
+    }
+    .itemName {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        a {
+            text-decoration: none;
+            color: "[theme: neutralPrimary, default: #333333]";
+        }        
+    }
+    .itemIndex {
+        font-size: smaller;
+        margin-bottom: 10;
+        display: flex;
+        justify-content: space-between;
+        color: "[theme: neutralSecondary, default: #666666]";
+    }
+}

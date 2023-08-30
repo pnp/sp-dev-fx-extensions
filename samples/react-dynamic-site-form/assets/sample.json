@@ -1,0 +1,74 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-dynamic-site-form",
+    "source": "pnp",
+    "title": "Dynamic Site Form",
+    "shortDescription": "The Dynamic Site Form solution implements a Form Customizer with a Dynamic Form with field overrides to look like the default SharePoint new site form.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-dynamic-site-form",
+    "longDescription": [
+      "The Dynamic Site Form solution implements a Form Customizer with a SPFx Controls Dynamic Form to load the form. It has field overrides for URL and Group mailbox values to make the form look and act like the default SharePoint new site form."
+    ],
+    "creationDateTime": "2023-06-22",
+    "updateDateTime": "2023-06-22",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "TypeScript,React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.3"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-FORM-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-dynamic-site-form/assets/dynamic-site-form.gif",
+        "alt": "Dynamic Site Form solution"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-dynamic-site-form/assets/dynamic-site-form-screenshot.png",
+        "alt": "Dynamic Site Form solution"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "martinlingstuyl",
+        "pictureUrl": "https://github.com/martinlingstuyl.png",
+        "name": "Martin Lingstuyl"
+      }
+    ],
+    "references": [
+      {
+        "name": "Building a SharePoint New Site Form Look-Alike",
+        "description": "A post on building a SPFx Form Customizer with a Dynamic Site with field overrides to create an experience that looks like the default SharePoint new site form.",
+        "url": "https://www.blimped.nl/building-a-sharepoint-new-site-form-look-alike"
+      },
+      {
+        "name": "Getting started with SharePoint Framework",
+        "description": "Introduction about how to develop Microsoft 365 extensions using SharePoint Framework.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+      },
+      {
+        "name": "Build your first Form Customizer extension",
+        "description": "Introduction about how to develop SharePoint Online form customizers using SharePoint Framework.",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-form-customizer"
+      },
+      {
+        "name": "Microsoft 365 Patterns and Practices",
+        "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+        "url": "https://aka.ms/m365pnp"
+      }
+    ]
+  }
+]

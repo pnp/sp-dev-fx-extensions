@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="PersonalAssistant"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="a4c9460d-77b2-4864-8fb7-183bf668c222"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>
