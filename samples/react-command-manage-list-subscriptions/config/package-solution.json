@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "manage-subscriptions-client-side-solution",
+    "id": "3ecb6ee3-3823-4161-a58b-25ad978a165a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.17.4"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Manage-Subscriptions description"
+      },
+      "longDescription": {
+        "default": "Manage-Subscriptions description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "1f9d52a0-a696-46b7-9e1c-a95d73a39490",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/manage-subscriptions.sppkg"
+  }
+}
