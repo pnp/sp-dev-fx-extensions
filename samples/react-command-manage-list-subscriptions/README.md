@@ -3,7 +3,7 @@
 ## Summary
 With the use of Rest calls, this sample commandset shows how to manage list subscriptions (SharePoint webhooks) and take action to extend the webhook expiration date. The commandset will be added to the lists and libraries and will only be shown if there are any list subscriptions available on the list. The subscriptions that are accessible are shown when you click on the Commandset. The 'Renew subscription' action can be used in accordance with the subscription's expiration date. Given that the default number of days is 180, the subscription's (webhook expiration renewal date) renewal date is set to 179 days. 
 
-Example use case - Since the webhook subscriptions are only valid to 180 days, and it is usually hard to keep a track on the expiration date. Say if the list has subscriptions, this commandset allows to manage those subscriptions with a possiblity to renew the subscriptions when expired. 
+Example use case - Since the webhook subscriptions are only valid to 180 days, and it is usually hard to keep a track on the expiration date and to renew it. Say if the list has subscriptions, this commandset allows to manage those subscriptions with a possiblity to renew the subscriptions when expired. 
 
 ![Manage Subscriptions](./assets/ManageSubscription.png)
 
