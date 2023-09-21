@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://m365x44410739.sharepoint.com/sites/PRIDE-EmployeeResourceGroup",
+      "customActions": {
+        "33ce42af-1748-4989-ab97-a8d9f782b886": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "feedback": {
+      "pageUrl": "https://m365x44410739.sharepoint.com/sites/PRIDE-EmployeeResourceGroup",
+      "customActions": {
+        "33ce42af-1748-4989-ab97-a8d9f782b886": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}
