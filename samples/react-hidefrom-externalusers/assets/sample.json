@@ -8,8 +8,8 @@
     "longDescription": [
       "This sample shows how Application Customizer can be hidden from tenant external users. This is often the ask from the business when a SharePoint Framework App customizer or a web part has internal links that would be broken if a guest user attempts to access any or them."
     ],
-    "creationDateTime": "2019-06-21",
-    "updateDateTime": "2019-06-21",
+    "creationDateTime": "2023-09-16",
+    "updateDateTime": "2023-09-16",
     "products": [
       "SharePoint"
     ],
@@ -37,10 +37,9 @@
     ],
     "authors": [
       {
-        "gitHubAccount": "VelinGeorgiev",
-        "company": "",
-        "pictureUrl": "https://github.com/VelinGeorgiev.png",
-        "name": "Velin Georgiev"
+        "gitHubAccount": "Mahyar915",
+        "pictureUrl": "https://github.com/Mahyar915.png",
+        "name": "Mohammad Mahyar Pourabdollah Khadar"
       }
     ],
     "references": [

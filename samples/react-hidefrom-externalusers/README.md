@@ -6,11 +6,11 @@ This sample shows how Application Customizer can be hidden from tenant external 
 
 ![SPFx app customizer hidden from external users](./assets/SharePoint-hidefrom-guest-user.gif)
 
-### Microsoft Graph to detect if the user is guest in the Office 365 tenant Azue Active Directory
+### Microsoft Graph to detect if the user is guest in the Office 365 tenant Azure Active Directory
 
 The Microsoft Graph is used along with the SharePoint Framework graph client to detect if user is guest in the Office 365 tenant Azure AD. Tenant admin will have to grant permissions to read user details from the Microsoft Graph through the SharePoint admin center -> API Management after the solution package is being deployed to SharePoint app catalog.
 
-```javascript
+```json
 // package-solution.json
 "webApiPermissionRequests": [
       {
@@ -21,10 +21,13 @@ The Microsoft Graph is used along with the SharePoint Framework graph client to 
 ```
 
 Additional information on how to call Microsoft Graph from SPFx solution is listed on the official Microsoft documents:
-[https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient).
+[https://docs.microsoft.com/sharepoint/dev/spfx/use-aadhttpclient](https://docs.microsoft.com/sharepoint/dev/spfx/use-aadhttpclient).
 
 ## Used SharePoint Framework Version 
+
 ![drop](https://img.shields.io/badge/drop-1.8.2-green.svg)
+
+Tested using Node.js v8.17.0
 
 ## Applies to
 
