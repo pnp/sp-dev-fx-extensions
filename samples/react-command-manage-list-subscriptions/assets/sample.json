@@ -3,19 +3,15 @@
         "name": "pnp-sp-dev-spfx-extensions-react-command-manage-list-subscriptions",
         "source": "pnp",
         "title": "React-Manage-List-Subscriptions",
-        "shortDescription": "This sample commandset demonstrates managing the list subscriptions (sharepoint webhooks) and action to renew the webhook expiration date using Rest calls.",
+        "shortDescription": "Demonstrates managing the list subscriptions (sharepoint webhooks) and action to renew the webhook expiration date using Rest calls.",
         "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-manage-list-subscriptions",
         "longDescription": [
-            "With the use of Rest calls, this sample commandset shows how to manage list subscriptions (SharePoint webhooks) and take action to extend the webhook expiration date. The commandset will be added to the lists and libraries and will only be shown if there are any list subscriptions available on the list. The subscriptions that are accessible are shown when you click on the Commandset. The 'Renew subscription' action can be used in accordance with the subscription's expiration date. Given that the default number of days is 180, the subscription's (webhook expiration renewal date) renewal date is set to 179 days. "
+            "With the use of Rest calls, this sample command set shows how to manage list subscriptions (SharePoint webhooks) and take action to extend the webhook expiration date. The commandset will be added to the lists and libraries and will only be shown if there are any list subscriptions available on the list. The subscriptions that are accessible are shown when you click on the Commandset. The 'Renew subscription' action can be used in accordance with the subscription's expiration date. Given that the default number of days is 180, the subscription's (webhook expiration renewal date) renewal date is set to 179 days. "
         ],
         "creationDateTime": "2023-09-12",
         "updateDateTime": "2023-09-12",
         "products": [
-            "SharePoint",
-            "WebHooks",
-            "Subscriptions",
-            "Update Subscriptions",
-            "Get Subscriptions"
+            "SharePoint"
         ],
         "metadata": [
             {
@@ -67,12 +63,12 @@
             {
                 "name": "Get Subscription",
                 "description": "Get SharePoint webhook subscriptions",
-                "url": "https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/lists/get-subscription"
+                "url": "https://learn.microsoft.com/sharepoint/dev/apis/webhooks/lists/get-subscription"
             },
             {
                 "name": "Update Subscription",
                 "description": "Update SharePoint webhook subscriptions",
-                "url": "https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/lists/update-subscription"
+                "url": "https://learn.microsoft.com/sharepoint/dev/apis/webhooks/lists/update-subscription"
             }
         ]
     }
