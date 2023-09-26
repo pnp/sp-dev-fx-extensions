@@ -1,8 +1,6 @@
 name: Merge sample metadata
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -18,21 +16,15 @@ jobs:
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v3
-        with:
-          ref: main
-          path: main
       - name: Join samples  
         run: |
-          jq -s '[.[][]]' ./main/samples/**/assets/sample.json  > ./main/.metadata/samples.json
-      - name: Validate JSON
-        continue-on-error: true
-        uses: docker://orrosenblatt/validate-json-action:latest
-        env:
-          INPUT_SCHEMA: ./main/templates/metadata-schema.json
-          INPUT_JSONS: ./Docs/docs/samples.json
-      - name: Commit samples.json to metadata
+          jq -s '[.[][]]' samples/**/assets/sample.json > .metadata/samples.json
+      - name: Commit samples.json to main
         uses: EndBug/add-and-commit@v9
         with:
+          add: '.metadata/samples.json --force'
+          push: true
+          token: ${{ secrets.GITHUB_TOKEN }}
           cwd: ./
           branch: main
           add: '.metadata/samples.json'
