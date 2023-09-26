@@ -50,8 +50,7 @@
   });
 
   // Get the JSON
-  $.getJSON(jsonPath, function (data) { 
-    console.log(`Read samples from ${jsonPath}`);
+  $.getJSON(jsonPath, function (data) {
     var asc = true;
     var prop = "updateDateTime";
 
