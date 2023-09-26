@@ -10,7 +10,7 @@ Example use case - Since the webhook subscriptions are only valid to 180 days, a
 
 ![Subscription Panel](./assets/SubscriptionPanel.gif)
 
-![Renewing webhook subscriptions](./assets/RenewSubscription.png)
+![Renewing webhook subscriptions](./assets/RenewSubscription.gif)
 
 ## Compatibility
 
