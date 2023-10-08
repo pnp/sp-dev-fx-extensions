@@ -6,7 +6,10 @@ An extension that displays Vote counter and button to vote or unvote.
 If the current user hasn't been voted, the button will become Vote button
 but if the current user has been voted, it will become Unvote button.
 
-The underlying value is an array of voter's login name in JSON format.
+The underlying value is a multiple person field.
+When a user clicks the 'vote' button, it will append the current user to the existing field value. Conversely, clicking the 'unvote' button will remove the current user from the current field value.
+
+![the app](assets/screenshot.png)
 
 ![picture of the extension in action](assets/preview.gif)
 
@@ -34,23 +37,12 @@ react-field-votes | [Ari Gunawan](https://github.com/AriGunawan) ([@AriGunawan30
 
 Version|Date|Comments
 -------|----|--------
+1.3|October 18, 2022|Change underlying field type from multiline text to multiple person
 1.2|October 18, 2022|Initial version
 
 ## Prerequisites
 
 - Create a list that will have the vote button
-- Create a new column: 
-    - Internal Name: `SPFxVotes`
-    - Display Name: Anything you want. e.g. Votes, Action, etc.
-    - Type: `Multiple lines of text`
-- My suggestion to prevent users manually update underlying votes data:
-   - Disable `Edit in grid view` feature on the list view
-      - Go to `List settings`
-      - Go to `Advanced settings`
-      - Disable quick edit
-        ![disable quick edit](/assets/disable%20quick%20edit.png)
-   - Remove `SPFxVotes` column from the form
-     ![edit form](/assets/edit-form.gif)
 
 ## Minimal Path to Awesome
 
@@ -76,6 +68,18 @@ Here's a debug URL for testing around this sample.
 ?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&fieldCustomizers={"SPFxVotes":{"id":"cfd41b03-0507-48c5-9fc8-e3dba6facfcd"}}
 ```
 
+## Deployment
+1. Build the app by executing following commands
+   - `gulp bundle --ship`
+   - `gulp package-solution --ship`
+2. Get the `React Field Votes.sppkg` file.
+3. Upload the .sppkg file to the App Catalog.
+4. Publish the app but don't globally deploy the app.
+5. Install the app in the desired sites.
+6. Open the list setting of the desired lists.
+7. Add the `Votes` column from `SPFx Columns` category.
+   - The app's installation on the step 5 will create this site column.
+8. Check on the list view page.
 
 ## Disclaimer
 

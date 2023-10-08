@@ -34,17 +34,13 @@ const ReactFieldVotes = (props: IReactFieldVotesProps): JSX.Element => {
     <div className={styles.reactFieldVotes}>
       <div>{totalVoters}</div>
       {isVoted ? (
-        <button
-          onClick={() => onUnVote()}
-          className={styles.voted}
-          type="button"
-        >
-          <Icon iconName="Like" />
+        <button onClick={() => onUnVote()} type="button">
+          <Icon iconName="LikeSolid" />
           <span>Voted</span>
         </button>
       ) : (
-        <button onClick={() => onVote()} type="button">
-          <Icon iconName="LikeSolid" />
+        <button onClick={() => onVote()} className={styles.vote} type="button">
+          <Icon iconName="Like" />
           <span>Vote</span>
         </button>
       )}
