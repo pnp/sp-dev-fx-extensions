@@ -19,10 +19,10 @@
     "@microsoft/sp-application-base": "1.8.0"
   },
   "devDependencies": {
-    "@microsoft/sp-build-web": "1.8.0",
+    "@microsoft/sp-build-web": "1.18.0",
     "@microsoft/sp-tslint-rules": "1.8.0",
     "@microsoft/sp-module-interfaces": "1.8.0",
-    "@microsoft/sp-webpart-workbench": "1.8.0",
+    "@microsoft/sp-webpart-workbench": "1.12.1",
     "@microsoft/rush-stack-compiler-2.7": "0.4.0",
     "gulp": "~3.9.1",
     "@types/chai": "3.4.34",
