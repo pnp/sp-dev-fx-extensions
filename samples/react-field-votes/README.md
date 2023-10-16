@@ -20,29 +20,26 @@ When a user clicks the 'vote' button, it will append the current user to the exi
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 
-
 ## Applies to
 
 * [SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
 * [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
+## Contributors
 
-## Solution
-
-Solution|Author(s)
---------|---------
-react-field-votes | [Ari Gunawan](https://github.com/AriGunawan) ([@AriGunawan3023](https://twitter.com/arigunawan3023))
+* [Ari Gunawan](https://github.com/AriGunawan)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
+1.4|October 8, 2023|Change underlying field type from JSON text to multiple person
 1.3|October 18, 2022|Change underlying field type from multiline text to multiple person
 1.2|October 18, 2022|Initial version
 
 ## Prerequisites
 
-- Create a list that will have the vote button
+* Create a list that will have the vote button
 
 ## Minimal Path to Awesome
 
@@ -69,16 +66,17 @@ Here's a debug URL for testing around this sample.
 ```
 
 ## Deployment
+
 1. Build the app by executing following commands
-   - `gulp bundle --ship`
-   - `gulp package-solution --ship`
+   * `gulp bundle --ship`
+   * `gulp package-solution --ship`
 2. Get the `React Field Votes.sppkg` file.
 3. Upload the .sppkg file to the App Catalog.
 4. Publish the app but don't globally deploy the app.
 5. Install the app in the desired sites.
 6. Open the list setting of the desired lists.
 7. Add the `Votes` column from `SPFx Columns` category.
-   - The app's installation on the step 5 will create this site column.
+   * The app's installation on the step 5 will create this site column.
 8. Check on the list view page.
 
 ## Disclaimer
