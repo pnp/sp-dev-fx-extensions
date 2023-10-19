@@ -1,0 +1,45 @@
+{
+  "id": "c129df59-b7ec-487d-b748-e197e12a16f8",
+  "alias": "TeamsChatEmbeddedApplicationCustomizer",
+  "componentType": "Extension",
+  "extensionType": "ApplicationCustomizer",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "loaderConfig": {
+    "internalModuleBaseUrls": [
+      "<!-- PATH TO CDN -->"
+    ],
+    "entryModuleId": "teams-chat-embedded-application-customizer",
+    "scriptResources": {
+      "teams-chat-embedded-application-customizer": {
+        "type": "path",
+        "path": "teams-chat-embedded-application-customizer_855723ada59a37f9b351.js"
+      },
+      "TeamsChatEmbeddedApplicationCustomizerStrings": {
+        "type": "path",
+        "path": "TeamsChatEmbeddedApplicationCustomizerStrings_en-us_b44866ddbbe4d5139cc86a28bf5af418.js"
+      },
+      "@microsoft/sp-application-base": {
+        "type": "component",
+        "id": "4df9bb86-ab0a-4aab-ab5f-48bf167048fb",
+        "version": "1.16.0"
+      },
+      "react": {
+        "type": "component",
+        "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",
+        "version": "17.0.1"
+      },
+      "react-dom": {
+        "type": "component",
+        "id": "aa0a46ec-1505-43cd-a44a-93f3a5aa460a",
+        "version": "17.0.1"
+      },
+      "@microsoft/decorators": {
+        "type": "component",
+        "id": "f97266fb-ccb7-430e-9384-4124d05295d3",
+        "version": "1.16.0"
+      }
+    }
+  }
+}

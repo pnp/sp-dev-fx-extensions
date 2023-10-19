@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "teams-chat-embedded-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/teamsChatEmbedded/TeamsChatEmbeddedApplicationCustomizer.js",
+          "manifest": "./src/extensions/teamsChatEmbedded/TeamsChatEmbeddedApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TeamsChatEmbeddedApplicationCustomizerStrings": "lib/extensions/teamsChatEmbedded/loc/{locale}.js"
+  }
+}
