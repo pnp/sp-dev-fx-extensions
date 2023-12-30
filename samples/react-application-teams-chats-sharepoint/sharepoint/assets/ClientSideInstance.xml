@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="TeamsChatEmbedded"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="c129df59-b7ec-487d-b748-e197e12a16f8"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>
