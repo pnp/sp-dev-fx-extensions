@@ -18,25 +18,19 @@ External Sharing and Sharing Links in right-side panel live in action
 
 For further details see the author's [blog series](https://mmsharepoint.wordpress.com/2023/07/27/a-search-driven-navigation-with-sharepoint-framework-spfx-extension-and-fluentui/)
 
+## Used SharePoint Framework Version
+
+![version](https://img.shields.io/badge/version-1.17.4-green.svg)
 
 ## Compatibility
 
-![SPFx 1.18.2](https://img.shields.io/badge/SPFx-1.17.4-green.svg)
-![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
+![SPFx 1.17.4](https://img.shields.io/badge/SPFx-1.17.4-green.svg)
+![Node.js v16](https://img.shields.io/badge/Node.js-v16-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 ![Hosted Workbench compatible](https://img.shields.io/badge/Hosted%20Workbench-compatible-green.svg "Does work with hosted workbench")
-
-Tested with Node version:v16.13.2 and SPFx 1.17.4 (previous version)
-
-Tested with Node version:v18.18.2 and SPFx 1.18.2 (current version)
-
-
-## Used SharePoint Framework Version
-
-![version](https://img.shields.io/badge/version-1.18.2-green.svg)
 
 ## Applies to
 
@@ -50,8 +44,6 @@ Tested with Node version:v18.18.2 and SPFx 1.18.2 (current version)
 Version|Date|Author|Comments
 -------|----|----|--------
 0.1|Jul 27, 2023|[Markus Moeller](https://twitter.com/moeller2_0)|Initial release
-1.0|Aug 11, 2023|[Markus Moeller](https://twitter.com/moeller2_0)|Public release
-1.1|Jan 20, 2024|[Markus Moeller](https://twitter.com/moeller2_0)|Upgraded to SPFx 1.18.2
 
 ## Disclaimer
 
@@ -92,6 +84,14 @@ Version|Date|Author|Comments
   * [Use Microsoft Graph API to handle sharing links](https://learn.microsoft.com/en-us/graph/api/shares-get?view=graph-rest-1.0&tabs=http&WT.mc_id=M365-MVP-5004617)
 * [Use FluentUI CommandBar, ContextualMenu, Dialog, List, Panel, PersonaInitialsColor, Pivot, TextField (incl 'Clear' icon)](https://developer.microsoft.com/en-us/fluentui#/?WT.mc_id=M365-MVP-5004617)
 * [Use SharePoint Rest API to work with permissions](https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/set-custom-permissions-on-a-list-by-using-the-rest-interface?WT.mc_id=M365-MVP-5004617)
+
+## Debug URL for testing
+
+Here's a debug URL for testing around this sample.
+
+```
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"315298b1-ad03-4730-8423-0a07941a96d9":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"useTeamsites":true,"useCommsites": true,"useHubsites": true,"useTeams": true,"useGraph": true}}}
+```
 
 ## References
 
