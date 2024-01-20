@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com",
+      "fieldCustomizers": {
+        "UniquePermissions": {
+          "id": "e0424f4f-5973-492b-aa7c-b8d00fc1a6a0",
+          "properties": {
+          }
+        }
+      }
+    },
+    "uniquePermissions": {
+      "pageUrl": "https://contoso.sharepoint.com",
+      "fieldCustomizers": {
+        "UniquePermissions": {
+          "id": "e0424f4f-5973-492b-aa7c-b8d00fc1a6a0",
+          "properties": {
+          }
+        }
+      }
+    }
+  }
+}

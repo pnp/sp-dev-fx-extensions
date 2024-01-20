@@ -77,6 +77,7 @@ export default class CommandBarNavigationApplicationCustomizer
             isSiteOwner: isSiteOwner
           }
         );
+        // eslint-disable-next-line @microsoft/spfx/pair-react-dom-render-unmount
         ReactDom.render(element, this._topPlaceholder.domElement); 
       }
     }

@@ -18,7 +18,10 @@ External Sharing and Sharing Links in right-side panel live in action
 
 For further details see the author's [blog series](https://mmsharepoint.wordpress.com/2023/07/27/a-search-driven-navigation-with-sharepoint-framework-spfx-extension-and-fluentui/)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 886272e926d8b2386e3f7acc14bf591ddad45120
 ## Compatibility
 
 ![SPFx 1.18.2](https://img.shields.io/badge/SPFx-1.17.4-green.svg)
@@ -29,6 +32,7 @@ For further details see the author's [blog series](https://mmsharepoint.wordpres
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 ![Hosted Workbench compatible](https://img.shields.io/badge/Hosted%20Workbench-compatible-green.svg "Does work with hosted workbench")
 
+<<<<<<< HEAD
 Tested with Node version:v16.13.2 and SPFx 1.17.4 (previous version)
 
 Tested with Node version:v18.18.2 and SPFx 1.18.2 (current version)
@@ -37,6 +41,9 @@ Tested with Node version:v18.18.2 and SPFx 1.18.2 (current version)
 ## Used SharePoint Framework Version
 
 ![version](https://img.shields.io/badge/version-1.18.2-green.svg)
+=======
+Tested with Node version:v16.13.2
+>>>>>>> 886272e926d8b2386e3f7acc14bf591ddad45120
 
 ## Applies to
 
@@ -53,36 +60,31 @@ Version|Date|Author|Comments
 1.0|Aug 11, 2023|[Markus Moeller](https://twitter.com/moeller2_0)|Public release
 1.1|Jan 20, 2024|[Markus Moeller](https://twitter.com/moeller2_0)|Upgraded to SPFx 1.18.2
 
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
 
 ## Minimal Path to Awesome
 
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  - **npm install**
-  - **gulp serve --nobrowser**
+  - `npm install`
+  - `gulp serve --nobrowser`
 
 - To grant necessary MS Graph permissions for some functionality
   - Either grant them manually (see package-solution.json which ones)
   - Grant them via Admin center
   - in the command-line run:
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - `gulp bundle --ship`
+  - `gulp package-solution --ship`
   - Upload app to app catalog
   - Enable
   - Grant requested permissions via API access as suggested
 - Open a SharePoint site of your choice
-- Attach the following to your site url:
+- Attach the following to your site URL:
   ```
   ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"315298b1-ad03-4730-8423-0a07941a96d9":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"useTeamsites":true,"useCommsites": true,"useHubsites": true,"useTeams": true,"useGraph": true}}}
   ```
 - Confirm 'Load Debug Scripts'
-- Play around with the properties in above's url
+- Play around with the properties in above's URL
 
 ## Features
 

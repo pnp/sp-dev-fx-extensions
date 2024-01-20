@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "feedback-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/feedback/FeedbackApplicationCustomizer.js",
+          "manifest": "./src/extensions/feedback/FeedbackApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FeedbackApplicationCustomizerStrings": "lib/extensions/feedback/loc/{locale}.js"
+  }
+}

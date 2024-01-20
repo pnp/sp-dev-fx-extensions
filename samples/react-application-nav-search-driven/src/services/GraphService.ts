@@ -54,6 +54,7 @@ export default class GraphService {
     return this.transformSearchSites(searchResponse);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private async searchSites(queryText: string, start: number): Promise<any[]> {
     this.client = await this.msGraphClientFactory.getClient('3');
     const requestBody = {
@@ -81,9 +82,11 @@ export default class GraphService {
     else return [];
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private transformSearchSites(response: any[]): IMenuItem[] {    
     const items: Array<IMenuItem> = new Array<IMenuItem>();
     if (response !== null && response.length > 0) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       response.forEach((r: any) => {          
         items.push({ displayName: r.resource.displayName, url: r.resource.webUrl, iconUrl: '', description: r.resource.description, key: r.resource.id });
       });
@@ -110,6 +113,7 @@ export default class GraphService {
             .top(20)   // Limit in batching!      
             .get();
     const teams: Array<ITeam> = new Array<ITeam>();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     response.value.forEach((item: ITeam|any) => {
       teams.push({ id: item.id, displayName: item.displayName, description: item.description, mailNickname: item.mailNickname, visibility: '', url: `/teams/${item.mailNickname}`, photo: '', members: item.members.length, createdDateTime: '', teamUrl: '', owners: []});
     });      
@@ -144,12 +148,15 @@ export default class GraphService {
       .api('$batch')
       .version('v1.0')
       .post(body);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     response.responses.forEach((docResponse: any) => {
       if (docResponse.status === 200) {
         const respId = parseInt(docResponse.id); 
         sharingLinks[respId].name = docResponse.body.name;
         sharingLinks[respId].url = docResponse.body.webUrl;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let permission: any;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         docResponse.body.permissions.forEach((p: any) => {
           if (p.id === sharingLinks[respId].key) {
             permission = p;

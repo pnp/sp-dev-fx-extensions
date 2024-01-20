@@ -1,0 +1,74 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-dynamic-form-with-location-picker",
+    "source": "pnp",
+    "title": "Dynamic Form with location picker",
+    "shortDescription": "This solution implements a simple Form Customizer with a Dynamic Form with a location picker, to demonstrate the many usages of a Dynamic Form.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-dynamic-form-with-location-picker",
+    "longDescription": [
+      "This solution implements a simple Form Customizer with a Dynamic Form with a location picker, to demonstrate the many usages of a Dynamic Form."
+    ],
+    "creationDateTime": "2023-06-28",
+    "updateDateTime": "2023-06-28",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "TypeScript,React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.3"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-FORM-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-dynamic-form-with-location-picker/assets/dynamic-form-with-location-picker.gif",
+        "alt": "Dynamic Form with location picker solution"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-dynamic-form-with-location-picker/assets/dynamic-form-with-location-picker-screenshot.png",
+        "alt": "Dynamic Form with location picker solution"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "martinlingstuyl",
+        "pictureUrl": "https://github.com/martinlingstuyl.png",
+        "name": "Martin Lingstuyl"
+      }
+    ],
+    "references": [
+      {
+        "name": "Building a SharePoint New Site Form Look-Alike",
+        "description": "A post on building a SPFx Form Customizer with a Dynamic Site with field overrides to create an experience that looks like the default SharePoint new site form.",
+        "url": "https://www.blimped.nl/building-a-sharepoint-new-site-form-look-alike"
+      },
+      {
+        "name": "Getting started with SharePoint Framework",
+        "description": "Introduction about how to develop Microsoft 365 extensions using SharePoint Framework.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+      },
+      {
+        "name": "Build your first Form Customizer extension",
+        "description": "Introduction about how to develop SharePoint Online form customizers using SharePoint Framework.",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-form-customizer"
+      },
+      {
+        "name": "Microsoft 365 Patterns and Practices",
+        "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+        "url": "https://aka.ms/m365pnp"
+      }
+    ]
+  }
+]

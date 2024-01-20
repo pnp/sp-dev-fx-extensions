@@ -17,6 +17,7 @@ export const SubMenuSites: React.FC<ISubMenuSitesProps> = (props) => {
    * This functions clears the search text and potential available search result
    * @param event 
    */
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const clearSearch = (event: React.MouseEvent) => {
     setSearchInputText('');
     setEmptySearchResult(false);
@@ -27,8 +28,10 @@ export const SubMenuSites: React.FC<ISubMenuSitesProps> = (props) => {
    * This functions searches within the sites for a given text
    * @param event 
    */
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const searchSites = (event: React.KeyboardEvent) => {
     if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       props.searchCallback(searchInputText)
         .then((response: IMenuItem[]) => {
           if (response.length === 0) {
@@ -46,6 +49,7 @@ export const SubMenuSites: React.FC<ISubMenuSitesProps> = (props) => {
    */
   const handleSearchTextChange = React.useCallback((event, newValue: string) => {
     specialSearchChars.forEach((char) => {
+      // eslint-disable-next-line @rushstack/security/no-unsafe-regexp
       const regPatt:RegExp = new RegExp(char,'gi');
       while (regPatt.exec(newValue)){
         newValue = newValue.substring(0, regPatt.lastIndex - 1) + newValue.substring(regPatt.lastIndex , newValue.length);

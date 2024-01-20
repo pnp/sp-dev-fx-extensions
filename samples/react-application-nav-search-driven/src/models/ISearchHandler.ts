@@ -9,9 +9,11 @@ export interface ISharePointSearchResults {
   export interface ISharePointRelevantResultsTable {
       Table: ISharePointSearchResultsTable;
       RowCount: number;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       Properties: any[];
   }
   
   export interface ISharePointSearchResultsTable {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       Rows: Array<any>;
   }

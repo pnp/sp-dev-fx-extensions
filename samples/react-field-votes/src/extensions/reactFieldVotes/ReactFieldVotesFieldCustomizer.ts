@@ -31,21 +31,20 @@ export default class ReactFieldVotesFieldCustomizer extends BaseFieldCustomizer<
     return Promise.resolve();
   }
 
-  public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
+  public async onRenderCell(event: IFieldCustomizerCellEventParameters): Promise<void> {
     const voters = this.processValue(
       event.listItem.getValueByName(Constants.INTERNAL_COLUMN_NAME)
     );
-    const loginName = this.context.pageContext.user.loginName;
     const sharePointService = new SharePointService(
       this._sp,
       this.context.pageContext.list.title,
-      event.listItem.getValueByName("ID"),
-      this.context.pageContext.user.loginName
+      event.listItem.getValueByName("ID")
     );
+    const currentUserId = await sharePointService.getCurrentUserId();
     const componentProperties: IReactFieldVotesProps = {
       sharePointService: sharePointService,
       totalVoters: voters.length,
-      isVoted: voters.indexOf(loginName) !== -1,
+      isVoted: voters.indexOf(currentUserId) !== -1,
     };
     const reactFieldVotes: React.ReactElement<IReactFieldVotesProps> =
       React.createElement(ReactFieldVotes, componentProperties);
@@ -53,18 +52,9 @@ export default class ReactFieldVotesFieldCustomizer extends BaseFieldCustomizer<
     ReactDOM.render(reactFieldVotes, event.domElement);
   }
 
-  protected processValue(value: string): string[] {
+  protected processValue(value: { id: string }[]): number[] {
     if (!value) return [];
-
-    try {
-      const voters = JSON.parse(value);
-      return voters;
-    } catch (error) {
-      alert(
-        "Failed to parse json value. Please check field value and ensure that it's array of string"
-      );
-      return [];
-    }
+    return value.map((voter) => Number(voter.id));
   }
 
   public onDisposeCell(event: IFieldCustomizerCellEventParameters): void {

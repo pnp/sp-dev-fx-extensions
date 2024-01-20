@@ -25,3 +25,5 @@ jobs:
           add: '.metadata/samples.json --force'
           push: true
           token: ${{ secrets.GITHUB_TOKEN }}
+          cwd: ./
+          branch: main

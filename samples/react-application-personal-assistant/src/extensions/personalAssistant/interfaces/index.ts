@@ -1,0 +1,1 @@
+export { IChatMessage } from './IChatMessage';

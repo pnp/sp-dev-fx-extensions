@@ -26,10 +26,13 @@ export const SitePermissions: React.FC<ISitePermissionsProps> = (props) => {
     setItems(respItems);
   };
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const deletePermission = async (principalId: string) => { 
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define
     hideDialog();   
     const response = await spService.removeSitePermission(props.currentSiteUrl, principalId);
     if (response) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       evalSitePermissions();
     }
   };
@@ -55,7 +58,7 @@ export const SitePermissions: React.FC<ISitePermissionsProps> = (props) => {
   const onRenderCell = (item: IPermissionItem, index: number): JSX.Element => {
     return (
       <div data-is-focusable={true}>       
-        <div className={index! % 2 === 0 ? styles.evenRow : styles.oddRow}>
+        <div className={index % 2 === 0 ? styles.evenRow : styles.oddRow}>
           <div className={styles.itemName}><a href={item.url}>{item.name}</a></div>
           <div className={styles.itemIndex}>
             <span>{item.permission}</span>
@@ -70,6 +73,7 @@ export const SitePermissions: React.FC<ISitePermissionsProps> = (props) => {
   };
 
   React.useEffect((): void => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     evalSitePermissions();
   }, []);
 

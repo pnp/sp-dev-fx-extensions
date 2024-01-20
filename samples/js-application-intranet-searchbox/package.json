@@ -20,11 +20,11 @@
     "@types/webpack-env": "^1.13.1"
   },
   "devDependencies": {
-    "@microsoft/sp-build-web": "1.8.0",
+    "@microsoft/sp-build-web": "1.18.0",
     "@microsoft/sp-tslint-rules": "1.8.0",
     "tslint-microsoft-contrib": "6.2.0",
     "@microsoft/sp-module-interfaces": "1.8.0",
-    "@microsoft/sp-webpart-workbench": "1.8.0",
+    "@microsoft/sp-webpart-workbench": "1.12.1",
     "@types/chai": "3.4.34",
     "@types/mocha": "2.2.38",
     "ajv": "~5.2.2",

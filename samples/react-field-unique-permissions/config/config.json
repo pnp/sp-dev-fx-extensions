@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "unique-permissions-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/uniquePermissions/UniquePermissionsFieldCustomizer.js",
+          "manifest": "./src/extensions/uniquePermissions/UniquePermissionsFieldCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "UniquePermissionsFieldCustomizerStrings": "lib/extensions/uniquePermissions/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}

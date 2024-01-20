@@ -3,7 +3,8 @@
     <Field ID="{9ef94a83-ef20-4908-b9ed-c46e4f7b6810}"
             Name="SPFxVotes"
             DisplayName="Votes"
-            Type="Note"
+            Type="UserMulti"
+            Mult="TRUE"
             Required="FALSE"
             Group="SPFx Columns"
             ClientSideComponentId="cfd41b03-0507-48c5-9fc8-e3dba6facfcd">

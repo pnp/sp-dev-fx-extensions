@@ -849,7 +849,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-starter-kit/raw/main/assets/images/components/ext-redirects.gif?raw=true",
+        "url": "https://github.com/pnp/sp-starter-kit/blob/master/assets/images/components/ext-redirects.gif",
         "alt": "Redirect Application Customizers"
       }
     ],
@@ -2206,6 +2206,62 @@
     ]
   },
   {
+    "name": "pnp-sp-dev-spfx-extensions-react-react-application-customizer-feedback-widget",
+    "source": "pnp",
+    "title": "Sticky Feedback Widget Application Customizer",
+    "shortDescription": "An SPFx Application Customizer Extension placed in the bottom placeholder which allows users to input their feedbacks without scrolling down to the end of the page.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-customizer-feedback-widget",
+    "longDescription": [
+      "An SPFx Application Customizer Extension placed in the bottom placeholder which allows users to input their feedbacks without scrolling down to the end of the page."
+    ],
+    "creationDateTime": "2023-07-02",
+    "updateDateTime": "2023-07-02",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.1"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-customizer-feedback-widget/assets/Feedback_Widget1.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "Sandeep-FED",
+        "pictureUrl": "https://github.com/Sandeep-FED.png",
+        "name": "Sandeep P S"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-dev-spfx-extensions-react-application-duetasks",
     "source": "pnp",
     "title": "Overdue Tasks Application Customizer",
@@ -2953,6 +3009,68 @@
     ]
   },
   {
+    "name": "pnp-sp-dev-spfx-extensions-react-application-nav-search-driven",
+    "source": "pnp",
+    "title": "Search driven navigation",
+    "shortDescription": "SPFx application search driven navigation and permission side panel.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-qna-chat",
+    "longDescription": [
+      "SPFx application extension acting as top level search driven navigation and permission checker on the right within a panel."
+    ],
+    "creationDateTime": "2023-07-27",
+    "updateDateTime": "2023-07-27",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.4"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-nav-search-driven/assets/01SearchDrivenNavigation.png",
+        "alt": "Menu navigation"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-nav-search-driven/assets/05SharingLinks.png",
+        "alt": "Side panel with permissions"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "mmsharepoint",
+        "pictureUrl": "https://github.com/mmsharepoint.png",
+        "name": "Markus Moeller"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=M365-MVP-5004617"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=M365-MVP-5004617"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-dev-spfx-extensions-react-application-news-ticker",
     "source": "pnp",
     "title": "News Ticker",
@@ -3156,6 +3274,62 @@
         "company": "ClearPeople",
         "pictureUrl": "https://github.com/luismanez.png",
         "name": "Luis Mañez"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-application-personal-assistant",
+    "source": "pnp",
+    "title": "Personal Assistant - OpenAI Function Calling with Microsoft Graph",
+    "shortDescription": "This sample is chatbot that provides information to the current logged in user.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-personal-assistant",
+    "longDescription": [
+      "This sample is chatbot that provides information to the current logged in user."
+    ],
+    "creationDateTime": "2023-06-23",
+    "updateDateTime": "2023-06-23",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.3"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-personal-assistant/assets/demo.gif",
+        "alt": "Extension preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "anoopt",
+        "pictureUrl": "https://github.com/anoopt.png",
+        "name": "Anoop Tatti"
       }
     ],
     "references": [
@@ -3698,6 +3872,62 @@
     ]
   },
   {
+    "name": "pnp-sp-dev-spfx-extensions-react-application-teams-chats-sharepoint",
+    "source": "pnp",
+    "title": "Embed Microsoft Teams chats in SharePoint pages",
+    "shortDescription": "Embed Microsoft Teams chats within SharePoint pages to streamline collaboration and information access for users.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-teams-chats-sharepoint",
+    "longDescription": [
+      "This SPFx extension was built to embed Microsoft Teams chats within SharePoint pages to streamline collaboration and information access for users. This application customizer takes advantage of a Microsoft Teams integration made by Microsoft for Edge where links shared in chats open with the conversation context next to it in the browser. Using this solution you can bring the same feature to your SharePoint pages."
+    ],
+    "creationDateTime": "2023-10-19",
+    "updateDateTime": "2023-10-19",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.0"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/react-application-teams-chats-sharepoint/assets/Microsoft%20Teams%20chat%20in%20SharePoint%20sites.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "joaoferreira",
+        "pictureUrl": "https://github.com/joaoferreira.png",
+        "name": "João Ferreira"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-dev-spfx-extensions-react-application-tenant-global-navbar",
     "source": "pnp",
     "title": "Tenant Global NavBar Application Customizer",
@@ -3740,6 +3970,62 @@
         "pictureUrl": "https://github.com/PaoloPia.png",
         "name": "Paolo Pialorsi",
         "twitter": "PaoloPia"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-application-tfl-status",
+    "source": "pnp",
+    "title": "Transport for London (TfL) Status",
+    "shortDescription": "This sample is chatbot that provides information about Transport for London (TfL) status.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-tfl-status",
+    "longDescription": [
+      "This sample is chatbot that provides information about Transport for London (TfL) status."
+    ],
+    "creationDateTime": "2023-06-23",
+    "updateDateTime": "2023-06-23",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.5"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-tfl-status/assets/demo.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "Anoop Tatti",
+        "pictureUrl": "https://github.com/anoopt.png",
+        "name": "anoopt"
       }
     ],
     "references": [
@@ -5029,6 +5315,79 @@
     ]
   },
   {
+    "name": "pnp-sp-dev-spfx-extensions-react-command-manage-list-subscriptions",
+    "source": "pnp",
+    "title": "React-Manage-List-Subscriptions",
+    "shortDescription": "Demonstrates managing the list subscriptions (sharepoint webhooks) and action to renew the webhook expiration date using Rest calls.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-manage-list-subscriptions",
+    "longDescription": [
+      "With the use of Rest calls, this sample command set shows how to manage list subscriptions (SharePoint webhooks) and take action to extend the webhook expiration date. The commandset will be added to the lists and libraries and will only be shown if there are any list subscriptions available on the list. The subscriptions that are accessible are shown when you click on the Commandset. The 'Renew subscription' action can be used in accordance with the subscription's expiration date. Given that the default number of days is 180, the subscription's (webhook expiration renewal date) renewal date is set to 179 days. "
+    ],
+    "creationDateTime": "2023-09-12",
+    "updateDateTime": "2023-09-12",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.4"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-COMMAND-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-manage-list-subscriptions/assets/ManageSubscription.png",
+        "alt": "Manage Subscriptions"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-manage-list-subscriptions/assets/SubscriptionPanel.gif",
+        "alt": "Subscription Panel"
+      },
+      {
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-manage-list-subscriptions/assets/RenewSubscription.gif",
+        "alt": "Renewing webhook subscriptions"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "NishkalankBezawada",
+        "pictureUrl": "https://github.com/NishkalankBezawada.png",
+        "name": "NIshkalank Bezawada"
+      }
+    ],
+    "references": [
+      {
+        "name": "Build your first SharePoint client-side web part",
+        "description": "Client-side web parts are client-side components that run in the context of a SharePoint page. Client-side web parts can be deployed to SharePoint environments that support the SharePoint Framework. You can also use modern JavaScript web frameworks, tools, and libraries to build them.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part"
+      },
+      {
+        "name": "Get Subscription",
+        "description": "Get SharePoint webhook subscriptions",
+        "url": "https://learn.microsoft.com/sharepoint/dev/apis/webhooks/lists/get-subscription"
+      },
+      {
+        "name": "Update Subscription",
+        "description": "Update SharePoint webhook subscriptions",
+        "url": "https://learn.microsoft.com/sharepoint/dev/apis/webhooks/lists/update-subscription"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-dev-spfx-extensions-react-command-page-model-pnpjs",
     "source": "pnp",
     "title": "Modern Page Model with PnP/PnPjs",
@@ -5468,6 +5827,150 @@
     ]
   },
   {
+    "name": "pnp-sp-dev-spfx-extensions-react-dynamic-form-with-location-picker",
+    "source": "pnp",
+    "title": "Dynamic Form with location picker",
+    "shortDescription": "This solution implements a simple Form Customizer with a Dynamic Form with a location picker, to demonstrate the many usages of a Dynamic Form.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-dynamic-form-with-location-picker",
+    "longDescription": [
+      "This solution implements a simple Form Customizer with a Dynamic Form with a location picker, to demonstrate the many usages of a Dynamic Form."
+    ],
+    "creationDateTime": "2023-06-28",
+    "updateDateTime": "2023-06-28",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "TypeScript,React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.3"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-FORM-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-dynamic-form-with-location-picker/assets/dynamic-form-with-location-picker.gif",
+        "alt": "Dynamic Form with location picker solution"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-dynamic-form-with-location-picker/assets/dynamic-form-with-location-picker-screenshot.png",
+        "alt": "Dynamic Form with location picker solution"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "martinlingstuyl",
+        "pictureUrl": "https://github.com/martinlingstuyl.png",
+        "name": "Martin Lingstuyl"
+      }
+    ],
+    "references": [
+      {
+        "name": "Building a SharePoint New Site Form Look-Alike",
+        "description": "A post on building a SPFx Form Customizer with a Dynamic Site with field overrides to create an experience that looks like the default SharePoint new site form.",
+        "url": "https://www.blimped.nl/building-a-sharepoint-new-site-form-look-alike"
+      },
+      {
+        "name": "Getting started with SharePoint Framework",
+        "description": "Introduction about how to develop Microsoft 365 extensions using SharePoint Framework.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+      },
+      {
+        "name": "Build your first Form Customizer extension",
+        "description": "Introduction about how to develop SharePoint Online form customizers using SharePoint Framework.",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-form-customizer"
+      },
+      {
+        "name": "Microsoft 365 Patterns and Practices",
+        "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+        "url": "https://aka.ms/m365pnp"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-dynamic-site-form",
+    "source": "pnp",
+    "title": "Dynamic Site Form",
+    "shortDescription": "The Dynamic Site Form solution implements a Form Customizer with a Dynamic Form with field overrides to look like the default SharePoint new site form.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-dynamic-site-form",
+    "longDescription": [
+      "The Dynamic Site Form solution implements a Form Customizer with a SPFx Controls Dynamic Form to load the form. It has field overrides for URL and Group mailbox values to make the form look and act like the default SharePoint new site form."
+    ],
+    "creationDateTime": "2023-06-22",
+    "updateDateTime": "2023-06-22",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "TypeScript,React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.3"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-FORM-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-dynamic-site-form/assets/dynamic-site-form.gif",
+        "alt": "Dynamic Site Form solution"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-dynamic-site-form/assets/dynamic-site-form-screenshot.png",
+        "alt": "Dynamic Site Form solution"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "martinlingstuyl",
+        "pictureUrl": "https://github.com/martinlingstuyl.png",
+        "name": "Martin Lingstuyl"
+      }
+    ],
+    "references": [
+      {
+        "name": "Building a SharePoint New Site Form Look-Alike",
+        "description": "A post on building a SPFx Form Customizer with a Dynamic Site with field overrides to create an experience that looks like the default SharePoint new site form.",
+        "url": "https://www.blimped.nl/building-a-sharepoint-new-site-form-look-alike"
+      },
+      {
+        "name": "Getting started with SharePoint Framework",
+        "description": "Introduction about how to develop Microsoft 365 extensions using SharePoint Framework.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+      },
+      {
+        "name": "Build your first Form Customizer extension",
+        "description": "Introduction about how to develop SharePoint Online form customizers using SharePoint Framework.",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-form-customizer"
+      },
+      {
+        "name": "Microsoft 365 Patterns and Practices",
+        "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+        "url": "https://aka.ms/m365pnp"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-dev-spfx-extensions-react-field-attachment-info",
     "source": "pnp",
     "title": "Field Attachment Info",
@@ -5815,6 +6318,62 @@
     ]
   },
   {
+    "name": "pnp-sp-dev-spfx-extensions-react-field-unique-permissions",
+    "source": "pnp",
+    "title": "Unique permissions on list items",
+    "shortDescription": "This sample demonstrates how to use field customizer to handle unique permissions on list items. ",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-field-unique-permissions",
+    "longDescription": [
+      "This sample demonstrates how to use field customizer to handle unique permissions on list items."
+    ],
+    "creationDateTime": "2023-06-23",
+    "updateDateTime": "2023-06-23",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "Javascript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.2"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-field-unique-permissions/assets/currentUserPermissions.png",
+        "alt": "Extension preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "mkm17",
+        "pictureUrl": "https://github.com/mkm17.png",
+        "name": "Michał Kornet"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-dev-spfx-extensions-react-field-user-permission",
     "source": "pnp",
     "title": "Displaying the current user permission with PNPJs",
@@ -5882,7 +6441,7 @@
       "If the current user hasn't been voted, the button will become Vote button but if the current user has been voted, it will become Unvote button."
     ],
     "creationDateTime": "2021-04-19",
-    "updateDateTime": "2022-11-11",
+    "updateDateTime": "2023-10-08",
     "products": [
       "SharePoint"
     ],
@@ -5999,8 +6558,8 @@
     "longDescription": [
       "This sample shows how Application Customizer can be hidden from tenant external users. This is often the ask from the business when a SharePoint Framework App customizer or a web part has internal links that would be broken if a guest user attempts to access any or them."
     ],
-    "creationDateTime": "2019-06-21",
-    "updateDateTime": "2019-06-21",
+    "creationDateTime": "2023-09-16",
+    "updateDateTime": "2023-09-16",
     "products": [
       "SharePoint"
     ],
@@ -6028,10 +6587,9 @@
     ],
     "authors": [
       {
-        "gitHubAccount": "VelinGeorgiev",
-        "company": "",
-        "pictureUrl": "https://github.com/VelinGeorgiev.png",
-        "name": "Velin Georgiev"
+        "gitHubAccount": "Mahyar915",
+        "pictureUrl": "https://github.com/Mahyar915.png",
+        "name": "Mohammad Mahyar Pourabdollah Khadar"
       }
     ],
     "references": [
@@ -6284,6 +6842,68 @@
     ]
   },
   {
+    "name": "pnp-sp-dev-spfx-extensions-react-modern-version-history",
+    "source": "pnp",
+    "title": "Modern Version History",
+    "shortDescription": "An extension modernizing the version history experience in SharePoint Online.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-modern-version-history",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-modern-version-history",
+    "longDescription": [
+      "This is an extension of the version history experience in SharePoint Online. It allows you to see the version history of a file in a modern experience, compare different versions, and restore a previous version."
+    ],
+    "creationDateTime": "2023-09-01",
+    "updateDateTime": "2023-10-02",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.4"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-modern-version-history/assets/Demo.gif",
+        "alt": "Web Part Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "Tanddant",
+        "pictureUrl": "https://github.com/Tanddant.png",
+        "name": "Dan Toft"
+      },
+      {
+        "gitHubAccount": "kasuken",
+        "pictureUrl": "https://github.com/kasuken.png",
+        "name": "Emanuele Bartolesi"
+      },
+      {
+        "gitHubAccount": "tmaestrini",
+        "pictureUrl": "https://github.com/tmaestrini.png",
+        "name": "Tobias Maestrini"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-dev-spfx-extensions-react-msal-bot",
     "source": "pnp",
     "title": "MSAL Bot Extension",
@@ -6476,6 +7096,64 @@
         "name": "Build your first ListView Command Set extension",
         "description": "Extensions are client-side components that run inside the context of a SharePoint page. Extensions can be deployed to SharePoint Online, and you can use modern JavaScript tools and libraries to build them.",
         "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-utility-extensions",
+    "source": "pnp",
+    "title": "Copy Path and Copy Name List view command set extensions",
+    "shortDescription": "List view command set extensions with below functionalities: Copy Path and Copy Name.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-utility-extensions",
+    "longDescription": [
+      "List view command set extensions with below functionalities:",
+      "1. Copy Path allows to copy the path of the document without breaking the permission inheritance.",
+      "2. Copy Name allows to copy the name of the document without using the currently available rename functionality."
+    ],
+    "creationDateTime": "2023-10-04",
+    "updateDateTime": "2023-10-04",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18.0"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-COMMAND-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-utility-extensions/assets/CopyPathCopyNameExtenstions.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "HarminderSethi",
+        "pictureUrl": "https://github.com/HarminderSethi.png",
+        "name": "Harminder Singh"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
       }
     ]
   }

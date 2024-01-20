@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "tf-l-status-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/tfLStatus/TfLStatusApplicationCustomizer.js",
+          "manifest": "./src/extensions/tfLStatus/TfLStatusApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TfLStatusApplicationCustomizerStrings": "lib/extensions/tfLStatus/loc/{locale}.js"
+  }
+}
