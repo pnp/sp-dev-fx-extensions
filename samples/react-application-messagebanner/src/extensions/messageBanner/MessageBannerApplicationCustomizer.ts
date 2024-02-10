@@ -1,3 +1,4 @@
+/* eslint-disable @microsoft/spfx/pair-react-dom-render-unmount */
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { override } from '@microsoft/decorators';
@@ -71,6 +72,7 @@ export default class MessageBannerApplicationCustomizer
     const bannerComponent = React.createElement(Banner, bannerProps);
     ReactDom.render(bannerComponent, this._topPlaceholder.domElement);
   }
+
 
   @override
   public onDispose(): void {

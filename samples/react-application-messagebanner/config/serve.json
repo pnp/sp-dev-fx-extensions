@@ -2,9 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
   "port": 4321,
   "https": true,
+  "initialPage": "https://cfcodedev.sharepoint.com/_layouts/workbench.aspx",
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://cfcodedev.sharepoint.com",
       "customActions": {
         "1e2688c4-99d8-4897-8871-a9c151ccfc87": {
           "location": "ClientSideExtension.ApplicationCustomizer",
