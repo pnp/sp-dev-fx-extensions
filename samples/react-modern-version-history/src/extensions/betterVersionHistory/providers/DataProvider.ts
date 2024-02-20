@@ -59,9 +59,6 @@ export class DataProvider implements IDataProvider {
             FileLink.searchParams.append("list", this._context.pageContext.list.id.toString());
             FileLink.searchParams.append("ID", this._context.listView.selectedRows[0].getValueByName("ID"));
             FileLink.searchParams.append("col", "Number");
-            //Todo: Add support
-            // FileLink.searchParams.append("op", "Delete");
-            // FileLink.searchParams.append("op", "Restore");
             FileLink.searchParams.append("ver", version.VersionId);
             FileLink.searchParams.append("IsDlg", "1");
 
