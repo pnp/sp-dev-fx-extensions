@@ -14,7 +14,7 @@
     },
     {
       "file": "src/extensions/betterVersionHistory/providers/DataProvider.ts",
-      "description": "Using PnPjs - not only because it's awesome, but also because it's easier, and gives us \"safer\" code",
+      "description": "Using PnPjs - not only because it's awesome, but also because it's easier, and gives us \"safer\" code\n\nAlso notice that we've moved all our data \"logic\" to a seperate file, seperating concerns",
       "line": 46
     },
     {
@@ -31,6 +31,11 @@
       "file": "src/extensions/betterVersionHistory/models/IVersion.ts",
       "description": "We'll end up with an array of just the changes in the given version",
       "line": 8
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/components/BetterVersionHistory.tsx",
+      "description": "We've built a Hook that allows us better reusablility across different Layouts (not the case here - but makes it possible)",
+      "line": 21
     },
     {
       "file": "src/extensions/betterVersionHistory/components/Version.tsx",
