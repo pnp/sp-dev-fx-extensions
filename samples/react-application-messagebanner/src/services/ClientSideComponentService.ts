@@ -17,9 +17,9 @@ class ClientSideComponentService {
     if (!customAction) return;
 
     try {
-      const body : { [key: string]: string} = {} ;
-      if (properties)     body["ClientSideComponentProperties"] = JSON.stringify(properties);
-      if (hostProperties) body["HostProperties"] = JSON.stringify(hostProperties);
+      const body: { [key: string]: string } = {};
+      if (properties) body.ClientSideComponentProperties = JSON.stringify(properties);
+      if (hostProperties) body.HostProperties = JSON.stringify(hostProperties);
 
       await this._context.spHttpClient.post(customAction["@odata.id"], SPHttpClient.configurations.v1, {
         headers: {

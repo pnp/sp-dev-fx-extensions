@@ -3,16 +3,16 @@ import { IBannerPanelProps } from './IBannerPanelProps';
 import styles from './BannerPanel.module.scss';
 import * as strings from 'MessageBannerApplicationCustomizerStrings';
 
-import { PanelType, Panel } from 'office-ui-fabric-react/lib/Panel';
-import { PrimaryButton, DefaultButton } from 'office-ui-fabric-react/lib/Button';
-import { TextField } from 'office-ui-fabric-react/lib/TextField';
-import { SwatchColorPicker, IColorCellProps } from 'office-ui-fabric-react/lib/SwatchColorPicker';
-import { getColorFromString, IColor } from 'office-ui-fabric-react/lib/Color';
-import { Slider } from 'office-ui-fabric-react/lib/Slider';
-import { Label } from 'office-ui-fabric-react/lib/Label';
-import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
-import { DatePicker } from 'office-ui-fabric-react/lib/DatePicker';
-import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
+import { PanelType, Panel } from '@fluentui/react/lib/Panel';
+import { PrimaryButton, DefaultButton } from '@fluentui/react/lib/Button';
+import { TextField } from '@fluentui/react/lib/TextField';
+import { SwatchColorPicker, IColorCellProps } from '@fluentui/react/lib/SwatchColorPicker';
+import { getColorFromString, IColor } from '@fluentui/react/lib/Color';
+import { Slider } from '@fluentui/react/lib/Slider';
+import { Label } from '@fluentui/react/lib/Label';
+import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
+import { DatePicker } from '@fluentui/react/lib/DatePicker';
+import { Toggle } from '@fluentui/react/lib/Toggle';
 
 const TEXT_COLORS: IColorCellProps[] = [
   { id: 't1', label: 'Black', color: '#000000' },
@@ -32,7 +32,7 @@ const BACKGROUND_COLORS: IColorCellProps[] = [
   { id: 'b8', label: 'White', color: '#ffffff' }
 ];
 
-const BannerPanel = (props: IBannerPanelProps) => {
+const BannerPanel = (props: IBannerPanelProps): JSX.Element => {
   const textColor: IColor = getColorFromString(props.settings.textColor);
   const textColorMatch = TEXT_COLORS.filter((c: IColorCellProps) => textColor && c.color === textColor.str);
   const textColorSelectedId = textColorMatch && textColorMatch.length > 0 ? textColorMatch[0].id : null;
