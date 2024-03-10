@@ -18,10 +18,6 @@ External Sharing and Sharing Links in right-side panel live in action
 
 For further details see the author's [blog series](https://mmsharepoint.wordpress.com/2023/07/27/a-search-driven-navigation-with-sharepoint-framework-spfx-extension-and-fluentui/)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 886272e926d8b2386e3f7acc14bf591ddad45120
 ## Compatibility
 
 ![SPFx 1.18.2](https://img.shields.io/badge/SPFx-1.17.4-green.svg)
@@ -32,18 +28,7 @@ For further details see the author's [blog series](https://mmsharepoint.wordpres
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 ![Hosted Workbench compatible](https://img.shields.io/badge/Hosted%20Workbench-compatible-green.svg "Does work with hosted workbench")
 
-<<<<<<< HEAD
-Tested with Node version:v16.13.2 and SPFx 1.17.4 (previous version)
-
-Tested with Node version:v18.18.2 and SPFx 1.18.2 (current version)
-
-
-## Used SharePoint Framework Version
-
-![version](https://img.shields.io/badge/version-1.18.2-green.svg)
-=======
 Tested with Node version:v16.13.2
->>>>>>> 886272e926d8b2386e3f7acc14bf591ddad45120
 
 ## Applies to
 
@@ -51,6 +36,10 @@ Tested with Node version:v16.13.2
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
+
+## Contributors
+
+* [Markus Moeller]([https://g](https://github.com/mmsharepoint))
 
 ## Version history
 
