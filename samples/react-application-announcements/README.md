@@ -27,26 +27,20 @@ the sp-starter-kit alertNotification component.
 
 ## Used SharePoint Framework Version 
 
-![1.10.0](https://img.shields.io/badge/version-1.10-green.svg)
+![1.18.2](https://img.shields.io/badge/version-1.18.2-green.svg)
 
 ## Applies to
 
 * [SharePoint Framework](https://dev.office.com/sharepoint)
 * [Office 365 tenant](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)
 
-## Solution
-
-Solution|Author(s)
---------|---------
-react-application-announcements | Martin Cyr (martin.cyr@metalogique.com)
-react-application-announcements | Mike Myers
-
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 2.0|May 20th, 2020|Initial release
-2.1|June 18th, 2020|Handle empty start and end dates for announcements. (Mike Myers)
+2.1|June 18th, 2020|Handle empty start and end dates for announcements
+2.2|March 12th, 2023|Update SPFx to 1.18 and pnpjs to 3.23
 
 ## Disclaimer
 
@@ -95,8 +89,8 @@ To deploy the announcements list and add the custom action to your desired site,
 
 1. Install PnPPowerShell `Install-Module SharePointPnPPowerShellOnline`
 1. Connect to your site `Connect-PnPOnline https://MyTenant.sharepoint.com/sites/MySite`
-1. Deploy the PnP Provisioning template `Apply-PnPProvisioningTemplate sharepoint\assets\pnptemplate.xml -Handlers Fields,ContentTypes,Lists`
-1. Add the custom action (remember to replace Contoso in the ClientSideComponentProperties by your site name) `Add-PnPCustomAction -Name "Announcements" -Title "Announcements" -Location "ClientSideExtension.ApplicationCustomizer" -ClientSideComponentId "dd7ec4fd-97aa-44c5-b6ad-87535862e0bf" -ClientSideComponentProperties="{&quot;listName&quot;:&quot;Site Announcements&quot;, &quot;siteUrl&quot;:&quot;/sites/Contoso&quot;}"`
+1. Deploy the PnP Provisioning template `Invoke-PnPSiteTemplate sharepoint\assets\pnptemplate.xml -Handlers Fields,ContentTypes,Lists`
+1. Add the custom action (remember to replace Contoso in the ClientSideComponentProperties by your site name) `Add-PnPCustomAction -Name "Announcements" -Title "Announcements" -Location "ClientSideExtension.ApplicationCustomizer" -ClientSideComponentId "dd7ec4fd-97aa-44c5-b6ad-87535862e0bf" -ClientSideComponentProperties '{"listName":"Site Announcements", "siteUrl":"/sites/Contoso"}'`
 
 Also, note that the template file also includes an example on how to deploy an extension on a site. This requires the app to be deployed to the app catalog
 
