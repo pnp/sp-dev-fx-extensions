@@ -3,15 +3,34 @@
   "solution": {
     "name": "Announcements",
     "id": "59a4b1e7-4dda-4cd9-adbe-b3c3118c021b",
-    "version": "2.0.0.0",
+    "version": "2.0.2.0",
     "includeClientSideAssets": true,
-    "skipFeatureDeployment": false,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "websiteUrl": "",
+      "mpnId": ""
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Displays a configurable banner at Site or Web"
+      },
+      "longDescription": {
+        "default": "Add a custom banner message to your SharePoint Online modern sites."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "4a1305d6-a44e-45cf-928b-25621581481f",
-        "version": "2.0.0.0",
+        "version": "2.0.2.0",
         "assets": {
           "elementManifests": [
             "elements.xml",

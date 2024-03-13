@@ -1,9 +1,20 @@
 {
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
   "port": 4321,
-  "initialPage": "https://localhost:5432/workbench",
   "https": true,
-  "api": {
-    "port": 5432,
-    "entryPath": "node_modules/@microsoft/sp-webpart-workbench/lib/api/"
+  "initialPage": "https://{tenantDomain}/_layouts/workbench.aspx",
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://{tenantDomain}",
+      "customActions": {
+        "dd7ec4fd-97aa-44c5-b6ad-87535862e0bf": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "listName": "Site Announcements", 
+            "siteUrl":"/sites/Announcements"
+          }
+        }
+      }
+    }
   }
 }

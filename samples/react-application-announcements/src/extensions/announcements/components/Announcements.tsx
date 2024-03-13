@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Link, MessageBar, MessageBarType } from '@microsoft/office-ui-fabric-react-bundle';
-import { Web } from "@pnp/sp/presets/all";
+import { ISPFXContext, SPFx, Web } from "@pnp/sp/presets/all";
 import { useEffect, useState } from 'react';
 import * as strings from 'announcementsStrings';
 import { QUALIFIED_NAME } from '../AnnouncementsApplicationCustomizer';
+import { Link, MessageBar, MessageBarType } from '@fluentui/react';
 
 interface IAnnouncementItem {
     ID: number;
@@ -14,6 +14,7 @@ interface IAnnouncementItem {
 }
 
 export interface IAnnouncementsProps {
+    context: ISPFXContext;
     siteUrl: string;
     listName: string;
     culture: string;
@@ -28,22 +29,25 @@ export default function RenderAnnouncements(props: IAnnouncementsProps) {
     // not on every render. The effect will be re-run if
     // props.siteUrl or props.listName changes
     useEffect(() => {
-        if (window.localStorage) {
-            const items: string = window.localStorage.getItem(QUALIFIED_NAME);
-            if (items) {
-                setAcknowledgedAnnouncements(JSON.parse(items));
-            }
-        }
-
         // Use PnP JS to query SharePoint
         const now: string = new Date().toISOString();
-        Web(props.siteUrl)
-            .lists.getByTitle(props.listName)
-            .items
-            .filter(`(Locale eq '${props.culture}' or Locale eq null) and (StartDateTime le datetime'${now}' or StartDateTime eq null) and (EndDateTime ge datetime'${now}' or EndDateTime eq null)`)
-            .select("ID", "Title", "Announcement", "Urgent", "Link", "Locale", "StartDateTime", "EndDateTime")
-            .get<IAnnouncementItem[]>()
-            .then(setAnnouncements);
+        (async () => {
+            const announcements: IAnnouncementItem[] = await Web(props.siteUrl)
+                .using(SPFx(props.context))
+                .lists.getByTitle(props.listName)
+                .items
+                .filter(`(Locale eq '${props.culture}' or Locale eq null) and (StartDateTime le datetime'${now}' or StartDateTime eq null) and (EndDateTime ge datetime'${now}' or EndDateTime eq null)`)
+                .select("ID", "Title", "Announcement", "Urgent", "Link", "Locale", "StartDateTime", "EndDateTime")();
+            setAnnouncements(announcements);
+
+            if (window.localStorage) {
+                const announcementsIDs = announcements.map(i => i.ID);
+                let acknowledgedAnnouncements: number[] = JSON.parse(window.localStorage.getItem(QUALIFIED_NAME) || "[]") || [];
+                let stillExistingAcknowledgedAnnouncements = acknowledgedAnnouncements.filter(announcement => announcementsIDs.indexOf(announcement) > -1);
+                window.localStorage.setItem(QUALIFIED_NAME, JSON.stringify(stillExistingAcknowledgedAnnouncements));
+                setAcknowledgedAnnouncements(stillExistingAcknowledgedAnnouncements);
+            }
+        })();
 
     }, [props.siteUrl, props.listName]);
 
@@ -55,7 +59,7 @@ export default function RenderAnnouncements(props: IAnnouncementsProps) {
             onDismiss={() => {
                 // On dismiss, add the current announcement id to the array 
                 // STORAGE_KEY item in localStorage so it is remembered locally
-                let items: number[] = JSON.parse(window.localStorage.getItem(QUALIFIED_NAME)) || [];
+                let items: number[] = JSON.parse(window.localStorage.getItem(QUALIFIED_NAME) || "[]") || [];
                 items.push(announcement.ID);
                 window.localStorage.setItem(QUALIFIED_NAME, JSON.stringify(items));
                 setAcknowledgedAnnouncements(items);

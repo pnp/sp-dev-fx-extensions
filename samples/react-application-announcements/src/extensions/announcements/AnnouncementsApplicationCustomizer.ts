@@ -3,7 +3,6 @@ import * as ReactDOM from 'react-dom';
 import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
 import { BaseApplicationCustomizer, PlaceholderName } from '@microsoft/sp-application-base';
-import { sp } from "@pnp/sp/presets/all";
 
 import * as strings from 'announcementsStrings';
 import Announcements, { IAnnouncementsProps } from './components/Announcements';
@@ -22,8 +21,6 @@ export default class AnnouncementsApplicationCustomizer
     protected async onInit(): Promise<void> {
         await super.onInit();
 
-        sp.setup(this.context);
-
         Log.info(QUALIFIED_NAME, `Initializing ${strings.Title}`);
 
         if (!this.properties.siteUrl || !this.properties.listName) {
@@ -41,9 +38,12 @@ export default class AnnouncementsApplicationCustomizer
         }
 
         let site = this.context.pageContext.site;
-        let tenantUrl = site.absoluteUrl.replace(site.serverRelativeUrl, "");
+        let tenantUrl = site.absoluteUrl;
+        if (site.serverRelativeUrl != '/')
+            tenantUrl = tenantUrl.replace(site.serverRelativeUrl, "");
 
         const elem: React.ReactElement<IAnnouncementsProps> = React.createElement(Announcements, { 
+            context: this.context,
             siteUrl: `${tenantUrl}${this.properties.siteUrl}`, 
             listName: this.properties.listName,
             culture: this.context.pageContext.cultureInfo.currentUICultureName
@@ -51,6 +51,6 @@ export default class AnnouncementsApplicationCustomizer
 
         ReactDOM.render(elem, header.domElement);
 
-        return Promise.resolve<void>();
+        return Promise.resolve();
     }
 }
