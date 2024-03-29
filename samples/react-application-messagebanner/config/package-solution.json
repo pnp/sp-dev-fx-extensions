@@ -3,7 +3,7 @@
   "solution": {
     "name": "Message Banner",
     "id": "004b6d5e-aee8-499b-9fe8-06757cfd043b",
-    "version": "1.4.0.0",
+    "version": "1.4.1.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

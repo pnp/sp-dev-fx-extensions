@@ -20,8 +20,8 @@ For further details see the author's [blog series](https://mmsharepoint.wordpres
 
 ## Compatibility
 
-![SPFx 1.17.4](https://img.shields.io/badge/SPFx-1.17.4-green.svg)
-![Node.js v16](https://img.shields.io/badge/Node.js-v16-green.svg)
+![SPFx 1.18.2](https://img.shields.io/badge/SPFx-1.17.4-green.svg)
+![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -37,11 +37,17 @@ Tested with Node version:v16.13.2
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
+## Contributors
+
+* [Markus Moeller]([https://g](https://github.com/mmsharepoint))
+
 ## Version history
 
 Version|Date|Author|Comments
 -------|----|----|--------
 0.1|Jul 27, 2023|[Markus Moeller](https://twitter.com/moeller2_0)|Initial release
+1.0|Aug 11, 2023|[Markus Moeller](https://twitter.com/moeller2_0)|Public release
+1.1|Jan 20, 2024|[Markus Moeller](https://twitter.com/moeller2_0)|Upgraded to SPFx 1.18.2
 
 
 ## Minimal Path to Awesome
@@ -77,14 +83,6 @@ Version|Date|Author|Comments
   * [Use Microsoft Graph API to handle sharing links](https://learn.microsoft.com/en-us/graph/api/shares-get?view=graph-rest-1.0&tabs=http&WT.mc_id=M365-MVP-5004617)
 * [Use FluentUI CommandBar, ContextualMenu, Dialog, List, Panel, PersonaInitialsColor, Pivot, TextField (incl 'Clear' icon)](https://developer.microsoft.com/en-us/fluentui#/?WT.mc_id=M365-MVP-5004617)
 * [Use SharePoint Rest API to work with permissions](https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/set-custom-permissions-on-a-list-by-using-the-rest-interface?WT.mc_id=M365-MVP-5004617)
-
-## Debug URL for testing
-
-Here's a debug URL for testing around this sample.
-
-```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"315298b1-ad03-4730-8423-0a07941a96d9":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"useTeamsites":true,"useCommsites": true,"useHubsites": true,"useTeams": true,"useGraph": true}}}
-```
 
 ## References
 

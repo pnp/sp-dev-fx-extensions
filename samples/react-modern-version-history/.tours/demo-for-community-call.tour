@@ -1,0 +1,56 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Demo for community call",
+  "steps": [
+    {
+      "file": "src/extensions/betterVersionHistory/BetterVersionHistoryCommandSet.ts",
+      "description": "Using Fluent UI icons - and matching the color to the current theme\n\nNot visible in demo, but if extensions is deployed to the command bar",
+      "line": 29
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/BetterVersionHistoryCommandSet.manifest.json",
+      "description": "Since icons aren't visible in the context menu (yet? - there are icons in the new list view)\n\nWhy not use emojis? 🎉",
+      "line": 16
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/providers/DataProvider.ts",
+      "description": "Using PnPjs - not only because it's awesome, but also because it's easier, and gives us \"safer\" code\n\nAlso notice that we've moved all our data \"logic\" to a seperate file, seperating concerns",
+      "line": 46
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/providers/DataProvider.ts",
+      "description": "Loop over each field in each version to compare - the versions API will return the full object of each given version, and not list what actually changed",
+      "line": 86
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/models/FieldValues.ts",
+      "description": "Check if the given field has changed since the last version - if not we'll skip it",
+      "line": 32
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/models/IVersion.ts",
+      "description": "We'll end up with an array of just the changes in the given version",
+      "line": 8
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/components/BetterVersionHistory.tsx",
+      "description": "We've built a Hook that allows us better reusablility across different Layouts (not the case here - but makes it possible)",
+      "line": 21
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/components/Version.tsx",
+      "description": "And now to render those data - looping over the \"changes\"",
+      "line": 104
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/components/Version.tsx",
+      "description": "We're also displaying the current approval status, something that's a bit \"hidden\" in the default experience!",
+      "line": 80
+    },
+    {
+      "file": "src/extensions/betterVersionHistory/providers/DataProvider.ts",
+      "description": "\"One - last note\" - There's no version restore API documentation, so we tracked what the default experience does, and make the same call ourselves, this \"might\" break down the line",
+      "line": 118
+    }
+  ]
+}

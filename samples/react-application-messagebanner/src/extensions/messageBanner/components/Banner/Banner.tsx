@@ -2,7 +2,7 @@ import * as React from 'react';
 const { useState, useEffect } = React;
 import { IBannerProps } from './IBannerProps';
 import styles from './Banner.module.scss';
-import { IconButton } from 'office-ui-fabric-react/lib/Button';
+import {IconButton} from '@fluentui/react/lib/Button';
 import BannerPanel from '../BannerPanel/BannerPanel';
 import * as strings from 'MessageBannerApplicationCustomizerStrings';
 import { BaseComponentContext } from '@microsoft/sp-component-base';
@@ -17,7 +17,7 @@ import { IHostProperties } from '../../../../models/IHostProperties';
 
 const BANNER_CONTAINER_ID = 'CustomMessageBannerContainer';
 
-const Banner = (props: IBannerProps) => {
+const Banner = (props: IBannerProps): JSX.Element => {
   const [defaultSettings, setDefaultSettings] = useState(props.settings);
   const [settings, setSettings] = useState(props.settings);
   const [isPanelOpen, setIsPanelOpen] = useState(false);

@@ -17,11 +17,11 @@ Built using a SharePoint Framework Application Customizer Extension with the Top
 
 ## Compatibility
 
-![SPFx 1.15.2](https://img.shields.io/badge/SPFx-1.15.2-green.svg)
-![Node.js v16 | v14 | v12 ](https://img.shields.io/badge/Node.js-v16%20%7C%20v14%20%7C%20v12-green.svg)
+![SPFx 1.14](https://img.shields.io/badge/SPFx-1.14-green.svg)
+![Node.js v14 | v12](https://img.shields.io/badge/Node.js-v14%20%7C%20v12-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
-![Does not work with SharePoint 2016 (Feature Pack 2)](<https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg> "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 ![Hosted Workbench Incompatible](https://img.shields.io/badge/Hosted%20Workbench-Incompatible-red.svg "Does not work with hosted workbench")
 
@@ -30,17 +30,16 @@ Built using a SharePoint Framework Application Customizer Extension with the Top
 - [SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
 - [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
-## Solution
+## Contributors
 
-| Solution                        | Author(s)                                                                                           |
-| ------------------------------- | --------------------------------------------------------------------------------------------------- |
-| react-application-messagebanner | [Brad Schlintz](https://github.com/bschlintz) ([@bschlintz](https://twitter.com/yourtwitterhandle)) |
-| react-application-messagebanner | [Paul Matthews](https://github.com/pmatthews05) ([@cann0nf0dder](https://twitter.com/cann0nf0dder)) |
+- [Brad Schlintz](https://github.com/bschlintz)
+- [Paul Matthews](https://github.com/pmatthews05) 
 
 ## Version history
 
 | Version | Date         | Comments                                                                                                               |
 | ------- | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| 1.4.1   | Feb 10, 2024 | Paul Matthews, upgraded to SPFX 1.18.2.                                                                                |
 | 1.4     | Aug 12, 2022 | Paul Matthews, upgraded to SPFX 1.15.2 obtained permission to submit to PNP Samples.                                   |
 | 1.0     | Nov 5, 2109  | Initial Commit 1.0 created by Brad Schlintz at [spfx-message-banner](https://github.com/bschlintz/spfx-message-banner) |
 
@@ -71,7 +70,7 @@ The banner settings are saved into the ClientSideComponentProperties on the cust
 | backgroundColor                | `"#ffffc6"`                                                                                               | Text. Background colour of the banner.                                                                                                                                                                                                                                                           |
 | textFontSizePx                 | `14`                                                                                                      | Integer. Font size of the banner text in pixels.                                                                                                                                                                                                                                                 |
 | bannerHeightPx                 | `30`                                                                                                      | Integer. Height of the banner in pixels.                                                                                                                                                                                                                                                         |
-| visibleStartDate               | `null` or `2023-09-01`                                                                                                 | Date String. (Optional). Date at which the banner message should be shown to members and visitors of the site. Message will always be visible to admins.                                                                                                                                         |
+| visibleStartDate               | `null` or `2023-09-01`                                                                                    | Date String. (Optional). Date at which the banner message should be shown to members and visitors of the site. Message will always be visible to admins.                                                                                                                                         |
 | disableSiteAdminUI             | `false`                                                                                                   | Boolean (Optional).To disable the site administrator user interface (edit icon). Additionally, if the `visibleStartDate` property is set to a future date, site administrators will no longer see the banner with the future visibility date badge.                                              |
 | enableSetPreAllocatedTopHeight | `false`                                                                                                   | Boolean (Optional). To enable setting the host property 'preAllocatedApplicationCustomizerTopHeight' when saving new banner height within the settings panel. This flag signals SharePoint to pre allocate the banner location height server-side to avoid the page shifting down during render. |
 
