@@ -1,0 +1,28 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.dialogTitle {
+  margin: 1.7em 0px 1em 0px;
+}
+
+.dialogSubtitle {
+  font-weight: $ms-font-weight-semibold;
+}
+
+.treeLeaf,
+.treeNode {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  i {
+    margin-right: 8px
+  }
+}
+
+.category {
+  background-color: $ms-color-themeLighterAlt;
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid $ms-color-themePrimary;
+  margin-right: 8px
+}

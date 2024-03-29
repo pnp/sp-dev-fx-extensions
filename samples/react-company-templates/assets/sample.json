@@ -1,0 +1,55 @@
+[
+    {
+        "name": "pnp-sp-dev-spfx-web-parts-react-company-templates",
+        "source": "pnp",
+        "title": "Company Templates",
+        "shortDescription": "An extension to provide a simple approach for company wide used templates in SharePoint Online.",
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/tree/main/samples/react-company-templates",
+        "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-webparts/tree/main/samples/react-company-templates",
+        "longDescription": [
+            "This is an alternative to the built-in 'New document' experience in a document library in SharePoint Online. It allows a SharePoint admin to define a repository (such as a standard document library or an org assets library) which acts as a source of templates that can be used in every document library. Any user can browse through the collection of company templates, get an instance of the desired template(s) by one single click and start using it."
+        ],
+        "creationDateTime": "2023-12-22",
+        "updateDateTime": "2024-03-29",
+        "products": [
+            "SharePoint"
+        ],
+        "metadata": [
+            {
+                "key": "CLIENT-SIDE-DEV",
+                "value": "React"
+            },
+            {
+                "key": "SPFX-VERSION",
+                "value": "1.17.4"
+            }
+        ],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-company-templates/assets/Demo.gif",
+                "alt": "Extension Preview"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "tmaestrini",
+                "pictureUrl": "https://github.com/tmaestrini.png",
+                "name": "Tobias Maestrini"
+            },
+            {
+                "gitHubAccount": "Tanddant",
+                "pictureUrl": "https://github.com/Tanddant.png",
+                "name": "Dan Toft (Code Reviews)"
+            }
+        ],
+        "references": [
+            {
+                "name": "ListView Command Set extension",
+                "description": "You can use SharePoint Framework (SPFx) Extensions to build list view command set extensions with the aim to extend the SharePoint command surfaces to add new actions, and provides client-side code that you can use to implement custom behaviors.",
+                "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api"
+            }
+        ]
+    }
+]

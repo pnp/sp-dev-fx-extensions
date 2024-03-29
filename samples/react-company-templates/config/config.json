@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "company-templates-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/companyTemplates/CompanyTemplatesCommandSet.js",
+          "manifest": "./src/extensions/companyTemplates/CompanyTemplatesCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CompanyTemplatesCommandSetStrings": "lib/extensions/companyTemplates/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}
