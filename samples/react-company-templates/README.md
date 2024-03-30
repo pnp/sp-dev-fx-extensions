@@ -9,7 +9,7 @@ A SharePoint administrator can easily configure the document library that contai
 ![Admin Settings](./assets/Settings.jpg)
 
 > [!WARNING]
-> 👉 For now, company templates can only be stored in one single library (aka «template repostory») within the whole SPO tenant. Therefore, only a user that has `isSiteAdmin` property assigned can access the settings view. We strongly recommend that only a tenant admin should / can configure the template repository settings.
+> 👉 For now, company templates can only be stored in one single library (aka «template repository») within the whole SPO tenant. Therefore, only a user that has `isSiteAdmin` property assigned can access the settings view. We strongly recommend that only a tenant admin should / can configure the template repository settings.
 
 > [!NOTE]
 > By defining the template repository, the settings will be stored in a **tenant property** (property name `easyTemplatesSettings`). Every instance of this extension refers to this tenant property. 
@@ -27,7 +27,7 @@ From a user perspective, the extension covers these features:
 - [x] List files that serve as company templates in a tree structure
 - [x] Filter by file category
 - [x] Filter by name
-- [x] Copy selected files fom template repository to the current document library
+- [x] Copy selected files from template repository to the current document library
 - [x] Show a settings page to all users who have permissions to manage lists
 
 It uses several ["Reusable React controls"](https://pnp.github.io/sp-dev-fx-controls-react/) for an awesome user experience.
@@ -35,7 +35,7 @@ It uses several ["Reusable React controls"](https://pnp.github.io/sp-dev-fx-cont
 ### Upcoming Features (or not yet implemented ideas)
 
 - [ ] Show link(s) to copied file(s) to be opened in a new browser tab (Dan's feature request 😃)
-- [ ] Display additional metadata (filesize, current version) of the template file
+- [ ] Display additional metadata (file size, current version) of the template file
 - [ ] Show a preview of a selected template file by clicking on its file name
 - [ ] Refresh template list by clicking on a refresh button in the command bar
 
