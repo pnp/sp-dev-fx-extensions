@@ -9,7 +9,7 @@
       "SharePoint Framework application customizer displaying an information banner using office-fabric-ui MessageBar."
     ],
     "creationDateTime": "2020-06-18",
-    "updateDateTime": "2020-06-18",
+    "updateDateTime": "2024-03-12",
     "products": [
       "SharePoint"
     ],
@@ -20,7 +20,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.10.0"
+        "value": "1.18.2"
       }
     ],
 "tags": [],
@@ -38,7 +38,6 @@
     "authors": [
       {
         "gitHubAccount": "thespooler",
-        "company": "",
         "pictureUrl": "https://github.com/thespooler.png",
         "name": "Mike Myers"
       }
