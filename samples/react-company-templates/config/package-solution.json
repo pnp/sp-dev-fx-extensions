@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "spo-templates-extension-client-side-solution",
-    "id": "fb423a64-9c98-42de-b873-e2fe1231e30a",
+    "id": "3c272c73-7281-4642-8dd9-2cd670f130f2",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
