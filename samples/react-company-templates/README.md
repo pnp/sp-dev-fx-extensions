@@ -28,7 +28,7 @@ From a user perspective, the extension covers these features:
 - [x] Filter by file category
 - [x] Filter by name
 - [x] Copy selected files from template repository to the current document library
-- [x] Show a settings page to all users who have permissions to manage lists
+- [x] Show a settings page to all users who are (at least) site admins
 
 It uses several ["Reusable React controls"](https://pnp.github.io/sp-dev-fx-controls-react/) for an awesome user experience.
 
