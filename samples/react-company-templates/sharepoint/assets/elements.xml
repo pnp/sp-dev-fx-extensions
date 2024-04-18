@@ -4,7 +4,7 @@
         Title="CompanyTemplates"
         RegistrationId="101"
         RegistrationType="List"
-        Location="ClientSideExtension.ListViewCommandSet.ContextMenu"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
         ClientSideComponentId="532b1c1d-bcbd-4831-a821-ec95eac1ca1c"
         ClientSideComponentProperties="{}">
     </CustomAction>
