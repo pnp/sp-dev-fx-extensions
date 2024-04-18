@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const samplesDir = path.join(__dirname, '..', '..', '..', 'samples');
-const outputDir = path.join(__dirname, '..', '..', '..', '.metadata');
+const samplesDir = '../../../samples';
+const outputDir = '../../../.metadata';
 const outputFile = path.join(outputDir, 'samples.json');
 
 async function readSampleJson(filePath) {
