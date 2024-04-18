@@ -1,29 +1,38 @@
-name: Merge sample metadata
+name: Merge Samples
 
 on:
   workflow_dispatch:
   push:
     branches:
-      # When someone push to `main` branch
       - main
-    paths:
-      - 'samples/**/assets/sample.json'
+  pull_request:
+    branches:
+      - main
+    types: [closed]
 
 jobs:
-  build:
-    name: 'Merge all sample.json files to samples.json'
+  merge_samples:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
     steps:
-      - name: Checkout main branch
+      - name: Checkout code
         uses: actions/checkout@v3
-      - name: Join samples  
-        run: |
-          jq -s '[.[][]]' samples/**/assets/sample.json > .metadata/samples.json
-      - name: Commit samples.json to main
-        uses: EndBug/add-and-commit@v9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          add: '.metadata/samples.json --force'
-          push: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-          cwd: ./
-          branch: main
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Merge samples
+        run: node .github/scripts/merge-samples/index.js
+
+      - name: Commit and push if necessary
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add -A
+          git diff --staged --quiet || git commit -m "Automated samples.json update"
+          git push
