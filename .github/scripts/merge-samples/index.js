@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const samplesDir = '../../../samples';
-const outputDir = '../../../.metadata';
+const repoRoot = process.cwd();  // Gets the current working directory
+const samplesDir = path.join(repoRoot, 'samples');
+const outputDir = path.join(repoRoot, '.metadata');
 const outputFile = path.join(outputDir, 'samples.json');
 
 async function readSampleJson(filePath) {
@@ -16,7 +17,7 @@ async function readSampleJson(filePath) {
                     resolve(jsonData);
                 } catch (parseErr) {
                     console.error(`Invalid JSON in ${filePath}`);
-                    resolve(null); // Return null if JSON is invalid
+                    resolve(null);  // Return null if JSON is invalid
                 }
             }
         });
@@ -33,7 +34,9 @@ async function mergeSamples() {
                 const samplePath = path.join(samplesDir, dir.name, 'assets', 'sample.json');
                 if (fs.existsSync(samplePath)) {
                     const sampleData = await readSampleJson(samplePath);
-                    samples = samples.concat(sampleData);
+                    if (sampleData) {  // Check if the data is not null (valid JSON)
+                        samples = samples.concat(sampleData);
+                    }
                 }
             }
         }
