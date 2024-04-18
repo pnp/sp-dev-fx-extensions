@@ -1,7 +1,6 @@
 name: Merge Samples
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -22,9 +21,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-
-      - name: Install dependencies
-        run: npm install
 
       - name: Merge samples
         run: node .github/scripts/merge-samples/index.js
