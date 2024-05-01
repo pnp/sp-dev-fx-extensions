@@ -45,7 +45,7 @@
         "@types/webpack-env": "1.13.1",
         "ajv": "~5.2.2",
         "gulp": "4.0.2",
-        "webpack-bundle-analyzer": "^3.8.0"
+        "webpack-bundle-analyzer": "^4.10.2"
     },
     "solution": {
         "developer": {
