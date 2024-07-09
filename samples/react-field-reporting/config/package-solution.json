@@ -1,0 +1,43 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "O365C FieldCust Reporting",
+        "id": "d32b299c-acb2-4089-93ee-b8effce103af",
+        "version": "1.0.0.0",
+        "includeClientSideAssets": true,
+        "skipFeatureDeployment": true,
+        "isDomainIsolated": false,
+        "developer": {
+            "name": "",
+            "websiteUrl": "",
+            "privacyUrl": "",
+            "termsOfUseUrl": "",
+            "mpnId": "Undefined-1.18.2"
+        },
+        "metadata": {
+            "shortDescription": {
+                "default": "o365c-fieldcust-reporting description"
+            },
+            "longDescription": {
+                "default": "o365c-fieldcust-reporting description"
+            },
+            "screenshotPaths": [],
+            "videoUrl": "",
+            "categories": []
+        },
+        "features": [{
+            "title": "Application Extension - Deployment of custom action",
+            "description": "Deploys a custom action with ClientSideComponentId association",
+            "id": "3df3b449-f1fb-4f68-8519-37aab256da31",
+            "version": "1.0.0.0",
+            "assets": {
+                "elementManifests": [
+                    "elements.xml"
+                ]
+            }
+        }]
+    },
+    "paths": {
+        "zippedPackage": "solution/o365c-fieldcust-reporting.sppkg"
+    }
+}

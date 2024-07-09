@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "16.18.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "o-365-c-fieldcust-reporting",
+    "libraryId": "d32b299c-acb2-4089-93ee-b8effce103af",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "o365c-fieldcust-reporting",
+    "solutionShortDescription": "o365c-fieldcust-reporting description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
