@@ -11,7 +11,9 @@ class SPService {
     }
     public static addListItemAsync = async (
         listName: string,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         item: any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ): Promise<any> => {
         try {
             const result = await this._sp.web.lists

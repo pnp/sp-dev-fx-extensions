@@ -71,6 +71,7 @@ const DocumentReporting: React.FC<IDocumentReportingProps> = (props) => {
     </div>
   );
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function generateDocumentId(metadata: any): string {
     const { userName, docId } = metadata;
 

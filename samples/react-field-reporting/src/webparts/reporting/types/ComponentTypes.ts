@@ -4,6 +4,7 @@ export type Column = {
 };
 
 export type Row = {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
 };
 
@@ -11,6 +12,7 @@ export type TableData = {
     tables: {
         name: string;
         columns: Column[];
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         rows: any[][];
     }[];
 };

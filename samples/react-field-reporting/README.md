@@ -1,7 +1,6 @@
-#React Document Reporting Field Customizer
+# React Document Reporting Field Customizer
 
 ## Summary
-
 
 This React-based SharePoint Framework (SPFx) application serves as a comprehensive solution for monitoring user activity within SharePoint documents. It features a field customizer that logs details about who has opened a document directly into Application Insights. Additionally, the application includes a SPFx web part designed to display this real-time reporting data. The data is presented in both a tabular format and visually, using charts, to provide a clear and insightful overview of user interactions with documents. This dual functionality not only enhances document tracking but also facilitates the analysis of user engagement through intuitive and accessible reporting tools.
 
@@ -10,7 +9,6 @@ This React-based SharePoint Framework (SPFx) application serves as a comprehensi
 ![React Document Reporting Field Customizer](./assets/app-results.png)
 
 ![React Document Reporting Field Customizer](./assets/app-charts.png)
-
 
 ## Used SharePoint Framework Version
 
@@ -34,13 +32,14 @@ Version|Date|Comments
 1.0|July 9, 2024|Initial release
 
 ## Disclaimer
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+`THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.`
 
 ## Prerequisites
 
-* Office 365 Developer tenant with a modern site collection 
-* Get Azure Application Insight Instrumentation key -  [more info](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-resources-app-insights-keys?view=azure-bot-service-4.0#instrumentation-key)
-* Get Azure AppInsight API Key and Secret - [more info]([more info](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-resources-app-insights-keys?view=azure-bot-service-4.0#instrumentation-key))
+- Office 365 Developer tenant with a modern site collection
+- Get Azure Application Insight Instrumentation key -  [more info](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-resources-app-insights-keys?view=azure-bot-service-4.0#instrumentation-key)
+- Get Azure AppInsight API Key and Secret - [more info]([more info](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-resources-app-insights-keys?view=azure-bot-service-4.0#instrumentation-key))
 
 ---
 
@@ -48,39 +47,39 @@ Version|Date|Comments
 
 - Clone this repository
 - Ensure that you are at the solution folder
-- Navigate to the following file and specifiy instrumentation Key
+- Navigate to the following file and specify instrumentation Key
   
 ```
 react-field-reporting\src\extensions\documentReporting\DocumentReportingFieldCustomizer.ts
 ```
 
-- in the command-line run:   
-  - **npm install**
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+- in the command-line run:
+  - `npm install`
+  - `gulp bundle --ship`
+  - `gulp package-solution --ship`
 - Deploy the package to app catalog
 - Add the app to the any site
 
-### Field Customizer configrations
-- Add the **ExtendedDocName** site column to the Document library
+### Field Customizer configurations
+
+- Add the `ExtendedDocName` site column to the Document library
 - Hide the existing Name column from the Document library
 - Click on any document name under the Extended Doc Name column, it should track the event in the Application Insights
+
 ### Documents Insights web part configurations
+
 - Configure the following properties in the web part
 
 ![Configuring Documents Insight configurations](./assets/app-webpart-configs.png)
 
 ## Features
 
-- **User Activity Monitoring**: Tracks and logs user interactions with documents, specifically noting when a document is opened.
-- **Integration with Application Insights**: Utilizes Application Insights for logging and monitoring document access events.
-- **Field Customizer for Enhanced Document Library**: Implements a custom field named **ExtendedDocName** to replace the default document name column, facilitating the tracking of document access.
-- **Real-time Reporting**: Offers a SharePoint Framework (SPFx) web part that displays real-time data on document interactions from Application Insights in both tabular and chart formats.
-- **Easy Configuration**: Provides straightforward setup instructions for deploying the package, adding the app to sites, and configuring both the field customizer and the web part.
-- **Visual Insights into Document Usage**: Through the Documents Insights web part, users can visually analyze document usage patterns within SharePoint.
-
-
-
+- `User Activity Monitoring`: Tracks and logs user interactions with documents, specifically noting when a document is opened.
+- `Integration with Application Insights`: Utilizes Application Insights for logging and monitoring document access events.
+- `Field Customizer for Enhanced Document Library`: Implements a custom field named `ExtendedDocName` to replace the default document name column, facilitating the tracking of document access.
+- `Real-time Reporting`: Offers a SharePoint Framework (SPFx) web part that displays real-time data on document interactions from Application Insights in both tabular and chart formats.
+- `Easy Configuration`: Provides straightforward setup instructions for deploying the package, adding the app to sites, and configuring both the field customizer and the web part.
+- `Visual Insights into Document Usage`: Through the Documents Insights web part, users can visually analyze document usage patterns within SharePoint.
 
 ## References
 
