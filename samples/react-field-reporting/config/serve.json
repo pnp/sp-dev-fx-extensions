@@ -1,0 +1,31 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+    "port": 4321,
+    "https": true,
+    "serveConfigurations": {
+        "default": {
+            "pageUrl": "https://ejazhussain.sharepoint.com/sites/dev/Shared%20Documents/Forms/AllItems.aspx",
+            "fieldCustomizers": {
+                "ExtendedDocName": {
+                    "id": "aa7f4c80-f747-4fd7-8e10-eb68a3cb5838",
+                    "properties": {
+                        "sampleText": "This is a sample text"
+                    }
+                }
+            }
+        },
+        "documentReporting": {
+            "pageUrl": "https://ejazhussain.sharepoint.com/sites/dev/Shared%20Documents/Forms/AllItems.aspx",
+            "fieldCustomizers": {
+                "ExtendedDocName": {
+                    "id": "aa7f4c80-f747-4fd7-8e10-eb68a3cb5838",
+                    "properties": {
+                        "sampleText": "This is a sample text"
+
+                    }
+                }
+            }
+        }
+    },
+    "initialPage": "https://{tenantDomain}/_layouts/workbench.aspx"
+}

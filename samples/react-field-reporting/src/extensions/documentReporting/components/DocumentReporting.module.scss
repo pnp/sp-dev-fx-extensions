@@ -1,0 +1,17 @@
+.documentReporting {
+    // background-color: "[theme:themePrimary, default:#0078d4]";
+    // color: "[theme:white, default:#ffffff]";
+    vertical-align: top;
+    font-weight: 400;
+    font-size: 14px;
+    color: #323130;
+    .linkStyle {
+        font-size: 14px;
+        text-decoration: none;
+        color: #323130;
+        &:hover {
+            text-decoration: underline;
+            color: #323130;
+        }
+    }
+}

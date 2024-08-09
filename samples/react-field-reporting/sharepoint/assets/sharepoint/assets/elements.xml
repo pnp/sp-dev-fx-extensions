@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">    
+    <Field ID="{e0a953c3-ee8c-45b3-8d7f-1a681e1e3e9b}"
+            Name="ExtendedDocName"
+            DisplayName="Extended Doc Name"
+            Type="Text"
+            Required="FALSE"
+            Group="SPFx Columns"
+            ClientSideComponentId="aa7f4c80-f747-4fd7-8e10-eb68a3cb5838">
+    </Field>
+</Elements>

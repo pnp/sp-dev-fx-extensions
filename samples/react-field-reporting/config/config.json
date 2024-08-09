@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "document-reporting-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/documentReporting/DocumentReportingFieldCustomizer.js",
+          "manifest": "./src/extensions/documentReporting/DocumentReportingFieldCustomizer.manifest.json"
+        }
+      ]
+    },
+    "reporting-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reporting/ReportingWebPart.js",
+          "manifest": "./src/webparts/reporting/ReportingWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "DocumentReportingFieldCustomizerStrings": "lib/extensions/documentReporting/loc/{locale}.js",
+    "ReportingWebPartStrings": "lib/webparts/reporting/loc/{locale}.js"
+  }
+}
