@@ -6,7 +6,7 @@ List view command set extensions with below functionalities
 
 1. Copy Path allows to copy the path of the document without breaking the permission inheritance.
 2. Copy Name allows to copy the name of the document without using the currently available rename functionality.
-![Copy Path & Copy Name Extensions](assets/CopyPathCopyNameExtenstions.png)
+   ![Copy Path & Copy Name Extensions](assets/CopyPathCopyNameExtenstions.png)
 
 ## Compatibility
 
@@ -45,13 +45,14 @@ N/A
 
 ## Version history
 
-| Version | Date              | Comments        |
-| ------- | ----------------- | --------------- |
-| 1.0     | Oct 22, 2023      | Initial release |
+| Version | Date         | Comments                |
+| ------- | ------------ | ----------------------- |
+| 1.0     | Oct 22, 2023 | Initial release         |
+| 1.1     | Aug 28, 2024 | Upgraded to SPFx 1.19.0 |
 
 ## Help
 
-We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
 If you're having issues building the solution, please run [spfx doctor](https://pnp.github.io/cli-microsoft365/cmd/spfx/spfx-doctor/) from within the solution folder to diagnose incompatibility issues with your environment.
 

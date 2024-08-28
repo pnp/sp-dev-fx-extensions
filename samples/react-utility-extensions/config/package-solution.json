@@ -12,7 +12,7 @@
       "websiteUrl": "",
       "privacyUrl": "",
       "termsOfUseUrl": "",
-      "mpnId": "Undefined-1.17.4"
+      "mpnId": "Undefined-1.19.0"
     },
     "metadata": {
       "shortDescription": {
@@ -32,10 +32,7 @@
         "id": "1f551192-912e-4956-9880-56471900a961",
         "version": "1.0.0.0",
         "assets": {
-          "elementManifests": [
-            "elements.xml",
-            "ClientSideInstance.xml"
-          ]
+          "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
         }
       }
     ]
