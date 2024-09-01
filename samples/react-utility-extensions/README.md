@@ -6,7 +6,7 @@ List view command set extensions with below functionalities
 
 1. Copy Path allows to copy the path of the document without breaking the permission inheritance.
 2. Copy Name allows to copy the name of the document without using the currently available rename functionality.
-![Copy Path & Copy Name Extensions](assets/CopyPathCopyNameExtenstions.png)
+   ![Copy Path & Copy Name Extensions](assets/CopyPathCopyNameExtenstions.png)
 
 ## Compatibility
 
@@ -17,8 +17,8 @@ List view command set extensions with below functionalities
 
 This sample is optimally compatible with the following environment configuration:
 
-![SPFx 1.18.0](https://img.shields.io/badge/SPFx-1.18.0-green.svg)
-![Node.js v18 | v16](https://img.shields.io/badge/Node.js-v18%20%7C%20v16-green.svg)
+![SPFx 1.19.0](https://img.shields.io/badge/SPFx-1.19.0-green.svg)
+![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](<https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg> "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -41,17 +41,18 @@ N/A
 
 ## Contributors
 
-[Harminder Singh](https://github.com/HarminderSethi)
+- [Harminder Singh](https://github.com/HarminderSethi)
 
 ## Version history
 
-| Version | Date              | Comments        |
-| ------- | ----------------- | --------------- |
-| 1.0     | Oct 22, 2023      | Initial release |
+| Version | Date         | Comments                |
+| ------- | ------------ | ----------------------- |
+| 1.0     | Oct 22, 2023 | Initial release         |
+| 1.1     | Aug 28, 2024 | Upgraded to SPFx 1.19.0 |
 
 ## Help
 
-We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
 If you're having issues building the solution, please run [spfx doctor](https://pnp.github.io/cli-microsoft365/cmd/spfx/spfx-doctor/) from within the solution folder to diagnose incompatibility issues with your environment.
 
