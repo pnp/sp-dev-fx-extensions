@@ -18,7 +18,7 @@ Please refrain from making drastic changes that may negatively impact your users
 
 ## Used SharePoint Framework Version
 
-![SPFx v1.8](https://img.shields.io/badge/SPFx-1.8-green.svg)
+![SPFx v1.20.0](https://img.shields.io/badge/SPFx-1.8-green.svg)
 
 ## Applies to
 
@@ -27,17 +27,18 @@ Please refrain from making drastic changes that may negatively impact your users
 
 ## Solution
 
-Solution|Author(s)
---------|---------
-react-application-injectcss|Hugo Bernier ([Tahoe Ninjas](http://tahoeninjas.blog), @bernierh)
+| Solution                    | Author(s)                                                      |
+| --------------------------- | -------------------------------------------------------------- |
+| react-application-injectcss | Hugo Bernier ([Tahoe Ninjas](http://tahoeninjas.blog), @bernierh) |
 
 ## Version history
 
-Version|Date|Comments
--------|----|--------
-1.0.0|07 May, 2018|Initial release
-1.1.0|18 October, 2018|Updated to SPFx 1.6
-1.2.0|28 March, 2018|Updated to SPFx 1.8
+| Version | Date             | Comments             |
+| ------- | ---------------- | -------------------- |
+| 1.0.0   | 07 May, 2018     | Initial release      |
+| 1.1.0   | 18 October, 2018 | Updated to SPFx 1.6  |
+| 1.2.0   | 28 March, 2018   | Updated to SPFx 1.8  |
+| 1.20.0  | 01 October, 2024 | Updated to SPFx 1.20 |
 
 ## Disclaimer
 
@@ -76,6 +77,8 @@ For example, the CSS provided above will make the feedback button appear as foll
 2. When prompted to deploy to all sites, choose the option that suits your needs.
 
 ### Automated deployment
+
+**NOTE** as of Sept 9th, 2024 to run the PnP PowerShell Cmdlets you must [register an Entra ID Application](https://pnp.github.io/powershell/articles/registerapplication.html) to use to run the cmdlets
 
 1. If you have not done so already, install the [PnP PowerShell Cmdlets](https://aka.ms/sppnp-powershell)
 2. Edit the `DeployApplicationCustomizer.ps1` file and change the `$tenantUrl` variable to point to your tenant.

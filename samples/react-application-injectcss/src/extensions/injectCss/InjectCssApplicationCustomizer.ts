@@ -23,12 +23,12 @@ export default class InjectCssApplicationCustomizer
     const cssUrl: string = this.properties.cssurl;
     if (cssUrl) {
         // inject the style sheet
-        const head: any = document.getElementsByTagName("head")[0] || document.documentElement;
-        let customStyle: HTMLLinkElement = document.createElement("link");
+        const head: HTMLElement = document.getElementsByTagName("head")[0] || document.documentElement;
+        const customStyle: HTMLLinkElement = document.createElement("link");
         customStyle.href = cssUrl;
         customStyle.rel = "stylesheet";
         customStyle.type = "text/css";
-        head.insertAdjacentElement("beforeEnd", customStyle);
+        head.insertAdjacentElement("beforeend", customStyle);
     }
 
     return Promise.resolve();

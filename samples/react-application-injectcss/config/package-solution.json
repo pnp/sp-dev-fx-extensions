@@ -7,6 +7,24 @@
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "websiteUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "react-application-injectcss description"
+      },
+      "longDescription": {
+        "default": "react-application-injectcss description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },    
     "features": [
       {
         "title": "Inject CSS Application Extension",
