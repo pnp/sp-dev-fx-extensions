@@ -1,6 +1,6 @@
 {
   "name": "react-application-injectcss",
-  "version": "0.0.1",
+  "version": "1.3.0",
   "private": true,
   "engines": {
     "node": ">=16.13.0 <17.0.0 || >=18.17.1 <19.0.0"

@@ -18,7 +18,7 @@ Please refrain from making drastic changes that may negatively impact your users
 
 ## Used SharePoint Framework Version
 
-![SPFx v1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
+![SPFx v1.20.0](https://img.shields.io/badge/SPFx-1.8-green.svg)
 
 ## Applies to
 
@@ -27,9 +27,10 @@ Please refrain from making drastic changes that may negatively impact your users
 
 ## Solution
 
-| Solution                    | Author(s)                                                      |
-| --------------------------- | -------------------------------------------------------------- |
-| react-application-injectcss | Hugo Bernier ([Tahoe Ninjas](http://tahoeninjas.blog), @bernierh) |
+| Solution                           | Author(s)                                                          |
+| ---------------------------------- | ------------------------------------------------------------------ |
+| react-application-injectcss        | Hugo Bernier ([Tahoe Ninjas](http://tahoeninjas.blog), @bernierh)     |
+| react-application-injectcss@v1.3.0 | Thomas Daly (MVP, [@\_tomdaly\_](https://www.twitter.com/_tomdaly_)) |
 
 ## Version history
 
@@ -38,7 +39,7 @@ Please refrain from making drastic changes that may negatively impact your users
 | 1.0.0   | 07 May, 2018     | Initial release      |
 | 1.1.0   | 18 October, 2018 | Updated to SPFx 1.6  |
 | 1.2.0   | 28 March, 2018   | Updated to SPFx 1.8  |
-| 1.20.0  | 01 October, 2024 | Updated to SPFx 1.20 |
+| 1.3.0   | 01 October, 2024 | Updated to SPFx 1.20 |
 
 ## Disclaimer
 
