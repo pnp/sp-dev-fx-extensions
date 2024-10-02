@@ -18,7 +18,7 @@ Please refrain from making drastic changes that may negatively impact your users
 
 ## Used SharePoint Framework Version
 
-![SPFx v1.20.0](https://img.shields.io/badge/SPFx-1.8-green.svg)
+![SPFx v1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
 
 ## Applies to
 
