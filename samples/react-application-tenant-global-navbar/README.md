@@ -32,16 +32,17 @@ Sample SharePoint Framework application customizer showing how to create a tenan
 
 ## Solution
 
-| Solution                               | Author(s)                                                                                       |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| react-application-tenant-global-navbar | Paolo Pialorsi (MCM, MVP,[PiaSys.com](https://piasys.com), [@PaoloPia](https://twitter.com/PaoloPia)) |
+| Solution                                      | Author(s)                                                                                       |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| react-application-tenant-global-navbar        | Paolo Pialorsi (MCM, MVP,[PiaSys.com](https://piasys.com), [@PaoloPia](https://twitter.com/PaoloPia)) |
+| react-application-tenant-global-navbar@v1.1.0 | Thomas Daly (MVP, [@\_tomdaly\_](https://www.twitter.com/_tomdaly_))                              |
 
 ## Version history
 
 | Version | Date               | Comments                       |
 | ------- | ------------------ | ------------------------------ |
 | 1.0.0   | September 28, 2017 | Initial release                |
-| 1.0.1   | October 2, 2024    | Upgrade SPFx v1.2.0 to v1.20.0 |
+| 1.1.0   | October 2, 2024    | Upgrade SPFx v1.2.0 to v1.20.0 |
 
 ## Disclaimer
 
