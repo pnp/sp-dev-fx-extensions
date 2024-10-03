@@ -1,10 +1,9 @@
-/* tslint:disable */
+
 require("./SiteBreadcrumb.module.css");
 const styles = {
-  breadcrumb: 'breadcrumb_a0ef1a89',
-  msBgColorThemePrimary: 'msBgColorThemePrimary_a0ef1a89',
-  breadcrumbLinks: 'breadcrumbLinks_a0ef1a89'
+  breadcrumb: 'breadcrumb_8346952e',
+  msBgColorThemePrimary: 'msBgColorThemePrimary_8346952e',
+  breadcrumbLinks: 'breadcrumbLinks_8346952e'
 };
 
 export default styles;
-/* tslint:enable */

@@ -2,7 +2,7 @@ declare interface ISiteBreadcrumbStrings {
   Title: string;
 }
 
-declare module 'siteBreadcrumbStrings' {
+declare module 'SiteBreadcrumbApplicationCustomizerStrings' {
   const strings: ISiteBreadcrumbStrings;
   export = strings;
 }
