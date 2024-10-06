@@ -1,5 +1,5 @@
 # Change these variables to enable the extension
-$customCSSUrl = "/Style%20Library/custom.css"
+$customCSSUrl = "/SiteAssets/custom.css"
 $tenantUrl = "https://<your-tenant>.sharepoint.com/sites/<your-site>"
 
 # Connect to the Site

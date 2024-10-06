@@ -8,7 +8,6 @@ import * as strings from 'InjectCssApplicationCustomizerStrings';
 
 const LOG_SOURCE: string = 'InjectCssApplicationCustomizer';
 
-
 export interface IInjectCssApplicationCustomizerProperties {
   cssurl: string;
 }

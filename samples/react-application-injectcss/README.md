@@ -59,7 +59,7 @@ Please refrain from making drastic changes that may negatively impact your users
  }
 ```
 
-2. Upload the CSS file as `custom.css` to your `Styles Library` of the root site collection (i.e.: `https://<yourtenant>.sharepoint.com/Style%20Library/Forms/AllItems.aspx`).
+2. Upload the CSS file as `custom.css` to your `Site Assets` of the root site collection (i.e.: `https://<yourtenant>.sharepoint.com/SiteAssets/Forms/AllItems.aspx`).
 3. Navigate to your site. Your custom CSS should be applied.
 
 For example, the CSS provided above will make the feedback button appear as follows:
@@ -89,7 +89,7 @@ For example, the CSS provided above will make the feedback button appear as foll
 
 ## Changing the CSS location
 
-To simplify deployment, the extension looks for a `custom.css` in your tenant's root `Style Library`. If you wish to use a different CSS name and location, use one of the following approaches:
+To simplify deployment, the extension looks for a `custom.css` in your tenant's root `Site Assets`. If you wish to use a different CSS name and location, use one of the following approaches:
 
 ### In the solution
 
