@@ -3,7 +3,7 @@
   "solution": {
     "name": "Message Banner",
     "id": "004b6d5e-aee8-499b-9fe8-06757cfd043b",
-    "version": "1.4.1.0",
+    "version": "1.4.2.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "message-banner Feature",
         "description": "The feature that activates elements of the message-banner solution.",
         "id": "2f5235b8-a888-46a5-9b30-eaf8cfdae04e",
-        "version": "1.4.0.0"
+        "version": "1.4.2.0"
       }
     ]
   },
