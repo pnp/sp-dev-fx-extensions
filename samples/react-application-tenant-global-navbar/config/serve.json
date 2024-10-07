@@ -1,10 +1,31 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
   "port": 4321,
-  "initialPage": "https://localhost:5432/workbench",
   "https": true,
-  "api": {
-    "port": 5432,
-    "entryPath": "node_modules/@microsoft/sp-webpart-workbench/lib/api/"
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
+      "customActions": {
+        "b1efedb9-b371-4f5c-a90f-3742d1842cf3": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "TopMenuTermSet": "TenantGlobalNavBar",
+            "BottomMenuTermSet": "TenantGlobalFooterBar"
+          }
+        }
+      }
+    },
+    "tenantGlobalNavBar": {
+      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
+      "customActions": {
+        "b1efedb9-b371-4f5c-a90f-3742d1842cf3": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "TopMenuTermSet": "TenantGlobalNavBar",
+            "BottomMenuTermSet": "TenantGlobalFooterBar"
+          }
+        }
+      }
+    }
   }
 }
