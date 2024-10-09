@@ -1,8 +1,7 @@
 $tenantUrl = "https://<your-tenant>.sharepoint.com/sites/<your-site>"
 
-# Get credentials
-$credentials = Get-Credential
-Connect-PnPOnline $tenantUrl -Credentials $credentials
+# Connect to the Site
+Connect-PnPOnline $tenantUrl -Interactive -ClientId "<your-new-registered-entra-id-application-id>"
 
 # Connect to tenant
 Get-PnPCustomAction | ? Name -eq "InjectCssApplicationCustomizer" | Remove-PnPCustomAction
