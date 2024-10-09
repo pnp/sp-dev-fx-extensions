@@ -1,53 +1,48 @@
-import { override } from '@microsoft/decorators';
-import {
-  BaseApplicationCustomizer
-} from '@microsoft/sp-application-base';
-import { Log } from '@microsoft/sp-core-library';
+import { BaseApplicationCustomizer } from "@microsoft/sp-application-base";
+import { Log } from "@microsoft/sp-core-library";
 //Needed to reference external CSS files
-import { SPComponentLoader } from '@microsoft/sp-loader';
-import { getIconClassName } from '@uifabric/styling';
-import * as $ from 'jquery';
-import * as strings from 'SpfxToastrApplicationCustomizerStrings';
-import * as toastr from 'toastr';
+import { SPComponentLoader } from "@microsoft/sp-loader";
+import * as $ from "jquery";
+import * as strings from "SpfxToastrApplicationCustomizerStrings";
+import * as toastr from "toastr";
 //import { IToast, ToastService } from '../../services/toastService'; //loaded from the toastService barrel - temporarily disabled due to issue with WebPack
-import { IToast } from '../../services/toastService/IToast';
-import { ToastService } from '../../services/toastService/ToastService';
-import styles from './SpfxToastr.module.scss';
+import { IToast } from "../../services/toastService/IToast";
+import { ToastService } from "../../services/toastService/ToastService";
+import styles from "./SpfxToastr.module.scss";
+import { getIconClassName } from "@fluentui/react";
+import { initializeIcons } from "@fluentui/font-icons-mdl2";
 
-const LOG_SOURCE: string = 'SpfxToastrApplicationCustomizer';
+const LOG_SOURCE: string = "SpfxToastrApplicationCustomizer";
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
  * it will be deserialized into the BaseExtension.properties object.
  * You can define an interface to describe it.
  */
-export interface ISpfxToastrApplicationCustomizerProperties {
-  //Nope
-}
+export interface ISpfxToastrApplicationCustomizerProperties {}
 
 /** A Custom Action which can be run during execution of a Client Side Application */
-export default class SpfxToastrApplicationCustomizer
-  extends BaseApplicationCustomizer<ISpfxToastrApplicationCustomizerProperties> {
-
+export default class SpfxToastrApplicationCustomizer extends BaseApplicationCustomizer<ISpfxToastrApplicationCustomizerProperties> {
   private toastsPromise: Promise<IToast[]>;
-
-  @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
-    
+
+    initializeIcons();
+
     //Load the Toastr CSS
-    SPComponentLoader.loadCss('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css');
+    SPComponentLoader.loadCss(
+      "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    );
 
     //Go ahead and request the toasts, but we can't use them until jQuery and Toastr are ready
-    this.toastsPromise = ToastService.getToasts(this.context.spHttpClient, this.context.pageContext.web.absoluteUrl, this.context.pageContext.web.id);
+    this.toastsPromise = ToastService.getToasts(
+      this.context.spHttpClient,
+      this.context.pageContext.web.absoluteUrl,
+      this.context.pageContext.web.id
+    );
 
-    function getClass(){
-      return "css-147";
-    }
-   
     //jQuery document ready
     $(document).ready(() => {
-
       //***********************
       //Toastr Options
       //***********************
@@ -70,56 +65,68 @@ export default class SpfxToastrApplicationCustomizer
       //We are unable to use the ms-bgColor styles since the Toast CSS loads
       // later and takes precedence, so we use our own color classes
       // For more background on this issue, see this article: https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/office-ui-fabric-integration
-      toastr.options.titleClass = 'ms-font-m ms-fontWeight-semibold';
-      toastr.options.messageClass = 'ms-font-s';
+      toastr.options.titleClass = "ms-fontSize-14 ms-fontWeight-semibold";
+      toastr.options.messageClass = "ms-fontSize-12";
       toastr.options.iconClasses = {
-        info: `${styles.info} ${styles.fabricIcon} ${getIconClassName('Info')}`,
-        warning: `${styles.warning} ${styles.fabricIcon} ${getIconClassName('Warning')}`,
-        error: `${styles.error} ${styles.fabricIcon} ${getIconClassName('Error')}`,
-        success: `${styles.success} ${styles.fabricIcon} ${getIconClassName('Completed')}`
+        info: `${styles.info} ${styles.fabricIcon} ${getIconClassName("Info")}`,
+        warning: `${styles.warning} ${styles.fabricIcon} ${getIconClassName(
+          "Warning"
+        )}`,
+        error: `${styles.error} ${styles.fabricIcon} ${getIconClassName(
+          "Error"
+        )}`,
+        success: `${styles.success} ${styles.fabricIcon} ${getIconClassName(
+          "Completed"
+        )}`,
       };
-      debugger;
-
-
+      
       //***********************
       //Toast Display
       //***********************
 
-      this.toastsPromise.then((toasts: IToast[]) => {
-        for (let t of toasts){
-          //Setup callbacks to track dismisal status
-          let overrides: ToastrOptions = {
-            onclick: () => {
-              ToastService.acknowledgeToast(t.Id, this.context.pageContext.web.id);
-            },
-            onCloseClick: () => {
-              ToastService.acknowledgeToast(t.Id, this.context.pageContext.web.id);
+      this.toastsPromise
+        .then((toasts: IToast[]) => {
+          for (const t of toasts) {
+            //Setup callbacks to track dismisal status
+            const overrides: ToastrOptions = {
+              onclick: () => {
+                ToastService.acknowledgeToast(
+                  t.Id,
+                  this.context.pageContext.web.id
+                );
+              },
+              onCloseClick: () => {
+                ToastService.acknowledgeToast(
+                  t.Id,
+                  this.context.pageContext.web.id
+                );
+              },
+            };
+
+            switch (t.Severity) {
+              case "Warning":
+                toastr.warning(t.Message, t.Title, overrides);
+                break;
+              case "Error":
+                toastr.error(t.Message, t.Title, overrides);
+                break;
+              case "Success":
+                toastr.success(t.Message, t.Title, overrides);
+                break;
+              default:
+                toastr.info(t.Message, t.Title, overrides);
+                break;
             }
-          };
-
-          switch (t.Severity){
-            case 'Warning':
-              toastr.warning(t.Message, t.Title, overrides);
-              break;
-            case 'Error':
-              toastr.error(t.Message, t.Title, overrides);
-              break;
-            case 'Success':
-              toastr.success(t.Message, t.Title, overrides);
-              break;
-            default:
-              toastr.info(t.Message, t.Title, overrides);
-              break;
           }
-        }
-      }).catch((error: any): void => {
-        //Generic error handler for any issues that occurred throughout
-        // the promise chain. Display it in a toast!
-        toastr.error(error, strings.FailedToLoad);
-      });
+        })
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .catch((error: any): void => {
+          //Generic error handler for any issues that occurred throughout
+          // the promise chain. Display it in a toast!
+          toastr.error(error, strings.FailedToLoad);
+        });
     });
-    
-    return Promise.resolve<void>();
-  }
 
+    return Promise.resolve();
+  }
 }

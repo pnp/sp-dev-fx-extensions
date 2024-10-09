@@ -1,14 +1,47 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "Toastr Notifications",
+    "name": "jquery-application-toastr-client-side-solution",
     "id": "461c7ee8-3ab9-47ee-b52d-44c77087d9e8",
-    "version": "1.4.0.0",
+    "version": "1.6.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
-    "iconPath": "AppIcon.png"
+    "isDomainIsolated": false,
+    "iconPath": "AppIcon.png",
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "jquery-application-toastr description"
+      },
+      "longDescription": {
+        "default": "jquery-application-toastr description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "e19853ac-f257-448d-aba4-45b4461143a0",
+        "version": "1.6.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
   },
   "paths": {
-    "zippedPackage": "solution/toastr.sppkg"
+    "zippedPackage": "solution/jquery-application-toastr.sppkg"
   }
 }

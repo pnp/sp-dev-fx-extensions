@@ -1,7 +1,7 @@
-$ms-orangeLighter:              "[theme:orangeLighter, default:#ff8c00]";
-$ms-redDark:                    "[theme:redDark, default:#a80000]";
-$ms-green:                      "[theme:green, default:#107c10]";
-$ms-blue:                       "[theme:blue, default:#0078d7]";
+$ms-orangeLighter: "[theme:orangeLighter, default:#ff8c00]";
+$ms-redDark: "[theme:redDark, default:#a80000]";
+$ms-green: "[theme:green, default:#107c10]";
+$ms-blue: "[theme:blue, default:#0078d7]";
 
 //These 2 classes are outside the main namespace because they are top level
 // classes for the toasts
@@ -17,23 +17,23 @@ $ms-blue:                       "[theme:blue, default:#0078d7]";
 
 .spfxToastr {
 
-	//Imitates much of the ms-Icon class from Office UI-Fabric but
+	// Imitates much of the ms-Icon class from Office UI-Fabric but
 	// is designed to display without the <i>
-	.fabricIcon{
-		display:block;
-	
+	.fabricIcon {
+		display: block;
+		font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+		opacity: 1 !important;
+
 		&:before {
 			position: fixed;
-			font-family: FabricMDL2Icons;
+			font-family: "Fluent MDL2 Hybrid Icons";
 			font-style: normal;
 			font-weight: 400;
-			speak: none;
 			font-size: 28px;
 			margin: 4px 0 0 -36px;
 			-webkit-font-smoothing: antialiased;
 		}
 	}
-
 
 	.info {
 		background-color: $ms-blue;

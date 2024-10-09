@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
     "spfx-toastr-application-customizer": {
@@ -11,10 +11,7 @@
       ]
     }
   },
-  "externals": {
-    "jquery": "https://code.jquery.com/jquery-2.2.4.min.js",
-    "toastr": "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-  },
+  "externals": {},
   "localizedResources": {
     "SpfxToastrApplicationCustomizerStrings": "lib/extensions/spfxToastr/loc/{locale}.js"
   }
