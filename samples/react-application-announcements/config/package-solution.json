@@ -3,7 +3,7 @@
   "solution": {
     "name": "Announcements",
     "id": "59a4b1e7-4dda-4cd9-adbe-b3c3118c021b",
-    "version": "2.0.2.0",
+    "version": "2.3.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "4a1305d6-a44e-45cf-928b-25621581481f",
-        "version": "2.0.2.0",
+        "version": "2.3.0.0",
         "assets": {
           "elementManifests": [
             "elements.xml",
