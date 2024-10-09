@@ -14,8 +14,8 @@ Example use case - Since the webhook subscriptions are only valid to 180 days, a
 
 ## Compatibility
 
-![SPFx 1.17.4](https://img.shields.io/badge/SPFx-1.17.4-green.svg)
-![Node.js v16.13+](https://img.shields.io/badge/Node.js-v16.13+-green.svg)
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
+![Node.js v18.18.2](https://img.shields.io/badge/Node.js-v18.18.2-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -23,7 +23,7 @@ Example use case - Since the webhook subscriptions are only valid to 180 days, a
 ![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
 ![Compatible with Remote Containers](https://img.shields.io/badge/Remote%20Containers-Compatible-green.svg)
 
-Tested using Node.js v16.13.0
+Tested using Node.js v18.18.2
 
 ## Applies to
 
@@ -38,6 +38,7 @@ Tested using Node.js v16.13.0
 Version|Date|Comments
 -------|----|--------
 1.0|September 12, 2023|Initial release
+2.0|October 03, 2024|Initial release
 
 ## Minimal Path to Awesome
 
@@ -53,18 +54,18 @@ Version|Date|Comments
 
 This extension illustrates the following concepts:
 
-* Using **Office fabric UI react** components for the UI.
+* Using **@fluentui/react** components for the UI.
 
 ## Debug URL for testing
 
 Here's a debug querystring for testing this sample:
 
 ```url
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"038b9697-9b22-4e42-8078-66ec93f546d0":{"location":"ClientSideExtension.ListViewcommand set.CommandBar","properties":{}}}
+?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"038b9697-9b22-4e42-8078-66ec93f546d0":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{"sampleTextOne":"One+item+is+selected+in+the+list","sampleTextTwo":"This+command+is+always+visible."}}}
 ```
 
 Your URL will look similar to the following (replace with your domain and site address):
 
 ```url
-https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"038b9697-9b22-4e42-8078-66ec93f546d0":{"location":"ClientSideExtension.ListViewcommand set.CommandBar","properties":{}}}
+https://yourtenant.sharepoint.com/sites/yoursite?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"038b9697-9b22-4e42-8078-66ec93f546d0":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{"sampleTextOne":"One+item+is+selected+in+the+list","sampleTextTwo":"This+command+is+always+visible."}}}
 ```
