@@ -1,11 +1,10 @@
 {
-  "extends": "@microsoft/sp-tslint-rules/base-tslint.json",
+  "extends": "./node_modules/@microsoft/sp-tslint-rules/base-tslint.json",
   "rules": {
     "class-name": false,
     "export-name": false,
     "forin": false,
     "label-position": false,
-    "member-access": true,
     "no-arg": false,
     "no-console": false,
     "no-construct": false,
@@ -16,8 +15,6 @@
     "no-shadowed-variable": true,
     "no-switch-case-fall-through": true,
     "no-unnecessary-semicolons": true,
-    "no-unused-expression": true,
-    "no-use-before-declare": true,
     "no-with-statement": true,
     "semicolon": true,
     "trailing-comma": false,
@@ -25,6 +22,9 @@
     "typedef-whitespace": false,
     "use-named-parameter": true,
     "variable-name": false,
-    "whitespace": false
+    "whitespace": false,
+    "no-use-before-declare": false,
+    "no-unused-expression": false,
+    "member-access": false
   }
 }
