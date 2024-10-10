@@ -3,13 +3,18 @@
     "plusBeta": true,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.7.1",
+    "version": "1.20.0",
     "libraryName": "react-command-singlepartapppage",
     "libraryId": "aeffa018-896c-491b-ba95-9d3372b31268",
     "packageManager": "npm",
     "solutionShortDescription": "Custom Command Set that set a Page layout to use the Single App Part page Layout",
     "isDomainIsolated": false,
     "componentType": "extension",
-    "extensionType": "ListViewCommandSet"
+    "extensionType": "ListViewCommandSet",
+    "nodeVersion": "18.18.2",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }
