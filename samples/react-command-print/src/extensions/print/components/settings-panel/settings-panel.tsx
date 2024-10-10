@@ -43,7 +43,7 @@ export default class SettingsPanel extends React.Component<ISettingsPanelProps, 
         return (
             <div className={styles.SettingsPanel}>
                 <Panel isOpen={this.props.showPanel}
-                    onDismissed={this.props.setShowPanel(false)}
+                    onDismiss={this.props.setShowPanel(false)} 
 
                     type={PanelType.medium} headerText="Print Settings">
                     <h3>Print Templates:</h3>
