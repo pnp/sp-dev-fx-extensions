@@ -13,6 +13,17 @@
       "websiteUrl": "",
       "mpnId": ""
     },
+    "metadata": {
+      "shortDescription": {
+        "default": "react-command-print description"
+      },
+      "longDescription": {
+        "default": "react-command-print description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",

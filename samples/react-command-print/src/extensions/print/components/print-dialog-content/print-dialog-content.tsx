@@ -242,7 +242,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
         const content: any[] = [];
 
         if (columns.length > 0) {
-            for (var i = 0; i < columns.length; i++) {
+            for (let i = 0; i < columns.length; i++) {
                 const item = columns[i];
                 if (item.Type === "Section") {
                     // If it's a section, first check if there is any field before this section and add it to the content
