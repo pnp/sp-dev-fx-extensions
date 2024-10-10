@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.19.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "share-point-quick-create",
+    "libraryId": "01f93abc-4538-4f31-b25f-4c0b26d3aba8",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "SharePoint Quick Create",
+    "solutionShortDescription": "SharePoint Quick Create description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}

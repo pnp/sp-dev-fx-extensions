@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "quick-create-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/quickCreate/QuickCreateApplicationCustomizer.js",
+          "manifest": "./src/extensions/quickCreate/QuickCreateApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "QuickCreateApplicationCustomizerStrings": "lib/extensions/quickCreate/loc/{locale}.js"
+  }
+}
