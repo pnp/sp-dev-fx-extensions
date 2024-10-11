@@ -1,0 +1,180 @@
+@import "~office-ui-fabric-react/dist/sass/References.scss";
+
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 576px;
+$breakpoint-tablet-value: 768; // Numerical value for calculations
+$icon-color: #ffffff;
+$close-icon-color: #ffffff !important;
+
+.alertItem {
+  width: 100%;
+
+  .container {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1; // Adjust as needed
+    padding-top: 5px;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .iconSection {
+    flex: 0 0 5%; // 5% width
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex: 0 0 auto;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .alertIcon {
+      font-size: 1.5rem;
+      color: $icon-color;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .textSection {
+    flex: 0 0 85%; // 85% width
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0; // Prevent overflow
+    padding: 0 10px;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex: 0 0 auto;
+      width: 100%;
+      padding: 0;
+    }
+
+    .alertTitle {
+      font-weight: bold;
+      margin-bottom: 5px;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 0.9rem;
+      }
+    }
+
+    .alertDescription,
+    .alertDescriptionExp {
+      white-space: normal;
+      overflow: visible;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .actionSection {
+    flex: 0 0 5%; // 10% width
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 0.5;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex: 0 0 auto;
+      width: 100%;
+      justify-content: flex-start;
+      margin-top: 10px;
+    }
+
+    .toggleButton,
+    .closeButton {
+      background: transparent;
+      color: $close-icon-color;
+      margin-left: 5px;
+
+      i {
+        color: $close-icon-color;
+      }
+    }
+  }
+
+  .alertLink {
+    margin-top: 5px;
+
+    a {
+      color: $icon-color;
+      font-weight: bold;
+      font-size: 0.9rem;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .stackLink {
+    padding: 0;
+    flex-grow: 0;
+    flex-shrink: 1; // Allow shrinking to prevent overflow
+    overflow: hidden;
+    display: inline-block;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  // Alert type styles
+  .actionable {
+    background-color: #f1c40f; // Yellow
+    color: #323130;
+
+    .alertIcon {
+      color: $icon-color;
+    }
+
+    .alertLink a {
+      color: #323130;
+    }
+  }
+
+  .info {
+    background-color: #389899; // Teal
+    color: $icon-color;
+  }
+
+  .interruption {
+    background-color: #c54644; // Red
+    color: $icon-color;
+  }
+
+  .maintenance {
+    background-color: #afd6d6; // Light blue
+    color: $icon-color;
+  }
+
+  .warning {
+    background-color: #f1c40f; // Yellow
+    color: $icon-color;
+  }
+
+  // Hide elements on mobile
+  .hideInMobile {
+    @media (max-width: #{($breakpoint-tablet-value - 1)}px) {
+      display: none;
+    }
+  }
+
+  // Hide elements on desktop
+  .hideInDesktop {
+    @media (min-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+}
