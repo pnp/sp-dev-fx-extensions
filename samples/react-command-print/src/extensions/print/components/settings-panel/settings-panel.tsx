@@ -17,7 +17,7 @@ import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib/Dia
 export default class SettingsPanel extends React.Component<ISettingsPanelProps, ISettingsPanelState>{
     private listService: ListService;
     private _defaultState: ISettingsPanelState;
-    constructor(props) {
+    constructor(props: ISettingsPanelProps | Readonly<ISettingsPanelProps>) {
         super(props);
         this.listService = new ListService();
         this._defaultState = {

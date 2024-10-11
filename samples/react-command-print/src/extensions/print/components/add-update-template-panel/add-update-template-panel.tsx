@@ -56,7 +56,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
     private _sectionBackgroundColor: string;
     private _sectionFontColor: string;
     private _selectedColor: string;
-    constructor(props) {
+    constructor(props: AddUpdateTemplatePanelProps | Readonly<AddUpdateTemplatePanelProps>) {
         super(props);
 
         this.listService = new ListService();
@@ -258,15 +258,15 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
         );
     }
 
-    private _skipBlankColumnsToggleChange = (value) => {
+    private _skipBlankColumnsToggleChange = (value: any) => {
         this.props.onTemplateChanged({ ...this.props.template, SkipBlankColumns: value });
     }
 
-    private _headerEditorChange = (value) => {
+    private _headerEditorChange = (value: any) => {
         this.props.onTemplateChanged({ ...this.props.template, Header: value });
     }
 
-    private _footerEditorChange = (value) => {
+    private _footerEditorChange = (value: any) => {
         this.props.onTemplateChanged({ ...this.props.template, Footer: value });
     }
 

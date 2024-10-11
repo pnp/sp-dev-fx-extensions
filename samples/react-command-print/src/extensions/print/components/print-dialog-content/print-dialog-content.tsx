@@ -26,9 +26,9 @@ import reactElementToJSXString from 'react-element-to-jsx-string';
 
 const _items: any[] = [];
 export default class PrintDialogContent extends React.Component<IPrintDialogContentProps, IPrintDialogContentState> {
-    private componentRef;
+    private componentRef: React.ReactInstance;
     private listService: ListService;
-    constructor(props) {
+    constructor(props: IPrintDialogContentProps | Readonly<IPrintDialogContentProps>) {
         super(props);
 
         if (_items.length === 0) {
@@ -305,7 +305,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     private _makeFieldsTable = (table: any): JSX.Element => {
         return <table className={styles.templateTable}>
             {
-                table.map(el => <tr>
+                table.map((el: { Name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal; Value: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal; }) => <tr>
                     <td className={styles.nameColumn}>
                         {el.Name}
                     </td>

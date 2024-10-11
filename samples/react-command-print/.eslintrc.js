@@ -88,6 +88,7 @@ module.exports = {
         //                    they can also cause a NodeJS process to terminate unexpectedly.
         '@typescript-eslint/no-floating-promises': 0,
         '@typescript-eslint/naming-convention': 0,
+        '@typescript-eslint/no-non-null-assertion': 0,
         // RATIONALE:         Catches a common coding mistake.
         '@typescript-eslint/no-for-in-array': 2,
         // STANDARDIZED BY:   @typescript-eslint\eslint-plugin\dist\configs\recommended.json

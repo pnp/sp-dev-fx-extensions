@@ -1,10 +1,13 @@
-import {
+//Commented this since it is not used in the code
+
+/*import {
     ListAddResult,
+    SharePointQueryable,
     Web
 } from "@pnp/sp";
 
 export default class ListHelper {
-    constructor(public webUrl) {
+    constructor(public webUrl: string | SharePointQueryable<any>) {
 
     }
     public ValidatePrintSettingsList() {
@@ -32,12 +35,12 @@ export default class ListHelper {
             }
         ];
 
-        return Promise.all(listStructure.map((elm) => {
+        return Promise.all(listStructure.map((elm: any) => {
             return this.CreateListInSP(elm);
         }));
     }
 
-    private CreateListInSP(element): Promise<any> {
+    private CreateListInSP(element: { [x: string]: string[]; }): Promise<any> {
 
         // changed to literal url string
         const spWeb = new Web(this.webUrl);
@@ -60,4 +63,4 @@ export default class ListHelper {
             return batch.execute();
         });
     }
-}
+}*/
