@@ -151,3 +151,5 @@ This extension showcases:
 - **Customizing the banner Section** of Modern SharePoint pages to provide a consistent and visible alerting mechanism.
 - **Efficient State Management and Caching** using local and session storage to optimize performance and reduce redundant data fetching.
 - **Responsive Design and User Interaction Handling** to ensure alerts are accessible and user-friendly across various devices and screen sizes.
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-alert-banner" />
