@@ -17,11 +17,11 @@ Built using a SharePoint Framework Application Customizer Extension with the Top
 
 ## Compatibility
 
-![SPFx 1.14](https://img.shields.io/badge/SPFx-1.14-green.svg)
-![Node.js v14 | v12](https://img.shields.io/badge/Node.js-v14%20%7C%20v12-green.svg)
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
+![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
-![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Does not work with SharePoint 2016 (Feature Pack 2)](<https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg> "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 ![Hosted Workbench Incompatible](https://img.shields.io/badge/Hosted%20Workbench-Incompatible-red.svg "Does not work with hosted workbench")
 
@@ -33,12 +33,14 @@ Built using a SharePoint Framework Application Customizer Extension with the Top
 ## Contributors
 
 - [Brad Schlintz](https://github.com/bschlintz)
-- [Paul Matthews](https://github.com/pmatthews05) 
+- [Paul Matthews](https://github.com/pmatthews05)
+- [Sandeep P S](https://github.com/Sandeep-FED)
 
 ## Version history
 
 | Version | Date         | Comments                                                                                                               |
 | ------- | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| 1.4.2   | Oct 06, 2024 | Sandeep P S, upgraded to SPFX 1.20.0.                                                                                  |
 | 1.4.1   | Feb 10, 2024 | Paul Matthews, upgraded to SPFX 1.18.2.                                                                                |
 | 1.4     | Aug 12, 2022 | Paul Matthews, upgraded to SPFX 1.15.2 obtained permission to submit to PNP Samples.                                   |
 | 1.0     | Nov 5, 2109  | Initial Commit 1.0 created by Brad Schlintz at [spfx-message-banner](https://github.com/bschlintz/spfx-message-banner) |
@@ -89,6 +91,7 @@ Here's a debug URL for testing around this sample. _Note: The '#' is encoded in 
 ## Installing with Script
 
 ### Build
+
 ```ps1
 npm install
 gulp clean
@@ -96,12 +99,14 @@ gulp build --ship
 gulp bundle --ship
 gulp package-solution --ship
 ```
+
 ### Upload to App Catalog
 
 #### PowerShell PnP
+
 ```ps1
 $appCatalogUrl = "https://tenant.sharepoint.com/sites/appcatalog"
-Connect-PnPOnline -url:$appCatalogUrl -pnpManagementShell 
+Connect-PnPOnline -url:$appCatalogUrl -pnpManagementShell
 
 Add-PnPApp -Path:"<path-to: react-application-messagebanner.sppkg>" `
   -Publish `
@@ -110,16 +115,19 @@ Add-PnPApp -Path:"<path-to: react-application-messagebanner.sppkg>" `
 ```
 
 #### M365 Cli
+
 ```bash
 m365 login
 m365 spo app add --filePath <path-to: react-application-messagebanner.sppkg> --overwrite
 m365 spo app deploy --name "react-application-messagebanner.sppkg" --skipFeatureDeployment
 ```
 
-
 ### Register SPFX Extension on your target SharePoint site(s) using one of the methods below.
+
 - Once added to Tenant App Catalog, you can then add to either Site or Web. The following code examples are for PNP PowerShell or M365 Cli.
+
 #### PowerShell PnP
+
 ```ps1
 Connect-PnPOnline -Url:"https://tenant.sharepoint.com/sites/targetSite"
 
@@ -153,6 +161,7 @@ Add-PnPCustomAction `
 ```
 
 #### M365 Cli
+
 ```bash
 m365 login
 
@@ -188,6 +197,7 @@ m365 spo customaction add --url "https://tenant.sharepoint.com/sites/targetSite"
 ### Remove SPFX Extension on your target SharePoint site(s) using one of the methods below.
 
 #### PowerShell PnP
+
 ```ps1
 Connect-PnPOnline -Url:"https://tenant.sharepoint.com/sites/targetSite"
 
@@ -199,6 +209,7 @@ Get-PnPCustomAction -Scope Web | Where-Object {$_.ClientSideComponentId -eq "1e2
 ```
 
 #### M365 Cli
+
 ```bash
 m365 login
 # Site Collection Scope

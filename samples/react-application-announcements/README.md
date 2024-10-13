@@ -24,10 +24,12 @@ Version|Date|Comments
 2.0|May 20th, 2020|Initial release
 2.1|June 18th, 2020|Handle empty start and end dates for announcements
 2.2|March 12th, 2024|Update SPFx to 1.18 and pnpjs to 3.23
+2.3|October 6th, 2024|Update SPFx to 1.20.0
 
 ## Contributors
 
 * [Mike Myers](https://github.com/thespooler)
+* [Sandeep P S](https://github.com/Sandeep-FED)
 
 ## Compatibility
 
@@ -38,7 +40,7 @@ Version|Date|Comments
 
 This sample is optimally compatible with the following environment configuration:
 
-![SPFx 1.18.2](https://img.shields.io/badge/SPFx-1.18.2-green.svg)
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
 ![Node.js v16 | v18](https://img.shields.io/badge/Node.js-v16%20%7C%20v18-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")

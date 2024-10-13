@@ -1,32 +1,38 @@
 {
   "name": "jquery-application-toastr",
-  "version": "0.0.1",
+  "version": "1.6.0",
   "private": true,
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=18.17.1 <19.0.0"
   },
+  "main": "lib/index.js",
   "scripts": {
     "build": "gulp bundle",
     "clean": "gulp clean",
-    "test": "gulp test",
-    "ship": "gulp clean && gulp bundle --ship && gulp package-solution --ship"
+    "test": "gulp test"
   },
   "dependencies": {
-    "@microsoft/sp-core-library": "~1.4.1",
-    "@microsoft/decorators": "~1.4.1",
-    "@types/webpack-env": ">=1.12.1 <1.14.0",
-    "@microsoft/sp-dialog": "~1.4.1",
-    "@microsoft/sp-application-base": "~1.4.1"
+    "@microsoft/decorators": "1.20.0",
+    "@microsoft/sp-application-base": "1.20.0",
+    "@microsoft/sp-core-library": "1.20.0",
+    "@microsoft/sp-dialog": "1.20.0",
+    "office-ui-fabric-core": "^11.1.0",
+    "toastr": "^2.1.4",
+    "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@microsoft/sp-build-web": "~1.4.1",
-    "@microsoft/sp-module-interfaces": "~1.4.1",
-    "@microsoft/sp-webpart-workbench": "~1.4.1",
-    "@types/chai": ">=3.4.34 <3.6.0",
-    "@types/jquery": "2.0.48",
-    "@types/mocha": ">=2.2.33 <2.6.0",
-    "@types/toastr": "^2.1.35",
-    "ajv": "~5.2.2",
-    "gulp": "~3.9.1"
+    "@microsoft/eslint-config-spfx": "1.20.2",
+    "@microsoft/eslint-plugin-spfx": "1.20.2",
+    "@microsoft/rush-stack-compiler-4.7": "0.1.0",
+    "@microsoft/sp-build-web": "1.20.2",
+    "@microsoft/sp-module-interfaces": "1.20.2",
+    "@rushstack/eslint-config": "4.0.1",
+    "@types/jquery": "^3.5.31",
+    "@types/toastr": "^2.1.43",
+    "@types/webpack-env": "~1.15.2",
+    "ajv": "^6.12.5",
+    "eslint": "8.57.0",
+    "gulp": "4.0.2",
+    "typescript": "4.7.4"
   }
 }
