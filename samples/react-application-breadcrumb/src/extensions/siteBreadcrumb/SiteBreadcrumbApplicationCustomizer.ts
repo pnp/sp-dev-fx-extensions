@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 import { Log } from "@microsoft/sp-core-library";
-import * as strings from "SiteBreadcrumbApplicationCustomizerStrings";
+import * as strings from 'siteBreadcrumbStrings';
 import {
   BaseApplicationCustomizer,
   PlaceholderContent,
