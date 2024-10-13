@@ -4,7 +4,7 @@ import { ListViewCommandSetContext } from "@microsoft/sp-listview-extensibility"
 import {
     DetailsList, DetailsListLayoutMode, SelectionMode, 
     IColumn, mergeStyles, Link, Panel, PanelType,MessageBar, MessageBarType,Spinner
-  } from 'office-ui-fabric-react';
+  } from '@fluentui/react';
 import { SubscriptionService } from '../services/SubscriptionService';
 import { Log } from '@microsoft/sp-core-library';
 
