@@ -1,4 +1,5 @@
-import Guid from '@microsoft/sp-core-library/lib/Guid';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Guid } from '@microsoft/sp-core-library';
 import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
 
 import { IToast } from './IToast';
@@ -40,11 +41,11 @@ export class ToastService {
 	 * @param {number} id - The list ID of the toast to acknowledge
 	*/
 	public static acknowledgeToast(id: number, webId: Guid): void {
-		let cachedData: IToastCache = ToastService.retrieveCache(webId);
+		const cachedData: IToastCache = ToastService.retrieveCache(webId);
 
 		// Check if the status already exists, and if so update it
 		//  otherwise, add a new status for the id
-		let index: number = ToastService.indexOfToastStatusById(id, cachedData.ToastStatuses);
+		const index: number = ToastService.indexOfToastStatusById(id, cachedData.ToastStatuses);
 		if (index >= 0) {
 			cachedData.ToastStatuses[index].Ack = new Date();
 		} else {
@@ -68,8 +69,10 @@ export class ToastService {
 	/** Rehydrates spfxToastr data from localStorage (or creates a new empty set) */
 	private static retrieveCache(webId: Guid): IToastCache {
 		//Pull data from localStorage if available and we previously cached it
-		let cachedData: IToastCache = localStorage ? JSON.parse(localStorage.getItem(this.webStorageKey(webId))) : undefined;
-		if (cachedData) {
+		const storedValue = localStorage.getItem(this.webStorageKey(webId));
+		let cachedData: IToastCache = storedValue ? JSON.parse(storedValue) : undefined;
+		
+		if (cachedData && cachedData.Loaded) {
 			cachedData.Loaded = new Date(cachedData.Loaded.valueOf()); //Rehydrate date from JSON (serializes to string)
 		} else {
 			//Initialize a new, empty object
@@ -103,8 +106,8 @@ export class ToastService {
 			if(cachedData.Loaded) {
 				//True Cache found, check if it is stale
 				// anything older than 2 minutes will be considered stale
-				let now: Date = new Date();
-				let staleTime: Date = new Date(now.getTime() + -2*60000);
+				const now: Date = new Date();
+				const staleTime: Date = new Date(now.getTime() + -2*60000);
 
 				if (cachedData.Loaded > staleTime && !ToastService.getFromListAlways) {
 					//console.log('Pulled toasts from localStorage');
@@ -116,7 +119,8 @@ export class ToastService {
 			if ((window as any).spfxToastrLoadingData) {
 				//Toasts are already being loaded! Briefly wait and try again
 				window.setTimeout((): void => {
-					ToastService.ensureToasts(spHttpClient, baseUrl, webId)
+					// eslint-disable-next-line no-void
+					void ToastService.ensureToasts(spHttpClient, baseUrl, webId)
 						.then((toasts: IToast[]): void => {
 							resolve(toasts);
 						});
@@ -157,15 +161,15 @@ export class ToastService {
 	/** Pulls the active toast entries directly from the underlying list */
 	private static getToastsFromList(spHttpClient: SPHttpClient, baseUrl: string): Promise<IToast[]> {
 		//Toasts are only shown during their scheduled window
-		let now: string = new Date().toISOString();
-		let filter: string = `(StartDate le datetime'${now}') and (EndDate ge datetime'${now}')`;
+		const now: string = new Date().toISOString();
+		const filter: string = `(StartDate le datetime'${now}') and (EndDate ge datetime'${now}')`;
 		
 		return spHttpClient.get(`${baseUrl}/${ToastService.apiEndPoint}?$select=${ToastService.select}&$filter=${filter}&$orderby=${ToastService.orderby}`,SPHttpClient.configurations.v1)
 			.then((response: SPHttpClientResponse): Promise<{ value: IToast[] }> => {
 				if (!response.ok) {
 					//Failed requests don't automatically throw exceptions which
 					// can be problematic for chained promises, so we throw one
-					throw `Unable to get items: ${response.status} (${response.statusText})`;
+					throw new Error(`Unable to get items: ${response.status} (${response.statusText})`);
 				}
 				return response.json();
 			})
@@ -174,8 +178,8 @@ export class ToastService {
 				// Even when your interface only defines certain properties, SP sends many
 				// extra properties that you may or may not care about (we don't)
 				// (this isn't strictly necessary but makes the cache much cleaner)
-				let toasts:IToast[] = [];
-				for (let v of results.value) {
+				const toasts: IToast[] = [];
+				for (const v of results.value) {
 					toasts.push({
 						Title: v.Title,
 						Id: v.Id,
@@ -197,7 +201,7 @@ export class ToastService {
 	/** Helper function to return the index of an IToastStatus object by the Id property */
 	private static indexOfToastStatusById(Id: number, toastStatuses: IToastStatus[]): number {
 		for (let i: number = 0; i < toastStatuses.length; i++) {
-			if (toastStatuses[i].Id == Id) {
+			if (toastStatuses[i].Id === Id) {
 				return i;
 			}
 		}
@@ -207,8 +211,8 @@ export class ToastService {
 	/** Helper function to clean up the toast statuses by removing old toasts */
 	private static processCache(cachedData: IToastCache): IToastCache {
 		//Setup a temporary array of Ids (makes the filtering easier)
-		let activeIds: number[] = [];
-		for (let toast of cachedData.Toasts) {
+		const activeIds: number[] = [];
+		for (const toast of cachedData.Toasts) {
 			activeIds.push(toast.Id);
 		}
 
@@ -229,9 +233,11 @@ export class ToastService {
 				return false;
 			}
 
-			let tsIndex: number = ToastService.indexOfToastStatusById(toast.Id, cachedData.ToastStatuses);
+			const tsIndex: number = ToastService.indexOfToastStatusById(toast.Id, cachedData.ToastStatuses);
 			if (tsIndex >= 0) {
-				let lastShown: Date = new Date(cachedData.ToastStatuses[tsIndex].Ack.valueOf()); //Likely needs to be rehyrdated from JSON
+				const lastShown: Date = new Date(cachedData.ToastStatuses[tsIndex].Ack.valueOf()); //Likely needs to be rehyrdated from JSON
+				const now: Date = new Date();
+
 				switch (toast.Frequency) {
 					case 'Once':
 						//Already shown
@@ -240,7 +246,6 @@ export class ToastService {
 						return true;
 					default:
 						//Default behavior is Once Per Day
-						let now: Date = new Date();
 						if (now.getFullYear() !== lastShown.getFullYear()
 								|| now.getMonth() !== lastShown.getMonth()
 								|| now.getDay() !== lastShown.getDay()) {
