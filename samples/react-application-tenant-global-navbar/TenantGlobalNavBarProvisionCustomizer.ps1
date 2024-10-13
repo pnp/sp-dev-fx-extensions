@@ -1,4 +1,4 @@
-﻿Connect-PnPOnline "https://<your-tenant>.sharepoint.com/sites/<your-site>" -UseWebLogin
+﻿Connect-PnPOnline "https://<your-tenant>.sharepoint.com/sites/<your-site>" -Interactive -ClientId "<your-new-registered-entra-id-application-id>"
 
 Add-PnPCustomAction -Title "TenantGlobalNavBarCustomAction" `
 					-Name "TenantGlobalNavBarCustomAction" `
