@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="TenantGlobalNavBar"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="b1efedb9-b371-4f5c-a90f-3742d1842cf3"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

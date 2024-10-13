@@ -1,145 +1,136 @@
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
-
-import { override } from '@microsoft/decorators';
-import { Log } from '@microsoft/sp-core-library';
+import * as React from "react";
+import * as ReactDom from "react-dom";
 import {
   BaseApplicationCustomizer,
   PlaceholderContent,
-  PlaceholderName
-} from '@microsoft/sp-application-base';
-
-import { escape } from '@microsoft/sp-lodash-subset';
-
-import TenantGlobalNavBar from './components/TenantGlobalNavBar';
-import { ITenantGlobalNavBarProps } from './components/ITenantGlobalNavBarProps';
-import TenantGlobalFooterBar from './components/TenantGlobalFooterBar';
-import { ITenantGlobalFooterBarProps } from './components/ITenantGlobalFooterBarProps';
-import * as SPTermStore from './services/SPTermStoreService';
+  PlaceholderName,
+} from "@microsoft/sp-application-base";
+import * as SPTermStore from "./services/SPTermStoreService";
+import * as strings from "TenantGlobalNavBarApplicationCustomizerStrings";
+import TenantGlobalNavBar from "./components/TenantGlobalNavBar";
+import TenantGlobalFooterBar from "./components/TenantGlobalFooterBar";
 import pnp from "sp-pnp-js";
+import { Log } from "@microsoft/sp-core-library";
+import {
+  DEFAULT_BOTTOM_MENU_TERM_SET,
+  DEFAULT_TOP_MENU_TERM_SET,
+} from "./constants/defaults";
 
-import styles from './AppCustomizer.module.scss';
-import * as strings from 'TenantGlobalNavBarApplicationCustomizerStrings';
-
-const LOG_SOURCE: string = 'TenantGlobalNavBarApplicationCustomizer';
-const NAV_TERMS_KEY: string = 'global-navigation-terms';
-
-/**
- * If your command set uses the ClientSideComponentProperties JSON input,
- * it will be deserialized into the BaseExtension.properties object.
- * You can define an interface to describe it.
- */
 export interface ITenantGlobalNavBarApplicationCustomizerProperties {
   TopMenuTermSet?: string;
   BottomMenuTermSet?: string;
 }
 
-/** A Custom Action which can be run during execution of a Client Side Application */
-export default class TenantGlobalNavBarApplicationCustomizer
-  extends BaseApplicationCustomizer<ITenantGlobalNavBarApplicationCustomizerProperties> {
+const LOG_SOURCE: string = "TenantGlobalNavBarApplicationCustomizer";
+const NAV_TERMS_KEY: string = "global-navigation-terms";
 
-  private _topPlaceholder: PlaceholderContent | undefined;
-  private _bottomPlaceholder: PlaceholderContent | undefined;
-  private _topMenuItems: SPTermStore.ISPTermObject[];
-  private _bottomMenuItems: SPTermStore.ISPTermObject[];
+export default class TenantGlobalNavBarApplicationCustomizer extends BaseApplicationCustomizer<ITenantGlobalNavBarApplicationCustomizerProperties> {
+  private topPlaceholder: PlaceholderContent | undefined;
+  private bottomPlaceholder: PlaceholderContent | undefined;
+  private topMenuItems: SPTermStore.ISPTermObject[];
+  private bottomMenuItems: SPTermStore.ISPTermObject[];
 
-  @override
-  public async onInit(): Promise<void> {
+  public onInit = async (): Promise<void> => {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
-
-    // Added to handle possible changes on the existence of placeholders
-    // this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
 
     // Configure caching
     pnp.setup({
       defaultCachingStore: "session",
       defaultCachingTimeoutSeconds: 900, //15min
-      globalCacheDisable: false // true to disable caching in case of debugging/testing
+      globalCacheDisable: false, // true to disable caching in case of debugging/testing
     });
 
     // Retrieve the menu items from taxonomy
-    let termStoreService: SPTermStore.SPTermStoreService = new SPTermStore.SPTermStoreService({
-      spHttpClient: this.context.spHttpClient,
-      siteAbsoluteUrl: this.context.pageContext.web.absoluteUrl,
-    });
+    const termStoreService: SPTermStore.SPTermStoreService =
+      new SPTermStore.SPTermStoreService({
+        spHttpClient: this.context.spHttpClient,
+        siteAbsoluteUrl: this.context.pageContext.web.absoluteUrl,
+      });
 
-    if (this.properties.TopMenuTermSet != null) {
-      let cachedTerms = pnp.storage.session.get(NAV_TERMS_KEY);
-      if(cachedTerms != null){
-        this._topMenuItems = cachedTerms;
-      }
-      else {
-        this._topMenuItems = await termStoreService.getTermsFromTermSetAsync(this.properties.TopMenuTermSet, this.context.pageContext.web.language);
-        pnp.storage.session.put(NAV_TERMS_KEY,this._topMenuItems);
-      }
+    // Check on Top Terms
+    const cachedTerms = pnp.storage.session.get(NAV_TERMS_KEY);
+
+    if (cachedTerms !== null) {
+      this.topMenuItems = cachedTerms;
+    } else {
+      const topMenuTermSet =
+        this.properties.TopMenuTermSet ?? DEFAULT_TOP_MENU_TERM_SET;
+
+      this.topMenuItems = await termStoreService.getTermsFromTermSetAsync(
+        topMenuTermSet,
+        this.context.pageContext.web.language
+      );
+      pnp.storage.session.put(NAV_TERMS_KEY, this.topMenuItems);
     }
-    if (this.properties.BottomMenuTermSet != null) {
-      this._bottomMenuItems = await termStoreService.getTermsFromTermSetAsync(this.properties.BottomMenuTermSet, this.context.pageContext.web.language);
-    }
 
-    // Call render method for generating the needed html elements
-    this._renderPlaceHolders();
+    // Check on Bottom Terms
+    const bottomMenuTermSet =
+      this.properties.BottomMenuTermSet ?? DEFAULT_BOTTOM_MENU_TERM_SET;
 
-    return Promise.resolve<void>();
+    this.bottomMenuItems = await termStoreService.getTermsFromTermSetAsync(
+      bottomMenuTermSet,
+      this.context.pageContext.web.language
+    );
+
+    this.context.placeholderProvider.changedEvent.add(
+      this,
+      this.renderPlaceHolders
+    );
+
+    return Promise.resolve();
+  };
+
+  public onDispose(): Promise<void> {
+    if (this.topPlaceholder)
+      ReactDom.unmountComponentAtNode(this.topPlaceholder.domElement);
+
+    if (this.bottomPlaceholder)
+      ReactDom.unmountComponentAtNode(this.bottomPlaceholder.domElement);
+
+    this.context.placeholderProvider.changedEvent.remove(
+      this,
+      this.renderPlaceHolders
+    );
+
+    return Promise.resolve();
   }
 
-  private _renderPlaceHolders(): void {
-
-    console.log('Available placeholders: ',
-      this.context.placeholderProvider.placeholderNames.map(name => PlaceholderName[name]).join(', '));
-
-    // Handling the top placeholder
-    if (!this._topPlaceholder) {
-      this._topPlaceholder =
-        this.context.placeholderProvider.tryCreateContent(
-          PlaceholderName.Top,
-          { onDispose: this._onDispose });
-
-      // The extension should not assume that the expected placeholder is available.
-      if (!this._topPlaceholder) {
-        console.error('The expected placeholder (Top) was not found.');
-        return;
-      }
-
-      if (this._topMenuItems != null && this._topMenuItems.length > 0) {
-        const element: React.ReactElement<ITenantGlobalNavBarProps> = React.createElement(
-          TenantGlobalNavBar,
-          {
-            menuItems: this._topMenuItems,
-          }
-        );
-
-        ReactDom.render(element, this._topPlaceholder.domElement);
-      }
+  private renderPlaceHolders(): void {
+    if (!this.topPlaceholder) {
+      this.topPlaceholder = this.context.placeholderProvider.tryCreateContent(
+        PlaceholderName.Top,
+        { onDispose: this.onDispose }
+      );
     }
 
-    // Handling the bottom placeholder
-    if (!this._bottomPlaceholder) {
-      this._bottomPlaceholder =
+    if (this.topPlaceholder) {
+      const element: React.ReactElement<{}> = React.createElement(
+        TenantGlobalNavBar,
+        {
+          menuItems: this.topMenuItems,
+        }
+      );
+      ReactDom.render(element, this.topPlaceholder.domElement);
+    }
+
+    if (!this.bottomPlaceholder) {
+      this.bottomPlaceholder =
         this.context.placeholderProvider.tryCreateContent(
           PlaceholderName.Bottom,
-          { onDispose: this._onDispose });
-
-      // The extension should not assume that the expected placeholder is available.
-      if (!this._bottomPlaceholder) {
-        console.error('The expected placeholder (Bottom) was not found.');
-        return;
-      }
-
-      if (this._bottomMenuItems != null && this._bottomMenuItems.length > 0) {
-        const element: React.ReactElement<ITenantGlobalNavBarProps> = React.createElement(
-          TenantGlobalFooterBar,
           {
-            menuItems: this._bottomMenuItems,
+            onDispose: this.onDispose,
           }
         );
-
-        ReactDom.render(element, this._bottomPlaceholder.domElement);
-      }
     }
-  }
 
-  private _onDispose(): void {
-    console.log('[TenantGlobalNavBarApplicationCustomizer._onDispose] Disposed custom top and bottom placeholders.');
+    if (this.bottomPlaceholder) {
+      const element: React.ReactElement<{}> = React.createElement(
+        TenantGlobalFooterBar,
+        {
+          menuItems: this.bottomMenuItems,
+        }
+      );
+      ReactDom.render(element, this.bottomPlaceholder.domElement);
+    }
   }
 }

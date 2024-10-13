@@ -1,6 +1,5 @@
 .app {
     .top {
-      height:40px;
       text-align:left;
       line-height:2.5;
       font-weight:bold;
@@ -10,7 +9,6 @@
     }
   
     .bottom, a, a:visited, a:hover {
-      height:40px;
       text-align:center;
       line-height:2.5;
       font-weight:bold;
@@ -25,8 +23,12 @@
 
     a {
       text-decoration: none;
-      color: white;
       padding-left: 10px;
       padding-right: 10px;
+    }
+
+    a, span {
+        color: #000;
+        font-size: 14px !important;
     }
   }
