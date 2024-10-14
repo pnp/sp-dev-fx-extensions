@@ -1,10 +1,10 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/core-build/serve.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
   "port": 4321,
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://thechriskent.sharepoint.com/sites/WarriorHorses",
+      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
       "customActions": {
         "a861c815-e425-416d-9520-04bcdf557e27": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -13,7 +13,7 @@
       }
     },
     "spfxToastr": {
-      "pageUrl": "https://thechriskent.sharepoint.com/sites/WarriorHorses",
+      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
       "customActions": {
         "a861c815-e425-416d-9520-04bcdf557e27": {
           "location": "ClientSideExtension.ApplicationCustomizer",

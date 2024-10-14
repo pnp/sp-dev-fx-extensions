@@ -1,8 +1,22 @@
 {
   "@microsoft/generator-sharepoint": {
-    "version": "1.4.1",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.4",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
     "libraryName": "jquery-application-toastr",
     "libraryId": "461c7ee8-3ab9-47ee-b52d-44c77087d9e8",
-    "environment": "spo"
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "jquery-application-toastr",
+    "solutionShortDescription": "jquery-application-toastr description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
   }
 }

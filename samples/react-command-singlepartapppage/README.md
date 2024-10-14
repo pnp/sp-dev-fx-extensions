@@ -8,8 +8,8 @@ Custom Command Set that set a Page layout to use the Single App Part page Layout
 
 ## Compatibility
 
-![SPFx 1.14.0](https://img.shields.io/badge/SPFx-1.14.0-green.svg)
-![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
+![Node.js v18.18.2](https://img.shields.io/badge/Node.js-v18.18.2-green.svg) 
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -27,6 +27,7 @@ Custom Command Set that set a Page layout to use the Single App Part page Layout
 Solution|Author(s)
 --------|---------
 react-command-singleapppartpage|Luis Mañez (MVP, [ClearPeople](http://www.clearpeople.com), @luismanez)
+react-command-singleapppartpage - Upgrade to SPFx 1.20.0|Nishkalank Bezawada (MVP, [Bravero AB](https://www.bravero.se/), @NishkalankBezawada)
 
 ## Version history
 
@@ -34,6 +35,7 @@ Version|Date|Comments
 -------|----|--------
 1.0.0|January 29, 2019|Initial release
 1.0.0|January 14, 2022|Upgraded to SPFx 1.14
+1.0.0|October 09, 2024|Upgraded to SPFx 1.20.0
 
 ## Prerequisites
 
