@@ -1,0 +1,58 @@
+[
+    {
+        "name": "pnp-sp-dev-spfx-extensions-react-application-quick-create",
+        "source": "pnp",
+        "title": "Application Customizer Quick Create",
+        "shortDescription": "Injects a button to the command bar which shows all the lists in the site and have the ability to quickly create an item by showing the NewForm.aspx inside a panel.",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-quick-create",
+        "longDescription": [
+            "SharePoint Framework Application Customizer that injects a button to the command bar which shows all the lists in the site and have the ability to quickly create an item by showing the NewForm.aspx inside a panel. Inspired by Quick Create functionality by popular CRMs."
+        ],
+        "creationDateTime": "2023-12-25",
+        "updateDateTime": "2024-09-30",
+        "products": [
+            "SharePoint"
+        ],
+        "metadata": [
+            {
+                "key": "CLIENT-SIDE-DEV",
+                "value": "React"
+            },
+            {
+                "key": "SPFX-VERSION",
+                "value": "1.18.2"
+            }
+        ],
+        "tags": [],
+        "categories": [
+            "SPFX-APPLICATION-EXTENSION"
+        ],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-quick-create/assets/QuickCreateDemo.gif",
+                "alt": "Preview"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "alecwantstobattle",
+                "pictureUrl": "https://github.com/alecwantstobattle.png",
+                "name": "Alec Tecson"
+            }
+        ],
+        "references": [
+            {
+                "name": "Overview of SharePoint Framework Extensions",
+                "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+                "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+            },
+            {
+                "name": "Use page placeholders from Application Customizer",
+                "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+                "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+            }
+        ]
+    }
+]
