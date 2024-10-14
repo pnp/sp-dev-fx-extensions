@@ -11,7 +11,7 @@ import { ApplicationCustomizerContext } from "@microsoft/sp-application-base";
 import { useBoolean } from "@fluentui/react-hooks";
 
 import { iconProps, panelProps } from "./QuickCreateButton.styles";
-import styles from "./QUickCreateButton.module.scss";
+import styles from "./QuickCreateButton.module.scss";
 
 const QuickCreateButton: React.FC<{ context: ApplicationCustomizerContext }> = (
   props
