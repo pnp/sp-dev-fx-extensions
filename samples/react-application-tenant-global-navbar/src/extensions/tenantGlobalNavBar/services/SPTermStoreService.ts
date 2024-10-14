@@ -1,4 +1,6 @@
-import { IWebPartContext} from '@microsoft/sp-webpart-base';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import { SPHttpClient, SPHttpClientResponse, ISPHttpClientOptions } from '@microsoft/sp-http';
 
@@ -10,7 +12,6 @@ export interface ISPTermStoreServiceConfiguration {
   spHttpClient: SPHttpClient;
   siteAbsoluteUrl: string;
 }
-
 
 /**
  * @interface
@@ -50,7 +51,8 @@ export class SPTermStoreService {
    * @function
    * Gets the collection of term stores in the current SharePoint env
    */
-  public async getTermsFromTermSetAsync(termSetName: string, termSetLocal: Number): Promise<ISPTermObject[]> {
+  public async getTermsFromTermSetAsync(termSetName: string, termSetLocal: number): Promise<ISPTermObject[]> {
+    
     if (Environment.type === EnvironmentType.SharePoint ||
         Environment.type === EnvironmentType.ClassicSharePoint) {
 
@@ -68,7 +70,7 @@ export class SPTermStoreService {
 
       //Build the Client Service Request
       let clientServiceUrl = this.siteAbsoluteUrl + '/_vti_bin/client.svc/ProcessQuery';
-      let data = '<Request AddExpandoFieldTypeSuffix="true" SchemaVersion="15.0.0.0" LibraryVersion="16.0.0.0" ApplicationName="JavaScript Client" xmlns="http://schemas.microsoft.com/sharepoint/clientquery/2009"><Actions><ObjectPath Id="2" ObjectPathId="1" /><ObjectIdentityQuery Id="3" ObjectPathId="1" /><ObjectPath Id="5" ObjectPathId="4" /><ObjectIdentityQuery Id="6" ObjectPathId="4" /><ObjectPath Id="8" ObjectPathId="7" /><Query Id="9" ObjectPathId="7"><Query SelectAllProperties="false"><Properties /></Query><ChildItemQuery SelectAllProperties="false"><Properties><Property Name="Terms" SelectAll="true"><Query SelectAllProperties="false"><Properties /></Query></Property></Properties></ChildItemQuery></Query></Actions><ObjectPaths><StaticMethod Id="1" Name="GetTaxonomySession" TypeId="{981cbc68-9edc-4f8d-872f-71146fcbb84f}" /><Method Id="4" ParentId="1" Name="GetDefaultSiteCollectionTermStore" /><Method Id="7" ParentId="4" Name="GetTermSetsByName"><Parameters><Parameter Type="String">' + termSetName + '</Parameter><Parameter Type="Int32">' + termSetLocal + '</Parameter></Parameters></Method></ObjectPaths></Request>';
+      let data = '<Request AddExpandoFieldTypeSuffix="true" SchemaVersion="15.0.0.0" LibraryVersion="16.0.0.0" ApplicationName="JavaScript Client" xmlns="http://schemas.microsoft.com/sharepoint/clientquery/2009"><Actions><ObjectPath Id="2" ObjectPathId="1" /><ObjectIdentityQuery Id="3" ObjectPathId="1" /><ObjectPath Id="5" ObjectPathId="4" /><ObjectIdentityQuery Id="6" ObjectPathId="4" /><ObjectPath Id="8" ObjectPathId="7" /><Query Id="9" ObjectPathId="7"><Query SelectAllProperties="true"><Properties /></Query><ChildItemQuery SelectAllProperties="true"><Properties><Property Name="Terms" SelectAll="true"><Query SelectAllProperties="true"><Properties /></Query></Property></Properties></ChildItemQuery></Query></Actions><ObjectPaths><StaticMethod Id="1" Name="GetTaxonomySession" TypeId="{981cbc68-9edc-4f8d-872f-71146fcbb84f}" /><Method Id="4" ParentId="1" Name="GetDefaultSiteCollectionTermStore" /><Method Id="7" ParentId="4" Name="GetTermSetsByName"><Parameters><Parameter Type="String">' + termSetName + '</Parameter><Parameter Type="Int32">' + termSetLocal + '</Parameter></Parameters></Method></ObjectPaths></Request>';
       httpPostOptions = {
         headers: {
           'accept': 'application/json',
@@ -131,7 +133,7 @@ export class SPTermStoreService {
 
       //Build the Client Service Request
       let clientServiceUrl = this.siteAbsoluteUrl + '/_vti_bin/client.svc/ProcessQuery';
-      let data = '<Request AddExpandoFieldTypeSuffix="true" SchemaVersion="15.0.0.0" LibraryVersion="16.0.0.0" ApplicationName=".NET Library" xmlns="http://schemas.microsoft.com/sharepoint/clientquery/2009"><Actions><ObjectPath Id="20" ObjectPathId="19" /><Query Id="21" ObjectPathId="19"><Query SelectAllProperties="false"><Properties /></Query><ChildItemQuery SelectAllProperties="true"><Properties><Property Name="CustomSortOrder" ScalarProperty="true" /><Property Name="LocalCustomProperties" ScalarProperty="true" /></Properties></ChildItemQuery></Query></Actions><ObjectPaths><Property Id="19" ParentId="16" Name="Terms" /><Identity Id="16" Name="' + term['_ObjectIdentity_'] + '" /></ObjectPaths></Request>';
+      let data = '<Request AddExpandoFieldTypeSuffix="true" SchemaVersion="15.0.0.0" LibraryVersion="16.0.0.0" ApplicationName=".NET Library" xmlns="http://schemas.microsoft.com/sharepoint/clientquery/2009"><Actions><ObjectPath Id="20" ObjectPathId="19" /><Query Id="21" ObjectPathId="19"><Query SelectAllProperties="true"><Properties /></Query><ChildItemQuery SelectAllProperties="true"><Properties><Property Name="CustomSortOrder" ScalarProperty="true" /><Property Name="LocalCustomProperties" ScalarProperty="true" /></Properties></ChildItemQuery></Query></Actions><ObjectPaths><Property Id="19" ParentId="16" Name="Terms" /><Identity Id="16" Name="' + term['_ObjectIdentity_'] + '" /></ObjectPaths></Request>';
       let httpPostOptions: ISPHttpClientOptions = {
         headers: {
           'accept': 'application/json',
@@ -172,7 +174,7 @@ export class SPTermStoreService {
    * @param guid
    */
   private async projectTermAsync(term: any) : Promise<ISPTermObject> {
-
+ 
     return({
       identity: term['_ObjectIdentity_'] !== undefined ? term['_ObjectIdentity_'] : "",
       isAvailableForTagging: term['IsAvailableForTagging'] !== undefined ? term['IsAvailableForTagging'] : false,

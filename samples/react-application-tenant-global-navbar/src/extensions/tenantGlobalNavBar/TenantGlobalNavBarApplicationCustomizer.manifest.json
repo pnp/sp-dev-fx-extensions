@@ -1,6 +1,7 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
+  //"id": "xxx9d93c416-176b-4e7a-b169-b22b9ddac177",
   "id": "b1efedb9-b371-4f5c-a90f-3742d1842cf3",
   "alias": "TenantGlobalNavBarApplicationCustomizer",
   "componentType": "Extension",
