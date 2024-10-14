@@ -1,10 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
   "port": 4321,
   "https": true,
+  "initialPage": "https://{tenantDomain}/_layouts/workbench.aspx",
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
       "customActions": {
         "5a1fcffd-dfeb-4844-b478-1feb4325a5a7": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -15,7 +16,7 @@
       }
     },
     "injectCss": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
       "customActions": {
         "5a1fcffd-dfeb-4844-b478-1feb4325a5a7": {
           "location": "ClientSideExtension.ApplicationCustomizer",

@@ -18,7 +18,7 @@ Please refrain from making drastic changes that may negatively impact your users
 
 ## Used SharePoint Framework Version
 
-![SPFx v1.8](https://img.shields.io/badge/SPFx-1.8-green.svg)
+![SPFx v1.20.0](https://img.shields.io/badge/SPFx-1.20-green.svg)
 
 ## Applies to
 
@@ -27,17 +27,19 @@ Please refrain from making drastic changes that may negatively impact your users
 
 ## Solution
 
-Solution|Author(s)
---------|---------
-react-application-injectcss|Hugo Bernier ([Tahoe Ninjas](http://tahoeninjas.blog), @bernierh)
+| Solution                           | Author(s)                                                          |
+| ---------------------------------- | ------------------------------------------------------------------ |
+| react-application-injectcss        | Hugo Bernier ([Tahoe Ninjas](http://tahoeninjas.blog), @bernierh)     |
+| react-application-injectcss@v1.3.0 | Thomas Daly (MVP, [@\_tomdaly\_](https://www.twitter.com/_tomdaly_)) |
 
 ## Version history
 
-Version|Date|Comments
--------|----|--------
-1.0.0|07 May, 2018|Initial release
-1.1.0|18 October, 2018|Updated to SPFx 1.6
-1.2.0|28 March, 2018|Updated to SPFx 1.8
+| Version | Date             | Comments             |
+| ------- | ---------------- | -------------------- |
+| 1.0.0   | 07 May, 2018     | Initial release      |
+| 1.1.0   | 18 October, 2018 | Updated to SPFx 1.6  |
+| 1.2.0   | 28 March, 2018   | Updated to SPFx 1.8  |
+| 1.3.0   | 01 October, 2024 | Updated to SPFx 1.20 |
 
 ## Disclaimer
 
@@ -57,7 +59,7 @@ Version|Date|Comments
  }
 ```
 
-2. Upload the CSS file as `custom.css` to your `Styles Library` of the root site collection (i.e.: `https://<yourtenant>.sharepoint.com/Style%20Library/Forms/AllItems.aspx`).
+2. Upload the CSS file as `custom.css` to your `Site Assets` of the root site collection (i.e.: `https://<yourtenant>.sharepoint.com/SiteAssets/Forms/AllItems.aspx`).
 3. Navigate to your site. Your custom CSS should be applied.
 
 For example, the CSS provided above will make the feedback button appear as follows:
@@ -77,6 +79,8 @@ For example, the CSS provided above will make the feedback button appear as foll
 
 ### Automated deployment
 
+**NOTE** as of Sept 9th, 2024 to run the PnP PowerShell Cmdlets you must [register an Entra ID Application](https://pnp.github.io/powershell/articles/registerapplication.html) to use to run the cmdlets
+
 1. If you have not done so already, install the [PnP PowerShell Cmdlets](https://aka.ms/sppnp-powershell)
 2. Edit the `DeployApplicationCustomizer.ps1` file and change the `$tenantUrl` variable to point to your tenant.
 3. From a PowerShell console, run the `DeployApplicationCustomizer.ps1` script to automatically deploy to all sites.
@@ -85,7 +89,7 @@ For example, the CSS provided above will make the feedback button appear as foll
 
 ## Changing the CSS location
 
-To simplify deployment, the extension looks for a `custom.css` in your tenant's root `Style Library`. If you wish to use a different CSS name and location, use one of the following approaches:
+To simplify deployment, the extension looks for a `custom.css` in your tenant's root `Site Assets`. If you wish to use a different CSS name and location, use one of the following approaches:
 
 ### In the solution
 
