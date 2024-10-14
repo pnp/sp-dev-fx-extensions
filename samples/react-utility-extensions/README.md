@@ -17,7 +17,7 @@ List view command set extensions with below functionalities
 
 This sample is optimally compatible with the following environment configuration:
 
-![SPFx 1.19.0](https://img.shields.io/badge/SPFx-1.19.0-green.svg)
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
 ![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
@@ -49,6 +49,7 @@ N/A
 | ------- | ------------ | ----------------------- |
 | 1.0     | Oct 22, 2023 | Initial release         |
 | 1.1     | Aug 28, 2024 | Upgraded to SPFx 1.19.0 |
+| 1.2     | Oct 11, 2024 | Upgraded to SPFx 1.20.0 |
 
 ## Help
 
