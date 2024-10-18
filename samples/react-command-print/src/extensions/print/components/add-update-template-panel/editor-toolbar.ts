@@ -1,8 +1,8 @@
 const modules = {
     toolbar: [
         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-        [{ 'font': [] }],
-        [{ 'align': [] }, { 'direction': 'rtl' }, { 'color': [] }],
+        [{ 'font': [] as string[] }],
+        [{ 'align': [] as string[] }, { 'direction': 'rtl' }, { 'color': [] as string[] }],
         ['table'],
         ['bold', 'italic', 'underline', 'blockquote', 'size'],
         [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
