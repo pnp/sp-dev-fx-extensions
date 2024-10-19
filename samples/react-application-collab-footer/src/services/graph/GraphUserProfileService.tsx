@@ -24,6 +24,7 @@ export default class SPUserProfileService {
    */
   public async getUserProfileProperty(propertyName: string): Promise<string | null> {
     const endpoint = `${this.siteUrl}/_api/SP.UserProfiles.PeopleManager/GetMyProperties`;
+    console.log(endpoint)
     try {
       const response: SPHttpClientResponse = await this.spHttpClient.get(endpoint, SPHttpClient.configurations.v1);
       const data = await response.json();

@@ -60,7 +60,7 @@ Version|Date|Comments
 1.0|May 9, 2018|Initial release
 2.0|January 1, 2020|Initial release for SharePoint Starter Kit v2
 3.0|February 2023|v3 - Upgraded to SPFx 1.16.1
-4.0|October 2024 | Updated the code to SPFX 1.20.1, Refactored alot of the code and  project to be more modern and use react 17 features, cleaned up the code, more logging etc etc etc.
+4.0|October 2024 | Updated the code to SPFX 1.20.1, Refactored the project to react 17, went over to graph api, cleaned up the code etc etc.
 
 
 

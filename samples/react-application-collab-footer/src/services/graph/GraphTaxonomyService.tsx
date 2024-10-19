@@ -55,9 +55,11 @@ export default class SPTaxonomyService {
    */
   public async getTermSetIdByName(termSetName: string, groupId: string): Promise<ITerm[]> {
     const termSetsUrl = `https://graph.microsoft.com/beta/sites/${this.siteId}/termStore/groups/${groupId}/sets`;
+    console.log("termSetsUrl",termSetsUrl)
 
     try {
       const termSetsData = await this.fetchGraphAPI(termSetsUrl);
+      console.log("termSetsData",termSetsData)
       // Filter term sets to find the one with the localized name "PnP-CollabFooter-SharedLinks"
       const filteredTermSets = termSetsData.value.filter((termSet: ITerms) =>
         termSet.localizedNames.some((localizedName: ILocalizedName) => localizedName.name === "PnP-CollabFooter-SharedLinks")

@@ -14,24 +14,6 @@
       "websiteUrl": "",
       "mpnId": "pnpsk"
     },
-    "webApiPermissionRequests": [
-      {
-        "resource": "Microsoft Graph",
-        "scope": "TermStore.Read.All"
-      },
-      {
-        "resource": "Microsoft Graph",
-        "scope": "Directory.ReadWrite.All"
-      },
-      {
-        "resource": "Microsoft Graph",
-        "scope": "User.ReadWrite.All"
-      },
-      {
-        "resource": "Microsoft Graph",
-        "scope": "Sites.Read.All"
-      }
-    ],
     "metadata": {
       "shortDescription": {
         "default": "react-application-collab-footer description"

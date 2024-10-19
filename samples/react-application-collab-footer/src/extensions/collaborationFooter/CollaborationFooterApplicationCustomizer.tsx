@@ -49,6 +49,7 @@ export default class CollaborationFooterApplicationCustomizer
   private async getSharedMenuItems(taxonomyService: SPTaxonomyService): Promise<IContextualMenuItem[]> {
     try {
       const terms: ITerm[] = await taxonomyService.getTermsFromTermSet(this.properties.sourceTermSet);
+      console.log("terms", terms);
 
       // Map top-level terms and their nested terms correctly with itemType: 0 (Normal)
       return terms.map(term => this.mapTermToMenuItem(term, ContextualMenuItemType.Normal));
