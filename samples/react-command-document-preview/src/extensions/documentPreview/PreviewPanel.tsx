@@ -11,7 +11,7 @@ export interface IPreviewPanelProps {
 }
 
 class PreviewPanelContent extends React.Component<IPreviewPanelProps, {}> {
-    constructor(props) {
+    constructor(props: IPreviewPanelProps) {
         super(props);
     }
 
