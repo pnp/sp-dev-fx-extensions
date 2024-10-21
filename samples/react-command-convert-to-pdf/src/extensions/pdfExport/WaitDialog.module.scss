@@ -1,0 +1,40 @@
+@import "~@fluentui/common-styles/dist/sass/common";
+
+$font-size-small: 0.8em;
+$dialog-width: 400px;
+$error-color: $ms-color-redDark; // Fluent UI theme red
+
+.dialog-container {
+  padding: 20px;
+  background-color: #f3f2f1;
+  border-radius: 5px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.dialog-message {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.error-label {
+  color: #a80000; /* Fluent UI Red Dark */
+  font-weight: bold;
+}
+
+.pnp-footer {
+  font-size: 0.8em;
+  float: right;
+  text-align: center;
+  margin-top: 10px;
+
+  a {
+    color: #0078d4; /* Fluent UI Theme Primary */
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

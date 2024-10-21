@@ -1,90 +1,149 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Label } from 'office-ui-fabric-react/lib/Label';
-import { Dialog, DialogType } from 'office-ui-fabric-react/lib/Dialog';
-import { getThemeColor } from './themeHelper';
+import { Label, ILabelStyles } from '@fluentui/react/lib/Label';
+import { Dialog, DialogType } from '@fluentui/react/lib/Dialog';
+import { Log } from '@microsoft/sp-core-library';
+import { useTheme } from '@fluentui/react'; // Fluent UI theme
+import styles from './WaitDialog.module.scss';
+
+interface IWaitDialogState {
+  isVisible: boolean;
+  title: string;
+  message: string;
+  error: string;
+  showClose: boolean;
+}
+
+type WaitDialogAction =
+  | { type: 'SHOW_DIALOG'; title: string; message: string }
+  | { type: 'SHOW_ERROR'; title: string; message: string }
+  | { type: 'CLOSE_DIALOG' };
+
+const waitDialogReducer = (state: IWaitDialogState, action: WaitDialogAction): IWaitDialogState => {
+  switch (action.type) {
+    case 'SHOW_DIALOG':
+      return { ...state, isVisible: true, title: action.title, message: action.message, error: '', showClose: false };
+    case 'SHOW_ERROR':
+      return { ...state, isVisible: true, title: action.title, message: action.message, error: action.message, showClose: true };
+    case 'CLOSE_DIALOG':
+      return { ...state, isVisible: false, message: '', title: '', error: '', showClose: false };
+    default:
+      return state;
+  }
+};
 
 interface IWaitDialogContentProps {
-    message: string;
-    error: string;
-    title: string;
-    showClose: boolean;
-    hidden: boolean;
-    closeCallback: () => void;
+  message: string;
+  error: string;
+  title: string;
+  showClose: boolean;
+  hidden: boolean;
+  closeCallback: () => void;
 }
 
-class WaitDialogContent extends React.Component<IWaitDialogContentProps, {}> {
-    constructor(props) {
-        super(props);
-        this.closeDialog = this.closeDialog.bind(this);
-    }
+const ErrorLabel: React.FC<{ error: string }> = ({ error }) => {
+  const theme = useTheme();
+  const labelStyles: ILabelStyles = {
+    root: {
+      marginBottom: '10px',
+      color: theme.palette.redDark,
+    },
+  };
+  return error ? <Label styles={labelStyles}><span dangerouslySetInnerHTML={{ __html: error }} /></Label> : null;
+};
 
-    public render(): JSX.Element {
-        let logo = require('./parker.png');
+const WaitDialogContent: React.FC<IWaitDialogContentProps> = ({
+  message,
+  error,
+  title,
+  showClose,
+  hidden,
+  closeCallback,
+}) => {
+  const dialogType = showClose ? DialogType.close : DialogType.normal;
 
-        let dialogType = this.props.showClose ? DialogType.close : DialogType.normal;
-        const color = getThemeColor("themePrimary");
+  return (
+    <div className={styles['dialog-container']}>
+      <Dialog
+        hidden={hidden}
+        dialogContentProps={{ type: dialogType, title, subText: message }}
+        modalProps={{ isDarkOverlay: true, isBlocking: true, onDismiss: closeCallback }}
+        aria-live="assertive" aria-label={title} aria-describedby="dialog-message"
+      >
+        <ErrorLabel error={error} />
+        <div className={styles["pnp-footer"]}>
+          <a href="https://github.com/pnp/PnP" target="_blank" rel="noopener noreferrer">
+            Powered by PnP
+          </a>
+        </div>
+      </Dialog>
+    </div>
+  );
+};
 
-        return (<div style={{ width: "400px" }}>
+const dialogDiv = document.createElement('div');
+document.body.appendChild(dialogDiv);
 
-            <Dialog hidden={this.props.hidden} isDarkOverlay={true} isBlocking={true}
-                onDismiss={this.closeDialog}
-                dialogContentProps={{
-                    type: dialogType,
-                    title: this.props.title,
-                    subText: this.props.message
-                }} >
-                <Label>
-                    <span dangerouslySetInnerHTML={{ __html: this.props.error }} />
-                </Label>
-                <div style={{ fontSize: '0.8em', float: 'right' }}>
-                    <a href="https://github.com/pnp/PnP" target="_blank" data-interception="off" style={{ color: color }}>
-                        Powered by
-                    <br />
-                        <img src={logo} style={{ width: '100px' }} />
-                    </a>
-                </div>
-            </Dialog>
-        </div >);
-    }
-    private closeDialog() {
-        if (this.props.closeCallback) {
-            this.props.closeCallback();
-        }
-    }
+const WaitDialog: React.FC<IWaitDialogState & { onClose: () => void }> = ({
+  isVisible,
+  message,
+  title,
+  error,
+  showClose,
+  onClose,
+}) => {
+  return ReactDOM.createPortal(
+    <WaitDialogContent
+      message={message}
+      title={title}
+      error={error}
+      showClose={showClose}
+      hidden={!isVisible}
+      closeCallback={onClose}
+    />,
+    dialogDiv
+  );
+};
+
+class WaitDialogController {
+  private container: HTMLElement;
+  private dispatch!: React.Dispatch<WaitDialogAction>;
+
+  constructor() {
+    this.container = document.createElement('div');
+    document.body.appendChild(this.container);
+
+    const Wrapper: React.FC = () => {
+      const [state, dispatch] = React.useReducer(waitDialogReducer, {
+        isVisible: false,
+        message: '',
+        title: '',
+        error: '',
+        showClose: false,
+      });
+
+      this.dispatch = dispatch;
+
+      return <WaitDialog {...state} onClose={() => dispatch({ type: 'CLOSE_DIALOG' })} />;
+    };
+
+    ReactDOM.render(<Wrapper />, this.container);
+  }
+
+  public show(title: string, message: string) {
+    this.dispatch({ type: 'SHOW_DIALOG', title, message });
+    Log.info('WaitDialogController', `Showing dialog: ${title} - ${message}`);
+  }
+
+  public showError(title: string, message: string) {
+    this.dispatch({ type: 'SHOW_ERROR', title, message });
+    Log.error('WaitDialogController', new Error(`Showing error dialog: ${title} - ${message}`));
+  }
+
+  public close() {
+    this.dispatch({ type: 'CLOSE_DIALOG' });
+    Log.info('WaitDialogController', 'Closing dialog.');
+  }
 }
 
-const div = document.createElement("div");
-export default class WaitDialog {
-    public message: string;
-    public title: string;
-    public error: string;
-    public showClose: boolean = false;
-    public hidden: boolean = true;
-
-    constructor(props) {
-        this.close = this.close.bind(this);
-    }
-
-    public render(): void {
-        ReactDOM.render(<WaitDialogContent
-            message={this.message}
-            title={this.title}
-            error={this.error}
-            showClose={this.showClose}
-            closeCallback={this.close}
-            hidden={this.hidden}
-            key={"b" + new Date().toISOString()}
-        />, div);
-    }
-
-    public show() {
-        this.hidden = false;
-        this.render();
-    }
-
-    public close() {
-        this.hidden = true;
-        this.render();
-    }
-}
+export default new WaitDialogController();

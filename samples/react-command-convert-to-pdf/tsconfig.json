@@ -1,38 +1,42 @@
 {
-    "extends": "./node_modules/@microsoft/rush-stack-compiler-3.7/includes/tsconfig-web.json",
+    "extends": "./node_modules/@microsoft/rush-stack-compiler-4.5/includes/tsconfig-web.json",
     "compilerOptions": {
         "target": "es5",
-        "forceConsistentCasingInFileNames": true,
         "module": "esnext",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "moduleResolution": "node",
         "jsx": "react",
-        "declaration": true,
+        "outDir": "lib",
         "sourceMap": true,
+        "declaration": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
         "experimentalDecorators": true,
         "skipLibCheck": true,
-        "outDir": "lib",
-        "inlineSources": false,
-        "strictNullChecks": false,
-        "noUnusedLocals": false,
-        "typeRoots": [
-            "./node_modules/@types",
-            "./node_modules/@microsoft"
-        ],
-        "types": [
-            "es6-promise",
-            "webpack-env",
-            "jszip"
-        ],
         "lib": [
             "es5",
             "dom",
             "es2015.collection",
             "es2015.promise"
+        ],
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules/@microsoft"
+        ],
+        "types": [
+            "webpack-env",
+            "node"
         ]
     },
     "include": [
         "src/**/*.ts",
-        "src/**/*.tsx"
+        "src/**/*.tsx",
+        "src/custom.d.ts" // Include typings for SCSS if created
     ],
     "exclude": [
         "node_modules",
