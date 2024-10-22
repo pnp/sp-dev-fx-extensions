@@ -19,11 +19,11 @@ extensions:
 
 This sample shows how to create a breadcrumb element and append it to your site via the SharePoint Framework Application Customizer extension.
 
-![Breadcrumb sample](./assets/breadcrumb-sample.png)
+![1727992607183](image/README/1727992607183.png)
 
 ## Used SharePoint Framework Version
 
-![SPFx 1.11](https://img.shields.io/badge/version-1.11.0-green.svg)
+![SPFx 1.20.0](https://img.shields.io/badge/version-1.20.0-green.svg)
 
 ## Applies to
 
@@ -32,18 +32,20 @@ This sample shows how to create a breadcrumb element and append it to your site 
 
 ## Solution
 
-Solution|Author(s)
---------|---------
-React-application-breadcrumb | Elio Struyf (MVP, U2U, [@eliostruyf](https://twitter.com/eliostruyf))
-React-application-breadcrumb | Swaminathan Sriram ([@SwaminathanSri3](https://twitter.com/SwaminathanSri3)) -- Upgrade to SPFx 1.11
+| Solution                            | Author(s)                                                                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------- |
+| React-application-breadcrumb        | Elio Struyf (MVP, U2U,[@eliostruyf](https://twitter.com/eliostruyf))                                 |
+| React-application-breadcrumb        | Swaminathan Sriram ([@SwaminathanSri3](https://twitter.com/SwaminathanSri3)) -- Upgrade to SPFx 1.11 |
+| react-application-breadcrumb@v2.1.0 | Thomas Daly (MVP, [@\_tomdaly\_](https://twitter.com/_tomdaly_))                                    |
 
 ## Version history
 
-Version|Date|Comments
--------|----|--------
-2.0|October 3, 2020|Updated to SPFx v1.11
-1.1|August 31, 2017|Updates for v1.2.0
-1.0|August 9, 2017|Initial release
+| Version | Date             | Comments                                                    |
+| ------- | ---------------- | ----------------------------------------------------------- |
+| 2.1     | October 10, 2024 | Upgrade SPFx from v1.11 to v1.20.0, update to use Fluent UI |
+| 2.0     | October 3, 2020  | Updated to SPFx v1.11                                       |
+| 1.1     | August 31, 2017  | Updates for v1.2.0                                          |
+| 1.0     | August 9, 2017   | Initial release                                             |
 
 ## Disclaimer
 
@@ -57,7 +59,7 @@ Version|Date|Comments
 - Move to folder where this readme exists
 - In the command window run:
   - `npm install`
-  - `gulp serve --nobrowser` 
+  - `gulp serve --nobrowser`
 - Open your SharePoint developer site and append the provided query string parameters from the command output
 
 > If you want, you can also test bundle and package it. The necessary feature configuration has already been done.
@@ -73,8 +75,9 @@ Here's a debug URL for testing around this sample.
 ## Features
 
 This project contains SharePoint Framework extensions that illustrates next features:
+
 * Calling the SharePoint REST APIs
 * Using React components in SharePoint Framework application customizer extensions
-* Using an Office UI Fabric component to built the site breadcrumb component
+* Using Fluent UI React library to build the site breadcrumb component
 
 <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-breadcrumb" />
