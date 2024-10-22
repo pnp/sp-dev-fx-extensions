@@ -3,10 +3,28 @@
   "solution": {
     "name": "react-application-injectcss-client-side-solution",
     "id": "1a07c460-c268-4569-beff-579c18de692b",
-    "version": "1.2.0.0",
+    "version": "1.3.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "websiteUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "react-application-injectcss description"
+      },
+      "longDescription": {
+        "default": "react-application-injectcss description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },    
     "features": [
       {
         "title": "Inject CSS Application Extension",
