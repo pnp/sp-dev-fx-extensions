@@ -6,7 +6,7 @@ import IPrintTemplateProps from './print-template-props';
 
 class PrintTemplateContent extends React.Component<IPrintTemplateProps, {}>{
 
-    constructor(props) {
+    constructor(props: IPrintTemplateProps | Readonly<IPrintTemplateProps>) {
         super(props);
     }
     public render() {
