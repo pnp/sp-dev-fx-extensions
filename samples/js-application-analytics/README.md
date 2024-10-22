@@ -46,6 +46,7 @@ Version|Date|Comments
 1.1|September 29, 2017|Updated for SPFx GA 1.3.0
 1.2|October 7, 2020|Refactored for SPFx 1.11; Added support for async/legacy modes
 1.3|July 1, 2021|Added support for Google Analytics V4
+1.4|October 21, 2024|Updated to SPFX 1.20
 
 ## Disclaimer
 
