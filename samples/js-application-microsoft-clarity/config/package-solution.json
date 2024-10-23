@@ -7,6 +7,17 @@
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
+    "metadata": {
+      "shortDescription": {
+        "default": "clarity description"
+      },
+      "longDescription": {
+        "default": "clarity description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
     "developer": {
       "name": "",
       "websiteUrl": "",
