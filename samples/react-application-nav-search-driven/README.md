@@ -20,7 +20,7 @@ For further details see the author's [blog series](https://mmsharepoint.wordpres
 
 ## Compatibility
 
-![SPFx 1.18.2](https://img.shields.io/badge/SPFx-1.17.4-green.svg)
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
 ![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
@@ -28,7 +28,7 @@ For further details see the author's [blog series](https://mmsharepoint.wordpres
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 ![Hosted Workbench compatible](https://img.shields.io/badge/Hosted%20Workbench-compatible-green.svg "Does work with hosted workbench")
 
-Tested with Node version:v16.13.2
+Tested with Node version:v18.20.2
 
 ## Applies to
 
@@ -40,6 +40,7 @@ Tested with Node version:v16.13.2
 ## Contributors
 
 * [Markus Moeller]([https://g](https://github.com/mmsharepoint))
+* [Dinesh Girase](https://github.com/dgirase)
 
 ## Version history
 
@@ -48,6 +49,7 @@ Version|Date|Author|Comments
 0.1|Jul 27, 2023|[Markus Moeller](https://twitter.com/moeller2_0)|Initial release
 1.0|Aug 11, 2023|[Markus Moeller](https://twitter.com/moeller2_0)|Public release
 1.1|Jan 20, 2024|[Markus Moeller](https://twitter.com/moeller2_0)|Upgraded to SPFx 1.18.2
+1.2|Oct 23, 2024|[Dinesh Girase](https://github.com/dgirase)|Upgraded to SPFx 1.20.0
 
 
 ## Minimal Path to Awesome
