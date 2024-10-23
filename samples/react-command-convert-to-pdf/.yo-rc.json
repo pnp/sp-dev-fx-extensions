@@ -2,12 +2,13 @@
     "@microsoft/generator-sharepoint": {
         "isCreatingSolution": true,
         "environment": "spo",
-        "version": "1.12.1",
+        "version": "1.20.0",
         "libraryName": "pnp-ext-pdf-convert",
         "libraryId": "06babd6f-e62f-41e8-87c9-6cb516203a2d",
         "packageManager": "npm",
         "componentType": "extension",
         "extensionType": "ListViewCommandSet",
+        "nodeVersion": "18.18.2",
         "isDomainIsolated": false
     }
 }

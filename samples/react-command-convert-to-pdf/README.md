@@ -30,6 +30,7 @@ Version|Date|Comments
 1.0| 2019| Initial release by Puzzlepart
 1.1| February 23, 2021| Moved and re-branded to PnP
 1.2| October 30, 2022| Upgrade SPFx to version 1.12.1
+1.3| October 21, 2024| Upgrade SPFx to version 1.20.1, rewrite it from scratch using Graph API and using the built in converter in Graph, moved to Fluent UI and alot more
 
 ## Disclaimer
 

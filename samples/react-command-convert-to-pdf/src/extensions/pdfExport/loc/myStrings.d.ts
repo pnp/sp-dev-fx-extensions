@@ -7,6 +7,9 @@ declare interface IPdfExportCommandSetStrings {
     GeneratingFiles: string;
     FailedToProcess: string;
     Exists: string;
+    Error: string;
+    OperationFailed: string;
+    FailedToGenerateUrls: string;
 }
 
 declare module 'PdfExportCommandSetStrings' {
