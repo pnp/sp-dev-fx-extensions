@@ -52,19 +52,22 @@ extensions:
 
 ## Prerequisites
  
-> **@microsoft/generator-sharepoint - 1.10.0**
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
+![Node.js v18.18.2](https://img.shields.io/badge/Node.js-v18.18.2-green.svg)
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
 react-command-document-preview | Sudharsan K.([@sudharsank](https://twitter.com/sudharsank), [Know More](http://windowssharepointserver.blogspot.com/))
+react-command-document-preview - Upgrade to SPFx v1.20.0 | Nishkalank Bezawada([@NishkalankBezawada](https://github.com/NishkalankBezawada))
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0.0.0|Mar 03 2020|Initial release
+1.0.0.1|Oct 23 2024|Upgrade to SPFx v1.20.0
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
@@ -75,4 +78,4 @@ Version|Date|Comments
 - in the command line run:
   - `npm install`
   - `gulp bundle --ship && gulp package-solution --ship`
-- Add the .sppkg file to the app catalog and add the **Page Comments** web part to the page.
+

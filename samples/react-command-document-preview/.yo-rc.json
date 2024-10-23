@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.16.1",
+    "version": "1.20.0",
     "nodeVersion": "14.21.3",
     "libraryName": "react-document-preview",
     "libraryId": "ee2d4b69-35e6-4be7-a5bf-8efc80d08edc",
@@ -12,7 +12,7 @@
     "extensionType": "ListViewCommandSet",
     "sdkVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.4.1"
+      "@microsoft/teams-js": "2.24.0"
     }
   }
 }
