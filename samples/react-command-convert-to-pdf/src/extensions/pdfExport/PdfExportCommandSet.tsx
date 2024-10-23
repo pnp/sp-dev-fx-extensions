@@ -43,12 +43,12 @@ export default class PdfExportCommandSet extends BaseListViewCommandSet<IPdfExpo
     const siteId = this.context.pageContext.site.id;
     const selectedItem = event.selectedRows[0];
     const fileName = selectedItem.getValueByName('FileLeafRef');
+    const fileURL = selectedItem.getValueByName('FileRef');
     const fileExtension = fileName.split('.').pop()?.toLowerCase();
 
     // Extract the drive item path
     const spItemUrl = selectedItem.getValueByName('.spItemUrl');
     const driveItemPath = this.extractDriveItemPath(spItemUrl);
-
     if (!driveItemPath) {
       this.handleError(new Error('No match found in URL'), 'Invalid URL for selected item.');
       return;
@@ -68,7 +68,7 @@ export default class PdfExportCommandSet extends BaseListViewCommandSet<IPdfExpo
         } else if (event.itemId === 'SAVE_AS') {
           const pdfBlob = await this.handlePdfConversion(siteId, driveItemPath, fileName, false);  // Get PDF blob
           if (pdfBlob) {
-            await this.uploadPdfToLibrary(driveItemPath, this.removeFileExtension(fileName) + '.pdf', pdfBlob);
+            await this.uploadPdfToLibrary(driveItemPath, this.removeFirstPart(this.removeFileExtension(fileURL)) + '.pdf', pdfBlob);
             window.location.reload();
           }
         }
@@ -83,13 +83,19 @@ export default class PdfExportCommandSet extends BaseListViewCommandSet<IPdfExpo
     const match = spItemUrl.match(/drives\/[^\/]+\/items\/[^\/?]+/);
     return match ? match[0] : null;
   }
-
+  private removeFirstPart = (input: string): string => {
+    const regex = /^\/[^\/]+/;
+    return input.replace(regex, '');
+  };
+  
+  
   // Handle PDF conversion: returns Blob or directly downloads PDF
   private async handlePdfConversion(siteId: any, drivePath: string, fileName: string, download: boolean): Promise<Blob | null> {
     WaitDialog.show(strings.DownloadAsPdf, strings.GeneratingFiles);
 
     try {
       const pdfUrl = `${GRAPH_API_BASE}/sites/${siteId}/${drivePath}/content?format=pdf`;
+      console.log(pdfUrl)
       const pdfBlob = await this.fetchPdfBlob(pdfUrl);
 
       if (download) {
