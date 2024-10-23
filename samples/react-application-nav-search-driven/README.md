@@ -49,7 +49,7 @@ Version|Date|Author|Comments
 0.1|Jul 27, 2023|[Markus Moeller](https://twitter.com/moeller2_0)|Initial release
 1.0|Aug 11, 2023|[Markus Moeller](https://twitter.com/moeller2_0)|Public release
 1.1|Jan 20, 2024|[Markus Moeller](https://twitter.com/moeller2_0)|Upgraded to SPFx 1.18.2
-1.2|Oct 22, 2024|[Dinesh Girase](https://github.com/dgirase)|Upgraded to SPFx 1.20.0
+1.2|Oct 23, 2024|[Dinesh Girase](https://github.com/dgirase)|Upgraded to SPFx 1.20.0
 
 
 ## Minimal Path to Awesome
