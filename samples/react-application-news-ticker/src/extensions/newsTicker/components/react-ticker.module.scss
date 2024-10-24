@@ -1,0 +1,22 @@
+.tickerContainer {
+  width: 100%;
+  position: relative;
+}
+
+.tickerContent {
+  display: flex; /* Use flexbox to layout the content correctly */
+  animation: ticker 20s linear infinite; /* Continuous scrolling */
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(100%); /* Start from off-screen on the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move all the way off-screen to the left */
+  }
+}
+
+.tickerItem {
+  margin: 0 5px; /* Spacing between ticker items */
+}
