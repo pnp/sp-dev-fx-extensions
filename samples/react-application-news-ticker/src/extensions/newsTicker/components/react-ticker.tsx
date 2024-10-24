@@ -44,22 +44,10 @@ const Ticker: React.FC<TickerProps> = ({ speed = 5, isMove, children }) => {
       <div
         ref={tickerRef}
         className={styles.tickerContent}
-        style={{ 
-          animation: isMove ? `ticker ${animationDuration} linear infinite` : "none"
-        }}
+        style={{ animationDuration }} // Apply dynamic duration
       >
         {children}
       </div>
-      <style>{`
-        @keyframes ticker {
-          0% {
-            transform: translateX(100%);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-      `}</style>
     </div>
   );
 };

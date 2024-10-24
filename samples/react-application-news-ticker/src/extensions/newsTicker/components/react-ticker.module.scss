@@ -1,22 +1,31 @@
 .tickerContainer {
+  overflow: hidden;
+  white-space: nowrap;
   width: 100%;
   position: relative;
 }
 
 .tickerContent {
-  display: flex; /* Use flexbox to layout the content correctly */
-  animation: ticker 20s linear infinite; /* Continuous scrolling */
+  white-space: nowrap;
+  animation: ticker linear infinite; /* Moved animation to SCSS */
 }
 
 @keyframes ticker {
   0% {
-    transform: translateX(100%); /* Start from off-screen on the right */
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%); /* Move all the way off-screen to the left */
+    transform: translateX(-100%);
   }
 }
 
+.newsTicker {
+  background-color: #48c78e;
+  color: white;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
 .tickerItem {
-  margin: 0 5px; /* Spacing between ticker items */
+  margin: 0 5px;
 }

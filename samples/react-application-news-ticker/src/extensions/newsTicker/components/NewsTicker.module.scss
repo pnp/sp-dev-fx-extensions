@@ -5,21 +5,6 @@
   font-size: 16px;
 }
 
-@keyframes ticker {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.tickerContent {
-  display: inline-block;
-  white-space: nowrap;
-  animation: ticker linear infinite;
-}
-
 .tickerItem {
   margin: 0 5px;
 }
