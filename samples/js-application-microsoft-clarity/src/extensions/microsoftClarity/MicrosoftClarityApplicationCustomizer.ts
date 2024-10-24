@@ -26,11 +26,11 @@ export default class MicrosoftClarityApplicationCustomizer
     var clarityID;
     clarityID = this.properties.clarityID;
     if (clarityID && clarityID != "") {debugger;
-      (function(c,l,a,r,i,t,y){
+      (function(c:any,l:any,a:any,r:any,i:any,t:any,y:any){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", clarityID);
+      })(window, document, "clarity", "script", clarityID, { async: 1, src: "" }, { parentNode: { insertBefore: (arg0: any, arg1: any): void => {} } });
     }    
     return Promise.resolve();
   }

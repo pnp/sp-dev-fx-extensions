@@ -12,8 +12,8 @@ Have a look to article [How to add Microsoft Clarity to modern SharePoint](https
 
 ## Compatibility
 
-![SPFx 1.11.0](https://img.shields.io/badge/SPFx-1.11.0-green.svg)
-![Node.js v10](https://img.shields.io/badge/Node.js-v10-green.svg) 
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
+![Node.js v18.18.2](https://img.shields.io/badge/Node.js-v18.18.2-green.svg) 
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -32,12 +32,14 @@ Have a look to article [How to add Microsoft Clarity to modern SharePoint](https
 Solution|Author(s)
 --------|---------
 Clarity | [João Ferreira](https://github.com/joaoferreira), [HANDS ON tek](https://sharepoint.handsontek.net), [@joao12ferreira](https://twitter.com/joao12ferreira)
+Clarity | [Nishkalank Bezawada (MVP)](https://github.com/NishkalankBezawada), [Bravero AB](https://www.bravero.se/), [@im_nishkalank](https://x.com/im_nishkalank)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|November 23, 2021|Initial release
+2.0|October 19, 2024|Upgraded to SPFx v1.20.0
 
 ## Minimal Path to Awesome
 
