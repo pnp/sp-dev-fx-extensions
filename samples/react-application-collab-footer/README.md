@@ -60,7 +60,7 @@ Version|Date|Comments
 1.0|May 9, 2018|Initial release
 2.0|January 1, 2020|Initial release for SharePoint Starter Kit v2
 3.0|February 2023|v3 - Upgraded to SPFx 1.16.1
-4.0|October 2024 | Updated the code to SPFX 1.20.1, Refactored the project to react 17, went over to graph api, cleaned up the code etc etc.
+4.0|October 2024 | Updated the code to SPFX 1.20, Refactored the project to react 17, Node 18, went over to graph api, cleaned up the code etc etc.
 
 
 
@@ -82,7 +82,9 @@ Version|Date|Comments
 * Move to correct folder where solution exists
 * in the command line run:
   * `npm install`
-  * `gulp serve`
+  * `gulp serve --nobrowser`
+  * `Add to the end of the URL test on your site : ?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"6638da67-06f4-4f55-a1df-485d568e8b72":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"sourceTermSet":"PnP-CollabFooter-SharedLinks","linksListTitle":"PnP-PortalFooter-Links","personalItemsStorageProperty":"PnP-CollabFooter-MyLinks"}}}`
+
 
 ## Features
 
