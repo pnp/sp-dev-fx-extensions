@@ -1,5 +1,5 @@
 import { News } from "../models/News";
-import SpService from "../service/SpService";
+import SpService from "../service/GraphService";
 
 export default interface INewsTickerProps {
   items: News[];

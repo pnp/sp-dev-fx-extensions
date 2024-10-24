@@ -4,6 +4,6 @@
         Title="NewsTicker"
         Location="ClientSideExtension.ApplicationCustomizer"
         ClientSideComponentId="4358e70e-ec3c-4713-beb6-39c88f7621d1"
-        ClientSideComponentProperties="{&quot;listTitle&quot;:&quot;News&quot;,&quot;listViewTitle&quot;:&quot;Published News&quot;}">
+        ClientSideComponentProperties="{&quot;listTitle&quot;:&quot;News&quot;,&quot;bgColor&quot;:&quot;#48c78e&quot;,&quot;textColor&quot;:&quot;white&quot;}">
     </CustomAction>
 </Elements>
