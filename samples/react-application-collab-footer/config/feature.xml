@@ -1,0 +1,12 @@
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/"
+         Title="My SPFx Extension Deployment"
+         Description="Deploying custom action via feature framework"
+         Id="a-new-unique-guid"
+         Version="1.0.0.0"
+         Scope="Web"
+         Hidden="FALSE"
+         DefaultResourceFile="core">
+  <ElementManifests>
+    <ElementManifest Location="assets/elements.xml" />
+  </ElementManifests>
+</Feature>

@@ -1,0 +1,12 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.collabFooter {
+    .collabFooterContainer {
+        background-color: $ms-color-neutralLighter;
+        color: $ms-color-neutralPrimary;
+    }
+
+    .commandBar {
+        width: 100%;
+    }
+}
