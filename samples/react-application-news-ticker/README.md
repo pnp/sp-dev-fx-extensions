@@ -8,8 +8,8 @@ An SPFx Extension that displays news as a running text at the top of every moder
 
 ## Compatibility
 
-![SPFx 1.15.2](https://img.shields.io/badge/SPFx-1.15.2-green.svg)
-![Node.js LTS v14](https://img.shields.io/badge/Node.js-LTS%20v14-green.svg) 
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
+![Node.js LTS v18](https://img.shields.io/badge/Node.js-LTS%20v18-green.svg) 
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -31,6 +31,7 @@ Create list as the data source for the app with below details:
    - `Title`: single line text
    - `Content`: multiline text (plain text)
    - `PublishDate`: date
+   - `ExpiryDate`: date
 3. Required View:
    - Title: `Published News`
    - Configure the view as you like. The app will get the data based on the view. Below is the example:
@@ -44,6 +45,8 @@ Solution|Author(s)
 --------|---------
 react-application-news-ticker | [Ari Gunawan](https://github.com/AriGunawan) ([@arigunawan3023](https://twitter.com/arigunawan3023))
 react-application-news-ticker | [Sudharsan Kesavanarayanan](https://github.com/sudharsank) (NTT Ltd, [@sudharsank](https://twitter.com/sudharsank))
+react-application-news-ticker | [Nicolas Kheirallah](https://github.com/NicolasKheirallah) 
+
 
 ## Version history
 
@@ -52,6 +55,7 @@ Version|Date|Comments
 1.0|April 19, 2021|Initial release
 1.1|October 17, 2021|Update SPFx version to 1.12.1
 1.2|August 27, 2021|Fixed failed upgrade and update SPFx version to 1.15.2
+1.3|October 24, 2024|Upgraded to SPFX 1.20, React 17 , Node 18! Rewrite the code to use Graph API, Also coded a native Ticker instead of another module as it's was no longer maintained! Also refactored a lot of the code
 
 
 ## Minimal Path to Awesome
@@ -73,15 +77,13 @@ This extension illustrates the following concepts:
 ## References
 
 - [SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
-- [PnP JS](https://pnp.github.io/pnpjs/)
-- [react-ticker](https://github.com/AndreasFaust/react-ticker)
 
 
 ## Debug URL for testing
 Here's a debug URL for testing around this sample. 
 
 ```
-?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"4358e70e-ec3c-4713-beb6-39c88f7621d1":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"listTitle":"News","listViewTitle":"Published+News","bgColor":"%2348c78e","textColor":"white"}}}
+?debugManifestsFile=https://localhost:4321/temp/manifests.js
 ```
 
 ## Disclaimer
