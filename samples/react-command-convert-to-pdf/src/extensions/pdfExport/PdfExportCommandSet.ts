@@ -158,7 +158,7 @@ export default class PdfExportCommandSet extends BaseListViewCommandSet<IPdfExpo
             default:
                 throw new Error('Unknown command');
         }
-    }
+     }
 
     private async saveAsPdf(files: SharePointFile[]): Promise<boolean> {
         const web = Web(this.context.pageContext.web.absoluteUrl);
