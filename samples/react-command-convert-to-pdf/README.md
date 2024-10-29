@@ -9,7 +9,7 @@ A global list customizer which adds functionality to all document libraries in S
 ## Compatibility
 
 ![SPFx 1.20](https://img.shields.io/badge/spfx-1.20.0-green.svg)
-![Node.js LTS 16.x | LTS 18.x](https://img.shields.io/badge/Node.js-LTS%2016.x%20%7C%20LTS%2018.x-green.svg)
+![Node.js LTS LTS 18.x](https://img.shields.io/badge/Node.js-LTS%2018.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg)
 ![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
