@@ -38,7 +38,7 @@ Solution|Author(s)
 js-application-analytics | [Giuliano De Luca](https://github.com/giuleon) ([@giuleon](https://twitter.com/giuleon) , [www.delucagiuliano.com](http://www.delucagiuliano.com))
 js-application-analytics | [Hugo Bernier](https://github.com/hugoabernier) ([@bernierh](https://twitter.com/bernierh) , [tahoeninjas.blog](https://tahoeninjas.blog))
 js-application-analytics | [João Ferreira](https://github.com/joaoferreira) ([@joao12ferreira](https://twitter.com/joao12ferreira) , [HANDS ON tek](https://sharepoint.handsontek.net))
-js-application-analytics | [Nicolas kheirallah](https://github.com/NicolasKheirallah) ([@NicolasKheirallah](https://twitter.com/NicolasKheirallah)
+js-application-analytics | [Nicolas kheirallah](https://github.com/NicolasKheirallah) ([@NicolasKheirallah](https://twitter.com/NicolasKheirallah))
 ## Version history
 
 Version|Date|Comments
