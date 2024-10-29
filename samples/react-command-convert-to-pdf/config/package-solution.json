@@ -3,23 +3,47 @@
     "solution": {
         "name": "Save and convert as PDF by PnP",
         "id": "06babd6f-e62f-41e8-87c9-6cb516203a2d",
-        "version": "1.2.0.0",
+        "version": "1.3",
         "includeClientSideAssets": true,
         "skipFeatureDeployment": true,
-        "features": [{
-            "title": "Save and convert as PDF by PnP",
-            "description": "Deploys a custom action to allow save and conversion of files as PDF from a library.",
-            "id": "94d2d641-737d-44ff-9c4d-32ac54996478",
-            "version": "1.1.0.0",
-            "assets": {
-                "elementManifests": [
-                    "elements.xml",
-                    "ea401ac9-3abc-4e27-b93b-09c9a0587ee9.xml"
-                ]
-            }
-        }]
-    },
-    "paths": {
-        "zippedPackage": "solution/pnp-ext-pdf-convert.sppkg"
+        "developer": {
+            "name": "",
+            "privacyUrl": "",
+            "termsOfUseUrl": "",
+            "websiteUrl": "",
+            "mpnId": "Undefined-1.20.0"
+        },
+        "metadata": {
+            "shortDescription": {
+                "default": "pnp-ext-pdf-convert description"
+            },
+            "longDescription": {
+                "default": "pnp-ext-pdf-convert description"
+            },
+            "webApiPermissionRequests": [
+                {
+                    "resource": "Microsoft Graph",
+                    "scope": "Sites.ReadWrite.All"
+                },
+                {
+                    "resource": "Microsoft Graph",
+                    "scope": "Files.ReadWrite.All"
+                }
+            ],
+            "features": [
+                {
+                    "title": "Save and convert as PDF by PnP",
+                    "description": "Deploys a custom action to allow save and conversion of files as PDF from a library.",
+                    "id": "94d2d641-737d-44ff-9c4d-32ac54996478",
+                    "version": "1.1.0.0",
+                    "assets": {
+                        "elementManifests": [
+                            "elements.xml",
+                            "ea401ac9-3abc-4e27-b93b-09c9a0587ee9.xml"
+                        ]
+                    }
+                }
+            ]
+        }
     }
 }
