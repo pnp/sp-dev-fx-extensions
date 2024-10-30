@@ -22,7 +22,7 @@
     "tslib": "2.8.0"
   },
   "devDependencies": {
-    "@microsoft/eslint-config-spfx": "^1.20.2",
+    "@microsoft/eslint-config-spfx": "1.20.2",
     "@microsoft/eslint-plugin-spfx": "1.20.2",
     "@microsoft/rush-stack-compiler-4.7": "0.1.1",
     "@microsoft/sp-build-web": "1.20.2",
