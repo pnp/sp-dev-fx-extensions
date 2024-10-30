@@ -10,7 +10,6 @@ import IPrintDialogContentProps from './print-dialog-content-props';
 import IPrintDialogContentState from './print-dialog-content-state';
 import PrintTemplateContent from '../print-dialog-template-content/print-template-content';
 import SettingsPanel from '../settings-panel/settings-panel';
-// import ListHelper from '../../util/list-helper';
 import ReactHtmlParser from 'react-html-parser';
 import {
     Dropdown
