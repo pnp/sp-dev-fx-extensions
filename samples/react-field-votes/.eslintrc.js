@@ -24,7 +24,7 @@ module.exports = {
         //
         // CONFIGURATION:     By default, these are banned: String, Boolean, Number, Object, Symbol
         '@typescript-eslint/ban-types': [
-          1,
+          0,
           {
             'extendDefaults': false,
             'types': {

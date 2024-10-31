@@ -8,8 +8,8 @@ A global list customizer which adds functionality to all document libraries in S
 
 ## Compatibility
 
-![SPFx 1.10](https://img.shields.io/badge/spfx-1.10.0-green.svg) 
-![Node.js LTS 6.x | LTS 8.x](https://img.shields.io/badge/Node.js-LTS%206.x%20%7C%20LTS%208.x-green.svg)
+![SPFx 1.20](https://img.shields.io/badge/spfx-1.20.0-green.svg)
+![Node.js LTS LTS 18.x](https://img.shields.io/badge/Node.js-LTS%2018.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-red.svg)
 ![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
@@ -19,17 +19,18 @@ A global list customizer which adds functionality to all document libraries in S
 
 ## Solution
 
-Solution|Author(s)
---------|---------
-pnp-ext-pdf-convert| Mikael Svenson ([@mikaelsvenson](https://twitter.com/mikaelsvenson))
-
+| Solution            | Author(s)                                                         |
+| ------------------- | ----------------------------------------------------------------- |
+| pnp-ext-pdf-convert | Mikael Svenson ([@mikaelsvenson](https://twitter.com/mikaelsvenson)) |
+| pnp-ext-pdf-convert | Nicolas Kheirallah ([@NicolasKheirallah](https://twitter.com/NicolasKheirallah)) |
 ## Version history
 
-Version|Date|Comments
--------|----|--------
-1.0| 2019| Initial release by Puzzlepart
-1.1| February 23, 2021| Moved and re-branded to PnP
-1.2| October 30, 2022| Upgrade SPFx to version 1.12.1
+| Version | Date              | Comments                                                                                                                                            |
+| ------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | 2019              | Initial release by Puzzlepart                                                                                                                       |
+| 1.1     | February 23, 2021 | Moved and re-branded to PnP                                                                                                                         |
+| 1.2     | October 30, 2022  | Upgrade SPFx to version 1.12.1                                                                                                                      |
+| 1.3     | October 21, 2024  | Upgrade SPFx to version 1.20.1, rewrite it from scratch using Graph API and using the built in converter in Graph, moved to Fluent UI, Node 18.x and alot more |
 
 ## Disclaimer
 
@@ -38,8 +39,8 @@ Version|Date|Comments
 ## Installing the solution
 
 - Upload and Deploy the file [pnp-ext-pdf-convert.sppkg](./pnp-ext-pdf-convert.sppkg) to your tenant app catalog. ![TrustSolution](./screenshot-2.png "Trust solution")
-    * If created the tenant app catalog can be reached via `https://<tenant>-admin.sharepoint.com/_layouts/15/online/ManageAppCatalog.aspx`.
-    * You need to be a SharePoint Administrator to upload this solution.
+  * If created the tenant app catalog can be reached via `https://<tenant>-admin.sharepoint.com/_layouts/15/online/ManageAppCatalog.aspx`.
+  * You need to be a SharePoint Administrator to upload this solution.
 - Navigate to a document library and select one or more files and you should see the PDF options in the document ribbon.
 
 _Note: It may take a little while before it shows the first time after install._

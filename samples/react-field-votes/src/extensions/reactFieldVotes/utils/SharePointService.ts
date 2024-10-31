@@ -36,6 +36,7 @@ export class SharePointService {
       const voters = item[Constants.INTERNAL_COLUMN_NAME + 'Id'];
       return voters || [];
     } catch (error) {
+      console.log(error);
       alert("Failed to get voters value.");
       return [];
     }
@@ -74,6 +75,7 @@ export class SharePointService {
           [Constants.INTERNAL_COLUMN_NAME + 'Id']: newVoters,
         });
     } catch (error) {
+      console.log(error);
       alert("Failed to remove vote.");
     }
   }
