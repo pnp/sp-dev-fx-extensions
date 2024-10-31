@@ -1,9 +1,10 @@
 {
-  "extends": "./node_modules/@microsoft/rush-stack-compiler-4.5/includes/tsconfig-web.json",
+  "extends": "./node_modules/@microsoft/rush-stack-compiler-4.7/includes/tsconfig-web.json",
   "compilerOptions": {
     "target": "es5",
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "jsx": "react",
     "declaration": true,
