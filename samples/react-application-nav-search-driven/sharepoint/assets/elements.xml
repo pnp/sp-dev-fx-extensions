@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="CommandBarNavigation"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="315298b1-ad03-4730-8423-0a07941a96d9"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
