@@ -9,7 +9,7 @@
             "SharePoint Framework Application Customizer that injects a button to the command bar which shows all the lists in the site and have the ability to quickly create an item by showing the NewForm.aspx inside a panel. Inspired by Quick Create functionality by popular CRMs."
         ],
         "creationDateTime": "2023-12-25",
-        "updateDateTime": "2024-10-31",
+        "updateDateTime": "2024-09-30",
         "products": [
             "SharePoint"
         ],
@@ -20,7 +20,7 @@
             },
             {
                 "key": "SPFX-VERSION",
-                "value": "1.20.0"
+                "value": "1.18.2"
             }
         ],
         "tags": [],
@@ -40,11 +40,6 @@
                 "gitHubAccount": "alecwantstobattle",
                 "pictureUrl": "https://github.com/alecwantstobattle.png",
                 "name": "Alec Tecson"
-            },
-            {
-                "gitHubAccount": "https://github.com/dgirase",
-                "pictureUrl": "https://avatars.githubusercontent.com/u/31006913?v=4&size=64",
-                "name": "Dinesh Girase"
             }
         ],
         "references": [

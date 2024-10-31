@@ -1,11 +1,11 @@
 import * as React from "react";
 import {
-  CommandButton,
   IContextualMenuItem,
   IContextualMenuProps,
   Panel,
   PanelType,
 } from "@fluentui/react";
+import { CommandButton } from "@fluentui/react/lib/components/Button/CommandButton/CommandButton";
 import { ListItemService } from "../../../services/ListService";
 import { ApplicationCustomizerContext } from "@microsoft/sp-application-base";
 import { useBoolean } from "@fluentui/react-hooks";
