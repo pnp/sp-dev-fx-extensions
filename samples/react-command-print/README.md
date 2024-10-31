@@ -24,6 +24,7 @@ Solution|Author(s)
 --------|---------
 react-command-print | Ramin Ahmadi
 react-command-print | Ari Gunawan ([@arigunawan3023](https://twitter.com/arigunawan3023))
+react-command-print | Nishkalank Bezawada ([@im_nishkalank](https://twitter.com/im_nishkalank))
 
 ## Version history
 
@@ -31,6 +32,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|Dec 05, 2018|Initial release
 1.1|May 02, 2021|Replace typestyle with mergeStyles (Ari Gunawan)
+1.2|October 30, 2024|Upgraded to SPFx v1.16.1 (Nishkalank Bezawada)
 
 ## Minimal Path to Awesome
 
