@@ -93,4 +93,4 @@ Key features demostrated by this solution:
 * Work with term sets using spHttpClient
 * Work with data from user property
 
-<img src="https://telemetry.sharepointpnp.com/sp-starter-kit/source/react-application-collab-footer" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-collab-footer" />
