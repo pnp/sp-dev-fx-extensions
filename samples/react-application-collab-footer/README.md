@@ -63,13 +63,6 @@ Version|Date|Comments
 4.0|October 2024 | Updated the code to SPFX 1.20, Refactored the project to react 17, Node 18, went over to graph api, cleaned up the code etc etc.
 
 
-
-## Todo 
-- [ ] Add Graph Support!
-- [ ] Clean up the code
-- [ ] Add support for icons for my links
-- [ ] Add support for sorting my links
-
 ## Disclaimer
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
