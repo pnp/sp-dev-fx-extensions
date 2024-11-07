@@ -2,7 +2,7 @@
 
 This application customizer provides you the ability to include a footer designed for normal and group associated teams sites. The footer includes sets of links configured within a taxonomy term set via the term store. A second set of links are personalized links, unqiue to each user, stored within each user's user profile within a user profile property. If this property does not exist in the user profile service, this capability will be hidden. 
 
-![Collaboration Footer](../../assets/images/components/ext-collab-footer.gif)
+![Collaboration Footer](/assets/images/components/ext-collab-footer.gif)
 
 Taxonomy dependency is utilized within the collaboration footer to provide a global set of links across multiple team sites, as well as a technology demostrator. Visit the [Portal footer application customizer](../react-application-portal-footer/) for an example of footer links driven by a SharePoint list.
 
@@ -27,7 +27,7 @@ Set-PnPApplicationCustomizer -Title "CollabFooter" -ClientSideComponentId 6638da
 
 ## Used SharePoint Framework Version
 
-![drop](https://img.shields.io/badge/version-1.16.1-green.svg)
+![drop](https://img.shields.io/badge/version-1.20.0-green.svg)
 
 * Supported in SharePoint Online
 
