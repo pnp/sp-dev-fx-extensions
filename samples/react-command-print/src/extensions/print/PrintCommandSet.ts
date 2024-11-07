@@ -59,7 +59,7 @@ export default class PrintCommandSet extends BaseListViewCommandSet<IPrintComman
         dialog.itemId = event.selectedRows[0].getValueByName('ID');
         dialog.title = event.selectedRows[0].getValueByName('Title');
         dialog.show().then(()=>{
-          Dialog.alert(''); //This line prevents issues with the dialog, please do not remove it/
+          Log.info(LOG_SOURCE, 'Dialog open');
         });
         break;
       default:
