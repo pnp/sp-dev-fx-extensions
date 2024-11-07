@@ -58,13 +58,6 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     }
 
     public async componentDidMount() {
-
-        // Validate and create Print Settings list --> added list definition to elements.xml for adding Print List Settings
-        // this.initializeSettings();
-        // Get templates
-        //this.getTemplates();
-        // Get select item values
-        //this.getItemContent();
         try {
             // Show spinner
             this.setState({ hideLoading: true });

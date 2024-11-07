@@ -8,8 +8,8 @@ This sample shows how you can print list items using different templates, site a
 
 ## Compatibility
 
-![SPFx 1.7](https://img.shields.io/badge/version-1.7-green.svg)
-![Node.js 8.x](https://img.shields.io/badge/Node.js-8.x-green.svg)
+![SPFx 1.16.1](https://img.shields.io/badge/version-1.16.1-green.svg)
+![Node.js 14.x](https://img.shields.io/badge/Node.js-14.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
