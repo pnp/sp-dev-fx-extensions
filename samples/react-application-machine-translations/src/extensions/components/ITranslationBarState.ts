@@ -1,5 +1,5 @@
 import { ILanguage } from "../../models/ILanguage";
-import { IContextualMenuItem } from "office-ui-fabric-react/lib/ContextualMenu";
+import { IContextualMenuItem } from "@fluentui/react/lib/ContextualMenu";
 import { IDetectedLanguage } from "../../models/IDetectedLanguage";
 
 export interface ITranslationBarState {
