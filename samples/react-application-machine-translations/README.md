@@ -10,7 +10,7 @@ The extension will determine the language of the page using the page description
 
 ## Compatibility
 
-![SPFx 1.18.0](https://img.shields.io/badge/SPFx-1.18.0-green.svg)
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
 
 ![Node.js >=16.13.0 <17.0.0 || >=18.17.1 <19.0.0](https://img.shields.io/badge/Node.js-%3E=16.13.0%20%3C17.0.0%20%7C%7C%20%3E=18.17.1%20%3C19.0.0-green.svg) 
 
@@ -35,13 +35,13 @@ Solution|Author(s)
 --------|---------
 react-application-machine-translations | [Robin Agten](https://twitter.com/AgtenRobin)
 react-application-machine-translations | [Michal Romiszewski](https://twitter.com/romiszewski) -- Update
-react-application-machine-translations | [Nishkalank Bezawada](https://bsky.app/profile/nishkalankbezawada.bsky.social) -- SPFx upgrade to v1.18.0
+react-application-machine-translations | [Nishkalank Bezawada](https://bsky.app/profile/nishkalankbezawada.bsky.social) -- SPFx upgrade to v1.20.0
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.2|December 08, 2024|Update TranslationService, SPFx upgrade to v1.17.0
+1.2|December 09, 2024|Update TranslationService, SPFx upgrade to v1.20.0
 1.1|July 23, 2021|Update TranslationService, SPFx to 1.12.1 and PnPjs to 2.7.0
 1.0|March 28, 2020|Initial release
 
