@@ -1,9 +1,10 @@
 import { IMenuProvider, MenuCategory } from "./index";
 import { Log } from "@microsoft/sp-core-library";
-import { Web, ListEnsureResult, Item } from "@pnp/sp";
+import { Web, IWeb, IListEnsureResult, IItem } from "@pnp/sp/presets/all";
 import { MenuItem } from "./MenuItem";
 
 const LOG_SOURCE: string = "ReactMegaMenuApplicationCustomizer_MenuSPListProvider";
+// within a webpart, application customizer, or adaptive card extension where the context object is available
 
 /**
  * Mega Menu items SharePoint list provider.
@@ -53,7 +54,7 @@ export class MenuSPListProvider implements IMenuProvider {
             }
 
             // session storage is disabled, empty or corrupt so fetch menu items from the SharePoint list.
-            this._fetchFromSPList().then((items:Item[]) => {
+            this._fetchFromSPList().then((items:IItem[]) => {
 
                 result = this._groupByCategory(items);
 
@@ -92,19 +93,19 @@ export class MenuSPListProvider implements IMenuProvider {
     /**
      * Fetches the menu items from the server, SharePoint mega menu list.
      */
-    private _fetchFromSPList(): Promise<Item[]> {
+    private _fetchFromSPList(): Promise<IItem[]> {
 
-        return new Promise<Item[]>((resolve, reject) => {
+        return new Promise<IItem[]>((resolve, reject) => {
 
-            let web: Web = new Web(this._webAbsoluteUrl);
+            let web: IWeb = Web(this._webAbsoluteUrl);
 
             web.lists.ensure("Mega Menu List")
-                .then((listResult: ListEnsureResult) => {
+                .then((listResult: IListEnsureResult) => {
 
                     listResult.list.items
                         .select("ID", "MegaMenuCategory", "MegaMenuItemName", "MegaMenuItemUrl")
                         .get()
-                        .then((items: Item[]) => {
+                        .then((items: IItem[]) => {
 
                             resolve(items);
                         })
@@ -130,13 +131,13 @@ export class MenuSPListProvider implements IMenuProvider {
      * @param items SPListItem
      */
     // tslint:disable:no-string-literal
-    private _groupByCategory(items: Item[], ): MenuCategory[] {
+    private _groupByCategory(items: IItem[], ): MenuCategory[] {
 
         let result: MenuCategory[] = [];
 
         for (let i: number = 0; i < items.length; i++) {
 
-            let item: Item = items[i];
+            let item: IItem = items[i];
 
             // init menu item.
             let menuItem: MenuItem = {

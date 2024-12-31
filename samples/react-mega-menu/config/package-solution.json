@@ -3,7 +3,7 @@
   "solution": {
     "name": "react-mega-menu-client-side-solution",
     "id": "466eb049-ab57-4a5d-ae51-0a8221cdb984",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [
@@ -11,7 +11,7 @@
         "title": "Application Extension - Deployment of custom action.",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "0582bd9b-5570-4698-8ac8-a2aee2801bad",
-        "version": "0.1.0",
+        "version": "0.1.4",
         "assets": {
           "elementManifests": [
             "elements.xml"
@@ -21,7 +21,25 @@
           ]
         }
       }
-    ]
+    ],
+    "developer": {
+      "name": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "websiteUrl": "",
+      "mpnId": "Undefined-1.15.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "react-mega-menu description"
+      },
+      "longDescription": {
+        "default": "react-mega-menu description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    }
   },
   "paths": {
     "zippedPackage": "solution/react-mega-menu.sppkg"
