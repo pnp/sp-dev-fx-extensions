@@ -1,4 +1,4 @@
-# AI Document Assitant
+# AI Document Assistant
 
 ## Summary
 
