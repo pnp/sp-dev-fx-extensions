@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <ClientSideComponentInstance
-        Title="PvaSso"
-        Location="ClientSideExtension.ApplicationCustomizer"
-        ComponentId="7c2dbe76-c0b8-46d2-a4a2-1b20e50b3df7"
-        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
-    </ClientSideComponentInstance>
-</Elements>
