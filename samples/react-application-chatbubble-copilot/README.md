@@ -2,7 +2,7 @@
 
 ## Summary
 
-This solution integrates a chatbot within SharePoint Online using a Tenant App Catalog and Azure AD App Registration. It provides a seamless way to enhance user engagement on SharePoint sites by embedding a customizable chatbot interface.
+This solution integrates a chatbot within SharePoint Online using a Tenant App Catalog and Azure AD App Registration. It provides a seamless way to enhance user engagement on SharePoint sites by embedding a customizable chatbot interface. You have a per site agent by createing it in a sharepoint list or a global one by adding json to TWE
 
 This is based on SharePointSSO
 
