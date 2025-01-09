@@ -12,7 +12,7 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "@fluentui/react": "^7.204.0",
+    "@fluentui/react": "8.106.4",
     "@microsoft/decorators": "1.20.0",
     "@microsoft/generator-sharepoint": "1.17.4",
     "@microsoft/sp-adaptive-card-extension-base": "1.20.0",
@@ -24,7 +24,6 @@
     "@pnp/spfx-controls-react": "3.17.0",
     "@types/react": "17.0.45",
     "@types/react-dom": "17.0.17",
-    "office-ui-fabric-react": "^7.204.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "tslib": "2.3.1"
