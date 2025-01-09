@@ -14,7 +14,7 @@
   "dependencies": {
     "@fluentui/react": "8.106.4",
     "@microsoft/decorators": "1.20.0",
-    "@microsoft/generator-sharepoint": "1.17.4",
+    "@microsoft/generator-sharepoint": "1.20.0",
     "@microsoft/sp-adaptive-card-extension-base": "1.20.0",
     "@microsoft/sp-core-library": "1.20.0",
     "@microsoft/sp-dialog": "1.20.0",
