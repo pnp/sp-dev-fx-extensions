@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "O365C.AIDocument.Assistant": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7122",
+      "launchBrowser": false
+    }
+  }
+}
