@@ -4,12 +4,12 @@ import styles from "./TranslationBar.module.scss";
 import { ITranslationBarProps } from "./ITranslationBarProps";
 import { ITranslationBarState } from "./ITranslationBarState";
 
-import { ActionButton } from "office-ui-fabric-react/lib/Button";
+import { ActionButton } from "@fluentui/react/lib/Button";
 import { ILanguage } from "../../models/ILanguage";
-import { IContextualMenuItem } from "office-ui-fabric-react/lib/ContextualMenu";
-import { Layer } from "office-ui-fabric-react/lib/Layer";
-import { MessageBar, MessageBarType } from "office-ui-fabric-react/lib/MessageBar";
-import { Overlay } from "office-ui-fabric-react/lib/Overlay";
+import { IContextualMenuItem } from "@fluentui/react/lib/ContextualMenu";
+import { Layer } from "@fluentui/react/lib/Layer";
+import { MessageBar, MessageBarType } from "@fluentui/react/lib/MessageBar";
+import { Overlay } from "@fluentui/react/lib/Overlay";
 import { IDetectedLanguage } from "../../models/IDetectedLanguage";
 
 import { sp } from "@pnp/sp";
@@ -241,7 +241,7 @@ export class TranslationBar extends React.Component<ITranslationBarProps, ITrans
       this.setState({ isTranslating: false, globalError: error.message });
     });
   }
-  private _translatePageTitle = async (title: string, languageCode): Promise<void> => {
+  private _translatePageTitle = async (title: string, languageCode : string): Promise<void> => {
     const translationResult: ITranslationResult = await this.props.translationService.translate(title, languageCode, false);
 
     // get the title element
