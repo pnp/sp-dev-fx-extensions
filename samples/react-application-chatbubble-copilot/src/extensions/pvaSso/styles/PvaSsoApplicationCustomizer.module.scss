@@ -1,0 +1,196 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+$modal-border-radius: 16px;
+$chat-button-size: 60px;
+$chat-background-color: var(--neutralLighterAlt);
+$chat-border-color: var(--neutralQuaternaryAlt);
+
+/* Global styles for Fluent UI modal overrides */
+:global {
+  .ms-Dialog-main {
+    border-radius: $modal-border-radius; /* Add rounded corners */
+    overflow: hidden;
+    max-width: 600px; /* Restrict modal width */
+    width: 90%; /* Responsive width */
+    max-height: 80vh; /* Restrict modal height */
+    height: auto; /* Allow content to dictate height */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  }
+
+  .ms-Dialog-content {
+    border-radius: $modal-border-radius; /* Inner content matching modal */
+    overflow: hidden; /* Prevent overflow */
+    background-color: $chat-background-color; /* Fluent light background */
+  }
+}
+
+/* Floating Chat Button */
+.modernChatContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure visibility */
+}
+
+.modernChatButton {
+  background-color: #0078d4;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: $chat-button-size;
+  height: $chat-button-size;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #005a9e; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge */
+  }
+
+  &:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+  }
+}
+
+.modernChatIcon {
+  font-size: 24px;
+}
+
+/* Chat Window */
+.modernChatWindow {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 400px;
+  max-width: 90%;
+  height: 60vh;
+  max-height: 80vh;
+  background-color: $chat-background-color;
+  border-radius: $modal-border-radius;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modernChatWindowVisible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Chatbot Modal */
+.chatbotModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  z-index: 1000;
+}
+
+/* Chatbot Container */
+.chatbotContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: $modal-border-radius;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background-color: var(--themePrimary);
+  color: white;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatCloseButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--neutralLighter);
+  }
+}
+
+/* Content Sections */
+.spinnerContainer,
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-color: $chat-background-color;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+
+  &.errorContainer {
+    color: var(--neutralDark); /* Error text color */
+  }
+}
+
+.webChatContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: white;
+  border-top: 1px solid $chat-border-color;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chatbotContainer {
+    width: 95%;
+    height: 80vh;
+  }
+
+  .header {
+    padding: 0.5rem;
+  }
+
+  .chatTitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbotContainer {
+    width: 100%;
+    height: 90vh;
+    border-radius: 0; /* Full-screen on mobile */
+  }
+
+  .header {
+    padding: 0.5rem;
+  }
+
+  .chatTitle {
+    font-size: 1rem;
+  }
+}
