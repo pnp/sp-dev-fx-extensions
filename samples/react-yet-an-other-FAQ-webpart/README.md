@@ -6,6 +6,7 @@ The Yet another FAQ Accordion Web Part is a modern solution for displaying frequ
 Long story short, idea behind this is it should contain everything you need an FAQ app.
 
 ![FAQ Web Part Preview](./assets/preview.png)
+![FAQ Web Part Settings](./assets/settings.png)
 
 
 ## Compatibility
