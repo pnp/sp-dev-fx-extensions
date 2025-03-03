@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://ejazhussain.sharepoint.com/sites/dev/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "8392b217-b5ca-41b6-87fe-bfbaf6e61982": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    },
+    "documentSummarizer": {
+      "pageUrl": "https://ejazhussain.sharepoint.com/sites/dev/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "8392b217-b5ca-41b6-87fe-bfbaf6e61982": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    }
+  }
+}
