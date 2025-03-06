@@ -1,0 +1,148 @@
+@import "~office-ui-fabric-react/dist/sass/References.scss";
+
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 576px;
+
+.richMediaContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.imageContainer {
+  max-width: 100%;
+  overflow: hidden;
+  margin: 5px 0;
+  
+  .alertImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    
+    @media (max-width: $breakpoint-mobile) {
+      max-height: 200px;
+      object-fit: cover;
+    }
+  }
+}
+
+.videoContainer {
+  max-width: 100%;
+  margin: 5px 0;
+  
+  .alertVideo {
+    max-width: 100%;
+    border-radius: 4px;
+    
+    @media (max-width: $breakpoint-mobile) {
+      max-height: 200px;
+    }
+  }
+}
+
+.htmlContainer {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px 0;
+  max-height: 300px;
+  overflow-y: auto;
+  
+  a {
+    color: inherit;
+    text-decoration: underline;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+    
+    th, td {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 5px;
+    }
+  }
+}
+
+.markdownContainer {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px 0;
+  max-height: 300px;
+  overflow-y: auto;
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    margin: 0.5em 0;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: underline;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  ul, ol {
+    margin: 0.5em 0;
+    padding-left: 20px;
+  }
+  
+  code {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  pre {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+    
+    code {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+  
+  blockquote {
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    margin: 0.5em 0;
+    padding-left: 10px;
+    font-style: italic;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  .htmlContainer, .markdownContainer {
+    direction: rtl;
+    text-align: right;
+    
+    blockquote {
+      border-left: none;
+      border-right: 3px solid rgba(255, 255, 255, 0.3);
+      padding-left: 0;
+      padding-right: 10px;
+    }
+    
+    ul, ol {
+      padding-left: 0;
+      padding-right: 20px;
+    }
+  }
+}

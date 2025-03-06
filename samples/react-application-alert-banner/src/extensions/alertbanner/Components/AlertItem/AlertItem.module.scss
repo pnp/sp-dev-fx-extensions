@@ -1,36 +1,114 @@
 @import "~office-ui-fabric-react/dist/sass/References.scss";
 
+// Variables
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 576px;
-$breakpoint-tablet-value: 768; // Numerical value for calculations
 $icon-color: #ffffff;
 $close-icon-color: #ffffff !important;
+$transition-duration: 0.25s;
+$border-radius: 4px;
+$box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+/* Global Dialog Styles */
+:global(.alertDialogModal) {
+  .ms-Dialog-main {
+    max-width: 600px;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+  
+  .ms-Dialog-header {
+    padding: 16px 24px !important;
+    margin: 0 !important;
+  }
+  
+  .ms-Dialog-title {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+  }
+  
+  .ms-Dialog-inner {
+    padding: 0 !important;
+  }
+  
+  .ms-Dialog-content {
+    padding: 0 !important;
+  }
+  
+  .ms-Dialog-subText {
+    display: none !important;
+  }
+  
+  .ms-Dialog-actions {
+    display: none !important;
+  }
+  
+  .ms-Dialog-closeButton {
+    color: inherit !important;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+  }
+}
 
 .alertItem {
   width: 100%;
+  transition: all $transition-duration ease;
+  margin-bottom: 8px;
+  
+  &:hover {
+    .actionSection {
+      opacity: 1;
+    }
+  }
 
   .container {
     display: flex;
-    align-items: center;
-    background-color: #f1f1f1; // Adjust as needed
-    padding-top: 5px;
+    align-items: flex-start;
+    padding: 12px 8px;
+    border-radius: $border-radius;
+    position: relative;
+    overflow: hidden;
+    transition: background-color $transition-duration ease;
 
     @media (max-width: $breakpoint-tablet) {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: stretch;
+    }
+  }
+  
+  .clickable {
+    cursor: pointer;
+    outline: none;
+    
+    &:hover {
+      filter: brightness(1.05);
+    }
+    
+    &:active {
+      filter: brightness(0.95);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 2px;
     }
   }
 
   .iconSection {
-    flex: 0 0 5%; // 5% width
+    flex: 0 0 3%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
 
     @media (max-width: $breakpoint-tablet) {
       flex: 0 0 auto;
       width: 100%;
       margin-bottom: 10px;
+      justify-content: flex-start;
     }
 
     .alertIcon {
@@ -44,25 +122,25 @@ $close-icon-color: #ffffff !important;
   }
 
   .textSection {
-    flex: 0 0 85%; // 85% width
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     min-width: 0; // Prevent overflow
-    padding: 0 10px;
+    padding: 0 5px;
 
     @media (max-width: $breakpoint-tablet) {
-      flex: 0 0 auto;
       width: 100%;
       padding: 0;
     }
 
     .alertTitle {
-      font-weight: bold;
-      margin-bottom: 5px;
+      font-weight: 600;
+      // margin-bottom: 8px;
+      font-size: 1.1rem;
+      line-height: 1.3;
 
       @media (max-width: $breakpoint-mobile) {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
       }
     }
 
@@ -70,32 +148,96 @@ $close-icon-color: #ffffff !important;
     .alertDescriptionExp {
       white-space: normal;
       overflow: visible;
+      transition: max-height $transition-duration ease, opacity $transition-duration ease;
+      line-height: 1.5;
+      font-size: 14px;
 
       @media (max-width: $breakpoint-mobile) {
-        font-size: 0.9rem;
+        font-size: 13px;
       }
+      
+      // Ensure proper HTML rendering
+      p {
+        margin: 0.5em 0;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      
+      a {
+        color: inherit;
+        text-decoration: underline;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      
+      ul, ol {
+        margin: 0.5em 0 0.5em 1.5em;
+        padding: 0;
+      }
+      
+      li {
+        margin-bottom: 0.25em;
+      }
+    }
+    
+    .truncatedHtml {
+      max-height: 3em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .alertDescription {
+      max-height: 2em;
+      overflow: hidden;
+    }
+
+    .alertDescriptionExp {
+      max-height: 500px;
     }
   }
 
   .actionSection {
-    flex: 0 0 5%; // 10% width
+    flex: 0 0 auto;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    opacity: 0.5;
+    opacity: 0.7;
+    transition: opacity $transition-duration ease;
 
     @media (max-width: $breakpoint-tablet) {
-      flex: 0 0 auto;
       width: 100%;
-      justify-content: flex-start;
+      justify-content: flex-end;
       margin-top: 10px;
+      opacity: 1;
     }
 
     .toggleButton,
-    .closeButton {
+    .closeButton,
+    .hideButton {
       background: transparent;
       color: $close-icon-color;
-      margin-left: 5px;
+      margin-left: 8px;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color $transition-duration ease;
+      font-size: 16px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
 
       i {
         color: $close-icon-color;
@@ -103,78 +245,300 @@ $close-icon-color: #ffffff !important;
     }
   }
 
-  .alertLink {
-    margin-top: 5px;
-
-    a {
-      color: $icon-color;
-      font-weight: bold;
+  // Improved Alert Links
+  .alertActionLink {
+    margin-top: 8px;
+    border-radius: $border-radius;
+    transition: background-color $transition-duration ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.25) !important; 
+    }
+    
+    &:active {
+      background-color: rgba(255, 255, 255, 0.35) !important;
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+      margin-top: 6px;
       font-size: 0.9rem;
+    }
+  }
+  
+  // Dialog Links
+  .dialogLink {
+    margin-top: 16px;
+    border-radius: $border-radius;
+    transition: background-color $transition-duration ease;
+    
+    &:hover {
+      background-color: rgba(0, 120, 212, 0.15) !important;
+    }
+    
+    &:active {
+      background-color: rgba(0, 120, 212, 0.25) !important;
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+      margin-top: 12px;
+    }
+  }
 
-      @media (max-width: $breakpoint-mobile) {
-        font-size: 0.9rem;
+  .quickActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    
+    .actionButton {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: $icon-color;
+      border: none;
+      padding: 5px 12px;
+      min-width: auto;
+      height: auto;
+      border-radius: $border-radius;
+      transition: background-color $transition-duration ease;
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      
+      .actionIcon {
+        margin-right: 6px;
+        font-size: 14px;
       }
     }
   }
 
-  .stackLink {
-    padding: 0;
-    flex-grow: 0;
-    flex-shrink: 1; // Allow shrinking to prevent overflow
-    overflow: hidden;
-    display: inline-block;
+  /* Priority specific styles */
+  .critical {
+    box-shadow: 0 0 10px rgba(232, 17, 35, 0.5);
+  }
 
+  .high {
+    border-left: 4px solid #EA4300;
+  }
+
+  .medium {
+    border-left: 4px solid #0078D4;
+  }
+
+  .low {
+    border-left: 4px solid #107C10;
+  }
+
+  /* Pinned class */
+  .pinned {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: $box-shadow;
+  }
+
+  /* Enhanced Dialog Content Styles */
+  .enhancedDialogContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Dialog content styles */
+  .dialogContent {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1;
+    color: #323130;
+    
+    // Ensure proper HTML rendering
+    p {
+      margin: 0.75em 0;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin: 1em 0 0.5em;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    
+    h1 {
+      font-size: 1.5em;
+    }
+    
+    h2 {
+      font-size: 1.3em;
+    }
+    
+    h3 {
+      font-size: 1.15em;
+    }
+    
+    a {
+      color: #0078d4;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    
+    ul, ol {
+      margin: 0.75em 0 0.75em 1.5em;
+      padding: 0;
+    }
+    
+    li {
+      margin-bottom: 0.35em;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    
+    pre, code {
+      font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      background-color: #f6f8fa;
+      border-radius: 3px;
+    }
+    
+    pre {
+      padding: 12px;
+      overflow: auto;
+      margin: 0.75em 0;
+    }
+    
+    code {
+      padding: 0.2em 0.4em;
+      margin: 0;
+      font-size: 85%;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 0.75em 0;
+      
+      th, td {
+        border: 1px solid #e1e1e1;
+        padding: 6px 12px;
+      }
+      
+      th {
+        background-color: #f8f8f8;
+        font-weight: 600;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f8f8f8;
+      }
+    }
+    
+    .dialogRichMedia {
+      margin: 20px 0;
+    }
+  }
+  
+  /* Dialog footer */
+  .dialogFooter {
+    padding: 16px 24px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .dialogCloseButton {
+      min-width: 80px;
+    }
+    
     @media (max-width: $breakpoint-mobile) {
-      display: block;
+      flex-direction: column-reverse;
+      gap: 16px;
+      
+      .dialogCloseButton {
+        width: 100%;
+      }
+    }
+  }
+  
+  /* Dialog quick actions */
+  .dialogQuickActions {
+    display: flex;
+    gap: 8px;
+    
+    .dialogActionButton {
+      min-width: auto;
+      height: auto;
+      padding: 6px 12px;
+      border-radius: $border-radius;
+      
+      @media (max-width: $breakpoint-mobile) {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
       width: 100%;
     }
   }
 
-  // Alert type styles
-  .actionable {
-    background-color: #f1c40f; // Yellow
-    color: #323130;
+  /* Animation for expanding/collapsing */
+  .alertDescriptionExp {
+    animation: expandDescription $transition-duration ease-out;
+  }
 
-    .alertIcon {
-      color: $icon-color;
+  @keyframes expandDescription {
+    from {
+      max-height: 3em;
+      opacity: 0.8;
     }
-
-    .alertLink a {
-      color: #323130;
-    }
-  }
-
-  .info {
-    background-color: #389899; // Teal
-    color: $icon-color;
-  }
-
-  .interruption {
-    background-color: #c54644; // Red
-    color: $icon-color;
-  }
-
-  .maintenance {
-    background-color: #afd6d6; // Light blue
-    color: $icon-color;
-  }
-
-  .warning {
-    background-color: #f1c40f; // Yellow
-    color: $icon-color;
-  }
-
-  // Hide elements on mobile
-  .hideInMobile {
-    @media (max-width: #{($breakpoint-tablet-value - 1)}px) {
-      display: none;
+    to {
+      max-height: 500px;
+      opacity: 1;
     }
   }
 
-  // Hide elements on desktop
-  .hideInDesktop {
-    @media (min-width: $breakpoint-tablet) {
-      display: none;
+  /* RTL Support */
+  [dir="rtl"] & {
+    .actionSection {
+      justify-content: flex-start;
+    }
+
+    .toggleButton,
+    .closeButton,
+    .hideButton {
+      margin-left: 0;
+      margin-right: 8px;
+    }
+
+    .high, .medium, .low {
+      border-left: none;
+      border-right: 4px solid;
+    }
+
+    .high {
+      border-right-color: #EA4300;
+    }
+
+    .medium {
+      border-right-color: #0078D4;
+    }
+
+    .low {
+      border-right-color: #107C10;
+    }
+    
+    .actionIcon {
+      margin-right: 0;
+      margin-left: 6px;
     }
   }
 }
