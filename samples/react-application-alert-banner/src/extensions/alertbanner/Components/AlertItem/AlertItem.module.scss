@@ -56,7 +56,6 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 .alertItem {
   width: 100%;
   transition: all $transition-duration ease;
-  margin-bottom: 8px;
   
   &:hover {
     .actionSection {
@@ -107,7 +106,6 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     @media (max-width: $breakpoint-tablet) {
       flex: 0 0 auto;
       width: 100%;
-      margin-bottom: 10px;
       justify-content: flex-start;
     }
 
@@ -287,7 +285,6 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   .quickActions {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
     margin-top: 16px;
     
     .actionButton {
@@ -460,7 +457,6 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     
     @media (max-width: $breakpoint-mobile) {
       flex-direction: column-reverse;
-      gap: 16px;
       
       .dialogCloseButton {
         width: 100%;

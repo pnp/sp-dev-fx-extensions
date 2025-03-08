@@ -1,5 +1,3 @@
-// IAlerts.types.ts with new features
-
 import { MSGraphClientV3 } from "@microsoft/sp-http";
 
 export enum AlertPriority {
@@ -16,25 +14,42 @@ export enum NotificationType {
   Both = "both"
 }
 
+// Interface for SharePoint Person field data
+export interface IPersonField {
+  id: string;          // User/Group ID
+  displayName: string; // Display name
+  email?: string;      // Email address (for users)
+  loginName?: string;  // Login name
+  isGroup: boolean;    // Whether this is a group or individual user
+}
+
+// Interface for targeting rules
+export interface ITargetingRule {
+  // Support for People fields
+  targetUsers?: IPersonField[]; // Individual users from People field
+  targetGroups?: IPersonField[]; // SharePoint groups from People field
+  
+  // Legacy targeting with string arrays
+  audiences?: string[]; 
+  
+  // Operation to apply
+  operation: "anyOf" | "allOf" | "noneOf";
+}
+
 export interface IAlertsBannerApplicationCustomizerProperties {
   alertTypesJson: string; // Property to hold the alert types JSON
   userTargetingEnabled: boolean; // Enable user targeting feature
   notificationsEnabled: boolean; // Enable notifications feature
   richMediaEnabled: boolean; // Enable rich media support
-  multiLanguageEnabled: boolean; // Enable multi-language support
 }
 
 export interface IAlertsProps {
   siteIds?: string[];
   graphClient: MSGraphClientV3;
   alertTypesJson: string; // Property to receive the alert types JSON
-  currentUser?: IUser; // Current user for targeting
-  supportedLanguages?: string[]; // Available languages
-  userLanguage?: string; // User's preferred language
   userTargetingEnabled?: boolean;
   notificationsEnabled?: boolean;
   richMediaEnabled?: boolean;
-  multiLanguageEnabled?: boolean;
 }
 
 export interface IAlertsState {
@@ -54,11 +69,6 @@ export interface IUser {
   jobTitle?: string;
   department?: string;
   userGroups?: string[];
-}
-
-export interface ITargetingRule {
-  audiences: string[]; // Departments, job titles, or group names
-  operation: "anyOf" | "allOf" | "noneOf"; // Logical operation to apply
 }
 
 export interface IAlertItem {
@@ -86,12 +96,6 @@ export interface IAlertRichMedia {
   altText?: string; // For accessibility
 }
 
-export interface IAlertTranslation {
-  title: string;
-  description: string;
-  linkDescription?: string;
-}
-
 export interface IQuickAction {
   label: string;
   actionType: "link" | "dismiss" | "acknowledge" | "custom";
@@ -107,11 +111,4 @@ export interface IAlertType {
   textColor: string;
   additionalStyles?: string;
   priorityStyles?: { [key in AlertPriority]?: string }; // Different styles based on priority
-}
-
-export interface IAlertPreferences {
-  expandedByDefault: boolean;
-  autoDismissAfter?: number; // In milliseconds, undefined means never auto-dismiss
-  showOnlyHighPriority: boolean;
-  preferredLanguage: string;
 }

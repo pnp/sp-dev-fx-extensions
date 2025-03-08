@@ -6,9 +6,10 @@ import {
   PlaceholderContent,
   PlaceholderName,
 } from "@microsoft/sp-application-base";
-import Alerts from "./Components/Alerts/Alerts";
-import { IAlertsBannerApplicationCustomizerProperties, IAlertsProps } from "./Components/Alerts/IAlerts";
+import { IAlertsBannerApplicationCustomizerProperties } from "./Components/Alerts/IAlerts";
 import { MSGraphClientV3 } from "@microsoft/sp-http";
+import { AlertsProvider } from "./Components/Context/AlertsContext";
+import Alerts from "./Components/Alerts/Alerts";
 
 export default class AlertsBannerApplicationCustomizer extends BaseApplicationCustomizer<IAlertsBannerApplicationCustomizerProperties> {
   private _topPlaceholderContent: PlaceholderContent | undefined;
@@ -92,7 +93,6 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
       this._customProperties.alertTypesJson = JSON.stringify(defaultAlertTypes);
     }
   
-    
     // Set defaults for any missing properties
     this._customProperties.userTargetingEnabled = 
       this._customProperties.userTargetingEnabled !== undefined ? 
@@ -145,7 +145,7 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
         this._topPlaceholderContent &&
         this._topPlaceholderContent.domElement
       ) {
-        // Try to get Graph client with version 3, but have better error handling
+        // Try to get Graph client with version 3, with error handling
         let msGraphClient: MSGraphClientV3;
         try {
           msGraphClient = await this.context.msGraphClientFactory.getClient("3") as MSGraphClientV3;
@@ -200,22 +200,28 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
         // Get alert types from our custom properties
         const alertTypesJsonString = this._customProperties.alertTypesJson || "[]";
 
-        // Create the Alerts React element with the necessary props
-        const alertsComponentElement: React.ReactElement<IAlertsProps> = React.createElement(
+        // Create the AlertsContext provider
+        const alertsComponent = React.createElement(
           Alerts,
           {
-            siteIds: siteIds, // Pass the array of site IDs
-            graphClient: msGraphClient, // Pass the Graph client to the Alerts component
-            alertTypesJson: alertTypesJsonString, // Pass the alert types JSON from properties
+            siteIds: siteIds,
+            graphClient: msGraphClient,
+            alertTypesJson: alertTypesJsonString,
             userTargetingEnabled: this._customProperties.userTargetingEnabled,
             notificationsEnabled: this._customProperties.notificationsEnabled,
             richMediaEnabled: this._customProperties.richMediaEnabled
           }
         );
 
-        // Render the Alerts component into the top placeholder's DOM element
+        // Wrap with the AlertsProvider
+        const alertsApp = React.createElement(
+          AlertsProvider, 
+          { children: alertsComponent }
+        );
+
+        // Render with error handling
         ReactDOM.render(
-          alertsComponentElement,
+          alertsApp,
           this._topPlaceholderContent.domElement
         );
       }

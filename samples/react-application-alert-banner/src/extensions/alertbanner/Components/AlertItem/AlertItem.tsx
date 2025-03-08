@@ -16,7 +16,7 @@ import {
   FontWeights,
   ActionButton,
   IButtonStyles
-} from "office-ui-fabric-react";
+} from "@fluentui/react";
 import classNames from "classnames";
 import {
   IAlertItem,

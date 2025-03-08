@@ -1,13 +1,14 @@
 import * as React from "react";
-import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
-import { MessageBar, MessageBarType } from "office-ui-fabric-react/lib/MessageBar";
+import { Spinner, SpinnerSize,MessageBar, MessageBarType } from "@fluentui/react";
 import styles from "./Alerts.module.scss";
 import { 
   IAlertsProps, 
   IAlertsState, 
   IAlertItem, 
   IAlertType,
-  AlertPriority
+  AlertPriority,
+  ITargetingRule,
+  IPersonField
 } from "./IAlerts";
 import AlertItem from "../AlertItem/AlertItem";
 import NotificationService from "../Services/NotificationService";
@@ -167,79 +168,162 @@ class Alerts extends React.Component<IAlertsProps, IAlertsState> {
     }
   }
 
-  private async _fetchAlerts(siteId: string): Promise<IAlertItem[]> {
-    const dateTimeNow = new Date().toISOString();
-    const filterQuery = `fields/StartDateTime le '${dateTimeNow}' and fields/EndDateTime ge '${dateTimeNow}'`;
+// Update these methods in your existing Alerts.tsx file
 
+private async _fetchAlerts(siteId: string): Promise<IAlertItem[]> {
+  const dateTimeNow = new Date().toISOString();
+  const filterQuery = `fields/StartDateTime le '${dateTimeNow}' and fields/EndDateTime ge '${dateTimeNow}'`;
+
+  try {
+    // Updated to include TargetUsers and TargetGroups fields
+    const response = await this.props.graphClient
+      .api(`/sites/${siteId}/lists/${Alerts.LIST_TITLE}/items`)
+      .header("Prefer", "HonorNonIndexedQueriesWarningMayFailRandomly")
+      .expand("fields($select=Title,AlertType,Description,Link,StartDateTime,EndDateTime,Priority,IsPinned,TargetingRules,TargetUsers,TargetGroups,TargetingOperation,NotificationType,RichMedia,QuickActions,CreatedDateTime,CreatedBy)")
+      .filter(filterQuery)
+      .orderby("fields/StartDateTime desc")
+      .get();
+
+    return response.value.map((item: any) => this._mapSharePointItemToAlert(item));
+  } catch (error) {
+    console.error(`Error fetching alerts from site ${siteId}:`, error);
+    return [];
+  }
+}
+
+// Map SharePoint list item to our alert model
+private _mapSharePointItemToAlert(item: any): IAlertItem {
+  const createdBy = item.fields.CreatedBy ? 
+    item.fields.CreatedBy.LookupValue || "Unknown" : 
+    "Unknown";
+
+  let priority = AlertPriority.Medium; // Default
+  if (item.fields.Priority) {
     try {
-      const response = await this.props.graphClient
-        .api(`/sites/${siteId}/lists/${Alerts.LIST_TITLE}/items`)
-        .header("Prefer", "HonorNonIndexedQueriesWarningMayFailRandomly")
-        .expand("fields($select=Title,AlertType,Description,Link,StartDateTime,EndDateTime,Priority,IsPinned,TargetingRules,NotificationType,RichMedia,CreatedDateTime,CreatedBy)")
-        .filter(filterQuery)
-        .orderby("fields/StartDateTime desc")
-        .get();
-
-      return response.value.map((item: any) => this._mapSharePointItemToAlert(item));
-    } catch (error) {
-      console.error(`Error fetching alerts from site ${siteId}:`, error);
-      return [];
+      priority = AlertPriority[item.fields.Priority as keyof typeof AlertPriority];
+    } catch {
+      priority = AlertPriority.Medium;
     }
   }
 
-  // Map SharePoint list item to our alert model
-  private _mapSharePointItemToAlert(item: any): IAlertItem {
-    const createdBy = item.fields.CreatedBy ? 
-      item.fields.CreatedBy.LookupValue || "Unknown" : 
-      "Unknown";
+  // Parse JSON fields
+  let targetingRules = undefined;
+  let richMedia = undefined;
+  let quickActions = undefined;
 
-    let priority = AlertPriority.Medium; // Default
-    if (item.fields.Priority) {
-      try {
-        priority = AlertPriority[item.fields.Priority as keyof typeof AlertPriority];
-      } catch {
-        priority = AlertPriority.Medium;
-      }
+  try {
+    // First try to parse the JSON TargetingRules field (legacy format)
+    if (item.fields.TargetingRules) {
+      targetingRules = JSON.parse(item.fields.TargetingRules);
+    }
+    // If either People field is present, create targeting rules using them
+    else if (item.fields.TargetUsers || item.fields.TargetGroups) {
+      targetingRules = this._createTargetingRulesFromPeopleFields(
+        item.fields.TargetUsers,
+        item.fields.TargetGroups,
+        item.fields.TargetingOperation || "anyOf" // Default to anyOf if not specified
+      );
     }
 
-    // Parse JSON fields
-    let targetingRules = undefined;
-    let richMedia = undefined;
-    let quickActions = undefined;
-
-    try {
-      if (item.fields.TargetingRules) {
-        targetingRules = JSON.parse(item.fields.TargetingRules);
-      }
-      if (item.fields.RichMedia) {
-        richMedia = JSON.parse(item.fields.RichMedia);
-      }
-      if (item.fields.QuickActions) {
-        quickActions = JSON.parse(item.fields.QuickActions);
-      }
-    } catch (error) {
-      console.warn("Error parsing JSON fields for alert:", item.id, error);
+    if (item.fields.RichMedia) {
+      richMedia = JSON.parse(item.fields.RichMedia);
     }
+    if (item.fields.QuickActions) {
+      quickActions = JSON.parse(item.fields.QuickActions);
+    }
+  } catch (error) {
+    console.warn("Error parsing JSON fields for alert:", item.id, error);
+  }
 
+  return {
+    Id: parseInt(item.id, 10),
+    title: item.fields.Title || "",
+    description: item.fields.Description || "",
+    AlertType: item.fields.AlertType || "Default",
+    priority: priority,
+    isPinned: item.fields.IsPinned || false,
+    targetingRules: targetingRules,
+    notificationType: item.fields.NotificationType || "none",
+    richMedia: richMedia,
+    link: item.fields.Link ? {
+      Url: item.fields.Link.Url || "",
+      Description: item.fields.Link.Description || "Learn More"
+    } : undefined,
+    quickActions: quickActions,
+    createdDate: item.fields.CreatedDateTime || "",
+    createdBy: createdBy
+  };
+}
+
+// Helper method to create targeting rules from SharePoint People fields
+private _createTargetingRulesFromPeopleFields(
+  targetUsers: any,
+  targetGroups: any,
+  operation: "anyOf" | "allOf" | "noneOf"
+): ITargetingRule[] {
+  const rule: ITargetingRule = {
+    operation: operation
+  };
+
+  // Process target users (individual people)
+  if (targetUsers) {
+    // Handle array of users
+    if (Array.isArray(targetUsers)) {
+      rule.targetUsers = targetUsers.map(user => this._mapPersonFieldData(user, false));
+    } 
+    // Handle single user
+    else {
+      rule.targetUsers = [this._mapPersonFieldData(targetUsers, false)];
+    }
+  }
+
+  // Process target groups
+  if (targetGroups) {
+    // Handle array of groups
+    if (Array.isArray(targetGroups)) {
+      rule.targetGroups = targetGroups.map(group => this._mapPersonFieldData(group, true));
+    } 
+    // Handle single group
+    else {
+      rule.targetGroups = [this._mapPersonFieldData(targetGroups, true)];
+    }
+  }
+
+  // Return as an array of rules (for now just one rule)
+  return [rule];
+}
+
+// Helper to map SharePoint Person field data to our IPersonField interface
+private _mapPersonFieldData(personField: any, isGroup: boolean): IPersonField {
+  // Try to handle both classic Person field format and Graph-like format
+  
+  if (personField.LookupId && personField.LookupValue) {
     return {
-      Id: parseInt(item.id, 10),
-      title: item.fields.Title || "",
-      description: item.fields.Description || "",
-      AlertType: item.fields.AlertType || "Default",
-      priority: priority,
-      isPinned: item.fields.IsPinned || false,
-      targetingRules: targetingRules,
-      notificationType: item.fields.NotificationType || "none",
-      richMedia: richMedia,
-      link: item.fields.Link ? {
-        Url: item.fields.Link.Url || "",
-        Description: item.fields.Link.Description || "Learn More"
-      } : undefined,
-      quickActions: quickActions,
-      createdDate: item.fields.CreatedDateTime || "",
-      createdBy: createdBy
+      id: personField.LookupId,
+      displayName: personField.LookupValue,
+      isGroup: isGroup
     };
   }
+  
+  if (personField.ID || personField.id) {
+    return {
+      id: personField.ID || personField.id,
+      displayName: personField.Title || personField.displayName,
+      email: personField.EMail || personField.email,
+      loginName: personField.Name || personField.loginName,
+      isGroup: isGroup
+    };
+  }
+  
+  return {
+    id: personField.id || "",
+    displayName: personField.displayName || personField.title || "",
+    email: personField.email || personField.mail || "",
+    loginName: personField.loginName || personField.userPrincipalName || "",
+    isGroup: isGroup
+  };
+}
+
 
   private _sortAlertsByPriority(alerts: IAlertItem[]): IAlertItem[] {
     const priorityOrder: { [key in AlertPriority]: number } = {

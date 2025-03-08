@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IAlertRichMedia } from "../Alerts/IAlerts";
-import { Text } from "office-ui-fabric-react/lib/Text";
+import { Text } from "@fluentui/react";
 import { marked } from "marked";
 import styles from "./RichMediaAlert.module.scss";
 
