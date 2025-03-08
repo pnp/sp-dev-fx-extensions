@@ -1,0 +1,75 @@
+<List xmlns:ows="Microsoft SharePoint"
+      Title="List Schema"
+      Name="ListSchema"
+      Direction="$Resources:Direction;"
+      Url="Lists/ListSchema"
+      BaseType="0"
+      EnableContentTypes="FALSE"
+      FolderCreation="FALSE"
+      VersioningEnabled="FALSE"
+      DisableAttachments="TRUE"
+      xmlns="http://schemas.microsoft.com/sharepoint/"
+      RootWebOnly="FALSE">
+  <MetaData>
+    <ContentTypes>
+    <ContentType ID="0x0100d98ec6bd89534e598115ef0bcf6aed4b"
+      Name="Alert">
+        <FieldRefs>
+          <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
+          <!-- Custom Field refs -->
+          <FieldRef ID="{a0f13f11-da45-4ad2-a62d-24d0ba05c88f}" Name="Description" />
+          <FieldRef ID="{ef3702e0-1f86-43df-84bd-b60465b71214}" Name="AlertType" />
+          <FieldRef ID="{fc28694b-a92b-422d-96e9-63fb2d4a8617}" Name="Link" />
+          <FieldRef ID="{70dc2ff6-28ba-452e-84a5-ccbbd2e855cb}" Name="StartDateTime" />
+          <FieldRef ID="{7f50a89a-5101-40b5-b978-c70124358c1a}" Name="EndDateTime" />
+        </FieldRefs>
+      </ContentType>
+    </ContentTypes>
+    <Fields>
+      <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Title" Required="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" FromBaseType="TRUE" ColName="nvarchar1" />
+      <!--Custom fields -->
+      <Field AppendOnly="FALSE" DisplayName="Description" Format="Dropdown" IsolateStyles="FALSE" Name="Description" NumLines="6" RichText="TRUE" RichTextMode="Compatible" Title="Description" Type="Note" ID="{a0f13f11-da45-4ad2-a62d-24d0ba05c88f}" SourceID="{1c92b8bd-d888-46d8-8184-75f09b737015}" StaticName="Description" ColName="ntext2" RowOrdinal="0" Required="TRUE" />
+      <Field DisplayName="Alert Type" FillInChoice="FALSE" Format="Dropdown" Name="AlertType" Title="AlertType" Type="Choice" ID="{ef3702e0-1f86-43df-84bd-b60465b71214}" SourceID="{1c92b8bd-d888-46d8-8184-75f09b737015}" StaticName="AlertType" ColName="nvarchar4" RowOrdinal="0" Required="TRUE"><CHOICES><CHOICE>Interruption</CHOICE><CHOICE>Warning</CHOICE><CHOICE>Info</CHOICE></CHOICES><Default>Maintenance</Default></Field>
+      <Field DisplayName="Link" Format="Hyperlink" Name="Link" Title="Link" Type="URL" ID="{fc28694b-a92b-422d-96e9-63fb2d4a8617}" SourceID="{1c92b8bd-d888-46d8-8184-75f09b737015}" StaticName="Link" ColName="nvarchar5" RowOrdinal="0" ColName2="nvarchar6" RowOrdinal2="0" Required="TRUE" />
+      <Field DisplayName="Start Date/Time" FriendlyDisplayFormat="Disabled" Format="DateTime" Name="StartDateTime" Title="StartDateTime" Type="DateTime" ID="{70dc2ff6-28ba-452e-84a5-ccbbd2e855cb}" SourceID="{1c92b8bd-d888-46d8-8184-75f09b737015}" StaticName="StartDateTime" ColName="datetime1" RowOrdinal="0" CustomFormatter="" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" CalType="0" Version="1"><Default><Today /></Default></Field>
+      <Field DisplayName="End Date/Time" FriendlyDisplayFormat="Disabled" Format="DateTime" Name="EndDateTime" Title="EndDateTime" Type="DateTime" ID="{7f50a89a-5101-40b5-b978-c70124358c1a}" SourceID="{1c92b8bd-d888-46d8-8184-75f09b737015}" StaticName="EndDateTime" ColName="datetime2" RowOrdinal="0" CustomFormatter="" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" CalType="0" Version="1"><Default /></Field>
+    </Fields>
+    <Views>
+      <View BaseViewID="1"
+            Type="HTML"
+            WebPartZoneID="Main"
+            DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;"
+            DefaultView="TRUE"
+            MobileView="TRUE"
+            MobileDefaultView="TRUE"
+            SetupPath="pages\viewpage.aspx"
+            ImageUrl="/_layouts/images/generic.png"
+            Url="AllItems.aspx">
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <Toolbar Type="Standard" />
+        <ViewFields>
+          <!-- Name is the InternalName -->
+          <FieldRef Name="Title"></FieldRef>
+          <!-- Custom field refs-->
+          <FieldRef Name="Description" ></FieldRef>
+          <FieldRef Name="AlertType" ></FieldRef>
+          <FieldRef Name="Link" ></FieldRef>
+          <FieldRef Name="StartDateTime" ></FieldRef>
+          <FieldRef Name="EndDateTime" ></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="ID" />
+          </OrderBy>
+        </Query>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>
