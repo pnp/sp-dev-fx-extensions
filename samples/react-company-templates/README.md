@@ -72,6 +72,8 @@ For more information about SPFx compatibility, please refer to <https://aka.ms/s
 
 - [Tobias Maestrini](https://github.com/tmaestrini)
 - [Dan Toft](https://github.com/Tanddant) (👀 Code reviews)
+- [Nicolas Kheirlalah](https://github.com/nicolaskheirallah)
+
 
 ## Version history
 
