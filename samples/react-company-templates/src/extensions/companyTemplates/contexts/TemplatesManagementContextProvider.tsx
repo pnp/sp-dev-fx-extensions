@@ -4,21 +4,33 @@ import { TemplateFile, useTemplateFiles } from "../../../hooks/useTemplateFiles"
 import { SPFxContext } from "./SPFxContext";
 import { SPFx, spfi } from '@pnp/sp';
 import { IFile } from "@pnp/sp/files";
+import { TemplatePreview } from "../components/TemplatePreview";
+import { ITreeItem } from "@pnp/spfx-controls-react/lib/TreeView";
+import { IAdvancedFilters } from "../components/EnhancedFilter";
 
 type TemplatesManagementContextProviderProps = {}
 
 export const TemplatesManagementContextProvider: React.FC<TemplatesManagementContextProviderProps> = (props: React.PropsWithChildren<TemplatesManagementContextProviderProps>) => {
   const context = React.useContext(SPFxContext).context;
-  const { templateFiles, templateFilesByCategory, loading, initWithListParams } = useTemplateFiles({ listId: undefined, webUrl: undefined });
+  const { templateFiles, templateFilesByCategory, loading, initWithListParams, reloadTemplates } = useTemplateFiles({ listId: undefined, webUrl: undefined });
   const [selectedTemplateFiles, setSelectedTemplateFiles] = React.useState<TemplateFile[]>([]);
   const [filterTemplateValue, setTemplateValueFilter] = React.useState('');
   const [filterTemplateCategories, setTemplateCategoriesFilter] = React.useState([]);
+  const [advancedFilters, setAdvancedFilters] = React.useState<IAdvancedFilters>({});
   const [copiedFiles, setCopied] = React.useState<{ files: IFile[], success: boolean, message: string }>(undefined);
   const [isCopyingFiles, setIsCopyingFiles] = React.useState<boolean>(false);
+  const [viewMode, setViewMode] = React.useState<'list' | 'grid'>('list');
+  
+  // New state for preview functionality
+  const [previewFile, setPreviewFile] = React.useState<TemplateFile | null>(null);
+  const [isPreviewOpen, setIsPreviewOpen] = React.useState<boolean>(false);
 
-  const addTemplateFilesToSelection = (files: any[]): void => {
+  // Fixed: Convert ITreeItem array to TemplateFile array
+  const addTemplateFilesToSelection = (files: ITreeItem[]): void => {
+    // Map the tree items to template files, extracting the data property
+    const templateFiles = files.map(item => item.data as TemplateFile).filter(Boolean);
     setSelectedTemplateFiles([]);
-    setSelectedTemplateFiles(files);
+    setSelectedTemplateFiles(templateFiles);
   }
 
   const filterTemplateByValue = (value: string): void => {
@@ -31,6 +43,10 @@ export const TemplatesManagementContextProvider: React.FC<TemplatesManagementCon
     setTemplateCategoriesFilter(categories);
   }
 
+  const updateAdvancedFilters = (filters: IAdvancedFilters): void => {
+    setAdvancedFilters(filters);
+  }
+
   const startCopyProcess = (): void => {
     setIsCopyingFiles(true);
   }
@@ -41,6 +57,18 @@ export const TemplatesManagementContextProvider: React.FC<TemplatesManagementCon
     setSelectedTemplateFiles([]);
     setIsCopyingFiles(false);
   }
+  
+  // Preview functionality
+  const previewTemplate = (file: TemplateFile): void => {
+    setPreviewFile(file);
+    setIsPreviewOpen(true);
+  };
+  
+  // Handle preview panel dismiss
+  const handlePreviewDismiss = (): void => {
+    setIsPreviewOpen(false);
+    setPreviewFile(null);
+  };
 
   async function initSourceList(): Promise<void> {
     const sp = spfi().using(SPFx(context));
@@ -60,12 +88,32 @@ export const TemplatesManagementContextProvider: React.FC<TemplatesManagementCon
   }, []);
 
   return <TemplatesManagementContext.Provider value={{
-    templateFiles, templateFilesByCategory, loading,
-    selectedFiles: selectedTemplateFiles, checkoutFiles: addTemplateFilesToSelection,
-    templateFilter: { value: filterTemplateValue, categories: filterTemplateCategories }, setTemplateValueFilter: filterTemplateByValue,
+    templateFiles, 
+    templateFilesByCategory, 
+    loading,
+    selectedFiles: selectedTemplateFiles, 
+    checkoutFiles: addTemplateFilesToSelection,
+    templateFilter: { value: filterTemplateValue, categories: filterTemplateCategories }, 
+    setTemplateValueFilter: filterTemplateByValue,
     setTemplateCategoriesFilter: filterTemplateByCatgegories,
-    copiedFiles, setCopiedFiles, startCopyProcess, isCopyingFiles
+    advancedFilters,
+    setAdvancedFilters: updateAdvancedFilters,
+    copiedFiles, 
+    setCopiedFiles, 
+    startCopyProcess, 
+    isCopyingFiles,
+    previewTemplate,
+    refreshTemplates: reloadTemplates,
+    viewMode,
+    setViewMode
   }}>
     {props.children}
+    {previewFile && (
+      <TemplatePreview 
+        file={previewFile} 
+        isOpen={isPreviewOpen} 
+        onDismiss={handlePreviewDismiss} 
+      />
+    )}
   </TemplatesManagementContext.Provider>
 }
