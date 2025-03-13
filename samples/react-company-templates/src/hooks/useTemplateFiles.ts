@@ -13,7 +13,6 @@ export type TemplateFile = {
   pathSegments: string[];
   modified: Date;
   categories?: string[];
-  // Add the new properties
   serverRelativeUrl?: string;
   size?: number;
   version?: string;

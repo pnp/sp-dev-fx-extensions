@@ -4,14 +4,12 @@ import { TemplateFile } from "../../../hooks/useTemplateFiles";
 import styles from './CompanyTemplates.module.scss'; 
 import { getFileTypeIconProps } from '@fluentui/react-file-type-icons';
 
-// Properly define the props interface, don't use {}
 export interface ITemplatePreviewProps {
   file: TemplateFile;
   isOpen: boolean;
   onDismiss: () => void;
 }
 
-// Use React.FC with the props interface, don't use PropsWithChildren<{}>
 export const TemplatePreview: React.FC<ITemplatePreviewProps> = (props) => {
   const { file, isOpen, onDismiss } = props;
   const [previewContent, setPreviewContent] = React.useState<string | null>(null);
