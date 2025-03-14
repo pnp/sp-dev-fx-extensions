@@ -2,7 +2,7 @@
 
 ## Summary
 
-This solution integrates a chatbot within SharePoint Online using a Tenant App Catalog and Azure AD App Registration. It provides a seamless way to enhance user engagement on SharePoint sites by embedding a customizable chatbot interface. You have a per site agent by createing it in a sharepoint list or a global one by adding json to TWE
+This solution integrates a chatbot within SharePoint Online using a Tenant App Catalog and Azure AD App Registration. It provides a seamless way to enhance user engagement on SharePoint sites by embedding a customizable chatbot interface. You have a per site agent by creating it in a SharePoint list or a global one by adding json to TWE
 
 This is based on SharePointSSO
 
@@ -43,7 +43,6 @@ This is based on SharePointSSO
 
 ![Token Exchange URL Configuration](images/toeknExchangeURL.png)
 
----
 
 ## Technologies Used
 
@@ -53,22 +52,25 @@ This is based on SharePointSSO
 - **Microsoft Graph API**
 - **SCSS for Styling**
 
----
 
 ## Compatibility
 
-| Environment                     | Supported |
-|---------------------------------|-----------|
-| SharePoint Online               | Yes       |
-| SharePoint Server 2019          | No        |
-| SharePoint Server 2016          | No        |
-| Node.js v18                     | Yes       |
-| Local Workbench                 | No        |
-| Hosted Workbench                | Yes       |
+| :warning: Important          |
+|:---------------------------|
+| Every SPFx version is optimally compatible with specific versions of Node.js. In order to be able to build this sample, you need to ensure that the version of Node on your workstation matches one of the versions listed in this section. This sample will not work on a different version of Node.|
+|Refer to <https://aka.ms/spfx-matrix> for more information on SPFx compatibility.   |
 
-Refer to [SPFx Compatibility Matrix](https://aka.ms/spfx-matrix) for detailed information.
+This sample is optimally compatible with the following environment configuration:
 
----
+![SPFx 1.20.2](https://img.shields.io/badge/SPFx-1.20.2-green.svg)
+![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
+![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
+![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
+![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
+![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
+![Compatible with Remote Containers](https://img.shields.io/badge/Remote%20Containers-Compatible-green.svg)
+
 
 ## Prerequisites
 
@@ -173,7 +175,6 @@ If the configuration list is not available, update the fallback JSON file with t
 2. Confirm the chatbot toggle button appears.
 3. Click the button to test the chatbot functionality.
 
----
 
 ## Troubleshooting
 
@@ -194,23 +195,34 @@ If the configuration list is not available, update the fallback JSON file with t
 - Review Azure Portal logs for authentication errors.
 - Verify SPFx configuration in `elements.xml`.
 
----
-## Solution
+## Contributors
 
-Solution|Author(s)
---------|---------
-Chatbubble-copilot-extension | Nicolas Kheirallah
+- [Nicolas Kheirallah](https://github.com/NicolasKheirallah)
 
----
+
 ## Version History
 
 | Version | Date       | Comments        |
 |---------|------------|-----------------|
 | 1.0     | Jan 8, 2025 | Initial Release |
 
----
-
 ## Disclaimer
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+## Help
+
+We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+You can try looking at [issues related to this sample](https://github.com/pnp/sp-dev-fx-extensions/issues?q=label%3Areact-application-chatbubble-copilot) to see if anybody else is having the same issues.
+
+You can also try looking at [discussions related to this sample](https://github.com/pnp/sp-dev-fx-extensions/discussions?discussions_q=label%3Areact-application-chatbubble-copilot) and see what the community is saying.
+
+If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=bug-report.yml&sample=react-application-chatbubble-copilot&authors=@NicolasKheirallah&title=react-application-chatbubble-copilot%20-%20).
+
+For questions regarding this sample, [create a new question](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=question.yml&sample=react-application-chatbubble-copilot&authors=@NicolasKheirallah&title=react-application-chatbubble-copilot%20-%20).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-chatbubble-copilot&authors=@NicolasKheirallah&title=react-application-chatbubble-copilot%20-%20).
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-chatbubble-copilot" />
 
