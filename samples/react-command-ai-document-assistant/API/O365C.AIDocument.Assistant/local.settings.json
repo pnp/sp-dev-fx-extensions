@@ -1,0 +1,16 @@
+{
+  "Host": {
+    "LocalHttpPort": 4321,
+    "CORS": "https://tenant.sharepoint.com"
+  },
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "AzureAd:ClientId": "xxxx",
+    "AzureAd:ClientSecret": "xxxx",
+    "AzureAd:TenantId": "xxxx",
+    "AzureOpenAI:APIKey": "xxxx",
+    "AzureOpenAI:Endpoint": "https://api.openai.com"
+  }
+}
