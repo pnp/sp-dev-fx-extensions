@@ -18,7 +18,7 @@ The app integrates seamlessly with Azure Functions to handle backend processing,
 
 ## DEMO
 
-![Document Assitant Architecture](./assets/architecture.png)
+![Document Assistant Architecture](./assets/architecture.png)
 
 
 
@@ -33,9 +33,9 @@ The app integrates seamlessly with Azure Functions to handle backend processing,
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
-Solution|Author(s)
---------|---------
-React Document Reporting Field Customizer | Ejaz Hussain ([Office 355 Clinic](https://www.office365clinic.com/), [GitHub](https://github.com/ejazhussain))
+## Contributors
+
+- [Ejaz Hussain](https://github.com/ejazhussain)
 
 ## Version history
 

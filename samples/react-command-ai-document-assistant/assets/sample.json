@@ -1,12 +1,12 @@
 [
   {
-    "name": "pnp-sp-dev-spfx-extensions-react-YOUR-SOLUTION-NAME-GOES-HERE",
+    "name": "pnp-sp-dev-spfx-extensions-YOUR-SOLUTION-NAME-GOES-HERE",
     "source": "pnp",
-    "title": "TODO: TITLE-GOES-HERE",
-    "shortDescription": "DESCRIPTION-GOES-HERE",
+    "title": "AI Document Assistant",
+    "shortDescription": "The AI Document Assistant is a SharePoint Framework (SPFx) Command Set extension designed to enhance document interactions in SharePoint Online. This intelligent assistant leverages the OpenAI Assistant API to allow users to ask questions about selected documents directly within a chat interface.",
     "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
     "longDescription": [
-      "TODO: LONG-DESCRIPTION-GOES-HERE"
+      "The AI Document Assistant is a SharePoint Framework (SPFx) Command Set extension designed to enhance document interactions in SharePoint Online. This intelligent assistant leverages the OpenAI Assistant API to allow users to ask questions about selected documents directly within a chat interface."
     ],
     "creationDateTime": "2023-12-25",
     "updateDateTime": "2023-12-31",
@@ -20,30 +20,27 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.16.1"
+        "value": "1.20.0"
       }
     ],
-"tags": [],
+    "tags": [],
     "categories": [
-      /* SELECT THE RIGHT ONE 
-            SPFX-COMMAND-EXTENSION,SPFX-FIELD-EXTENSION,SPFX-APPLICATION-EXTENSION
-      */
       "SPFX-APPLICATION-EXTENSION"
-   
     ],
     "thumbnails": [
       {
+        "name": "architecture.png",
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/YOUR-SOLUTION-NAME-GOES-HERE/assets/preview.gif",
-        "alt": "Preview"
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-command-ai-document-assistant/assets/architecture.png",
+        "alt": "Web Part Preview"
       }
     ],
     "authors": [
       {
-        "gitHubAccount": "TODO: YOUR-GITHUB-USERNAME",
-        "pictureUrl": "https://github.com/TODO:YOUR-GITHUB-USERNAME.png",
-        "name": "TODO: YOUR-DISPLAY-NAME"
+        "gitHubAccount": "https://github.com/ejazhussain",
+        "pictureUrl": "https://github.com/ejazhussain.png",
+        "name": "Ejaz Hussain"
       }
     ],
     "references": [

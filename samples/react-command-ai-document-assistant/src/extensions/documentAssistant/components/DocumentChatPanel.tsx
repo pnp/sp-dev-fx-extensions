@@ -128,10 +128,12 @@ export const DocumentChatPanel: React.FC<IDocumentChatProps> = (props) => {
                 <Input
                     className='rce-example-input'
                     referance={inputReferance}
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     clear={(clear:(any)) => (clearRef = clear)}
                     defaultValue=''
                     onChange={handleQuestionChange}
                     placeholder="Ask a question..."
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     onKeyPress={(e: any) => {
                         if (e.shiftKey && e.charCode === 13) {
                             return true
