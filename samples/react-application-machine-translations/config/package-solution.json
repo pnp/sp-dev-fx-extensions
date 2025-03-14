@@ -14,6 +14,17 @@
       "termsOfUseUrl": "",
       "mpnId": ""
     },
+    "metadata": {
+      "shortDescription": {
+        "default": "machine-translation-extension description"
+      },
+      "longDescription": {
+        "default": "machine-translation-extension description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",
