@@ -24,9 +24,23 @@ Special thanks to Thomas Daly for the initial foundation!
 - **Accessibility Features**: Built with keyboard navigation, screen reader support, and WCAG compliance
 - **Caching & Performance Optimization**: Smart caching and rendering strategies for optimal performance
 
-## Used SharePoint Framework Version
+## Compatibility
 
-![SPFx 1.20](https://img.shields.io/badge/version-1.20.0-green.svg)
+| :warning: Important          |
+|:---------------------------|
+| Every SPFx version is optimally compatible with specific versions of Node.js. In order to be able to build this sample, you need to ensure that the version of Node on your workstation matches one of the versions listed in this section. This sample will not work on a different version of Node.|
+|Refer to <https://aka.ms/spfx-matrix> for more information on SPFx compatibility.   |
+
+This sample is optimally compatible with the following environment configuration:
+
+![SPFx 1.20.2](https://img.shields.io/badge/SPFx-1.20.2-green.svg)
+![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
+![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
+![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
+![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
+![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
+![Compatible with Remote Containers](https://img.shields.io/badge/Remote%20Containers-Compatible-green.svg)
 
 ## Applies to
 
@@ -43,11 +57,9 @@ Special thanks to Thomas Daly for the initial foundation!
 - SharePoint Online site collection with appropriate permissions
 - Access to configure the tenant App Catalog
 
-## Solution
+## Contributors
 
-| Solution     | Author(s)                                         |
-| ------------ | ------------------------------------------------- |
-| alert-banner | [Nicolas Kheirallah](https://github.com/nicolasKheirallah) |
+- [Nicolas Kheirallah](https://github.com/nicolasKheirallah)
 
 ## Version History
 
@@ -58,12 +70,6 @@ Special thanks to Thomas Daly for the initial foundation!
 | 1.2     | October 11, 2024| Added dynamic alert types, added support for homesite, hubsite and local site |
 | 1.1     | August 17, 2024 | Added caching and session management for alerts |
 | 1.0     | July 15, 2024   | Initial release                                 |
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
 
 ## Minimal Path to Awesome
 
@@ -294,5 +300,9 @@ The extension can be configured through these properties:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp)
 - [FluentUI React Components](https://developer.microsoft.com/en-us/fluentui#/controls/web)
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-alert-banner" />
