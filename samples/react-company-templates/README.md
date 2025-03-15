@@ -30,15 +30,22 @@ From a user perspective, the extension covers these features:
 - [x] Filter by name
 - [x] Copy selected files from template repository to the current document library
 - [x] Show a settings page to all users who are (at least) site admins
+- [x] Display additional metadata (file size, current version) of the template file
+- [x] Show a preview of a selected template file by clicking on its file name
+- [x] Refresh template list by clicking on a refresh button in the command bar
+- [x] Advanced filtering by date range and file size
+- [x] View template version history through SharePoint's built-in history viewer
+- [x] Toggle between list and grid view for template browsing
+- [x] Bulk download of selected templates
 
 It uses several ["Reusable React controls"](https://pnp.github.io/sp-dev-fx-controls-react/) for an awesome user experience.
 
 ### Upcoming Features (or not yet implemented ideas)
 
 - [ ] Show link(s) to copied file(s) to be opened in a new browser tab (Dan's feature request 😃)
-- [ ] Display additional metadata (file size, current version) of the template file
-- [ ] Show a preview of a selected template file by clicking on its file name
-- [ ] Refresh template list by clicking on a refresh button in the command bar
+- [ ] Add template usage statistics
+- [ ] Improved mobile experience
+- [ ] Integration with Microsoft Teams
 
 ## Compatibility
 
@@ -49,10 +56,10 @@ It uses several ["Reusable React controls"](https://pnp.github.io/sp-dev-fx-cont
 
 This sample is optimally compatible with the following environment configuration:
 
-![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
+![SPFx 1.20](https://img.shields.io/badge/SPFx-1.20-green.svg)
 ![PnPJs 3.22.0](https://img.shields.io/badge/PnPJs-3.22.0-green.svg)
-![Reusable React Controls 3.17.0](https://img.shields.io/badge/spfx--controls--react-3.17.0-green.svg)
-![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
+![Reusable React Controls 3.20.0](https://img.shields.io/badge/spfx--controls--react-3.20.0-green.svg)
+![Node.js v16](https://img.shields.io/badge/Node.js-v18-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](<https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg> "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -66,6 +73,8 @@ For more information about SPFx compatibility, please refer to <https://aka.ms/s
 
 - [Tobias Maestrini](https://github.com/tmaestrini)
 - [Dan Toft](https://github.com/Tanddant) (👀 Code reviews)
+- [Nicolas Kheirlalah](https://github.com/nicolaskheirallah)
+
 
 ## Version history
 
@@ -91,6 +100,34 @@ If you prefer using `fast-serve`, you can run the following command:
 
 > This sample can also be opened with [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview). Visit <https://aka.ms/spfx-devcontainer> for further instructions.
 > \*\*
+
+## How to use the new features
+
+### Advanced Filtering
+1. Click the filter icon in the command bar to open the advanced filters panel
+2. Set date ranges using the date pickers to filter by modification date
+3. Use the file size slider to limit results by file size
+4. Click "Apply Filters" to see filtered results or "Clear Filters" to reset
+
+### Template Preview
+1. Click on any template filename to open a preview panel
+2. The preview shows file content for supported file types
+3. Preview panel displays additional metadata including file size, version, and creation/modification dates
+
+### Version History
+1. Click the history icon next to any template
+2. SharePoint's built-in version history page opens in a new tab
+3. View all versions and their details
+
+### Grid View
+1. Toggle between list and grid views using the toggle switch in the command bar
+2. Grid view displays templates in a column layout with more metadata visible
+3. Both views support selection, preview, and actions
+
+### Bulk Operations
+1. Select multiple templates using the checkboxes
+2. The number of selected items appears above the list
+3. Click "Download selected" to download all selected templates
 
 ## How to run the solution locally
 

@@ -27,3 +27,293 @@
   border: 1px solid $ms-color-themePrimary;
   margin-right: 8px
 }
+
+.templateName {
+  cursor: pointer;
+  color: $ms-color-themePrimary;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.actionIcon {
+  cursor: pointer;
+  margin-left: 5px;
+  color: $ms-color-themePrimary;
+  
+  &:hover {
+    color: $ms-color-themeDark;
+  }
+}
+
+.actionText {
+  cursor: pointer;
+  color: $ms-color-themePrimary;
+  font-weight: $ms-font-weight-semibold;
+  
+  &:hover {
+    color: $ms-color-themeDark;
+    text-decoration: underline;
+  }
+}
+
+.detailsList {
+  margin-top: 10px;
+  
+  :global {
+    .ms-DetailsHeader {
+      padding-top: 8px;
+    }
+    
+    .ms-DetailsRow {
+      &:hover {
+        background-color: $ms-color-neutralLighter;
+      }
+    }
+  }
+}
+
+.previewPanel {
+  padding: 20px;
+  
+  .previewHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    
+    .previewTitle {
+      font-size: 18px;
+      font-weight: $ms-font-weight-semibold;
+      margin-left: 8px;
+    }
+  }
+  
+  .previewContent {
+    border: 1px solid $ms-color-neutralLight;
+    padding: 16px;
+    background-color: $ms-color-white;
+    min-height: 200px;
+    overflow: auto;
+  }
+  
+  .previewMetadata {
+    margin-top: 16px;
+    
+    .metadataItem {
+      display: flex;
+      margin-bottom: 8px;
+      
+      .metadataLabel {
+        font-weight: $ms-font-weight-semibold;
+        width: 120px;
+      }
+    }
+  }
+}
+
+.filterControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  .filterSection {
+    margin-right: 15px;
+  }
+}
+
+.versionHistory {
+  padding: 20px;
+  
+  .versionItem {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid $ms-color-neutralLight;
+    border-radius: 4px;
+    
+    &:hover {
+      background-color: $ms-color-neutralLighterAlt;
+    }
+    
+    .versionHeader {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      
+      .versionNumber {
+        font-weight: $ms-font-weight-semibold;
+      }
+      
+      .versionDate {
+        color: $ms-color-neutralSecondary;
+      }
+    }
+    
+    .versionModifier {
+      font-size: 12px;
+      color: $ms-color-neutralSecondary;
+    }
+  }
+}
+
+.gridViewItem {
+  padding: 10px;
+  margin: 8px;
+  border: 1px solid $ms-color-neutralLight;
+  border-radius: 4px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  
+  &:hover {
+    background-color: $ms-color-neutralLighterAlt;
+    border-color: $ms-color-neutralTertiary;
+  }
+  
+  .gridItemHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    
+    .gridItemIcon {
+      margin-right: 8px;
+    }
+    
+    .gridItemName {
+      font-weight: $ms-font-weight-semibold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  
+  .gridItemMetadata {
+    font-size: 12px;
+    color: $ms-color-neutralSecondary;
+    margin-bottom: 4px;
+  }
+  
+  .gridItemActions {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.filtersPanel {
+  border-top: 1px solid $ms-color-neutralLight;
+  padding-top: 12px;
+  margin-bottom: 16px;
+}
+
+.dateFilterRow {
+  margin-bottom: 12px;
+}
+
+.filterPanelFooter {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid $ms-color-neutralLight;
+}
+
+.advancedFilterBadge {
+  background-color: $ms-color-themePrimary;
+  color: $ms-color-white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.activeFilter {
+  background-color: $ms-color-themeLighter;
+}
+
+.filterButton {
+  position: relative;
+}
+
+.refreshButton {
+  &.spinning {
+    animation: spin 1.5s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.toggleViewButton {
+  margin-left: auto;
+}
+
+.noResultsMessage {
+  margin-top: 32px;
+  text-align: center;
+  color: $ms-color-neutralSecondary;
+  font-size: 16px;
+}
+
+.selectionControls {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  padding: 8px;
+  background-color: $ms-color-neutralLighterAlt;
+  border-radius: 2px;
+  
+  .selectionCount {
+    font-weight: $ms-font-weight-semibold;
+    margin-right: 16px;
+  }
+  
+  .selectionAction {
+    color: $ms-color-themePrimary;
+    cursor: pointer;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.downloadingIndicator {
+  display: flex;
+  align-items: center;
+  
+  .downloadIcon {
+    margin-right: 8px;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.headerControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  
+  .viewControls {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.historyLink {
+  margin-left: 4px;
+  color: $ms-color-themePrimary;
+  cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}

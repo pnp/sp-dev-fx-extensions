@@ -10,7 +10,7 @@
             "This is an alternative to the built-in 'New document' experience in a document library in SharePoint Online. It allows a SharePoint admin to define a repository (such as a standard document library or an org assets library) which acts as a source of templates that can be used in every document library. Any user can browse through the collection of company templates, get an instance of the desired template(s) by one single click and start using it."
         ],
         "creationDateTime": "2023-12-22",
-        "updateDateTime": "2025-03-13",
+        "updateDateTime": "2025-03-12",
         "products": [
             "SharePoint"
         ],
@@ -42,6 +42,11 @@
                 "gitHubAccount": "Tanddant",
                 "pictureUrl": "https://github.com/Tanddant.png",
                 "name": "Dan Toft (Code Reviews)"
+            },
+            {
+                "gitHubAccount": "NicolasKheirallah",
+                "pictureUrl": "https://github.com/NicolasKheirallah.png",
+                "name": "Nicolas Kheirallah"
             }
         ],
         "references": [
