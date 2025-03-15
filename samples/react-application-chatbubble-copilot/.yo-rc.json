@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.20.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.0",
+    "libraryName": "chatbubble-copilot-extension-sso",
+    "libraryId": "60705f7c-295f-4002-ace3-255ebb264645",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "chatbubble-copilot-extension-sso",
+    "solutionShortDescription": "chatbubble-copilot-extension-sso description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}
