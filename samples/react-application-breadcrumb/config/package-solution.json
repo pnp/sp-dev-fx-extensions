@@ -3,27 +3,39 @@
   "solution": {
     "name": "site-breadcrumb-extension-client-side-solution",
     "id": "4d6b2847-ccab-4778-9b3a-0e9ea58d88a9",
-    "version": "2.0.0.0",
+    "version": "2.1.0.0",
     "isDomainIsolated": false,
     "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "site-breadcrumb-extension description"
+      },
+      "longDescription": {
+        "default": "site-breadcrumb-extension description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
     "features": [{
       "title": "SharePoint Framework Breadcrumb Extension",
       "description": "Deploys the Breadcrumb custom action to the site",
       "id": "52d8511d-f447-4b3b-b087-d82b861861a1",
-      "version": "2.0.0.0",
+      "version": "2.1.0.0",
       "assets": {
         "elementManifests": [
           "elements.xml"
         ]
       }
-    }],
-    "developer": {
-      "name": "",
-      "privacyUrl": "",
-      "termsOfUseUrl": "",
-      "websiteUrl": "",
-      "mpnId": ""
-    }
+    }]
   },
   "paths": {
     "zippedPackage": "solution/site-breadcrumb-extension.sppkg"

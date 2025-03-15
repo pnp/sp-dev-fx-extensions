@@ -15,8 +15,8 @@ When a user clicks the 'vote' button, it will append the current user to the exi
 
 ## Compatibility
 
-![SPFx 1.15.2](https://img.shields.io/badge/SPFx-1.15.2-green.svg)
-![Node.js v14 | v16](https://img.shields.io/badge/Node.js-v14%20%7C%20v16-green.svg)
+![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
+![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
 
@@ -28,11 +28,13 @@ When a user clicks the 'vote' button, it will append the current user to the exi
 ## Contributors
 
 * [Ari Gunawan](https://github.com/AriGunawan)
+* [Ervin Gayle](https://github.com/ErvinGayle)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
+1.5|October 26, 2024|Updated SPFx packages to 1.20.0
 1.4|October 8, 2023|Change underlying field type from JSON text to multiple person
 1.3|October 18, 2022|Change underlying field type from multiline text to multiple person
 1.2|October 18, 2022|Initial version

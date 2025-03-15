@@ -12,14 +12,32 @@ type ICommandBarMenuProps = {
 }
 
 export const CommandBarMenu: React.FunctionComponent<ICommandBarMenuProps> = (props: React.PropsWithChildren<ICommandBarMenuProps>) => {
-  const { selectedFiles, checkoutFiles, setTemplateValueFilter, copiedFiles } = React.useContext(TemplatesManagementContext);
+  const { selectedFiles, checkoutFiles, setTemplateValueFilter, copiedFiles, refreshTemplates } = React.useContext(TemplatesManagementContext);
   const { context } = React.useContext(SPFxContext);
   const { pageNavigationHandler } = props;
   const [userIsSiteAdmin, setUserIsSiteAdmin] = React.useState<boolean>(false);
+  const [isRefreshing, setIsRefreshing] = React.useState<boolean>(false);
 
   function clearCommandBarValues(): void {
     checkoutFiles([]);
     setTemplateValueFilter(undefined);
+  }
+
+  // Fixed: Use regular function that returns void instead of async function
+  function handleRefresh(): void {
+    setIsRefreshing(true);
+    if (refreshTemplates) {
+      refreshTemplates()
+        .then(() => {
+          setIsRefreshing(false);
+        })
+        .catch((error) => {
+          console.error("Error refreshing templates:", error);
+          setIsRefreshing(false);
+        });
+    } else {
+      setIsRefreshing(false);
+    }
   }
 
   React.useEffect(() => {
@@ -38,6 +56,16 @@ export const CommandBarMenu: React.FunctionComponent<ICommandBarMenuProps> = (pr
       ariaLabel: 'Copy',
       onRender: () => <div style={{ margin: 'auto' }}><CopyTemplatesButton selectedFiles={selectedFiles} /></div>,
     },
+    {
+      key: 'refresh',
+      text: 'Refresh',
+      ariaLabel: 'Refresh templates',
+      iconProps: { 
+        iconName: isRefreshing ? 'SyncStatus' : 'Refresh'
+      },
+      onClick: handleRefresh, // Now this matches the expected type
+      disabled: isRefreshing
+    }
   ];
 
   const commandBarFarItems: ICommandBarItemProps[] = [
@@ -57,12 +85,10 @@ export const CommandBarMenu: React.FunctionComponent<ICommandBarMenuProps> = (pr
     },
   ];
 
-
   return <CommandBar
     items={commandBarItems}
     farItems={commandBarFarItems}
     ariaLabel="Template actions"
     styles={{ root: { borderBottom: '1px solid #edebe9', borderTop: '1px solid #edebe9' } }}
   />
-
 }

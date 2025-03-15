@@ -19,6 +19,7 @@ import { IconButton } from 'office-ui-fabric-react/lib/Button';
 import { ColorPicker } from 'office-ui-fabric-react/lib/ColorPicker';
 import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
 import { Toggle } from 'office-ui-fabric-react/lib/Toggle';
+import { IColor } from 'office-ui-fabric-react';
 
 let _draggedItem: any = null;
 let _draggedIndex = -1;
@@ -55,7 +56,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
     private _sectionBackgroundColor: string;
     private _sectionFontColor: string;
     private _selectedColor: string;
-    constructor(props) {
+    constructor(props: AddUpdateTemplatePanelProps | Readonly<AddUpdateTemplatePanelProps>) {
         super(props);
 
         this.listService = new ListService();
@@ -118,7 +119,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                     onRenderFooterContent={this._onRenderFooterContent}
                 >
                     <div className={`${styles.AddUpdateTemplate} ms-Grid}`}>
-                        <TextField value={Title} label="Name" errorMessage={this.state.titleErrorMessage} onChanged={(name) => { this.props.onTemplateChanged({ ...this.props.template, Title: name }); this.setState({ titleErrorMessage: '' }); }} />
+                        <TextField value={Title} label="Name" errorMessage={this.state.titleErrorMessage} onChange={(event, name) => { this.props.onTemplateChanged({ ...this.props.template, Title: name }); this.setState({ titleErrorMessage: '' }); }} />
                         <Label>Columns (Drag fields from the left table to the right one)</Label>
                         <div className="ms-Grid-row">
                             <div className={`ms-Grid-col ms-sm6 ms-md6 ms-lg6`}>
@@ -176,7 +177,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                         <Label>Add section</Label>
                         <div className="ms-Grid-row">
                             <div className="ms-Grid-col ms-sm10 ms-md10 ms-lg10">
-                                <TextField errorMessage={this.state.sectionErrorMessage} onChanged={(value) => this.setState({ section: { ...this.state.section, Title: value, Id: value }, sectionErrorMessage: '' })} value={this.state.section.Title} />
+                                <TextField errorMessage={this.state.sectionErrorMessage} onChange={(event, value) => this.setState({ section: { ...this.state.section, Title: value, Id: value }, sectionErrorMessage: '' })} value={this.state.section.Title} />
 
                             </div>
                             <div className="ms-Grid-col ms-sm1 ms-md2 ms-lg2">
@@ -198,7 +199,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                                 <ReactQuill modules={modules} formats={formats} className={styles.quillEditor} value={HeaderAdvancedMode ? '' : Header} onChange={this._headerEditorChange} />
                             </div>
                             <div hidden={!HeaderAdvancedMode}>
-                                <TextField multiline rows={11} placeholder="Put your HTML code here..." value={Header} onChanged={(value) => this.props.onTemplateChanged({ ...this.props.template, Header: value })} />
+                                <TextField multiline rows={11} placeholder="Put your HTML code here..." value={Header} onChange={(event, value) => this.props.onTemplateChanged({ ...this.props.template, Header: value })} />
                             </div>
                         </div>
                         <Toggle
@@ -214,7 +215,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                                 <ReactQuill modules={modules} formats={formats} className={styles.quillEditor} value={FooterAdvancedMode ? '' : Footer} onChange={this._footerEditorChange} />
                             </div>
                             <div hidden={!FooterAdvancedMode}>
-                                <TextField multiline rows={11} value={Footer} onChanged={(value) => this.props.onTemplateChanged({ ...this.props.template, Footer: value })} placeholder="Put your HTML code here..." />
+                                <TextField multiline rows={11} value={Footer} onChange={(event,value) => this.props.onTemplateChanged({ ...this.props.template, Footer: value })} placeholder="Put your HTML code here..." />
                             </div>
                         </div>
                         <Toggle
@@ -244,7 +245,7 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
                             containerClassName: 'ms-dialogMainOverride'
                         }}
                     >
-                        <ColorPicker color={this._selectedColor} onColorChanged={this._onColorChange} />
+                        <ColorPicker color={this._selectedColor} onChange={this._onColorChange} />
                         <DialogFooter>
                             <PrimaryButton onClick={this._onColorSelected} text="OK" />
                             <DefaultButton onClick={this._closeColorPicker} text="Cancel" />
@@ -257,15 +258,15 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
         );
     }
 
-    private _skipBlankColumnsToggleChange = (value) => {
+    private _skipBlankColumnsToggleChange = (value: any) => {
         this.props.onTemplateChanged({ ...this.props.template, SkipBlankColumns: value });
     }
 
-    private _headerEditorChange = (value) => {
+    private _headerEditorChange = (value: any) => {
         this.props.onTemplateChanged({ ...this.props.template, Header: value });
     }
 
-    private _footerEditorChange = (value) => {
+    private _footerEditorChange = (value: any) => {
         this.props.onTemplateChanged({ ...this.props.template, Footer: value });
     }
 
@@ -289,8 +290,8 @@ export default class AddUpdateTemplate extends React.Component<AddUpdateTemplate
             isFontColorPicker
         });
     }
-    private _onColorChange = (color: string): void => {
-        this._selectedColor = color;
+    private _onColorChange = (ev: React.SyntheticEvent<HTMLElement>, color: IColor): void => {
+        this._selectedColor = color.str;
     }
 
     private _closeColorPicker = () => {

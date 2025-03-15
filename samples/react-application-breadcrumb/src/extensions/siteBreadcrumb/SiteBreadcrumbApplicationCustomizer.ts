@@ -1,73 +1,79 @@
 import * as React from "react";
-import * as ReactDom from 'react-dom';
-import { override } from '@microsoft/decorators';
-import { Log } from '@microsoft/sp-core-library';
+import * as ReactDom from "react-dom";
+import { Log } from "@microsoft/sp-core-library";
+import * as strings from 'siteBreadcrumbStrings';
 import {
   BaseApplicationCustomizer,
   PlaceholderContent,
-  PlaceholderName
-} from '@microsoft/sp-application-base';
+  PlaceholderName,
+} from "@microsoft/sp-application-base";
+import SiteBreadcrumb from "./components/SiteBreadcrumb";
+import { ISiteBreadcrumbProps } from "./components/ISiteBreadcrumb";
 
-import * as strings from 'siteBreadcrumbStrings';
-import SiteBreadcrumb from './components/SiteBreadcrumb';
-import { ISiteBreadcrumbProps } from './components/ISiteBreadcrumb';
-
-const LOG_SOURCE: string = 'SiteBreadcrumbApplicationCustomizer';
+const LOG_SOURCE: string = "SiteBreadcrumbApplicationCustomizer";
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
  * it will be deserialized into the BaseExtension.properties object.
  * You can define an interface to describe it.
  */
-export interface ISiteBreadcrumbApplicationCustomizerProperties {
-  // This is an example; replace with your own property
-  testMessage: string;
-}
+export interface ISiteBreadcrumbApplicationCustomizerProperties {}
 
 /** A Custom Action which can be run during execution of a Client Side Application */
-export default class SiteBreadcrumbApplicationCustomizer
-  extends BaseApplicationCustomizer<ISiteBreadcrumbApplicationCustomizerProperties> {
-  private _headerPlaceholder: PlaceholderContent;
+export default class SiteBreadcrumbApplicationCustomizer extends BaseApplicationCustomizer<ISiteBreadcrumbApplicationCustomizerProperties> {
+  private topPlaceholder: PlaceholderContent | undefined;
 
-  @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-    // Added to handle possible changes on the existence of placeholders
-    this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
+    this.context.placeholderProvider.changedEvent.add(
+      this,
+      this.renderPlaceHolders
+    );
 
-    // Call render method for generating the needed html elements
-    this._renderPlaceHolders();
+    this.context.application.navigatedEvent.add(this, this.renderPlaceHolders);
 
-    return Promise.resolve<void>();
+    return Promise.resolve();
   }
 
-  private _renderPlaceHolders(): void {
-    // Check if the header placeholder is already set and if the header placeholder is available
-    if (!this._headerPlaceholder && this.context.placeholderProvider.placeholderNames.indexOf(PlaceholderName.Top) !== -1) {
-      this._headerPlaceholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top, {
-        onDispose: this._onDispose
-      });
+  public onDispose(): Promise<void> {
+    if (this.topPlaceholder)
+      ReactDom.unmountComponentAtNode(this.topPlaceholder?.domElement);
 
-      // The extension should not assume that the expected placeholder is available.
-      if (!this._headerPlaceholder) {
-        console.error('The expected placeholder (PageHeader) was not found.');
-        return;
-      }
+    this.context.placeholderProvider.changedEvent.remove(
+      this,
+      this.renderPlaceHolders
+    );
 
-      if (this._headerPlaceholder.domElement) {
-        const element: React.ReactElement<ISiteBreadcrumbProps> = React.createElement(
-          SiteBreadcrumb,
-          {
-            context: this.context
-          }
-        );
-        ReactDom.render(element, this._headerPlaceholder.domElement);
-      }
+    this.context.application.navigatedEvent.remove(
+      this,
+      this.renderPlaceHolders
+    );
+
+    return Promise.resolve();
+  }
+
+  private renderPlaceHolders(): void {
+    if (!this.topPlaceholder) {
+      this.topPlaceholder = this.context.placeholderProvider.tryCreateContent(
+        PlaceholderName.Top,
+        { onDispose: this.onDispose }
+      );
     }
-  }
 
-  private _onDispose(): void {
-    console.log('[Breadcrumb._onDispose] Disposed breadcrumb.');
+    if (this.topPlaceholder) {
+      const element: React.ReactElement<ISiteBreadcrumbProps> =
+        React.createElement(SiteBreadcrumb, {
+          context: this.context,
+        });
+
+      const container = this.topPlaceholder.domElement;
+
+      // Clear any existing content in the container [navigate event]
+      ReactDom.unmountComponentAtNode(container);
+
+      // Render the React component in the DOM
+      ReactDom.render(element, container);
+    }
   }
 }

@@ -1,50 +1,41 @@
 import * as React from "react";
-import Ticker from "react-ticker";
-
 import INewsTickerProps from "./INewsTickerProps";
 import Constants from "../helpers/Constants";
+import styles from './NewsTicker.module.scss';
+import Ticker from "./react-ticker";
 
-const NewsTicker = (props: INewsTickerProps): JSX.Element => {
-  const [isMove, setIsMove] = React.useState(true);
+const NewsTicker: React.FC<INewsTickerProps> = ({ bgColor, textColor, items }) => {
+  const [isMove, setIsMove] = React.useState<boolean>(true);
 
-  function generateNewsText(date: Date): string {
+  const generateNewsText = (date: Date): string => {
     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-  }
+  };
 
-  const itemStyle: React.CSSProperties = {
-    margin: "0 5px",
+  const handleMouseEnter = () => setIsMove(false);
+  const handleMouseLeave = () => setIsMove(true);
+
+  const newsContainerStyle: React.CSSProperties = {
+    backgroundColor: bgColor || "#48c78e",
+    color: textColor || "white",
   };
-  const newsContainer: React.CSSProperties = {
-    backgroundColor: props.bgColor ? props.bgColor : "#48c78e",
-    color: props.textColor ? props.textColor : "white",
-    padding: "5px 0",
-    fontSize: "16px",
-  };
+
   return (
     <div
       id={Constants.ROOT_ID}
-      onMouseEnter={() => {
-        setIsMove(false);
-      }}
-      onMouseLeave={() => {
-        setIsMove(true);
-      }}
-      style={newsContainer}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={styles.newsTicker}
+      style={newsContainerStyle}
     >
-      <Ticker move={isMove} speed={5}>
-        {({ index }) => (
-          <>
-            {props.items &&
-              props.items.map((news) => (
-                <>
-                  <span style={itemStyle}>|</span>
-                  <span style={itemStyle}>
-                    <b>{generateNewsText(news.publishDate)}</b>: {news.content}
-                  </span>
-                </>
-              ))}
-          </>
-        )}
+      <Ticker isMove={isMove} speed={20}>
+        {items?.map((news, index) => (
+          <React.Fragment key={index}>
+            <span className={styles.tickerItem}>|</span>
+            <span className={styles.tickerItem}>
+              <b>{generateNewsText(news.publishDate)}</b>: {news.content}
+            </span>
+          </React.Fragment>
+        ))}
       </Ticker>
     </div>
   );

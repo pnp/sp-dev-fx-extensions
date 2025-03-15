@@ -2,12 +2,17 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.7.0",
+    "version": "1.16.1",
     "libraryName": "react-command-print",
     "libraryId": "138b7ab0-1bff-4801-894e-86b5cce48624",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "extension",
-    "extensionType": "ListViewCommandSet"
+    "nodeVersion": "16.18.1",
+    "extensionType": "ListViewCommandSet",
+    "sdkVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    }
   }
 }
