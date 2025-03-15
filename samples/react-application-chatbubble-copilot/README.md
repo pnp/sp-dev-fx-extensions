@@ -6,6 +6,9 @@ This solution integrates a chatbot within SharePoint Online using a Tenant App C
 
 This is based on SharePointSSO
 
+![Chatbot Interface](./assets/Chatbot.png)
+
+
 ### Key Features
 
 - Tenant-wide chatbot integration for SharePoint Online.
@@ -25,7 +28,7 @@ This is based on SharePointSSO
 
 #### Chatbot Interface
 
-![Chatbot Interface](images/Chatbot.png)
+![Chatbot Interface](./assets/Chatbot.png)
 
 #### Application Client ID in Azure
 
