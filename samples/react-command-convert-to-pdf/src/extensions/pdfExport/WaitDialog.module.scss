@@ -1,15 +1,18 @@
 @import "~@fluentui/common-styles/dist/sass/common";
 
 $font-size-small: 0.8em;
-$dialog-width: 400px;
-$error-color: $ms-color-redDark; // Fluent UI theme red
+$dialog-width: 450px; // Adjusted to match the desired max-width
+$error-color: $ms-color-redDark;
+$warning-color: $ms-color-orangeLighter;
+$success-color: $ms-color-greenLight;
 
 .dialogContainer {
   padding: 20px;
   background-color: #f3f2f1;
   border-radius: 5px;
-  max-width: 400px;
+  max-width: $dialog-width;
   margin: 0 auto;
+  transition: background-color 0.3s ease;
 }
 
 .dialogMessage {
@@ -18,23 +21,95 @@ $error-color: $ms-color-redDark; // Fluent UI theme red
   margin-bottom: 20px;
 }
 
+.notificationIcon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 32px;
+}
 .errorLabel {
-  color: #a80000; /* Fluent UI Red Dark */
+  color: $error-color;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+
+  i {
+    margin-right: 8px;
+  }
+}
+.progressContainer {
+  margin: 15px 0;
+}
+
+.spinner {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eaeaea;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  i {
+    margin-right: 8px;
+  }
 }
 
 .pnpFooter {
-  font-size: 0.8em;
-  float: right;
-  text-align: center;
-  margin-top: 10px;
+  font-size: $font-size-small;
+  text-align: right;
 
   a {
-    color: #0078d4; /* Fluent UI Theme Primary */
+    color: #0078d4;
     text-decoration: none;
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+:global(.ms-Dialog) {
+  outline: none;
+
+  &:focus {
+    outline: 2px solid $ms-color-themePrimary;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dialogContainer {
+    padding: 15px;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+
+    .pnpFooter {
+      margin-bottom: 10px;
+    }
+
+    .themeToggle {
+      align-self: flex-start;
+      margin-top: 10px;
     }
   }
 }
