@@ -83,10 +83,10 @@ export default class CopyCopyUtilityFunctionsCommandSet extends BaseListViewComm
         let isCopied: boolean = false;
         const webUrl = this.context.pageContext.web.absoluteUrl;
         const fileRef = event.selectedRows[0]?.getValueByName("FileRef");
-        const fileUrl = `${webUrl}/${fileRef.replace(
-          this.context.pageContext.web.serverRelativeUrl,
-          ""
-        )}`;
+        const cleanFileRef = fileRef
+          .replace(this.context.pageContext.web.serverRelativeUrl, "")
+          .replace(/^\/+/, ""); // Remove leading slash
+        const fileUrl = `${webUrl}/${cleanFileRef}`;
         await navigator.clipboard
           .writeText(fileUrl)
           .then(() => {
