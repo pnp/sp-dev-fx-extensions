@@ -84,7 +84,7 @@ export default class CopyCopyUtilityFunctionsCommandSet extends BaseListViewComm
         const webUrl = this.context.pageContext.web.absoluteUrl;
         const fileRef = event.selectedRows[0]?.getValueByName("FileRef");
         const cleanFileRef = fileRef
-          .replace(this.context.pageContext.web.serverRelativeUrl, "")
+          .replaceAll(this.context.pageContext.web.serverRelativeUrl, "")
           .replace(/^\/+/, ""); // Remove leading slash
         const fileUrl = `${webUrl}/${cleanFileRef}`;
         await navigator.clipboard
