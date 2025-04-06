@@ -18,7 +18,7 @@
     "@microsoft/sp-core-library": "1.17.3",
     "@microsoft/sp-dialog": "1.17.3",
     "react": "^17.0.1",
-    "react-chat-elements": "^10.16.2",
+    "react-chat-elements": "^12.0.17",
     "react-dom": "^17.0.1",
     "tslib": "2.3.1"
   },

@@ -21,8 +21,9 @@ This sample demonstrates how to implement Google Analytics in Modern SharePoint 
 
 ## Compatibility
 
-![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg) 
-![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg) ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
+![SPFx 1.20](https://img.shields.io/badge/SPFx-1.20.0-green.svg) 
+![Node.js LTS 18.x](https://img.shields.io/badge/Node.js-LTS%2018.x-green.svg) 
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted: Does not work with local workbench](https://img.shields.io/badge/Workbench-Hosted-yellow.svg "Does not work with local workbench")
 
 ## Applies to
@@ -37,7 +38,7 @@ Solution|Author(s)
 js-application-analytics | [Giuliano De Luca](https://github.com/giuleon) ([@giuleon](https://twitter.com/giuleon) , [www.delucagiuliano.com](http://www.delucagiuliano.com))
 js-application-analytics | [Hugo Bernier](https://github.com/hugoabernier) ([@bernierh](https://twitter.com/bernierh) , [tahoeninjas.blog](https://tahoeninjas.blog))
 js-application-analytics | [João Ferreira](https://github.com/joaoferreira) ([@joao12ferreira](https://twitter.com/joao12ferreira) , [HANDS ON tek](https://sharepoint.handsontek.net))
-
+js-application-analytics | [Nicolas kheirallah](https://github.com/NicolasKheirallah) ([@NicolasKheirallah](https://twitter.com/NicolasKheirallah))
 ## Version history
 
 Version|Date|Comments
@@ -46,6 +47,7 @@ Version|Date|Comments
 1.1|September 29, 2017|Updated for SPFx GA 1.3.0
 1.2|October 7, 2020|Refactored for SPFx 1.11; Added support for async/legacy modes
 1.3|July 1, 2021|Added support for Google Analytics V4
+1.4|October 21, 2024|Updated to SPFX 1.20
 
 ## Disclaimer
 

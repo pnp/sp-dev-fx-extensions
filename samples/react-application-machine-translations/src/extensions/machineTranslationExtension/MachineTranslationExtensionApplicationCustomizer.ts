@@ -28,7 +28,7 @@ export default class MachineTranslationExtensionApplicationCustomizer
   @override
   public onInit(): Promise<void> {
 
-    sp.setup(this.context);
+    sp.setup(this.context as any);
 
     // Added to handle possible changes on the existence of placeholders.
     this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);

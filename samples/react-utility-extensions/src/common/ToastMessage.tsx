@@ -1,4 +1,4 @@
-import { useId, useToastController, Toast, ToastTitle, Toaster, ToastPosition, FluentProvider, webLightTheme } from "@fluentui/react-components";
+import { useId, useToastController, Toast, ToastTitle, Toaster, ToastPosition, FluentProvider, webLightTheme, IdPrefixProvider } from "@fluentui/react-components";
 import * as React from "react";
 
 export interface IToastMessageProps {
@@ -22,10 +22,10 @@ export const ToastMessage = (props: IToastMessageProps): React.JSX.Element => {
 	});
 
 	return (
-		<>
+		<IdPrefixProvider value="react-utility-extensions">
 			<FluentProvider theme={webLightTheme}>
 				<Toaster toasterId={toasterId} position={props.position} />
 			</FluentProvider>
-		</>
+		</IdPrefixProvider >
 	);
 };

@@ -9,7 +9,7 @@
       "This sample shows how you can print list items using different templates, site admin can add, edit or remove templates and users can print items based on those templates."
     ],
     "creationDateTime": "2018-12-05",
-    "updateDateTime": "2018-12-05",
+    "updateDateTime": "2024-10-30",
     "products": [
       "SharePoint"
     ],
@@ -20,7 +20,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.7"
+        "value": "1.16.1"
       }
     ],
 "tags": [],
@@ -42,6 +42,13 @@
         "pictureUrl": "https://github.com/AhmadiRamin.png",
         "name": "Ramin Ahmadi",
         "twitter": "raminahmadi1986"
+      },
+      {
+        "gitHubAccount": "NishkalankBezawada",
+        "company": "Bravero AB",
+        "pictureUrl": "https://github.com/NishkalankBezawada.png",
+        "name": "Nishkalank Bezawada",
+        "twitter": "im_nishkalank"
       }
     ],
     "references": [

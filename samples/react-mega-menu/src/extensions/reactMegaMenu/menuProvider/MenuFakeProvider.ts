@@ -1,4 +1,4 @@
-import { IMenuProvider, MenuCategory } from "./index";
+import { IMenuProvider, MenuCategory } from "./mockIndex";
 
 /**
  * Fake data provider for offline tests.

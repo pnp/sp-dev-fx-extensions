@@ -2,7 +2,7 @@ import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
 
-import { Icon } from "office-ui-fabric-react/lib/Icon";
+import { Icon } from "@fluentui/react/lib/Icon";
 import * as React from "react";
 
 import { SharePointService } from "../utils/SharePointService";

@@ -10,7 +10,6 @@ import IPrintDialogContentProps from './print-dialog-content-props';
 import IPrintDialogContentState from './print-dialog-content-state';
 import PrintTemplateContent from '../print-dialog-template-content/print-template-content';
 import SettingsPanel from '../settings-panel/settings-panel';
-// import ListHelper from '../../util/list-helper';
 import ReactHtmlParser from 'react-html-parser';
 import {
     Dropdown
@@ -26,9 +25,9 @@ import reactElementToJSXString from 'react-element-to-jsx-string';
 
 const _items: any[] = [];
 export default class PrintDialogContent extends React.Component<IPrintDialogContentProps, IPrintDialogContentState> {
-    private componentRef;
+    private componentRef: React.ReactInstance;
     private listService: ListService;
-    constructor(props) {
+    constructor(props: IPrintDialogContentProps | Readonly<IPrintDialogContentProps>) {
         super(props);
 
         if (_items.length === 0) {
@@ -42,12 +41,12 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
         }
 
         this.state = {
-            hideLoading: false,
+            hideLoading: true,
             loadingMessage: "Loading...",
             templates: [],
             items: _items,
             showPanel: false,
-            hideTemplateLoading: true,
+            hideTemplateLoading: false,
             printTemplate: null,
             selectedTemplateIndex: -1,
             itemContent: {},
@@ -58,14 +57,21 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
         initializeIcons();
     }
 
-    public componentDidMount() {
-
-        // Validate and create Print Settings list --> added list definition to elements.xml for adding Print List Settings
-        // this.initializeSettings();
-        // Get templates
-        this.getTemplates();
-        // Get select item values
-        this.getItemContent();
+    public async componentDidMount() {
+        try {
+            // Show spinner
+            this.setState({ hideLoading: true });
+    
+            // Fetch templates and item content in parallel
+            await Promise.all([this.getTemplates(), this.getItemContent()]);
+    
+            // Hide spinner once data is fetched
+            this.setState({ hideLoading: false }, () => console.log("hideLoading set to:", this.state.hideLoading));
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            // Ensure spinner hides even if there's an error
+            this.setState({ hideLoading: false }, () => console.log("hideLoading set to:", this.state.hideLoading));
+        }
     }
 
     public render(): JSX.Element {
@@ -78,10 +84,13 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
                 showCloseButton={true}
             >
 
-                <div className="ms-grid-row">
-                    <Spinner hidden={this.state.hideLoading} size={SpinnerSize.large} label={this.state.loadingMessage} ariaLive="assertive" />
-                </div>
-                <div className="ms-Grid" dir="ltr" hidden={!this.state.hideLoading}>
+                {this.state.hideLoading && 
+                    <div className="ms-grid-row">
+                        <Spinner size={SpinnerSize.large} label={this.state.loadingMessage} ariaLive="assertive" />
+                    </div>
+                }
+
+                <div className="ms-Grid" dir="ltr" hidden={this.state.hideLoading}>
                     <div className="ms-Grid-row">
                         <div className="ms-Grid-col ms-sm8 ms-md8 ms-lg8">
                             <Dropdown
@@ -101,9 +110,12 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
                             <span hidden={!this.state.isSiteAdmin}><IconButton iconProps={{ iconName: 'Settings' }} title="Settings" ariaLabel="Settings" onClick={this._setShowPanel(true)} /></span>
                         </div>
                     </div>
-                    <div className={`${styles.loadingMargin} ms-grid-row`}>
-                        <Spinner hidden={this.state.hideTemplateLoading} size={SpinnerSize.large} label={this.state.loadingMessage} ariaLive="assertive" />
-                    </div>
+                    {this.state.hideTemplateLoading &&
+                        <div className={`${styles.loadingMargin} ms-grid-row`}>
+                            <Spinner size={SpinnerSize.large} label={this.state.loadingMessage} ariaLive="assertive" />
+                        </div>
+                    }
+
                     <div hidden={!this.state.printTemplate} className={`${styles.templateContent} ms-grid-row`}>
                         <PrintTemplateContent itemId={this.props.itemId} template={this.state.printTemplate} ref={el => (this.componentRef = el)} />
                     </div>
@@ -204,9 +216,14 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
 
         // Display loading indicator
         this.setState({
-            hideTemplateLoading: false
+            hideTemplateLoading: true
         });
 
+        if (!template || !template.Columns) {
+            console.error("Template or Columns property is undefined:", template);
+            this.setState({ hideTemplateLoading: true }, () => console.log("hideTemplateLoading set to since there was an error:", this.state.hideTemplateLoading));
+            return;
+        }
         // Get the columns to be displayed, if user updated the template recently, doesn't need to be parse it as an array
         const columns: any[] = isArray(template.Columns) ? template.Columns : JSON.parse(template.Columns);
 
@@ -217,7 +234,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
         const content: any[] = [];
 
         if (columns.length > 0) {
-            for (var i = 0; i < columns.length; i++) {
+            for (let i = 0; i < columns.length; i++) {
                 const item = columns[i];
                 if (item.Type === "Section") {
                     // If it's a section, first check if there is any field before this section and add it to the content
@@ -270,8 +287,8 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
                 footer: template.Footer,
                 content
             },
-            hideTemplateLoading: true
-        });
+            hideTemplateLoading: false
+        }, () => console.log("hideTemplateLoading set to after setState:", this.state.hideTemplateLoading));
     }
 
     /**
@@ -280,7 +297,7 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     private _makeFieldsTable = (table: any): JSX.Element => {
         return <table className={styles.templateTable}>
             {
-                table.map(el => <tr>
+                table.map((el: { Name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal; Value: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal; }) => <tr>
                     <td className={styles.nameColumn}>
                         {el.Name}
                     </td>
@@ -310,6 +327,8 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
         };
     }
 
+    
+
     // Check if Print Settings list exists, otherwise create it
     /*
     private initializeSettings = async () => {
@@ -327,14 +346,16 @@ export default class PrintDialogContent extends React.Component<IPrintDialogCont
     */
     // Get all available templates for this list
     private getTemplates = async () => {
-        this.setState({
-            hideLoading: false
-        });
-        const templates = await this.listService.GetTemplatesByListId(this.props.listId);
-        this.setState({
-            templates,
-            hideLoading: true
-        });
+        this.setState({ hideLoading: false });
+        try {
+            const { listId } = this.props;
+            const templates = await this.listService.GetTemplatesByListId(listId);
+            this.setState({ templates });
+        } catch (error) {
+            console.error('Error fetching item content:', error);
+        } finally {
+            this.setState({ hideLoading: true });
+        }
     }
 
     // Gets all fields name and value for selected item, also checks if current user is able to open settings panel

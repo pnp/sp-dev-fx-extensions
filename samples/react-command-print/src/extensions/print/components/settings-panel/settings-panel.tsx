@@ -17,7 +17,7 @@ import { Dialog, DialogType, DialogFooter } from 'office-ui-fabric-react/lib/Dia
 export default class SettingsPanel extends React.Component<ISettingsPanelProps, ISettingsPanelState>{
     private listService: ListService;
     private _defaultState: ISettingsPanelState;
-    constructor(props) {
+    constructor(props: ISettingsPanelProps | Readonly<ISettingsPanelProps>) {
         super(props);
         this.listService = new ListService();
         this._defaultState = {
@@ -43,7 +43,7 @@ export default class SettingsPanel extends React.Component<ISettingsPanelProps, 
         return (
             <div className={styles.SettingsPanel}>
                 <Panel isOpen={this.props.showPanel}
-                    onDismissed={this.props.setShowPanel(false)}
+                    onDismiss={this.props.setShowPanel(false)} 
 
                     type={PanelType.medium} headerText="Print Settings">
                     <h3>Print Templates:</h3>
