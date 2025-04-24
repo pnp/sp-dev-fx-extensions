@@ -45,12 +45,13 @@ N/A
 
 ## Version history
 
-| Version | Date         | Comments                                       |
-| ------- | ------------ | ---------------------------------------------- |
-| 1.0     | Oct 22, 2023 | Initial release                                |
-| 1.1     | Aug 28, 2024 | Upgraded to SPFx 1.19.0                        |
-| 1.2     | Oct 11, 2024 | Upgraded to SPFx 1.20.0                        |
-| 1.3     | Oct 11, 2024 | Bug fix for missing site address for root site |
+| Version | Date         | Comments                                         |
+| ------- | ------------ | ------------------------------------------------ |
+| 1.0     | Oct 22, 2023 | Initial release                                  |
+| 1.1     | Aug 28, 2024 | Upgraded to SPFx 1.19.0                          |
+| 1.2     | Oct 11, 2024 | Upgraded to SPFx 1.20.0                          |
+| 1.3     | Mar 01, 2025 | Bug fix for missing site address for root site   |
+| 1.4     | Mar 17, 2025 | Bug fix for extra forward slash in non root site |
 
 ## Help
 
