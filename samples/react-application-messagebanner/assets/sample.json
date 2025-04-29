@@ -63,6 +63,12 @@
         "pictureUrl": "https://github.com/bschlintz.png",
         "name": "Brad Schlintz",
         "twitter": "bschlintz"
+      },
+      {
+        "gitHubAccount": "Sandeep-FED",
+        "company": "EY",
+        "pictureUrl": "https://github.com/sandeep-fed.png",
+        "name": "Sandeep P S"
       }
     ],
     "references": [
