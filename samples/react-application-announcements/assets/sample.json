@@ -40,6 +40,12 @@
         "gitHubAccount": "thespooler",
         "pictureUrl": "https://github.com/thespooler.png",
         "name": "Mike Myers"
+      },
+      {
+        "gitHubAccount": "Sandeep-FED",
+        "company": "EY",
+        "pictureUrl": "https://github.com/sandeep-fed.png",
+        "name": "Sandeep P S"
       }
     ],
     "references": [
