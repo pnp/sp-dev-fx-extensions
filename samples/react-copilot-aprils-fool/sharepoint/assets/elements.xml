@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="CopilotAprilFools"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="2d2e1a0b-88b4-40ad-8f55-91055395b77c"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
