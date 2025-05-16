@@ -1,80 +1,93 @@
-import * as React from "react";
-import { useEffect, useState } from "react";
-import { BiMessageSquareDetail } from "react-icons/bi";
-import { RiCloseCircleLine } from "react-icons/ri";
-import { Text } from "@fluentui/react/lib";
+import * as React from "react"
+import { useEffect, useState } from "react"
+import { BiMessageSquareDetail } from "react-icons/bi"
+import { RiCloseCircleLine } from "react-icons/ri"
+import { Text } from "@fluentui/react"
 
-import styles from "./FeedbackCustomizer.module.scss";
-import { Sp } from "../../../Environment/Env";
-import { SuccessPage } from "./SuccessPage";
+import styles from "./FeedbackCustomizer.module.scss"
+import { SuccessPage } from "./SuccessPage"
+import { getSP } from "../../../Configuration/PnPConfig"
+import { SPFI } from "@pnp/sp"
+import { Logger } from "@pnp/logging"
 
-export default function FeedbackCustomizer() {
-  const [open, setOpen] = useState(false);
-  const [currentUserMail, setCurrentUserMail] = useState("");
-  const [userName, setuserName] = useState("");
-  const [feedbackComment, setfeedbackComment] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successFlag, setSuccessFlag] = useState(false);
-  const [currentsiteUrl, setSiteUrl] = useState("");
+type CurrentUser = {
+  name: string
+  mailId: string
+}
+
+export default function FeedbackCustomizer(props) {
+  const [open, setOpen] = useState(false)
+  const [currentUser, setCurrentUser] = useState<CurrentUser>({
+    name: "",
+    mailId: "",
+  })
+  const [feedbackComment, setfeedbackComment] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
+  const [successFlag, setSuccessFlag] = useState(false)
+  const [currentsiteUrl, setSiteUrl] = useState("")
+  const [isExiting, setIsExiting] = useState(false)
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleBtnClose = () => {
-    setOpen(false);
-    setfeedbackComment("");
-    setSuccessFlag(false);
-    handleOpen(); // Call handleOpen to show the popup again
-  };
+    setOpen(false)
+    setfeedbackComment("")
+    setSuccessFlag(false)
+    handleOpen() // Call handleOpen to show the popup again
+  }
 
   const handleClose = () => {
-    setOpen(false);
-    setfeedbackComment("");
-  };
+    setIsExiting(true)
+    setTimeout(() => {
+      setOpen(false)
+      setIsExiting(false)
+      setfeedbackComment("")
+    }, 1500) // Changed from 900 to 1500 to match the new 1.5s duration
+  }
 
   useEffect(() => {
-    Sp.currentUser()
-      .then((user) => {
-        setCurrentUserMail(user.UserPrincipalName);
-        setuserName(user.Title);
+    if (props.context) {
+      setCurrentUser({
+        name: props.context.pageContext.user.displayName,
+        mailId: props.context.pageContext.user.email,
       })
-      .catch((error) => {
-        console.log(error);
-      });
-
+    }
     // set current page siteurl
-    let getpageUrl = window.location.href;
-    setSiteUrl(getpageUrl);
-  }, []);
+    let getpageUrl = window.location.href
+    setSiteUrl(getpageUrl)
+  }, [])
 
   const handleTextArea = (event) => {
-    setfeedbackComment(event.target.value);
-  };
+    setfeedbackComment(event.target.value)
+  }
 
   const handleFeedbackSubmit = async () => {
+    let sp: SPFI = getSP()
+
     if (feedbackComment.trim() === "") {
-      setErrorMessage("Comment can't be empty");
+      setErrorMessage("Comment can't be empty")
     } else if (feedbackComment.length < 30) {
-      setErrorMessage("Comment should be at least 50 characters long");
+      setErrorMessage("Comment should be at least 50 characters long")
     } else {
-      await Sp.lists
+      await sp.web.lists
         .getByTitle("Feedbacks")
         .items.add({
-          Employee_Name: userName,
-          Employee_MailId: currentUserMail,
+          Employee_Name: currentUser.name,
+          Employee_MailId: currentUser.mailId,
           Comment: feedbackComment,
         })
-        .then(() => {
-          console.log("Message sent successfully");
+        .then((res) => {
+          console.log("Message sent successfully")
         })
-        .catch((err) => console.log(err));
+        .catch((err) => Logger.error(err))
 
-      setErrorMessage("");
-      setfeedbackComment("");
-      setSuccessFlag(true);
+      setErrorMessage("")
+      setfeedbackComment("")
+      setSuccessFlag(true)
     }
-  };
+  }
 
   return (
     <>
@@ -96,18 +109,20 @@ export default function FeedbackCustomizer() {
             <Text className={styles["text-style"]}>Feedback</Text>
           </div>
           {open && (
-            <div className={styles["popup-container"]}>
+            <div
+              className={`${styles["popup-container"]} ${
+                isExiting ? styles["popup-container-exit"] : ""
+              }`}
+            >
               <div className={styles["header-container"]}>
                 <Text
                   style={{
                     color: "#fff",
-                    paddingTop: "3px",
-                    fontSize: "17px",
-                    fontWeight: "500",
-                    fontFamily: "Calibre",
+                    fontSize: "16px",
+                    fontWeight: "600",
                   }}
                 >
-                  Submit your feedback here!
+                  Submit your feedbacks & ideas
                 </Text>
                 <RiCloseCircleLine
                   style={{
@@ -125,7 +140,7 @@ export default function FeedbackCustomizer() {
                     className={styles["textArea__style"]}
                     value={feedbackComment}
                     onChange={handleTextArea}
-                    placeholder="Type here..."
+                    placeholder='Type here...'
                   ></textarea>
                   <p className={styles["errorTxt"]}>{errorMessage}</p>
                   <button
@@ -144,5 +159,5 @@ export default function FeedbackCustomizer() {
         </div>
       )}
     </>
-  );
+  )
 }
