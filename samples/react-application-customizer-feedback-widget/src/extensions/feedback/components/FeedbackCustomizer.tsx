@@ -2,13 +2,18 @@ import * as React from "react"
 import { useEffect, useState } from "react"
 import { BiMessageSquareDetail } from "react-icons/bi"
 import { RiCloseCircleLine } from "react-icons/ri"
-import { Text } from "@fluentui/react"
-
 import styles from "./FeedbackCustomizer.module.scss"
 import { SuccessPage } from "./SuccessPage"
 import { getSP } from "../../../Configuration/PnPConfig"
 import { SPFI } from "@pnp/sp"
-import { Logger } from "@pnp/logging"
+import {
+  FluentProvider,
+  IdPrefixProvider,
+  Textarea,
+  webLightTheme,
+  Text,
+  Rating,
+} from "@fluentui/react-components"
 
 type CurrentUser = {
   name: string
@@ -30,6 +35,7 @@ export default function FeedbackCustomizer({
     mailId: "",
   })
   const [feedbackComment, setfeedbackComment] = useState("")
+  const [currentRating, setCurrentRating] = useState<any>(0)
   const [errorMessage, setErrorMessage] = useState("")
   const [successFlag, setSuccessFlag] = useState(false)
   const [currentsiteUrl, setSiteUrl] = useState("")
@@ -79,107 +85,121 @@ export default function FeedbackCustomizer({
     } else if (feedbackComment.length < 30) {
       setErrorMessage("Comment should be at least 50 characters long")
     } else {
-      await sp.web.lists
-        .getByTitle("Feedbacks")
-        .items.add({
-          Employee_Name: currentUser.name,
-          Employee_MailId: currentUser.mailId,
-          Comment: feedbackComment,
-        })
-        .then((res) => {
-          console.log("Message sent successfully")
-        })
-        .catch((err) => Logger.error(err))
+      let data = await sp.web.lists.getByTitle("Feedbacks").items.add({
+        Employee_Name: currentUser.name,
+        Employee_MailId: currentUser.mailId,
+        Comment: feedbackComment,
+      })
+
+      if (currentRating > 0) {
+        const item = sp.web.lists.getByTitle("Feedbacks").items.getById(data.ID)
+
+        // rate an item
+        await item.rate(currentRating)
+      }
 
       setErrorMessage("")
       setfeedbackComment("")
+      setCurrentRating(0)
       setSuccessFlag(true)
     }
   }
 
   return (
-    <>
-      {currentsiteUrl.includes("viewlsts") ? (
-        <div></div>
-      ) : currentsiteUrl.includes("AllItems") ? (
-        <div></div>
-      ) : currentsiteUrl.includes("Forms") ? (
-        <div></div>
-      ) : (
-        <div
-          className={`${styles["feedback-widget-container"]} ${
-            properties.position === "leftBottom"
-              ? styles["widget-left"]
-              : styles["widget-right"]
-          }`}
-        >
+    <IdPrefixProvider value='feedback-customizer-'>
+      <FluentProvider theme={webLightTheme}>
+        {currentsiteUrl.includes("viewlsts") ? (
+          <div></div>
+        ) : currentsiteUrl.includes("AllItems") ? (
+          <div></div>
+        ) : currentsiteUrl.includes("Forms") ? (
+          <div></div>
+        ) : (
           <div
-            className={styles["buttonWrapper"]}
-            onClick={open ? handleClose : handleOpen}
+            className={`${styles["feedback-widget-container"]} ${
+              properties.position === "leftBottom"
+                ? styles["widget-left"]
+                : styles["widget-right"]
+            }`}
           >
-            <BiMessageSquareDetail
-              style={{ width: "23px", height: "23px", paddingBottom: "4px" }}
-            />
-            <Text className={styles["text-style"]}>Feedback</Text>
-          </div>
-          {open && (
             <div
-              className={`${styles["popup-container"]} ${
-                isExiting ? styles["popup-container-exit"] : ""
-              } ${
-                properties.position === "leftBottom" ? styles["popup-left"] : ""
-              }`}
+              className={styles["buttonWrapper"]}
+              onClick={open ? handleClose : handleOpen}
             >
-              <div className={styles["header-container"]}>
-                <Text
-                  style={{
-                    color: "#fff",
-                    fontSize: "16px",
-                    fontWeight: "600",
-                  }}
-                >
-                  {properties.title}
-                </Text>
-                <RiCloseCircleLine
-                  style={{
-                    cursor: "pointer",
-                    color: "#fff",
-                    width: "22px",
-                    height: "22px",
-                  }}
-                  onClick={handleClose}
-                />
-              </div>
-              {successFlag === false ? (
-                <div className={styles["feedbackWrapper"]}>
-                  <textarea
-                    className={styles["textArea__style"]}
-                    value={feedbackComment}
-                    onChange={handleTextArea}
-                    placeholder='Type here...'
-                  ></textarea>
-                  <p className={styles["errorTxt"]}>{errorMessage}</p>
-                  <button
-                    className={styles["submitbtn"]}
-                    onClick={handleFeedbackSubmit}
-                  >
-                    Submit
-                  </button>
-                </div>
-              ) : (
-                <SuccessPage goBack={handleBtnClose} />
-              )}
+              <BiMessageSquareDetail
+                style={{ width: "23px", height: "23px", paddingBottom: "4px" }}
+              />
+              <Text className={styles["text-style"]}>Feedback</Text>
+            </div>
+            {open && (
               <div
-                className={`${styles["downarrow"]} ${
+                className={`${styles["popup-container"]} ${
+                  isExiting ? styles["popup-container-exit"] : ""
+                } ${
                   properties.position === "leftBottom"
-                    ? styles["downarrow-left"]
+                    ? styles["popup-left"]
                     : ""
                 }`}
-              ></div>
-            </div>
-          )}
-        </div>
-      )}
-    </>
+              >
+                <div className={styles["header-container"]}>
+                  <Text
+                    style={{
+                      color: "#fff",
+                      fontSize: "16px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {properties.title}
+                  </Text>
+                  <RiCloseCircleLine
+                    style={{
+                      cursor: "pointer",
+                      color: "#fff",
+                      width: "22px",
+                      height: "22px",
+                    }}
+                    onClick={handleClose}
+                  />
+                </div>
+                {successFlag === false ? (
+                  <div className={styles["feedbackWrapper"]}>
+                    <Textarea
+                      className={styles["textArea__style"]}
+                      value={feedbackComment}
+                      onChange={(event) => handleTextArea(event)}
+                      placeholder='Type here...'
+                    ></Textarea>
+                    {errorMessage && (
+                      <p className={styles["errorTxt"]}>{errorMessage}</p>
+                    )}
+                    <Rating
+                      value={currentRating}
+                      color='marigold'
+                      max={5}
+                      onChange={(_, data) => setCurrentRating(data.value)}
+                    />
+                    <button
+                      className={styles["submitbtn"]}
+                      onClick={handleFeedbackSubmit}
+                    >
+                      Submit
+                    </button>
+                  </div>
+                ) : (
+                  <SuccessPage goBack={handleBtnClose} />
+                )}
+                <div
+                  className={`${styles["downarrow"]} ${
+                    properties.position === "leftBottom"
+                      ? styles["downarrow-left"]
+                      : ""
+                  }`}
+                ></div>
+              </div>
+            )}
+          </div>
+        )}
+      </FluentProvider>
+    </IdPrefixProvider>
   )
 }

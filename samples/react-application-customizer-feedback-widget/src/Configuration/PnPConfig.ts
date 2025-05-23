@@ -7,6 +7,8 @@ import "@pnp/sp/webs"
 import "@pnp/sp/lists"
 import "@pnp/sp/items"
 import "@pnp/sp/site-users/web"
+import "@pnp/sp/items"
+import "@pnp/sp/comments"
 
 var _sp: SPFI | null = null
 
