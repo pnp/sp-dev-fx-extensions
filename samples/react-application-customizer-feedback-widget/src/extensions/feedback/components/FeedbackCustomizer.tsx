@@ -15,7 +15,15 @@ type CurrentUser = {
   mailId: string
 }
 
-export default function FeedbackCustomizer(props) {
+interface IFeedbackCustomizerProps {
+  context: any
+  properties: any
+}
+
+export default function FeedbackCustomizer({
+  context,
+  properties,
+}: IFeedbackCustomizerProps) {
   const [open, setOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState<CurrentUser>({
     name: "",
@@ -48,10 +56,10 @@ export default function FeedbackCustomizer(props) {
   }
 
   useEffect(() => {
-    if (props.context) {
+    if (context) {
       setCurrentUser({
-        name: props.context.pageContext.user.displayName,
-        mailId: props.context.pageContext.user.email,
+        name: context.pageContext.user.displayName,
+        mailId: context.pageContext.user.email,
       })
     }
     // set current page siteurl
@@ -98,7 +106,13 @@ export default function FeedbackCustomizer(props) {
       ) : currentsiteUrl.includes("Forms") ? (
         <div></div>
       ) : (
-        <div className={styles["feedback-widget-container"]}>
+        <div
+          className={`${styles["feedback-widget-container"]} ${
+            properties.position === "leftBottom"
+              ? styles["widget-left"]
+              : styles["widget-right"]
+          }`}
+        >
           <div
             className={styles["buttonWrapper"]}
             onClick={open ? handleClose : handleOpen}
@@ -112,6 +126,8 @@ export default function FeedbackCustomizer(props) {
             <div
               className={`${styles["popup-container"]} ${
                 isExiting ? styles["popup-container-exit"] : ""
+              } ${
+                properties.position === "leftBottom" ? styles["popup-left"] : ""
               }`}
             >
               <div className={styles["header-container"]}>
@@ -122,7 +138,7 @@ export default function FeedbackCustomizer(props) {
                     fontWeight: "600",
                   }}
                 >
-                  Submit your feedbacks & ideas
+                  {properties.title}
                 </Text>
                 <RiCloseCircleLine
                   style={{
@@ -153,7 +169,13 @@ export default function FeedbackCustomizer(props) {
               ) : (
                 <SuccessPage goBack={handleBtnClose} />
               )}
-              <div className={styles["downarrow"]}></div>
+              <div
+                className={`${styles["downarrow"]} ${
+                  properties.position === "leftBottom"
+                    ? styles["downarrow-left"]
+                    : ""
+                }`}
+              ></div>
             </div>
           )}
         </div>

@@ -11,6 +11,7 @@
   padding: 0.5rem 1rem 0 1rem;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  z-index: 10;
 }
 .feedback-widget-container:hover {
   background-color: $ms-color-themeDark;
@@ -103,7 +104,6 @@
   padding-left: 1rem;
   padding-top: 1rem;
   padding-right: 1rem;
-  color: $ms-color-themeLight;
   padding-bottom: 0.7rem;
   background: $ms-color-themeSecondary;
   font-style: normal;
@@ -133,13 +133,6 @@
 .submitbtn:hover {
   background-color: $ms-color-themeDark;
 }
-:global {
-  .sp-placeholder-bottom {
-    position: absolute !important;
-    bottom: 0 !important;
-    right: 45px !important;
-  }
-}
 
 // styles for sucess page
 .successWrapper {
@@ -147,4 +140,22 @@
   flex-direction: column;
   align-items: center;
   color: #000;
+}
+.widget-left{
+  position: absolute;
+  left: 35px;
+  top: auto;
+  bottom: 0;
+}
+.widget-right{
+  position: absolute;
+  right: 35px;
+  top: auto;
+  bottom: 0;
+}
+.popup-left{
+  left:80px
+}
+.downarrow-left{
+  left: 6%;
 }
