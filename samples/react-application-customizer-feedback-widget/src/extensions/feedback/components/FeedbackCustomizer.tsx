@@ -176,6 +176,7 @@ export default function FeedbackCustomizer({
                       value={currentRating}
                       color='marigold'
                       max={5}
+                      size='large'
                       onChange={(_, data) => setCurrentRating(data.value)}
                     />
                     <button
