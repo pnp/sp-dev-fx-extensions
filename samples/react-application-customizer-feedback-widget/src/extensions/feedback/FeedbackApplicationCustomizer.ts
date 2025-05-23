@@ -11,7 +11,7 @@ import FeedbackCustomizer from "./components/FeedbackCustomizer"
 import { getSP } from "../../Configuration/PnPConfig"
 
 export interface IFeedbackApplicationCustomizerProperties {
-  testMessage: string
+  title: string
 }
 
 export default class FeedbackApplicationCustomizer extends BaseApplicationCustomizer<IFeedbackApplicationCustomizerProperties> {
@@ -57,6 +57,7 @@ export default class FeedbackApplicationCustomizer extends BaseApplicationCustom
         FeedbackCustomizer,
         {
           context: this.context,
+          properties: this.properties,
         }
       )
       ReactDOM.render(elem, this.HeaderPlaceholder.domElement)

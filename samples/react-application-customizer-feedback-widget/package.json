@@ -1,6 +1,6 @@
 {
   "name": "feedback-customizer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "engines": {
     "node": ">=16.13.0 <17.0.0 || >=18.17.1 <19.0.0"
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fluentui/react": "8.122.14",
+    "@fluentui/react-components": "^9.64.0",
     "@microsoft/decorators": "1.20.0",
     "@microsoft/sp-adaptive-card-extension-base": "1.20.0",
     "@microsoft/sp-application-base": "1.20.0",
