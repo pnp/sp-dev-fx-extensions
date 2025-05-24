@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "m-365-service-health-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/m365ServiceHealth/M365ServiceHealthApplicationCustomizer.js",
+          "manifest": "./src/extensions/m365ServiceHealth/M365ServiceHealthApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "M365ServiceHealthApplicationCustomizerStrings": "lib/extensions/m365ServiceHealth/loc/{locale}.js"
+  }
+}
