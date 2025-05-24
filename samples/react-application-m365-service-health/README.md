@@ -52,7 +52,7 @@ The extesnio create a bottom on the footer of the SharePoint site, which when cl
 
 ## Prerequisites
 
- If you want to use the solution with the `All` scope, you need to deploy an Azure Function that will provide the service health data to non-admin users. The Azure Function should be configured to call the Microsoft Graph API and return the service health information securely. You can find the project for the Azure Function in the [Azure Function project](https://github.com/joaojmendes/sp-dev-fx-extensions/tree/main/samples/react-application-m365-service-health/react-application-m365-service-health-azure-functions).
+ If you want to use the solution with the `All` scope, you need to deploy an Azure Function that will provide the service health data to non-admin users. The Azure Function should be configured to call the Microsoft Graph API and return the service health information securely. You can find the project for the Azure Function in the [Azure Function project](react-application-service-health-azfn.zip).
 
 ## Solution
 
