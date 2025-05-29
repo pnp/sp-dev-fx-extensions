@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="M365ServiceHealth"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="cb906b84-c26d-4356-b0ba-fdf4fa522f51"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

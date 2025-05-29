@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "M365 Service Health Extension",
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer",
+    "template": "none",
+    "componentName": "m365ServiceHealth",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.14.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "m-365-service-health-extension",
+    "libraryId": "ed2728bd-0f80-41e2-9f9f-66bdcbcc71a8",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "M365 Service Health Extension description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}
