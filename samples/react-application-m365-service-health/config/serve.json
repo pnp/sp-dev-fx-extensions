@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://spteck.sharepoint.com/sites/HumanResources/SitePages/Home.aspx",
+      "customActions": {
+        "cb906b84-c26d-4356-b0ba-fdf4fa522f51": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "scope": "admins"
+          }
+        }
+      }
+    },
+    "m365ServiceHealth": {
+      "pageUrl": "https://spteck.sharepoint.com/sites/HumanResources/SitePages/Home.aspx",
+      "customActions": {
+        "cb906b84-c26d-4356-b0ba-fdf4fa522f51": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "scope": "admins"
+          }
+        }
+      }
+    }
+  }
+}
