@@ -21,12 +21,7 @@ export const IssueInformation: React.FunctionComponent<
 
   const getIssueFromSelectedItem = React.useCallback(
     (selectedItem: IHealthServices): Issue => {
-      return selectedItem.issues.sort((a, b) => {
-        return (
-          new Date(b.startDateTime).getTime() -
-          new Date(a.startDateTime).getTime()
-        );
-      })[0];
+      return selectedItem.issues.find((issue) => !issue.endDateTime) as Issue;
     },
     []
   );
