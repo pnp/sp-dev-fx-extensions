@@ -9,12 +9,14 @@ export interface ISuccessProps {
 
 export const SuccessPage: React.FC<ISuccessProps> = (props:ISuccessProps): JSX.Element => {
 
-  const handleGoBack = () => {
-    props.goBack && props.goBack();
+  const handleGoBack = (): void => {
+    if (props.goBack) {
+      props.goBack();
+    }
   };
 
   return (
-    <div className={styles["successWrapper"]}>
+    <div className={styles.successWrapper}>
       <p style={{ marginBottom: "0", fontSize: "15px", fontWeight: "500" }}>
         Thanks for submitting your feedback!
       </p>
