@@ -1,14 +1,14 @@
-# m-365-service-health-extension
+# Microsoft 365 Service Health Extension
 
 ## Summary
 
 This extension provides real-time monitoring of Microsoft 365 service health directly within your SharePoint environment. It enables users to quickly check the availability status of core M365 services, helping organizations stay informed about outages or incidents.
 
-The extesnio create a bottom on the footer of the SharePoint site, which when clicked, opens a dialog showing the service health status. The extension can be configured to show service health information to either tenant administrators only or to all users in the tenant.
+The extension create a bottom on the footer of the SharePoint site, which when clicked, opens a dialog showing the service health status. The extension can be configured to show service health information to either tenant administrators only or to all users in the tenant.
 
-![Service Health Extension](./src/assets/m365ServiceHealth01.png)
-![Service Health Extension Dialog](./src/assets/m365ServiceHealth02.png)
-![Service Health Extension Details](./src/assets/m365ServiceHealth03.png)
+![Service Health Extension](./assets/m365ServiceHealth01.png)
+![Service Health Extension Dialog](./assets/m365ServiceHealth02.png)
+![Service Health Extension Details](./assets/m365ServiceHealth03.png)
 
 ### Key Features
 
@@ -54,17 +54,16 @@ The extesnio create a bottom on the footer of the SharePoint site, which when cl
 
  If you want to use the solution with the `All` scope, you need to deploy an Azure Function that will provide the service health data to non-admin users. The Azure Function should be configured to call the Microsoft Graph API and return the service health information securely. You can find the project for the Azure Function in the [Azure Function project](react-application-service-health-azfn.zip).
 
-## Solution
+## Contributors
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | João Mendes - [joaojmendes](https://twitter.com/joaojmendes) |
+- [João Mendes](https://github.com/joaojmendes)
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.0     | May 24, 2021 | Initial release |
+| 1.0     | May 24, 2025 | Initial release |
+
 
 ## Disclaimer
 
