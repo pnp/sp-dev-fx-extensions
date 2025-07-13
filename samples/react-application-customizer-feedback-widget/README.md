@@ -47,6 +47,8 @@ Create a SharePoint custom list Feedbacks in the SPO site where this application
 | Employee_Name | Text |
 | Comment | Multi-line Text |
 
+> Note: Enable Ratings column for the list.
+
 > **Optional:** Unhide the default column `Created` to capture the submitted date.
 
 ## Contributors🧑‍💻
@@ -59,6 +61,7 @@ Create a SharePoint custom list Feedbacks in the SPO site where this application
 | ------- | ---------------- | --------------- |
 | 1.0     | July 02, 2023   | Initial release  |
 | 1.1     | April 10, 2025   | Version upgrade to SPFx 1.20.0 & other improvements  |
+| 1.2     | May 23, 2025   | Implement Ratings & change position of widget based on property configuration |
 
 ## Minimal Path to Awesome⚡
 
@@ -71,11 +74,10 @@ Create a SharePoint custom list Feedbacks in the SPO site where this application
 ## Debug URL for Testing
 
 ```javascript
-?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%2233ce42af-1748-4989-ab97-a8d9f782b886%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D
+?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B"33ce42af-1748-4989-ab97-a8d9f782b886"%3A%7B"location"%3A"ClientSideExtension.ApplicationCustomizer"%2C"properties"%3A%7B"title"%3A"Submit+your+feedbacks+%26+ideas"%2C"position"%3A"rightBottom"%7D%7D%7D
 ```
 
-## Deploy Package Solution 🚀
-
+## Deploy Package Solution 
 - Ensure that you are at the solution folder
 - in the command-line run:
   - `gulp build --ship`
