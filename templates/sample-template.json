@@ -25,9 +25,6 @@
     ],
 "tags": [],
     "categories": [
-      /* SELECT THE RIGHT ONE 
-            SPFX-COMMAND-EXTENSION,SPFX-FIELD-EXTENSION,SPFX-APPLICATION-EXTENSION
-      */
       "SPFX-APPLICATION-EXTENSION"
    
     ],

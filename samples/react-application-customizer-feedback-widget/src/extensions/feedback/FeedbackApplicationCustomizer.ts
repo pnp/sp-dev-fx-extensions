@@ -11,7 +11,7 @@ import FeedbackCustomizer from "./components/FeedbackCustomizer"
 import { getSP } from "../../Configuration/PnPConfig"
 
 export interface IFeedbackApplicationCustomizerProperties {
-  testMessage: string
+  title: string
 }
 
 export default class FeedbackApplicationCustomizer extends BaseApplicationCustomizer<IFeedbackApplicationCustomizerProperties> {
@@ -53,10 +53,12 @@ export default class FeedbackApplicationCustomizer extends BaseApplicationCustom
         this._rootElement = this.HeaderPlaceholder.domElement
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const elem: React.ReactElement<any> = React.createElement(
         FeedbackCustomizer,
         {
           context: this.context,
+          properties: this.properties,
         }
       )
       ReactDOM.render(elem, this.HeaderPlaceholder.domElement)
