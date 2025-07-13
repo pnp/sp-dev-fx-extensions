@@ -21,38 +21,42 @@ type CurrentUser = {
 }
 
 interface IFeedbackCustomizerProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   context: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   properties: any
 }
 
 export default function FeedbackCustomizer({
   context,
   properties,
-}: IFeedbackCustomizerProps) {
+// eslint-disable-next-line @rushstack/no-new-null
+}: IFeedbackCustomizerProps): React.ReactElement | null {
   const [open, setOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState<CurrentUser>({
     name: "",
     mailId: "",
   })
   const [feedbackComment, setfeedbackComment] = useState("")
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [currentRating, setCurrentRating] = useState<any>(0)
   const [errorMessage, setErrorMessage] = useState("")
   const [successFlag, setSuccessFlag] = useState(false)
   const [currentsiteUrl, setSiteUrl] = useState("")
   const [isExiting, setIsExiting] = useState(false)
 
-  const handleOpen = () => {
+  const handleOpen = (): void => {
     setOpen(true)
   }
 
-  const handleBtnClose = () => {
+  const handleBtnClose = (): void => {
     setOpen(false)
     setfeedbackComment("")
     setSuccessFlag(false)
     handleOpen() // Call handleOpen to show the popup again
   }
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     setIsExiting(true)
     setTimeout(() => {
       setOpen(false)
@@ -69,23 +73,23 @@ export default function FeedbackCustomizer({
       })
     }
     // set current page siteurl
-    let getpageUrl = window.location.href
+    const getpageUrl = window.location.href
     setSiteUrl(getpageUrl)
   }, [])
 
-  const handleTextArea = (event) => {
+  const handleTextArea = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
     setfeedbackComment(event.target.value)
   }
 
-  const handleFeedbackSubmit = async () => {
-    let sp: SPFI = getSP()
+  const handleFeedbackSubmit = async (): Promise<void> => {
+    const sp: SPFI = getSP()
 
     if (feedbackComment.trim() === "") {
       setErrorMessage("Comment can't be empty")
     } else if (feedbackComment.length < 30) {
       setErrorMessage("Comment should be at least 50 characters long")
     } else {
-      let data = await sp.web.lists.getByTitle("Feedbacks").items.add({
+      const data = await sp.web.lists.getByTitle("Feedbacks").items.add({
         Employee_Name: currentUser.name,
         Employee_MailId: currentUser.mailId,
         Comment: feedbackComment,
@@ -123,7 +127,7 @@ export default function FeedbackCustomizer({
             }`}
           >
             <div
-              className={styles["buttonWrapper"]}
+              className={styles.buttonWrapper}
               onClick={open ? handleClose : handleOpen}
             >
               <BiMessageSquareDetail
@@ -162,15 +166,15 @@ export default function FeedbackCustomizer({
                   />
                 </div>
                 {successFlag === false ? (
-                  <div className={styles["feedbackWrapper"]}>
+                  <div className={styles.feedbackWrapper}>
                     <Textarea
-                      className={styles["textArea__style"]}
+                      className={styles.textArea__style}
                       value={feedbackComment}
                       onChange={(event) => handleTextArea(event)}
                       placeholder='Type here...'
                     ></Textarea>
                     {errorMessage && (
-                      <p className={styles["errorTxt"]}>{errorMessage}</p>
+                      <p className={styles.errorTxt}>{errorMessage}</p>
                     )}
                     <Rating
                       value={currentRating}
@@ -180,7 +184,7 @@ export default function FeedbackCustomizer({
                       onChange={(_, data) => setCurrentRating(data.value)}
                     />
                     <button
-                      className={styles["submitbtn"]}
+                      className={styles.submitbtn}
                       onClick={handleFeedbackSubmit}
                     >
                       Submit
@@ -190,7 +194,7 @@ export default function FeedbackCustomizer({
                   <SuccessPage goBack={handleBtnClose} />
                 )}
                 <div
-                  className={`${styles["downarrow"]} ${
+                  className={`${styles.downarrow} ${
                     properties.position === "leftBottom"
                       ? styles["downarrow-left"]
                       : ""

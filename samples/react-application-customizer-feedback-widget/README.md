@@ -77,8 +77,7 @@ Create a SharePoint custom list Feedbacks in the SPO site where this application
 ?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B"33ce42af-1748-4989-ab97-a8d9f782b886"%3A%7B"location"%3A"ClientSideExtension.ApplicationCustomizer"%2C"properties"%3A%7B"title"%3A"Submit+your+feedbacks+%26+ideas"%2C"position"%3A"rightBottom"%7D%7D%7D
 ```
 
-## Deploy Package Solution 🚀
-
+## Deploy Package Solution 
 - Ensure that you are at the solution folder
 - in the command-line run:
   - `gulp build --ship`

@@ -53,6 +53,7 @@ export default class FeedbackApplicationCustomizer extends BaseApplicationCustom
         this._rootElement = this.HeaderPlaceholder.domElement
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const elem: React.ReactElement<any> = React.createElement(
         FeedbackCustomizer,
         {
