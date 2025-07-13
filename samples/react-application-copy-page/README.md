@@ -1,4 +1,4 @@
-# react-application-copy-page
+# Copy Page SPFx Application Customizer
 
 ## Summary
 
@@ -38,11 +38,9 @@ This SPFx Application Customizer empowers content authors to **copy modern site 
 - The source and destination sites must use modern pages and have the **Site Pages** library.
 - User must have contribute permissions on the destination site.
 
-## Solution
+## Contributors
 
-| Solution            | Author(s)                             |
-|---------------------|----------------------------------------|
-| copy-page-extension | [Ahmad Jad Alhak](https://github.com/ahmad-jad-alhak) |
+- [Ahmad Jad Alhak](https://github.com/ahmad-jad-alhak)
 
 ## Version history
 
@@ -143,8 +141,6 @@ This SPFx Application Customizer demonstrates:
 
 We welcome feedback and contributions! Feel free to submit issues or pull requests to improve this solution.
 
----
----
 
 ## References
 
@@ -152,3 +148,5 @@ We welcome feedback and contributions! Feel free to submit issues or pull reques
 - [SharePoint client-side pages API](https://pnp.github.io/pnpjs/sp/clientside-pages/)
 - [PnPjs Documentation](https://pnp.github.io/pnpjs/)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-copy-page" />
