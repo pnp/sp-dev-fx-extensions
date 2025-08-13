@@ -82,6 +82,7 @@ Since SharePoint list is used to store the menu items is relatively easy to chan
 Solution|Author(s)
 --------|---------
 react-mega-menu | Velin Georgiev ([@VelinGeorgiev](https://twitter.com/velingeorgiev))
+SPFx v1.20 and React Testling Library | Ervin Gayle(https://github.com/ervingayle)
 
 ## Version history
 
@@ -92,6 +93,7 @@ Version|Date|Comments
 0.1.1|October 10, 2018  | Updated to SPFx 1.6.0 and @pnp 1.2.2
 0.1.2|December 10, 2018  | Updated to SPFx 1.7.0 and @pnp 1.2.7
 0.1.3|October 28, 2022  | Upgrade to SPFx 1.12.1
+0.1.4|Decemberr 30, 2024  | Upgrade to SPFx 1.20.0 and React Testing Library from Enzyme
 
 
 ## Disclaimer
@@ -114,6 +116,7 @@ Full URL to request would be something like following:
 https://tenant.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={%226a4a81ba-4704-463b-98eb-1d1bfa710744%22:{%22location%22:%22ClientSideExtension.ApplicationCustomizer%22,%22properties%22:{%22isDebug%22:true,%22rootWebOnly%22:false,%22enableSessionStorageCache%22:true}}}
 ```
 - Select `Load debug scripts` on the **Allow debug scripts?** popup window.
+- To run unit tests `npx jest` or `npx jest --verbose`
 
 ## Features
 

@@ -1,0 +1,19 @@
+{
+    "verbose": true,
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
+      "^.+\\.(css|scss|html)$": "jest-transform-stub", 
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json|html)$)": "jest-transform-stub"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!office-ui-fabric-react|@microsoft/sp-core-library|@pnp/sp)"
+    ],
+    "moduleNameMapper": {
+      "^@microsoft/sp-core-library/lib-common/log/(.*)$": "<rootDir>/__mocks__/sp-core-library/$1.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "setupFilesAfterEnv": ["<rootDir>/setupTests.js"],
+    "testEnvironment": "jsdom",
+    "testMatch": ["<rootDir>/lib/**/*.test.(js|jsx|ts|tsx)"],
+    "preset": "ts-jest"
+}

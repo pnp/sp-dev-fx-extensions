@@ -1,0 +1,25 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "react-copilot-aprils-fool",
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer",
+    "template": "none",
+    "componentName": "Copilot April Fools",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "20.16.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "react-copilot-aprils-fool",
+    "libraryId": "4389f8df-31ed-4999-8fc5-42fcdc338894",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "react-copilot-aprils-fool description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}

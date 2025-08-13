@@ -6,6 +6,24 @@
     "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": false,
+    "developer": {
+      "name": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "websiteUrl": "",
+      "mpnId": ""
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "react-command-print description"
+      },
+      "longDescription": {
+        "default": "react-command-print description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="CopyPage"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="94902ee2-daea-4d56-8457-a8694fec3f06"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

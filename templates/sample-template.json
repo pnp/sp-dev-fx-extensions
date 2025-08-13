@@ -25,10 +25,8 @@
     ],
 "tags": [],
     "categories": [
-      /* SELECT THE RIGHT ONE */
       "SPFX-APPLICATION-EXTENSION"
-      "SPFX-COMMAND-EXTENSION"
-      "SPFX-FIELD-EXTENSION"      
+   
     ],
     "thumbnails": [
       {

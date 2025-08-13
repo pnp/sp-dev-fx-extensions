@@ -1,0 +1,21 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.appContainer {
+  position: fixed;
+  bottom: 25px; /* Position the button at the bottom */
+  z-index: 9999; /* Ensure it overlays all elements */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the button horizontally */
+  width: 100%; /* Ensure the container spans the width of the page */
+}
+
+.appButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: "[theme:white, default:#ffffff]"; /* Use white for text */
+  background-color: "[theme:themePrimary, default:#0078d4]"; /* Use the primary theme color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -49,11 +49,12 @@ export interface IReactMegaMenuApplicationCustomizerProperties {
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class ReactMegaMenuApplicationCustomizer
   extends BaseApplicationCustomizer<IReactMegaMenuApplicationCustomizerProperties> {
-
+  
+  private _topPlaceholder: PlaceholderContent | undefined;
   @override
   public onInit(): Promise<void> {
 
-    let placeholder: PlaceholderContent | any = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
+    let placeholder: PlaceholderContent | any = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top, { onDispose: this._onDispose });
 
     // init the react mega menu component.
     const element: React.ReactElement<IMegaMenuProps> = React.createElement(
@@ -88,4 +89,10 @@ export default class ReactMegaMenuApplicationCustomizer
 
     return new MenuSPListProvider(webUrl, this.properties.enableSessionStorageCache);
   }
+
+  private _onDispose = (): void => {
+    if (this._topPlaceholder?.domElement) {
+      ReactDom.unmountComponentAtNode(this._topPlaceholder.domElement);
+    }
+  };
 }

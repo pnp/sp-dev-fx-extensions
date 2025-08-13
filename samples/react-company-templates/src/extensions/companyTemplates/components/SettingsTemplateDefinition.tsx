@@ -1,5 +1,5 @@
-import { Stack } from "office-ui-fabric-react";
-import * as React from "react"
+import * as React from "react";
+import { Stack } from "@fluentui/react";
 import { FieldPicker } from "@pnp/spfx-controls-react/lib/FieldPicker";
 import { SPFxContext } from "../contexts/SPFxContext";
 import { FieldsOrderBy } from "@pnp/spfx-controls-react/lib/services/ISPService";

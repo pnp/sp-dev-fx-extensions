@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "version": "1.15.2",
+    "version": "1.20.0",
     "libraryName": "react-field-votes",
     "libraryId": "2a2ccbf6-44a6-44a5-8129-068602b64e19",
     "environment": "spo",
@@ -12,6 +12,9 @@
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "extension",
-    "extensionType": "FieldCustomizer"
+    "extensionType": "FieldCustomizer",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0"
+    }
   }
 }

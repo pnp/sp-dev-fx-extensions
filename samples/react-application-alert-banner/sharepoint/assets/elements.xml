@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction Title="alertbanner" Location="ClientSideExtension.ApplicationCustomizer" ClientSideComponentId="4b274e80-896b-4c87-9a78-d751d9dff522" ClientSideComponentProperties="[
+   {
+      &quot;name&quot;:&quot;Info&quot;,
+      &quot;iconName&quot;:&quot;Info12&quot;,
+      &quot;backgroundColor&quot;:&quot;#389899&quot;,
+      &quot;textColor&quot;:&quot;#ffffff&quot;,
+      &quot;additionalStyles&quot;:&quot;&quot;
+   },
+   {
+      &quot;name&quot;:&quot;Warning&quot;,
+      &quot;iconName&quot;:&quot;ShieldAlert&quot;,
+      &quot;backgroundColor&quot;:&quot;#f1c40f&quot;,
+      &quot;textColor&quot;:&quot;#ffffff&quot;,
+      &quot;additionalStyles&quot;:&quot;&quot;
+   },
+   {
+      &quot;name&quot;:&quot;Maintenance&quot;,
+      &quot;iconName&quot;:&quot;CRMServices&quot;,
+      &quot;backgroundColor&quot;:&quot;#afd6d6&quot;,
+      &quot;textColor&quot;:&quot;#ffffff&quot;,
+      &quot;additionalStyles&quot;:&quot;&quot;
+   },
+   {
+      &quot;name&quot;:&quot;Interruption&quot;,
+      &quot;iconName&quot;:&quot;IncidentTriangle&quot;,
+      &quot;backgroundColor&quot;:&quot;#c54644&quot;,
+      &quot;textColor&quot;:&quot;#ffffff&quot;,
+      &quot;additionalStyles&quot;:&quot;&quot;
+   }
+]"></CustomAction>
+</Elements>

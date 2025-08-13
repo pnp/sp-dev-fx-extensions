@@ -219,7 +219,7 @@
       "In this sample is possible to see how to implement Google Analytics through SPFx Extensions Application Customizers"
     ],
     "creationDateTime": "2020-10-07",
-    "updateDateTime": "2021-07-01",
+    "updateDateTime": "2024-10-23",
     "products": [
       "SharePoint"
     ],
@@ -230,7 +230,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.11.0"
+        "value": "1.20.0"
       }
     ],
     "tags": [],
@@ -1913,7 +1913,7 @@
       "The Alert Banner SPFx Extension is a custom SharePoint Framework (SPFx) extension designed to display alert notifications prominently in the Banner of Modern SharePoint sites. These alerts are dynamically retrieved from a SharePoint list using the Microsoft Graph API, ensuring users receive important updates and information seamlessly integrated with Microsoft 365 services."
     ],
     "creationDateTime": "2023-12-25",
-    "updateDateTime": "2024-10-11",
+    "updateDateTime": "2025-03-06",
     "products": [
       "SharePoint"
     ],
@@ -2033,7 +2033,7 @@
       "SharePoint Framework application customizer displaying an information banner using office-fabric-ui MessageBar."
     ],
     "creationDateTime": "2020-06-18",
-    "updateDateTime": "2024-10-06",
+    "updateDateTime": "2024-12-24",
     "products": [
       "SharePoint"
     ],
@@ -2064,6 +2064,12 @@
         "gitHubAccount": "thespooler",
         "pictureUrl": "https://github.com/thespooler.png",
         "name": "Mike Myers"
+      },
+      {
+        "gitHubAccount": "Sandeep-FED",
+        "company": "EY",
+        "pictureUrl": "https://github.com/sandeep-fed.png",
+        "name": "Sandeep P S"
       }
     ],
     "references": [
@@ -2146,7 +2152,7 @@
       "This sample shows how to create a breadcrumb element and append it to your site via the SharePoint Framework Application Customizer extension."
     ],
     "creationDateTime": "2020-10-03",
-    "updateDateTime": "2020-10-03",
+    "updateDateTime": "2024-10-05",
     "products": [
       "SharePoint"
     ],
@@ -2157,7 +2163,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.11.0"
+        "value": "1.20.0"
       }
     ],
     "tags": [],
@@ -2202,16 +2208,16 @@
     ]
   },
   {
-    "name": "pnp-sp-dev-spfx-extensions-react-application-collab-footer",
+    "name": "pnp-sp-dev-spfx-extensions-react-application-chatbubble-copilot",
     "source": "pnp",
-    "title": "Collaboration Footer Application Customizers",
-    "shortDescription": "This application customizer provides you the ability to include a footer designed for normal and group associated teams sites.",
-    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-collab-footer",
+    "title": "Chatbot Integration for SharePoint Online",
+    "shortDescription": "This solution integrates a chatbot within SharePoint Online using a Tenant App Catalog and Azure AD App Registration. It provides a seamless way to enhance user engagement on SharePoint sites by embedding a customizable chatbot interface. You have a per site agent by creating it in a SharePoint list or a global one by adding json to TWE",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-chatbubble-copilot",
     "longDescription": [
-      "This application customizer provides you the ability to include a footer designed for normal and group associated teams sites."
+      "This solution integrates a chatbot within SharePoint Online using a Tenant App Catalog and Azure AD App Registration. It provides a seamless way to enhance user engagement on SharePoint sites by embedding a customizable chatbot interface. You have a per site agent by creating it in a SharePoint list or a global one by adding json to TWE"
     ],
-    "creationDateTime": "2020-01-01",
-    "updateDateTime": "2020-01-01",
+    "creationDateTime": "2025-01-08",
+    "updateDateTime": "2025-01-08",
     "products": [
       "SharePoint"
     ],
@@ -2222,7 +2228,56 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.4.0"
+        "value": "1.20.0"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [],
+    "authors": [
+      {
+        "gitHubAccount": "https://github.com/NicolasKheirallah",
+        "pictureUrl": "https://github.com/NicolasKheirallah.png",
+        "name": "Nicolas Kheirallah"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-YOUR-SOLUTION-NAME-GOES-HERE",
+    "source": "pnp",
+    "title": "Copy Page SPFx Application Customizer",
+    "shortDescription": "This SPFx Application Customizer empowers content authors to copy modern site pages across sites with full control over:",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
+    "longDescription": [
+      "This SPFx Application Customizer empowers content authors to copy modern site pages across sites with full control over:"
+    ],
+    "creationDateTime": "2023-12-25",
+    "updateDateTime": "2023-12-31",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.21.1"
       }
     ],
     "tags": [],
@@ -2231,25 +2286,39 @@
     ],
     "thumbnails": [
       {
+        "name": "preview-01.png",
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-starter-kit/raw/master/assets/images/components/ext-collab-footer.gif",
-        "alt": "Collaboration Footer Application Customizers"
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-01.png",
+        "alt": "Web Part Preview"
+      },
+      {
+        "name": "preview-02.png",
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-02.png",
+        "alt": "Web Part Preview"
+      },
+      {
+        "name": "preview-03.png",
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-03.png",
+        "alt": "Web Part Preview"
+      },
+      {
+        "name": "preview-04.png",
+        "type": "image",
+        "order": 103,
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-04.png",
+        "alt": "Web Part Preview"
       }
     ],
     "authors": [
       {
-        "gitHubAccount": "PaoloPia",
-        "company": "PiaSys.com",
-        "pictureUrl": "https://github.com/PaoloPia.png",
-        "name": "Paolo Pialorsi",
-        "twitter": "PaoloPia"
-      },
-      {
-        "gitHubAccount": "spdavid",
-        "company": "Zalo Solutions AB",
-        "pictureUrl": "https://github.com/spdavid.png",
-        "name": "David Opdendries"
+        "gitHubAccount": "https://github.com/ahmad-jad-alhak",
+        "pictureUrl": "https://github.com/ahmad-jad-alhak.png",
+        "name": "Ahmad Jad Alhak"
       }
     ],
     "references": [
@@ -2275,7 +2344,7 @@
       "An SPFx Application Customizer Extension placed in the bottom placeholder which allows users to input their feedbacks without scrolling down to the end of the page."
     ],
     "creationDateTime": "2023-07-02",
-    "updateDateTime": "2023-07-02",
+    "updateDateTime": "2025-05-25",
     "products": [
       "SharePoint"
     ],
@@ -2286,7 +2355,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.16.1"
+        "value": "1.20.2"
       }
     ],
     "tags": [],
@@ -2503,7 +2572,7 @@
       "This sample shows how to inject a custom Cascading Style Sheet (CSS) on modern pages."
     ],
     "creationDateTime": "2018-03-28",
-    "updateDateTime": "2018-03-28",
+    "updateDateTime": "2024-10-05",
     "products": [
       "SharePoint"
     ],
@@ -2514,7 +2583,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.8"
+        "value": "1.20.0"
       }
     ],
     "tags": [],
@@ -2628,16 +2697,16 @@
     ]
   },
   {
-    "name": "pnp-sp-dev-spfx-extensions-react-application-machine-translations",
+    "name": "pnp-sp-dev-spfx-extensions-react-YOUR-SOLUTION-NAME-GOES-HERE",
     "source": "pnp",
-    "title": "Machine Translations",
-    "shortDescription": "This application customizer lets you translate the text on a SharePoint page using the Translator Text API of Microsoft Azure.",
-    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-machine-translations",
+    "title": "Microsoft 365 Service Health Extension",
+    "shortDescription": "This extension provides real-time monitoring of Microsoft 365 service health directly within your SharePoint environment. It enables users to quickly check the availability status of core M365 services, helping organizations stay informed about outages or incidents.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
     "longDescription": [
-      "This application customizer lets you translate the text on a SharePoint page using the Translator Text API of Microsoft Azure."
+      "This extension provides real-time monitoring of Microsoft 365 service health directly within your SharePoint environment. It enables users to quickly check the availability status of core M365 services, helping organizations stay informed about outages or incidents."
     ],
-    "creationDateTime": "2021-01-20",
-    "updateDateTime": "2021-07-22",
+    "creationDateTime": "2021-05-24",
+    "updateDateTime": "2021-05-24",
     "products": [
       "SharePoint"
     ],
@@ -2648,7 +2717,78 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.10.0"
+        "value": "1.21.1"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "name": "m365ServiceHealth01.png",
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth01.png",
+        "alt": "Web Part Preview"
+      },
+      {
+        "name": "m365ServiceHealth02.png",
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth02.png",
+        "alt": "Web Part Preview"
+      },
+      {
+        "name": "m365ServiceHealth03.png",
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth03.png",
+        "alt": "Web Part Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "https://github.com/joaojmendes",
+        "pictureUrl": "https://github.com/joaojmendes.png",
+        "name": "João Mendes"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-application-machine-translations",
+    "source": "pnp",
+    "title": "Machine Translations",
+    "shortDescription": "This application customizer lets you translate the text on a SharePoint page using the Translator Text API of Microsoft Azure.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-machine-translations",
+    "longDescription": [
+      "This application customizer lets you translate the text on a SharePoint page using the Translator Text API of Microsoft Azure."
+    ],
+    "creationDateTime": "2021-01-20",
+    "updateDateTime": "2024-12-09",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.20.0"
       }
     ],
     "tags": [],
@@ -2680,6 +2820,11 @@
         "gitHubAccount": "mromiszewski",
         "pictureUrl": "https://github.com/mromiszewski.png",
         "name": "Michał Romiszewski"
+      },
+      {
+        "gitHubAccount": "NishkalankBezawada",
+        "pictureUrl": "https://github.com/NishkalankBezawada.png",
+        "name": "Nishkalank Bezawada"
       }
     ],
     "references": [
@@ -2759,6 +2904,12 @@
         "pictureUrl": "https://github.com/bschlintz.png",
         "name": "Brad Schlintz",
         "twitter": "bschlintz"
+      },
+      {
+        "gitHubAccount": "Sandeep-FED",
+        "company": "EY",
+        "pictureUrl": "https://github.com/sandeep-fed.png",
+        "name": "Sandeep P S"
       }
     ],
     "references": [
@@ -3078,7 +3229,7 @@
       "SPFx application extension acting as top level search driven navigation and permission checker on the right within a panel."
     ],
     "creationDateTime": "2023-07-27",
-    "updateDateTime": "2024-01-20",
+    "updateDateTime": "2024-10-23",
     "products": [
       "SharePoint"
     ],
@@ -3089,7 +3240,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.18.2"
+        "value": "1.20.0"
       }
     ],
     "tags": [],
@@ -3140,7 +3291,7 @@
       "An SPFx Extension that displays news as a running text at the top of every modern page."
     ],
     "creationDateTime": "2021-04-19",
-    "updateDateTime": "2022-11-11",
+    "updateDateTime": "2024-10-24",
     "products": [
       "SharePoint"
     ],
@@ -3151,7 +3302,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.15.2"
+        "value": "1.20.0"
       }
     ],
     "thumbnails": [
@@ -4455,6 +4606,63 @@
     ]
   },
   {
+    "name": "pnp-sp-dev-spfx-extensions-YOUR-SOLUTION-NAME-GOES-HERE",
+    "source": "pnp",
+    "title": "AI Document Assistant",
+    "shortDescription": "The AI Document Assistant is a SharePoint Framework (SPFx) Command Set extension designed to enhance document interactions in SharePoint Online. This intelligent assistant leverages the OpenAI Assistant API to allow users to ask questions about selected documents directly within a chat interface.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
+    "longDescription": [
+      "The AI Document Assistant is a SharePoint Framework (SPFx) Command Set extension designed to enhance document interactions in SharePoint Online. This intelligent assistant leverages the OpenAI Assistant API to allow users to ask questions about selected documents directly within a chat interface."
+    ],
+    "creationDateTime": "2023-12-25",
+    "updateDateTime": "2023-12-31",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.20.0"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "name": "architecture.png",
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-command-ai-document-assistant/assets/architecture.png",
+        "alt": "Web Part Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "https://github.com/ejazhussain",
+        "pictureUrl": "https://github.com/ejazhussain.png",
+        "name": "Ejaz Hussain"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-dev-spfx-extensions-react-react-command-change-page-layouttype",
     "source": "pnp",
     "title": "Change Page Layout Command Extension",
@@ -4527,7 +4735,7 @@
       "A global list customizer which adds functionality to all document libraries in SharePoint Online to convert one or more documents in-place to PDF, or download one or more documents as a PDF. When selecting multiple documents for download they will be downloaded as a zip file. The converter uses built in API's of converting to PDF."
     ],
     "creationDateTime": "2021-02-23",
-    "updateDateTime": "2021-11-11",
+    "updateDateTime": "2024-10-23",
     "products": [
       "SharePoint"
     ],
@@ -4538,7 +4746,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.12.1"
+        "value": "1.20.0"
       }
     ],
     "tags": [],
@@ -5581,7 +5789,7 @@
       "This sample shows how you can print list items using different templates, site admin can add, edit or remove templates and users can print items based on those templates."
     ],
     "creationDateTime": "2018-12-05",
-    "updateDateTime": "2018-12-05",
+    "updateDateTime": "2024-10-30",
     "products": [
       "SharePoint"
     ],
@@ -5592,7 +5800,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.7"
+        "value": "1.16.1"
       }
     ],
     "tags": [],
@@ -5614,6 +5822,13 @@
         "pictureUrl": "https://github.com/AhmadiRamin.png",
         "name": "Ramin Ahmadi",
         "twitter": "raminahmadi1986"
+      },
+      {
+        "gitHubAccount": "NishkalankBezawada",
+        "company": "Bravero AB",
+        "pictureUrl": "https://github.com/NishkalankBezawada.png",
+        "name": "Nishkalank Bezawada",
+        "twitter": "im_nishkalank"
       }
     ],
     "references": [
@@ -5953,7 +6168,7 @@
       "This is an alternative to the built-in 'New document' experience in a document library in SharePoint Online. It allows a SharePoint admin to define a repository (such as a standard document library or an org assets library) which acts as a source of templates that can be used in every document library. Any user can browse through the collection of company templates, get an instance of the desired template(s) by one single click and start using it."
     ],
     "creationDateTime": "2023-12-22",
-    "updateDateTime": "2024-04-06",
+    "updateDateTime": "2025-03-12",
     "products": [
       "SharePoint"
     ],
@@ -5964,7 +6179,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.17.4"
+        "value": "1.20.0"
       }
     ],
     "thumbnails": [
@@ -5985,6 +6200,11 @@
         "gitHubAccount": "Tanddant",
         "pictureUrl": "https://github.com/Tanddant.png",
         "name": "Dan Toft (Code Reviews)"
+      },
+      {
+        "gitHubAccount": "NicolasKheirallah",
+        "pictureUrl": "https://github.com/NicolasKheirallah.png",
+        "name": "Nicolas Kheirallah"
       }
     ],
     "references": [
@@ -5992,6 +6212,54 @@
         "name": "ListView Command Set extension",
         "description": "You can use SharePoint Framework (SPFx) Extensions to build list view command set extensions with the aim to extend the SharePoint command surfaces to add new actions, and provides client-side code that you can use to implement custom behaviors.",
         "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-copilot-aprils-fool",
+    "source": "pnp",
+    "title": "Copilot April's Fool",
+    "shortDescription": "An extention to privide a simple approach to display custom messages in SharePoint Online.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-copilot-aprils-fool",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-copilot-aprils-fool",
+    "longDescription": [
+      "An extention to privide a simple approach to display custom messages in SharePoint Online."
+    ],
+    "creationDateTime": "2025-03-23",
+    "updateDateTime": "2025-03-23",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.20.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-copilot-aprils-fool/assets/sample.png",
+        "alt": "Extension Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "ValerasNarbutas",
+        "pictureUrl": "https://github.com/ValerasNarbutas.png",
+        "name": "Valeras Narbutas"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
       }
     ]
   },
@@ -6684,7 +6952,7 @@
       "If the current user hasn't been voted, the button will become Vote button but if the current user has been voted, it will become Unvote button."
     ],
     "creationDateTime": "2021-04-19",
-    "updateDateTime": "2023-10-08",
+    "updateDateTime": "2024-10-29",
     "products": [
       "SharePoint"
     ],
@@ -6695,7 +6963,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.15.2"
+        "value": "1.20.0"
       }
     ],
     "categories": [
@@ -6973,7 +7241,7 @@
       "This sample shows site mega menu. Application customizer is used along with SharePoint List to store the menu items."
     ],
     "creationDateTime": "2018-12-10",
-    "updateDateTime": "2018-12-10",
+    "updateDateTime": "2024-10-31",
     "products": [
       "SharePoint"
     ],
@@ -6984,7 +7252,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.7.0"
+        "value": "1.20.0"
       }
     ],
     "tags": [],
@@ -7343,18 +7611,16 @@
     ]
   },
   {
-    "name": "pnp-sp-dev-spfx-extensions-react-utility-extensions",
+    "name": "pnp-sp-dev-spfx-extensions-react-YOUR-SOLUTION-NAME-GOES-HERE",
     "source": "pnp",
     "title": "Copy Path and Copy Name List view command set extensions",
-    "shortDescription": "List view command set extensions with below functionalities: Copy Path and Copy Name.",
-    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-utility-extensions",
+    "shortDescription": "List view command set extensions with below functionalities",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
     "longDescription": [
-      "List view command set extensions with below functionalities:",
-      "1. Copy Path allows to copy the path of the document without breaking the permission inheritance.",
-      "2. Copy Name allows to copy the name of the document without using the currently available rename functionality."
+      "List view command set extensions with below functionalities"
     ],
-    "creationDateTime": "2023-10-04",
-    "updateDateTime": "2024-08-28",
+    "creationDateTime": "2023-10-22",
+    "updateDateTime": "2025-02-27",
     "products": [
       "SharePoint"
     ],
@@ -7365,24 +7631,25 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.19.0"
+        "value": "1.20.0"
       }
     ],
     "tags": [],
     "categories": [
-      "SPFX-COMMAND-EXTENSION"
+      "SPFX-APPLICATION-EXTENSION"
     ],
     "thumbnails": [
       {
+        "name": "CopyPathCopyNameExtenstions.png",
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-utility-extensions/assets/CopyPathCopyNameExtenstions.png",
-        "alt": "Preview"
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-utility-extensions/assets/CopyPathCopyNameExtenstions.png",
+        "alt": "Web Part Preview"
       }
     ],
     "authors": [
       {
-        "gitHubAccount": "HarminderSethi",
+        "gitHubAccount": "https://github.com/HarminderSethi",
         "pictureUrl": "https://github.com/HarminderSethi.png",
         "name": "Harminder Singh"
       }
