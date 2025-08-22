@@ -1,0 +1,173 @@
+/**
+ * Shared styles for common UI patterns across the Collaboration Footer
+ * This helps reduce duplication and maintain consistency
+ */
+
+// Common button styles
+.compactButton {
+  padding: 2px 6px;
+  min-width: 20px;
+  height: 20px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: var(--button-hover-bg, #f3f2f1);
+    border-color: var(--button-hover-border, #c8c6c4);
+  }
+  
+  &:active {
+    background-color: var(--button-active-bg, #edebe9);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.primaryButton {
+  @extend .compactButton;
+  background-color: var(--primary-color, #0078d4);
+  color: white;
+  border-color: var(--primary-color, #0078d4);
+  
+  &:hover {
+    background-color: var(--primary-hover, #106ebe);
+    border-color: var(--primary-hover, #106ebe);
+  }
+}
+
+// Common icon styles
+.buttonIcon {
+  font-size: 12px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkIcon {
+  font-size: 14px;
+  margin-right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Common layout patterns
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+// Common spacing utilities
+.spacing {
+  &Small {
+    gap: 4px;
+  }
+  
+  &Medium {
+    gap: 8px;
+  }
+  
+  &Large {
+    gap: 12px;
+  }
+}
+
+// Common loading and state styles
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: var(--text-secondary, #605e5c);
+  font-size: 12px;
+}
+
+.errorContainer {
+  padding: 10px;
+  background-color: var(--error-bg, #fdf2f2);
+  border: 1px solid var(--error-border, #f5c6cb);
+  border-radius: 4px;
+  color: var(--error-text, #721c24);
+  font-size: 12px;
+}
+
+.successContainer {
+  padding: 10px;
+  background-color: var(--success-bg, #d4edda);
+  border: 1px solid var(--success-border, #c3e6cb);
+  border-radius: 4px;
+  color: var(--success-text, #155724);
+  font-size: 12px;
+}
+
+// Common animation keyframes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fadeInAnimation {
+  animation: fadeIn 0.2s ease;
+}
+
+.slideInAnimation {
+  animation: slideIn 0.3s ease;
+}
+
+// Responsive breakpoints
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

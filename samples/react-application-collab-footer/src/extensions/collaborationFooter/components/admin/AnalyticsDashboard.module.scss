@@ -1,0 +1,155 @@
+.analyticsDashboard {
+  padding: 24px;
+  max-width: 1200px;
+
+  .loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+  }
+
+  .analyticsError {
+    margin: 24px;
+  }
+
+  .dashboardHeader {
+    margin-bottom: 32px;
+
+    .dashboardTitle {
+      color: #323130;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .dashboardDescription {
+      color: #605e5c;
+    }
+  }
+
+  .quickStats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+
+    .statCard {
+      padding: 24px;
+      background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      .statValue {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+
+      .statLabel {
+        opacity: 0.9;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .insightsSection {
+    margin-bottom: 32px;
+
+    .sectionTitle {
+      color: #323130;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .insightsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+
+      .insightCard {
+        padding: 16px;
+        background-color: #f8f8f8;
+        border-radius: 6px;
+        border-left: 4px solid #0078d4;
+
+        .insightTitle {
+          color: #605e5c;
+          margin-bottom: 8px;
+          display: block;
+        }
+
+        .insightValue {
+          color: #323130;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .categorySection {
+    margin-bottom: 32px;
+
+    .sectionTitle {
+      color: #323130;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .categoryBars {
+      .categoryBar {
+        margin-bottom: 16px;
+
+        .categoryInfo {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+
+  .detailsPivot {
+    margin-bottom: 32px;
+
+    .tableSection {
+      margin-top: 16px;
+    }
+  }
+
+  .popularityScore {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > div:first-child {
+      flex: 1;
+    }
+  }
+
+  .favoriteLinks {
+    .favoriteLink {
+      margin-bottom: 2px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .actionButtons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .dataInfo {
+    margin-top: 16px;
+  }
+}

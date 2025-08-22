@@ -1,0 +1,82 @@
+.linkManagementPanel {
+  z-index: 1000 !important;
+  
+  :global(.ms-Panel-main) {
+    max-width: 90vw;
+    z-index: 1000 !important;
+    // Ensure panel slides from right
+    transform-origin: right center;
+    position: fixed !important;
+    right: 0 !important;
+    top: 0 !important;
+    height: 100vh !important;
+  }
+  
+  :global(.ms-Panel-overlay) {
+    z-index: 999 !important;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  :global(.ms-Panel-scrollableContent) {
+    z-index: 1001 !important;
+  }
+  
+  // Animation and positioning improvements
+  :global(.ms-Panel-commands) {
+    border-bottom: 1px solid #edebe9;
+    padding: 16px 20px;
+    background: #faf9f8;
+  }
+  
+  :global(.ms-Panel-navigation) {
+    padding: 0 20px 16px 20px;
+  }
+  
+  // Responsive adjustments
+  @media screen and (max-width: 768px) {
+    :global(.ms-Panel-main) {
+      width: 100vw !important;
+      right: 0 !important;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    :global(.ms-Panel-main) {
+      width: 80vw !important;
+      max-width: 600px !important;
+    }
+  }
+}
+
+.panelContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+.pivotContainer {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabContent {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid #e1e1e1;
+  background: #ffffff;
+  margin-top: auto;
+}

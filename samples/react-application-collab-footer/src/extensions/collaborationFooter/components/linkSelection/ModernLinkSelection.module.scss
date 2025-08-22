@@ -1,0 +1,405 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.dialogWrapper {
+  :global(.ms-Dialog-main) {
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+}
+
+.dialogContainer {
+  .dialogContent {
+    padding: 0 24px 24px 24px;
+    max-height: 70vh;
+    overflow-y: auto;
+    
+    @media screen and (max-width: 768px) {
+      padding: 0 16px 16px 16px;
+      max-height: 80vh;
+    }
+  }
+
+  .messageContainer {
+    margin-bottom: 16px;
+    
+    :global(.ms-MessageBar) {
+      border-radius: 6px;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .headerControls {
+    margin-bottom: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid $ms-color-neutralQuaternaryAlt;
+    
+    @media screen and (max-width: 768px) {
+      margin-bottom: 16px;
+      padding: 16px 0;
+    }
+  }
+
+  .contentSections {
+    .mandatorySection {
+      margin-bottom: 32px;
+      
+      @media screen and (max-width: 768px) {
+        margin-bottom: 24px;
+      }
+    }
+
+    .optionalSection {
+      // Styles handled by individual sections
+    }
+
+    .sectionTitle {
+      margin-bottom: 16px;
+      
+      @media screen and (max-width: 768px) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .linksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+    
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+
+  .linkCard {
+    background: $ms-color-white;
+    border: 1px solid $ms-color-neutralQuaternaryAlt;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    
+    &:hover {
+      border-color: $ms-color-themePrimary;
+      box-shadow: 0 2px 8px rgba(0, 120, 212, 0.15);
+      transform: translateY(-1px);
+    }
+    
+    &.selected {
+      border-color: $ms-color-themePrimary;
+      background: linear-gradient(135deg, rgba(0, 120, 212, 0.02) 0%, rgba(0, 120, 212, 0.05) 100%);
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, $ms-color-themePrimary 0%, $ms-color-themeSecondary 100%);
+      }
+    }
+    
+    &.mandatory {
+      border-color: $ms-color-green;
+      background: linear-gradient(135deg, rgba(16, 124, 16, 0.02) 0%, rgba(16, 124, 16, 0.05) 100%);
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, $ms-color-green 0%, $ms-color-greenDark 100%);
+      }
+      
+      &:hover {
+        border-color: $ms-color-green;
+        box-shadow: 0 2px 8px rgba(16, 124, 16, 0.15);
+      }
+    }
+  }
+
+  .linkCardContent {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+    
+    @media screen and (max-width: 768px) {
+      padding: 14px;
+      min-height: 64px;
+    }
+  }
+
+  .linkInfo {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .linkIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, rgba(0, 120, 212, 0.1) 0%, rgba(0, 120, 212, 0.05) 100%);
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin-right: 12px;
+    
+    @media screen and (max-width: 768px) {
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+    }
+    
+    .mandatory & {
+      background: linear-gradient(135deg, rgba(16, 124, 16, 0.1) 0%, rgba(16, 124, 16, 0.05) 100%);
+    }
+  }
+
+  .linkDetails {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .linkActions {
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+
+  .mandatoryBadge {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    background: rgba(16, 124, 16, 0.1);
+    border: 1px solid rgba(16, 124, 16, 0.2);
+    border-radius: 4px;
+    color: $ms-color-green;
+  }
+
+  .categorySection {
+    margin-bottom: 24px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    @media screen and (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .categoryHeader {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 16px;
+    
+    @media screen and (max-width: 768px) {
+      padding: 12px 0;
+      margin-bottom: 12px;
+    }
+  }
+
+  .categoryInfo {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .categoryLinks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+
+  .emptyState {
+    padding: 48px 24px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.01);
+    border-radius: 8px;
+    border: 2px dashed $ms-color-neutralQuaternaryAlt;
+    
+    @media screen and (max-width: 768px) {
+      padding: 32px 16px;
+    }
+  }
+}
+
+// Enhanced checkbox styles
+:global(.ms-Checkbox) {
+  :global(.ms-Checkbox-checkbox) {
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+      border-color: $ms-color-themePrimary;
+    }
+  }
+  
+  &:global(.is-checked) :global(.ms-Checkbox-checkbox) {
+    background: linear-gradient(135deg, $ms-color-themePrimary 0%, $ms-color-themeDark 100%);
+    border-color: $ms-color-themePrimary;
+  }
+  
+  &:global(.is-indeterminate) :global(.ms-Checkbox-checkbox) {
+    background: linear-gradient(135deg, rgba(0, 120, 212, 0.8) 0%, rgba(0, 120, 212, 0.6) 100%);
+    border-color: $ms-color-themePrimary;
+  }
+}
+
+// Enhanced toggle styles
+:global(.ms-Toggle) {
+  :global(.ms-Toggle-background) {
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  &:global(.is-checked) :global(.ms-Toggle-background) {
+    background: linear-gradient(135deg, $ms-color-themePrimary 0%, $ms-color-themeDark 100%);
+  }
+  
+  :global(.ms-Toggle-thumb) {
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+// Enhanced search box styles
+:global(.ms-SearchBox) {
+  :global(.ms-SearchBox-field) {
+    border-radius: 6px;
+    border: 1px solid $ms-color-neutralQuaternaryAlt;
+    transition: all 0.2s ease-in-out;
+    
+    &:focus {
+      border-color: $ms-color-themePrimary;
+      box-shadow: 0 0 0 1px $ms-color-themePrimary;
+    }
+  }
+  
+  :global(.ms-SearchBox-iconContainer) {
+    color: $ms-color-neutralSecondary;
+  }
+}
+
+// Enhanced button styles
+:global(.ms-Button) {
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  
+  &:global(.ms-Button--primary) {
+    background: linear-gradient(135deg, $ms-color-themePrimary 0%, $ms-color-themeDark 100%);
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 120, 212, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, $ms-color-themeDark 0%, $ms-color-themeDarker 100%);
+      box-shadow: 0 4px 8px rgba(0, 120, 212, 0.3);
+      transform: translateY(-1px);
+    }
+    
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(0, 120, 212, 0.2);
+    }
+  }
+  
+  &:global(.ms-Button--default) {
+    background: $ms-color-white;
+    border: 1px solid $ms-color-neutralQuaternaryAlt;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    
+    &:hover {
+      background: $ms-color-neutralLighterAlt;
+      border-color: $ms-color-themePrimary;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 480px) {
+  .dialogContainer {
+    .dialogContent {
+      padding: 0 12px 12px 12px;
+    }
+    
+    .headerControls {
+      :global(.ms-Stack) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+    }
+    
+    .linkCard {
+      .linkCardContent {
+        padding: 12px;
+        min-height: 56px;
+      }
+      
+      .linkIcon {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .linkCard {
+    border: 2px solid $ms-color-neutralPrimary;
+    
+    &.selected {
+      border-color: $ms-color-themePrimary;
+      background: $ms-color-themeLight;
+    }
+    
+    &.mandatory {
+      border-color: $ms-color-green;
+      background: $ms-color-neutralLighter;
+    }
+  }
+  
+  .linkIcon {
+    border: 1px solid $ms-color-neutralPrimary;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .linkCard,
+  :global(.ms-Button),
+  :global(.ms-Checkbox-checkbox),
+  :global(.ms-Toggle-background),
+  :global(.ms-Toggle-thumb) {
+    transition: none !important;
+    transform: none !important;
+  }
+}

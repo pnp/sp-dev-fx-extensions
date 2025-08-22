@@ -1,0 +1,62 @@
+.bulkOperationsSection {
+  .sectionHeader {
+    margin-bottom: 20px;
+    
+    .sectionTitle {
+      color: #323130;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .sectionDescription {
+      color: #605e5c;
+    }
+  }
+  
+  .operationsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 20px;
+    
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .operationGroup {
+      .groupTitle {
+        color: #323130;
+        font-weight: 600;
+        margin-bottom: 12px;
+        display: block;
+      }
+      
+      .operationButton {
+        width: 100%;
+        text-align: left;
+        justify-content: flex-start;
+        
+        &:hover {
+          background-color: #f3f2f1;
+        }
+      }
+    }
+  }
+  
+  .linkCounts {
+    padding: 12px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    border-left: 3px solid #0078d4;
+    
+    .countText {
+      color: #605e5c;
+      font-weight: 500;
+    }
+  }
+}

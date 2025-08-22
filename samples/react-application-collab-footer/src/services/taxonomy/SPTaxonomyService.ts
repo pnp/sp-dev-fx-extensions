@@ -6,13 +6,15 @@
  */
 
 import { ExtensionContext } from '@microsoft/sp-extension-base';
-import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
+import { Environment, EnvironmentType, Log } from '@microsoft/sp-core-library';
 import {
   SPHttpClient,
   SPHttpClientResponse,
   ISPHttpClientOptions,
 } from '@microsoft/sp-http';
 import { ITermSets, ITermSet, ITerms, ITerm } from './SPTaxonomyTypes'; // Assuming these types are already defined
+
+const LOG_SOURCE: string = 'SPTaxonomyService';
 
 export default class SPTaxonomyService {
   // Endpoint URLs for the ProcessQuery and ContextInfo APIs
@@ -77,7 +79,7 @@ export default class SPTaxonomyService {
 
       return this.formDigest;
     } catch (error) {
-      console.error('SPTaxonomyService: Failed to retrieve Form Digest:', error);
+      Log.error(LOG_SOURCE, error as Error);
       throw error;
     }
   }
@@ -93,7 +95,7 @@ export default class SPTaxonomyService {
       Environment.type !== EnvironmentType.SharePoint &&
       Environment.type !== EnvironmentType.ClassicSharePoint
     ) {
-      console.warn('SPTaxonomyService: Not running in a SharePoint environment.');
+      Log.warn(LOG_SOURCE, 'Not running in a SharePoint environment');
       return [];
     }
 
@@ -127,7 +129,7 @@ export default class SPTaxonomyService {
       const serviceJSONResponse: any[] = await serviceResponse.json();
       return await this.processTermSetResponse(serviceJSONResponse);
     } catch (error) {
-      console.error(`SPTaxonomyService: Failed to get terms from term set "${termSetName}":`, error);
+      Log.error(LOG_SOURCE, error as Error);
       return [];
     }
   }
@@ -197,7 +199,7 @@ export default class SPTaxonomyService {
       return await Promise.all(childItems.map(async (term: ITerm) => this.expandTerm(term)));
     }
 
-    console.warn('SPTaxonomyService: No term sets found in the response.');
+    Log.warn(LOG_SOURCE, 'No term sets found in the response');
     return [];
   }
 
@@ -259,10 +261,10 @@ export default class SPTaxonomyService {
           );
         }
 
-        console.warn('SPTaxonomyService: No child terms found in the response.');
+        Log.warn(LOG_SOURCE, 'No child terms found in the response');
         return [];
       } catch (error) {
-        console.error('SPTaxonomyService: Failed to get child terms:', error);
+        Log.error(LOG_SOURCE, error as Error);
         return [];
       }
     }

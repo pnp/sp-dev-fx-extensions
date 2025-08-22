@@ -1,0 +1,42 @@
+// AdminPanel SCSS module
+.adminPanel {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.adminPanelContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adminSection {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e1e4e8;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #323130;
+  margin-bottom: 12px;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.adminActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e1e4e8;
+}
