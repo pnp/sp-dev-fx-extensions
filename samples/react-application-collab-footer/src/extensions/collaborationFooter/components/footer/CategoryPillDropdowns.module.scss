@@ -1,0 +1,26 @@
+
+.categoryPillDropdowns {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.pillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .categoryPillDropdowns {
+    padding: 6px 12px;
+  }
+  
+  .pillsContainer {
+    gap: 8px;
+  }
+}

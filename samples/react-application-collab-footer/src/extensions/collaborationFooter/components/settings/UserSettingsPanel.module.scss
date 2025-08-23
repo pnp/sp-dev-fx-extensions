@@ -1,0 +1,268 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.userSettingsPanel {
+  :global(.ms-Panel-main) {
+    z-index: 1001 !important;
+  }
+  
+  :global(.ms-Panel-content) {
+    padding: 0;
+  }
+  
+  :global(.ms-Panel-scrollableContent) {
+    padding: 16px;
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.sectionTitle {
+  font-weight: 600;
+  color: $ms-color-themePrimary;
+  margin-bottom: 8px;
+  border-bottom: 1px solid $ms-color-neutralQuaternary;
+  padding-bottom: 4px;
+}
+
+.panelFooter {
+  padding: 16px 24px;
+  background-color: $ms-color-neutralLighterAlt;
+  border-top: 1px solid $ms-color-neutralQuaternary;
+  margin: 0 -16px -16px -16px;
+  
+  :global(.ms-Button) {
+    min-width: 120px;
+  }
+}
+
+.sliderContainer {
+  .sliderDescription {
+    color: $ms-color-neutralSecondary;
+    margin-top: 4px;
+    font-style: italic;
+  }
+}
+
+.settingsDescription {
+  color: $ms-color-neutralSecondary;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.sectionSubtitle {
+  font-weight: 600;
+  color: $ms-color-neutralPrimary;
+  margin-bottom: 8px;
+}
+
+.storageInfoSection {
+  padding: 12px;
+  background-color: $ms-color-neutralLighterAlt;
+  border-radius: 4px;
+  border: 1px solid $ms-color-neutralQuaternary;
+
+  .storageStatus {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+
+    .oneDriveIcon {
+      color: $ms-color-themePrimary;
+      font-size: 16px;
+    }
+
+    .localIcon {
+      color: $ms-color-neutralSecondary;
+      font-size: 16px;
+    }
+  }
+
+  .storageWarning {
+    color: $ms-color-orange;
+    font-style: italic;
+    margin-top: 8px;
+  }
+}
+
+// Display mode preview styles
+.displayModePreview {
+  border: 1px solid $ms-color-neutralQuaternaryAlt;
+  border-radius: 4px;
+  padding: 12px;
+  margin-top: 8px;
+  background-color: $ms-color-neutralLighterAlt;
+  
+  .previewTitle {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: $ms-color-neutralSecondary;
+  }
+  
+  .previewContent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    
+    .previewPill {
+      background: linear-gradient(135deg, #fafafa 0%, #f8f9fa 100%);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 2px 6px;
+      font-size: 10px;
+      color: $ms-color-neutralPrimary;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      
+      &.square {
+        border-radius: 2px;
+      }
+      
+      &.minimal {
+        border: none;
+        background: transparent;
+        text-decoration: underline;
+      }
+      
+      &.compact {
+        padding: 1px 4px;
+        font-size: 9px;
+      }
+      
+      &.spacious {
+        padding: 4px 8px;
+        font-size: 11px;
+      }
+      
+      &.showMorePill {
+        background: $ms-color-neutralLight;
+        border-color: $ms-color-neutralTertiary;
+        font-style: italic;
+      }
+    }
+    
+    .previewBadge {
+      background: $ms-color-themePrimary;
+      color: white;
+      font-size: 8px;
+      padding: 1px 3px;
+      border-radius: 2px;
+      margin-left: 4px;
+    }
+    
+    .previewDropdown {
+      background: white;
+      border: 1px solid $ms-color-neutralQuaternary;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 10px;
+      color: $ms-color-neutralPrimary;
+      min-width: 80px;
+      margin-bottom: 4px;
+      position: relative;
+      
+      &::after {
+        content: '▼';
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 8px;
+        color: $ms-color-neutralSecondary;
+      }
+    }
+  }
+}
+
+// Full footer preview
+.fullFooterPreview {
+  border: 2px solid $ms-color-themePrimary;
+  border-radius: 8px;
+  padding: 16px;
+  background: linear-gradient(135deg, $ms-color-neutralLighterAlt 0%, white 100%);
+  
+  .previewTitle {
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: $ms-color-themePrimary;
+    text-align: center;
+  }
+  
+  .previewFooterContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border: 1px solid $ms-color-neutralQuaternary;
+    border-radius: 6px;
+    padding: 12px 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    .previewLinksSection {
+      flex: 1;
+      margin-right: 16px;
+    }
+    
+    .previewActionsSection {
+      display: flex;
+      gap: 8px;
+      
+      .previewActionButton {
+        width: 24px;
+        height: 24px;
+        background: $ms-color-neutralLighter;
+        border: 1px solid $ms-color-neutralQuaternary;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background: $ms-color-themeLighter;
+          border-color: $ms-color-themePrimary;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+  .userSettingsPanel {
+    :global(.ms-Panel-main) {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+  
+  .panelFooter {
+    :global(.ms-Button) {
+      min-width: 80px;
+      flex: 1;
+    }
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .sectionTitle {
+    border-bottom-color: WindowText;
+  }
+  
+  .panelFooter {
+    background-color: Window;
+    border-top-color: WindowText;
+  }
+  
+  .displayModePreview {
+    border-color: WindowText;
+    background-color: Window;
+  }
+}

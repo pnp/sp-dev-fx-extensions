@@ -14,6 +14,6 @@
   "externals": {},
   "localizedResources": {
     "CollaborationFooterApplicationCustomizerStrings": "lib/extensions/collaborationFooter/loc/{locale}.js",
-    "MyLinksStrings": "lib/extensions/collaborationFooter/components/myLinks/loc/{locale}.js"
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
   }
 }

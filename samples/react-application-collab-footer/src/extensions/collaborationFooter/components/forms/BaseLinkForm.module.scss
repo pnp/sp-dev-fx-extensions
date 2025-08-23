@@ -1,0 +1,92 @@
+/* Copy shared styles from PersonalLinkForm.module.scss */
+.baseLinkForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.formHeader {
+  border-bottom: 1px solid var(--neutralLight);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.formHeader h4 {
+  margin: 0;
+  color: var(--themePrimary);
+  font-weight: 600;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.customCategorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background-color: var(--neutralLighter);
+  border-radius: 4px;
+}
+
+.customCategoryActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.iconSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.iconLabel {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--neutralPrimary);
+}
+
+.iconPreview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--neutralLight);
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+.iconImage {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.iconFluentUI {
+  font-size: 24px;
+  color: var(--themePrimary);
+}
+
+.iconName {
+  flex: 1;
+  font-size: 14px;
+  color: var(--neutralPrimary);
+}
+
+.chooseIconButton {
+  min-width: 120px;
+}
+
+.formActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid var(--neutralLight);
+  margin-top: 8px;
+}

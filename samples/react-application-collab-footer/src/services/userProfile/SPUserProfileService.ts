@@ -6,7 +6,9 @@
  */
 
 import { ExtensionContext } from '@microsoft/sp-extension-base';
-import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
+import { Environment, EnvironmentType, Log } from '@microsoft/sp-core-library';
+
+const LOG_SOURCE: string = 'SPUserProfileService';
 import {
   SPHttpClient,
   SPHttpClientResponse,
@@ -65,7 +67,7 @@ export default class SPUserProfileService {
       this.formDigest = formDigest;
       return formDigest;
     } catch (error) {
-      console.error('Failed to retrieve Form Digest:', error);
+      Log.error(LOG_SOURCE, error as Error);
       throw error;
     }
   }
@@ -80,7 +82,7 @@ export default class SPUserProfileService {
       Environment.type !== EnvironmentType.SharePoint &&
       Environment.type !== EnvironmentType.ClassicSharePoint
     ) {
-      console.warn('SPUserProfileService: Not running in a SharePoint environment.');
+      Log.warn(LOG_SOURCE, 'Not running in a SharePoint environment');
       return null;
     }
 
@@ -143,10 +145,10 @@ export default class SPUserProfileService {
         return personProperties.UserProfileProperties[propertyName] ?? null;
       }
 
-      console.warn(`SPUserProfileService: User profile property "${propertyName}" not found in the response.`);
+      Log.warn(LOG_SOURCE, `User profile property "${propertyName}" not found in the response`);
       return null;
     } catch (error) {
-      console.error(`SPUserProfileService: Failed to get user profile property "${propertyName}":`, error);
+      Log.error(LOG_SOURCE, error as Error);
       return null;
     }
   }
@@ -163,7 +165,7 @@ export default class SPUserProfileService {
       Environment.type !== EnvironmentType.SharePoint &&
       Environment.type !== EnvironmentType.ClassicSharePoint
     ) {
-      console.warn('SPUserProfileService: Not running in a SharePoint environment.');
+      Log.warn(LOG_SOURCE, 'Not running in a SharePoint environment');
       return false;
     }
 
@@ -220,7 +222,7 @@ export default class SPUserProfileService {
       const response: ISetPropertyResponse = serviceJSONResponse[0];
       return response?.ErrorInfo === null;
     } catch (error) {
-      console.error(`SPUserProfileService: Failed to set user profile property "${propertyName}":`, error);
+      Log.error(LOG_SOURCE, error as Error);
       return false;
     }
   }

@@ -1,0 +1,137 @@
+.tabContent {
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 8px;
+  margin-top: 8px;
+  height: 100%;
+  overflow: auto;
+}
+
+.tabHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.tabHeaderText {
+  flex: 1;
+  
+  h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  
+  p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+.bulkActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.selectionInfo {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.linksContainer {
+  margin: 16px 0;
+}
+
+.organizationLinkItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: white;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.linkContent {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.linkInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.linkTitle {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-neutral-primary);
+}
+
+.mandatoryBadge {
+  background: #d13438;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.selectedBadge {
+  background: var(--color-success);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.linkDescription {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.linkActions {
+  flex-shrink: 0;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-style: italic;
+}
+
+.filterSection {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e1e1e1;
+}
+
+.linkListSection {
+  margin-top: 16px;
+  padding: 0;
+}
