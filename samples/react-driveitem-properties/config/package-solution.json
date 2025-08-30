@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "react-driveitem-properties-client-side-solution",
+    "id": "fced0861-5427-44ff-87b3-a45e53f453f5",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.21.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "react-driveitem-properties description"
+      },
+      "longDescription": {
+        "default": "react-driveitem-properties description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "828962d9-7fe8-4c6e-b31e-17d715b33807",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-driveitem-properties.sppkg"
+  }
+}

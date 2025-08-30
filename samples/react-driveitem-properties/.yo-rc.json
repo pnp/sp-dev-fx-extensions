@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.18.0",
+    "sdksVersions": {},
+    "version": "1.20.2",
+    "libraryName": "react-driveitem-properties",
+    "libraryId": "fced0861-5427-44ff-87b3-a45e53f453f5",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "react-driveitem-properties",
+    "solutionShortDescription": "react-driveitem-properties description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}
