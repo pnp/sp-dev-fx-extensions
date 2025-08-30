@@ -5,8 +5,7 @@
 List view command set extensions with below functionalities
 
 1. Allow to copy the Drive Id and Drive Item Id for the selected item in the document library.
-2. Copy Name allows to copy the name of the document without using the currently available rename functionality.
-   ![Copy Path & Copy Name Extensions](assets/DriveItemProperties.png)
+   ![Drive Item Properties Extensions](assets/DriveItemProperties.png)
 
 ## Compatibility
 
