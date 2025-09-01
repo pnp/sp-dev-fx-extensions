@@ -1,0 +1,18 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "22.14.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "archive-documents",
+    "libraryId": "42c185b3-9bc4-4822-8beb-907fef6a66ac",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "archive-documents",
+    "solutionShortDescription": "archive-documents description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

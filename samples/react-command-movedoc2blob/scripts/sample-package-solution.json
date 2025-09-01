@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "archive-documents-client-side-solution",
+    "id": "a599c24a-3153-4f58-9562-14ae116e92c5",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Archive Documents solution"
+      },
+      "longDescription": {
+        "default": "Archive Documents solution"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Archive Documents Feature",
+        "description": "The feature that activates Archive Documents",
+        "id": "b562dc26-6ec0-422e-b9da-f317deaadcd8",
+        "version": "1.0.0.0"
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.ReadWrite.All"
+      },
+      {
+        "resource": "{YOUR_APP_ID_HERE}",
+        "scope": "access_as_user"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/archive-documents.sppkg"
+  }
+}

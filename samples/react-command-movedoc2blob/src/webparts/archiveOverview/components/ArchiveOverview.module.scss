@@ -1,0 +1,37 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.archiveOverview {
+  overflow: hidden;
+  padding: 1.5em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+  background-color: "[theme:bodyBackground, default: #ffffff]";
+  background-color: var(--bodyBackground);
+
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+
+  .searchSection {
+    margin-bottom: 1em;
+  }
+
+  .documentsTable {
+    background-color: "[theme:bodyBackground, default: #ffffff]";
+    background-color: var(--bodyBackground);
+    border: 1px solid "[theme:neutralLighter, default: #f3f2f1]";
+    border-radius: 2px;
+  }
+
+  .emptyState {
+    text-align: center;
+    padding: 2em;
+    color: "[theme:neutralSecondary, default: #605e5c]";
+    color: var(--neutralSecondary);
+  }
+
+  .loadingContainer {
+    text-align: center;
+    padding: 2em;
+  }
+}

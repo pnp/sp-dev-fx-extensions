@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "archive-document-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/archiveDocument/ArchiveDocumentCommandSet.js",
+          "manifest": "./src/extensions/archiveDocument/ArchiveDocumentCommandSet.manifest.json"
+        }
+      ]
+    },
+    "archive-overview-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/archiveOverview/ArchiveOverviewWebPart.js",
+          "manifest": "./src/webparts/archiveOverview/ArchiveOverviewWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ArchiveDocumentCommandSetStrings": "lib/extensions/archiveDocument/loc/{locale}.js",
+    "ArchiveOverviewWebPartStrings": "lib/webparts/archiveOverview/loc/{locale}.js"
+  }
+}

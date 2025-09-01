@@ -1,0 +1,101 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.archiveDialogContainer {
+  border-radius: 8px;
+  box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18);
+  padding: 24px;
+  min-width: 340px;
+  max-width: 440px;
+}
+
+.archiveDialogHeader {
+  margin-bottom: 16px;
+}
+
+.archiveDialogTitle {
+  font-size: $ms-font-size-xl;
+  font-weight: $ms-font-weight-semibold;
+  line-height: 28px;
+  margin: 0;
+  color: $ms-color-neutralPrimary;
+}
+
+.archiveDialogContent {
+  margin-bottom: 24px;
+}
+
+.archiveDialogText {
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  line-height: 20px;
+  color: $ms-color-neutralSecondary;
+  margin: 0;
+}
+
+.archiveDialogActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.archiveDialogButton {
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-semibold;
+  height: 32px;
+  min-width: 80px;
+  padding: 0 16px;
+  position: relative;
+  transition: all 0.1s ease;
+  outline: none;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus {
+    outline: 2px solid $ms-color-neutralSecondary;
+    outline-offset: 2px;
+  }
+}
+
+.archiveDialogButtonPrimary {
+  @extend .archiveDialogButton;
+  background-color: $ms-color-themePrimary;
+  border-color: $ms-color-themePrimary;
+  color: $ms-color-white;
+
+  &:hover {
+    background-color: $ms-color-themeDark;
+    border-color: $ms-color-themeDark;
+  }
+
+  &:active {
+    background-color: $ms-color-themeDarker;
+    border-color: $ms-color-themeDarker;
+  }
+}
+
+.archiveDialogButtonDefault {
+  @extend .archiveDialogButton;
+  background-color: $ms-color-white;
+  border-color: $ms-color-neutralTertiary;
+  color: $ms-color-neutralPrimary;
+
+  &:hover {
+    background-color: $ms-color-neutralLighter;
+    border-color: $ms-color-neutralPrimary;
+  }
+
+  &:active {
+    background-color: $ms-color-neutralLight;
+    border-color: $ms-color-neutralPrimary;
+  }
+}

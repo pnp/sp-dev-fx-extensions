@@ -1,0 +1,43 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Build generated files
+dist
+lib
+release
+solution
+temp
+*.sppkg
+.heft
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# OSX
+.DS_Store
+
+# Visual Studio files
+.ntvs_analysis.dat
+.vs
+bin
+obj
+
+# Resx Generated Code
+*.resx.ts
+
+# Styles Generated Code
+*.scss.ts
+
+
+app-registration-details.json
+src/config.local.ts
+__blobstorage__/*
+__azurite_db*
+config/package-solution.local.json
+config/serve.local.json
+.env.example
