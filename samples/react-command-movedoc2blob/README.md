@@ -65,7 +65,9 @@ Follow these detailed steps to set up and deploy the complete solution:
 
 - **Why this step?** The app registration enables secure authentication between SharePoint, your SPFx solution, and the Azure Functions backend.
 
-### 3. (optional) Deploy Azure Infrastructure (Bicep) only you like to deploy
+### 3. (optional) Deploy Azure Infrastructure (Bicep) 
+
+only you like to deploy
 
 - **Deploy the infrastructure** using Bicep files in the `infra` folder:
 
