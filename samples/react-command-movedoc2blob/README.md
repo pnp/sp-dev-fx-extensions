@@ -2,7 +2,7 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
+This sample demonstrates 'on_behalf_of' authentication to securely move draft documents from SharePoint to Azure Blob Storage. It showcases delegated access and integration between SPFx, Azure Functions, and Azure Storage, while addressing the need to clean up repeated or outdated files (like "Final", "Final_Draft", etc.) in SharePoint.
 
 [Document Moved](assets/document_moved.png)
 

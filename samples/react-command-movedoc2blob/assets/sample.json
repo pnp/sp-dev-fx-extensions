@@ -6,7 +6,7 @@
     "shortDescription": "The sample demonstrates how to create a command that moves a document to Azure Blob Storage.",
     "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-movedoc2blob",
     "longDescription": [
-      "The sample illustrates how to move a document from SharePoint to Azure Blob Storage."
+      "This sample demonstrates 'on_behalf_of' authentication to securely move draft documents from SharePoint to Azure Blob Storage. It showcases delegated access and integration between SPFx, Azure Functions, and Azure Storage, while addressing the need to clean up repeated or outdated files (like Final, 'Final_Draft', etc.) in SharePoint."
     ],
     "creationDateTime": "2025-09-02",
     "updateDateTime": "2025-09-02",
