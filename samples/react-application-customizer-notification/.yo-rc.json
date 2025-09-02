@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.17.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "sp-webhooks",
+    "libraryId": "9a0c7bb2-7f92-4a0a-aff4-678aff46b76c",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "sp-webhooks",
+    "solutionShortDescription": "sp-webhooks description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}
