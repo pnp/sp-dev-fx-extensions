@@ -1,0 +1,165 @@
+// Use CSS custom properties for theming
+
+.multiLanguageEditor {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  .languageTabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--colorNeutralStroke2);
+    
+    .languageTab {
+      min-height: 40px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      
+      .languageName {
+        font-weight: 500;
+      }
+      
+      .languageCode {
+        font-size: 12px;
+        opacity: 0.8;
+      }
+      
+      .customLabel {
+        font-size: 10px;
+        background: var(--colorBrandBackground);
+        color: var(--colorNeutralForegroundOnBrand);
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+    
+    .addLanguageButton {
+      border: 2px dashed var(--colorNeutralStroke2);
+      background: transparent;
+      
+      &:hover {
+        border-color: var(--colorBrandStroke1);
+        background: var(--colorNeutralBackground1Hover);
+      }
+    }
+  }
+  
+  .contentEditor {
+    margin-top: 16px;
+    
+    .contentEditorHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .contentFields {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px;
+    }
+  }
+  
+  .addLanguageForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0;
+  }
+  
+  .languageSummary {
+    margin-top: 16px;
+    
+    .summaryGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
+      padding: 16px;
+      
+      .summaryItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border: 1px solid var(--colorNeutralStroke2);
+        border-radius: 8px;
+        background: var(--colorNeutralBackground1);
+        
+        .summaryLanguage {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          
+          .summaryCode {
+            opacity: 0.7;
+          }
+        }
+        
+        .summaryStatus {
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .multiLanguageEditor {
+    padding: 8px;
+    
+    .languageTabs {
+      .languageTab {
+        min-width: auto;
+        padding: 6px 12px;
+        
+        .languageCode {
+          display: none;
+        }
+      }
+    }
+    
+    .languageSummary {
+      .summaryGrid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+  }
+}
+
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .multiLanguageEditor {
+    .languageTabs {
+      .languageTab {
+        border: 2px solid var(--colorNeutralStroke1);
+        
+        &:focus {
+          border-color: var(--colorStrokeFocus2);
+          outline: 2px solid var(--colorStrokeFocus2);
+          outline-offset: 2px;
+        }
+      }
+    }
+    
+    .languageSummary {
+      .summaryGrid {
+        .summaryItem {
+          border: 2px solid var(--colorNeutralStroke1);
+        }
+      }
+    }
+  }
+}

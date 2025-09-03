@@ -1,0 +1,676 @@
+// SharePoint Rich Text Editor Styles
+
+.field {
+  margin-bottom: 20px;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #323130;
+  line-height: 18px;
+  flex: 1;
+}
+
+.characterCount {
+  font-size: 12px;
+  color: #605e5c;
+  font-weight: 400;
+  margin-left: 8px;
+  
+  &.overLimit {
+    color: #a80000;
+    font-weight: 600;
+  }
+}
+
+.required {
+  color: #a80000;
+  margin-left: 3px;
+}
+
+.description {
+  font-size: 12px;
+  color: #605e5c;
+  margin-bottom: 5px;
+  line-height: 16px;
+}
+
+.error {
+  font-size: 12px;
+  color: #a80000;
+  margin-top: 5px;
+  line-height: 16px;
+}
+
+.helpText {
+  font-size: 11px;
+  color: #8a8886;
+  margin-top: 4px;
+  line-height: 14px;
+  font-style: italic;
+}
+
+// Editor container
+.editorContainer {
+  border: 1px solid #8a8886;
+  border-radius: 2px;
+  background: #ffffff;
+  position: relative;
+  transition: border-color 0.1s ease-out;
+  
+  &:focus-within {
+    border-color: #0078d4;
+    box-shadow: inset 0 0 0 1px #0078d4;
+  }
+  
+  &:hover:not(:focus-within) {
+    border-color: #323130;
+  }
+}
+
+.editorError {
+  border-color: #a80000;
+  
+  &:focus-within {
+    border-color: #a80000;
+    box-shadow: inset 0 0 0 1px #a80000;
+  }
+}
+
+// Toolbar - Enhanced styling for PnP RichText
+:global(.ql-toolbar) {
+  background: #f8f9fa !important;
+  border-bottom: 1px solid #edebe9 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 8px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif !important;
+  
+  // Fix ugly spacing and alignment
+  .ql-formats {
+    margin-right: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+    
+    &:last-child {
+      margin-right: 0 !important;
+    }
+    
+    // Add separator between format groups
+    &:not(:last-child)::after {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background: #c8c6c4;
+      margin: 0 8px 0 4px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.toolbar {
+  background: #f8f9fa;
+  border-bottom: 1px solid #edebe9;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.toolbarGroup {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  
+  &:not(:last-child)::after {
+    content: '';
+    width: 1px;
+    height: 20px;
+    background: #c8c6c4;
+    margin: 0 8px;
+  }
+}
+
+// PnP RichText toolbar button styling
+:global(.ql-toolbar) {
+  // Style all toolbar buttons
+  button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    border: 1px solid transparent !important;
+    border-radius: 2px !important;
+    background: transparent !important;
+    color: #605e5c !important;
+    cursor: pointer !important;
+    transition: all 0.1s ease-out !important;
+    font-size: 14px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    
+    &:hover:not(:disabled) {
+      background: #edebe9 !important;
+      color: #323130 !important;
+      border-color: transparent !important;
+    }
+    
+    &:active:not(:disabled) {
+      background: #e1dfdd !important;
+    }
+    
+    &:focus {
+      outline: 2px solid #0078d4 !important;
+      outline-offset: -2px !important;
+      border-color: transparent !important;
+    }
+    
+    &:disabled {
+      opacity: 0.4 !important;
+      cursor: not-allowed !important;
+    }
+    
+    // Active/selected state
+    &.ql-active {
+      background: #deecf9 !important;
+      color: #0078d4 !important;
+      border-color: #0078d4 !important;
+    }
+    
+    svg, i {
+      width: 16px !important;
+      height: 16px !important;
+      font-size: 16px !important;
+    }
+  }
+  
+  // Style dropdowns (Fluent UI components)
+  .ms-Dropdown {
+    min-width: 80px !important;
+    height: 32px !important;
+    
+    .ms-Dropdown-title {
+      height: 32px !important;
+      line-height: 30px !important;
+      padding: 0 8px !important;
+      border: 1px solid #8a8886 !important;
+      border-radius: 2px !important;
+      background: #ffffff !important;
+      font-size: 14px !important;
+      color: #323130 !important;
+      
+      &:hover {
+        border-color: #323130 !important;
+        background: #f3f2f1 !important;
+      }
+      
+      &:focus {
+        border-color: #0078d4 !important;
+        box-shadow: inset 0 0 0 1px #0078d4 !important;
+      }
+    }
+    
+    .ms-Dropdown-caretDownWrapper {
+      right: 8px !important;
+      
+      .ms-Icon {
+        font-size: 12px !important;
+        color: #605e5c !important;
+      }
+    }
+  }
+}
+
+.toolbarButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 2px;
+  background: transparent;
+  color: #605e5c;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  
+  &:hover:not(:disabled) {
+    background: #edebe9;
+    color: #323130;
+  }
+  
+  &:active:not(:disabled) {
+    background: #e1dfdd;
+  }
+  
+  &:focus {
+    outline: 2px solid #0078d4;
+    outline-offset: -2px;
+  }
+  
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Editor content area
+.editor {
+  min-height: 120px;
+  max-height: 400px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #323130;
+  line-height: 1.4;
+  overflow-y: auto;
+  word-wrap: break-word;
+  border: none !important;
+  
+  // Override PnP RichText styles
+  :global(.ql-editor) {
+    padding: 12px !important;
+    min-height: 100px !important;
+    font-size: 14px !important;
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif !important;
+    line-height: 1.4 !important;
+    border: none !important;
+  }
+  
+  :global(.ql-toolbar) {
+    border-bottom: 1px solid #edebe9 !important;
+    background: #f8f9fa !important;
+    padding: 8px 12px !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+    
+    :global(.ql-picker-label) {
+      color: #605e5c !important;
+    }
+    
+    // Fix specific PnP RichText toolbar dropdown styling issues
+    .headerDropDown_81a853a1,
+    .toolbarDropDown_81a853a1 {
+      :global(.ms-Dropdown) {
+        min-width: 120px !important;
+        
+        :global(.dropdown-540) {
+          height: 32px !important;
+          border: 1px solid #8a8886 !important;
+          border-radius: 2px !important;
+          background: #ffffff !important;
+          
+          &:hover {
+            border-color: #323130 !important;
+            background: #f3f2f1 !important;
+          }
+          
+          &:focus,
+          &[aria-expanded="true"] {
+            border-color: #0078d4 !important;
+            box-shadow: inset 0 0 0 1px #0078d4 !important;
+          }
+        }
+        
+        :global(.title-367),
+        :global(.title-337) {
+          padding: 0 24px 0 8px !important;
+          height: 30px !important;
+          line-height: 30px !important;
+          font-size: 14px !important;
+          color: #323130 !important;
+          
+          :global(.toolbarSubmenuDisplayButton_81a853a1) {
+            display: flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            
+            :global(.toolbarDropDownTitleIcon_81a853a1) {
+              font-size: 16px !important;
+              color: #605e5c !important;
+            }
+            
+            span {
+              font-size: 14px !important;
+              color: #323130 !important;
+            }
+          }
+        }
+        
+        :global(.caretDownWrapper-338) {
+          right: 8px !important;
+          
+          :global(.toolbarSubmenuCaret_81a853a1) {
+            font-size: 10px !important;
+            color: #605e5c !important;
+          }
+        }
+      }
+    }
+    
+    // Fix TooltipHost styling
+    :global(.root-279) {
+      display: inline-flex !important;
+    }
+    
+    // Fix specific button styling from PnP
+    :global(.root-545) {
+      width: 32px !important;
+      height: 32px !important;
+      min-width: 32px !important;
+      padding: 0 !important;
+      border: 1px solid transparent !important;
+      border-radius: 2px !important;
+      background: transparent !important;
+      
+      :global(.flexContainer-246) {
+        justify-content: center !important;
+        
+        :global(.root-124),
+        :global(.css-43),
+        :global(.icon-248) {
+          font-size: 16px !important;
+          color: #605e5c !important;
+        }
+      }
+      
+      &:hover {
+        background: #edebe9 !important;
+        border-color: transparent !important;
+        
+        :global(.flexContainer-246) {
+          :global(.root-124),
+          :global(.css-43),
+          :global(.icon-248) {
+            color: #323130 !important;
+          }
+        }
+      }
+      
+      &:focus {
+        outline: 2px solid #0078d4 !important;
+        outline-offset: -2px !important;
+        border-color: transparent !important;
+      }
+      
+      &:active {
+        background: #e1dfdd !important;
+      }
+    }
+    
+    // Fix ugly spacing and alignment for format groups
+    :global(.ql-formats) {
+      margin-right: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 2px !important;
+      
+      &:last-child {
+        margin-right: 0 !important;
+      }
+      
+      // Add separator between format groups
+      &:not(:last-child)::after {
+        content: '';
+        width: 1px;
+        height: 20px;
+        background: #c8c6c4;
+        margin: 0 8px 0 4px;
+        flex-shrink: 0;
+      }
+    }
+    
+    :global(.ql-stroke) {
+      stroke: #605e5c !important;
+    }
+    
+    :global(.ql-fill) {
+      fill: #605e5c !important;
+    }
+  }
+  
+  :global(.ql-container) {
+    border: none !important;
+    font-family: inherit !important;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &[contenteditable="true"]:empty::before {
+    content: attr(data-placeholder);
+    color: #605e5c;
+    font-style: italic;
+    pointer-events: none;
+  }
+  
+  // Rich text content styling
+  h1, h2, h3, h4, h5, h6 {
+    margin: 16px 0 8px 0;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 16px; }
+  h5 { font-size: 14px; }
+  h6 { font-size: 12px; }
+  
+  p {
+    margin: 8px 0;
+  }
+  
+  ul, ol {
+    margin: 8px 0;
+    padding-left: 24px;
+    
+    li {
+      margin: 4px 0;
+    }
+  }
+  
+  blockquote {
+    margin: 16px 0;
+    padding-left: 16px;
+    border-left: 4px solid #0078d4;
+    font-style: italic;
+    color: #605e5c;
+  }
+  
+  pre {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 16px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+  
+  code {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    padding: 2px 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+  }
+  
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  a {
+    color: #0078d4;
+    text-decoration: underline;
+    
+    &:hover {
+      color: #106ebe;
+      text-decoration: none;
+    }
+    
+    &:visited {
+      color: #5c2e91;
+    }
+  }
+  
+  strong, b {
+    font-weight: 600;
+  }
+  
+  em, i {
+    font-style: italic;
+  }
+  
+  u {
+    text-decoration: underline;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 16px 0;
+    
+    th, td {
+      border: 1px solid #c8c6c4;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    
+    th {
+      background: #f3f2f1;
+      font-weight: 600;
+    }
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #c8c6c4;
+    margin: 20px 0;
+  }
+}
+
+
+// Responsive design
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 6px 8px;
+  }
+  
+  .toolbarButton {
+    width: 28px;
+    height: 28px;
+    
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  .editor {
+    padding: 10px;
+    font-size: 16px; // Prevent zoom on iOS
+  }
+  
+  .toolbarGroup {
+    &:not(:last-child)::after {
+      margin: 0 6px;
+    }
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .editorContainer,
+  .toolbar {
+    border-width: 2px;
+  }
+  
+  .toolbarButton {
+    border-width: 1px;
+    border-color: transparent;
+    
+    &:hover:not(:disabled),
+    &:focus {
+      border-color: currentColor;
+    }
+  }
+}
+
+// Screen reader only content
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Print styles
+@media print {
+  .toolbar {
+    display: none;
+  }
+  
+  .helpText {
+    display: none;
+  }
+  
+  .editorContainer {
+    border: none;
+    box-shadow: none;
+  }
+  
+  .editor {
+    padding: 0;
+    max-height: none;
+  }
+  
+  .srOnly {
+    display: none;
+  }
+}

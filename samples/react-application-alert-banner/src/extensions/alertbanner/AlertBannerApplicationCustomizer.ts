@@ -9,14 +9,23 @@ import {
 import { IAlertsBannerApplicationCustomizerProperties } from "./Components/Alerts/IAlerts";
 import { MSGraphClientV3 } from "@microsoft/sp-http";
 import { AlertsProvider } from "./Components/Context/AlertsContext";
+import { LocalizationService } from "./Components/Services/LocalizationService";
+import { LocalizationProvider } from "./Components/Hooks/useLocalization";
 import Alerts from "./Components/Alerts/Alerts";
+import { logger } from './Components/Services/LoggerService';
 
 export default class AlertsBannerApplicationCustomizer extends BaseApplicationCustomizer<IAlertsBannerApplicationCustomizerProperties> {
   private _topPlaceholderContent: PlaceholderContent | undefined;
   private _customProperties: IAlertsBannerApplicationCustomizerProperties;
+  private _siteIds: string[] | null = null; // Cache site IDs to prevent recalculation
+  private _isRendering: boolean = false; // Prevent concurrent renders
 
   @override
   public async onInit(): Promise<void> {
+    // Initialize localization service
+    const localizationService = LocalizationService.getInstance(this.context);
+    await localizationService.initialize(this.context);
+
     // Initialize default configuration
     this._initializeDefaultProperties();
 
@@ -32,7 +41,7 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
   private _initializeDefaultProperties(): void {
     // Instead of modifying this.properties directly, create a local copy
     this._customProperties = { ...this.properties };
-  
+
     // Set default alert types if none are provided
     if (!this._customProperties.alertTypesJson || this._customProperties.alertTypesJson === "[]") {
       const defaultAlertTypes = [
@@ -89,22 +98,19 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
           }
         }
       ];
-      
+
       this._customProperties.alertTypesJson = JSON.stringify(defaultAlertTypes);
     }
-  
+
     // Set defaults for any missing properties
-    this._customProperties.userTargetingEnabled = 
-      this._customProperties.userTargetingEnabled !== undefined ? 
+    this._customProperties.userTargetingEnabled =
+      this._customProperties.userTargetingEnabled !== undefined ?
       this._customProperties.userTargetingEnabled : true;
-    
-    this._customProperties.notificationsEnabled = 
-      this._customProperties.notificationsEnabled !== undefined ? 
+
+    this._customProperties.notificationsEnabled =
+      this._customProperties.notificationsEnabled !== undefined ?
       this._customProperties.notificationsEnabled : true;
-    
-    this._customProperties.richMediaEnabled = 
-      this._customProperties.richMediaEnabled !== undefined ? 
-      this._customProperties.richMediaEnabled : true;
+
   }
 
   @override
@@ -124,7 +130,7 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
           PlaceholderName.Top
         )
       ) {
-        console.warn("Top placeholder is not available.");
+        logger.warn('ApplicationCustomizer', 'Top placeholder is not available');
         return;
       }
 
@@ -139,8 +145,46 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
     }
   }
 
+  private _handleSettingsChange = (settings: {
+    alertTypesJson: string;
+    userTargetingEnabled: boolean;
+    notificationsEnabled: boolean;
+  }): void => {
+    // Check if settings actually changed to prevent unnecessary re-renders
+    const hasChanged =
+      this._customProperties.alertTypesJson !== settings.alertTypesJson ||
+      this._customProperties.userTargetingEnabled !== settings.userTargetingEnabled ||
+      this._customProperties.notificationsEnabled !== settings.notificationsEnabled;
+
+    if (!hasChanged) {
+      logger.debug('ApplicationCustomizer', 'Alert settings unchanged, skipping re-render');
+      return;
+    }
+
+    // Update the custom properties
+    this._customProperties = {
+      ...this._customProperties,
+      alertTypesJson: settings.alertTypesJson,
+      userTargetingEnabled: settings.userTargetingEnabled,
+      notificationsEnabled: settings.notificationsEnabled
+    };
+
+    logger.debug('ApplicationCustomizer', 'Alert settings updated', settings);
+
+    // Re-render the component with new settings (but only if actually changed)
+    this._renderAlertsComponent();
+  };
+
   private async _renderAlertsComponent(): Promise<void> {
+    // Prevent concurrent rendering
+    if (this._isRendering) {
+      logger.debug('ApplicationCustomizer', 'Render already in progress, skipping');
+      return;
+    }
+
     try {
+      this._isRendering = true;
+
       if (
         this._topPlaceholderContent &&
         this._topPlaceholderContent.domElement
@@ -150,51 +194,58 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
         try {
           msGraphClient = await this.context.msGraphClientFactory.getClient("3") as MSGraphClientV3;
         } catch (graphError) {
-          console.error("Error getting Graph client v3:", graphError);
+          logger.error('ApplicationCustomizer', 'Error getting Graph client v3', graphError);
           throw graphError; // Re-throw to be caught by outer try/catch
         }
-        
-        // Get the current site ID
-        const currentSiteId: string = this.context.pageContext.site.id.toString();
-        let siteIds: string[] = [currentSiteId];
 
-        try {
-          // Get the hub site ID, if available
-          const siteContext = this.context.pageContext as any; // Cast to any to access hubSiteId
-          const hubSiteId: string = siteContext.site.hubSiteId
-            ? siteContext.site.hubSiteId.toString()
-            : "";
+        // Use cached site IDs if available, otherwise calculate them once
+        if (!this._siteIds) {
+          // Get the current site ID
+          const currentSiteId: string = this.context.pageContext.site.id.toString();
+          this._siteIds = [currentSiteId];
 
-          if (
-            hubSiteId &&
-            hubSiteId !== "00000000-0000-0000-0000-000000000000" &&
-            hubSiteId !== currentSiteId &&
-            !siteIds.includes(hubSiteId)
-          ) {
-            siteIds.push(hubSiteId);
-          }
-
-          // Get the SharePoint home site ID
           try {
-            const homeSiteResponse = await msGraphClient
-              .api("/sites/root")
-              .select("id")
-              .get();
-            const homeSiteId: string = homeSiteResponse.id;
+            // Get the hub site ID, if available
+            const siteContext = this.context.pageContext as any; // Cast to any to access hubSiteId
+            const hubSiteId: string = siteContext.site.hubSiteId
+              ? siteContext.site.hubSiteId.toString()
+              : "";
 
             if (
-              homeSiteId &&
-              homeSiteId !== currentSiteId &&
-              homeSiteId !== hubSiteId &&
-              !siteIds.includes(homeSiteId)
+              hubSiteId &&
+              hubSiteId !== "00000000-0000-0000-0000-000000000000" &&
+              hubSiteId !== currentSiteId &&
+              !this._siteIds.includes(hubSiteId)
             ) {
-              siteIds.push(homeSiteId);
+              this._siteIds.push(hubSiteId);
             }
-          } catch (homeSiteError) {
-            console.warn("Unable to fetch home site, continuing with local and hub sites only:", homeSiteError);
+
+            // Get the SharePoint home site ID
+            try {
+              const homeSiteResponse = await msGraphClient
+                .api("/sites/root")
+                .select("id")
+                .get();
+              const homeSiteId: string = homeSiteResponse.id;
+
+              if (
+                homeSiteId &&
+                homeSiteId !== currentSiteId &&
+                homeSiteId !== hubSiteId &&
+                !this._siteIds.includes(homeSiteId)
+              ) {
+                this._siteIds.push(homeSiteId);
+              }
+            } catch (homeSiteError) {
+              logger.warn('ApplicationCustomizer', 'Unable to fetch home site, continuing with local and hub sites only', homeSiteError);
+            }
+          } catch (siteError) {
+            logger.warn('ApplicationCustomizer', 'Error gathering site IDs, falling back to current site only', siteError);
           }
-        } catch (siteError) {
-          console.warn("Error gathering site IDs, falling back to current site only:", siteError);
+
+          logger.debug('ApplicationCustomizer', `Site IDs calculated and cached: ${this._siteIds.join(', ')}`);
+        } else {
+          logger.debug('ApplicationCustomizer', `Using cached site IDs: ${this._siteIds.join(', ')}`);
         }
 
         // Get alert types from our custom properties
@@ -204,19 +255,20 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
         const alertsComponent = React.createElement(
           Alerts,
           {
-            siteIds: siteIds,
+            siteIds: this._siteIds, // Use cached site IDs
             graphClient: msGraphClient,
+            context: this.context,
             alertTypesJson: alertTypesJsonString,
             userTargetingEnabled: this._customProperties.userTargetingEnabled,
             notificationsEnabled: this._customProperties.notificationsEnabled,
-            richMediaEnabled: this._customProperties.richMediaEnabled
+            onSettingsChange: this._handleSettingsChange
           }
         );
 
-        // Wrap with the AlertsProvider
+        // Wrap with the LocalizationProvider and AlertsProvider
         const alertsApp = React.createElement(
-          AlertsProvider, 
-          { children: alertsComponent }
+          LocalizationProvider,
+          { children: React.createElement(AlertsProvider, { children: alertsComponent }) }
         );
 
         // Render with error handling
@@ -226,8 +278,8 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
         );
       }
     } catch (error) {
-      console.error("Error rendering Alerts component:", error);
-      
+      logger.error('ApplicationCustomizer', 'Error rendering Alerts component', error);
+
       // Render a minimal error message instead of failing completely
       if (this._topPlaceholderContent && this._topPlaceholderContent.domElement) {
         const errorElement = React.createElement(
@@ -235,12 +287,14 @@ export default class AlertsBannerApplicationCustomizer extends BaseApplicationCu
           { style: { padding: '10px', color: '#666', fontSize: '13px' } },
           'Unable to load alerts at this time. Please try refreshing the page.'
         );
-        
+
         ReactDOM.render(
           errorElement,
           this._topPlaceholderContent.domElement
         );
       }
+    } finally {
+      this._isRendering = false;
     }
   }
 

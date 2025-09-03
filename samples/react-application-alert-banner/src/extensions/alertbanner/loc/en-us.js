@@ -1,5 +1,264 @@
 define([], function() {
   return {
-    "Title": "AlertBannerApplicationCustomizer"
+    "Title": "AlertBannerApplicationCustomizer",
+    
+    // General UI
+    "Save": "Save",
+    "Cancel": "Cancel",
+    "Close": "Close",
+    "Edit": "Edit",
+    "Delete": "Delete",
+    "Add": "Add",
+    "Update": "Update",
+    "Create": "Create",
+    "Remove": "Remove",
+    "Yes": "Yes",
+    "No": "No",
+    "OK": "OK",
+    "Loading": "Loading...",
+    "Error": "Error",
+    "Success": "Success",
+    "Warning": "Warning",
+    "Info": "Info",
+    
+    // Language
+    "Language": "Language",
+    "SelectLanguage": "Select Language",
+    "ChangeLanguage": "Change Language",
+    
+    // Time-related
+    "JustNow": "Just now",
+    "MinutesAgo": "{0} minutes ago",
+    "HoursAgo": "{0} hours ago",
+    "DaysAgo": "{0} days ago",
+    
+    // Alert Settings
+    "AlertSettings": "Alert Settings",
+    "AlertSettingsTitle": "Alert Banner Settings",
+    "AlertSettingsDescription": "Configure the alert banner settings. These changes will be applied site-wide.",
+    "ConfigureAlertBannerSettings": "Configure Alert Banner Settings",
+    "Features": "Features",
+    "EnableUserTargeting": "Enable User Targeting",
+    "EnableUserTargetingDescription": "Allow alerts to target specific users or groups",
+    "EnableNotifications": "Enable Notifications",
+    "EnableNotificationsDescription": "Send browser notifications for critical alerts",
+    "EnableRichMedia": "Enable Rich Media",
+    "EnableRichMediaDescription": "Support images, videos, and rich content in alerts",
+    "AlertTypesConfiguration": "Alert Types Configuration",
+    "AlertTypesConfigurationDescription": "Configure the available alert types (JSON format):",
+    "AlertTypesPlaceholder": "Enter alert types JSON configuration...",
+    "AlertTypesHelpText": "Each alert type should have: name, iconName, backgroundColor, textColor, additionalStyles, and priorityStyles",
+    "SaveSettings": "Save Settings",
+    "InvalidJSONError": "Invalid JSON format in Alert Types configuration. Please check your syntax.",
+    
+    // Alert Management
+    "CreateAlert": "Create Alert",
+    "EditAlert": "Edit Alert",
+    "DeleteAlert": "Delete Alert",
+    "AlertTitle": "Alert Title",
+    "AlertDescription": "Description",
+    "AlertType": "Alert Type",
+    "Priority": "Priority",
+    "Status": "Status",
+    "TargetSites": "Target Sites",
+    "LinkUrl": "Link URL",
+    "LinkDescription": "Link Description",
+    "ScheduledStart": "Scheduled Start",
+    "ScheduledEnd": "Scheduled End",
+    "IsPinned": "Pinned",
+    "NotificationType": "Notification Type",
+    
+    // Priority Levels
+    "PriorityLow": "Low",
+    "PriorityMedium": "Medium",
+    "PriorityHigh": "High",
+    "PriorityCritical": "Critical",
+    
+    // Status Types
+    "StatusActive": "Active",
+    "StatusExpired": "Expired",
+    "StatusScheduled": "Scheduled",
+    "StatusInactive": "Inactive",
+    
+    // Notification Types
+    "NotificationNone": "None",
+    "NotificationBrowser": "Browser",
+    "NotificationEmail": "Email",
+    "NotificationBoth": "Both",
+    
+    // Alert Types
+    "AlertTypeInfo": "Info",
+    "AlertTypeWarning": "Warning",
+    "AlertTypeMaintenance": "Maintenance",
+    "AlertTypeInterruption": "Interruption",
+    
+    // User Interface
+    "ShowMore": "Show More",
+    "ShowLess": "Show Less",
+    "ViewDetails": "View Details",
+    "Expand": "Expand",
+    "Collapse": "Collapse",
+    "Preview": "Preview",
+    "Templates": "Templates",
+    "CustomizeColors": "Customize Colors",
+    
+    // Site Selection
+    "SelectSites": "Select Sites",
+    "CurrentSite": "Current Site",
+    "AllSites": "All Sites",
+    "HubSites": "Hub Sites",
+    "RecentSites": "Recent Sites",
+    "FollowedSites": "Followed Sites",
+    
+    // Permissions and Errors
+    "InsufficientPermissions": "Insufficient permissions to perform this action",
+    "PermissionDeniedCreateLists": "User lacks permissions to create SharePoint lists",
+    "PermissionDeniedAccessLists": "User lacks permissions to access SharePoint lists",
+    "ListsNotFound": "SharePoint lists do not exist and cannot be created",
+    "InitializationFailed": "Failed to initialize SharePoint connection",
+    "ConnectionError": "Connection error occurred",
+    "SaveError": "Error occurred while saving",
+    "LoadError": "Error occurred while loading data",
+    
+    // User Friendly Messages
+    "NoAlertsMessage": "No alerts are currently available",
+    "AlertsLoadingMessage": "Loading alerts...",
+    "AlertCreatedSuccess": "Alert created successfully",
+    "AlertUpdatedSuccess": "Alert updated successfully",
+    "AlertDeletedSuccess": "Alert deleted successfully",
+    "SettingsSavedSuccess": "Settings saved successfully",
+    
+    // Date and Time
+    "CreatedBy": "Created by",
+    "CreatedOn": "Created on",
+    "LastModified": "Last modified",
+    "Never": "Never",
+    "Today": "Today",
+    "Yesterday": "Yesterday",
+    "Tomorrow": "Tomorrow",
+    
+    // Validation Messages
+    "FieldRequired": "This field is required",
+    "InvalidUrl": "Please enter a valid URL",
+    "InvalidDate": "Please enter a valid date",
+    "InvalidEmail": "Please enter a valid email address",
+    "TitleTooLong": "Title is too long (maximum 255 characters)",
+    "DescriptionTooLong": "Description is too long (maximum 2000 characters)",
+    
+    // Rich Media
+    "UploadImage": "Upload Image",
+    "RemoveImage": "Remove Image",
+    "ImageAltText": "Image Alt Text",
+    "VideoUrl": "Video URL",
+    "EmbedCode": "Embed Code",
+    
+    // Accessibility
+    "CloseDialog": "Close dialog",
+    "OpenSettings": "Open settings",
+    "ExpandAlert": "Expand alert",
+    "CollapseAlert": "Collapse alert",
+    "AlertActions": "Alert actions",
+    "PinAlert": "Pin alert",
+    "UnpinAlert": "Unpin alert",
+    
+    // List Management
+    "FailedToLoadSiteInformation": "Failed to load site information",
+    "AlertsListCreatedSuccessfully": "Alerts list created successfully on {0}",
+    "FailedToCreateAlertsList": "Failed to create alerts list on {0}",
+    "HomeSite": "Home Site",
+    "HubSite": "Hub Site",
+    "CurrentSite": "Current Site",
+    "HomeSiteDescription": "Alerts shown on all sites in the tenant",
+    "HubSiteDescription": "Alerts shown on hub and connected sites",
+    "CurrentSiteDescription": "Alerts shown only on this site",
+    "ListExistsAndAccessible": "List exists and accessible",
+    "ListExistsNoAccess": "List exists but no access",
+    "ListNotExistsCanCreate": "List not found - can create",
+    "ListNotExistsCannotCreate": "List not found - cannot create",
+    "AlertListsManagement": "Alert Lists Management",
+    "LoadingSiteInformation": "Loading site information...",
+    "ManageAlertListsDescription": "Manage alert lists across your site hierarchy",
+    "CreatingList": "Creating...",
+    "CreateAlertsList": "Create Alerts List",
+    "ReadyForAlerts": "Ready for alerts",
+    "AlertHierarchy": "Alert Display Hierarchy",
+    "AlertHierarchyDescription": "Alerts are displayed based on site hierarchy: Home Site alerts appear everywhere, Hub Site alerts appear on hub and connected sites, and Site alerts appear only on the specific site.",
+    "HomeSiteScope": "Shown on all sites",
+    "HubSiteScope": "Shown on hub and connected sites",
+    "SiteScope": "Shown only on this site",
+    
+    // Multi-Language Editor
+    "FailedToLoadLanguages": "Failed to load available languages",
+    "LanguageAddedSuccessfully": "Language added successfully",
+    "FailedToAddLanguage": "Failed to add language",
+    "LanguageRemovedSuccessfully": "Language removed successfully",
+    "FailedToRemoveLanguage": "Failed to remove language",
+    "LoadingLanguages": "Loading languages...",
+    "MultiLanguageContent": "Multi-Language Content",
+    "MultiLanguageContentDescription": "Create content in multiple languages for broader accessibility",
+    "AddLanguage": "Add Language",
+    "AddCustomLanguage": "Add Custom Language",
+    "LanguageCode": "Language Code",
+    "LanguageName": "Language Name",
+    "NativeLanguageName": "Native Language Name",
+    "QuickAdd": "Quick Add",
+    "SelectSuggestedLanguage": "Select from suggested languages",
+    "RightToLeft": "Right-to-Left",
+    "RTLEnabled": "RTL Enabled",
+    "RTLDisabled": "RTL Disabled",
+    "EditingContent": "Editing Content",
+    "RemoveLanguage": "Remove Language",
+    "ContentSummary": "Content Summary",
+    "HasContent": "Has Content",
+    "NoContent": "No Content",
+    
+    // Notification Messages
+    "SettingsUpdatedSuccessfully": "Settings updated successfully!",
+    "AlertCreatedSuccessfully": "Alert created successfully!",
+    "AlertUpdatedSuccessfully": "Alert updated successfully!",
+    "AlertDeletedSuccessfully": "Alert deleted successfully!",
+    "AlertTypeCreatedSuccessfully": "Alert type created successfully!",
+    "AlertTypeDeletedSuccessfully": "Alert type deleted successfully!",
+    "ListsInitializedSuccessfully": "SharePoint lists initialized successfully!",
+    
+    // Error Messages
+    "FailedToCreateAlert": "Failed to create alert. Please check your permissions and try again.",
+    "FailedToUpdateAlert": "Failed to update alert. Please try again.",
+    "FailedToDeleteAlert": "Failed to delete alert. Please try again.",
+    "FailedToLoadAlerts": "Failed to load alerts. Please check your permissions.",
+    "FailedToSaveSettings": "Failed to save settings. Please try again.",
+    "PermissionDeniedListCreation": "You don't have permission to create SharePoint lists. Please contact your administrator.",
+    "SharePointListsNotFound": "SharePoint lists not found and cannot be created automatically.",
+    "InvalidFormData": "Please fill in all required fields correctly.",
+    "AlertTypeNameRequired": "Alert type name is required.",
+    "AlertTypeAlreadyExists": "An alert type with this name already exists.",
+    
+    // Form Validation
+    "TitleRequired": "Alert title is required",
+    "DescriptionRequired": "Alert description is required",
+    "AlertTypeRequired": "Please select an alert type",
+    "TitleMinLength": "Title must be at least 3 characters",
+    "TitleMaxLength": "Title must be less than 100 characters",
+    "DescriptionMinLength": "Description must be at least 10 characters (excluding HTML tags)",
+    "InvalidUrlFormat": "Please enter a valid URL",
+    "LinkDescriptionRequired": "Link description is required when URL is provided",
+    "EndDateMustBeAfterStartDate": "End date must be after start date",
+    "AtLeastOneSiteRequired": "Please select at least one site for alert distribution",
+    
+    // Language Field Manager
+    "MultiLanguageFieldManagement": "Multi-Language Field Management",
+    "SelectLanguagesToAdd": "Select languages to add multi-language content fields to your alert lists. Fields will be created for Title, Description, and Link Description in each selected language.",
+    "AvailableLanguages": "Available Languages",
+    "Active": "Active",
+    "Updating": "Updating...",
+    "Refresh": "Refresh",
+    "LoadingLanguageSupport": "Loading language support...",
+    "LanguageFieldsCreatedAs": "Language fields are created as: Title_{LANG}, Description_{LANG}, LinkDescription_{LANG}",
+    "EnglishCannotBeRemoved": "English is the default language and cannot be removed.",
+    "LanguageSupportAdded": "Added {0} language support successfully!",
+    "LanguageSupportRemoved": "Removed {0} from active languages.",
+    "FailedToAddLanguageSupport": "Failed to add {0} language support.",
+    "FailedToRemoveLanguageSupport": "Failed to remove {0} language support.",
+    "CouldNotLoadLanguageSupport": "Could not load current language support. Using defaults."
   }
 });

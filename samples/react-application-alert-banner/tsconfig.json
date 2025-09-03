@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/@microsoft/rush-stack-compiler-4.7/includes/tsconfig-web.json",
+  "extends": "./node_modules/@microsoft/rush-stack-compiler-5.3/includes/tsconfig-web.json",
   "compilerOptions": {
     "target": "ES6",
     "forceConsistentCasingInFileNames": true,
@@ -12,21 +12,61 @@
     "skipLibCheck": true,
     "outDir": "lib",
     "inlineSources": false,
+    
+    // Enhanced type safety (gradually enabled)
+    "strict": false, // Enable gradually
     "noImplicitAny": true,
+    "noImplicitReturns": false, // Too many violations initially
+    "noImplicitThis": false,
+    "noUnusedLocals": false, // Too many violations initially 
+    "noUnusedParameters": false, // Too many violations initially
+    "exactOptionalPropertyTypes": false, // Enable after fixing interfaces
+    "noUncheckedIndexedAccess": false, // Enable after array access fixes
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": false,
+    
+    // Additional strictness (gradually enabled)
+    "strictNullChecks": false, // Enable after null checks
+    "strictBindCallApply": false,
+    "strictFunctionTypes": false,
+    "strictPropertyInitialization": false, // Enable after constructor fixes
+    "useUnknownInCatchVariables": false, // Enable after error handling fixes
+    
+    // Import/module strictness
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "preserveSymlinks": false,
+    
     "typeRoots": [
       "./node_modules/@types",
-      "./node_modules/@microsoft"
+      "./node_modules/@microsoft",
+      "./src/types"
     ],
     "types": [
       "webpack-env"
     ],
     "lib": [
       "esnext",
-      "dom"
-    ]
+      "dom",
+      "dom.iterable"
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@services/*": ["./src/extensions/alertbanner/Components/Services/*"],
+      "@components/*": ["./src/extensions/alertbanner/Components/*"],
+      "@utils/*": ["./src/extensions/alertbanner/Components/Utils/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "temp",
+    "release",
+    "*.d.ts"
   ]
 }
