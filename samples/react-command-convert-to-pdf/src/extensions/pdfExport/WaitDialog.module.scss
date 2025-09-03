@@ -1,115 +1,346 @@
 @import "~@fluentui/common-styles/dist/sass/common";
 
-$font-size-small: 0.8em;
-$dialog-width: 450px; // Adjusted to match the desired max-width
-$error-color: $ms-color-redDark;
-$warning-color: $ms-color-orangeLighter;
-$success-color: $ms-color-greenLight;
-
-.dialogContainer {
-  padding: 20px;
-  background-color: #f3f2f1;
-  border-radius: 5px;
-  max-width: $dialog-width;
-  margin: 0 auto;
-  transition: background-color 0.3s ease;
+$primary-blue: #0078d4;
+$light-gray: #f8f9fa;
+$medium-gray: #6c757d;
+$dark-gray: #212529;
+$success-green: #28a745;
+$border-color: #dee2e6;
+.dialog-container {
+  :global(.ms-Modal) {
+    z-index: 1000000 !important;
+  }
+  
+  :global(.ms-Overlay) {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  :global(.ms-Dialog-main) {
+    background: white !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e1e1e1 !important;
+    min-width: 480px !important;
+    max-width: 520px !important;
+    
+    @media (max-width: 640px) {
+      min-width: 90vw !important;
+      max-width: 90vw !important;
+      margin: 16px !important;
+    }
+  }
+  
+  :global(.ms-Dialog-content) {
+    padding: 0 !important;
+  }
 }
 
-.dialogMessage {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 20px;
+.dialog-body {
+  padding: 24px;
+  background: white;
+  
+  @media (max-width: 640px) {
+    padding: 20px;
+  }
+}
+.loading-container {
+  width: 100%;
+  
+  .loading-content {
+    width: 100%;
+  }
+  
+  .loading-header {
+    margin-bottom: 20px;
+    text-align: center;
+    
+    .icon-container {
+      display: inline-block;
+      margin-bottom: 12px;
+      
+      .icon-background {
+        width: 48px;
+        height: 48px;
+        background: $primary-blue;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        
+        .main-icon {
+          color: white;
+          font-size: 20px;
+        }
+      }
+      
+      .spinner-overlay {
+        display: none;
+      }
+    }
+    
+    .header-content {
+      .main-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #323130;
+        margin: 0 0 8px 0;
+        line-height: 1.3;
+      }
+      
+      .main-subtitle {
+        font-size: 14px;
+        color: #605e5c;
+        margin: 0 0 8px 0;
+        line-height: 1.4;
+      }
+      
+      .estimated-time {
+        font-size: 13px;
+        color: $primary-blue;
+        margin: 0;
+        font-weight: 400;
+      }
+    }
+  }
+  
+  .progress-section {
+    margin-bottom: 16px;
+    
+    .main-progress {
+      :global(.ms-ProgressIndicator-itemDescription) {
+        font-size: 13px !important;
+        color: #605e5c !important;
+        margin-bottom: 8px !important;
+        text-align: center !important;
+        font-weight: 400 !important;
+      }
+      
+      :global(.ms-ProgressIndicator-itemProgress) {
+        height: 4px !important;
+        border-radius: 2px !important;
+        background: #f3f2f1 !important;
+        
+        :global(.ms-ProgressIndicator-progressTrack) {
+          background: $primary-blue !important;
+          border-radius: 2px !important;
+        }
+      }
+    }
+  }
+  
+  .current-file-section {
+    margin-bottom: 16px;
+    
+    .current-file-label {
+      font-size: 13px;
+      color: #323130;
+      font-weight: 400;
+      margin: 0 0 6px 0;
+      text-align: center;
+    }
+    
+    .file-info-card {
+      background: #faf9f8;
+      border: 1px solid #edebe9;
+      border-radius: 2px;
+      padding: 12px;
+      text-align: center;
+      
+      .file-icon {
+        color: $primary-blue;
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      
+      .file-details {
+        .file-name {
+          font-size: 13px;
+          color: #323130;
+          font-weight: 400;
+          margin: 0 0 4px 0;
+          word-break: break-word;
+        }
+        
+        .file-status {
+          font-size: 12px;
+          color: #605e5c;
+          margin: 0;
+        }
+      }
+      
+      .processing-indicator {
+        margin-top: 6px;
+        
+        :global(.ms-Spinner-circle) {
+          width: 14px !important;
+          height: 14px !important;
+          border-width: 1px !important;
+          border-color: rgba($primary-blue, 0.3) !important;
+          border-top-color: $primary-blue !important;
+        }
+      }
+    }
+  }
+  
+  .status-info {
+    margin-bottom: 12px;
+    
+    .status-items {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      
+      .status-icon-success {
+        color: $success-green;
+        font-size: 10px;
+      }
+      
+      .status-text {
+        color: #605e5c;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+  }
+  
+  .tips-section {
+    background: #f8f9fa;
+    border-radius: 2px;
+    padding: 8px;
+    text-align: center;
+    
+    .tip-title {
+      font-size: 11px;
+      color: #605e5c;
+      font-weight: 400;
+      margin: 0 0 2px 0;
+    }
+    
+    .tip-text {
+      font-size: 10px;
+      color: #8a8886;
+      margin: 0;
+      line-height: 1.3;
+    }
+  }
 }
 
-.notificationIcon {
+.error-container {
+  text-align: center;
+  
+  .error-message {
+    border-radius: 2px !important;
+    border: 1px solid #d83b01 !important;
+    background: #fed9cc !important;
+    
+    :global(.ms-MessageBar-content) {
+      padding: 12px !important;
+    }
+    
+    :global(.ms-MessageBar-icon) {
+      color: #d83b01 !important;
+      font-size: 14px !important;
+    }
+  }
+  
+  .error-icon {
+    color: #d83b01;
+    font-size: 14px;
+  }
+  
+  .error-title {
+    font-size: 16px;
+    color: #323130;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+  }
+  
+  .error-text {
+    font-size: 13px;
+    color: #605e5c;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+.dialog-actions {
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
-  font-size: 32px;
-}
-.errorLabel {
-  color: $error-color;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-
-  i {
-    margin-right: 8px;
-  }
-}
-.progressContainer {
-  margin: 15px 0;
-}
-
-.spinner {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-}
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #eaeaea;
-}
-
-.themeToggle {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
-
-  i {
-    margin-right: 8px;
-  }
-}
-
-.pnpFooter {
-  font-size: $font-size-small;
-  text-align: right;
-
-  a {
-    color: #0078d4;
-    text-decoration: none;
-
+  margin-top: 16px;
+  
+  .close-button {
+    background: $primary-blue !important;
+    color: white !important;
+    border: 1px solid $primary-blue !important;
+    border-radius: 2px !important;
+    font-weight: 400 !important;
+    min-width: 80px !important;
+    height: 32px !important;
+    font-size: 13px !important;
+    
     &:hover {
-      text-decoration: underline;
+      background: #106ebe !important;
+      border-color: #106ebe !important;
     }
   }
 }
 
-:global(.ms-Dialog) {
-  outline: none;
-
-  &:focus {
-    outline: 2px solid $ms-color-themePrimary;
+.branding-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #edebe9;
+  text-align: center;
+  
+  .branding-icon {
+    color: $primary-blue;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+  
+  .branding-text {
+    font-size: 10px;
+    color: #8a8886;
+    
+    strong {
+      color: #605e5c;
+      font-weight: 400;
+    }
   }
 }
 
-@media screen and (max-width: 480px) {
-  .dialogContainer {
-    padding: 15px;
+@media (max-width: 640px) {
+  .loading-container {
+    .loading-header {
+      .header-content {
+        .main-title {
+          font-size: 20px;
+        }
+        
+        .main-subtitle {
+          font-size: 14px;
+        }
+      }
+    }
+    
+    .status-items {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
   }
+}
 
-  .footer {
-    flex-direction: column-reverse;
-
-    .pnpFooter {
-      margin-bottom: 10px;
-    }
-
-    .themeToggle {
-      align-self: flex-start;
-      margin-top: 10px;
-    }
+@media print {
+  .dialog-container {
+    display: none !important;
   }
 }

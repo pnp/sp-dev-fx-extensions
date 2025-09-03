@@ -3,7 +3,7 @@
     "solution": {
         "name": "Save and convert as PDF by PnP",
         "id": "06babd6f-e62f-41e8-87c9-6cb516203a2d",
-        "version": "1.4.0.0",
+        "version": "1.2.0.236",
         "includeClientSideAssets": true,
         "skipFeatureDeployment": true,
         "webApiPermissionRequests": [

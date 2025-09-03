@@ -1,6 +1,6 @@
 {
     "name": "pnp-ext-pdf-convert",
-    "version": "1.4.0",
+    "version": "1.1.0",
     "main": "lib/index.js",
     "private": true,
     "scripts": {
@@ -8,47 +8,40 @@
         "clean": "gulp clean",
         "test": "gulp test"
     },
-    "engines": {
-        "node": ">=16.13.0 <17.0.0 || >=18.17.1 <19.0.0"
-    },
     "dependencies": {
-        "@fluentui/react": "8.122.12",
-        "@microsoft/decorators": "1.20.0",
-        "@microsoft/sp-core-library": "1.20.0",
-        "@microsoft/sp-http": "1.20.0",
-        "@microsoft/sp-listview-extensibility": "1.20.0",
-        "@pnp/sp": "^4.10.0",
-        "@pnp/spfx-controls-react": "^3.20.0",
+        "@fluentui/common-styles": "^1.2.62",
+        "@fluentui/react": "8.123.5",
+        "@microsoft/decorators": "1.21.1",
+        "@microsoft/sp-core-library": "1.21.1",
+        "@microsoft/sp-dialog": "1.21.1",
+        "@microsoft/sp-http": "1.21.1",
+        "@microsoft/sp-listview-extensibility": "1.21.1",
         "file-saver": "^2.0.5",
+        "jszip": "^3.10.1",
         "react": "17.0.1",
-        "react-dom": "17.0.1"
+        "react-dom": "17.0.1",
+        "sass": "^1.92.0"
     },
     "resolutions": {
         "@types/react": "17.0.1"
     },
     "devDependencies": {
-        "@fluentui/common-styles": "^1.2.67",
-        "@microsoft/eslint-config-spfx": "1.20.2",
-        "@microsoft/eslint-plugin-spfx": "1.20.2",
-        "@microsoft/microsoft-graph-client": "3.0.7",
-        "@microsoft/rush-stack-compiler-4.7": "0.1.1",
-        "@microsoft/sp-build-web": "1.20.2",
-        "@microsoft/sp-module-interfaces": "1.20.2",
-        "@rushstack/eslint-config": "4.0.1",
+        "@microsoft/rush-stack-compiler-5.3": "^0.1.0",
+        "@microsoft/sp-build-web": "1.21.1",
+        "@microsoft/sp-module-interfaces": "1.21.1",
+        "@microsoft/sp-tslint-rules": "1.21.1",
+        "@microsoft/sp-webpart-workbench": "1.12.1",
         "@types/chai": "5.0.0",
         "@types/es6-promise": "3.3.0",
         "@types/file-saver": "^2.0.7",
+        "@types/jszip": "^3.4.1",
         "@types/mocha": "10.0.9",
-        "@types/react": "17.0.45",
-        "@types/react-dom": "17.0.17",
-        "@types/uuid": "^10.0.0",
+        "@types/node-sass": "^4.11.7",
+        "@types/react": "17.0.1",
+        "@types/react-dom": "17.0.1",
         "@types/webpack-env": "1.18.5",
         "ajv": "~8.17.1",
-        "eslint": "8.57.0",
-        "eslint-plugin-react-hooks": "4.3.0",
         "gulp": "5.0.0",
-        "sass": "^1.80.3",
-        "typescript": "4.7.4",
         "webpack-bundle-analyzer": "^4.10.2"
     },
     "solution": {
