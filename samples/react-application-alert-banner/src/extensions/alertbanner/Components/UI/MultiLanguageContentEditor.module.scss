@@ -1,0 +1,147 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.languageSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.availableLanguages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 16px;
+  border: 1px solid var(--colorNeutralStroke2);
+  background-color: var(--colorNeutralBackground1);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: var(--colorNeutralBackground2);
+    border-color: var(--colorBrandStroke1);
+  }
+  
+  &.selected {
+    background-color: var(--colorBrandBackground2);
+    border-color: var(--colorBrandStroke1);
+    color: var(--colorBrandForeground1);
+  }
+}
+
+.tabsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tabContent {
+  padding: 20px 24px;
+  border: 1px solid var(--colorNeutralStroke2);
+  border-radius: 6px;
+  background-color: var(--colorNeutralBackground1);
+}
+
+.contentFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 4px;
+}
+
+.tabHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.languageInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.removeButton {
+  min-width: auto;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--colorNeutralForeground2);
+}
+
+.emptyIcon {
+  font-size: 48px;
+  color: var(--colorNeutralForeground3);
+  margin-bottom: 16px;
+}
+
+.summary {
+  padding: 12px;
+  background-color: var(--colorNeutralBackground2);
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+.tabFlag {
+  margin-right: 6px;
+}
+
+.tabBadge {
+  margin-left: 6px;
+}
+
+.langCode {
+  color: var(--colorNeutralForeground2);
+}
+
+.summaryList {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.summaryItem {
+  margin-bottom: 4px;
+}
+
+.statusComplete {
+  color: var(--colorPaletteGreenForeground1);
+}
+
+.statusIncomplete {
+  color: var(--colorPaletteRedForeground1);
+}
+
+.allLanguagesText {
+  color: var(--colorNeutralForeground2);
+}
+
+// Ensure input fields stay within container boundaries
+.contentFields :global(.input_febaa492),
+.contentFields input[id^="sp-control-"] {
+  box-sizing: border-box;
+  max-width: calc(100% - 8px);
+  margin: 0 4px;
+}

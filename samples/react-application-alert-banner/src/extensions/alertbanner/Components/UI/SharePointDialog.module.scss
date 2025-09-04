@@ -1,0 +1,173 @@
+// SharePoint-style dialog implementation
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease-out;
+  padding: 20px;
+}
+
+.dialog {
+  background: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 4px 23px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  animation: slideIn 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px 24px;
+  border-bottom: 1px solid #edebe9;
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #323130;
+  line-height: 24px;
+  flex: 1;
+  margin-right: 16px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  color: #605e5c;
+  transition: all 0.1s ease-out;
+  
+  &:hover {
+    background-color: #f3f2f1;
+    color: #323130;
+  }
+  
+  &:active {
+    background-color: #edebe9;
+  }
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  
+  // Custom scrollbar to match SharePoint
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f3f2f1;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c8c6c4;
+    border-radius: 6px;
+    border: 3px solid #f3f2f1;
+    
+    &:hover {
+      background: #a19f9d;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px 24px 20px 24px;
+  border-top: 1px solid #edebe9;
+  flex-shrink: 0;
+  background: #faf9f8;
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .dialog {
+    border: 2px solid;
+  }
+  
+  .header,
+  .footer {
+    border-width: 2px;
+  }
+  
+  .closeButton {
+    border: 1px solid transparent;
+    
+    &:focus {
+      border-color: currentColor;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .dialog {
+    width: 95vw !important;
+    max-width: 95vw;
+    margin: 10px;
+  }
+  
+  .header,
+  .content,
+  .footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .title {
+    font-size: 18px;
+  }
+}

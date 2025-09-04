@@ -1,0 +1,59 @@
+.errorContainer {
+  padding: 24px;
+  border: 1px solid #d13438;
+  border-radius: 4px;
+  background-color: #fdf6f6;
+  margin: 16px;
+  max-width: 600px;
+}
+
+.errorHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.errorMessage {
+  margin-top: 16px;
+}
+
+.errorMessageText {
+  color: #605e5c;
+}
+
+.errorId {
+  margin-top: 12px;
+}
+
+.errorIdText {
+  color: #8a8886;
+  font-family: monospace;
+}
+
+.errorActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.errorDetails {
+  margin-top: 20px;
+}
+
+.errorDetailsSummary {
+  cursor: pointer;
+  color: #605e5c;
+}
+
+.errorDetailsCode {
+  margin-top: 8px;
+  padding: 12px;
+  background: #f3f2f1;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  font-size: 12px;
+  overflow: auto;
+  max-height: 200px;
+  white-space: pre-wrap;
+}

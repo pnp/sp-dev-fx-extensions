@@ -1,0 +1,146 @@
+[
+  {
+    "fields": {
+      "Title": "🚨 System Maintenance Alert",
+      "Description": "We will be performing scheduled maintenance on our systems. During this time, some services may be temporarily unavailable. We apologize for any inconvenience and thank you for your patience.",
+      "AlertType": "Maintenance",
+      "Priority": "Medium",
+      "IsPinned": false,
+      "NotificationType": "Browser",
+      "LinkUrl": "#STATUS-PAGE-URL-HERE",
+      "LinkDescription": "Check Service Status",
+      "TargetSites": "",
+      "Status": "Active",
+      "ContentType": "template",
+      "TargetLanguage": "all",
+      "LanguageGroup": "maintenance-template-1",
+      "AvailableForAll": true
+    }
+  },
+  {
+    "fields": {
+      "Title": "📢 Important Announcement",
+      "Description": "We have important news to share with you. Please take a moment to read this announcement as it may affect your daily workflow and access to certain resources.",
+      "AlertType": "Info",
+      "Priority": "High",
+      "IsPinned": false,
+      "NotificationType": "Browser",
+      "LinkUrl": "#ANNOUNCEMENT-URL-HERE",
+      "LinkDescription": "Read Full Announcement",
+      "TargetSites": "",
+      "Status": "Active",
+      "ContentType": "template",
+      "TargetLanguage": "all",
+      "LanguageGroup": "announcement-template-1",
+      "AvailableForAll": true
+    }
+  },
+  {
+    "fields": {
+      "Title": "⚠️ Security Update Required",
+      "Description": "A critical security update is now available. Please update your browser and ensure you're running the latest version of all company applications to maintain security compliance.",
+      "AlertType": "Warning",
+      "Priority": "Critical",
+      "IsPinned": true,
+      "NotificationType": "Browser",
+      "LinkUrl": "#SECURITY-UPDATE-URL-HERE",
+      "LinkDescription": "Download Security Update",
+      "TargetSites": "",
+      "Status": "Active",
+      "ContentType": "template",
+      "TargetLanguage": "all",
+      "LanguageGroup": "security-template-1",
+      "AvailableForAll": true
+    }
+  },
+  {
+    "fields": {
+      "Title": "🔧 Service Interruption Notice",
+      "Description": "We are experiencing technical difficulties that may impact system performance. Our technical team is working to resolve this issue as quickly as possible. We will provide updates as they become available.",
+      "AlertType": "Interruption",
+      "Priority": "High",
+      "IsPinned": false,
+      "NotificationType": "Browser",
+      "LinkUrl": "#SUPPORT-URL-HERE",
+      "LinkDescription": "Contact Support",
+      "TargetSites": "",
+      "Status": "Active",
+      "ContentType": "template",
+      "TargetLanguage": "all",
+      "LanguageGroup": "interruption-template-1",
+      "AvailableForAll": true
+    }
+  },
+  {
+    "fields": {
+      "Title": "📚 Training Session Available",
+      "Description": "Join us for an interactive training session covering new features and best practices. This session is designed to help you make the most of our platform and improve your productivity.",
+      "AlertType": "Info",
+      "Priority": "Low",
+      "IsPinned": false,
+      "NotificationType": "Browser",
+      "LinkUrl": "#TRAINING-URL-HERE",
+      "LinkDescription": "Register for Training",
+      "TargetSites": "",
+      "Status": "Active",
+      "ContentType": "template",
+      "TargetLanguage": "all",
+      "LanguageGroup": "training-template-1",
+      "AvailableForAll": true
+    }
+  },
+  {
+    "fields": {
+      "Title": "🎉 Milestone Achievement",
+      "Description": "We're excited to celebrate this important milestone with you! This achievement represents the hard work and dedication of our entire team. Thank you for being part of our journey.",
+      "AlertType": "Info",
+      "Priority": "Low",
+      "IsPinned": false,
+      "NotificationType": "None",
+      "LinkUrl": "#NEWS-URL-HERE",
+      "LinkDescription": "Read Full Story",
+      "TargetSites": "",
+      "Status": "Active",
+      "ContentType": "template",
+      "TargetLanguage": "all",
+      "LanguageGroup": "celebration-template-1",
+      "AvailableForAll": true
+    }
+  },
+  {
+    "fields": {
+      "Title": "🔄 System Update Completed",
+      "Description": "We've successfully updated our systems with the latest improvements and security enhancements. All services are now running on the updated version with improved performance and new features.",
+      "AlertType": "Info",
+      "Priority": "Medium",
+      "IsPinned": false,
+      "NotificationType": "None",
+      "LinkUrl": "#RELEASE-NOTES-URL-HERE",
+      "LinkDescription": "View Release Notes",
+      "TargetSites": "",
+      "Status": "Active",
+      "ContentType": "template",
+      "TargetLanguage": "all",
+      "LanguageGroup": "update-template-1",
+      "AvailableForAll": true
+    }
+  },
+  {
+    "fields": {
+      "Title": "⏰ Deadline Reminder",
+      "Description": "This is a friendly reminder that an important deadline is approaching. Please ensure you complete the required tasks on time. If you need assistance or have questions, please don't hesitate to reach out to your manager.",
+      "AlertType": "Info",
+      "Priority": "Medium",
+      "IsPinned": false,
+      "NotificationType": "Browser",
+      "LinkUrl": "#TASK-PORTAL-URL-HERE",
+      "LinkDescription": "View Tasks",
+      "TargetSites": "",
+      "Status": "Active",
+      "ContentType": "template",
+      "TargetLanguage": "all",
+      "LanguageGroup": "reminder-template-1",
+      "AvailableForAll": true
+    }
+  }
+]

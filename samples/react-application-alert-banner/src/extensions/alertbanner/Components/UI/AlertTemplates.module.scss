@@ -1,0 +1,407 @@
+// Alert Templates Styles
+
+.templatesContainer {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.templatesHeader {
+  margin-bottom: 20px;
+  
+  h3 {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #323130;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #605e5c;
+  }
+}
+
+.searchAndFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.searchBox {
+  position: relative;
+  max-width: 400px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 40px 8px 12px;
+  border: 1px solid #8a8886;
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: inherit;
+  
+  &:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: inset 0 0 0 1px #0078d4;
+  }
+  
+  &::placeholder {
+    color: #605e5c;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #605e5c;
+  pointer-events: none;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.categoryFilter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.categoryButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid #8a8886;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #323130;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  
+  &:hover {
+    border-color: #323130;
+    background: #f3f2f1;
+  }
+  
+  &.active {
+    background: #0078d4;
+    border-color: #0078d4;
+    color: #ffffff;
+  }
+  
+  &:focus {
+    outline: 2px solid #0078d4;
+    outline-offset: 2px;
+  }
+}
+
+.categoryIcon {
+  font-size: 14px;
+  
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.templatesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.templateCard {
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  overflow: hidden;
+  
+  &:hover {
+    border-color: #0078d4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.templateIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  background: linear-gradient(135deg, #f3f2f1 0%, #faf9f8 100%);
+  font-size: 28px;
+  border-bottom: 1px solid #edebe9;
+  
+  svg {
+    width: 28px;
+    height: 28px;
+    color: #605e5c;
+    
+    &:hover {
+      color: #323130;
+    }
+  }
+}
+
+.templateContent {
+  padding: 16px 16px 12px 16px;
+}
+
+.templateName {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #323130;
+  line-height: 20px;
+}
+
+.templateDescription {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #605e5c;
+  line-height: 18px;
+}
+
+.templateMeta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.priorityBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  &.critical {
+    background: #d13438;
+    color: #ffffff;
+  }
+  
+  &.high {
+    background: #f7630c;
+    color: #ffffff;
+  }
+  
+  &.medium {
+    background: #0078d4;
+    color: #ffffff;
+  }
+  
+  &.low {
+    background: #107c10;
+    color: #ffffff;
+  }
+}
+
+.pinnedBadge,
+.notificationBadge {
+  font-size: 9px;
+  font-weight: 500;
+  padding: 3px 6px;
+  border-radius: 8px;
+  background: #f3f2f1;
+  color: #323130;
+  border: 1px solid #edebe9;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  
+  svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.templateAction {
+  padding: 12px 16px;
+  background: #faf9f8;
+  border-top: 1px solid #edebe9;
+}
+
+.useTemplateButton {
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 2px;
+  background: #0078d4;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.1s ease-out;
+  
+  &:hover {
+    background: #106ebe;
+  }
+  
+  &:active {
+    background: #005a9e;
+  }
+  
+  &:focus {
+    outline: 2px solid #0078d4;
+    outline-offset: 2px;
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: #605e5c;
+  
+  .loadingIcon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #323130;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+.noResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: #605e5c;
+  
+  .noResultsIcon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+    
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  
+  h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #323130;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+
+// Responsive design
+@media (max-width: 768px) {
+  .templatesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .searchAndFilter {
+    gap: 12px;
+  }
+  
+  .categoryFilter {
+    gap: 6px;
+  }
+  
+  .categoryButton {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .templateCard {
+    &:hover {
+      transform: none;
+    }
+  }
+  
+  .templateIcon {
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .templateContent {
+    padding: 12px;
+  }
+  
+  .templateName {
+    font-size: 15px;
+  }
+  
+  .templateDescription {
+    font-size: 12px;
+  }
+  
+  .templateAction {
+    padding: 10px 12px;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .templateCard,
+  .searchInput,
+  .categoryButton {
+    border-width: 2px;
+  }
+  
+  .templateIcon {
+    border-bottom-width: 2px;
+  }
+  
+  .templateAction {
+    border-top-width: 2px;
+  }
+}
+
+// Animations
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}

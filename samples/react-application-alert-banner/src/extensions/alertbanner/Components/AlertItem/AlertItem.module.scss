@@ -1,540 +1,371 @@
-@import "~office-ui-fabric-react/dist/sass/References.scss";
+// Modern Fluent UI v9 styles - minimal SCSS since most styling is in makeStyles
+// This file provides fallback styles and CSS module classes
 
-// Variables
-$breakpoint-tablet: 768px;
-$breakpoint-mobile: 576px;
-$icon-color: #ffffff;
-$close-icon-color: #ffffff !important;
-$transition-duration: 0.25s;
-$border-radius: 4px;
-$box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-
-/* Global Dialog Styles */
-:global(.alertDialogModal) {
-  .ms-Dialog-main {
-    max-width: 600px;
-    border-radius: $border-radius;
-    overflow: hidden;
+// Enhanced animation keyframes
+@keyframes modernSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
   }
-  
-  .ms-Dialog-header {
-    padding: 16px 24px !important;
-    margin: 0 !important;
-  }
-  
-  .ms-Dialog-title {
-    font-size: 20px !important;
-    font-weight: 600 !important;
-    margin: 0 !important;
-  }
-  
-  .ms-Dialog-inner {
-    padding: 0 !important;
-  }
-  
-  .ms-Dialog-content {
-    padding: 0 !important;
-  }
-  
-  .ms-Dialog-subText {
-    display: none !important;
-  }
-  
-  .ms-Dialog-actions {
-    display: none !important;
-  }
-  
-  .ms-Dialog-closeButton {
-    color: inherit !important;
-    
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.2) !important;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
+@keyframes modernFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes criticalAttention {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(232, 17, 35, 0.15);
+  }
+  50% {
+    transform: scale(1.002);
+    box-shadow: 0 8px 24px rgba(232, 17, 35, 0.25);
+  }
+}
+
+// Global animation classes for Fluent UI components
+:global(.modern-alert-enter) {
+  animation: modernSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:global(.modern-alert-fade) {
+  animation: modernFadeIn 0.3s ease-out;
+}
+
+:global(.critical-attention) {
+  animation: criticalAttention 3s ease-in-out infinite;
+}
+
+// Global icon fixes for Fluent UI v9
+:global(svg) {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+// Ensure all Fluent UI icons are visible
+:global([data-icon-name]) {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+// Fix for Fluent UI React Components buttons
+:global(.fui-Button) {
+  svg {
+    display: inline-block !important;
+    width: 1em;
+    height: 1em;
+  }
+}
+
+// Fallback styles for legacy support
 .alertItem {
   width: 100%;
-  transition: all $transition-duration ease;
+  margin: 0;
+  
+  // Ensure proper stacking context
+  position: relative;
+  z-index: 1;
+}
+
+
+// Responsive enhancements
+@media (max-width: 768px) {
+  :global(.modern-alert-enter) {
+    animation: modernFadeIn 0.2s ease-out;
+  }
+  
+  .alertItem {
+    margin-bottom: 12px;
+  }
+}
+
+// Accessibility and motion preferences
+@media (prefers-reduced-motion: reduce) {
+  :global(.modern-alert-enter),
+  :global(.modern-alert-fade),
+  :global(.critical-attention) {
+    animation: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :global(.critical-attention) {
+    animation: none;
+  }
+}
+
+
+// Core layout styles used by the component
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: space-between;
+  min-height: 44px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: #323130;
+  position: relative;
+  overflow: hidden;
   
   &:hover {
-    .actionSection {
-      opacity: 1;
-    }
-  }
-
-  .container {
-    display: flex;
-    align-items: flex-start;
-    padding: 12px 8px;
-    border-radius: $border-radius;
-    position: relative;
-    overflow: hidden;
-    transition: background-color $transition-duration ease;
-
-    @media (max-width: $breakpoint-tablet) {
-      flex-direction: column;
-      align-items: stretch;
-    }
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
   }
   
-  .clickable {
-    cursor: pointer;
-    outline: none;
-    
-    &:hover {
-      filter: brightness(1.05);
-    }
-    
-    &:active {
-      filter: brightness(0.95);
-    }
-    
-    &:focus-visible {
-      outline: 2px solid white;
-      outline-offset: 2px;
-    }
+  &:active {
+    transform: translateY(0);
   }
+}
 
-  .iconSection {
-    flex: 0 0 3%;
-    display: flex;
+.clickable {
+  cursor: pointer;
+}
+
+// Modern priority styling with improved visual hierarchy
+.critical {
+  background: linear-gradient(135deg, #ffffff 0%, #fef9f9 100%);
+  border: 1px solid #f3d6d8;
+  border-left: 4px solid #d13438;
+  
+  .alertTitle {
+    color: #d13438;
+    font-weight: 600;
+  }
+  
+  .priorityIndicator {
+    background-color: #d13438;
+  }
+  
+  &:hover {
+    border-color: #e8bec0;
+    box-shadow: 0 4px 16px rgba(209, 52, 56, 0.12);
+  }
+}
+
+.high {
+  background: linear-gradient(135deg, #ffffff 0%, #fffaf7 100%);
+  border: 1px solid #f7e6d3;
+  border-left: 4px solid #f7630c;
+  
+  .alertTitle {
+    color: #f7630c;
+    font-weight: 600;
+  }
+  
+  .priorityIndicator {
+    background-color: #f7630c;
+  }
+  
+  &:hover {
+    border-color: #f2d4b8;
+    box-shadow: 0 4px 16px rgba(247, 99, 12, 0.12);
+  }
+}
+
+.medium {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
+  border: 1px solid #d1e7f0;
+  border-left: 4px solid #0078d4;
+  
+  .alertTitle {
+    color: #0078d4;
+    font-weight: 600;
+  }
+  
+  .priorityIndicator {
+    background-color: #0078d4;
+  }
+  
+  &:hover {
+    border-color: #b8d4e6;
+    box-shadow: 0 4px 16px rgba(0, 120, 212, 0.12);
+  }
+}
+
+.low {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fcf9 100%);
+  border: 1px solid #d3e7d3;
+  border-left: 4px solid #107c10;
+  
+  .alertTitle {
+    color: #107c10;
+    font-weight: 600;
+  }
+  
+  .priorityIndicator {
+    background-color: #107c10;
+  }
+  
+  &:hover {
+    border-color: #b8d4b8;
+    box-shadow: 0 4px 16px rgba(16, 124, 16, 0.12);
+  }
+}
+
+.pinned {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+// Layout sections
+.iconSection {
+  flex-shrink: 0;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.alertIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  
+  // Ensure Fluent UI icons render
+  svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+}
+
+.textSection {
+  flex: 1;
+  min-width: 0;
+}
+
+.alertTitle {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+}
+
+.truncatedHtml {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+  color: rgba(50, 49, 48, 0.8);
+  font-size: 14px;
+}
+
+.alertDescription {
+  margin: 4px 0 0 0;
+  max-width: 100%;
+}
+
+.actionSection {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+  
+  // Ensure button icons are visible
+  :global(.fui-Button__icon) {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    display: inline-flex !important;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-
-    @media (max-width: $breakpoint-tablet) {
-      flex: 0 0 auto;
-      width: 100%;
-      justify-content: flex-start;
-    }
-
-    .alertIcon {
-      font-size: 1.5rem;
-      color: $icon-color;
-
-      @media (max-width: $breakpoint-mobile) {
-        font-size: 1.2rem;
-      }
-    }
-  }
-
-  .textSection {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-width: 0; // Prevent overflow
-    padding: 0 5px;
-
-    @media (max-width: $breakpoint-tablet) {
-      width: 100%;
-      padding: 0;
-    }
-
-    .alertTitle {
-      font-weight: 600;
-      // margin-bottom: 8px;
-      font-size: 1.1rem;
-      line-height: 1.3;
-
-      @media (max-width: $breakpoint-mobile) {
-        font-size: 0.95rem;
-      }
-    }
-
-    .alertDescription,
-    .alertDescriptionExp {
-      white-space: normal;
-      overflow: visible;
-      transition: max-height $transition-duration ease, opacity $transition-duration ease;
-      line-height: 1.5;
-      font-size: 14px;
-
-      @media (max-width: $breakpoint-mobile) {
-        font-size: 13px;
-      }
-      
-      // Ensure proper HTML rendering
-      p {
-        margin: 0.5em 0;
-        &:first-child {
-          margin-top: 0;
-        }
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-      
-      a {
-        color: inherit;
-        text-decoration: underline;
-        opacity: 0.9;
-        &:hover {
-          opacity: 1;
-        }
-      }
-      
-      ul, ol {
-        margin: 0.5em 0 0.5em 1.5em;
-        padding: 0;
-      }
-      
-      li {
-        margin-bottom: 0.25em;
-      }
-    }
     
-    .truncatedHtml {
-      max-height: 3em;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
-
-    .alertDescription {
-      max-height: 2em;
-      overflow: hidden;
-    }
-
-    .alertDescriptionExp {
-      max-height: 500px;
-    }
-  }
-
-  .actionSection {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    opacity: 0.7;
-    transition: opacity $transition-duration ease;
-
-    @media (max-width: $breakpoint-tablet) {
-      width: 100%;
-      justify-content: flex-end;
-      margin-top: 10px;
-      opacity: 1;
-    }
-
-    .toggleButton,
-    .closeButton,
-    .hideButton {
-      background: transparent;
-      color: $close-icon-color;
-      margin-left: 8px;
-      cursor: pointer;
-      padding: 6px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color $transition-duration ease;
-      font-size: 16px;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-
-      i {
-        color: $close-icon-color;
-      }
-    }
-  }
-
-  // Improved Alert Links
-  .alertActionLink {
-    margin-top: 8px;
-    border-radius: $border-radius;
-    transition: background-color $transition-duration ease;
-    
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.25) !important; 
-    }
-    
-    &:active {
-      background-color: rgba(255, 255, 255, 0.35) !important;
-    }
-    
-    @media (max-width: $breakpoint-mobile) {
-      margin-top: 6px;
-      font-size: 0.9rem;
+    svg {
+      width: 20px;
+      height: 20px;
+      display: block !important;
     }
   }
   
-  // Dialog Links
-  .dialogLink {
-    margin-top: 16px;
-    border-radius: $border-radius;
-    transition: background-color $transition-duration ease;
-    
-    &:hover {
-      background-color: rgba(0, 120, 212, 0.15) !important;
-    }
-    
-    &:active {
-      background-color: rgba(0, 120, 212, 0.25) !important;
-    }
-    
-    @media (max-width: $breakpoint-mobile) {
-      margin-top: 12px;
-    }
+  // Alternative selector for Fluent UI v9 buttons
+  :global([data-testid]) svg,
+  :global(.fui-Button) svg {
+    width: 20px;
+    height: 20px;
+    display: block !important;
   }
+}
 
-  .quickActions {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 16px;
-    
-    .actionButton {
-      background-color: rgba(255, 255, 255, 0.2);
-      color: $icon-color;
-      border: none;
-      padding: 5px 12px;
-      min-width: auto;
-      height: auto;
-      border-radius: $border-radius;
-      transition: background-color $transition-duration ease;
-      
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.3);
-      }
-      
-      .actionIcon {
-        margin-right: 6px;
-        font-size: 14px;
-      }
-    }
-  }
+.carouselCounter {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  min-width: 60px;
+  justify-content: center;
+}
 
-  /* Priority specific styles */
-  .critical {
-    box-shadow: 0 0 10px rgba(232, 17, 35, 0.5);
-  }
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: #d1d1d1;
+  margin: 0 4px;
+}
 
-  .high {
-    border-left: 4px solid #EA4300;
-  }
 
-  .medium {
-    border-left: 4px solid #0078D4;
-  }
+// Alert Content Styles
+.alertContentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacingVerticalM);
+  padding-top: var(--spacingVerticalM);
+  border-top: 1px solid var(--colorNeutralStroke2);
+}
 
-  .low {
-    border-left: 4px solid #107C10;
-  }
 
-  /* Pinned class */
-  .pinned {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: $box-shadow;
-  }
+// Description Content Styles
+.descriptionParagraph {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacingVerticalS);
+}
 
-  /* Enhanced Dialog Content Styles */
-  .enhancedDialogContent {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
+.descriptionListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacingVerticalXS);
+}
 
-  /* Dialog content styles */
-  .dialogContent {
-    padding: 24px;
-    overflow-y: auto;
-    flex: 1;
-    color: #323130;
-    
-    // Ensure proper HTML rendering
-    p {
-      margin: 0.75em 0;
-      &:first-child {
-        margin-top: 0;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      margin: 1em 0 0.5em;
-      font-weight: 600;
-      line-height: 1.25;
-    }
-    
-    h1 {
-      font-size: 1.5em;
-    }
-    
-    h2 {
-      font-size: 1.3em;
-    }
-    
-    h3 {
-      font-size: 1.15em;
-    }
-    
-    a {
-      color: #0078d4;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    
-    ul, ol {
-      margin: 0.75em 0 0.75em 1.5em;
-      padding: 0;
-    }
-    
-    li {
-      margin-bottom: 0.35em;
-    }
-    
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 4px;
-    }
-    
-    pre, code {
-      font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
-      background-color: #f6f8fa;
-      border-radius: 3px;
-    }
-    
-    pre {
-      padding: 12px;
-      overflow: auto;
-      margin: 0.75em 0;
-    }
-    
-    code {
-      padding: 0.2em 0.4em;
-      margin: 0;
-      font-size: 85%;
-    }
-    
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin: 0.75em 0;
-      
-      th, td {
-        border: 1px solid #e1e1e1;
-        padding: 6px 12px;
-      }
-      
-      th {
-        background-color: #f8f8f8;
-        font-weight: 600;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #f8f8f8;
-      }
-    }
-    
-    .dialogRichMedia {
-      margin: 20px 0;
-    }
-  }
-  
-  /* Dialog footer */
-  .dialogFooter {
-    padding: 16px 24px;
-    background-color: #f8f8f8;
-    border-top: 1px solid #e0e0e0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    .dialogCloseButton {
-      min-width: 80px;
-    }
-    
-    @media (max-width: $breakpoint-mobile) {
-      flex-direction: column-reverse;
-      
-      .dialogCloseButton {
-        width: 100%;
-      }
-    }
-  }
-  
-  /* Dialog quick actions */
-  .dialogQuickActions {
-    display: flex;
-    gap: 8px;
-    
-    .dialogActionButton {
-      min-width: auto;
-      height: auto;
-      padding: 6px 12px;
-      border-radius: $border-radius;
-      
-      @media (max-width: $breakpoint-mobile) {
-        flex: 1;
-        justify-content: center;
-      }
-    }
-    
-    @media (max-width: $breakpoint-mobile) {
-      width: 100%;
-    }
-  }
+.descriptionListItem {
+  display: flex;
+  gap: var(--spacingHorizontalS);
+  align-items: flex-start;
+}
 
-  /* Animation for expanding/collapsing */
-  .alertDescriptionExp {
-    animation: expandDescription $transition-duration ease-out;
-  }
+.descriptionBoldText {
+  font-weight: var(--fontWeightSemibold);
+}
 
-  @keyframes expandDescription {
-    from {
-      max-height: 3em;
-      opacity: 0.8;
-    }
-    to {
-      max-height: 500px;
-      opacity: 1;
-    }
-  }
-
-  /* RTL Support */
-  [dir="rtl"] & {
-    .actionSection {
-      justify-content: flex-start;
-    }
-
-    .toggleButton,
-    .closeButton,
-    .hideButton {
-      margin-left: 0;
-      margin-right: 8px;
-    }
-
-    .high, .medium, .low {
-      border-left: none;
-      border-right: 4px solid;
-    }
-
-    .high {
-      border-right-color: #EA4300;
-    }
-
-    .medium {
-      border-right-color: #0078D4;
-    }
-
-    .low {
-      border-right-color: #107C10;
-    }
-    
-    .actionIcon {
-      margin-right: 0;
-      margin-left: 6px;
-    }
-  }
+.descriptionToggleButton {
+  align-self: flex-start;
+  margin-top: var(--spacingVerticalS);
 }

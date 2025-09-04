@@ -1,0 +1,25 @@
+.languageSelector {
+  min-width: 120px;
+}
+
+.languageOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  .languageName {
+    font-weight: 500;
+  }
+  
+  .languageCode {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+}
+
+.compactSelector {
+  .languageButton {
+    min-width: auto;
+    padding: 4px 8px;
+  }
+}

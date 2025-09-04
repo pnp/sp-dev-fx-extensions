@@ -1,0 +1,276 @@
+// Color Picker Styles
+
+.field {
+  margin-bottom: 20px;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #323130;
+  margin-bottom: 5px;
+  line-height: 18px;
+}
+
+.description {
+  font-size: 12px;
+  color: #605e5c;
+  margin-bottom: 8px;
+  line-height: 16px;
+}
+
+.colorPickerContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.colorButton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 38px;
+  padding: 4px;
+  border: 1px solid #8a8886;
+  border-radius: 2px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.1s ease-out;
+  
+  &:hover {
+    border-color: #323130;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: inset 0 0 0 1px #0078d4;
+  }
+}
+
+.colorPreview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.colorSwatch {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #c8c6c4;
+  border-radius: 2px;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.colorValue {
+  font-size: 14px;
+  color: #323130;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+.colorDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border: 1px solid #c8c6c4;
+  border-radius: 2px;
+  box-shadow: 0 4px 23px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  margin-top: 2px;
+  animation: slideDown 0.2s ease-out;
+}
+
+.presetColors,
+.customColor {
+  margin-bottom: 16px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #323130;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+  max-width: 280px;
+}
+
+.presetColor {
+  width: 32px;
+  height: 32px;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s ease-out;
+  
+  &:hover {
+    border-color: #0078d4;
+    transform: scale(1.1);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.3);
+  }
+  
+  &.selected {
+    border-color: #0078d4;
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.3);
+    
+    &::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.customColorInputs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nativeColorPicker {
+  width: 40px;
+  height: 32px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  &::-webkit-color-swatch {
+    border: 1px solid #c8c6c4;
+    border-radius: 2px;
+  }
+  
+  &::-moz-color-swatch {
+    border: 1px solid #c8c6c4;
+    border-radius: 2px;
+  }
+}
+
+.colorTextInput {
+  flex: 1;
+  min-height: 32px;
+  padding: 5px 8px;
+  border: 1px solid #8a8886;
+  border-radius: 2px;
+  font-size: 13px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  
+  &:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: inset 0 0 0 1px #0078d4;
+  }
+}
+
+.applyButton {
+  background-color: #0078d4;
+  border: 1px solid #0078d4;
+  color: #ffffff;
+  border-radius: 2px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-out;
+  
+  &:hover:not(:disabled) {
+    background-color: #106ebe;
+    border-color: #106ebe;
+  }
+  
+  &:disabled {
+    background-color: #c8c6c4;
+    border-color: #c8c6c4;
+    cursor: not-allowed;
+  }
+  
+  &:focus {
+    outline: 2px solid #0078d4;
+    outline-offset: 2px;
+  }
+}
+
+// Animations
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .colorButton,
+  .colorDropdown,
+  .presetColor,
+  .colorTextInput {
+    border-width: 2px;
+  }
+  
+  .presetColor.selected::after {
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .colorDropdown {
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, -50%);
+    max-width: 320px;
+    width: 90vw;
+  }
+  
+  .colorGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .customColorInputs {
+    flex-direction: column;
+    
+    .colorTextInput {
+      width: 100%;
+    }
+  }
+}

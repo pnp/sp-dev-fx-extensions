@@ -1,0 +1,396 @@
+// Site Selector Styles
+
+.siteSelector {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: #605e5c;
+  
+  p {
+    margin: 16px 0 0 0;
+    font-size: 14px;
+  }
+}
+
+.loadingSpinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f3f2f1;
+  border-top: 3px solid #0078d4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Suggested Scopes
+.suggestedScopes {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #faf9f8;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  
+  h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #323130;
+  }
+}
+
+.scopeButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scopeButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+// Search and Filters
+.searchAndFilters {
+  margin-bottom: 20px;
+}
+
+.searchBox {
+  position: relative;
+  margin-bottom: 12px;
+  
+  .searchIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #605e5c;
+    pointer-events: none;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.filterSection {
+  position: relative;
+}
+
+.filterToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.filterOptions {
+  margin-top: 12px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  > * {
+    margin-bottom: 16px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.typeFilter {
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #323130;
+    margin-bottom: 5px;
+  }
+}
+
+.typeSelect {
+  width: 100%;
+  min-height: 32px;
+  padding: 5px 12px;
+  border: 1px solid #8a8886;
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #323130;
+  background-color: #ffffff;
+  
+  &:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: inset 0 0 0 1px #0078d4;
+  }
+}
+
+// Selection Summary
+.selectionSummary {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: #e6f3ff;
+  border: 1px solid #b3d9ff;
+  border-radius: 4px;
+  
+  p {
+    margin: 0;
+    font-size: 13px;
+    color: #0078d4;
+  }
+}
+
+// Sites Grid
+.sitesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.siteCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  
+  &:hover:not(.disabled) {
+    border-color: #0078d4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  &.selected {
+    background: #f3f9ff;
+    border-color: #0078d4;
+    box-shadow: 0 2px 8px rgba(0, 120, 212, 0.2);
+  }
+  
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.siteIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: #f3f2f1;
+  color: #605e5c;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .siteCard.selected & {
+    background: #0078d4;
+    color: #ffffff;
+  }
+}
+
+.siteInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.siteName {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #323130;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.siteUrl {
+  margin: 0 0 6px 0;
+  font-size: 12px;
+  color: #605e5c;
+  line-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selectionIndicator {
+  flex-shrink: 0;
+  color: #0078d4;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .siteCard.selected & {
+    opacity: 1;
+  }
+}
+
+// Permission Badges
+.permissionBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  &.owner {
+    background: #107c10;
+    color: #ffffff;
+  }
+  
+  &.contribute {
+    background: #0078d4;
+    color: #ffffff;
+  }
+  
+  &.design {
+    background: #8764b8;
+    color: #ffffff;
+  }
+  
+  &.readOnly {
+    background: #8a8886;
+    color: #ffffff;
+  }
+}
+
+// No Results
+.noResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: #605e5c;
+}
+
+.noResultsIcon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.noResults h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #323130;
+}
+
+.noResults p {
+  margin: 0;
+  font-size: 14px;
+  max-width: 300px;
+}
+
+
+// Responsive design
+@media (max-width: 768px) {
+  .scopeButtons {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .scopeButton {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .sitesGrid {
+    grid-template-columns: 1fr;
+    max-height: 300px;
+  }
+  
+  .siteCard {
+    padding: 10px 12px;
+    
+    &:hover:not(.disabled) {
+      transform: none;
+    }
+  }
+  
+  .siteName {
+    font-size: 13px;
+  }
+  
+  .siteUrl {
+    font-size: 11px;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .siteCard,
+  .suggestedScopes,
+  .filterOptions,
+  .selectionSummary {
+    border-width: 2px;
+  }
+  
+  .siteIcon {
+    border: 1px solid currentColor;
+  }
+}
+
+// Print styles
+@media print {
+  .filterSection,
+  .selectionSummary {
+    display: none;
+  }
+  
+  .sitesGrid {
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .siteCard:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

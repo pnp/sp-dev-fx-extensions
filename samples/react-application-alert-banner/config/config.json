@@ -13,6 +13,7 @@
   },
   "externals": {},
   "localizedResources": {
-    "AlertBannerApplicationCustomizerStrings": "lib/extensions/alertbanner/loc/{locale}.js"
+    "AlertBannerApplicationCustomizerStrings": "lib/extensions/alertbanner/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
   }
 }

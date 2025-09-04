@@ -1,36 +1,30 @@
 [
-   {
-      "name":"Info",
-      "iconName":"Info12",
-      "backgroundColor":"#389899",
-      "textColor":"#ffffff",
-      "additionalStyles":"",
-      "priorityStyles": {
-         "critical": "border: 2px solid #E81123;",
-         "high": "border: 1px solid #EA4300;",
-         "medium": "",
-         "low": ""
-      }
-   },
-   {
-      "name":"Warning",
-      "iconName":"ShieldAlert",
-      "backgroundColor":"#f1c40f",
-      "textColor":"#ffffff",
-      "additionalStyles":""
-   },
-   {
-      "name":"Maintenance",
-      "iconName":"CRMServices",
-      "backgroundColor":"#afd6d6",
-      "textColor":"#ffffff",
-      "additionalStyles":""
-   },
-   {
-      "name":"Interruption",
-      "iconName":"IncidentTriangle",
-      "backgroundColor":"#c54644",
-      "textColor":"#ffffff",
-      "additionalStyles":""
-   }
-]
+    {
+       "name":"Info",
+       "iconName":"Info12",
+       "backgroundColor":"#389899",
+       "textColor":"#ffffff",
+       "additionalStyles":""
+    },
+    {
+       "name":"Warning",
+       "iconName":"ShieldAlert",
+       "backgroundColor":"#f1c40f",
+       "textColor":"#ffffff",
+       "additionalStyles":""
+    },
+    {
+       "name":"Maintenance",
+       "iconName":"CRMServices",
+       "backgroundColor":"#afd6d6",
+       "textColor":"#ffffff",
+       "additionalStyles":""
+    },
+    {
+       "name":"Interruption",
+       "iconName":"IncidentTriangle",
+       "backgroundColor":"#c54644",
+       "textColor":"#ffffff",
+       "additionalStyles":""
+    }
+ ]

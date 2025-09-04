@@ -1,0 +1,159 @@
+.repairDialog {
+  .dialogContent {
+    min-height: 200px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 0;
+  }
+
+  .confirmationContent {
+    .repairActionsList {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+
+      li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 8px 0;
+        border-bottom: 1px solid #edebe9;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        i {
+          margin-top: 2px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .progressIndicator {
+    margin: 16px 0;
+  }
+
+  .progressText {
+    color: #605e5c;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .resultMessage {
+    margin-bottom: 20px;
+  }
+
+  .resultSection {
+    margin-bottom: 20px;
+    padding: 16px;
+    border: 1px solid #edebe9;
+    border-radius: 4px;
+    background: #fafafa;
+
+    .sectionTitle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-weight: 600;
+
+      i {
+        font-size: 16px;
+      }
+    }
+
+    .listItem {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+
+      i {
+        font-size: 12px;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .primaryButton {
+    background-color: #0078d4;
+    border-color: #0078d4;
+
+    &:hover {
+      background-color: #106ebe;
+      border-color: #106ebe;
+    }
+  }
+}
+
+// Icon colors
+.removeIcon {
+  color: #d13438 !important;
+}
+
+.addIcon {
+  color: #107c10 !important;
+}
+
+.updateIcon {
+  color: #0078d4 !important;
+}
+
+.protectIcon {
+  color: #8764b8 !important;
+}
+
+.successIcon {
+  color: #107c10 !important;
+}
+
+.warningIcon {
+  color: #ffd23f !important;
+}
+
+.errorIcon {
+  color: #d13438 !important;
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .repairDialog {
+    .resultSection {
+      background: #323130;
+      border-color: #605e5c;
+    }
+
+    .progressText {
+      color: #a19f9d;
+    }
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .repairDialog {
+    .resultSection {
+      border-width: 2px;
+    }
+
+    .confirmationContent .repairActionsList li {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .repairDialog {
+    .dialogContent {
+      max-height: none;
+      overflow: visible;
+    }
+
+    .progressIndicator {
+      display: none;
+    }
+  }
+}

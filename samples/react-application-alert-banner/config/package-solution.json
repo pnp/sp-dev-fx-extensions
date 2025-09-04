@@ -3,14 +3,34 @@
     "solution": {
         "name": "alert-banner-client-side-solution",
         "id": "19ca3d2c-07f7-4a03-ac6e-609fa591ccd9",
-        "version": "1.1.0.171",
+        "version": "3.0.0.2",
         "includeClientSideAssets": true,
         "skipFeatureDeployment": true,
         "isDomainIsolated": false,
         "webApiPermissionRequests": [
             {
                 "resource": "Microsoft Graph",
-                "scope": "Sites.Read.All"
+                "scope": "Sites.ReadWrite.All"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "User.Read"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "Mail.Send"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "GroupMember.Read.All"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "Directory.Read.All"
+            },
+            {
+                "resource": "Microsoft Graph",
+                "scope": "Sites.FullControl.All"
             }
         ],
         "developer": {
@@ -22,10 +42,10 @@
         },
         "metadata": {
             "shortDescription": {
-                "default": "alertbanner description"
+                "default": "Hierarchical alert banner with Home/Hub/Site distribution, automatic list management, and multi-language content creation"
             },
             "longDescription": {
-                "default": "alertbanner description"
+                "default": "A sophisticated alert banner with hierarchical site distribution (Home/Hub/Site), automatic list detection and creation, multi-language content management, simplified user targeting with SharePoint People/Groups fields, HTML content support, and comprehensive site context awareness."
             },
             "screenshotPaths": [],
             "videoUrl": "",

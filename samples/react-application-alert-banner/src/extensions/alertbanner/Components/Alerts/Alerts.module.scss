@@ -1,93 +1,103 @@
-@import "~office-ui-fabric-react/dist/sass/References.scss";
+// Fluent UI v9 compatible styles with modern animations
 
-$breakpoint-tablet: 768px;
-$breakpoint-mobile: 576px;
-
-.alerts {
-  width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-  .container {
-    margin: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .loadingContainer {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .noAlerts {
-    width: 100%;
-    padding: 5px 0;
-  }
-
-  .languageSelector {
-    margin: 10px 0;
-    max-width: 200px;
-    align-self: flex-end;
-  }
-
-  /* Priority-based styling for container */
-  .critical {
-    animation: pulse 2s infinite;
-  }
-
-  .pinned {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  }
-}
-
-/* Pulse animation for critical alerts */
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(232, 17, 35, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(232, 17, 35, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(232, 17, 35, 0);
-  }
-}
-
-/* RTL Support */
-[dir="rtl"] {
-  .alerts {
-    .languageSelector {
-      align-self: flex-start;
-    }
-  }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .alerts {
-    .container {
-      /* Adjust colors for dark mode if needed */
-    }
-  }
-}
-
-/* Animations */
-@keyframes slideIn {
+// Modern animation keyframes
+@keyframes slideInFromTop {
   from {
+    opacity: 0;
     transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(232, 17, 35, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(232, 17, 35, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
   to {
-    transform: translateY(0);
     opacity: 1;
   }
 }
 
-.alerts .container > div {
-  animation: slideIn 0.3s ease-out;
+// Global animation classes
+:global(.alert-slide-in) {
+  animation: slideInFromTop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:global(.alert-fade-in) {
+  animation: fadeIn 0.2s ease-out;
+}
+
+:global(.alert-critical-pulse) {
+  animation: pulseGlow 2s infinite;
+}
+
+// Container styles
+.alerts {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+}
+
+.container {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.loadingContainer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noAlerts {
+  width: 100%;
+  padding: 5px 0;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  :global(.alert-slide-in) {
+    animation: fadeIn 0.2s ease-out; // Simpler animation on mobile
+  }
+}
+
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  :global(.alert-critical-pulse) {
+    animation: none; // Disable animations in high contrast mode
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  :global(.alert-slide-in),
+  :global(.alert-fade-in),
+  :global(.alert-critical-pulse) {
+    animation: none;
+  }
 }

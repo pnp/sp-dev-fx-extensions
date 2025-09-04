@@ -1,0 +1,379 @@
+// SharePoint-style form controls
+
+// Common field styles
+.field {
+  margin-bottom: 20px;
+  padding: 0 4px;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #323130;
+  margin-bottom: 5px;
+  line-height: 18px;
+}
+
+.required {
+  color: #a80000;
+  margin-left: 3px;
+}
+
+.description {
+  font-size: 12px;
+  color: #605e5c;
+  margin-bottom: 5px;
+  line-height: 16px;
+}
+
+.error {
+  font-size: 12px;
+  color: #a80000;
+  margin-top: 5px;
+  line-height: 16px;
+}
+
+// Button styles
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 5px 16px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+  
+  &:focus {
+    outline: 2px solid #0078d4;
+    outline-offset: 2px;
+  }
+}
+
+.buttonIcon {
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.primary {
+  background-color: #0078d4;
+  border-color: #0078d4;
+  color: #ffffff;
+  
+  &:hover:not(:disabled) {
+    background-color: #106ebe;
+    border-color: #106ebe;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: #005a9e;
+    border-color: #005a9e;
+  }
+}
+
+.secondary {
+  background-color: #ffffff;
+  border-color: #8a8886;
+  color: #323130;
+  
+  &:hover:not(:disabled) {
+    background-color: #f3f2f1;
+    border-color: #323130;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: #edebe9;
+    border-color: #201f1e;
+  }
+}
+
+.danger {
+  background-color: #d13438;
+  border-color: #d13438;
+  color: #ffffff;
+  
+  &:hover:not(:disabled) {
+    background-color: #a4262c;
+    border-color: #a4262c;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: #731a1f;
+    border-color: #731a1f;
+  }
+}
+
+// Input styles
+.input,
+.textarea,
+.select {
+  display: block;
+  width: 100%;
+  max-width: calc(100% - 8px);
+  min-height: 32px;
+  padding: 5px 12px;
+  margin: 0 4px;
+  border: 1px solid #8a8886;
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #323130;
+  background-color: #ffffff;
+  transition: border-color 0.1s ease-out;
+  box-sizing: border-box;
+  
+  &:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: inset 0 0 0 1px #0078d4;
+  }
+  
+  &:hover:not(:disabled) {
+    border-color: #323130;
+  }
+  
+  &:disabled {
+    background-color: #f3f2f1;
+    border-color: #c8c6c4;
+    color: #a19f9d;
+    cursor: not-allowed;
+  }
+  
+  &::placeholder {
+    color: #605e5c;
+  }
+}
+
+.inputError {
+  border-color: #a80000;
+  
+  &:focus {
+    border-color: #a80000;
+    box-shadow: inset 0 0 0 1px #a80000;
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 20px;
+}
+
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
+  
+  &:disabled {
+    cursor: not-allowed;
+  }
+  
+  // Ensure consistent height with inputs
+  min-height: 32px;
+  height: auto;
+}
+
+// Toggle styles
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  background: none;
+  padding: 0;
+  
+  &:focus {
+    outline: 2px solid #0078d4;
+    outline-offset: 2px;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.toggleOff {
+  background-color: #c8c6c4;
+  
+  &:hover:not(:disabled) {
+    background-color: #a19f9d;
+  }
+  
+  .toggleThumb {
+    transform: translateX(0);
+  }
+}
+
+.toggleOn {
+  background-color: #0078d4;
+  
+  &:hover:not(:disabled) {
+    background-color: #106ebe;
+  }
+  
+  .toggleThumb {
+    transform: translateX(24px);
+  }
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 1px;
+  left: 0px;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.1s ease-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggleLabel {
+  font-size: 14px;
+  font-weight: 400;
+  color: #323130;
+  cursor: pointer;
+  user-select: none;
+  flex: 1;
+  margin: 0;
+}
+
+// Section styles
+.section {
+  margin-bottom: 24px;
+  border: 1px solid #edebe9;
+  border-radius: 2px;
+  background-color: #faf9f8;
+}
+
+.sectionHeader {
+  padding: 12px 16px;
+  background-color: #f3f2f1;
+  border-bottom: 1px solid #edebe9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.1s ease-out;
+  
+  &:hover {
+    background-color: #edebe9;
+  }
+  
+  &:focus {
+    outline: 2px solid #0078d4;
+    outline-offset: -2px;
+  }
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #323130;
+  line-height: 20px;
+}
+
+.sectionToggle {
+  font-size: 16px;
+  color: #605e5c;
+  transition: transform 0.1s ease-out;
+  user-select: none;
+  
+  &.collapsed {
+    transform: rotate(-90deg);
+  }
+}
+
+.sectionContent {
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .input,
+  .textarea,
+  .select,
+  .button {
+    border-width: 2px;
+  }
+  
+  .toggle {
+    border-width: 2px;
+    border-color: currentColor;
+  }
+  
+  .section {
+    border-width: 2px;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .field {
+    margin-bottom: 16px;
+  }
+  
+  .button {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+  
+  .input,
+  .textarea,
+  .select {
+    min-height: 44px;
+  }
+  
+  .toggle {
+    width: 48px;
+    height: 24px;
+    
+    .toggleThumb {
+      width: 20px;
+      height: 20px;
+    }
+    
+    &.toggleOn .toggleThumb {
+      transform: translateX(24px);
+    }
+  }
+}
