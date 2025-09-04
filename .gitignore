@@ -370,3 +370,4 @@ samples/react-application-chatbubble-copilot/lib/extensions/pvaSso/types/IChatBo
 samples/react-application-chatbubble-copilot/lib/extensions/pvaSso/types/IChatBotProps.d.ts.map
 samples/react-application-chatbubble-copilot/lib/extensions/pvaSso/types/IChatBotProps.js
 samples/react-application-chatbubble-copilot/lib/extensions/pvaSso/types/IChatBotProps.js.map
+samples/react-command-movedoc2blob/app-registration-details.json

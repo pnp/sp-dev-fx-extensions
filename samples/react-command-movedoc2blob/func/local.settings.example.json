@@ -1,0 +1,19 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    
+    "// SharePoint Configuration": "",
+    "SHAREPOINT_TENANT_ID": "your-tenant-id-here",
+    "SHAREPOINT_CLIENT_ID": "your-app-registration-client-id",
+    "SHAREPOINT_CLIENT_SECRET": "your-app-registration-secret",
+    "SHAREPOINT_SITE_URL": "https://yourtenant.sharepoint.com/sites/yoursite",
+    
+    "// Azure Storage Configuration": "",
+    "STORAGE_ACCOUNT_NAME": "your-storage-account-name",
+    
+    "// Application Insights": "",
+    "APPLICATIONINSIGHTS_CONNECTION_STRING": "your-app-insights-connection-string"
+  }
+}

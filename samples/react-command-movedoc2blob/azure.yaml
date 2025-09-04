@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: move-documents-to-blob
+metadata:
+  template: move-documents-to-blob@0.0.1-beta
+
+services:
+  func:
+    project: "./func"
+    language: dotnet
+    host: function
+
+infra:
+  provider: bicep
+
+pipeline:
+  provider: github
