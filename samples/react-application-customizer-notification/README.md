@@ -101,3 +101,5 @@ Add-PnPApplicationCustomizer -Title "Notification Customizer" -ClientSideCompone
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [PnP PowerShell](https://pnp.github.io/powershell/)
 - [Getting started with Application Customizer](https://learn.microsoft.com/en-gb/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension)
+
+![](https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-customizer-notification)
