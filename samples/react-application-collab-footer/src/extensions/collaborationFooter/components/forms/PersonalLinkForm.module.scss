@@ -1,0 +1,85 @@
+// Using CSS custom properties instead of SCSS imports
+// Fluent UI colors will be available through CSS variables
+
+.personalLinkForm {
+  .formHeader {
+    margin-bottom: 24px;
+    
+    h4 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #323130;
+    }
+  }
+  
+  .formFields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+    
+    .customCategorySection {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      
+      .customCategoryActions {
+        display: flex;
+        gap: 8px;
+        align-items: flex-end;
+      }
+    }
+    
+    .iconSection {
+      .iconLabel {
+        font-size: 14px;
+        font-weight: 600;
+        color: #323130;
+        margin-bottom: 8px;
+        display: block;
+      }
+      
+      .iconPreview {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 12px;
+        border: 1px solid #e1e1e1;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        
+        .iconImage {
+          width: 24px;
+          height: 24px;
+          object-fit: contain;
+        }
+        
+        .iconFluentUI {
+          font-size: 24px;
+          color: #0078d4;
+        }
+        
+        .iconName {
+          flex: 1;
+          color: #666666;
+          font-size: 14px;
+        }
+        
+        .chooseIconButton {
+          min-width: auto;
+          height: 32px;
+        }
+      }
+    }
+  }
+  
+  .formActions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    padding-top: 24px;
+    margin-top: 24px;
+    border-top: 1px solid #e1e1e1;
+  }
+}

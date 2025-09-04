@@ -1,17 +1,15 @@
 [
   {
-    "name": "pnp-sp-dev-spfx-extensions-react-utility-extensions",
+    "name": "pnp-sp-dev-spfx-extensions-react-YOUR-SOLUTION-NAME-GOES-HERE",
     "source": "pnp",
     "title": "Copy Path and Copy Name List view command set extensions",
-    "shortDescription": "List view command set extensions with below functionalities: Copy Path and Copy Name.",
-    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-utility-extensions",
+    "shortDescription": "List view command set extensions with below functionalities",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
     "longDescription": [
-      "List view command set extensions with below functionalities:",
-      "1. Copy Path allows to copy the path of the document without breaking the permission inheritance.",
-      "2. Copy Name allows to copy the name of the document without using the currently available rename functionality."
+      "List view command set extensions with below functionalities"
     ],
-    "creationDateTime": "2023-10-04",
-    "updateDateTime": "2024-08-28",
+    "creationDateTime": "2023-10-22",
+    "updateDateTime": "2025-02-27",
     "products": [
       "SharePoint"
     ],
@@ -22,24 +20,25 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.19.0"
+        "value": "1.20.0"
       }
     ],
     "tags": [],
     "categories": [
-      "SPFX-COMMAND-EXTENSION"
+      "SPFX-APPLICATION-EXTENSION"
     ],
     "thumbnails": [
       {
+        "name": "CopyPathCopyNameExtenstions.png",
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-utility-extensions/assets/CopyPathCopyNameExtenstions.png",
-        "alt": "Preview"
+        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-utility-extensions/assets/CopyPathCopyNameExtenstions.png",
+        "alt": "Web Part Preview"
       }
     ],
     "authors": [
       {
-        "gitHubAccount": "HarminderSethi",
+        "gitHubAccount": "https://github.com/HarminderSethi",
         "pictureUrl": "https://github.com/HarminderSethi.png",
         "name": "Harminder Singh"
       }

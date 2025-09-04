@@ -1,0 +1,276 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.hiddenFileInput {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dropZone {
+  border: 2px dashed #d0d7de;
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    border-color: #0969da;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    
+    .uploadIcon {
+      color: #0969da;
+      transform: scale(1.1);
+    }
+    
+    .browseButton {
+      background: #0969da;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(9, 105, 218, 0.3);
+    }
+  }
+  
+  &.dragOver {
+    border-color: #0969da;
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-style: solid;
+    transform: scale(1.02);
+    
+    .uploadIcon {
+      color: #0969da;
+      animation: bounce 0.6s ease-in-out infinite alternate;
+    }
+    
+    .dropZoneText {
+      color: #0969da;
+      font-weight: 600;
+    }
+  }
+  
+  &.fileSelected {
+    border-color: #22c55e;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    
+    .successIcon {
+      color: #22c55e;
+      animation: checkmark 0.5s ease-out;
+    }
+    
+    .fileName {
+      color: #16a34a;
+      font-weight: 600;
+    }
+  }
+}
+
+.dropZoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.uploadIcon {
+  font-size: 48px;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.successIcon {
+  font-size: 48px;
+  color: #22c55e;
+}
+
+.dropZoneText {
+  font-size: 18px;
+  font-weight: 500;
+  color: #374151;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.orText {
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.browseButton {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+  text-decoration: none;
+  
+  &:hover {
+    background: #0969da;
+    border-color: #0969da;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(9, 105, 218, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(9, 105, 218, 0.2);
+  }
+  
+  &:focus {
+    outline: 2px solid #0969da;
+    outline-offset: 2px;
+  }
+}
+
+.fileName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+  word-break: break-all;
+  text-align: center;
+  max-width: 100%;
+}
+
+.fileSize {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.fileInfo {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.acceptedFormats,
+.maxSize {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+  
+  strong {
+    color: #374151;
+  }
+}
+
+// Animations
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+  .dropZone {
+    padding: 24px 16px;
+    min-height: 120px;
+  }
+  
+  .uploadIcon {
+    font-size: 36px;
+  }
+  
+  .dropZoneContent {
+    gap: 8px;
+  }
+  
+  .browseButton {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .dropZone,
+  .uploadIcon,
+  .browseButton {
+    transition: none;
+    animation: none;
+    transform: none !important;
+  }
+  
+  .dropZone.dragOver {
+    transform: none;
+  }
+}
+
+// High contrast support
+@media (prefers-contrast: high) {
+  .dropZone {
+    border-color: $ms-color-neutralPrimary;
+    background: $ms-color-white;
+    
+    &:hover,
+    &.dragOver {
+      border-color: $ms-color-themePrimary;
+      background: $ms-color-themeLight;
+    }
+    
+    &.fileSelected {
+      border-color: $ms-color-green;
+      background: $ms-color-neutralLighter;
+    }
+  }
+  
+  .browseButton {
+    background: $ms-color-neutralLight;
+    border-color: $ms-color-neutralPrimary;
+    color: $ms-color-neutralPrimary;
+    
+    &:hover {
+      background: $ms-color-themePrimary;
+      border-color: $ms-color-themePrimary;
+      color: $ms-color-white;
+    }
+  }
+  
+  .fileInfo {
+    background: $ms-color-neutralLighter;
+    border-color: $ms-color-neutralPrimary;
+  }
+}

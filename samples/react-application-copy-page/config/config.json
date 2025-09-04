@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "copy-page-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/copyPage/CopyPageApplicationCustomizer.js",
+          "manifest": "./src/extensions/copyPage/CopyPageApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CopyPageApplicationCustomizerStrings": "lib/extensions/copyPage/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}

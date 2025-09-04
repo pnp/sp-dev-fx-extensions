@@ -1,0 +1,39 @@
+.linkBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--color-error);
+  color: white;
+  border-radius: 8px;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  min-width: 16px;
+  text-align: center;
+  z-index: 1;
+  
+  &.new {
+    background: var(--color-success);
+  }
+  
+  &.updated {
+    background: var(--color-warning);
+  }
+  
+  &.popular {
+    background: var(--color-info);
+  }
+  
+  &.urgent {
+    background: var(--color-error);
+    animation: pulse 1.5s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

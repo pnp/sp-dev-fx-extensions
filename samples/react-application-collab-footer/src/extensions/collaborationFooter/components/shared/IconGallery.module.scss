@@ -1,0 +1,11 @@
+.iconGalleryModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000 !important;
+}
+
+:global(.ms-Modal-scrollableContent) {
+  z-index: 10000 !important;
+}
+

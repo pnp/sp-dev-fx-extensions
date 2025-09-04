@@ -2,12 +2,12 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "nodeVersion": "16.18.1",
+    "nodeVersion": "18.18.2",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.4.1"
+      "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.16.1",
+    "version": "1.20.0",
     "libraryName": "feedback-customizer",
     "libraryId": "c66c6f38-3920-41b8-849d-3383aa467780",
     "environment": "spo",

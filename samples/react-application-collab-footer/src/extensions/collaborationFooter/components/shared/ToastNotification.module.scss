@@ -1,0 +1,216 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.toastContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000000; // Higher than footer z-index
+  max-width: 480px;
+  pointer-events: none; // Allow clicks through container
+  
+  @media screen and (max-width: 768px) {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}
+
+.toast {
+  pointer-events: auto; // Re-enable clicks on individual toasts
+  margin-bottom: 8px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.toastVisible {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  &.toastHidden {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  // Enhanced MessageBar styling
+  :global(.ms-MessageBar) {
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid transparent !important;
+    backdrop-filter: blur(8px) !important;
+    
+    &:global(.ms-MessageBar--success) {
+      background: linear-gradient(135deg, rgba(16, 124, 16, 0.95) 0%, rgba(16, 124, 16, 0.90) 100%) !important;
+      border-color: rgba(16, 124, 16, 0.3) !important;
+      color: white !important;
+    }
+    
+    &:global(.ms-MessageBar--error) {
+      background: linear-gradient(135deg, rgba(164, 38, 44, 0.95) 0%, rgba(164, 38, 44, 0.90) 100%) !important;
+      border-color: rgba(164, 38, 44, 0.3) !important;
+      color: white !important;
+    }
+    
+    &:global(.ms-MessageBar--warning) {
+      background: linear-gradient(135deg, rgba(255, 140, 0, 0.95) 0%, rgba(255, 140, 0, 0.90) 100%) !important;
+      border-color: rgba(255, 140, 0, 0.3) !important;
+      color: white !important;
+    }
+    
+    &:global(.ms-MessageBar--info) {
+      background: linear-gradient(135deg, rgba(0, 120, 212, 0.95) 0%, rgba(0, 120, 212, 0.90) 100%) !important;
+      border-color: rgba(0, 120, 212, 0.3) !important;
+      color: white !important;
+    }
+    
+    // Icon styling
+    :global(.ms-MessageBar-icon) {
+      color: white !important;
+      opacity: 0.9;
+    }
+    
+    // Dismiss button styling
+    :global(.ms-MessageBar-dismissal) {
+      :global(.ms-Button) {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 50% !important;
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.2) !important;
+          border-color: rgba(255, 255, 255, 0.3) !important;
+        }
+        
+        :global(.ms-Button-icon) {
+          color: white !important;
+          font-size: 12px !important;
+        }
+      }
+    }
+  }
+}
+
+.toastContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.toastMessage {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: inherit;
+}
+
+.toastActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.toastActionButton {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  &:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+  }
+}
+
+// Animation keyframes
+@keyframes toastSlideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastSlideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    transition: opacity 0.2s ease;
+    transform: none !important;
+    
+    &.toastVisible {
+      opacity: 1;
+    }
+    
+    &.toastHidden {
+      opacity: 0;
+    }
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .toast {
+    :global(.ms-MessageBar) {
+      border: 2px solid $ms-color-neutralPrimary !important;
+      
+      &:global(.ms-MessageBar--success) {
+        background: $ms-color-green !important;
+        color: $ms-color-white !important;
+      }
+      
+      &:global(.ms-MessageBar--error) {
+        background: $ms-color-red !important;
+        color: $ms-color-white !important;
+      }
+      
+      &:global(.ms-MessageBar--warning) {
+        background: $ms-color-yellow !important;
+        color: $ms-color-neutralPrimary !important;
+      }
+      
+      &:global(.ms-MessageBar--info) {
+        background: $ms-color-themePrimary !important;
+        color: $ms-color-white !important;
+      }
+    }
+  }
+}

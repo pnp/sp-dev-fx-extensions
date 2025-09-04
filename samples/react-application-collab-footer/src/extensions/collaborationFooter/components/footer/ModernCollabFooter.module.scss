@@ -1,0 +1,756 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+// CSS Custom Properties for better maintainability
+:root {
+  // Color palette
+  --footer-bg-primary: linear-gradient(135deg, #fafafa 0%, #f8f9fa 100%);
+  --footer-border: #{$ms-color-neutralQuaternaryAlt};
+  --footer-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+  
+  // Button colors
+  --button-bg: rgba(255, 255, 255, 0.9);
+  --button-bg-hover: rgba(255, 255, 255, 1);
+  --button-border: rgba(0, 0, 0, 0.1);
+  --button-color: #{$ms-color-themePrimary};
+  --button-shadow-hover: 0 2px 8px rgba(0, 120, 212, 0.2);
+  
+  // Admin button colors
+  --admin-button-color: #{$ms-color-red};
+  --admin-button-border: rgba(164, 38, 44, 0.3);
+  --admin-button-shadow: 0 2px 8px rgba(164, 38, 44, 0.2);
+  
+  // Link colors
+  --link-bg: rgba(255, 255, 255, 0.85);
+  --link-bg-hover: rgba(255, 255, 255, 1);
+  --link-border: rgba(0, 0, 0, 0.08);
+  --link-color: #{$ms-color-neutralPrimary};
+  --link-color-hover: #{$ms-color-themeDark};
+  --link-shadow-hover: 0 2px 6px rgba(0, 120, 212, 0.15);
+  
+  // Spacing and sizing
+  --footer-max-width: 1200px;
+  --border-radius: 10px;
+  --border-radius-small: 6px;
+  --transition: all 0.2s ease;
+  
+  // Z-index scale - positioned below SharePoint's sp-appBar (typically 1000+)
+  --z-footer: 99;
+  --z-search: 101;
+  --z-modal: 1000;
+}
+
+// Mixins for common patterns
+@mixin button-base {
+  border: 1px solid var(--button-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  outline: none;
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--button-shadow-hover);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &:focus {
+    border-color: var(--button-color);
+    box-shadow: 0 0 0 1px var(--button-color);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin link-base {
+  background: var(--link-bg);
+  border: 1px solid var(--link-border);
+  color: var(--link-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-weight: 500;
+  text-decoration: none;
+  outline: none;
+  
+  &:hover {
+    background: var(--link-bg-hover);
+    border-color: var(--button-color);
+    transform: translateY(-1px);
+    box-shadow: var(--link-shadow-hover);
+    color: var(--link-color-hover);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 120, 212, 0.2);
+  }
+  
+  &:focus {
+    border-color: var(--button-color);
+    box-shadow: 0 0 0 1px var(--button-color);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    
+    &:hover {
+      background: var(--link-bg);
+      border-color: var(--link-border);
+      transform: none;
+      box-shadow: none;
+      color: var(--link-color);
+    }
+  }
+}
+
+@mixin responsive-padding {
+  @media screen and (max-width: 1024px) {
+    padding: 3px 6px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    padding: 2px 4px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    padding: 2px;
+  }
+}
+
+// Animations
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 1px 3px rgba(216, 59, 1, 0.4), 0 0 0 0 rgba(216, 59, 1, 0.7);
+  }
+  70% {
+    box-shadow: 0 1px 3px rgba(216, 59, 1, 0.4), 0 0 0 6px rgba(216, 59, 1, 0);
+  }
+  100% {
+    box-shadow: 0 1px 3px rgba(216, 59, 1, 0.4), 0 0 0 0 rgba(216, 59, 1, 0);
+  }
+}
+
+// Main footer component
+.modernFooter {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 16px; // Add spacing above footer to avoid overlaying sp-appBar
+  background: var(--footer-bg-primary);
+  border-top: 1px solid var(--footer-border);
+  box-shadow: var(--footer-shadow);
+  z-index: var(--z-footer);
+  animation: slideInFromBottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+// Footer container - matches ms-SPLegacyFabricBlock sizing
+.footerContainer {
+  // Standard SharePoint fabric block layout to match ms-SPLegacyFabricBlock
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 20px;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  
+  // Responsive padding that matches SharePoint's legacy fabric block
+  @media screen and (max-width: 1200px) {
+    padding: 8px 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    padding: 8px 16px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    padding: 8px 12px;
+  }
+}
+
+// Explicit rule for when footer is inside ms-SPLegacyFabricBlock
+:global(.ms-SPLegacyFabricBlock) .footerContainer {
+  // Inherit the exact same dimensions as the parent fabric block
+  max-width: inherit;
+  padding: 8px 20px;
+  margin: 0 auto;
+  
+  @media screen and (max-width: 1200px) {
+    padding: 8px 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    padding: 8px 16px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    padding: 8px 12px;
+  }
+}
+
+// New layout structure: items left, settings right
+.footerLayout {
+  display: flex;
+  align-items: center; // Center align all items vertically
+  justify-content: space-between;
+  gap: 12px; // Increase gap for better spacing
+  width: 100%;
+  min-height: 32px; // Ensure consistent height
+}
+
+.linksSection {
+  flex: 1;
+  min-width: 0; // Allow flex item to shrink
+  display: flex;
+  align-items: center; // Ensure links are centered
+}
+
+.actionsSection {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px; // Add gap between action buttons
+  padding-right: 25px;
+}
+
+// Responsive layout adjustments
+@media screen and (max-width: 768px) {
+  .footerLayout {
+    gap: 8px; // Maintain reasonable gap on mobile
+    min-height: 28px;
+  }
+  
+  .compactActions {
+    gap: 4px;
+    
+    .compactButton {
+      padding: 3px 8px;
+      min-width: 24px;
+      height: 24px;
+      font-size: 11px;
+      
+      .buttonIcon {
+        font-size: 10px;
+      }
+      
+      &.iconOnly {
+        width: 24px;
+        min-width: 24px;
+        padding: 0;
+      }
+    }
+  }
+  
+  .linksContainer {
+    gap: 4px; // Reduce gap on mobile but keep reasonable spacing
+  }
+  
+  .linkItem {
+    padding: 3px 8px;
+    height: 24px;
+    font-size: 11px;
+  }
+  
+  .linkIcon {
+    font-size: 10px;
+    margin-right: 3px;
+  }
+}
+
+// Banner size modifiers with consolidated styles
+.bannerSmall {
+  .footerContainer {
+    // Smaller variant while maintaining fabric block proportions
+    padding: 4px 12px;
+    
+    @media screen and (max-width: 768px) {
+      padding: 4px 8px;
+    }
+    
+    @media screen and (max-width: 480px) {
+      padding: 4px 6px;
+    }
+  }
+  
+  .compactButton {
+    font-size: 10px;
+    padding: 2px 6px;
+    height: 22px;
+    min-width: 22px;
+    
+    .buttonIcon {
+      font-size: 9px;
+    }
+    
+    &.iconOnly {
+      width: 22px;
+      min-width: 22px;
+      padding: 0;
+    }
+  }
+  
+  .linkPill, .linkItem {
+    padding: 2px 8px;
+    font-size: 11px;
+    height: 22px;
+    line-height: 18px;
+  }
+  
+  .searchBox input {
+    font-size: 10px;
+    padding: 2px 6px;
+    height: 18px;
+  }
+  
+  .searchArea, .searchResults {
+    padding: 2px;
+  }
+}
+
+.bannerLarge {
+  .footerContainer {
+    // Larger variant with enhanced fabric block proportions
+    padding: 12px 24px;
+    
+    @media screen and (max-width: 1200px) {
+      padding: 12px 24px;
+    }
+    
+    @media screen and (max-width: 768px) {
+      padding: 10px 20px;
+    }
+    
+    @media screen and (max-width: 480px) {
+      padding: 8px 16px;
+    }
+  }
+  
+  .compactButton {
+    font-size: 14px;
+    padding: 6px 14px;
+    height: 34px;
+    min-width: 34px;
+    
+    .buttonIcon {
+      font-size: 14px;
+    }
+    
+    &.iconOnly {
+      width: 34px;
+      min-width: 34px;
+      padding: 0;
+    }
+  }
+  
+  .linkPill, .linkItem {
+    padding: 6px 12px;
+    font-size: 14px;
+    height: 34px;
+    line-height: 22px;
+  }
+  
+  .searchArea, .searchResults {
+    padding: 8px;
+  }
+}
+
+// Components
+.notificationBar {
+  margin-bottom: 6px;
+  
+  :global(.ms-MessageBar) {
+    border-radius: var(--border-radius-small);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    
+    &:global(.ms-MessageBar--success) {
+      background: linear-gradient(135deg, rgba(16, 124, 16, 0.1) 0%, rgba(16, 124, 16, 0.05) 100%);
+      border-left: 4px solid $ms-color-green;
+    }
+    
+    &:global(.ms-MessageBar--error) {
+      background: linear-gradient(135deg, rgba(164, 38, 44, 0.1) 0%, rgba(164, 38, 44, 0.05) 100%);
+      border-left: 4px solid $ms-color-red;
+    }
+  }
+}
+
+.contentArea {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compactActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; // Increase gap for better spacing
+  
+  .compactButton {
+    @include button-base;
+    background: var(--button-bg);
+    color: var(--button-color);
+    padding: 4px 10px; // Increase padding for better touch targets
+    height: 28px; // Increase height to match modern SharePoint standards
+    min-width: 28px;
+    font-size: 12px; // Increase font size for better readability
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      background: var(--button-bg-hover);
+      border-color: var(--button-color);
+    }
+    
+    .buttonIcon {
+      font-size: 12px; // Increase icon size
+      color: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    // Button with both icon and text
+    &:not(.iconOnly) .buttonIcon {
+      margin-right: 4px;
+    }
+    
+    // Icon-only buttons should be square
+    &.iconOnly {
+      width: 28px;
+      min-width: 28px;
+      padding: 0;
+      
+      .buttonIcon {
+        margin: 0;
+      }
+    }
+    
+    &.adminButton {
+      color: var(--admin-button-color);
+      border-color: var(--admin-button-border);
+      
+      &:hover {
+        border-color: var(--admin-button-color);
+        box-shadow: var(--admin-button-shadow);
+      }
+      
+      .buttonIcon {
+        color: var(--admin-button-color);
+      }
+    }
+  }
+}
+
+.linksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px; // Increase gap between links for better spacing
+  padding: 0; // Remove vertical padding
+  width: 100%;
+}
+
+
+.linkItem {
+  @include link-base;
+  padding: 4px 10px; // Increase padding for better touch targets
+  height: 28px; // Increase height to match buttons
+  font-size: 12px; // Increase font size for better readability
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.linkPill {
+  @extend .linkItem;
+  height: 28px; // Match linkItem height
+  line-height: 20px;
+}
+
+.linkIcon {
+  font-size: 12px; // Increase icon size to match button icons
+  color: var(--button-color);
+  margin-right: 4px; // Increase margin for better spacing
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Badge system with consolidated styles
+.linkBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border-radius: var(--border-radius-small);
+  padding: 1px 3px;
+  margin-left: 3px;
+  line-height: 1;
+  min-width: 16px;
+  height: 10px;
+  color: white;
+  
+  &.new {
+    background: linear-gradient(135deg, #16c60c 0%, #107c10 100%);
+    box-shadow: 0 1px 3px rgba(16, 124, 16, 0.3);
+  }
+  
+  &.updated {
+    background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+    box-shadow: 0 1px 3px rgba(16, 110, 190, 0.3);
+  }
+  
+  &.popular {
+    background: linear-gradient(135deg, #ca5010 0%, #8e3a00 100%);
+    box-shadow: 0 1px 3px rgba(202, 80, 16, 0.3);
+  }
+  
+  &.urgent {
+    background: linear-gradient(135deg, #d83b01 0%, #a4262c 100%);
+    box-shadow: 0 1px 3px rgba(216, 59, 1, 0.4);
+    animation: pulse 2s infinite;
+  }
+}
+
+.searchArea {
+  background: var(--button-bg-hover);
+  border: 1px solid var(--button-border);
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: var(--z-search);
+}
+
+.searchBox {
+  input {
+    font-size: 11px;
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--button-border);
+    
+    &:focus {
+      border-color: var(--button-color);
+      box-shadow: 0 0 0 1px var(--button-color);
+    }
+  }
+}
+
+.searchResults {
+  max-height: 120px;
+  overflow-y: auto;
+  border-top: 1px solid var(--button-border);
+  margin-top: 4px;
+  padding-top: 4px;
+  
+  .linkItem {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 2px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  :root {
+    --button-border: #000000;
+    --link-border: #000000;
+    --footer-border: #000000;
+  }
+}
+
+// User settings styles - pill variations
+.linkItem {
+  // Pill style variations
+  &.pillSquare {
+    border-radius: 2px !important;
+  }
+
+  &.pillMinimal {
+    background: transparent !important;
+    border: none !important;
+    text-decoration: underline;
+    padding: 2px 4px !important;
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.05) !important;
+      text-decoration: none;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  &.pillRounded {
+    border-radius: 10px !important;
+  }
+}
+
+// Density variations
+.linksContainer {
+  &.densityCompact .linkItem {
+    padding: 1px 4px !important;
+    font-size: 10px !important;
+    margin: 0 1px !important;
+    height: 18px !important;
+    
+    .linkIcon {
+      font-size: 8px !important;
+      margin-right: 2px !important;
+    }
+  }
+
+  &.densitySpacious .linkItem {
+    padding: 5px 12px !important;
+    font-size: 12px !important;
+    margin: 0 3px !important;
+    height: 26px !important;
+    
+    .linkIcon {
+      font-size: 12px !important;
+      margin-right: 4px !important;
+    }
+  }
+
+  &.densityNormal .linkItem {
+    // Uses default styles
+  }
+
+  // Category dropdowns display
+  &.categoryDropdowns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+
+    .categoryGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .categoryLabel {
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--ms-color-neutralSecondary, #605e5c);
+        text-transform: uppercase;
+        margin-bottom: 2px;
+      }
+
+      .categoryLinks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
+      }
+    }
+  }
+}
+
+.showMoreIndicator {
+  font-size: 10px;
+  color: var(--ms-color-neutralSecondary, #605e5c);
+  font-style: italic;
+  padding: 2px 4px;
+  border: 1px dashed var(--ms-color-neutralQuaternary, #d2d0ce);
+  border-radius: 4px;
+  margin-left: 4px;
+  background: var(--ms-color-neutralLighterAlt, #faf9f8);
+}
+
+.dropdownContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 4px 0;
+
+  :global(.ms-Dropdown) {
+    :global(.ms-Dropdown-title) {
+      font-size: 11px !important;
+      height: 24px !important;
+      line-height: 22px !important;
+      border-radius: 4px !important;
+    }
+
+    :global(.ms-Dropdown-caretDown) {
+      font-size: 8px !important;
+    }
+
+    :global(.ms-Label) {
+      font-size: 10px !important;
+      font-weight: 600 !important;
+      margin-bottom: 2px !important;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    :global(.ms-Dropdown) {
+      margin-right: 0 !important;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .modernFooter {
+    animation: none;
+  }
+  
+  .linkBadge.urgent {
+    animation: none;
+  }
+  
+  :root {
+    --transition: none;
+  }
+}

@@ -1,0 +1,61 @@
+.tabContent {
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 8px;
+  margin-top: 8px;
+  height: 100%;
+  overflow: auto;
+}
+
+.tabHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.tabHeaderText {
+  flex: 1;
+  
+  h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  
+  p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+.bulkActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.selectionInfo {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.filterSection {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e1e1e1;
+}
+
+.linkListSection {
+  margin-top: 16px;
+  padding: 0;
+}

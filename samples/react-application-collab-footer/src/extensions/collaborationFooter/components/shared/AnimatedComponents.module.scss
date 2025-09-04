@@ -1,0 +1,606 @@
+// Animation constants
+$animation-duration-fast: 0.15s;
+$animation-duration-normal: 0.3s;
+$animation-duration-slow: 0.6s;
+$easing-ease-out: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easing-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// Base animated container styles
+.hoverAnimation {
+  transition: all $animation-duration-fast $easing-ease-out;
+}
+
+.focusAnimation {
+  transition: all $animation-duration-fast $easing-ease-out;
+}
+
+// Hover animation variants
+.hoverLift {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hoverScale {
+  transform: scale(1.02);
+}
+
+.hoverGlow {
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.3);
+}
+
+.hoverBrightness {
+  filter: brightness(1.1);
+}
+
+.pressed {
+  transform: scale(0.98);
+  transition: transform $animation-duration-fast $easing-ease-out;
+}
+
+// Focus animation variants
+.focusRing {
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+}
+
+.focusScale {
+  transform: scale(1.05);
+}
+
+.focusGlow {
+  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.3);
+}
+
+// Ripple effect
+.rippleContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: rippleEffect 600ms ease-out;
+  pointer-events: none;
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+// Transition classes for CSSTransition
+// Fade animations
+.fadeEnter {
+  opacity: 0;
+}
+
+.fadeEnterActive {
+  opacity: 1;
+  transition: opacity $animation-duration-normal $easing-ease-out;
+}
+
+.fadeExit {
+  opacity: 1;
+}
+
+.fadeExitActive {
+  opacity: 0;
+  transition: opacity $animation-duration-normal $easing-ease-out;
+}
+
+// Slide animations
+.slideEnter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slideEnterActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+.slideExit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slideExitActive {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+// Slide right animations (for toasts)
+.slideRightEnter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slideRightEnterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+.slideRightExit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slideRightExitActive {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+// Slide up animations (for toasts)
+.slideUpEnter {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.slideUpEnterActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+.slideUpExit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slideUpExitActive {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+// Scale animations
+.scaleEnter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.scaleEnterActive {
+  opacity: 1;
+  transform: scale(1);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+.scaleExit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scaleExitActive {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+// Bounce animations
+.bounceEnter {
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+.bounceEnterActive {
+  opacity: 1;
+  transform: scale(1);
+  transition: all $animation-duration-slow $easing-bounce;
+}
+
+.bounceExit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.bounceExitActive {
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+// No animation for reduced motion
+.noAnimationEnter,
+.noAnimationEnterActive,
+.noAnimationExit,
+.noAnimationExitActive {
+  transition: none !important;
+  animation: none !important;
+}
+
+// Toast positioning
+.toast {
+  position: fixed;
+  z-index: 9999;
+  
+  &.top {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  &.bottom {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  &.topRight {
+    top: 20px;
+    right: 20px;
+  }
+  
+  &.bottomRight {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+// Modal styles
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.modalContent {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+// Modal transition classes
+.modalEnter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.modalEnterActive {
+  opacity: 1;
+  transform: scale(1);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+.modalExit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modalExitActive {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all $animation-duration-normal $easing-ease-out;
+}
+
+// Backdrop transition classes
+.backdropEnter {
+  opacity: 0;
+}
+
+.backdropEnterActive {
+  opacity: 1;
+  transition: opacity $animation-duration-normal $easing-ease-out;
+}
+
+.backdropExit {
+  opacity: 1;
+}
+
+.backdropExitActive {
+  opacity: 0;
+  transition: opacity $animation-duration-normal $easing-ease-out;
+}
+
+// Progress bar styles
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: #f3f2f1;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  
+  &.striped .progressFill {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.15) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 16px 16px;
+  }
+  
+  &.animated .progressFill {
+    animation: progressStripes 1s linear infinite;
+  }
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #0078d4;
+  border-radius: inherit;
+  position: relative;
+  transition: width $animation-duration-normal $easing-ease-out;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    animation: progressShimmer 2s ease-in-out infinite;
+  }
+}
+
+.progressLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  mix-blend-mode: difference;
+}
+
+@keyframes progressStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 32px 0;
+  }
+}
+
+@keyframes progressShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+// Staggered list animations
+.animatedListItem {
+  &:nth-child(1) { animation-delay: 0ms; }
+  &:nth-child(2) { animation-delay: 50ms; }
+  &:nth-child(3) { animation-delay: 100ms; }
+  &:nth-child(4) { animation-delay: 150ms; }
+  &:nth-child(5) { animation-delay: 200ms; }
+  &:nth-child(6) { animation-delay: 250ms; }
+  &:nth-child(7) { animation-delay: 300ms; }
+  &:nth-child(8) { animation-delay: 350ms; }
+  &:nth-child(9) { animation-delay: 400ms; }
+  &:nth-child(10) { animation-delay: 450ms; }
+}
+
+// Card flip animation
+.cardFlip {
+  perspective: 1000px;
+  
+  .cardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform $animation-duration-slow $easing-ease-in-out;
+    transform-style: preserve-3d;
+    
+    &.flipped {
+      transform: rotateY(180deg);
+    }
+  }
+  
+  .cardFront,
+  .cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+  }
+  
+  .cardBack {
+    transform: rotateY(180deg);
+  }
+}
+
+// Pulse effect for loading states
+.pulseEffect {
+  animation: pulseGlow ($animation-duration-slow * 2) $easing-ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 120, 212, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 120, 212, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 120, 212, 0);
+  }
+}
+
+// Shake animation for errors
+.shakeError {
+  animation: shake $animation-duration-normal $easing-ease-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-4px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
+}
+
+// Floating animation
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// Typing animation
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #0078d4;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0078d4;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .toast {
+    left: 10px;
+    right: 10px;
+    
+    &.top {
+      top: 10px;
+      transform: none;
+    }
+    
+    &.bottom {
+      bottom: 10px;
+      transform: none;
+    }
+    
+    &.topRight,
+    &.bottomRight {
+      right: 10px;
+    }
+  }
+  
+  .modalContent {
+    margin: 10px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+  }
+}
+
+// High contrast mode support
+@media (forced-colors: active) {
+  .progressBar {
+    border: 1px solid ButtonText;
+  }
+  
+  .progressFill {
+    background-color: Highlight;
+    
+    &::after {
+      display: none;
+    }
+  }
+  
+  .modalBackdrop {
+    background-color: Canvas;
+    opacity: 0.8;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .hoverAnimation,
+  .focusAnimation,
+  .ripple,
+  .progressFill,
+  .cardInner,
+  .floating,
+  .typewriter {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .progressFill::after {
+    display: none;
+  }
+}
+
+// Dark theme support
+@media (prefers-color-scheme: dark) {
+  .progressBar {
+    background-color: #3a3a3a;
+  }
+  
+  .modalBackdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .progressLabel {
+    color: #ffffff;
+  }
+}

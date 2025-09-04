@@ -1,0 +1,152 @@
+.adminNavigationPanel {
+  padding: 24px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mainNavigation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.navigationHeader {
+  text-align: center;
+  margin-bottom: 32px;
+  
+  .title {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .description {
+    color: var(--color-neutral-secondary);
+    display: block;
+  }
+}
+
+.navigationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  flex: 1;
+}
+
+.navigationCard {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid var(--color-neutral-tertiary);
+  border-radius: 8px;
+  background: var(--color-white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  .cardIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+    
+    i {
+      font-size: 20px;
+      color: white;
+    }
+  }
+  
+  .cardContent {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    
+    .cardTitle {
+      font-weight: 600;
+      color: var(--color-neutral-primary);
+      margin-bottom: 4px;
+      line-height: 1.3;
+      display: block;
+    }
+    
+    .cardDescription {
+      color: var(--color-neutral-secondary);
+      line-height: 1.4;
+      display: block;
+    }
+  }
+  
+  .cardArrow {
+    color: var(--color-neutral-tertiary);
+    margin-left: 12px;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+  }
+  
+  &:hover .cardArrow {
+    color: var(--color-primary);
+  }
+}
+
+.sectionHeader {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-neutral-tertiary);
+  
+  .backButton {
+    margin-bottom: 16px;
+    
+    &:hover {
+      background-color: var(--color-neutral-lighter);
+    }
+  }
+  
+  .sectionTitleContainer {
+    display: flex;
+    flex-direction: column;
+    
+    .sectionTitle {
+      color: var(--color-primary);
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    .sectionDescription {
+      color: var(--color-neutral-secondary);
+      display: block;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .navigationGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .navigationCard {
+    padding: 16px;
+    
+    .cardIcon {
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;
+      
+      i {
+        font-size: 18px;
+      }
+    }
+  }
+}

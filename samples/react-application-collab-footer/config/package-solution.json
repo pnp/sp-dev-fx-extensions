@@ -3,7 +3,7 @@
   "solution": {
     "name": "Starter Kit - Collaboration Footer",
     "id": "8b5fa72c-26f0-488a-a952-6ec68c81f623",
-    "version": "3.0.0.0",
+    "version": "8.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -14,16 +14,34 @@
       "websiteUrl": "",
       "mpnId": "pnpsk"
     },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Files.ReadWrite"
+      },
+      {
+        "resource": "Microsoft Graph", 
+        "scope": "User.Read"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "TermStore.Read.All"
+      }
+    ],
     "metadata": {
       "shortDescription": {
-        "default": "react-application-collab-footer description"
+        "default": "Modern collaboration footer with hybrid OneDrive and SharePoint storage"
       },
       "longDescription": {
-        "default": "react-application-collab-footer description"
+        "default": "A high-performance SharePoint Framework application customizer that provides a modern, flexible footer with enterprise-grade optimizations. Features hybrid architecture with OneDrive JSON storage for personal links and SharePoint Lists for global links with mandatory/optional flags. Version 8.0 includes lazy loading, enhanced error boundaries, optimized TypeScript implementation, and comprehensive performance improvements."
       },
       "screenshotPaths": [],
       "videoUrl": "",
-      "categories": []
+      "categories": ["Productivity", "Collaboration"]
     },
     "features": [
       {

@@ -1,0 +1,81 @@
+.categoriesManagementSection {
+  padding: 16px;
+
+  .sectionHeader {
+    margin-bottom: 24px;
+
+    .sectionTitle {
+      color: #323130;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .sectionDescription {
+      color: #605e5c;
+    }
+  }
+
+  .statsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+
+    .statCard {
+      padding: 16px;
+      background-color: #f8f8f8;
+      border-radius: 4px;
+      border-left: 3px solid #0078d4;
+      text-align: center;
+
+      .statValue {
+        color: #323130;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .statLabel {
+        color: #605e5c;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .actionButtons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+  }
+
+  .editForm {
+    .colorPickerContainer {
+      margin: 16px 0;
+
+      .colorLabel {
+        color: #323130;
+        font-weight: 500;
+        margin-bottom: 8px;
+        display: block;
+      }
+    }
+
+    .panelActions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e1dfdd;
+    }
+  }
+}

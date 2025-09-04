@@ -1,0 +1,133 @@
+.audienceTargetingSection {
+  padding: 16px;
+  
+  .sectionHeader {
+    margin-bottom: 24px;
+    
+    .sectionTitle {
+      color: #323130;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    .sectionDescription {
+      color: #605e5c;
+    }
+  }
+  
+  .peoplePickerContainer {
+    margin-bottom: 24px;
+  }
+  
+  .quickAddSection {
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    
+    .quickAddTitle {
+      color: #323130;
+      font-weight: 500;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    .groupButtons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      
+      .groupButton {
+        font-size: 12px;
+        min-width: auto;
+        padding: 4px 8px;
+      }
+    }
+  }
+  
+  .loadingContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .summarySection {
+    margin-bottom: 24px;
+    padding: 16px;
+    border: 1px solid #e1dfdd;
+    border-radius: 4px;
+    
+    .summaryTitle {
+      color: #323130;
+      font-weight: 500;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    .targetUsersList {
+      .targetUserItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #f3f2f1;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        .removeButton {
+          min-width: 24px;
+          height: 24px;
+          padding: 0;
+          
+          i {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  
+  .validationSection {
+    margin-bottom: 24px;
+    
+    .validationActions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .validationResults {
+      .resultsTitle {
+        color: #323130;
+        font-weight: 500;
+        margin-bottom: 8px;
+        display: block;
+      }
+    }
+  }
+  
+  .actionButtons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #e1dfdd;
+  }
+  
+  .helpSection {
+    ul {
+      margin: 8px 0 0 0;
+      padding-left: 20px;
+      
+      li {
+        margin-bottom: 4px;
+        font-size: 13px;
+      }
+    }
+  }
+}

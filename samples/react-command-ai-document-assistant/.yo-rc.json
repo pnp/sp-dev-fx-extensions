@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.17.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "o-365-c-sp-document-summarizer",
+    "libraryId": "66f7edc4-740f-4724-8863-507c1c53a8de",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "o365c-sp-document-summarizer",
+    "solutionShortDescription": "o365c-sp-document-summarizer description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}
