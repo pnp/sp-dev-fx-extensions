@@ -1,0 +1,504 @@
+@import "~@fluentui/common-styles/dist/sass/common";
+
+// Import shared design tokens
+$fluent-primary: #0078d4;
+$fluent-primary-hover: #106ebe;
+$fluent-neutral-white: #ffffff;
+$fluent-neutral-light: #f3f2f1;
+$fluent-neutral-lighter: #faf9f8;
+$fluent-neutral-primary: #323130;
+$fluent-neutral-secondary: #605e5c;
+$fluent-neutral-tertiary: #a19f9d;
+$fluent-semantic-error: #d13438;
+$fluent-semantic-warning: #ff8c00;
+$fluent-semantic-success: #107c10;
+
+// Elevation and Shadows
+$elevation-4: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+$elevation-8: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+$elevation-16: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
+
+// Border Radius
+$border-radius-small: 4px;
+$border-radius-medium: 8px;
+$border-radius-large: 12px;
+
+// Animation & Transitions
+$transition-fast: 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
+$transition-normal: 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+$transition-slow: 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+
+// Typography Mixins
+@mixin fluent-typography-large {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+@mixin fluent-typography-medium-plus {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@mixin fluent-typography-medium {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@mixin fluent-typography-small {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+// Progress Dialog Container
+.progress-dialog-container {
+  // Dialog Modal Override
+  :global(.ms-Modal) {
+    z-index: 1000001 !important;
+  }
+  
+  :global(.ms-Overlay) {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(4px);
+    animation: fadeIn $transition-normal;
+  }
+  
+  :global(.ms-Dialog-main) {
+    background: $fluent-neutral-white !important;
+    border-radius: $border-radius-large !important;
+    box-shadow: $elevation-16 !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    min-width: 500px !important;
+    max-width: 700px !important;
+    overflow: hidden !important;
+    animation: slideUpScale $transition-normal;
+    
+    @media (max-width: 750px) {
+      min-width: 90vw !important;
+      max-width: 90vw !important;
+      margin: 16px !important;
+    }
+  }
+  
+  :global(.ms-Dialog-title) {
+    @include fluent-typography-large;
+    color: $fluent-neutral-primary !important;
+    padding: 24px 32px 16px 32px !important;
+    margin: 0 !important;
+    border-bottom: 1px solid $fluent-neutral-lighter !important;
+    background: linear-gradient(135deg, rgba($fluent-primary, 0.02) 0%, rgba($fluent-primary, 0.01) 100%) !important;
+  }
+  
+  :global(.ms-Dialog-content) {
+    padding: 0 !important;
+  }
+}
+
+// Progress Body
+.progress-body {
+  padding: 32px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: linear-gradient(180deg, rgba($fluent-neutral-lighter, 0.3) 0%, transparent 100%);
+}
+
+// Progress Header
+.progress-header {
+  .progress-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, $fluent-primary 0%, lighten($fluent-primary, 15%) 100%);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: $elevation-8;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba($fluent-primary, 0.3), rgba($fluent-primary, 0.1));
+      z-index: -1;
+      animation: pulse 3s infinite;
+    }
+    
+    .progress-header-icon {
+      color: $fluent-neutral-white;
+      font-size: 24px;
+      animation: float 4s ease-in-out infinite;
+    }
+  }
+  
+  .progress-header-content {
+    flex: 1;
+    
+    .progress-header-title {
+      @include fluent-typography-large;
+      color: $fluent-neutral-primary;
+      margin: 0 0 4px 0;
+      font-weight: 600;
+    }
+    
+    .progress-header-subtitle {
+      @include fluent-typography-medium;
+      color: $fluent-neutral-secondary;
+      margin: 0;
+      opacity: 0.9;
+    }
+  }
+}
+
+// Main Progress Section
+.progress-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  .main-progress-indicator {
+    :global(.ms-ProgressIndicator-itemName) {
+      @include fluent-typography-medium-plus;
+      color: $fluent-neutral-primary !important;
+      margin-bottom: 8px !important;
+      font-weight: 600 !important;
+    }
+    
+    :global(.ms-ProgressIndicator-itemDescription) {
+      @include fluent-typography-small;
+      color: $fluent-neutral-secondary !important;
+      margin-bottom: 12px !important;
+    }
+    
+    :global(.ms-ProgressIndicator-itemProgress) {
+      height: 6px !important;
+      border-radius: 3px !important;
+      background: rgba($fluent-neutral-light, 0.8) !important;
+      overflow: hidden !important;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+      
+      :global(.ms-ProgressIndicator-progressTrack) {
+        background: linear-gradient(90deg, $fluent-primary 0%, lighten($fluent-primary, 20%) 100%) !important;
+        border-radius: 3px !important;
+        position: relative !important;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+          animation: shimmer 2s infinite;
+        }
+      }
+    }
+  }
+  
+  .current-file-section {
+    background: $fluent-neutral-lighter;
+    border: 1px solid rgba($fluent-neutral-light, 0.8);
+    border-radius: $border-radius-medium;
+    padding: 16px;
+    transition: all $transition-normal;
+    
+    &:hover {
+      background: darken($fluent-neutral-lighter, 1%);
+      border-color: rgba($fluent-primary, 0.2);
+    }
+    
+    .current-file-info {
+      flex: 1;
+      
+      .current-file-label {
+        @include fluent-typography-medium-plus;
+        color: $fluent-neutral-primary;
+        margin: 0 0 2px 0;
+        font-weight: 600;
+      }
+      
+      .current-file-name {
+        @include fluent-typography-small;
+        color: $fluent-neutral-secondary;
+        margin: 0;
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        background: rgba($fluent-neutral-white, 0.8);
+        padding: 2px 6px;
+        border-radius: $border-radius-small;
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+  
+  .status-message {
+    border-radius: $border-radius-medium !important;
+    border: 1px solid rgba($fluent-semantic-warning, 0.3) !important;
+    background: rgba($fluent-semantic-warning, 0.08) !important;
+    
+    :global(.ms-MessageBar-content) {
+      padding: 12px 16px !important;
+    }
+    
+    :global(.ms-MessageBar-icon) {
+      color: $fluent-semantic-warning !important;
+      font-size: 14px !important;
+    }
+    
+    :global(.ms-MessageBar-text) {
+      @include fluent-typography-small;
+      color: darken($fluent-semantic-warning, 20%) !important;
+    }
+  }
+}
+
+// Progress Footer
+.progress-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba($fluent-neutral-lighter, 0.8);
+  text-align: center;
+  
+  .branding-icon {
+    color: $fluent-primary;
+    font-size: 16px;
+    opacity: 0.8;
+    animation: rotate 20s linear infinite;
+  }
+  
+  .branding-text {
+    @include fluent-typography-small;
+    color: $fluent-neutral-tertiary;
+    
+    strong {
+      color: $fluent-neutral-secondary;
+      font-weight: 600;
+    }
+  }
+}
+
+// Dialog Content & Modal overrides
+.dialog-content {
+  // Additional content styles if needed
+}
+
+.dialog-modal {
+  // Additional modal styles if needed
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpScale {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive Design
+@media (max-width: 750px) {
+  .progress-body {
+    padding: 24px 20px;
+    gap: 20px;
+  }
+  
+  .progress-header {
+    .progress-icon-container {
+      width: 48px;
+      height: 48px;
+      
+      .progress-header-icon {
+        font-size: 20px;
+      }
+    }
+    
+    .progress-header-content {
+      .progress-header-title {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      
+      .progress-header-subtitle {
+        font-size: 13px;
+      }
+    }
+  }
+  
+  .current-file-section {
+    padding: 12px;
+    
+    .current-file-info {
+      .current-file-label {
+        font-size: 14px;
+      }
+      
+      .current-file-name {
+        font-size: 11px;
+      }
+    }
+  }
+  
+  .progress-footer {
+    .branding-text {
+      font-size: 11px;
+    }
+  }
+}
+
+// High Contrast Mode Support
+@media (prefers-contrast: high) {
+  .progress-dialog-container {
+    :global(.ms-Dialog-main) {
+      border: 2px solid !important;
+    }
+  }
+  
+  .progress-header .progress-icon-container {
+    background: ButtonText !important;
+    
+    .progress-header-icon {
+      color: ButtonFace !important;
+    }
+  }
+  
+  .main-progress-indicator {
+    :global(.ms-ProgressIndicator-progressTrack) {
+      background: ButtonText !important;
+    }
+  }
+}
+
+// Dark Mode Support
+@media (prefers-color-scheme: dark) {
+  .progress-dialog-container {
+    :global(.ms-Dialog-main) {
+      background: #292929 !important;
+      border-color: #484644 !important;
+    }
+    
+    :global(.ms-Dialog-title) {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, rgba($fluent-primary, 0.1) 0%, rgba($fluent-primary, 0.05) 100%) !important;
+      border-bottom-color: #484644 !important;
+    }
+  }
+  
+  .progress-body {
+    background: linear-gradient(180deg, rgba(#484644, 0.2) 0%, transparent 100%);
+  }
+  
+  .progress-header-title {
+    color: #ffffff !important;
+  }
+  
+  .progress-header-subtitle {
+    color: #c8c6c4 !important;
+  }
+  
+  .main-progress-indicator {
+    :global(.ms-ProgressIndicator-itemName) {
+      color: #ffffff !important;
+    }
+    
+    :global(.ms-ProgressIndicator-itemDescription) {
+      color: #c8c6c4 !important;
+    }
+    
+    :global(.ms-ProgressIndicator-itemProgress) {
+      background: rgba(#484644, 0.8) !important;
+    }
+  }
+  
+  .current-file-section {
+    background: #484644;
+    border-color: #605e5c;
+    
+    .current-file-label {
+      color: #ffffff !important;
+    }
+    
+    .current-file-name {
+      color: #c8c6c4 !important;
+      background: rgba(#292929, 0.8) !important;
+    }
+  }
+  
+  .progress-footer {
+    border-top-color: rgba(#484644, 0.8) !important;
+    
+    .branding-text {
+      color: #8a8886 !important;
+      
+      strong {
+        color: #c8c6c4 !important;
+      }
+    }
+  }
+}
+
+// Print Styles (hide dialogs when printing)
+@media print {
+  .progress-dialog-container {
+    display: none !important;
+  }
+}

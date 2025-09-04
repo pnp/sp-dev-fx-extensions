@@ -1,39 +1,32 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Dialog, DialogType, IDialogContentStyles } from '@fluentui/react/lib/Dialog';
-import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
-import { ProgressIndicator } from '@fluentui/react/lib/ProgressIndicator';
+import { Dialog, DialogType } from '@fluentui/react/lib/Dialog';
 import { Icon } from '@fluentui/react/lib/Icon';
+import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
+import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
+import { Stack } from '@fluentui/react/lib/Stack';
+import { Text } from '@fluentui/react/lib/Text';
+import { DefaultButton } from '@fluentui/react/lib/Button';
+import { ProgressIndicator } from '@fluentui/react/lib/ProgressIndicator';
 import { Log } from '@microsoft/sp-core-library';
-import { ThemeProvider } from '@fluentui/react';
+import { mergeStyles } from '@fluentui/react';
 import styles from './WaitDialog.module.scss';
-import * as strings from 'PdfExportCommandSetStrings';
-
-enum NotificationType {
-  Info,
-  Success,
-  Warning,
-  Error
-}
 
 interface IWaitDialogState {
   isVisible: boolean;
   title: string;
   message: string;
-  notificationType: NotificationType;
+  error: string;
   showClose: boolean;
-  progress?: {
-    current: number;
-    total: number;
-  } | null;
+  progress?: number;
+  currentFile?: string;
+  estimatedTime?: string;
 }
 
 type WaitDialogAction =
   | { type: 'SHOW_DIALOG'; title: string; message: string }
-  | { type: 'SHOW_SUCCESS'; title: string; message: string }
-  | { type: 'SHOW_WARNING'; title: string; message: string }
   | { type: 'SHOW_ERROR'; title: string; message: string }
-  | { type: 'SET_PROGRESS'; current: number; total: number }
+  | { type: 'UPDATE_PROGRESS'; progress?: number; currentFile?: string; estimatedTime?: string }
   | { type: 'CLOSE_DIALOG' };
 
 const waitDialogReducer = (state: IWaitDialogState, action: WaitDialogAction): IWaitDialogState => {
@@ -44,29 +37,11 @@ const waitDialogReducer = (state: IWaitDialogState, action: WaitDialogAction): I
         isVisible: true, 
         title: action.title, 
         message: action.message, 
-        notificationType: NotificationType.Info,
+        error: '', 
         showClose: false,
-        progress: null 
-      };
-    case 'SHOW_SUCCESS':
-      return { 
-        ...state, 
-        isVisible: true, 
-        title: action.title, 
-        message: action.message, 
-        notificationType: NotificationType.Success,
-        showClose: true,
-        progress: null 
-      };
-    case 'SHOW_WARNING':
-      return { 
-        ...state, 
-        isVisible: true, 
-        title: action.title, 
-        message: action.message, 
-        notificationType: NotificationType.Warning,
-        showClose: true,
-        progress: null 
+        progress: undefined,
+        currentFile: undefined,
+        estimatedTime: undefined
       };
     case 'SHOW_ERROR':
       return { 
@@ -74,14 +49,18 @@ const waitDialogReducer = (state: IWaitDialogState, action: WaitDialogAction): I
         isVisible: true, 
         title: action.title, 
         message: action.message, 
-        notificationType: NotificationType.Error,
+        error: action.message, 
         showClose: true,
-        progress: null 
+        progress: undefined,
+        currentFile: undefined,
+        estimatedTime: undefined
       };
-    case 'SET_PROGRESS':
-      return { 
-        ...state, 
-        progress: { current: action.current, total: action.total } 
+    case 'UPDATE_PROGRESS':
+      return {
+        ...state,
+        progress: action.progress,
+        currentFile: action.currentFile,
+        estimatedTime: action.estimatedTime
       };
     case 'CLOSE_DIALOG':
       return { 
@@ -89,9 +68,11 @@ const waitDialogReducer = (state: IWaitDialogState, action: WaitDialogAction): I
         isVisible: false, 
         message: '', 
         title: '', 
-        notificationType: NotificationType.Info,
+        error: '', 
         showClose: false,
-        progress: null 
+        progress: undefined,
+        currentFile: undefined,
+        estimatedTime: undefined
       };
     default:
       return state;
@@ -100,128 +81,222 @@ const waitDialogReducer = (state: IWaitDialogState, action: WaitDialogAction): I
 
 interface IWaitDialogContentProps {
   message: string;
+  error: string;
   title: string;
-  notificationType: NotificationType;
   showClose: boolean;
   hidden: boolean;
-  progress?: { current: number; total: number } | null;
+  progress?: number;
+  currentFile?: string;
+  estimatedTime?: string;
   closeCallback: () => void;
 }
 
-// Notification icon component
-const NotificationIcon: React.FC<{ type: NotificationType }> = ({ type }) => {
-  let iconName: string;
-  let iconColor: string;
-  
-  switch (type) {
-    case NotificationType.Success:
-      iconName = 'CheckMark';
-      iconColor = 'green';
-      break;
-    case NotificationType.Warning:
-      iconName = 'Warning';
-      iconColor = 'orange';
-      break;
-    case NotificationType.Error:
-      iconName = 'Error';
-      iconColor = 'red';
-      break;
-    default:
-      iconName = 'Info';
-      iconColor = 'blue';
-  }
-  
-  const iconStyles = { 
-    marginRight: '8px', 
-    color: iconColor,
-    fontSize: '24px'
-  };
-  
-  return <Icon iconName={iconName} style={iconStyles} />;
+const ErrorContent: React.FC<{ error: string }> = ({ error }) => {
+  return error ? (
+    <div className={styles['error-container']}>
+      <MessageBar 
+        messageBarType={MessageBarType.error} 
+        className={styles['error-message']}
+      >
+        <Stack tokens={{ childrenGap: 12 }}>
+          <Stack horizontal tokens={{ childrenGap: 12 }} verticalAlign="center">
+            <Icon iconName="ErrorBadge" className={styles['error-icon']} />
+            <Text variant="large" className={styles['error-title']}>
+              Operation Failed
+            </Text>
+          </Stack>
+          <Text variant="medium" className={styles['error-text']}>
+            {error}
+          </Text>
+        </Stack>
+      </MessageBar>
+    </div>
+  ) : null;
 };
 
-// Wait dialog content component
+const LoadingContent: React.FC<{ 
+  message: string; 
+  title: string; 
+  progress?: number; 
+  currentFile?: string; 
+  estimatedTime?: string; 
+}> = ({ message, title, progress, currentFile, estimatedTime }) => {
+  return (
+    <div className={styles['loading-container']}>
+      <div className={styles['loading-content']}>
+        <div className={styles['loading-header']}>
+          <div className={styles['icon-container']}>
+            <div className={styles['icon-background']}>
+              <Icon iconName="PDF" className={styles['main-icon']} />
+            </div>
+          </div>
+          <div className={styles['header-content']}>
+            <div className={styles['main-title']}>
+              {title}
+            </div>
+            <div className={styles['main-subtitle']}>
+              <Stack horizontal tokens={{ childrenGap: 8 }} verticalAlign="center" horizontalAlign="center">
+                <Spinner size={SpinnerSize.small} />
+                <Text>{message}</Text>
+              </Stack>
+            </div>
+            {estimatedTime && (
+              <div className={styles['estimated-time']}>
+                {estimatedTime}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className={styles['progress-section']}>
+          {progress !== undefined ? (
+            <ProgressIndicator
+              percentComplete={progress / 100}
+              description={`${Math.round(progress)}% complete`}
+              className={styles['main-progress']}
+            />
+          ) : (
+            <ProgressIndicator
+              description="Processing your request..."
+              className={styles['main-progress']}
+            />
+          )}
+        </div>
+
+        {currentFile && (
+          <div className={styles['current-file-section']}>
+            <div className={styles['current-file-label']}>
+              Currently processing:
+            </div>
+            <div className={styles['file-info-card']}>
+              <Icon iconName="Document" className={styles['file-icon']} />
+              <div className={styles['file-details']}>
+                <div className={styles['file-name']}>
+                  {currentFile}
+                </div>
+                <div className={styles['file-status']}>
+                  Converting to PDF...
+                </div>
+              </div>
+              <div className={styles['processing-indicator']}>
+                <Spinner size={SpinnerSize.small} />
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className={styles['status-info']}>
+          <div className={styles['status-items']}>
+            <div className={styles['status-item']}>
+              <Icon iconName="CheckMark" className={styles['status-icon-success']} />
+              <span className={styles['status-text']}>Secure</span>
+            </div>
+            <div className={styles['status-item']}>
+              <Icon iconName="Shield" className={styles['status-icon-success']} />
+              <span className={styles['status-text']}>Microsoft Graph</span>
+            </div>
+            <div className={styles['status-item']}>
+              <Icon iconName="Cloud" className={styles['status-icon-success']} />
+              <span className={styles['status-text']}>Cloud</span>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles['tips-section']}>
+          <div className={styles['tip-title']}>
+            💡 Tip
+          </div>
+          <div className={styles['tip-text']}>
+            Select multiple files for batch conversion
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const WaitDialogContent: React.FC<IWaitDialogContentProps> = ({
   message,
+  error,
   title,
-  notificationType,
   showClose,
   hidden,
   progress,
-  closeCallback
+  currentFile,
+  estimatedTime,
+  closeCallback,
 }) => {
   const dialogType = showClose ? DialogType.close : DialogType.normal;
   
-  const progressPercentage = progress 
-    ? progress.current / progress.total
-    : undefined;
-
-  // Dialog content styles
-  const dialogContentStyles: Partial<IDialogContentStyles> = {
-    title: {
-      fontWeight: 600,
-      fontSize: '20px',
-      paddingBottom: 12,
-      marginBottom: 0
-    },
-    subText: {
-      fontSize: '14px'
+  const dialogStyles = mergeStyles({
+    selectors: {
+      '.ms-Dialog-main': {
+        backgroundColor: '#ffffff',
+        borderRadius: '4px',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+        border: '1px solid #e1e1e1',
+        minWidth: '480px',
+        maxWidth: '520px',
+        overflow: 'hidden'
+      },
+      '.ms-Dialog-title': {
+        display: 'none'
+      },
+      '.ms-Dialog-content': {
+        padding: '0'
+      }
     }
-  };
+  });
 
   return (
-    <div className={styles.dialogContainer}>
+    <div className={`${styles['dialog-container']} ${dialogStyles}`}>
       <Dialog
         hidden={hidden}
         dialogContentProps={{ 
-          type: dialogType, 
-          title, 
-          subText: message,
-          styles: dialogContentStyles
+          type: dialogType,
+          showCloseButton: showClose,
+          className: undefined
         }}
         modalProps={{ 
           isDarkOverlay: true, 
-          isBlocking: true, 
-          onDismiss: closeCallback
+          isBlocking: !showClose,
+          onDismiss: showClose ? closeCallback : undefined,
+          className: undefined
         }}
-        aria-live="assertive" 
-        aria-label={title} 
-        aria-describedby="dialog-message"
+        minWidth={480}
+        maxWidth={600}
       >
-        {notificationType !== NotificationType.Info && (
-          <div className={styles.notificationIcon}>
-            <NotificationIcon type={notificationType} />
-          </div>
-        )}
-        
-        {!showClose && !progress && (
-          <Spinner 
-            size={SpinnerSize.large} 
-            label={strings.Processing}
-            ariaLive="assertive"
-            className={styles.spinner}
-          />
-        )}
-        
-        {progress && (
-          <div className={styles.progressContainer}>
-            <ProgressIndicator 
-              label={`${strings.Processing} ${progress.current} of ${progress.total}`}
-              percentComplete={progressPercentage}
-              barHeight={4}
+        <div className={styles['dialog-body']}>
+          {error ? (
+            <ErrorContent error={error} />
+          ) : (
+            <LoadingContent 
+              message={message} 
+              title={title} 
+              progress={progress}
+              currentFile={currentFile}
+              estimatedTime={estimatedTime}
             />
-          </div>
-        )}
-        
-        <div className={styles.footer}>
-          <div className={styles.pnpFooter}>
-            <a 
-              href="https://github.com/pnp/PnP" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              Powered by PnP
-            </a>
+          )}
+          
+          {showClose && (
+            <div className={styles['dialog-actions']}>
+              <DefaultButton 
+                text="Close" 
+                onClick={closeCallback}
+                className={styles['close-button']}
+                iconProps={{ iconName: 'Cancel' }}
+              />
+            </div>
+          )}
+          
+          <div className={styles['branding-footer']}>
+            <Stack horizontal tokens={{ childrenGap: 8 }} verticalAlign="center" horizontalAlign="center">
+              <Icon iconName="SharePointLogo" className={styles['branding-icon']} />
+              <Text variant="small" className={styles['branding-text']}>
+                Powered by <strong>PnP Community</strong>
+              </Text>
+            </Stack>
           </div>
         </div>
       </Dialog>
@@ -229,37 +304,36 @@ const WaitDialogContent: React.FC<IWaitDialogContentProps> = ({
   );
 };
 
-// Create a DOM element for the portal
 const dialogDiv = document.createElement('div');
 document.body.appendChild(dialogDiv);
 
-// Wait dialog component
 const WaitDialog: React.FC<IWaitDialogState & { onClose: () => void }> = ({
   isVisible,
   message,
   title,
-  notificationType,
+  error,
   showClose,
   progress,
-  onClose
+  currentFile,
+  estimatedTime,
+  onClose,
 }) => {
   return ReactDOM.createPortal(
-    <ThemeProvider>
-      <WaitDialogContent
-        message={message}
-        title={title}
-        notificationType={notificationType}
-        showClose={showClose}
-        hidden={!isVisible}
-        progress={progress}
-        closeCallback={onClose}
-      />
-    </ThemeProvider>,
+    <WaitDialogContent
+      message={message}
+      title={title}
+      error={error}
+      showClose={showClose}
+      progress={progress}
+      currentFile={currentFile}
+      estimatedTime={estimatedTime}
+      hidden={!isVisible}
+      closeCallback={onClose}
+    />,
     dialogDiv
   );
 };
 
-// Wait dialog controller class
 class WaitDialogController {
   private container: HTMLElement;
   private dispatch!: React.Dispatch<WaitDialogAction>;
@@ -273,19 +347,13 @@ class WaitDialogController {
         isVisible: false,
         message: '',
         title: '',
-        notificationType: NotificationType.Info,
+        error: '',
         showClose: false,
-        progress: null
       });
 
       this.dispatch = dispatch;
 
-      return (
-        <WaitDialog
-          {...state}
-          onClose={() => dispatch({ type: 'CLOSE_DIALOG' })}
-        />
-      );
+      return <WaitDialog {...state} onClose={() => dispatch({ type: 'CLOSE_DIALOG' })} />;
     };
 
     ReactDOM.render(<Wrapper />, this.container);
@@ -296,42 +364,19 @@ class WaitDialogController {
     Log.info('WaitDialogController', `Showing dialog: ${title} - ${message}`);
   }
 
-  public showSuccess(title: string, message: string) {
-    this.dispatch({ type: 'SHOW_SUCCESS', title, message });
-    Log.info('WaitDialogController', `Showing success dialog: ${title} - ${message}`);
-  }
-
-  public showWarning(title: string, message: string) {
-    this.dispatch({ type: 'SHOW_WARNING', title, message });
-    Log.info('WaitDialogController', `Showing warning dialog: ${title} - ${message}`);
-  }
-
   public showError(title: string, message: string) {
     this.dispatch({ type: 'SHOW_ERROR', title, message });
     Log.error('WaitDialogController', new Error(`Showing error dialog: ${title} - ${message}`));
   }
 
-  public setProgress(current: number, total: number) {
-    this.dispatch({ type: 'SET_PROGRESS', current, total });
-    Log.verbose('WaitDialogController', `Progress updated: ${current}/${total}`);
+  public updateProgress(progress?: number, currentFile?: string, estimatedTime?: string) {
+    this.dispatch({ type: 'UPDATE_PROGRESS', progress, currentFile, estimatedTime });
+    Log.info('WaitDialogController', `Updating progress: ${progress}% - ${currentFile}`);
   }
 
   public close() {
     this.dispatch({ type: 'CLOSE_DIALOG' });
     Log.info('WaitDialogController', 'Closing dialog.');
-  }
-
-  // Helper method to update progress during batch operations
-  public updateBatchProgress(current: number, total: number, currentItemName?: string) {
-    this.setProgress(current, total);
-    
-    if (currentItemName) {
-      this.dispatch({ 
-        type: 'SHOW_DIALOG', 
-        title: `${strings.Processing} ${current} of ${total}`, 
-        message: `${strings.ConvertingToPdf.replace('{0}', currentItemName)}` 
-      });
-    }
   }
 }
 
