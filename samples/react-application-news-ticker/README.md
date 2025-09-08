@@ -30,6 +30,7 @@ Create list as the data source for the app with below details:
 2. Required Columns: 
    - `Title`: single line text
    - `Content`: multiline text (plain text)
+   - `RssUrl`: single line text (plain text)
    - `PublishDate`: date
    - `ExpiryDate`: date
 3. Required View:
@@ -56,6 +57,8 @@ Version|Date|Comments
 1.1|October 17, 2021|Update SPFx version to 1.12.1
 1.2|August 27, 2021|Fixed failed upgrade and update SPFx version to 1.15.2
 1.3|October 24, 2024|Upgraded to SPFX 1.20, React 17 , Node 18! Rewrite the code to use Graph API, Also coded a native Ticker instead of another module as it's was no longer maintained! Also refactored a lot of the code
+2.0|July 4, 2025|Added RSS feed integration support for external news sources, Major UI/UX improvements: Removed icons for cleaner design, replaced bullet separators with pipe characters, fixed hover behavior to pause instead of blanking, optimized CSS with min-height constraints, fixed memory leaks with proper event listener, improved performance
+2.1|September 8, 2025|Updated to SPFX 1.21. and Typescript 5.3
 
 
 ## Minimal Path to Awesome
@@ -71,8 +74,15 @@ Version|Date|Comments
 This extension illustrates the following concepts:
 
 - Display news as a running text at the top of every modern page where the app installed
-- Get news items from a SharePoint list view using PnPJS
-- Stop the running text when user hover it
+- Get news items from SharePoint lists across multiple sites (current site, home site, hub site) using Microsoft Graph API
+- **RSS Feed Integration** - Fetch and display news from external RSS feeds with automatic date filtering
+- Native React ticker component with smooth animations and accessibility support
+- Pause animation on hover while maintaining content visibility
+- Clean, minimalist design with pipe separators and no icons
+- Memory leak prevention with proper event listener cleanup
+- Configurable speed, direction, and visual styling options
+- Accessibility features including reduced motion preference support
+- **RSS Content Processing** - Automatic HTML sanitization and content extraction from RSS feeds
 
 ## References
 

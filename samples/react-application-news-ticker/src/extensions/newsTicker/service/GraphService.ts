@@ -1,18 +1,16 @@
 import { MSGraphClientV3, SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
-
-export interface News {
-  title: string;
-  content: string;
-  publishDate: Date;
-}
+import { News } from "../models/News";
+import RssService from "./RssService";
 
 export default class GraphService {
   private _graphClient: MSGraphClientV3;
   private _spHttpClient: SPHttpClient;
+  private _rssService: RssService;
 
   constructor(graphClient: MSGraphClientV3, spHttpClient: SPHttpClient) {
     this._graphClient = graphClient;
     this._spHttpClient = spHttpClient;
+    this._rssService = new RssService();
   }
 
   /**
@@ -22,21 +20,27 @@ export default class GraphService {
    * @param listTitle - The title of the SharePoint list.
    */
   public async getNewsItems(siteID: string, siteName: string, listTitle: string): Promise<News[]> {
-    const today = new Date().toISOString().split("T")[0]; // Format date as YYYY-MM-DD
+    const today = new Date();
+    const startDate = new Date(today);
+    startDate.setHours(0, 0, 0, 0);
+    const endDate = new Date(today);
+    endDate.setHours(23, 59, 59, 999);
 
     try {
-      // Step 1: Fetch news from the current site, home site, and hub site
-      const currentSiteNews = await this._fetchNewsItemsFromSite(siteID, listTitle, today);
+      const currentSiteNews = await this._fetchNewsItemsFromSite(siteID, listTitle, today.toISOString().split("T")[0]);
       const homeSiteId = await this._getHomeSiteID();
-      const homeSiteNews = homeSiteId ? await this._fetchNewsItemsFromSite(homeSiteId, listTitle, today) : [];
+      const homeSiteNews = homeSiteId ? await this._fetchNewsItemsFromSite(homeSiteId, listTitle, today.toISOString().split("T")[0]) : [];
 
-      const hubSiteId = await this._getHubSiteID(siteName); // Use SharePoint REST API for hubSiteId
-      const hubSiteNews = hubSiteId ? await this._fetchNewsItemsFromSite(hubSiteId, listTitle, today) : [];
+      const hubSiteId = await this._getHubSiteID(siteName);
+      const hubSiteNews = hubSiteId ? await this._fetchNewsItemsFromSite(hubSiteId, listTitle, today.toISOString().split("T")[0]) : [];
 
-      // Step 2: Combine the news items from all sources
-      const allNews = [...currentSiteNews, ...homeSiteNews, ...hubSiteNews];
+      const allSharePointNews = [...currentSiteNews, ...homeSiteNews, ...hubSiteNews];
 
-      // Step 3: Sort the combined news by publishDate (ascending)
+      const rssUrls = this._extractRssUrls(allSharePointNews);
+      const rssNews = rssUrls.length > 0 ? await this._rssService.fetchMultipleRssFeeds(rssUrls, startDate, endDate) : [];
+
+      const allNews = [...allSharePointNews, ...rssNews];
+
       return allNews.sort((a, b) => a.publishDate.getTime() - b.publishDate.getTime());
 
     } catch (error) {
@@ -53,20 +57,18 @@ export default class GraphService {
    */
   private async _fetchNewsItemsFromSite(siteId: string, listTitle: string, today: string): Promise<News[]> {
     try {
-      // Construct the Graph API URL with filters, sorting, and limiting
       const apiUrl = `/sites/${siteId}/lists/${listTitle}/items?expand=fields&$filter=fields/PublishDate le '${today}' and fields/ExpiryDate gt '${today}'&$orderby=fields/PublishDate asc&$top=10`;
 
-      // Use MSGraphClientV3 to call the Microsoft Graph API
       const response = await this._graphClient
         .api(apiUrl)
         .header("Prefer", "HonorNonIndexedQueriesWarningMayFailRandomly")
         .get();
 
-      // Map the response to the News model
       return response.value.map((item: any) => ({
         title: item.fields.Title,
         content: item.fields.Content,
         publishDate: new Date(item.fields.PublishDate),
+        rssUrl: item.fields.RssUrl || undefined,
       } as News));
 
     } catch (error) {
@@ -81,7 +83,6 @@ export default class GraphService {
    */
   private async _getHomeSiteID(): Promise<string | null> {
     try {
-      // Call the Graph API to get the home site details
       const response = await this._graphClient
         .api("/sites/root?$select=siteCollection")
         .get();
@@ -114,5 +115,18 @@ export default class GraphService {
       console.error(`Error fetching hub site ID for site ${siteUrl}:`, error);
       return null;
     }
+  }
+
+  private _extractRssUrls(newsItems: News[]): string[] {
+    const rssUrls: string[] = [];
+    newsItems.forEach(item => {
+      if (item.rssUrl && item.rssUrl.trim() !== '') {
+        const url = item.rssUrl.trim();
+        if (!rssUrls.includes(url)) {
+          rssUrls.push(url);
+        }
+      }
+    });
+    return rssUrls;
   }
 }
