@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="Redaction"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="0c6fc4c5-1b55-4999-bfcc-b6d349f8a747"
+        ClientSideComponentProperties="{&quot;azureFunctionUrl&quot;:&quot;{{AZURE_FUNCTION_URL}}&quot;,&quot;clientId&quot;:&quot;{{CLIENT_ID}}&quot;, &quot;functionKey&quot;:&quot;{{FUNCTION_KEY}}&quot;, &quot;maxFilesPerJob&quot;:20, &quot;maxFileSize&quot;:52428800, &quot;enabledFileTypes&quot;:[&quot;pdf&quot;, &quot;docx&quot;, &quot;doc&quot;, &quot;txt&quot;]}">
+    </CustomAction>
+</Elements>

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "redaction-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/redaction/RedactionCommandSet.js",
+          "manifest": "./src/extensions/redaction/RedactionCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "RedactionCommandSetStrings": "lib/extensions/redaction/loc/{locale}.js"
+  }
+}
