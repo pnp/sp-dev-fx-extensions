@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "react-driveitem-properties-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/reactDriveitemid/ReactDriveitemidCommandSet.js",
+          "manifest": "./src/extensions/reactDriveitemid/ReactDriveitemidCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReactDriveitemidCommandSetStrings": "lib/extensions/reactDriveitemid/loc/{locale}.js"
+  }
+}
