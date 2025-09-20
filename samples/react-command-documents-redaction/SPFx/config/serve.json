@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://contoso.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "0c6fc4c5-1b55-4999-bfcc-b6d349f8a747": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "azureFunctionUrl": "{{AZURE_FUNCTION_URL}}",
+            "clientId": "{{CLIENT_ID}}",
+            "functionKey": "{{FUNCTION_KEY}}",
+            "maxFilesPerJob": 20,
+            "maxFileSize": 52428800,
+            "enabledFileTypes": ["pdf", "docx", "doc", "txt"]
+          }
+        }
+      }
+    },
+    "redaction": {
+      "pageUrl": "https://contoso.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "0c6fc4c5-1b55-4999-bfcc-b6d349f8a747": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "azureFunctionUrl": "{{AZURE_FUNCTION_URL}}",
+            "clientId": "{{CLIENT_ID}}",
+            "functionKey": "{{FUNCTION_KEY}}",
+            "maxFilesPerJob": 20,
+            "maxFileSize": 52428800,
+            "enabledFileTypes": ["pdf", "docx", "doc", "txt"]
+          }
+        }
+      }
+    }
+  }
+}

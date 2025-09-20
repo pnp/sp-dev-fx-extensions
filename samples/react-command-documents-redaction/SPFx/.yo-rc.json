@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.18.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "react-command-documents-redaction",
+    "libraryId": "65d887ec-bbb9-43b0-9978-e07fe8a2bacb",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "react-command-documents-redaction",
+    "solutionShortDescription": "react-command-documents-redaction description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}

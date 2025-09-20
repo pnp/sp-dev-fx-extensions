@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "react-command-documents-redaction-client-side-solution",
+    "id": "65d887ec-bbb9-43b0-9978-e07fe8a2bacb",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Ramin Ahmadi",
+      "websiteUrl": "https://www.codingwithramin.com",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.21.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "PII Redaction extension for SharePoint documents"
+      },
+      "longDescription": {
+        "default": "SharePoint Framework extension that enables redaction of personally identifiable information in documents using Azure AI Language Services"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "{{API_NAME}}",
+        "scope": "user_impersonation"
+      },
+      {
+        "resource": "Windows Azure Active Directory",
+        "scope": "User.Read"
+      }
+    ],
+    "features": [
+      {
+        "title": "PII Redaction Command Set",
+        "description": "Command set extension for redacting PII from documents",
+        "id": "9ad74e69-485f-4dae-888b-3eb243e4db17",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-command-documents-redaction.sppkg"
+  }
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-command-documents-redaction",
+    "source": "pnp",
+    "title": "Azure AI Document Redaction Extension",
+    "shortDescription": "Provides document redaction capabilities using Azure AI Language services",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-documents-redaction",
+    "longDescription": [
+      "This SharePoint Framework (SPFx) extension provides document redaction capabilities using Azure AI Language services. Users can select documents from SharePoint document libraries and automatically redact sensitive information such as PII (Personally Identifiable Information), PHI (Protected Health Information), and custom entity types. The solution includes both a SharePoint Framework list view command set extension and a complete Azure Functions backend for processing."
+    ],
+    "creationDateTime": "2025-09-20",
+    "updateDateTime": "2025-09-20",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.21.1"
+      }
+    ],
+"tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-documents-redaction/assets/preview.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "AhmadiRamin",
+        "pictureUrl": "https://github.com/AhmadiRamin.png",
+        "name": "Ramin Ahmadi"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+        "url": "https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+      }
+    ]
+  }
+]
