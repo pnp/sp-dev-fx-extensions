@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "notification-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/notification/NotificationApplicationCustomizer.js",
+          "manifest": "./src/extensions/notification/NotificationApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "NotificationApplicationCustomizerStrings": "lib/extensions/notification/loc/{locale}.js"
+  }
+}
