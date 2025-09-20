@@ -11,8 +11,16 @@ const LOG_SOURCE: string = "NewsTickerApplicationCustomizer";
 
 export interface INewsTickerApplicationCustomizerProperties {
   listTitle: string;
-  bgColor: string;
-  textColor: string;
+  bgColor?: string;
+  textColor?: string;
+  speed?: number;
+  direction?: 'left' | 'right';
+  pauseOnHover?: boolean;
+  showDate?: boolean;
+  dateFormat?: 'short' | 'medium' | 'long';
+  maxItems?: number;
+  respectMotionPreference?: boolean;
+  refreshInterval?: number;
 }
 
 export default class NewsTickerApplicationCustomizer extends BaseApplicationCustomizer<INewsTickerApplicationCustomizerProperties> {
@@ -21,11 +29,8 @@ export default class NewsTickerApplicationCustomizer extends BaseApplicationCust
 
   protected onInit(): Promise<void> {
     return super.onInit().then(async () => {
-      // Get both MSGraphClientV3 and SPHttpClient
       const graphClient = await this.context.msGraphClientFactory.getClient("3");
       const spHttpClient = this.context.spHttpClient;
-  
-      // Pass both clients to GraphService
       this._graphService = new GraphService(graphClient, spHttpClient);
       this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
     });
@@ -40,7 +45,18 @@ export default class NewsTickerApplicationCustomizer extends BaseApplicationCust
         return;
       }
 
-      const { listTitle, bgColor, textColor } = this.properties;
+      const { 
+        listTitle, 
+        bgColor, 
+        textColor, 
+        speed, 
+        direction, 
+        pauseOnHover, 
+        showDate, 
+        dateFormat, 
+        maxItems, 
+        respectMotionPreference
+      } = this.properties;
 
       if (!listTitle) {
         Log.error(LOG_SOURCE, new Error("Required property listTitle is missing."));
@@ -57,7 +73,6 @@ export default class NewsTickerApplicationCustomizer extends BaseApplicationCust
           return;
         }
 
-        // Prevent multiple instances of the NewsTicker component
         if (document.getElementById(Constants.ROOT_ID)) {
           Log.info(LOG_SOURCE, "NewsTicker already rendered.");
           return;
@@ -66,6 +81,14 @@ export default class NewsTickerApplicationCustomizer extends BaseApplicationCust
           items: newsItems,
           bgColor,
           textColor,
+          speed,
+          direction,
+          pauseOnHover,
+          showDate,
+          dateFormat,
+          maxItems,
+          respectMotionPreference,
+          locale: this.context.pageContext.cultureInfo.currentCultureName || navigator.language || 'en-US',
         } as INewsTickerProps);
 
         ReactDom.render(element, this._topPlaceholder.domElement);
