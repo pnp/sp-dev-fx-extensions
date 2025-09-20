@@ -8,8 +8,8 @@ An SPFx Extension that displays news as a running text at the top of every moder
 
 ## Compatibility
 
-![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
-![Node.js LTS v18](https://img.shields.io/badge/Node.js-LTS%20v18-green.svg) 
+![SPFx 1.21.1](https://img.shields.io/badge/SPFx-1.21.1-green.svg)
+![Node.js LTS v22](https://img.shields.io/badge/Node.js-LTS%20v22-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -26,8 +26,9 @@ An SPFx Extension that displays news as a running text at the top of every moder
 ## Prerequisites
 
 Create list as the data source for the app with below details:
+
 1. List title: `News`
-2. Required Columns: 
+2. Required Columns:
    - `Title`: single line text
    - `Content`: multiline text (plain text)
    - `RssUrl`: single line text (plain text)
@@ -40,14 +41,11 @@ Create list as the data source for the app with below details:
       - Sort: `PublishDate Ascending`
       - Limit: `10`
 
-## Solution
+## Contributors
 
-Solution|Author(s)
---------|---------
-react-application-news-ticker | [Ari Gunawan](https://github.com/AriGunawan) ([@arigunawan3023](https://twitter.com/arigunawan3023))
-react-application-news-ticker | [Sudharsan Kesavanarayanan](https://github.com/sudharsank) (NTT Ltd, [@sudharsank](https://twitter.com/sudharsank))
-react-application-news-ticker | [Nicolas Kheirallah](https://github.com/NicolasKheirallah) 
-
+- [Ari Gunawan](https://github.com/AriGunawan)
+- [Sudharsan Kesavanarayanan](https://github.com/sudharsank)
+- [Nicolas Kheirallah](https://github.com/NicolasKheirallah)
 
 ## Version history
 
@@ -59,7 +57,6 @@ Version|Date|Comments
 1.3|October 24, 2024|Upgraded to SPFX 1.20, React 17 , Node 18! Rewrite the code to use Graph API, Also coded a native Ticker instead of another module as it's was no longer maintained! Also refactored a lot of the code
 2.0|July 4, 2025|Added RSS feed integration support for external news sources, Major UI/UX improvements: Removed icons for cleaner design, replaced bullet separators with pipe characters, fixed hover behavior to pause instead of blanking, optimized CSS with min-height constraints, fixed memory leaks with proper event listener, improved performance
 2.1|September 8, 2025|Updated to SPFX 1.21. and Typescript 5.3
-
 
 ## Minimal Path to Awesome
 
@@ -88,15 +85,16 @@ This extension illustrates the following concepts:
 
 - [SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
 
-
 ## Debug URL for testing
-Here's a debug URL for testing around this sample. 
 
-```
+Here's a debug URL for testing around this sample.
+
+```shell
 ?debugManifestsFile=https://localhost:4321/temp/manifests.js
 ```
 
 ## Disclaimer
+
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 ## Help
