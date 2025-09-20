@@ -2,14 +2,14 @@
   {
     "name": "pnp-sp-dev-spfx-extensions-react-application-alert-banner",
     "source": "pnp",
-    "title": "Alert Banner",
-    "shortDescription": "Designed to display alert notifications prominently in the Banner of Modern SharePoint sites",
+    "title": "Alert Banner SPFx Extension",
+    "shortDescription": "The Alert Banner SPFx Extension is a custom SharePoint Framework (SPFx) extension designed to display alert notifications prominently in the Banner of Modern SharePoint sites. These alerts are dynamically retrieved from a SharePoint list using the Microsoft Graph API, ensuring users receive important updates and information seamlessly integrated with Microsoft 365 services.",
     "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-alert-banner",
     "longDescription": [
       "The Alert Banner SPFx Extension is a custom SharePoint Framework (SPFx) extension designed to display alert notifications prominently in the Banner of Modern SharePoint sites. These alerts are dynamically retrieved from a SharePoint list using the Microsoft Graph API, ensuring users receive important updates and information seamlessly integrated with Microsoft 365 services."
     ],
     "creationDateTime": "2023-12-25",
-    "updateDateTime": "2025-03-06",
+    "updateDateTime": "2025-09-03",
     "products": [
       "SharePoint"
     ],
@@ -20,25 +20,26 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.20.0"
+        "value": "1.21.1"
       }
     ],
 "tags": [],
     "categories": [
-      "SPFX-APPLICATION-EXTENSION"  
+      "SPFX-APPLICATION-EXTENSION"
+   
     ],
     "thumbnails": [
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-alert-banner/assets/Screenshot2024-08-17170932.png",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-alert-banner/assets/preview.gif",
         "alt": "Preview"
       }
     ],
     "authors": [
       {
-        "gitHubAccount": "nicolasKheirallah",
-        "pictureUrl": "https://github.com/nicolasKheirallah.png",
+        "gitHubAccount": "NicolasKheirallah",
+        "pictureUrl": "https://github.com/NicolasKheirallah.png",
         "name": "Nicolas Kheirallah"
       }
     ],

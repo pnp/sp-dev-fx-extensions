@@ -1,0 +1,1863 @@
+// User-Friendly Alert Settings Styles
+
+.settingsButton {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-out;
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.settingsContainer {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  height: 100%;
+  max-height: 95vh; // Prevent overflow beyond viewport
+  min-height: 500px; // Ensure minimum usable height
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; // Prevent container overflow
+  
+  // Ensure the dialog stays within bounds
+  width: 100%;
+  max-width: 1400px; // Limit max width for very wide screens
+  min-width: 800px; // Ensure minimum width for usability
+  
+  // On smaller screens, adjust constraints
+  @media (max-width: 900px) {
+    min-width: auto;
+    width: 95vw;
+    max-width: 95vw;
+    height: 95vh;
+  }
+  
+  @media (max-width: 600px) {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    min-height: 100vh;
+  }
+}
+
+// Tab navigation
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #edebe9;
+  background: #faf9f8;
+  margin: 0;
+  padding: 0;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  border: none;
+  background: transparent;
+  color: #605e5c;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  border-bottom: 2px solid transparent;
+  
+  &:hover {
+    background: #f3f2f1;
+    color: #323130;
+  }
+  
+  &:focus {
+    outline: 2px solid #0078d4;
+    outline-offset: -2px;
+  }
+}
+
+.activeTab {
+  background: #ffffff;
+  color: #323130;
+  border-bottom-color: #0078d4;
+  font-weight: 600;
+  
+  &:hover {
+    background: #ffffff;
+  }
+}
+
+.tabIcon {
+  font-size: 16px;
+}
+
+// Tab content
+.tabContent {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; // Allow flex child to shrink
+}
+
+.tabHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  
+  h3 {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #323130;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #605e5c;
+  }
+}
+
+// Templates section
+.templatesSection {
+  margin-bottom: 32px;
+}
+
+.templates {
+  margin-bottom: 20px;
+}
+
+.templateActions {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  border-top: 1px solid #edebe9;
+}
+
+// Alert form
+.alertForm {
+  max-width: none;
+}
+
+.formWithPreview {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 32px;
+  align-items: start;
+}
+
+.formColumn {
+  min-width: 0;
+}
+
+.previewColumn {
+  position: sticky;
+  top: 0;
+}
+
+.previewSticky {
+  position: sticky;
+  top: 24px;
+}
+
+.previewToggle {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.configGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+  
+  > * {
+    margin-bottom: 0;
+  }
+  
+  // Ensure consistent alignment for form fields in grid
+  :global {
+    .field {
+      margin-bottom: 0 !important;
+      
+      .label {
+        min-height: 18px;
+        line-height: 18px;
+      }
+      
+      .description {
+        min-height: 16px;
+        line-height: 16px;
+      }
+      
+      .input,
+      .select {
+        min-height: 32px;
+        box-sizing: border-box;
+      }
+      
+      .error {
+        min-height: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #edebe9;
+}
+
+// Alert types section
+.typeFormWithPreview {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 24px;
+  align-items: start;
+}
+
+.typeFormColumn {
+  min-width: 0;
+}
+
+.typePreviewColumn {
+  position: sticky;
+  top: 0;
+}
+
+.colorRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+  
+  > * {
+    margin-bottom: 0;
+  }
+  
+  // Ensure consistent alignment for form fields in grid
+  :global {
+    .field {
+      margin-bottom: 0 !important;
+      
+      .label {
+        min-height: 18px;
+        line-height: 18px;
+      }
+      
+      .description {
+        min-height: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+.existingTypes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.dragDropInstructions {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f8f9fa;
+  border: 1px solid #e1e5e9;
+  border-radius: 4px;
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #605e5c;
+  }
+}
+
+.alertTypeCard {
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  background: #ffffff;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  cursor: grab;
+  position: relative;
+  
+  &:hover {
+    border-color: #c8c6c4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  &:active {
+    cursor: grabbing;
+  }
+  
+  &[draggable="true"]:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.dragHandle {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #605e5c;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: #c8c6c4;
+  }
+}
+
+.dragIcon {
+  font-family: monospace;
+  font-weight: bold;
+  color: #8a8a8a;
+  cursor: grab;
+  user-select: none;
+  
+  .alertTypeCard:active & {
+    cursor: grabbing;
+  }
+}
+
+.orderNumber {
+  font-weight: 600;
+  color: #323130;
+  font-size: 11px;
+}
+
+.typePreview {
+  padding: 16px;
+  background: #faf9f8;
+  border-bottom: 1px solid #edebe9;
+}
+
+.typeActions {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px; // Add spacing between buttons
+  background: #ffffff;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #605e5c;
+  
+  .emptyIcon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+  }
+  
+  h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #323130;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+// Settings section
+.settingsGrid {
+  display: grid;
+  gap: 20px;
+  
+  > * {
+    margin-bottom: 0;
+  }
+}
+
+.systemInfo {
+  padding: 16px;
+  background: #faf9f8;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #edebe9;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.infoLabel {
+  font-size: 13px;
+  color: #605e5c;
+  font-weight: 500;
+}
+
+.infoValue {
+  font-size: 13px;
+  font-weight: 600;
+  
+  &.enabled {
+    color: #107c10;
+  }
+  
+  &.disabled {
+    color: #a80000;
+  }
+}
+
+// Site targeting
+.siteTargeting {
+  margin-bottom: 24px;
+  max-width: 100%;
+  overflow: hidden; // Prevent overflow outside dialog
+  
+  // Ensure site selector stays within bounds
+  :global {
+    .site-selector-container {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    .site-grid {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+  }
+}
+
+// Scheduling options
+.schedulingOptions {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #edebe9;
+  
+  h4 {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #323130;
+  }
+}
+
+.dateGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px; // Increased gap to prevent overlap
+  align-items: start; // Changed back to start for better alignment
+  margin-top: 8px;
+  
+  > * {
+    margin-bottom: 0;
+    min-width: 0; // Prevent grid items from overflowing
+  }
+  
+  // Ensure consistent alignment for date inputs
+  :global {
+    .field {
+      margin-bottom: 0 !important;
+      display: flex;
+      flex-direction: column;
+      width: 100%; // Ensure full width usage
+      min-width: 0; // Prevent overflow
+      
+      .label {
+        min-height: 18px;
+        line-height: 18px;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #323130;
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      
+      .input {
+        min-height: 32px;
+        height: 32px; // Fixed height for consistency
+        box-sizing: border-box;
+        flex: none; // Don't grow
+        margin-bottom: 6px;
+        width: 100%;
+        max-width: 100%;
+        
+        // Fix for datetime-local inputs
+        &[type="datetime-local"] {
+          padding: 6px 8px;
+          font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+          font-size: 14px;
+          border: 1px solid #605e5c;
+          border-radius: 2px;
+          background: #ffffff;
+          color: #323130;
+          
+          &:hover {
+            border-color: #323130;
+          }
+          
+          &:focus {
+            border-color: #0078d4;
+            outline: 1px solid #0078d4;
+            outline-offset: -1px;
+            box-shadow: 0 0 0 1px #0078d4;
+          }
+          
+          &:disabled {
+            background: #f3f2f1;
+            border-color: #c8c6c4;
+            color: #a19f9d;
+          }
+        }
+      }
+      
+      .description {
+        font-size: 12px;
+        line-height: 16px;
+        color: #605e5c;
+        margin-bottom: 4px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      .error {
+        font-size: 12px;
+        line-height: 16px;
+        color: #d13438;
+        margin-top: 4px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
+// Responsive behavior for date grid
+@media (max-width: 768px) {
+  .dateGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+// Alert management
+.alertsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1; // Take remaining space
+  min-height: 0; // Allow flex shrinking
+  overflow-y: auto;
+  padding: 4px;
+  
+  // Calculate height dynamically based on available space
+  max-height: calc(100vh - 300px); // Account for header, tabs, and filters
+  
+  // Better scrollbar styling
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+    
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+  
+  // Firefox scrollbar styling
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+  
+  // When filters are open, adjust height to prevent compression
+  .filterSection:has(.advancedFilters) ~ & {
+    max-height: calc(100vh - 450px);
+  }
+}
+
+.alertCard {
+  border: 1px solid #edebe9;
+  border-radius: 6px;
+  background: #ffffff;
+  overflow: visible;
+  transition: all 0.2s ease-out;
+  
+  &:hover {
+    border-color: #c8c6c4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  &.selected {
+    border-color: #0078d4;
+    box-shadow: 0 0 0 1px #0078d4;
+  }
+  
+  &.templateCard {
+    border-left: 4px solid #8764b8;
+    
+    .alertCardContent {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      min-height: 150px !important; // Force minimum height
+      
+      .alertCardTitle {
+        display: block !important;
+        visibility: visible !important;
+        color: #323130 !important;
+      }
+      
+      .alertCardDescription {
+        display: block !important;
+        visibility: visible !important;
+        color: #605e5c !important;
+      }
+      
+      .alertTypeIndicator {
+        display: block !important;
+        visibility: visible !important;
+      }
+      
+      .alertMetaData {
+        display: block !important;
+        visibility: visible !important;
+      }
+      
+      .alertCardActions {
+        display: flex !important;
+        visibility: visible !important;
+      }
+    }
+  }
+  
+  &.errorState {
+    border-left: 4px solid #d13438;
+    background-color: #fef6f6;
+    
+    .alertCardContent {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      min-height: 120px !important;
+    }
+  }
+}
+
+.alertCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #faf9f8;
+  border-bottom: 1px solid #edebe9;
+}
+
+.alertCheckbox {
+  margin: 0;
+  transform: scale(1.2);
+}
+
+.alertStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusBadge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  
+  &.active {
+    background: #c7e6d0;
+    color: #107c10;
+  }
+  
+  &.expired {
+    background: #f1a7a7;
+    color: #a80000;
+  }
+  
+  &.scheduled {
+    background: #fde1a2;
+    color: #8a6914;
+  }
+}
+
+.contentTypeBadge {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-left: 4px;
+  display: inline-block;
+
+  &.alert {
+    background-color: #e7f3ff;
+    color: #0078d4;
+    border: 1px solid #c7e0f4;
+  }
+
+  &.template {
+    background-color: #f3f0ff;
+    color: #8764b8;
+    border: 1px solid #d4c5f9;
+  }
+}
+
+.alertCardContent {
+  padding: 16px;
+}
+
+.filterSection {
+  background: #f8f9fa;
+  border: 1px solid #e1dfdd;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  flex-shrink: 0; // Don't let filter section shrink
+  
+  // Make the filter more compact
+  & > div {
+    margin-bottom: 0;
+    
+    .label {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e1dfdd;
+}
+
+.filterSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  
+  span {
+    font-size: 13px;
+    color: #605e5c;
+    
+    &:first-child {
+      font-weight: 600;
+      color: #323130;
+      font-size: 14px;
+    }
+  }
+}
+
+.filterToggleButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #ffffff;
+  border: 1px solid #c8c6c4;
+  border-radius: 4px;
+  color: #323130;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+  
+  &:hover {
+    background: #f3f2f1;
+    border-color: #8a8886;
+  }
+  
+  &:active {
+    background: #edebe9;
+  }
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.searchBar {
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.searchInput {
+  width: 100%;
+  
+  :global {
+    .input {
+      border-radius: 6px !important;
+      border: 2px solid #e1dfdd !important;
+      transition: all 0.15s ease-out !important;
+      font-size: 14px !important;
+      padding: 12px 16px !important;
+      
+      &:focus {
+        border-color: #0078d4 !important;
+        box-shadow: 0 0 0 1px #0078d4 !important;
+      }
+      
+      &:hover {
+        border-color: #c8c6c4 !important;
+      }
+      
+      &::placeholder {
+        color: #8a8886 !important;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.advancedFilters {
+  border-top: 1px solid #e1dfdd;
+  padding-top: 12px;
+  animation: slideDown 0.3s ease-out;
+  max-height: 200px;
+  overflow-y: auto;
+  
+  // Better scrollbar styling for compact filters
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 2px;
+    
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  
+  // Make form fields more compact
+  :global {
+    .field {
+      margin-bottom: 0 !important;
+      
+      .label {
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        margin-bottom: 4px !important;
+      }
+      
+      .select, .input {
+        min-height: 32px !important;
+        height: 32px !important;
+        padding: 6px 8px !important;
+        font-size: 13px !important;
+      }
+      
+      .description {
+        font-size: 11px !important;
+        margin-top: 2px !important;
+      }
+    }
+  }
+}
+
+.dateRangeFilters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border: 1px solid #e1dfdd;
+  border-radius: 4px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.filterActions {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+  border-top: 1px solid #e1dfdd;
+  
+  button {
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all 0.15s ease-out;
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.alertMetaData {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin-top: 12px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.alertTypeIndicator {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  background-color: var(--bg-color, #0078d4);
+  color: var(--text-color, #ffffff);
+}
+
+.alertCardTitle {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #323130;
+  line-height: 1.3;
+}
+
+.alertCardDescription {
+  color: #605e5c;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  
+  // Allow full content to be visible
+  max-height: none;
+  overflow: visible;
+  position: relative;
+}
+
+.alertMetadata {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  font-size: 12px;
+}
+
+.metadataRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.metadataLabel {
+  color: #605e5c;
+  font-weight: 500;
+  min-width: 60px;
+}
+
+.priorityBadge {
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  
+  &.critical {
+    background: #fef6f6;
+    color: #d13438;
+    border: 1px solid #f1a7a7;
+  }
+  
+  &.high {
+    background: #fffcf1;
+    color: #8a6914;
+    border: 1px solid #fde1a2;
+  }
+  
+  &.medium {
+    background: #f3f2f1;
+    color: #605e5c;
+    border: 1px solid #c8c6c4;
+  }
+  
+  &.low {
+    background: #f3fffa;
+    color: #107c10;
+    border: 1px solid #c7e6d0;
+  }
+}
+
+.alertCardActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #faf9f8;
+  border-top: 1px solid #edebe9;
+}
+
+.pinnedBadge {
+  font-size: 10px;
+  color: #8a6914;
+  background: #fffcf1;
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid #fde1a2;
+}
+
+.editAlertForm {
+  padding: 0;
+  height: 100%;
+  max-height: 90vh; // Prevent dialog from exceeding viewport
+  min-height: 600px; // Ensure minimum usable height
+  display: flex;
+  flex-direction: column;
+  
+  .formWithPreview {
+    flex: 1;
+    min-height: 0; // Allow flex child to shrink
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 24px;
+    overflow: hidden;
+    
+    .formColumn {
+      min-height: 0; // Allow flex child to shrink
+      overflow-y: auto;
+      padding-right: 8px;
+      // Add smooth scrolling
+      scroll-behavior: smooth;
+      
+      // Better scrollbar styling
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 3px;
+        
+        &:hover {
+          background: #a8a8a8;
+        }
+      }
+    }
+    
+    .previewColumn {
+      min-height: 0; // Allow flex child to shrink
+      overflow-y: auto;
+      border-left: 1px solid #edebe9;
+      padding-left: 16px;
+      
+      // Better scrollbar styling
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 3px;
+        
+        &:hover {
+          background: #a8a8a8;
+        }
+      }
+      
+      .previewSticky {
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 1;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #edebe9;
+        margin-bottom: 16px;
+      }
+    }
+    
+    // Responsive behavior for edit form
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      
+      .previewColumn {
+        border-left: none;
+        border-top: 1px solid #edebe9;
+        padding-left: 0;
+        padding-top: 16px;
+        
+        .previewSticky {
+          position: static;
+          border-bottom: none;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  // Ensure form fields don't get cut off
+  .formActions {
+    flex-shrink: 0;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #edebe9;
+    background: white;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+  }
+}
+
+// Creation progress
+.creationProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progressItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  
+  &.success {
+    background: #f3fffa;
+    border: 1px solid #c7e6d0;
+  }
+  
+  &.warning {
+    background: #fffcf1;
+    border: 1px solid #fde1a2;
+  }
+  
+  &.error {
+    background: #fef6f6;
+    border: 1px solid #f1a7a7;
+  }
+}
+
+.progressSite {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.permissionLevel {
+  font-size: 11px;
+  color: #605e5c;
+  text-transform: uppercase;
+}
+
+.progressStatus {
+  font-weight: 500;
+}
+
+// Dialog footer
+.dialogFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  background: #faf9f8;
+  border-top: 1px solid #edebe9;
+}
+
+
+// Responsive design
+@media (max-width: 1200px) {
+  .formWithPreview {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .previewColumn {
+    position: static;
+  }
+  
+  .previewSticky {
+    position: static;
+  }
+  
+  .typeFormWithPreview {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .typePreviewColumn {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .settingsButton {
+    position: fixed;
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .tabContent {
+    padding: 16px;
+  }
+  
+  .tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+  .tab {
+    padding: 12px 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .tabHeader {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .configGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .colorRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .formActions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .existingTypes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .infoItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .dialogFooter {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .tab,
+  .alertTypeCard,
+  .systemInfo {
+    border-width: 2px;
+  }
+  
+  .tabs {
+    border-bottom-width: 2px;
+  }
+  
+  .templateActions,
+  .formActions,
+  .typePreview {
+    border-width: 2px;
+  }
+}
+
+// Print styles
+@media print {
+  .settingsButton {
+    display: none;
+  }
+  
+  .dialogFooter {
+    display: none;
+  }
+  
+  .tabContent {
+    padding: 0;
+  }
+  
+  .formActions,
+  .templateActions,
+  .typeActions {
+    display: none;
+  }
+}
+
+// Animation for smooth transitions
+.tabContent {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Focus management
+.settingsContainer {
+  &:focus-within {
+    .previewColumn {
+      opacity: 1;
+    }
+  }
+}
+
+// Loading states
+.formActions {
+  button:disabled {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 2px solid transparent;
+      border-top: 2px solid currentColor;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Additional styles for inline replacements
+.errorMessage {
+  color: #d13438;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.flexRowGap12 {
+  display: flex;
+  gap: 12px;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.loadingContainer {
+  text-align: center;
+  padding: 40px;
+  color: #605e5c;
+}
+
+.loadingTitle {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.loadingSubtitle {
+  font-size: 14px;
+}
+
+.emptyStateList {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.flexRowCentered {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.metaInfo {
+  font-size: 12px;
+  color: #605e5c;
+  margin: 0;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  
+  strong {
+    font-weight: 600;
+    color: #323130;
+    white-space: nowrap;
+  }
+}
+
+.colorPreviewSwatch {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.fullWidthColumn {
+  grid-column: 1 / -1;
+}
+
+.spinnerContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #605e5c;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0078d4;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.infoText {
+  margin-bottom: 16px;
+  color: #605e5c;
+}
+
+.actionButtonsRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.helpText {
+  font-size: 14px;
+  color: #605e5c;
+}
+
+.creatingProgress {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #f3f2f1;
+  border-radius: 4px;
+}
+
+.successContainer {
+  padding: 16px;
+  background-color: #dff6dd;
+  border: 1px solid #92c5f7;
+  border-radius: 4px;
+  color: #323130;
+}
+
+.successHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.successIcon {
+  font-size: 18px;
+}
+
+.successDescription {
+  margin: 8px 0 0 26px;
+  color: #605e5c;
+}
+
+.storageManagement {
+  margin-bottom: 16px;
+  color: #605e5c;
+}
+
+.storageButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.typeDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.additionalOptions {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e1e1e1;
+}
+
+// Language Dialog Styles
+.languageDialogIcon {
+  margin-right: 8px;
+}
+
+.languageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.languageLabel {
+  display: flex;
+  flex-direction: column;
+}
+
+.languageSelectionSummary {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: var(--colorNeutralBackground2);
+  border-radius: 4px;
+}
+
+.languageDialogDescription {
+  margin-bottom: 16px;
+}
+
+.languageWarningBox {
+  margin-top: 12px;
+  padding: 8px;
+  background-color: var(--colorPaletteYellowBackground2);
+  border-radius: 4px;
+  border: 1px solid var(--colorPaletteYellowBorder2);
+}
+
+.languageWarningText {
+  color: var(--colorPaletteYellowForeground1);
+}
+
+.helpTextWithMargin {
+  margin-top: 8px;
+}
+
+// Language Management Section
+.languageManagementTitle {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.languageManagementDescription {
+  margin: 0 0 16px 0;
+  color: #605e5c;
+  font-size: 14px;
+}
+
+.languageModeSelector {
+  margin-bottom: 16px;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--colorNeutralForeground1);
+  margin-bottom: 8px;
+}
+
+.languageOptions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.infoMessage {
+  padding: 12px;
+  background-color: var(--colorNeutralBackground2);
+  border-radius: 4px;
+  color: var(--colorNeutralForeground2);
+  margin-top: 8px;
+}
+
+// Pre-Creation Language Selection styles removed - now using Fluent UI CardPreview
+
+.colorInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.colorSwatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid var(--colorNeutralStroke1);
+}
+
+.colorText {
+  color: var(--colorNeutralForeground2);
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.iconInfo {
+  color: var(--colorNeutralForeground2);
+  font-size: 11px;
+}
+
+.multiLanguageBadge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 6px;
+  background: #e6f3ff;
+  color: #0078d4;
+  border-radius: 10px;
+  border: 1px solid #b3d9ff;
+}
+
+.languageList {
+  font-size: 12px;
+  color: #605e5c;
+}
+
+// Preview Language Selector
+.previewLanguageSelector {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #faf9f8;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+}
+
+.previewLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #323130;
+  margin-bottom: 8px;
+}
+
+.previewLanguageButtons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.previewLanguageButton {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+// Multi-language Preview Info
+.multiLanguagePreviewInfo {
+  margin-top: 16px;
+  padding: 12px;
+  background: #e6f3ff;
+  border: 1px solid #b3d9ff;
+  border-radius: 4px;
+  
+  p {
+    margin: 0 0 4px 0;
+    font-size: 12px;
+    color: #0078d4;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Enhanced Scheduling UI
+.schedulingContainer {
+  background: #faf9f8;
+  border: 1px solid #edebe9;
+  border-radius: 6px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.schedulingHeader {
+  margin-bottom: 16px;
+}
+
+.schedulingDescription {
+  margin: 0;
+  font-size: 14px;
+  color: #605e5c;
+  font-style: italic;
+}
+
+.schedulingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.schedulingColumn {
+  // Individual column styling if needed
+}
+
+.scheduleSummary {
+  background: #ffffff;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+  
+  h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #323130;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 13px;
+    color: #323130;
+    line-height: 1.4;
+  }
+}
+
+.timezoneInfo {
+  background: #f3f2f1;
+  border: 1px solid #e1dfdd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  
+  p {
+    margin: 0;
+    font-size: 11px;
+    color: #605e5c;
+  }
+}
+
+// Form helper styles
+.fieldDescription {
+  font-size: 12px;
+  color: #605e5c;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.errorMessage {
+  color: #d13438;
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+// Responsive scheduling
+@media (max-width: 768px) {
+  .schedulingGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
