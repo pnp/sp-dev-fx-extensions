@@ -46,11 +46,9 @@ This SharePoint Framework (SPFx) extension provides document redaction capabilit
 - Azure Cognitive Services Language Resource
 - Azure Functions App (.NET 9 isolated)
 
-## Solution
+## Contributors
 
-| Solution                    | Author(s)                                   |
-| --------------------------- | ------------------------------------------- |
-| azure-ai-document-redaction | [Ramin Ahmadi](https://codingwithramin.com) |
+- [Ramin Ahmadi](https://github.com/AhmadiRamin)
 
 ## Version history
 
