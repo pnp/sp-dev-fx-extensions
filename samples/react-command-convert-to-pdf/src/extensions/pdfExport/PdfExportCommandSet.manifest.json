@@ -1,54 +1,32 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
-  "id": "ea401ac9-3abc-4e27-b93b-09c9a0587ee9",
-  "alias": "PdfExportCommandSet",
-  "componentType": "Extension",
-  "extensionType": "ListViewCommandSet",
-  "version": "*",
-  "manifestVersion": 2,
-  "requiresCustomScript": false,
-  "items": {
-    "EXPORT": {
-      "title": {
-        "default": "Download as PDF",
-        "en-US": "Download as PDF",
-        "fr-FR": "Télécharger en PDF",
-        "es-ES": "Descargar como PDF",
-        "de-DE": "Als PDF herunterladen",
-        "sv-SE": "Ladda ner som PDF",
-        "nb-NO": "Last ned som PDF",
-        "da-DK": "Download som PDF"
-      },
-      "iconImageUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cpath fill='currentColor' d='M15.5 17a.5.5 0 0 1 .09.992L15.5 18h-11a.5.5 0 0 1-.09-.992L4.5 17zM10 2.002a.5.5 0 0 1 .492.41l.008.09l-.004 11.794l3.645-3.648a.5.5 0 0 1 .638-.059l.07.058a.5.5 0 0 1 .058.638l-.058.07l-4.492 4.5a.5.5 0 0 1-.255.136l-.106.01a.5.5 0 0 1-.395-.195l-4.457-4.451a.5.5 0 0 1 .637-.766l.07.058l3.645 3.641L9.5 2.502a.5.5 0 0 1 .5-.5'/%3E%3C/svg%3E",
-      "type": "command"
-    },
-    "SAVE_AS": {
-      "title": {
-        "default": "Convert to PDF",
-        "en-US": "Convert to PDF",
-        "fr-FR": "Convertir en PDF",
-        "es-ES": "Convertir a PDF",
-        "de-DE": "In PDF konvertieren",
-        "sv-SE": "Konvertera till PDF",
-        "nb-NO": "Konverter til PDF",
-        "da-DK": "Konvertér til PDF"
-      },
-      "iconImageUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cpath fill='currentColor' d='M6.5 11a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-.166h.334a1.167 1.167 0 0 0 0-2.334zm.834 1.334H7V12h.333a.167.167 0 0 1 0 .334M12 11.499a.5.5 0 0 1 .5-.499h.999a.5.5 0 0 1 0 1H13v.335h.5a.5.5 0 1 1 0 1H13l.001.164a.5.5 0 0 1-1 .002L12 12.834zM9.5 11a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h.502a1.5 1.5 0 0 0 0-3zm.5 2v-1h.002a.5.5 0 0 1 0 1zM4.001 4a2 2 0 0 1 2-2h4.585a1.5 1.5 0 0 1 1.061.44l3.914 3.914a1.5 1.5 0 0 1 .44 1.06v1.668a1.5 1.5 0 0 1 .998 1.414v4.003a1.5 1.5 0 0 1-.998 1.414V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-.087A1.5 1.5 0 0 1 3 14.5v-4.003a1.5 1.5 0 0 1 1-1.414zm11 4h-3.5A1.5 1.5 0 0 1 10 6.5V3H6a1 1 0 0 0-1 1v4.996h10zM5 15.999A1 1 0 0 0 6 17h8a1 1 0 0 0 1-1.001zm6-12.792V6.5a.5.5 0 0 0 .5.5h3.292zM4.502 9.996a.5.5 0 0 0-.5.5v4.003a.5.5 0 0 0 .5.5h10.997a.5.5 0 0 0 .5-.5v-4.003a.5.5 0 0 0-.5-.5z'/%3E%3C/svg%3E",
-      "type": "command"
-    },
-    "SEND_AS": {
-      "title": {
-        "default": "Send PDF as Email",
-        "en-US": "Send PDF as Email",
-        "fr-FR": "Envoyer le PDF par e-mail",
-        "es-ES": "Enviar PDF por correo electrónico",
-        "de-DE": "PDF als E-Mail senden",
-        "sv-SE": "Skicka PDF som e-post",
-        "nb-NO": "Send PDF som e-post",
-        "da-DK": "Send PDF som e-mail"
-      },
-      "iconImageUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cpath fill='currentColor' d='M6.5 11a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-.166h.334a1.167 1.167 0 0 0 0-2.334zm.834 1.334H7V12h.333a.167.167 0 0 1 0 .334M12 11.499a.5.5 0 0 1 .5-.499h.999a.5.5 0 0 1 0 1H13v.335h.5a.5.5 0 1 1 0 1H13l.001.164a.5.5 0 0 1-1 .002L12 12.834zM9.5 11a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h.502a1.5 1.5 0 0 0 0-3zm.5 2v-1h.002a.5.5 0 0 1 0 1zM4.001 4a2 2 0 0 1 2-2h4.585a1.5 1.5 0 0 1 1.061.44l3.914 3.914a1.5 1.5 0 0 1 .44 1.06v1.668a1.5 1.5 0 0 1 .998 1.414v4.003a1.5 1.5 0 0 1-.998 1.414V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-.087A1.5 1.5 0 0 1 3 14.5v-4.003a1.5 1.5 0 0 1 1-1.414zm11 4h-3.5A1.5 1.5 0 0 1 10 6.5V3H6a1 1 0 0 0-1 1v4.996h10zM5 15.999A1 1 0 0 0 6 17h8a1 1 0 0 0 1-1.001zm6-12.792V6.5a.5.5 0 0 0 .5.5h3.292zM4.502 9.996a.5.5 0 0 0-.5.5v4.003a.5.5 0 0 0 .5.5h10.997a.5.5 0 0 0 .5-.5v-4.003a.5.5 0 0 0-.5-.5z'/%3E%3C/svg%3E",
-      "type": "command"
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+    "id": "ea401ac9-3abc-4e27-b93b-09c9a0587ee9",
+    "alias": "PdfExportCommandSet",
+    "componentType": "Extension",
+    "extensionType": "ListViewCommandSet",
+    "version": "*",
+    "manifestVersion": 2,
+    "requiresCustomScript": false,
+    "items": {
+        "EXPORT": {
+            "title": {
+                "default": "Download as PDF",
+                "fr-fr": "Télécharger au format PDF",
+                "es-es": "Descargar como PDF",
+                "de-de": "Als PDF herunterladen"
+            },
+            "iconName": "Download",
+            "type": "command"
+        },
+        "SAVE_AS": {
+            "title": {
+                "default": "Convert to PDF",
+                "fr-fr": "Convertir en PDF",
+                "es-es": "Convertir a PDF",
+                "de-de": "In PDF konvertieren"
+            },
+            "iconName": "SaveAs",
+            "type": "command"
+        }
     }
-  }
 }
