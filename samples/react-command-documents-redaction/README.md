@@ -4,7 +4,7 @@
 
 This SharePoint Framework (SPFx) extension provides document redaction capabilities using Azure AI Language services. Users can select documents from SharePoint document libraries and automatically redact sensitive information such as PII (Personally Identifiable Information), PHI (Protected Health Information), and custom entity types. The solution includes both a SharePoint Framework list view command set extension and a complete Azure Functions backend for processing.
 
-![Document Redaction Extension in action](./assets/demo.gif)
+![Document Redaction Extension in action](./Assets/demo.gif)
 
 ## Features
 
