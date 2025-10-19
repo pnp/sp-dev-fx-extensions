@@ -3,8 +3,8 @@
     "sdkVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2"
     },
-     "version": "1.20.0",
-     "nodeVersion": "18.18.2",
+    "version": "1.21.1",
+    "nodeVersion": "22.18.0",
     "libraryName": "sample-extension",
     "libraryId": "e0723b90-604f-4109-bf8a-20a2cf09f08f",
     "environment": "spo",
