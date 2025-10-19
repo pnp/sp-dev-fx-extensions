@@ -19,6 +19,7 @@
   "dependencies": {
     "@fluentui/react": "8.106.4",
     "@fluentui/react-components": "^9.72.2",
+    "@fluentui/react-icons": "^2.0.312",
     "@microsoft/decorators": "1.21.1",
     "@microsoft/sp-adaptive-card-extension-base": "1.21.1",
     "@microsoft/sp-application-base": "1.21.1",
