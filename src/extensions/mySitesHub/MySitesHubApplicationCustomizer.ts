@@ -63,12 +63,9 @@ export default class MySitesHubApplicationCustomizer extends BaseApplicationCust
     )
     if (!this.HeaderPlaceholder) {
       this.HeaderPlaceholder =
-        this.context.placeholderProvider.tryCreateContent(
-          PlaceholderName.Bottom,
-          {
-            onDispose: this._onDispose,
-          }
-        )
+        this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top, {
+          onDispose: this._onDispose,
+        })
       if (!this.HeaderPlaceholder) {
         console.error("The expected placeholder (Top) was not found.")
         return
