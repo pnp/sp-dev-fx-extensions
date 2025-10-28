@@ -15,8 +15,8 @@ import {
   PersonStarFilled,
   PersonStarRegular,
 } from "@fluentui/react-icons"
-import { getFollowedSites } from "../services/SiteService"
 import { MySitesDrawer } from "./MySitesDrawer"
+import { BaseComponentContext } from "@microsoft/sp-component-base"
 
 const PersonStar = bundleIcon(PersonStarFilled, PersonStarRegular)
 
@@ -30,6 +30,10 @@ const useStyles = makeStyles({
   },
 })
 
+export const AppContext = React.createContext<BaseComponentContext | undefined>(
+  undefined
+)
+
 export const MySitesRoot = (props: IMySitesRoot) => {
   const [isOpenDialog, setIsOpenDialog] = useState<boolean>(false)
 
@@ -40,14 +44,6 @@ export const MySitesRoot = (props: IMySitesRoot) => {
   }, [theme])
 
   const fluentStyles = useStyles()
-
-  React.useEffect(() => {
-    followedSitesFetch()
-  }, [context])
-
-  const followedSitesFetch = async () => {
-    await getFollowedSites(context)
-  }
 
   return (
     <IdPrefixProvider value='my-sites-hub-provider-'>
@@ -63,10 +59,12 @@ export const MySitesRoot = (props: IMySitesRoot) => {
             onClick={() => setIsOpenDialog(!isOpenDialog)}
           />
         </Tooltip>
-        <MySitesDrawer
-          openDrawer={isOpenDialog}
-          setDrawerVisiblity={setIsOpenDialog}
-        />
+        <AppContext.Provider value={context}>
+          <MySitesDrawer
+            openDrawer={isOpenDialog}
+            setDrawerVisiblity={setIsOpenDialog}
+          />
+        </AppContext.Provider>
       </FluentProvider>
     </IdPrefixProvider>
   )

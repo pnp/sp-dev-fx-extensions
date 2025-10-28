@@ -14,23 +14,21 @@ const TAB_COMPONENTS: Record<string, React.ReactNode> = {
 export const MySitesTabs = () => {
   const [selectedTab, setSelectedTab] = React.useState<string>("followed")
 
-  console.log("Selected Tab:", selectedTab)
   return (
     <>
       <TabList
         appearance='filled-circular'
         aria-label='My Sites Tabs'
-        size='small'
         selectedValue={selectedTab}
         onTabSelect={(_, data) => setSelectedTab(data.value as string)}
       >
         {Tabs.map((tab) => (
-          <Tab key={tab.key} value={tab.key}>
+          <Tab key={tab.key} value={tab.key} icon={<tab.icon />}>
             {tab.label}
           </Tab>
         ))}
       </TabList>
-      {TAB_COMPONENTS[selectedTab]}
+      <div style={{ marginTop: "1rem" }}>{TAB_COMPONENTS[selectedTab]}</div>
     </>
   )
 }

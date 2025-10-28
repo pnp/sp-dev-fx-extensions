@@ -1,4 +1,9 @@
 // Constants.ts
+import {
+  GlobeStarRegular,
+  ClockRegular,
+  DocumentOnePageSparkleRegular,
+} from "@fluentui/react-icons"
 
 export const DrawerTitles = {
   mySitesPanel: "My Sites",
@@ -16,7 +21,7 @@ export const Tooltips = {
 }
 
 export const Tabs = [
-  { key: "followed", label: "Followed" },
-  { key: "frequent", label: "Frequent" },
-  { key: "custom", label: "Custom" },
+  { key: "followed", label: "Followed", icon: GlobeStarRegular },
+  { key: "frequent", label: "Frequent", icon: ClockRegular },
+  { key: "custom", label: "Custom", icon: DocumentOnePageSparkleRegular },
 ]
