@@ -12,13 +12,13 @@ import {
 import { useMemo, useState } from "react"
 import {
   bundleIcon,
-  PersonStarFilled,
-  PersonStarRegular,
+  GlobeStarFilled,
+  GlobeStarRegular,
 } from "@fluentui/react-icons"
 import { MySitesDrawer } from "./MySitesDrawer"
 import { BaseComponentContext } from "@microsoft/sp-component-base"
 
-const PersonStar = bundleIcon(PersonStarFilled, PersonStarRegular)
+const PersonStar = bundleIcon(GlobeStarFilled, GlobeStarRegular)
 
 const useStyles = makeStyles({
   root: {
