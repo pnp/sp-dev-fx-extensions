@@ -28,7 +28,15 @@ export const MySitesTabs = () => {
           </Tab>
         ))}
       </TabList>
-      <div style={{ marginTop: "1rem" }}>{TAB_COMPONENTS[selectedTab]}</div>
+      <div
+        style={{
+          marginTop: "1rem",
+          overflowY: "scroll",
+          height: "calc(100vh - 150px)",
+        }}
+      >
+        {TAB_COMPONENTS[selectedTab]}
+      </div>
     </>
   )
 }
