@@ -4,6 +4,13 @@ export interface IResourceVisualization {
   previewImageUrl: string
 }
 
+export interface ISharePointIds {
+  listItemId: string
+  siteId: string
+  siteUrl: string
+  webId: string
+}
+
 export interface IFollowedSites {
   id: string
   name?: string
@@ -12,6 +19,7 @@ export interface IFollowedSites {
   webUrl: string
   isFollowed?: boolean
   resourceVisualization?: IResourceVisualization
+  sharepointIds?: ISharePointIds
 }
 
 export interface IFollowedSitesResponse {
