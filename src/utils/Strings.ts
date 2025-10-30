@@ -2,11 +2,11 @@
 import {
   GlobeStarRegular,
   ClockRegular,
-  DocumentOnePageSparkleRegular,
+  // DocumentOnePageSparkleRegular,
 } from "@fluentui/react-icons"
 
 export const DrawerTitles = {
-  mySitesPanel: "My Sites",
+  mySitesPanel: "My Sites Hub",
   aiInsightsPanel: "AI Insights",
 }
 
@@ -23,5 +23,5 @@ export const Tooltips = {
 export const Tabs = [
   { key: "followed", label: "Followed", icon: GlobeStarRegular },
   { key: "frequent", label: "Frequent", icon: ClockRegular },
-  { key: "custom", label: "Custom", icon: DocumentOnePageSparkleRegular },
+  // { key: "custom", label: "Custom", icon: DocumentOnePageSparkleRegular },
 ]

@@ -3,12 +3,12 @@ import * as React from "react"
 import { Tabs } from "../utils/Strings"
 import { FrequentSites } from "./FrequentSites"
 import { FollowedSites } from "./FollowedSites"
-import { CustomSites } from "./CustomSites"
+// import { CustomSites } from "./CustomSites"
 
 const TAB_COMPONENTS: Record<string, React.ReactNode> = {
   followed: <FollowedSites />,
   frequent: <FrequentSites />,
-  custom: <CustomSites />,
+  // custom: <CustomSites />,
 }
 
 export const MySitesTabs = () => {
