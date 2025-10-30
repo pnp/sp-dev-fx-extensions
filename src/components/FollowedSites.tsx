@@ -10,7 +10,11 @@ import {
   Tooltip,
 } from "@fluentui/react-components"
 import * as React from "react"
-import { getFollowedSites, getGroupImageUrl } from "../services/SiteService"
+import {
+  getFollowedSites,
+  getGroupImageUrl,
+  removeFollowedSite,
+} from "../services/SiteService"
 import { AppContext } from "./MySitesRoot"
 import { BaseComponentContext } from "@microsoft/sp-component-base"
 import { IFollowedSites } from "../models/IFollowedSites"
@@ -109,6 +113,19 @@ export const FollowedSites = () => {
     return <SiteListShimmer count={5} />
   }
 
+  const handleUnfollow = async (site: IFollowedSites) => {
+    try {
+      setLoading(true)
+      await removeFollowedSite(context, site.webUrl, site.id)
+      // Refetch the data
+      await followedSitesFetch()
+    } catch (error) {
+      console.error("Failed to unfollow site", error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <List navigationMode='items'>
       {followedSites.map((site: IFollowedSites, index) => (
@@ -139,6 +156,7 @@ export const FollowedSites = () => {
                   appearance='transparent'
                   icon={<StarFilled />}
                   size='large'
+                  onClick={() => handleUnfollow(site)}
                 />
               </Tooltip>
             </div>

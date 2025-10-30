@@ -91,16 +91,21 @@ export const addFollowedSite = async (
 ): Promise<void> => {
   try {
     const endpoint = `${context.pageContext.web.absoluteUrl}/_api/v2.1/favorites/followedSites/oneDrive.add`
-    const body = {
-      id:siteId,
-      siteUrl: siteUrl,
+
+     const requestBody = {
+      value: [
+        {
+          webUrl: siteUrl,
+          id: siteId,
+        },
+      ],
     }
 
     const response: SPHttpClientResponse = await context.spHttpClient.post(
       endpoint,
       SPHttpClient.configurations.v1,
       {
-        body: JSON.stringify(body),
+        body: JSON.stringify(requestBody),
         headers: {
           "Content-Type": "application/json",
         },
@@ -119,19 +124,26 @@ export const addFollowedSite = async (
 // remove followed site _api/v2.1/favorites/followedSites/oneDrive.remove
 export const removeFollowedSite = async (
   context: BaseComponentContext,
+  webUrl: string,
   siteId: string
 ): Promise<void> => {
   try {
     const endpoint = `${context.pageContext.web.absoluteUrl}/_api/v2.1/favorites/followedSites/oneDrive.remove`
-    const body = {
-      id: siteId,
+
+    const requestBody = {
+      value: [
+        {
+          webUrl: webUrl,
+          id: siteId,
+        },
+      ],
     }
 
     const response: SPHttpClientResponse = await context.spHttpClient.post(
       endpoint,
       SPHttpClient.configurations.v1,
       {
-        body: JSON.stringify(body),
+        body: JSON.stringify(requestBody),
         headers: {
           "Content-Type": "application/json",
         },
