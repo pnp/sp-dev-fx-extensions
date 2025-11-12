@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentTranslationApp", "DocumentTranslationApp.csproj", "{30B344B5-EB42-B184-1746-0AC0D4B9EB7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30B344B5-EB42-B184-1746-0AC0D4B9EB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B344B5-EB42-B184-1746-0AC0D4B9EB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B344B5-EB42-B184-1746-0AC0D4B9EB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B344B5-EB42-B184-1746-0AC0D4B9EB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5EAEA8B-E51D-4ADD-B867-EB32C21D5380}
+	EndGlobalSection
+EndGlobal
