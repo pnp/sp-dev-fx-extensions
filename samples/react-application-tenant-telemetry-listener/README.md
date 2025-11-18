@@ -166,6 +166,9 @@ window.dispatchEvent(
 );
 ```
 
+Example webpart can be found in samples:
+[https://github.com/pnp/sp-dev-fx-webparts/tree/main/samples/react-telemetry-event-sender-sample](https://github.com/pnp/sp-dev-fx-webparts/tree/main/samples/react-telemetry-event-sender-sample)
+
 That’s all.
 No dependency imports. No service initialization.
 The Application Customizer handles all communication.
