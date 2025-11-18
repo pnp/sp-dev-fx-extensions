@@ -141,6 +141,8 @@ Create a **new item** with:
 
 Save → telemetry starts flowing across the entire tenant.
 
+![Telemetry AppCatalog](assets/previewAppCatalog.png)
+
 ---
 
 # How to Use in Your Web Parts
