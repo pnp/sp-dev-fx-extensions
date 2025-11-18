@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="TenantTelemetry"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="11352c34-6ebe-4679-82bb-734061f2cae0"
+        ClientSideComponentProperties="{
+            &quot;mode&quot;: &quot;appinsights&quot;,
+            &quot;endpoint&quot;: &quot;InstrumentationKey=YOURKEY;IngestionEndpoint=https://...;LiveEndpoint=https://...&quot;
+        }">
+    </CustomAction>
+</Elements>

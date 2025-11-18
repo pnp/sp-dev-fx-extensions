@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "react-application-tenant-telemetry-listener",
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer",
+    "template": "none",
+    "componentName": "TenantTelemetry",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.21.1",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "react-application-tenant-telemetry-listener",
+    "libraryId": "136ab316-3f7a-47f0-83c9-b30253706f3f",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "react-application-tenant-telemetry-listener description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}
