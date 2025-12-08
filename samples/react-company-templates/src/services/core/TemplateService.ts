@@ -111,7 +111,8 @@ export class TemplateService implements ITemplateService {
   public async copyTemplates(targetFolderRelativeUrl: string, selectedFiles: any[]): Promise<IFile[]> {
     try {
       const files = await Promise.all(selectedFiles.map(async (file) => {
-        const sourceWeb = await this.getWeb(file.data.webUrl);
+        const data = file.data ? file.data : file;
+        const sourceWeb = await this.getWeb(data.webUrl);
         return await sourceWeb.getFileById(file.data.id)
           .copyByPath(`${targetFolderRelativeUrl}/${file.data.fileLeafRef}`, false, {
             KeepBoth: false,
