@@ -3,7 +3,7 @@
   "solution": {
     "name": "feedback-customizer-client-side-solution",
     "id": "c66c6f38-3920-41b8-849d-3383aa467780",
-    "version": "1.2.0.0",
+    "version": "1.2.0.1",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "Application Extension - Deployment of custom action",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "062f8d82-ce8f-4035-b0ce-6cba7de74232",
-        "version": "1.2.0.0",
+        "version": "1.2.0.1",
         "assets": {
           "elementManifests": ["elements.xml", "ClientSideInstance.xml"]
         }

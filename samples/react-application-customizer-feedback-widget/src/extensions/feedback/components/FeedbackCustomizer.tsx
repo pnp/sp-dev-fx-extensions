@@ -10,10 +10,12 @@ import {
   FluentProvider,
   IdPrefixProvider,
   Textarea,
-  webLightTheme,
   Text,
   Rating,
+  Theme,
 } from "@fluentui/react-components"
+import { IReadonlyTheme } from "@microsoft/sp-component-base"
+import { createV9Theme } from "@fluentui/react-migration-v8-v9"
 
 type CurrentUser = {
   name: string
@@ -25,13 +27,15 @@ interface IFeedbackCustomizerProps {
   context: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   properties: any
+  theme?: IReadonlyTheme
 }
 
 export default function FeedbackCustomizer({
   context,
   properties,
-// eslint-disable-next-line @rushstack/no-new-null
-}: IFeedbackCustomizerProps): React.ReactElement | null {
+  theme,
+}: // eslint-disable-next-line @rushstack/no-new-null
+IFeedbackCustomizerProps): React.ReactElement | null {
   const [open, setOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState<CurrentUser>({
     name: "",
@@ -77,7 +81,9 @@ export default function FeedbackCustomizer({
     setSiteUrl(getpageUrl)
   }, [])
 
-  const handleTextArea = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
+  const handleTextArea = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ): void => {
     setfeedbackComment(event.target.value)
   }
 
@@ -109,9 +115,13 @@ export default function FeedbackCustomizer({
     }
   }
 
+  const computedTheme = React.useMemo<Partial<Theme>>(() => {
+    return createV9Theme(theme as never)
+  }, [theme])
+
   return (
     <IdPrefixProvider value='feedback-customizer-'>
-      <FluentProvider theme={webLightTheme}>
+      <FluentProvider theme={computedTheme}>
         {currentsiteUrl.includes("viewlsts") ? (
           <div></div>
         ) : currentsiteUrl.includes("AllItems") ? (
@@ -120,6 +130,10 @@ export default function FeedbackCustomizer({
           <div></div>
         ) : (
           <div
+            style={{
+              backgroundColor: theme?.palette?.themePrimary,
+              color: theme?.palette?.themeLight,
+            }}
             className={`${styles["feedback-widget-container"]} ${
               properties.position === "leftBottom"
                 ? styles["widget-left"]
@@ -133,7 +147,12 @@ export default function FeedbackCustomizer({
               <BiMessageSquareDetail
                 style={{ width: "23px", height: "23px", paddingBottom: "4px" }}
               />
-              <Text className={styles["text-style"]}>Feedback</Text>
+              <Text
+                className={styles["text-style"]}
+                style={{ color: theme?.palette?.themeLight }}
+              >
+                Feedback
+              </Text>
             </div>
             {open && (
               <div
@@ -145,10 +164,16 @@ export default function FeedbackCustomizer({
                     : ""
                 }`}
               >
-                <div className={styles["header-container"]}>
+                <div
+                  className={styles["header-container"]}
+                  style={{
+                    backgroundColor: theme?.palette?.themePrimary,
+                    color: theme?.palette?.themeLight,
+                  }}
+                >
                   <Text
                     style={{
-                      color: "#fff",
+                      color: theme?.semanticColors.accentButtonText,
                       fontSize: "16px",
                       fontWeight: "600",
                     }}
@@ -184,6 +209,7 @@ export default function FeedbackCustomizer({
                       onChange={(_, data) => setCurrentRating(data.value)}
                     />
                     <button
+                      style={{ backgroundColor: theme?.palette?.themeDark }}
                       className={styles.submitbtn}
                       onClick={handleFeedbackSubmit}
                     >
