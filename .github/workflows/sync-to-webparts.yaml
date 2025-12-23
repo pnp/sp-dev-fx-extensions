@@ -39,6 +39,6 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ -f .metadata/samples.json ]; then
-            SAMPLE_COUNT=$(jq '.  | length' .metadata/samples. json)
+            SAMPLE_COUNT=$(jq '.  | length' .metadata/samples.json)
             echo "📊 **Extensions Samples to Sync:** $SAMPLE_COUNT" >> $GITHUB_STEP_SUMMARY
           fi
