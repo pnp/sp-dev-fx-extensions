@@ -1,0 +1,60 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-application-tenant-telemetry-listener",
+    "source": "pnp",
+    "title": "Tenant Telemetry Application Customizer",
+    "shortDescription": "A tenant-wide SPFx Application Customizer that collects telemetry from all SPFx web parts and extensions using Application Insights or Azure Functions.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-tenant-telemetry-listener",
+    "longDescription": [
+      "This SPFx Application Customizer enables tenant-wide telemetry collection for all custom SPFx solutions. ",
+      "Web parts dispatch lightweight telemetry events using the browser CustomEvent API, and the Application Customizer enriches and forwards them to either Azure Application Insights or an Azure Function endpoint.",
+      "This helps organizations understand usage patterns, adoption, component versions, page views, and custom events across thousands of SharePoint Online sites."
+    ],
+    "creationDateTime": "2025-11-18",
+    "updateDateTime": "2025-11-18",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "JavaScript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.20.0"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-tenant-telemetry-listener/assets/preview.png",
+        "alt": "Tenant Telemetry Application Customizer preview screenshot"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "ValerasNarbutas",
+        "pictureUrl": "https://github.com/ValerasNarbutas.png",
+        "name": "Valeras Narbutas"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "SPFx Extensions allow developers to extend the SharePoint user experience. Application Customizers are ideal for tenant-wide logic such as telemetry or analytics.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions"
+      },
+      {
+        "name": "Use page placeholders from Application Customizer",
+        "description": "Application Customizers provide access to well-known locations on SharePoint pages and enable tenant-wide customization scenarios.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions"
+      }
+    ]
+  }
+]
