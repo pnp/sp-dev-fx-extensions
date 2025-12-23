@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.18.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "react-command-document-translation",
+    "libraryId": "dfac6b85-57f6-4d1f-b0a9-3ae51ed41ee0",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "react-command-document-translation",
+    "solutionShortDescription": "react-command-document-translation description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}
