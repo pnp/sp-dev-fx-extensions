@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://devskynet0.sharepoint.com",
+      "customActions": {
+        "f9fdc242-8072-4e2c-ab79-3159265522c9": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {            
+          }
+        }
+      }
+    },
+    "quickAppointmentRegister": {
+      "pageUrl": "https://devskynet0.sharepoint.com",
+      "customActions": {
+        "f9fdc242-8072-4e2c-ab79-3159265522c9": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {            
+          }
+        }
+      }
+    }
+  }
+}

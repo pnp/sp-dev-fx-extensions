@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Fast Register to Appointment",
+    "id": "8840a13c-f490-41e6-9c2a-e5cba8dfba1f",
+    "version": "1.2.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "iconPath": "assets/96x96.png",
+    "metadata": {
+      "shortDescription": {
+        "default": "Fast Register to Appointment"
+      },
+      "longDescription": {
+        "default": "Add a function to register directly to an event/appointment. User will be added to the attendees list."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Fast Register to Appointment",
+        "description": "Add a function to register directly to an event/appointment. User will be added to the attendees list.",
+        "id": "53fd8073-f835-491f-866a-1532cead2475",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/dev-sky-ac-quick-appointment-register.sppkg"
+  }
+}
