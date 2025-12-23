@@ -1,9 +1,22 @@
 import * as React from "react";
 import { ISPFXContext, SPFx, Web } from "@pnp/sp/presets/all";
 import { useEffect, useState } from "react";
-import * as strings from "announcementsStrings";
 import { QUALIFIED_NAME } from "../AnnouncementsApplicationCustomizer";
-import { Link, MessageBar, MessageBarType } from "@fluentui/react";
+import {
+  FluentProvider,
+  IdPrefixProvider,
+  MessageBarGroup,
+  webLightTheme,
+} from "@fluentui/react-components";
+import {
+  MessageBar,
+  MessageBarActions,
+  MessageBarTitle,
+  MessageBarBody,
+  Button,
+  Link,
+} from "@fluentui/react-components";
+import { DismissRegular } from "@fluentui/react-icons";
 
 interface IAnnouncementItem {
   ID: number;
@@ -77,43 +90,55 @@ export default function RenderAnnouncements(props: IAnnouncementsProps) {
     )
     .map((announcement) => (
       <MessageBar
-        messageBarType={
-          announcement.Urgent ? MessageBarType.error : MessageBarType.warning
-        }
-        isMultiline={false}
-        onDismiss={
-          !announcement.IsHideClose
-            ? () => {
-                // On dismiss, add the current announcement id to the array
-                // STORAGE_KEY item in localStorage so it is remembered locally
-                let items: number[] =
-                  JSON.parse(
-                    window.localStorage.getItem(QUALIFIED_NAME) || "[]"
-                  ) || [];
-                items.push(announcement.ID);
-                window.localStorage.setItem(
-                  QUALIFIED_NAME,
-                  JSON.stringify(items)
-                );
-                setAcknowledgedAnnouncements(items);
-              }
-            : undefined // No onDismiss handler if IsHideClose is true
-        }
-        dismissButtonAriaLabel={strings.Close}
+        key={announcement.ID}
+        intent={announcement.Urgent ? "warning" : "info"}
+        shape="square"
+        style={{ marginBottom: "2px" }}
       >
-        <strong>{announcement.Title}</strong>&nbsp;
-        {/*
-            Unsafe set of HTML, this could cause XSS, use with care.
-            Since the source list is under administrative control, this should be safe.
-            */}
-        <span dangerouslySetInnerHTML={{ __html: announcement.Announcement }} />
-        {announcement.Link && (
-          <Link href={announcement.Link.Url} target="_blank">
-            {announcement.Link.Description}
-          </Link>
-        )}
+        <MessageBarBody>
+          <MessageBarTitle>{announcement.Title}</MessageBarTitle>
+          <span
+            dangerouslySetInnerHTML={{ __html: announcement.Announcement }}
+          />{" "}
+          {announcement.Link && (
+            <Link href={announcement.Link.Url} target="_blank">
+              {announcement.Link.Description}
+            </Link>
+          )}
+        </MessageBarBody>
+        <MessageBarActions
+          containerAction={
+            !announcement.IsHideClose ? (
+              <Button
+                onClick={() => {
+                  // On dismiss, add the current announcement id to the array
+                  // STORAGE_KEY item in localStorage so it is remembered locally
+                  let items: number[] =
+                    JSON.parse(
+                      window.localStorage.getItem(QUALIFIED_NAME) || "[]"
+                    ) || [];
+                  items.push(announcement.ID);
+                  window.localStorage.setItem(
+                    QUALIFIED_NAME,
+                    JSON.stringify(items)
+                  );
+                  setAcknowledgedAnnouncements(items);
+                }}
+                aria-label="dismiss"
+                appearance="subtle"
+                icon={<DismissRegular />}
+              />
+            ) : undefined // No onDismiss handler if IsHideClose is true
+          }
+        />
       </MessageBar>
     ));
 
-  return <div>{announcementElements}</div>;
+  return (
+    <IdPrefixProvider value="react-announcements-">
+      <FluentProvider theme={webLightTheme}>
+        <MessageBarGroup>{announcementElements}</MessageBarGroup>
+      </FluentProvider>
+    </IdPrefixProvider>
+  );
 }

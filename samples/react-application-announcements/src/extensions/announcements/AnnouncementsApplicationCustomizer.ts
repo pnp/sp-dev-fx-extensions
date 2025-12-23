@@ -42,12 +42,13 @@ export default class AnnouncementsApplicationCustomizer
         if (site.serverRelativeUrl != '/')
             tenantUrl = tenantUrl.replace(site.serverRelativeUrl, "");
 
-        const elem: React.ReactElement<IAnnouncementsProps> = React.createElement(Announcements, { 
+        const elem: React.ReactElement<IAnnouncementsProps> =
+          React.createElement(Announcements, {
             context: this.context,
-            siteUrl: `${tenantUrl}${this.properties.siteUrl}`, 
+            siteUrl: `${tenantUrl}${this.properties.siteUrl}`,
             listName: this.properties.listName,
-            culture: this.context.pageContext.cultureInfo.currentUICultureName
-         });
+            culture: this.context.pageContext.cultureInfo.currentUICultureName,
+          });
 
         ReactDOM.render(elem, header.domElement);
 

@@ -24,6 +24,7 @@ the sp-starter-kit alertNotification component.
 | 2.2     | March 12th, 2024    | Update SPFx to 1.18 and pnpjs to 3.23              |
 | 2.3     | October 6th, 2024   | Update SPFx to 1.20.0                              |
 | 2.4     | December 10th, 2024 | Allow ability to hide dismiss button               |
+| 2.5     | October 20th, 2025 | Update SPFx to 1.21.1               |
 
 ## Contributors
 
