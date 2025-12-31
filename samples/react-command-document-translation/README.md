@@ -4,11 +4,26 @@
 
 A SharePoint Framework (SPFx) List View Command Set extension that enables users to translate documents from one language to another using Azure Document Translation Service. Users can select one or more documents from a SharePoint document library and translate them into multiple target languages simultaneously.
 
-![Document Translation](./Assets/demo.gif)
+![Document Translation](./assets/demo.gif)
 
-## Used SharePoint Framework Version
+## Compatibility
 
-![version](https://img.shields.io/badge/version-1.21.1-green.svg)
+| :warning: Important          |
+|:---------------------------|
+| Every SPFx version is optimally compatible with specific versions of Node.js. In order to be able to Toolchain this sample, you need to ensure that the version of Node on your workstation matches one of the versions listed in this section. This sample will not work on a different version of Node.|
+|Refer to <https://aka.ms/spfx-matrix> for more information on SPFx compatibility.   |
+
+This sample is optimally compatible with the following environment configuration:
+
+![SPFx 1.21.1](https://img.shields.io/badge/SPFx-1.21.1-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
+![Toolchain: Heft](https://img.shields.io/badge/Toolchain-Heft-green.svg)
+![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
+![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
+![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
+![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
+![Compatible with Remote Containers](https://img.shields.io/badge/Remote%20Containers-Compatible-green.svg)
 
 ## Applies to
 
@@ -74,11 +89,13 @@ A SharePoint Framework (SPFx) List View Command Set extension that enables users
 ### Part 1: SPFx Extension Setup
 
 1. **Clone or Download the Repository**
+
    ```bash
    cd react-command-document-translation/SPFx
    ```
 
 2. **Install Dependencies**
+
    ```bash
    npm install
    ```
@@ -86,6 +103,7 @@ A SharePoint Framework (SPFx) List View Command Set extension that enables users
 3. **Update Configuration**
 
    Edit `config/serve.json` for local testing:
+
    ```json
    {
      "customActions": {
@@ -104,6 +122,7 @@ A SharePoint Framework (SPFx) List View Command Set extension that enables users
    ```
 
 4. **Build the Extension**
+
    ```bash
    gulp bundle --ship
    gulp package-solution --ship
@@ -118,6 +137,7 @@ A SharePoint Framework (SPFx) List View Command Set extension that enables users
 ### Part 2: Azure Function Backend Setup
 
 1. **Navigate to Azure Function Directory**
+
    ```bash
    cd ../AzureFunction/DocumentTranslationApp
    ```
@@ -127,11 +147,13 @@ A SharePoint Framework (SPFx) List View Command Set extension that enables users
    - Copy and adapt C# files from `react-command-documents-redaction/AzureFunction`
 
 3. **Install NuGet Packages**
+
    ```bash
    dotnet restore
    ```
 
 4. **Configure local.settings.json**
+
    ```json
    {
      "IsEncrypted": false,
@@ -177,6 +199,7 @@ A SharePoint Framework (SPFx) List View Command Set extension that enables users
    - **Host.CORS**: Set to SharePoint domain in production (e.g., `"https://yourtenant.sharepoint.com"`)
 
 5. **Test Locally**
+
    ```bash
    dotnet run
    # Or use Azure Functions Core Tools
@@ -184,6 +207,7 @@ A SharePoint Framework (SPFx) List View Command Set extension that enables users
    ```
 
 6. **Deploy to Azure**
+
    ```bash
    func azure functionapp publish <your-function-app-name>
    ```
@@ -207,6 +231,7 @@ A SharePoint Framework (SPFx) List View Command Set extension that enables users
 ### Azure Document Translation API
 
 **Start Translation Job**
+
 ```http
 POST https://{endpoint}/translator/document/batches?api-version=2024-05-01
 Headers:
@@ -232,6 +257,7 @@ Body:
 ```
 
 **Get Translation Status**
+
 ```http
 GET https://{endpoint}/translator/document/batches/{id}?api-version=2024-05-01
 Headers:
