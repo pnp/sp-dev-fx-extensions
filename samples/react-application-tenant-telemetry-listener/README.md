@@ -14,8 +14,6 @@ The telemetry is sent either directly to **Azure Application Insights** or to a 
 
 ![Telemetry Overview](assets/preview.png)
 
----
-
 ## Summary
 
 This SPFx Application Customizer listens for telemetry events via the browser’s `CustomEvent` API:
@@ -42,29 +40,33 @@ The extension enriches the payload with site and page context and then forwards 
 ✔ Deployment instructions (tenant-wide)
 ✔ App Insights Log queries
 
----
-
 ## Compatibility
 
-![SPFx 1.20](https://img.shields.io/badge/SPFx-1.20-green.svg)
-![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
-![SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
-![Workbench unsupported](https://img.shields.io/badge/Workbench-Unsupported-red.svg)
+| :warning: Important          |
+|:---------------------------|
+| Every SPFx version is optimally compatible with specific versions of Node.js. In order to be able to Toolchain this sample, you need to ensure that the version of Node on your workstation matches one of the versions listed in this section. This sample will not work on a different version of Node.|
+|Refer to <https://aka.ms/spfx-matrix> for more information on SPFx compatibility.   |
 
----
+This sample is optimally compatible with the following environment configuration:
+
+![SPFx 1.21.1](https://img.shields.io/badge/SPFx-1.21.1-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
+![Toolchain: Heft](https://img.shields.io/badge/Toolchain-Heft-green.svg)
+![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
+![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
+![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
+![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
+![Compatible with Remote Containers](https://img.shields.io/badge/Remote%20Containers-Compatible-green.svg)
 
 ## Applies to
 
 * [SharePoint Framework](https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
 * [Microsoft 365 tenant](https://learn.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
----
-
 ## Contributors
 
 * [Valeras Narbutas](https://github.com/ValerasNarbutas)
-
----
 
 ## Version history
 
@@ -72,17 +74,13 @@ The extension enriches the payload with site and page context and then forwards 
 | ------- | ---------- | --------------- |
 | 1.0     | November 18, 2025 | Initial release |
 
----
-
 ## Prerequisites
 
 * Azure Application Insights **or** Azure Function endpoint
 * Tenant App Catalog
 * Modern SharePoint pages
 
----
-
-# Minimal Path to Awesome
+## Minimal Path to Awesome
 
 ### 1. Clone the repo
 
@@ -143,9 +141,7 @@ Save → telemetry starts flowing across the entire tenant.
 
 ![Telemetry AppCatalog](assets/previewAppCatalog.png)
 
----
-
-# How to Use in Your Web Parts
+## How to Use in Your Web Parts
 
 Your web part (or another extension) simply dispatches an event:
 
@@ -173,9 +169,7 @@ That’s all.
 No dependency imports. No service initialization.
 The Application Customizer handles all communication.
 
----
-
-# How to Test Via Console
+## How to Test Via Console
 
 Open any modern SharePoint page, then run:
 
@@ -197,9 +191,7 @@ window.dispatchEvent(
 
 The Application Customizer logs the event and pushes telemetry.
 
----
-
-# How to Verify in Application Insights
+## How to Verify in Application Insights
 
 Go to **Logs** and run:
 
@@ -219,9 +211,7 @@ customEvents
 | top 50 by timestamp desc
 ```
 
----
-
-# How to Test Azure Function Mode
+## How to Test Azure Function Mode
 
 If using Azure Function mode, telemetry is sent via:
 
@@ -231,7 +221,7 @@ Content-Type: application/json
 Body: { ...payload }
 ```
 
-### Check your Function:
+### Check your Function
 
 #### 1. Azure Portal → Function App → Function → **Monitor**
 
@@ -254,7 +244,7 @@ You should see the JSON payload:
 }
 ```
 
-#### 3. Your function can forward to:
+#### 3. Your function can forward to
 
 * Event Grid
 * Log Analytics
@@ -263,7 +253,7 @@ You should see the JSON payload:
 
 ---
 
-# Debug URL
+## Debug URL
 
 To test the extension locally:
 
@@ -275,9 +265,7 @@ To test the extension locally:
 
 (Update `ComponentId` and endpoint as needed.)
 
----
-
-# Features
+## Features
 
 This sample demonstrates:
 
@@ -292,10 +280,6 @@ This sample demonstrates:
   ✔ Component identity and version
   ✔ Custom event data
 
----
+## Disclaimer
 
-# Disclaimer
-
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND.**
-
-
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
