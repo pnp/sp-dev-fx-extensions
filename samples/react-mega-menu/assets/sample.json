@@ -31,13 +31,13 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-mega-menu/assets/menu.gif",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-mega-menu/assets/mega.png",
         "alt": "Mega Menu Application Customizer Extension"
       },
       {
         "type": "image",
         "order": 101,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/blob/main/samples/react-mega-menu/assets/menu2.gif?raw=true",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-mega-menu/assets/mega2.png",
         "alt": "Mega Menu Application Customizer Extension"
       }
     ],
