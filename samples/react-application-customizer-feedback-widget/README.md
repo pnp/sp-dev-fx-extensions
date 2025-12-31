@@ -2,8 +2,9 @@
 
 ## Summary
 
-An SPFx Application Customizer Extension placed in the bottom placeholder which allows users to input their feedbacks without scrolling down to the end of the page.
+An SPFx Application Customizer Extension added to the bottom placeholder that lets users submit comments and ratings, which are then stored in a SharePoint list. Additionally, it gives admins the flexibility to position the widget on either the bottom-left or bottom-right corner of the screen.
 
+![Screenshot 1](assets/Feedback_WidgetMain.png)
 ![Screenshot 1](assets/Feedback_Widget1.png)
 ![Screenshot 2](assets/Feedback_Widget2.png)
 ![Screenshot 3](assets/Feedback_Widget3.png)
@@ -19,8 +20,8 @@ An SPFx Application Customizer Extension placed in the bottom placeholder which 
 
 This sample is optimally compatible with the following environment configuration:
 
-![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
-![Node.js v18 | v16](https://img.shields.io/badge/Node.js-v18%20%7C%20v16-green.svg)
+![SPFx 1.21.1](https://img.shields.io/badge/SPFx-1.21.1-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -28,7 +29,7 @@ This sample is optimally compatible with the following environment configuration
 ![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-red.svg)
 ![Compatible with Remote Containers](https://img.shields.io/badge/Remote%20Containers-Compatible-red.svg)
 
-Tested using Node.js v18.18.2
+Tested using Node.js v22.18.0
 
 ## Applies to
 
@@ -62,6 +63,7 @@ Create a SharePoint custom list Feedbacks in the SPO site where this application
 | 1.0     | July 02, 2023   | Initial release  |
 | 1.1     | April 10, 2025   | Version upgrade to SPFx 1.20.0 & other improvements  |
 | 1.2     | May 23, 2025   | Implement Ratings & change position of widget based on property configuration |
+| 1.3     | Oct 17, 2025   | Version upgrade to SPFx 1.21.1 & widget UI elements dynamically adapts to site theme colors |
 
 ## Minimal Path to Awesome⚡
 
@@ -77,7 +79,7 @@ Create a SharePoint custom list Feedbacks in the SPO site where this application
 ?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B"33ce42af-1748-4989-ab97-a8d9f782b886"%3A%7B"location"%3A"ClientSideExtension.ApplicationCustomizer"%2C"properties"%3A%7B"title"%3A"Submit+your+feedbacks+%26+ideas"%2C"position"%3A"rightBottom"%7D%7D%7D
 ```
 
-## Deploy Package Solution 
+## Deploy Package Solution
 - Ensure that you are at the solution folder
 - in the command-line run:
   - `gulp build --ship`
