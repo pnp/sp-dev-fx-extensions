@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
+
+  "id": "11352c34-6ebe-4679-82bb-734061f2cae0",
+  "alias": "TenantTelemetryApplicationCustomizer",
+  "componentType": "Extension",
+  "extensionType": "ApplicationCustomizer",
+
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false
+}
