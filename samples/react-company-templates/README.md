@@ -75,7 +75,6 @@ For more information about SPFx compatibility, please refer to <https://aka.ms/s
 - [Dan Toft](https://github.com/Tanddant) (👀 Code reviews)
 - [Nicolas Kheirlalah](https://github.com/nicolaskheirallah)
 
-
 ## Version history
 
 | Version | Date           | Comments                       |
@@ -104,27 +103,32 @@ If you prefer using `fast-serve`, you can run the following command:
 ## How to use the new features
 
 ### Advanced Filtering
+
 1. Click the filter icon in the command bar to open the advanced filters panel
 2. Set date ranges using the date pickers to filter by modification date
 3. Use the file size slider to limit results by file size
 4. Click "Apply Filters" to see filtered results or "Clear Filters" to reset
 
 ### Template Preview
+
 1. Click on any template filename to open a preview panel
 2. The preview shows file content for supported file types
 3. Preview panel displays additional metadata including file size, version, and creation/modification dates
 
 ### Version History
+
 1. Click the history icon next to any template
 2. SharePoint's built-in version history page opens in a new tab
 3. View all versions and their details
 
 ### Grid View
+
 1. Toggle between list and grid views using the toggle switch in the command bar
 2. Grid view displays templates in a column layout with more metadata visible
 3. Both views support selection, preview, and actions
 
 ### Bulk Operations
+
 1. Select multiple templates using the checkboxes
 2. The number of selected items appears above the list
 3. Click "Download selected" to download all selected templates
