@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="MySitesHub"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="01ec7cba-7bc2-4ae6-8f69-0a577999cad1"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
