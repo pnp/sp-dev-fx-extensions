@@ -3,6 +3,11 @@ import {
   PlaceholderContent,
   PlaceholderName,
 } from "@microsoft/sp-application-base"
+import {
+  ThemeProvider,
+  IReadonlyTheme,
+  ThemeChangedEventArgs,
+} from "@microsoft/sp-component-base"
 
 import * as React from "react"
 import * as ReactDOM from "react-dom"
@@ -17,8 +22,17 @@ export interface IFeedbackApplicationCustomizerProperties {
 export default class FeedbackApplicationCustomizer extends BaseApplicationCustomizer<IFeedbackApplicationCustomizerProperties> {
   private HeaderPlaceholder: PlaceholderContent | undefined
   private _rootElement: HTMLElement | null = null
+  private _themeProvider: ThemeProvider | undefined
+
+  private _themeVariant: IReadonlyTheme | undefined
 
   public onInit(): Promise<void> {
+    this._themeProvider = this.context.serviceScope.consume(
+      ThemeProvider.serviceKey
+    )
+    this._themeVariant = this._themeProvider.tryGetTheme()
+    this._themeProvider.themeChangedEvent.add(this, this._handleThemeChanged)
+
     this.context.placeholderProvider.changedEvent.add(
       this,
       this._renderPlaceHolders
@@ -28,6 +42,11 @@ export default class FeedbackApplicationCustomizer extends BaseApplicationCustom
     getSP(this.context)
 
     return Promise.resolve()
+  }
+
+  private _handleThemeChanged(args: ThemeChangedEventArgs): void {
+    this._themeVariant = args.theme
+    this._renderPlaceHolders()
   }
 
   private _renderPlaceHolders(): void {
@@ -52,17 +71,18 @@ export default class FeedbackApplicationCustomizer extends BaseApplicationCustom
       if (!this._rootElement) {
         this._rootElement = this.HeaderPlaceholder.domElement
       }
-
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const elem: React.ReactElement<any> = React.createElement(
-        FeedbackCustomizer,
-        {
-          context: this.context,
-          properties: this.properties,
-        }
-      )
-      ReactDOM.render(elem, this.HeaderPlaceholder.domElement)
     }
+
+    // Always re-render the React component with the latest theme
+    const elem: React.ReactElement<any> = React.createElement(
+      FeedbackCustomizer,
+      {
+        context: this.context,
+        properties: this.properties,
+        theme: this._themeVariant,
+      }
+    )
+    ReactDOM.render(elem, this.HeaderPlaceholder.domElement)
   }
 
   private _onDispose(): void {

@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "my-sites-hub",
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer",
+    "template": "none",
+    "componentName": "my-sites-hub",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.18.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "my-sites-hub",
+    "libraryId": "377c8a5e-4073-4a22-95d2-60b86078cc73",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "my-sites-hub description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}

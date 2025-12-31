@@ -7,7 +7,7 @@
 Redirect from URL based on mapping from a list on the site. Can be used to automatically redirect from pages to other locations.
 
 
-![Redirection Extension](https://github.com/pnp/sp-starter-kit/blob/master/assets/images/components/ext-redirects.gif?raw=true)
+![Redirection Extension](assets/ext-redirects.gif)
 
 ## Used SharePoint Framework Version
 
