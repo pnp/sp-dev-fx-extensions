@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="QuickAppointmentRegister"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="f9fdc242-8072-4e2c-ab79-3159265522c9"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

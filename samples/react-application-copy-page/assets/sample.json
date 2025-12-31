@@ -1,10 +1,10 @@
 [
   {
-    "name": "pnp-sp-dev-spfx-extensions-react-YOUR-SOLUTION-NAME-GOES-HERE",
+    "name": "pnp-sp-dev-spfx-extensions-react-application-copy-page",
     "source": "pnp",
     "title": "Copy Page SPFx Application Customizer",
     "shortDescription": "This SPFx Application Customizer empowers content authors to copy modern site pages across sites with full control over:",
-    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-copy-page",
     "longDescription": [
       "This SPFx Application Customizer empowers content authors to copy modern site pages across sites with full control over:"
     ],
