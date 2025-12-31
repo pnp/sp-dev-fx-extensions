@@ -30,6 +30,7 @@
     "@types/webpack-env": "~1.15.2",
     "@typescript-eslint/parser": "8.44.0",
     "ajv": "^6.12.6",
+    "baseline-browser-mapping": "^2.9.11",
     "eslint": "8.57.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "gulp": "4.0.2",

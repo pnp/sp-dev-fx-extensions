@@ -1,19 +1,38 @@
 # Quick Register to Appointment (SharePoint Event page)
+
 Add a function to register directly to an event/appointment. User will be added to the attendees list.
 
 ## Summary
+
 SharePoint Online provides a list of appointments (events) on a site. The "Events" web part can be used to display them on a page. Users can access the appointment details via the web part and view all the details. The detailed view provides a link that allows them to add the appointment to their personal calendar. An appointment entry also allows them to maintain an attendee list. The "Events" list provides the "Attendees" column, where multiple people can be added. However, there is no automatic function for this; the list must be edited manually.
 The special app extension adds a registration and deregistration function to the detailed view. Users can register for a specific appointment and later deregister with a simple click. Attendees are automatically managed in the attendee column of the list.
 
-![UI of the generated form](https://www.dev-sky.net/img/apps/fastregisterappointment.png)
+![UI of the generated form](./assets/fastregisterappointment.png)
 
 *Extended interface of an appointment*
 
-## Video
+### Video
+
 [![SharePoint Online: Fast & easy appointment booking](https://img.youtube.com/vi/_-aTpJPXRdA/hqdefault.jpg)](https://youtu.be/_-aTpJPXRdA)
 
-## Used SharePoint Framework Version
-![version](https://img.shields.io/badge/version-1.21.1-green.svg)
+## Compatibility
+
+| :warning: Important          |
+|:---------------------------|
+| Every SPFx version is optimally compatible with specific versions of Node.js. In order to be able to Toolchain this sample, you need to ensure that the version of Node on your workstation matches one of the versions listed in this section. This sample will not work on a different version of Node.|
+|Refer to <https://aka.ms/spfx-matrix> for more information on SPFx compatibility.   |
+
+This sample is optimally compatible with the following environment configuration:
+
+![SPFx 1.21.1](https://img.shields.io/badge/SPFx-1.21.1-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
+![Toolchain: Heft](https://img.shields.io/badge/Toolchain-Heft-green.svg)
+![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
+![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
+![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
+![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
+![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
+![Compatible with Remote Containers](https://img.shields.io/badge/Remote%20Containers-Compatible-green.svg)
 
 ## Applies to
 
@@ -22,15 +41,9 @@ The special app extension adds a registration and deregistration function to the
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
-## Prerequisites
+## Contributors
 
-> Nothing :-)
-
-## Solution
-
-| Solution    | Author(s)                                                   |
-| ----------- | ----------------------------------------------------------- |
-| Repository  | Marc André Schröder-Zhou (https://github.com/maschroeder-z) |
+- [Marc André Schröder-Zhou](https://github.com/maschroeder-z)
 
 ## Version history
 
@@ -40,22 +53,24 @@ The special app extension adds a registration and deregistration function to the
 | 1.1     | 24.07.2024       | Upgrade to SPFx 1.18    |
 | 1.0     | 30.09.2023       | Initial Release         |
 
----
+
 
 ## Minimal Path to Awesome
 
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  - **npm install**
-  - **gulp serve**
+  - `npm install`
+  - `gulp serve`
 
-> Check your currenr Node version and installed SPFx-Framework version.
+> Check your current Node version and installed SPFx-Framework version.
 
 ## Features
+
 Allows quick and easy registration for an event.
 
 ## Help
+
 Please contact me for further help or information about the sample.
 
 ## References
@@ -68,6 +83,6 @@ Please contact me for further help or information about the sample.
 
 ## Disclaimer
 
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-quick-register-to-appointment" />
