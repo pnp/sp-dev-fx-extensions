@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://{tenantDomain}/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "1f94503e-9f38-49f9-ab62-5dbbc086cbb6": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "azureFunctionUrl": "https://your-function-app.azurewebsites.net",
+            "clientId": "your-azure-ad-app-id",
+            "functionKey": "your-function-key-if-using",
+            "maxFilesPerJob": 20,
+            "maxFileSize": 52428800,
+            "enabledFileTypes": ["pdf", "docx", "doc", "txt"]
+          }
+        }
+      }
+    },
+    "documentTranslation": {
+      "pageUrl": "https://{tenantDomain}/Shared%20Documents/Forms/AllItems.aspx",
+      "customActions": {
+        "1f94503e-9f38-49f9-ab62-5dbbc086cbb6": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "azureFunctionUrl": "https://your-function-app.azurewebsites.net",
+            "clientId": "your-azure-ad-app-id",
+            "functionKey": "your-function-key-if-using",
+            "maxFilesPerJob": 20,
+            "maxFileSize": 52428800,
+            "enabledFileTypes": ["pdf", "docx", "doc", "txt"]
+          }
+        }
+      }
+    }
+  }
+}

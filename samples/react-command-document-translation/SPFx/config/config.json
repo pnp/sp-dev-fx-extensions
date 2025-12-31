@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "document-translation-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/documentTranslation/DocumentTranslationCommandSet.js",
+          "manifest": "./src/extensions/documentTranslation/DocumentTranslationCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "DocumentTranslationCommandSetStrings": "lib/extensions/documentTranslation/loc/{locale}.js"
+  }
+}

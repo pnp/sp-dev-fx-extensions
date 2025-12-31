@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+
+  "id": "1f94503e-9f38-49f9-ab62-5dbbc086cbb6",
+  "alias": "DocumentTranslationCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "items": {
+    "TRANSLATE_DOCUMENT": {
+      "title": { "default": "Translate" },
+      "iconImageUrl": "data:image/png;base64,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",
+      "type": "command"
+    }
+  }
+}

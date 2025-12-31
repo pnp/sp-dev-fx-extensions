@@ -1,0 +1,69 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+.env.local
+
+# SPFx build output
+SPFx/dist/
+SPFx/lib/
+SPFx/temp/
+SPFx/coverage/
+SPFx/release/
+SPFx/sharepoint/
+
+# Azure Function build output
+AzureFunction/**/bin/
+AzureFunction/**/obj/
+AzureFunction/**/.vs/
+AzureFunction/**/*.user
+AzureFunction/**/*.suo
+AzureFunction/**/.vscode/
+AzureFunction/**/local.settings.json
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Azure Storage Emulator
+__blobstorage__/
+__queuestorage__/
+__azurite_db*__.json

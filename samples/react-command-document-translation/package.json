@@ -1,0 +1,31 @@
+{
+  "name": "react-command-document-translation",
+  "version": "1.0.0",
+  "description": "SharePoint Framework List View Command Set extension for translating documents using Azure Document Translation Service",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd SPFx && npm install",
+    "build": "cd SPFx && npm run build",
+    "clean": "cd SPFx && npm run clean",
+    "test": "cd SPFx && npm test"
+  },
+  "keywords": [
+    "sharepoint",
+    "spfx",
+    "command-set",
+    "document-translation",
+    "azure",
+    "translator",
+    "multi-language",
+    "internationalization"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions.git"
+  },
+  "engines": {
+    "node": ">=22.14.0 < 23.0.0"
+  }
+}
