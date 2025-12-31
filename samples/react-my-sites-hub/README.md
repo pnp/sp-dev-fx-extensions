@@ -54,7 +54,7 @@ No special setup required — the extension works across any SharePoint Online e
 | ------- | ---------------- | --------------- |
 | 1.0     | October 30, 2025   | Initial release  |
 
-## Minimal Path to Awesome⚡
+## Minimal Path to Awesome
 
 - Clone this repository
 - Ensure that you are at the solution folder
