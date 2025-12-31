@@ -1664,7 +1664,7 @@
                 "name": "DriveItemProperties.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-driveitem-properties/assets/DriveItemProperties.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-driveitem-properties/assets/DriveItemProperties.png",
                 "alt": "Web Part Preview"
             }
         ],
@@ -2087,7 +2087,7 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-starter-kit/blob/master/assets/images/components/ext-redirects.gif",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/raw/samples/js-application-redirect/ext-redirects.png",
                 "alt": "Redirect Application Customizers"
             }
         ],
