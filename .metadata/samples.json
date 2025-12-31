@@ -1493,7 +1493,7 @@
                 "name": "fastregisterappointment.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-quick-register-to-appointment/assets/fastregisterappointment.png",
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-quick-register-to-appointment/assets/fastregisterappointment.png",
                 "alt": "Web Part Preview"
             }
         ],
@@ -2860,28 +2860,28 @@
                 "name": "preview-01.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-copy-page/assets/preview-01.png",
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-01.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "preview-02.png",
                 "type": "image",
                 "order": 101,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-copy-page/assets/preview-02.png",
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-02.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "preview-03.png",
                 "type": "image",
                 "order": 102,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-copy-page/assets/preview-03.png",
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-03.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "preview-04.png",
                 "type": "image",
                 "order": 103,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-copy-page/assets/preview-04.png",
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-04.png",
                 "alt": "Web Part Preview"
             }
         ],
@@ -3669,21 +3669,21 @@
                 "name": "m365ServiceHealth01.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth01.png",
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth01.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "m365ServiceHealth02.png",
                 "type": "image",
                 "order": 101,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth02.png",
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth02.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "m365ServiceHealth03.png",
                 "type": "image",
                 "order": 102,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth03.png",
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth03.png",
                 "alt": "Web Part Preview"
             }
         ],
@@ -4808,7 +4808,7 @@
                 "name": "CopyPathCopyNameExtenstions.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-utility-extensions/assets/CopyPathCopyNameExtenstions.png",
+                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-utility-extensions/assets/CopyPathCopyNameExtenstions.png",
                 "alt": "Web Part Preview"
             }
         ],
