@@ -2,14 +2,14 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": false,
     "environment": "spo",
-    "version": "1.20.0",
+    "version": "1.21.1",
     "libraryName": "message-banner",
     "libraryId": "004b6d5e-aee8-499b-9fe8-06757cfd043b",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "extension",
     "extensionType": "ApplicationCustomizer",
-    "nodeVersion": "18.18.2",
+    "nodeVersion": "22.18.0",
     "sdkVersions": {
       "@microsoft/teams-js": "2.24.0",
       "@microsoft/microsoft-graph-client": "3.0.2"
