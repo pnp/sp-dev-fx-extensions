@@ -17,8 +17,8 @@ Built using a SharePoint Framework Application Customizer Extension with the Top
 
 ## Compatibility
 
-![SPFx 1.20.0](https://img.shields.io/badge/SPFx-1.20.0-green.svg)
-![Node.js v18](https://img.shields.io/badge/Node.js-v18-green.svg)
+![SPFx 1.21.1](https://img.shields.io/badge/SPFx-1.21.1-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](<https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg> "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
@@ -40,6 +40,7 @@ Built using a SharePoint Framework Application Customizer Extension with the Top
 
 | Version | Date         | Comments                                                                                                               |
 | ------- | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| 1.4.3   | Oct 20, 2025 | Sandeep P S, upgraded to SPFX 1.21.1|
 | 1.4.2   | Oct 06, 2024 | Sandeep P S, upgraded to SPFX 1.20.0.                                                                                  |
 | 1.4.1   | Feb 10, 2024 | Paul Matthews, upgraded to SPFX 1.18.2.                                                                                |
 | 1.4     | Aug 12, 2022 | Paul Matthews, upgraded to SPFX 1.15.2 obtained permission to submit to PNP Samples.                                   |

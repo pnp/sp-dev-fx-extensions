@@ -32,7 +32,7 @@
         "name": "DriveItemProperties.png",
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-driveitem-properties/assets/DriveItemProperties.png",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-driveitem-properties/assets/DriveItemProperties.png",
         "alt": "Web Part Preview"
       }
     ],

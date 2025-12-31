@@ -27,7 +27,12 @@
     "categories": [
       "SPFX-APPLICATION-EXTENSION"
     ],
-    "thumbnails": [],
+    "thumbnails":             {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-chatbubble-copilot/assets/Chatbot.png",
+                "alt": "Extension Preview"
+            },
     "authors": [
       {
         "gitHubAccount": "https://github.com/NicolasKheirallah",

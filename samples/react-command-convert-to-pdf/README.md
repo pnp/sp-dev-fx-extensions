@@ -4,7 +4,7 @@
 
 A global list customizer which adds functionality to all document libraries in SharePoint Online to convert one or more documents in-place to PDF, or download one or more documents as a PDF. When selecting multiple documents for download they will be downloaded as a zip file. The converter uses built in API's of converting to PDF.
 
-![preview](./screenshot.gif "Preview")
+![preview](./assets/screenshot.gif "Preview")
 
 ## Compatibility
 
@@ -39,7 +39,7 @@ Version|Date|Comments
 
 ## Installing the solution
 
-- Upload and Deploy the file [pnp-ext-pdf-convert.sppkg](./pnp-ext-pdf-convert.sppkg) to your tenant app catalog. ![TrustSolution](./screenshot-2.png "Trust solution")
+- Upload and Deploy the file [pnp-ext-pdf-convert.sppkg](./pnp-ext-pdf-convert.sppkg) to your tenant app catalog. ![TrustSolution](./assets/screenshot-2.png "Trust solution")
     * If created the tenant app catalog can be reached via `https://<tenant>-admin.sharepoint.com/_layouts/15/online/ManageAppCatalog.aspx`.
     * You need to be a SharePoint Administrator to upload this solution.
 - Navigate to a document library and select one or more files and you should see the PDF options in the document ribbon.
