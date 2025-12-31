@@ -659,11 +659,11 @@
         ]
     },
     {
-        "name": "pnp-sp-dev-spfx-extensions-YOUR-SOLUTION-NAME-GOES-HERE",
+        "name": "pnp-sp-dev-spfx-extensions-react-command-ai-document-assistant",
         "source": "pnp",
         "title": "AI Document Assistant",
         "shortDescription": "The AI Document Assistant is a SharePoint Framework (SPFx) Command Set extension designed to enhance document interactions in SharePoint Online. This intelligent assistant leverages the OpenAI Assistant API to allow users to ask questions about selected documents directly within a chat interface.",
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-ai-document-assistant",
         "longDescription": [
             "The AI Document Assistant is a SharePoint Framework (SPFx) Command Set extension designed to enhance document interactions in SharePoint Online. This intelligent assistant leverages the OpenAI Assistant API to allow users to ask questions about selected documents directly within a chat interface."
         ],
@@ -691,7 +691,7 @@
                 "name": "architecture.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-command-ai-document-assistant/assets/architecture.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-ai-document-assistant/assets/architecture.png",
                 "alt": "Web Part Preview"
             }
         ],
@@ -1493,7 +1493,7 @@
                 "name": "fastregisterappointment.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-quick-register-to-appointment/assets/fastregisterappointment.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-quick-register-to-appointment/assets/fastregisterappointment.png",
                 "alt": "Web Part Preview"
             }
         ],
@@ -1664,7 +1664,7 @@
                 "name": "DriveItemProperties.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-driveitem-properties/assets/DriveItemProperties.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-driveitem-properties/assets/DriveItemProperties.png",
                 "alt": "Web Part Preview"
             }
         ],
@@ -2828,11 +2828,11 @@
         ]
     },
     {
-        "name": "pnp-sp-dev-spfx-extensions-react-YOUR-SOLUTION-NAME-GOES-HERE",
+        "name": "pnp-sp-dev-spfx-extensions-react-application-copy-page",
         "source": "pnp",
         "title": "Copy Page SPFx Application Customizer",
         "shortDescription": "This SPFx Application Customizer empowers content authors to copy modern site pages across sites with full control over:",
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-copy-page",
         "longDescription": [
             "This SPFx Application Customizer empowers content authors to copy modern site pages across sites with full control over:"
         ],
@@ -2860,28 +2860,28 @@
                 "name": "preview-01.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-01.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-copy-page/assets/preview-01.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "preview-02.png",
                 "type": "image",
                 "order": 101,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-02.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-copy-page/assets/preview-02.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "preview-03.png",
                 "type": "image",
                 "order": 102,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-03.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-copy-page/assets/preview-03.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "preview-04.png",
                 "type": "image",
                 "order": 103,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-copy-page/assets/preview-04.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-copy-page/assets/preview-04.png",
                 "alt": "Web Part Preview"
             }
         ],
@@ -3669,21 +3669,21 @@
                 "name": "m365ServiceHealth01.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth01.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth01.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "m365ServiceHealth02.png",
                 "type": "image",
                 "order": 101,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth02.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth02.png",
                 "alt": "Web Part Preview"
             },
             {
                 "name": "m365ServiceHealth03.png",
                 "type": "image",
                 "order": 102,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth03.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-m365-service-health/assets/m365ServiceHealth03.png",
                 "alt": "Web Part Preview"
             }
         ],
@@ -4776,11 +4776,11 @@
         ]
     },
     {
-        "name": "pnp-sp-dev-spfx-extensions-react-YOUR-SOLUTION-NAME-GOES-HERE",
+        "name": "pnp-sp-dev-spfx-extensions-react-utility-extensions",
         "source": "pnp",
         "title": "Copy Path and Copy Name List view command set extensions",
         "shortDescription": "List view command set extensions with below functionalities",
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/YOUR-SOLUTION-NAME-GOES-HERE",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-utility-extensions",
         "longDescription": [
             "List view command set extensions with below functionalities"
         ],
@@ -4808,7 +4808,7 @@
                 "name": "CopyPathCopyNameExtenstions.png",
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-webparts/raw/main/samples/react-utility-extensions/assets/CopyPathCopyNameExtenstions.png",
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-utility-extensions/assets/CopyPathCopyNameExtenstions.png",
                 "alt": "Web Part Preview"
             }
         ],
