@@ -4,7 +4,7 @@
 
 A SharePoint Framework (SPFx) List View Command Set extension that enables users to translate documents from one language to another using Azure Document Translation Service. Users can select one or more documents from a SharePoint document library and translate them into multiple target languages simultaneously.
 
-![Document Translation](./assets/demo.gif)
+![Document Translation](./Assets/demo.gif)
 
 ## Compatibility
 
