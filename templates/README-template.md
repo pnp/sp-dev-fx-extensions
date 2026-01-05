@@ -23,32 +23,93 @@ Short summary on functionality and used technologies.
 
 ## Compatibility
 
-![SPFx 1.14](https://img.shields.io/badge/SPFx-1.14-green.svg)
-![Node.js v14 | v12](https://img.shields.io/badge/Node.js-v14%20%7C%20v12-green.svg)
+| :warning: Important          |
+|:---------------------------|
+| Every SPFx version is optimally compatible with specific versions of Node.js. In order to be able to Toolchain this sample, you need to ensure that the version of Node on your workstation matches one of the versions listed in this section. This sample will not work on a different version of Node.|
+|Refer to <https://aka.ms/spfx-matrix> for more information on SPFx compatibility.   |
+
+This sample is optimally compatible with the following environment configuration:
+
+![SPFx 1.22.0](https://img.shields.io/badge/SPFx-1.22.0-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
+![Toolchain: Heft](https://img.shields.io/badge/Toolchain-Heft-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 ![Does not work with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Incompatible-red.svg "SharePoint Server 2019 requires SPFx 1.4.1 or lower")
 ![Does not work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Incompatible-red.svg "SharePoint Server 2016 Feature Pack 2 requires SPFx 1.1")
 ![Local Workbench Unsupported](https://img.shields.io/badge/Local%20Workbench-Unsupported-red.svg "Local workbench is no longer available as of SPFx 1.13 and above")
-![Hosted Workbench Incompatible](https://img.shields.io/badge/Hosted%20Workbench-Incompatible-red.svg "Does not work with hosted workbench")
+![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
+![Compatible with Remote Containers](https://img.shields.io/badge/Remote%20Containers-Compatible-green.svg)
 
-> Don't worry if you're unsure about the compatibility matrix above. We'll verify it when we approve the PR.
-> ![SPFx 1.13.1](https://img.shields.io/badge/SPFx-1.13.1-green.svg)
-> ![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg)
-> 
-> If using SPFx 1.12.1, update the SPFx and Node.js tags accordingly:
-> ![SPFx 1.12.1](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
-> ![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg)
->
-> If using an older version of SPFx, update the SPFx and Node.js compatibility tag accordingly:
-> SPFx 1.11
-> ![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg)
-> ![Node.js LTS 10.x](https://img.shields.io/badge/Node.js-LTS%2010.x-green.svg)
->
-> SPFx 1.4.1
-> ![SPFx 1.4.1](https://img.shields.io/badge/SPFx-1.4.1-green.svg)
-> ![Node.js LTS 6.x | LTS 8.x](https://img.shields.io/badge/Node.js-LTS%206.x%20%7C%20LTS%208.x-green.svg)
->
-> DELETE THIS PARAGRAPH BEFORE SUBMITTING
+<!--
+If using SPFx 1.22
+
+![SPFx 1.21.1](https://img.shields.io/badge/SPFx-1.21.1-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
+![Toolchain: Gulp](https://img.shields.io/badge/Toolchain-Gulp-green.svg)
+
+If using SPFx 1.18
+![SPFx 1.18.2](https://img.shields.io/badge/SPFx-1.18.2-green.svg)
+![Node.js v16 | v18](https://img.shields.io/badge/Node.js-v16%20%7C%20v18-green.svg)
+
+If using SPFx 1.17.4
+![SPFx 1.17.4](https://img.shields.io/badge/SPFx-1.17.4-green.svg)
+![Node.js v16.13+](https://img.shields.io/badge/Node.js-v16.13+-green.svg)
+
+If using SPFx 1.16
+![SPFx 1.16.1](https://img.shields.io/badge/SPFx-1.16.1-green.svg)
+![Node.js v16 | v14 | v12](https://img.shields.io/badge/Node.js-v16%20%7C%20v14%20%7C%20v12-green.svg)
+
+If using SPFX 1.14, update the SPFx and Node.js tags as per below:
+![SPFx 1.14](https://img.shields.io/badge/SPFx-1.14-green.svg)
+![Node.js v14 | v12](https://img.shields.io/badge/Node.js-v14%20%7C%20v12-green.svg)
+
+  If using SPFx 1.13.1, update the SPFx and Node.js tags accordingly:
+![SPFx 1.13.1](https://img.shields.io/badge/SPFx-1.13.1-green.svg)
+
+  If using SPFx 1.12.1, update the SPFx and Node.js tags accordingly:
+![SPFx 1.12.1](https://img.shields.io/badge/SPFx-1.12.1-green.svg)
+![Node.js v14 | v12 | v10](https://img.shields.io/badge/Node.js-v14%20%7C%20v12%20%7C%20v10-green.svg) 
+
+  If using an older version of SPFx, update the SPFx and Node.js compatibility tag accordingly:
+
+  SPFx 1.11
+![SPFx 1.11](https://img.shields.io/badge/SPFx-1.11.0-green.svg) 
+![Node.js v10](https://img.shields.io/badge/Node.js-v10-green.svg) 
+
+ SPFx 1.10
+![SPFx 1.10](https://img.shields.io/badge/SPFx-1.10.0-green.svg) 
+![Node.js v10 | v8](https://img.shields.io/badge/Node.js-v10%20%7C%20v8-green.svg) 
+
+ SPFx 1.4.1
+![SPFx 1.4.1](https://img.shields.io/badge/SPFx-1.4.1-green.svg)
+![Node.js v6 | v8](https://img.shields.io/badge/Node.js-LTS%206.x%20%7C%20v8-green.svg)
+
+  If you built this sample specifically for SharePoint 2016, or SharePoint 2019 support, update the SharePoint compatibility tag accordingly:
+![Works with SharePoint 2019](https://img.shields.io/badge/SharePoint%20Server%202019-Compatible-green.svg)
+![Work with SharePoint 2016 (Feature Pack 2)](https://img.shields.io/badge/SharePoint%20Server%202016%20(Feature%20Pack%202)-Compatible-green.svg)
+
+  If you know your web part only works on the hosted workbench, you can use this for the workbench compatibility tag:
+![Local Workbench Incompatible](https://img.shields.io/badge/Local%20Workbench-Incompatible-red.svg "EXPLAIN WHY IT WORK WORK IN LOCAL WORKBENCH")
+
+  Otherwise:
+![Local Workbench Compatible](https://img.shields.io/badge/Local%20Workbench-Compatible-green.svg)
+
+  If your web part needs permissions before working in the hosted workbench, let people know;
+![Hosted Workbench (Requires permissions))](https://img.shields.io/badge/Hosted%20Workbench-(Requires%20permissions%)-yellow.svg "Requires permissions to be granted before this solution can work on the hosted workbench")
+
+  or:
+![Hosted Workbench Partially)](https://img.shields.io/badge/Hosted%20Workbench-Partially-yellow.svg "EXPLAIN WHY THE SOLUTION DOESN'T FULL WORK IN THE HOSTED WORKBENCH")
+
+  Otherwise:
+![Hosted Workbench Compatible](https://img.shields.io/badge/Hosted%20Workbench-Compatible-green.svg)
+
+ If you specifically built and tested this web part to work with Teams, use this for the Teams compatibility tag:
+    ![Teams Yes: Designed for Microsoft Teams](https://img.shields.io/badge/Teams-Yes-green.svg "Designed for Microsoft Teams")
+ And if you know for sure that it is NOT compatible with Teams, use this:
+    ![Teams No: Not designed for Microsoft Teams](https://img.shields.io/badge/Teams-No-red.svg "Not designed for Microsoft Teams")
+
+Don't worry if you're unsure about the compatibility matrix above. We'll verify it when we approve the PR. 
+-->
 
 ## Applies to
 

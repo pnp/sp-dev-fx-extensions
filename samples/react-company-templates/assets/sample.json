@@ -53,7 +53,7 @@
             {
                 "name": "ListView Command Set extension",
                 "description": "You can use SharePoint Framework (SPFx) Extensions to build list view command set extensions with the aim to extend the SharePoint command surfaces to add new actions, and provides client-side code that you can use to implement custom behaviors.",
-                "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api"
+                "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api"
             }
         ]
     }
