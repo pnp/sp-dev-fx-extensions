@@ -20,11 +20,11 @@ This is based on SharePointSSO
 
 #### API Permissions Setup
 
-![API Permissions Setup](images/apiPermissions.png)
+![API Permissions Setup](./assets/apiPermissions.png)
 
 #### Adding APIs in Azure AD
 
-![Adding APIs in Azure AD](images/apisMyOrganization.png)
+![Adding APIs in Azure AD](./assets/apisMyOrganization.png)
 
 #### Chatbot Interface
 
@@ -32,19 +32,19 @@ This is based on SharePointSSO
 
 #### Application Client ID in Azure
 
-![Application Client ID](images/clientID.png)
+![Application Client ID](./assets/clientID.png)
 
 #### Custom Scopes for API
 
-![Custom Scopes for API](images/customScope.png)
+![Custom Scopes for API](./assets/customScope.png)
 
 #### Scope Permissions Setup
 
-![Scope Permissions Setup](images/scopePermissions.png)
+![Scope Permissions Setup](./assets/scopePermissions.png)
 
 #### Token Exchange URL Configuration
 
-![Token Exchange URL Configuration](images/toeknExchangeURL.png)
+![Token Exchange URL Configuration](./assets/toeknExchangeURL.png)
 
 
 ## Technologies Used
