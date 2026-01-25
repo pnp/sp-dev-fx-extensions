@@ -24,10 +24,10 @@
     "office-ui-fabric-react": "5.83.0"
   },
   "devDependencies": {
-    "@microsoft/sp-build-web": "1.5.1",
+    "@microsoft/sp-build-web": "1.11.0",
     "@microsoft/sp-module-interfaces": "1.5.1",
-    "@microsoft/sp-webpart-workbench": "1.5.1",
-    "gulp": "~3.9.1",
+    "@microsoft/sp-webpart-workbench": "1.11.0",
+    "gulp": "~5.0.1",
     "@types/chai": ">=3.4.34 <3.6.0",
     "@types/mocha": ">=2.2.33 <2.6.0",
     "ajv": "~5.2.2"
