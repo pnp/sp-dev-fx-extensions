@@ -1,0 +1,20 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "useGulp": false,
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.17.0",
+    "sdksVersions": {},
+    "version": "1.22.0",
+    "libraryName": "commandset-authenticated-flow-trigger",
+    "libraryId": "1211df76-6adc-4956-82fd-bd6483da8787",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "commandset-authenticated-flow-trigger",
+    "solutionShortDescription": "commandset-authenticated-flow-trigger description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}

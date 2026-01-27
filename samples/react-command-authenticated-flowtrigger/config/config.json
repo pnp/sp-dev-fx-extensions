@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "authenticated-flow-trigger-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/authenticatedFlowTrigger/AuthenticatedFlowTriggerCommandSet.js",
+          "manifest": "./src/extensions/authenticatedFlowTrigger/AuthenticatedFlowTriggerCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AuthenticatedFlowTriggerCommandSetStrings": "lib/extensions/authenticatedFlowTrigger/loc/{locale}.js"
+  }
+}
