@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="AuthenticatedFlowTrigger"
+        RegistrationId="101"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="750c7714-6a06-4351-86a9-652e2aa5f6e2"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>
