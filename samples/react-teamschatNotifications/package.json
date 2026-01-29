@@ -56,7 +56,7 @@
     "ajv": "~5.2.2",
     "gulp": "~3.9.1",
     "gulp-sequence": "1.0.0",
-    "spfx-uifabric-themes": "^0.7.1",
+    "spfx-uifabric-themes": "^0.9.0",
     "typescript": "~3.5.x",
     "webpack-bundle-analyzer": "^3.4.1"
   }
