@@ -124,6 +124,7 @@ You need to create a Power Automate flow with the following configuration:
      }
    }
    ```
+
    ![Command Set in Action](assets/power-automate-trigger.png)
 
 5. **Add your flow logic** - Add any actions needed after the trigger (e.g., "Get file properties" from SharePoint)
@@ -161,7 +162,7 @@ After deploying the solution package, a SharePoint or Global administrator must 
 
 ```bash
 git clone https://github.com/pnp/sp-dev-fx-webparts.git
-cd sp-dev-fx-webparts/samples/commandset-authenticated-flow-trigger
+cd sp-dev-fx-extensions/samples/commandset-authenticated-flow-trigger
 npm install
 ```
 
@@ -269,6 +270,7 @@ commandset-authenticated-flow-trigger/
 ### Key Code Components
 
 **FlowService.ts** - Handles authenticated HTTP calls:
+
 ```typescript
 FlowService.aadHttpClient = await aadHttpClientFactory.getClient(
   "https://service.flow.microsoft.com/"
@@ -276,6 +278,7 @@ FlowService.aadHttpClient = await aadHttpClientFactory.getClient(
 ```
 
 **package-solution.json** - Declares required permissions:
+
 ```json
 {
   "webApiPermissionRequests": [
@@ -305,9 +308,9 @@ FlowService.aadHttpClient = await aadHttpClientFactory.getClient(
 
 ## References
 
-- [Add OAuth authentication for HTTP request triggers - Power Automate](https://learn.microsoft.com/en-us/power-automate/oauth-authentication)
-- [Connect to Entra ID-secured APIs in SharePoint Framework solutions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient)
-- [Build your first ListView Command Set extension](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api)
+- [Add OAuth authentication for HTTP request triggers - Power Automate](https://learn.microsoft.com/power-automate/oauth-authentication)
+- [Connect to Entra ID-secured APIs in SharePoint Framework solutions](https://learn.microsoft.com/sharepoint/dev/spfx/use-aadhttpclient)
+- [Build your first ListView Command Set extension](https://learn.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api)
 - [Using OAuth authentication for HTTP request triggers in Power Automate](https://forwardforever.com/using-oauth-authentication-for-http-request-triggers-in-power-automate/)
 - [Securing HTTP Triggered Power Automate Flows using OAuth](https://platinumdogs.wordpress.com/2023/12/22/securing-http-triggered-power-automate-flows-using-oauth/)
 - [Heft Documentation](https://heft.rushstack.io/)
@@ -319,12 +322,12 @@ We do not support samples, but this community is always willing to help, and we 
 
 If you're having issues building the solution, please run [spfx doctor](https://pnp.github.io/cli-microsoft365/cmd/spfx/spfx-doctor/) from within the solution folder to diagnose incompatibility issues with your environment.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/sp-dev-fx-webparts/issues?q=label%3A%22sample%3A%20commandset-authenticated-flow-trigger%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/sp-dev-fx-extensions/issues?q=label%3A%22sample%3A%20commandset-authenticated-flow-trigger%22) to see if anybody else is having the same issues.
 
-You can also try looking at [discussions related to this sample](https://github.com/pnp/sp-dev-fx-webparts/discussions?discussions_q=commandset-authenticated-flow-trigger) and see what the community is saying.
+You can also try looking at [discussions related to this sample](https://github.com/pnp/sp-dev-fx-extensions/discussions?discussions_q=commandset-authenticated-flow-trigger) and see what the community is saying.
 
 ## Disclaimer
 
 **THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-webparts/samples/commandset-authenticated-flow-trigger" alt="Visitor stats" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/commandset-authenticated-flow-trigger" alt="Visitor stats" />
