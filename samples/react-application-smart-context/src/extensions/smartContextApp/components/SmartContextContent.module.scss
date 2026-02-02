@@ -1,0 +1,923 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+// Copilot-inspired colors
+$copilot-purple: #7B61FF;
+$copilot-blue: #00BCF2;
+$copilot-gradient: linear-gradient(135deg, $copilot-purple 0%, $copilot-blue 100%);
+
+.smartContextContent {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  width: 100%;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Header
+.header {
+  text-align: center;
+  padding: 20px 0 24px;
+  border-bottom: 1px solid rgba($copilot-purple, 0.1);
+  margin-bottom: 24px;
+}
+
+.aiBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba($copilot-purple, 0.1) 0%, rgba($copilot-blue, 0.1) 100%);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  border: 1px solid rgba($copilot-purple, 0.2);
+}
+
+.aiBadgeText {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: $copilot-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.headerTitle {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  color: $ms-color-neutralPrimary;
+  margin-bottom: 4px;
+}
+
+.headerSubtitle {
+  display: block;
+  font-size: 13px;
+  color: $ms-color-neutralSecondary;
+}
+
+// Sections container
+.sectionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+// Section styles
+.section {
+  background: $ms-color-white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid $ms-color-neutralLight;
+  animation: slideUp 0.4s ease-out forwards;
+  opacity: 0;
+  transform: translateY(15px);
+  width: 100%;
+  box-sizing: border-box;
+  
+  &.tldr {
+    background: linear-gradient(135deg, rgba($copilot-purple, 0.03) 0%, rgba($copilot-blue, 0.03) 100%);
+    border-color: rgba($copilot-purple, 0.15);
+    
+    .sectionIconWrapper {
+      background: $copilot-gradient;
+    }
+    
+    .sectionIcon {
+      color: white;
+    }
+  }
+  
+  &.people {
+    .sectionIconWrapper {
+      background: linear-gradient(135deg, #0078D4 0%, #00BCF2 100%);
+    }
+    
+    .sectionIcon {
+      color: white;
+    }
+  }
+  
+  &.content {
+    .sectionIconWrapper {
+      background: linear-gradient(135deg, #107C10 0%, #7FBA00 100%);
+    }
+    
+    .sectionIcon {
+      color: white;
+    }
+  }
+  
+  &.other {
+    .sectionIconWrapper {
+      background: linear-gradient(135deg, #605E5C 0%, #8A8886 100%);
+    }
+    
+    .sectionIcon {
+      color: white;
+    }
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sectionIconWrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $ms-color-neutralLighter;
+  flex-shrink: 0;
+}
+
+.sectionIcon {
+  font-size: 16px;
+  color: $ms-color-neutralSecondary;
+}
+
+.sectionTitleGroup {
+  flex: 1;
+}
+
+.sectionTitle {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: $ms-color-neutralPrimary;
+  line-height: 1.3;
+}
+
+.sectionDescription {
+  display: block;
+  font-size: 12px;
+  color: $ms-color-neutralSecondary;
+  margin-top: 2px;
+}
+
+.sectionContent {
+  padding-left: 48px;
+}
+
+// Items container
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+// TLDR items
+.tldrItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba($copilot-purple, 0.04);
+  border-radius: 8px;
+  animation: fadeInItem 0.3s ease-out forwards;
+  opacity: 0;
+  
+  &:hover {
+    background: rgba($copilot-purple, 0.08);
+  }
+}
+
+@keyframes fadeInItem {
+  to {
+    opacity: 1;
+  }
+}
+
+.tldrBullet {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i {
+    font-size: 14px;
+    color: $copilot-purple;
+  }
+}
+
+.tldrText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: $ms-color-neutralPrimary;
+}
+
+// People cards
+.personCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: $ms-color-neutralLighterAlt;
+  border-radius: 8px;
+  animation: fadeInItem 0.3s ease-out forwards;
+  opacity: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+  
+  &:hover {
+    background: $ms-color-neutralLight;
+    transform: translateX(4px);
+  }
+}
+
+.personaIcon {
+  flex-shrink: 0;
+}
+
+.personInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.personLink {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0078D4;
+  line-height: 1.4;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+    color: darken(#0078D4, 10%);
+  }
+}
+
+.personName {
+  font-size: 14px;
+  font-weight: 600;
+  color: $ms-color-neutralPrimary;
+  line-height: 1.4;
+}
+
+.personDetail {
+  font-size: 12px;
+  color: $ms-color-neutralSecondary;
+  line-height: 1.4;
+}
+
+// Attribution group headers (Sources / Related)
+.attributionGroupHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0 4px;
+  margin-top: 8px;
+  border-bottom: 1px solid rgba($copilot-purple, 0.1);
+  
+  &:first-child {
+    margin-top: 0;
+  }
+  
+  i {
+    font-size: 14px;
+    color: $copilot-purple;
+  }
+  
+  span {
+    font-size: 12px;
+    font-weight: 600;
+    color: $ms-color-neutralPrimary;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Content cards
+.contentCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: $ms-color-neutralLighterAlt;
+  border-radius: 8px;
+  animation: fadeInItem 0.3s ease-out forwards;
+  opacity: 0;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    background: $ms-color-neutralLight;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.contentIcon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(#107C10, 0.1) 0%, rgba(#7FBA00, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i {
+    font-size: 14px;
+    color: #107C10;
+  }
+}
+
+.contentText {
+  font-size: 14px;
+  color: $ms-color-neutralPrimary;
+  line-height: 1.5;
+  flex: 1;
+}
+
+// Default items
+.defaultItem {
+  padding: 8px 0;
+  border-bottom: 1px solid $ms-color-neutralLight;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// Empty state
+.emptyState {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: $ms-color-neutralLighterAlt;
+  border-radius: 8px;
+}
+
+.emptyIcon {
+  font-size: 16px;
+  color: $ms-color-neutralTertiary;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: $ms-color-neutralSecondary;
+  font-style: italic;
+}
+
+// Error state
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  background: rgba(#d13438, 0.05);
+  border-radius: 8px;
+  margin: 16px;
+}
+
+.errorIcon {
+  font-size: 32px;
+  color: #d13438;
+}
+
+.errorText {
+  font-size: 14px;
+  color: #d13438;
+  text-align: center;
+  font-family: monospace;
+}
+
+// Citations
+.citation {
+  color: $copilot-purple;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: rgba($copilot-purple, 0.08);
+  transition: background 0.2s ease, color 0.2s ease;
+  
+  &:hover {
+    background: rgba($copilot-purple, 0.15);
+    text-decoration: none;
+    color: darken($copilot-purple, 10%);
+  }
+}
+
+// Show more button
+.showMoreContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top: 1px solid $ms-color-neutralLighter;
+}
+
+.showMoreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: $copilot-purple;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  
+  &:hover {
+    background: rgba($copilot-purple, 0.08);
+    text-decoration: none;
+    color: darken($copilot-purple, 10%);
+  }
+  
+  &:active {
+    background: rgba($copilot-purple, 0.12);
+  }
+}
+
+.showMoreIcon {
+  font-size: 12px;
+}
+
+// Footer
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid $ms-color-neutralLight;
+}
+
+.footerIcon {
+  font-size: 14px;
+  color: $ms-color-neutralTertiary;
+}
+
+.footerText {
+  font-size: 12px;
+  color: $ms-color-neutralSecondary;
+}
+
+// ============================================
+// NEW SECTIONS - My Role, Pending Actions, Key Decisions, Timeline
+// ============================================
+
+// My Role Card
+.myRoleCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba($copilot-purple, 0.08) 0%, rgba($copilot-blue, 0.08) 100%);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba($copilot-purple, 0.2);
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+.myRoleIconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: $copilot-gradient;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.myRoleIcon {
+  font-size: 20px;
+  color: white;
+}
+
+.myRoleContent {
+  flex: 1;
+}
+
+.myRoleTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.myRoleLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $ms-color-neutralSecondary;
+}
+
+.legendToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: $copilot-purple;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+  
+  i {
+    font-size: 10px;
+  }
+  
+  &:hover {
+    background: rgba($copilot-purple, 0.08);
+    text-decoration: none;
+  }
+}
+
+.myRoleValue {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: $ms-color-neutralPrimary;
+  margin-bottom: 4px;
+}
+
+.myRoleReason {
+  display: block;
+  font-size: 13px;
+  color: $ms-color-neutralSecondary;
+}
+
+.reasonHighlight {
+  font-weight: 600;
+  color: $ms-color-neutralPrimary;
+}
+
+// Role Legend
+.roleLegend {
+  width: 100%;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba($copilot-purple, 0.15);
+}
+
+.legendTitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $ms-color-neutralSecondary;
+  margin-bottom: 12px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  background: rgba($ms-color-white, 0.5);
+  transition: background 0.2s ease;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  &.legendItemActive {
+    background: rgba($copilot-purple, 0.12);
+    border: 1px solid rgba($copilot-purple, 0.25);
+  }
+}
+
+.legendIcon {
+  font-size: 14px;
+  color: $copilot-purple;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.legendText {
+  flex: 1;
+}
+
+.legendRole {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: $ms-color-neutralPrimary;
+  line-height: 1.3;
+}
+
+.legendDesc {
+  display: block;
+  font-size: 11px;
+  color: $ms-color-neutralSecondary;
+  line-height: 1.4;
+}
+
+// Pending Actions Section
+.section.pendingActions {
+  background: linear-gradient(135deg, rgba(#d83b01, 0.03) 0%, rgba(#ffaa44, 0.03) 100%);
+  border-color: rgba(#d83b01, 0.15);
+  
+  .sectionIconWrapper {
+    background: linear-gradient(135deg, #d83b01 0%, #ffaa44 100%);
+  }
+  
+  .sectionIcon {
+    color: white;
+  }
+}
+
+.actionCard {
+  padding: 14px 16px;
+  background: $ms-color-white;
+  border-radius: 10px;
+  border-left: 4px solid $ms-color-neutralTertiary;
+  animation: fadeInItem 0.3s ease-out forwards;
+  opacity: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  &.urgencyHigh {
+    border-left-color: #d13438;
+    background: rgba(#d13438, 0.02);
+  }
+  
+  &.urgencyMedium {
+    border-left-color: #ffaa44;
+    background: rgba(#ffaa44, 0.02);
+  }
+  
+  &.urgencyLow {
+    border-left-color: #107C10;
+    background: rgba(#107C10, 0.02);
+  }
+}
+
+.actionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.urgencyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  
+  i {
+    font-size: 10px;
+  }
+  
+  &.urgencyHigh {
+    background: rgba(#d13438, 0.12);
+    color: #d13438;
+  }
+  
+  &.urgencyMedium {
+    background: rgba(#ffaa44, 0.15);
+    color: #986f0b;
+  }
+  
+  &.urgencyLow {
+    background: rgba(#107C10, 0.12);
+    color: #107C10;
+  }
+}
+
+.actionDueDate {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: $ms-color-neutralSecondary;
+  
+  i {
+    font-size: 11px;
+  }
+}
+
+.actionText {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: $ms-color-neutralPrimary;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.actionOwner {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: $ms-color-neutralSecondary;
+  
+  i {
+    font-size: 11px;
+  }
+}
+
+// Key Decisions Section
+.section.keyDecisions {
+  .sectionIconWrapper {
+    background: linear-gradient(135deg, #8764B8 0%, #C239B3 100%);
+  }
+  
+  .sectionIcon {
+    color: white;
+  }
+}
+
+.decisionCard {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  background: $ms-color-neutralLighterAlt;
+  border-radius: 10px;
+  animation: fadeInItem 0.3s ease-out forwards;
+  opacity: 0;
+  transition: background 0.2s ease;
+  
+  &:hover {
+    background: $ms-color-neutralLight;
+  }
+}
+
+.decisionIcon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(#8764B8, 0.15) 0%, rgba(#C239B3, 0.15) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i {
+    font-size: 14px;
+    color: #8764B8;
+  }
+}
+
+.decisionContent {
+  flex: 1;
+}
+
+.decisionText {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: $ms-color-neutralPrimary;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.decisionMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.decisionBy, .decisionDate {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: $ms-color-neutralSecondary;
+  
+  i {
+    font-size: 11px;
+  }
+}
+
+.decisionContext {
+  display: block;
+  font-size: 12px;
+  color: $ms-color-neutralTertiary;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+// Timeline Section
+.section.timeline {
+  .sectionIconWrapper {
+    background: linear-gradient(135deg, #038387 0%, #00B294 100%);
+  }
+  
+  .sectionIcon {
+    color: white;
+  }
+}
+
+.timelineItem {
+  display: flex;
+  gap: 12px;
+  animation: fadeInItem 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.timelineMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 16px;
+}
+
+.timelineDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #038387 0%, #00B294 100%);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.timelineLine {
+  width: 2px;
+  flex: 1;
+  min-height: 20px;
+  background: linear-gradient(to bottom, #00B294, rgba(#00B294, 0.2));
+  margin-top: 4px;
+}
+
+.timelineContent {
+  flex: 1;
+  padding-bottom: 16px;
+}
+
+.timelineHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timelineDate {
+  font-size: 12px;
+  font-weight: 600;
+  color: #038387;
+}
+
+.timelineSource {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: $ms-color-neutralSecondary;
+  padding: 2px 8px;
+  background: $ms-color-neutralLighter;
+  border-radius: 10px;
+  
+  i {
+    font-size: 10px;
+  }
+}
+
+.timelineEvent {
+  font-size: 14px;
+  color: $ms-color-neutralPrimary;
+  line-height: 1.5;
+}

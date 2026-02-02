@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "smart-context-app-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/smartContextApp/SmartContextAppApplicationCustomizer.js",
+          "manifest": "./src/extensions/smartContextApp/SmartContextAppApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SmartContextAppApplicationCustomizerStrings": "lib/extensions/smartContextApp/loc/{locale}.js"
+  }
+}

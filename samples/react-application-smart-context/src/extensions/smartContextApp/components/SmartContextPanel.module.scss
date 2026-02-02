@@ -1,0 +1,114 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.smartContextPanel {
+  :global(.ms-Panel-content) {
+    padding: 20px;
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    rgba(123, 97, 255, 0.08) 0%,
+    rgba(0, 212, 255, 0.05) 50%,
+    rgba(0, 188, 242, 0.03) 100%
+  );
+  border-radius: 20px;
+}
+
+.contentContainer {
+  padding: 20px;
+  width: 100%;
+}
+
+.markdownContent {
+  line-height: 1.6;
+}
+
+.heading1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: $ms-color-themePrimary;
+  border-bottom: 1px solid $ms-color-neutralLight;
+  padding-bottom: 8px;
+}
+
+.heading2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: $ms-color-neutralPrimary;
+}
+
+.listItem {
+  margin-left: 20px;
+  margin-bottom: 8px;
+  color: $ms-color-neutralPrimary;
+  
+  &::marker {
+    color: $ms-color-themePrimary;
+  }
+}
+
+.citation {
+  font-size: 12px;
+  color: $ms-color-themePrimary;
+  text-decoration: none;
+  vertical-align: super;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.attributionsSection {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid $ms-color-neutralLight;
+}
+
+.attributionsTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: $ms-color-neutralSecondary;
+  margin-bottom: 12px;
+}
+
+.attributionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.attributionItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 13px;
+  
+  a {
+    color: $ms-color-themePrimary;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.attributionBadge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: $ms-color-neutralLighter;
+  color: $ms-color-neutralSecondary;
+  text-transform: uppercase;
+}
