@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://federicoporceddumvp.sharepoint.com/SitePages/test-123.aspx",
+      "customActions": {
+        "48cf64ba-259f-4964-be91-efd229cd49c6": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "smartContextApp": {
+      "pageUrl": "https://federicoporceddumvp.sharepoint.com/SitePages/test-123.aspx",
+      "customActions": {
+        "48cf64ba-259f-4964-be91-efd229cd49c6": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}

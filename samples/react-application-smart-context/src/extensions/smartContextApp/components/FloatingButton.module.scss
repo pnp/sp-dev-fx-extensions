@@ -1,0 +1,113 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+// Fluent Side Tab - Centro verticale
+.tabContainer {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000000;
+}
+
+.sideTab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border: none;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  background-color: $ms-color-themePrimary;
+  color: $ms-color-white;
+  cursor: pointer;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  box-shadow: 
+    -2px 0 8px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 
+    background-color 0.15s ease,
+    padding 0.2s ease,
+    box-shadow 0.2s ease;
+  animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  // Focus ring - Fluent style
+  &:focus-visible {
+    outline: none;
+    box-shadow: 
+      0 0 0 2px $ms-color-white,
+      0 0 0 4px $ms-color-themePrimary,
+      -2px 0 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:hover {
+    background-color: $ms-color-themeDarkAlt;
+    padding: 14px 12px;
+    box-shadow: 
+      -4px 0 16px rgba(0, 0, 0, 0.2),
+      0 4px 8px rgba(0, 0, 0, 0.15);
+    
+    .sparkleIcon {
+      transform: scale(1.1);
+    }
+    
+    .tabText {
+      opacity: 1;
+    }
+  }
+  
+  &:active {
+    background-color: $ms-color-themeDark;
+    padding: 14px 8px;
+  }
+}
+
+.sparkleIcon {
+  flex-shrink: 0;
+  color: currentColor;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+}
+
+.tabTextShort,
+.tabTextFull {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.tabTextShort {
+  opacity: 0.9;
+}
+
+.tabTextFull {
+  display: none;
+  opacity: 0;
+}
+
+.sideTab:hover {
+  .tabTextShort {
+    display: none;
+  }
+  
+  .tabTextFull {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
