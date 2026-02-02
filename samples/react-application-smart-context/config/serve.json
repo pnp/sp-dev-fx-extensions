@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://federicoporceddumvp.sharepoint.com/SitePages/test-123.aspx",
+      "pageUrl": "https://{tenantname}.sharepoint.com/SitePages/yourpage.aspx",
       "customActions": {
         "48cf64ba-259f-4964-be91-efd229cd49c6": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -15,7 +15,7 @@
       }
     },
     "smartContextApp": {
-      "pageUrl": "https://federicoporceddumvp.sharepoint.com/SitePages/test-123.aspx",
+      "pageUrl": "https://{tenantname}.sharepoint.com/SitePages/yourpage.aspx",
       "customActions": {
         "48cf64ba-259f-4964-be91-efd229cd49c6": {
           "location": "ClientSideExtension.ApplicationCustomizer",
