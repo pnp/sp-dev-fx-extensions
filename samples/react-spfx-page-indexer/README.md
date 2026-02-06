@@ -10,11 +10,15 @@ An SPFx Application Customizer that automatically indexes SharePoint modern page
 
 - **Automatic Indexing**: Automatically indexes Site Pages when they load
 - **Complete Content Capture**: Uses auto-scroll to capture all lazy-loaded content
-- **Web Part Detection**: Identifies and catalogs all SPFx web parts on the page
+- **Web Part Detection**: Identifies and catalogs all web parts on the page
 - **Deduplication**: Intelligent content deduplication to avoid repeated content
 - **Word Count**: Calculates total word count for each page
-- **Centralized Storage**: Stores all indexed data in a SharePoint lists    
+- **Centralized Storage**: Stores all indexed data in a SharePoint list
 - **Smart Filtering**: Only indexes pages in /SitePages/ library
+
+## Upcoming Features
+
+- 🔜 **Image Indexing**: Automatic extraction and indexing of images from pages (coming soon)
 
 ## Used SharePoint Framework Version
 
@@ -51,45 +55,32 @@ An SPFx Application Customizer that automatically indexes SharePoint modern page
 
 ---
 
-## Features
+## Minimal Path to Awesome
 
-### Automatic Page Indexing
-The extension automatically indexes SharePoint Site Pages when they load, capturing:
-- Page URL and title
-- Complete page content (with lazy loading support)
-- All SPFx web parts and their content
-- Total word count
-- Last indexed timestamp
+- Clone this repository
+- In the command-line run:
+  - `npm install`
+  - `gulp serve`
+- To deploy:
+  - `gulp bundle --ship`
+  - `gulp package-solution --ship`
+  - Upload the `.sppkg` file to your App Catalog
+  - Install the app on your site
 
-### Smart Content Extraction
-- **Auto-scroll**: Automatically scrolls through the page to trigger lazy-loaded content
-- **Deduplication**: Removes duplicate web part instances
-- **Clean output**: Stores content once without repetition
+## Features Details
 
-### PageIndex List Structure
-The extension creates a "PageIndex" list with these fields:
-- **PageId**: Unique identifier (indexed)
-- **PageUrl**: Hyperlink to the page
-- **PageTitle**: Title of the page
-- **PageContent**: Extracted content (multiline text)
-- **TotalWordCount**: Word count (number)
-- **WebPartsData**: JSON data of web parts (multiline text)
-- **WebPartsCount**: Number of web parts (number)
-- **LastIndexed**: Timestamp (datetime)
+### PageIndex List
+The extension automatically creates a "PageIndex" list with these fields:
+- **PageId**: Unique identifier
+- **PageUrl**: Link to the page
+- **PageTitle**: Page title
+- **PageContent**: Extracted content
+- **TotalWordCount**: Word count
+- **WebPartsData**: JSON data of web parts
+- **WebPartsCount**: Number of web parts
+- **LastIndexed**: Timestamp
 
-## Configuration
-
-The extension works out-of-the-box with these default settings:
-- **Indexing delay**: 6 seconds after page load
-- **Auto-scroll speed**: 500px every 150ms
-- **Scroll timeout**: 10 seconds maximum
-- **Image loading timeout**: 5 seconds
-
-To customize, modify the following files:
-- `GraphService.ts`: Adjust scroll speed and timeouts
-- `PageIndexerService.ts`: Change indexing delay and retry logic
-
-## Indexing Policy
+### Indexing Policy
 
 **WILL INDEX:**
 - ✅ Pages in `/SitePages/` library
@@ -101,47 +92,14 @@ To customize, modify the following files:
 - Layout pages
 - System pages
 
-## Architecture
-
-### Key Components
-
-**PageIndexerApplicationCustomizer.ts**
-- Entry point for the extension
-- Initializes PnPjs and services
-- Provides global debug interface
-
-**PageIndexerService.ts**
-- Manages indexing workflow
-- Handles page navigation detection
-- Implements retry logic
-
-**GraphService.ts**
-- Extracts page content and metadata
-- Implements auto-scroll for lazy loading
-- Detects and catalogs SPFx web parts
-
-**ListService.ts**
-- Manages SharePoint list operations
-- Creates and maintains PageIndex list
-- Handles CRUD operations
-
 ## References
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp)
 - [PnPjs Documentation](https://pnp.github.io/pnpjs/)
 
 ## Help
 
-We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
-
-If you encounter any issues while using this sample, [create a new issue](https://github.com/pnp/react-spfx-page-indexer/issues/new).
-
-## Support
-
-This is an open source project and community provided support is available via GitHub issues.
+If you encounter any issues while using this sample, [create a new issue](https://github.com/saiiiiiii/react-spfx-page-indexer/issues/new).
 
 <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-spfx-page-indexer" />
