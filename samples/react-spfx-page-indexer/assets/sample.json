@@ -34,6 +34,7 @@
         "alt": "SharePoint Page Indexer - Automatic page content indexing"
       },
       {
+        "name": "papageindex-list.png",
         "type": "image",
         "order": 101,
         "url": "https://github.com/saiiiiiii/react-spfx-page-indexer/raw/main/assets/pageindex-list.png",
