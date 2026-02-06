@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "page-indexer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/pageIndexer/PageIndexerApplicationCustomizer.js",
+          "manifest": "./src/extensions/pageIndexer/PageIndexerApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "test-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/testWebPart/TestWebPartWebPart.js",
+          "manifest": "./src/webparts/testWebPart/TestWebPartWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PageIndexerApplicationCustomizerStrings": "lib/extensions/pageIndexer/loc/{locale}.js",
+    "TestWebPartWebPartStrings": "lib/webparts/testWebPart/loc/{locale}.js"
+  }
+}

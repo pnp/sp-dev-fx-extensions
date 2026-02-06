@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="PageIndexer"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="86892ffd-7304-4f44-824f-28ab49d8318f"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
