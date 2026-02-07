@@ -1,11 +1,11 @@
 [
   {
-    "name": "pnp-sp-dev-spfx-extensions-react-spfx-page-indexer",
+    "name": "pnp-sp-dev-spfx-extensions-react-application-page-indexer",
     "source": "pnp",
     "title": "SharePoint Page Indexer",
     "shortDescription": "An SPFx Application Customizer that automatically indexes SharePoint modern pages, extracting page content, web parts, and metadata into a centralized SharePoint list.",
-    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-spfx-page-indexer",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-spfx-page-indexer",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-page-indexer",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-page-indexer",
     "longDescription": [
       "This SPFx Application Customizer automatically indexes SharePoint Site Pages when they load. It captures complete page content including lazy-loaded sections, catalogs all SPFx web parts, calculates word counts, and stores everything in a centralized PageIndex SharePoint list. The solution includes intelligent deduplication, auto-scroll functionality for complete content capture, and debug tools for manual testing."
     ],
@@ -30,14 +30,14 @@
         "name": "page-indexer-demo.gif",
         "type": "image",
         "order": 100,
-        "url": "https://github.com/saiiiiiii/react-spfx-page-indexer/raw/main/assets/page-indexer-demo.gif",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-page-indexer/assets/page-indexer-demo.gif",
         "alt": "SharePoint Page Indexer - Automatic page content indexing"
       },
       {
         "name": "papageindex-list.png",
         "type": "image",
         "order": 101,
-        "url": "https://github.com/saiiiiiii/react-spfx-page-indexer/raw/main/assets/pageindex-list.png",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-page-indexer/assets/pageindex-list.png",
         "alt": "PageIndex SharePoint List with indexed content"
       }
     ],
