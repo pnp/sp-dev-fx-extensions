@@ -21,7 +21,7 @@
     "@microsoft/sp-dialog": "1.21.1",
     "@pnp/graph": "^4.13.0",
     "@pnp/sp": "^4.13.0",
-    "axios": "^1.9.0",
+    "axios": "^1.13.5",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
     "lodash": "^4.17.21",
