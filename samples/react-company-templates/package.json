@@ -15,7 +15,7 @@
   "dependencies": {
     "@fluentui/react": "^8.122.11",
     "@microsoft/decorators": "1.20.0",
-    "@microsoft/generator-sharepoint": "1.20.0",
+    "@microsoft/generator-sharepoint": "1.22.2",
     "@microsoft/sp-core-library": "1.20.0",
     "@microsoft/sp-dialog": "1.20.0",
     "@microsoft/sp-listview-extensibility": "1.20.0",
@@ -30,10 +30,10 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@microsoft/eslint-config-spfx": "1.20.2",
+    "@microsoft/eslint-config-spfx": "1.22.2",
     "@microsoft/eslint-plugin-spfx": "1.20.2",
     "@microsoft/rush-stack-compiler-4.7": "0.1.0",
-    "@microsoft/sp-build-web": "1.20.2",
+    "@microsoft/sp-build-web": "1.22.2",
     "@microsoft/sp-module-interfaces": "1.20.2",
     "@rushstack/eslint-config": "4.3.0",
     "@types/webpack-env": "~1.15.2",
