@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "layout-customizer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/layoutCustomizer/LayoutCustomizerApplicationCustomizer.js",
+          "manifest": "./src/extensions/layoutCustomizer/LayoutCustomizerApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "LayoutCustomizerApplicationCustomizerStrings": "lib/extensions/layoutCustomizer/loc/{locale}.js"
+  }
+}
