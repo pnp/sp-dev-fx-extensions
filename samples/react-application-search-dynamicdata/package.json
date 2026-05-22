@@ -32,7 +32,7 @@
     "moment": "^2.21.0"
   },
   "devDependencies": {
-    "@microsoft/sp-build-web": "1.16.1",
+    "@microsoft/sp-build-web": "1.23.0",
     "@microsoft/sp-module-interfaces": "1.5.0-plusbeta",
     "@microsoft/sp-webpart-workbench": "1.12.1",
     "gulp": "~3.9.1",
