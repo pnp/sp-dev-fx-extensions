@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
     <CustomAction
-        Title="ApproveActionCommandSet"
+        Title="GroupingCommandSet"
+        RegistrationId="100"
+        RegistrationType="List"
         Location="ClientSideExtension.ListViewCommandSet.CommandBar"
-        ClientSideComponentId="0dd1fb3d-e3e3-47ad-b218-a0a5e275f7b1"
-        ClientSideComponentProperties="{&quot;sampleTextOne&quot;:&quot;One item is selected in the list&quot;,&quot;sampleTextTwo&quot;:&quot;This command is always visible.&quot;}">
+        ClientSideComponentId="8a3f5c12-1d4e-4b2a-9c8f-3b1e5d6a7f90"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+    <CustomAction
+        Title="GroupingCommandSet"
+        RegistrationId="101"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="8a3f5c12-1d4e-4b2a-9c8f-3b1e5d6a7f90"
+        ClientSideComponentProperties="{}">
     </CustomAction>
 </Elements>

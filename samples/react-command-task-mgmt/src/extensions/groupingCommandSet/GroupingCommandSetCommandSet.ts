@@ -8,6 +8,7 @@ import {
 } from '@microsoft/sp-listview-extensibility';
 import { Dialog } from '@microsoft/sp-dialog';
 import { spfi, SPFx, type SPFI } from '@pnp/sp';
+
 import '@pnp/sp/webs';
 import '@pnp/sp/lists';
 import '@pnp/sp/items';
@@ -33,11 +34,9 @@ export default class GroupingCommandSetCommandSet extends BaseListViewCommandSet
 
     const approve: Command | undefined = this.tryGetCommand('CMD_APPROVE');
     const reject: Command | undefined = this.tryGetCommand('CMD_REJECT');
-    const copyLink: Command | undefined = this.tryGetCommand('CMD_COPYLINK');
 
     if (approve) approve.visible = hasSelection;
     if (reject) reject.visible = hasSelection;
-    if (copyLink) copyLink.visible = hasSelection;
   }
 
   /**
@@ -51,9 +50,6 @@ export default class GroupingCommandSetCommandSet extends BaseListViewCommandSet
           break;
         case 'CMD_REJECT':
           await this._bulkUpdateStatus(event.selectedRows, 'Rejected');
-          break;
-        case 'CMD_COPYLINK':
-          await this._copyLink(event.selectedRows);
           break;
         default:
           throw new Error(`Unknown command: ${event.itemId}`);
@@ -107,45 +103,12 @@ export default class GroupingCommandSetCommandSet extends BaseListViewCommandSet
       throw new Error(`${strings.UpdateFailed} (items: ${failures.join(', ')})`);
     }
 
-    // Soft refresh — let the host re-render the command bar; the list view
-    // will pick up the new Status values on its next data fetch.
+    // Re-evaluate command visibility.
     this.raiseOnChange();
-  }
 
-  /**
-   * Copies the Display Form URL of the first selected item to the clipboard.
-   * Falls back to a Dialog with the link when the Clipboard API is unavailable
-   * (insecure context, missing user-gesture, or unsupported browser).
-   *
-   * URL pattern: <webUrl>/<listServerRelativeUrl>/DispForm.aspx?ID=<itemId>
-   */
-  private async _copyLink(rows: readonly RowAccessor[]): Promise<void> {
-    const first: RowAccessor | undefined = rows?.[0];
-    if (!first) return;
-
-    const itemId: number = Number(first.getValueByName('ID'));
-    const webUrl: string = this.context.pageContext.web.absoluteUrl;
-    const listRelUrl: string = this.context.pageContext.list?.serverRelativeUrl ?? '';
-
-    const link: string =
-      `${webUrl.replace(/\/$/, '')}${listRelUrl}/DispForm.aspx?ID=${itemId}`;
-
-    let copied: boolean = false;
-    try {
-      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
-        await navigator.clipboard.writeText(link);
-        copied = true;
-      }
-    } catch (err) {
-      Log.warn(LOG_SOURCE, `Clipboard API failed: ${err instanceof Error ? err.message : String(err)}`);
-    }
-
-    if (copied) {
-      Log.info(LOG_SOURCE, `Copied link: ${link}`);
-      await Dialog.alert(strings.CopySuccess);
-    } else {
-      // Fallback — show the link so the user can copy manually.
-      await Dialog.alert(`${strings.CopyFailed}\n\n${link}`);
-    }
+    // SPFx does not expose a public API to force the modern list view to
+    // re-fetch its data, so reload the page to surface the new Status values
+    // immediately.
+    window.location.reload();
   }
 }
