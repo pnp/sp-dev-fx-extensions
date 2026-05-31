@@ -3,7 +3,7 @@
   "solution": {
     "name": "react-command-task-mgmt-client-side-solution",
     "id": "71f9db24-0d1d-4659-a232-abc9ad718491",
-    "version": "1.0.1.0",
+    "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "Grouping Command Set - Deployment of grouped list view commands",
         "description": "Deploys the grouped Status/Share List View Command Set",
         "id": "b6c7d8e9-1a2b-3c4d-5e6f-7890abcdef12",
-        "version": "1.0.1.0",
+        "version": "1.0.0.0",
         "assets": {
           "elementManifests": [
             "elements.xml"
