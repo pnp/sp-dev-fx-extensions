@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction Title="AccessLens"
+        RegistrationId="101"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="42b08ab6-ee15-419a-96da-c68be824118b"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>
