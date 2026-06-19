@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "site-content-ribbon-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/siteContentRibbon/SiteContentRibbonApplicationCustomizer.js",
+          "manifest": "./src/extensions/siteContentRibbon/SiteContentRibbonApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SiteContentRibbonApplicationCustomizerStrings": "lib/extensions/siteContentRibbon/loc/{locale}.js"
+  }
+}
