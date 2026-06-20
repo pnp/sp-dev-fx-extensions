@@ -1,0 +1,24 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "SiteContentRibbonExtension",
+    "environment": "spo",
+    "packageManager": "npm",
+    "useGulp": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer",
+    "template": "none",
+    "componentName": "SiteContentRibbon",
+    "componentDescription": "Ribbon icon to open site content panel",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.14.0",
+    "sdksVersions": {},
+    "version": "1.23.0",
+    "libraryName": "site-content-ribbon-extension",
+    "libraryId": "0696d3ba-f2a4-4721-b709-31e98609739e",
+    "solutionShortDescription": "SiteContentRibbonExtension description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}

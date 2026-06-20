@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="SiteContentRibbon"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="a82c7644-3927-44e4-8d67-edfaace16d38"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
