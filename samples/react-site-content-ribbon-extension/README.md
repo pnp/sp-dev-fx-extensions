@@ -35,7 +35,7 @@ This sample is optimally compatible with the following environment configuration
 
 ## Contributors
 
-- Harminder Singh
+- [Harminder Singh](https://github.com/HarminderSethi)
 
 ## Version history
 
