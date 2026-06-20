@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+  "id": "8a3f5c12-1d4e-4b2a-9c8f-3b1e5d6a7f90",
+  "alias": "GroupingCommandSetCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "items": {
+    "GROUP_STATUS": {
+      "title": { "default": "Status" },
+      "type": "group",
+      "iconImageUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23333' d='M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm0 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Zm-1 8.79 4.4-4.4a.75.75 0 0 1 1.13.98l-.07.08-5 5a.75.75 0 0 1-.98.07l-.08-.07-2.5-2.5a.75.75 0 0 1 .98-1.13l.08.07L9 12.29Z'/%3E%3C/svg%3E"
+    },
+    "CMD_APPROVE": {
+      "title": { "default": "Approve" },
+      "type": "command",
+      "group": "GROUP_STATUS",
+      "iconImageUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23107c10' d='m8.5 16.59-5.3-5.3a.75.75 0 0 1 .98-1.13l.08.07L8.5 14.47l7.24-7.24a.75.75 0 0 1 1.13.98l-.07.08-7.78 7.78a.75.75 0 0 1-1.06 0l.04.04Z'/%3E%3C/svg%3E"
+    },
+    "CMD_REJECT": {
+      "title": { "default": "Reject" },
+      "type": "command",
+      "group": "GROUP_STATUS",
+      "iconImageUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23d13438' d='m4.09 4.22.06-.07a.75.75 0 0 1 .98-.07l.07.06L10 8.94l4.8-4.8a.75.75 0 0 1 1.12.98l-.06.07L11.06 10l4.8 4.8a.75.75 0 0 1-.98 1.12l-.07-.06L10 11.06l-4.8 4.8a.75.75 0 0 1-1.12-.98l.06-.07L8.94 10l-4.8-4.8a.75.75 0 0 1-.05-.98Z'/%3E%3C/svg%3E"
+    }
+  }
+}

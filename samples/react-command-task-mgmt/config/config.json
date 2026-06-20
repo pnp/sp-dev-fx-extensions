@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "grouping-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/groupingCommandSet/GroupingCommandSetCommandSet.js",
+          "manifest": "./src/extensions/groupingCommandSet/GroupingCommandSetCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GroupingCommandSetStrings": "lib/extensions/groupingCommandSet/loc/{locale}.js"
+  }
+}
