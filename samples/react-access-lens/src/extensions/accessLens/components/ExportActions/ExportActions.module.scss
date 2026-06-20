@@ -1,0 +1,37 @@
+﻿.exportSection {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fallbackContainer {
+  margin-top: 8px;
+}
+
+.fallbackTextArea {
+  width: 100%;
+  min-height: 120px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 11px;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  padding: 8px;
+  resize: vertical;
+}
+
+.statusMessage {
+  font-size: 12px;
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.successMessage {
+  color: #107c10;
+  background: #dff6dd;
+}
+
+.errorMessage {
+  color: #a80000;
+  background: #fde7e9;
+}

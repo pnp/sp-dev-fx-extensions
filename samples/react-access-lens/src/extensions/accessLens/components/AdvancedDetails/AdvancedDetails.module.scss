@@ -1,0 +1,54 @@
+﻿.detailsSection {
+  margin-top: 4px;
+}
+
+.toggle {
+  cursor: pointer;
+  background: none;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #323130;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toggle:hover {
+  background: #f3f2f1;
+}
+
+.jsonContainer {
+  margin-top: 8px;
+  background: #faf9f8;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  padding: 12px;
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.jsonContainer pre {
+  margin: 0;
+  font-size: 11px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #323130;
+}
+
+.debugBadge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  background: #e6f2fb;
+  color: #004578;
+  font-weight: 600;
+  margin-bottom: 8px;
+}

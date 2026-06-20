@@ -1,0 +1,31 @@
+﻿.contextCard {
+  background: #faf9f8;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.contextCard table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.contextCard th,
+.contextCard td {
+  padding: 3px 8px 3px 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+.contextCard th {
+  font-weight: 600;
+  white-space: nowrap;
+  width: 160px;
+  color: #323130;
+}
+
+.contextCard td {
+  color: #605e5c;
+  word-break: break-all;
+}

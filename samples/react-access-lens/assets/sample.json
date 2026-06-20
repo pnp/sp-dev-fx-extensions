@@ -1,0 +1,75 @@
+﻿[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-access-lens",
+    "source": "pnp",
+    "title": "Access Lens",
+    "shortDescription": "Inspect SharePoint document library permissions from the command bar.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-access-lens",
+    "longDescription": [
+      "Access Lens is a read-only SharePoint Framework ListView Command Set for modern SharePoint Online document libraries.",
+      "It adds an Inspect Access command to the document library command bar and opens a right-side panel with permission inheritance, effective permission source, web and library role assignments, visible SharePoint group members, risk indicators, and export options.",
+      "The sample runs entirely in the browser, uses the current SharePoint context and PnPjs, and does not require Microsoft Graph permissions, admin consent, a backend service, external storage, or telemetry."
+    ],
+    "creationDateTime": "2026-06-15",
+    "updateDateTime": "2026-06-16",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.23.0"
+      }
+    ],
+    "tags": [
+      "SPFx",
+      "SharePoint Framework",
+      "ListView Command Set",
+      "Document Library",
+      "Permissions",
+      "Access Review",
+      "Role Assignments",
+      "PnPjs",
+      "React"
+    ],
+    "categories": [
+      "SPFX-LISTVIEW-COMMANDSET"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-access-lens/assets/panel-overview.png",
+        "alt": "Access Lens permission overview panel"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "rwenz02",
+        "pictureUrl": "https://github.com/rwenz02.png",
+        "name": "Rick Wenz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "Use SharePoint Framework Extensions to extend the SharePoint user experience, including toolbars and list views.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "Build your first ListView Command Set extension",
+        "description": "Learn how to create a SharePoint Framework ListView Command Set extension.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api?WT.mc_id=m365-15741-cxa"
+      },
+      {
+        "name": "PnPjs documentation",
+        "description": "PnPjs provides fluent APIs for working with SharePoint and Microsoft 365.",
+        "url": "https://pnp.github.io/pnpjs/"
+      }
+    ]
+  }
+]

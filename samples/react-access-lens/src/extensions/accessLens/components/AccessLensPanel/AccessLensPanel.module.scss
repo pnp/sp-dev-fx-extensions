@@ -1,0 +1,27 @@
+﻿.panel {
+  :global(.ms-Panel-content) {
+    padding: 0 16px 16px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.headerActions {
+  display: flex;
+  gap: 4px;
+}
+
+.subtitle {
+  color: #605e5c;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.section {
+  margin-bottom: 16px;
+}
