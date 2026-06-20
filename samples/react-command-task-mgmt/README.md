@@ -34,23 +34,15 @@ When one or more items are selected, the user can approve or reject the selected
 - A SharePoint list that contains a single-line text or choice column named **`Status`** (the internal name must be `Status`).
 - Permissions to edit items on the target list.
 
-## Solution
+## Contributors
 
-| Solution                | Author(s) |
-| ----------------------- | --------- |
-| react-command-task-mgmt | [Aimery Thomas](https://github.com/a1mery) |
+- [Aimery Thomas](https://github.com/a1mery)
 
 ## Version history
 
 | Version | Date         | Comments        |
 | ------- | ------------ | --------------- |
 | 1.0     | May 31, 2026 | Initial release |
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
 
 ## Minimal Path to Awesome
 
@@ -100,3 +92,11 @@ The manifest defines:
 - [PnPjs documentation](https://pnp.github.io/pnpjs/)
 - [Heft Documentation](https://heft.rushstack.io/)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+---
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-task-mgmt" />
