@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-06-20T18:22:11+02:00",
+  "commit": "d1a85e035a0e311e86b68a85f8023369c6ce6155",
+  "errors": [
+    {
+      "file": "samples/react-access-lens/assets/sample.json",
+      "error": "JSON decode error at line 1, column 1: Unexpected UTF-8 BOM (decode using utf-8-sig)"
+    }
+  ]
+}
