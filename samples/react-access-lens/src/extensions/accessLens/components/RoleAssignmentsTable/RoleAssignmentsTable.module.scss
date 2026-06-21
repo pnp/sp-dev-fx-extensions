@@ -1,0 +1,110 @@
+﻿.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table th {
+  text-align: left;
+  padding: 6px 8px;
+  background: #f3f2f1;
+  border-bottom: 2px solid #edebe9;
+  font-weight: 600;
+  color: #323130;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #edebe9;
+  vertical-align: top;
+  color: #323130;
+}
+
+.effectiveRow td {
+  background: #fff;
+}
+
+.nonEffectiveRow td {
+  background: #faf9f8;
+  color: #797673;
+}
+
+.expandButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #0078d4;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+
+.expandButton:hover {
+  text-decoration: underline;
+}
+
+.groupMembersRow td {
+  padding: 0;
+  border-bottom: 1px solid #edebe9;
+}
+
+.groupMembersContent {
+  padding: 8px 16px;
+  background: #f3f2f1;
+}
+
+.memberTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.memberTable th {
+  text-align: left;
+  padding: 4px 6px;
+  background: #edebe9;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.memberTable td {
+  padding: 4px 6px;
+  border-bottom: 1px solid #e1dfdd;
+}
+
+.noteTag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  margin: 1px 2px;
+}
+
+.noteExternal {
+  background: #fff4ce;
+  color: #835b00;
+}
+
+.noteBroad {
+  background: #fff4ce;
+  color: #835b00;
+}
+
+.noAssignments {
+  color: #797673;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.errorMessage {
+  color: #a80000;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+.loadingMembers {
+  padding: 4px 0;
+  font-size: 12px;
+  color: #605e5c;
+}

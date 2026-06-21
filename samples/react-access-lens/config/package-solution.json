@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sharepoint-access-lens-client-side-solution",
+    "title": "SharePoint Access Lens",
+    "id": "0e417c6a-bd1e-4ceb-979d-3e15ea45f15f",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Rick Wenz",
+      "websiteUrl": "https://github.com/rwenz02",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Inspect SharePoint document library permissions from the command bar."
+      },
+      "longDescription": {
+        "default": "SharePoint Access Lens is a read-only SharePoint Framework ListView Command Set for modern SharePoint Online document libraries. It summarizes permission inheritance, effective permission source, role assignments, SharePoint group members, risk indicators, and export options without requiring Microsoft Graph permissions or a backend service."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": [
+        "IT/admin",
+        "Collaboration"
+      ]
+    },
+    "features": [
+      {
+        "title": "SharePoint Access Lens command set",
+        "description": "Deploys the Inspect Access ListView Command Set custom action for SharePoint document libraries.",
+        "id": "d6d6e50c-1cfe-47e5-94f4-782c55aebbd6",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/sharepoint-access-lens.sppkg"
+  }
+}

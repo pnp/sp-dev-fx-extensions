@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "access-lens-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/accessLens/AccessLensCommandSet.js",
+          "manifest": "./src/extensions/accessLens/AccessLensCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AccessLensCommandSetStrings": "lib/extensions/accessLens/loc/{locale}.js"
+  }
+}

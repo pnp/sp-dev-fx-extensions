@@ -1,0 +1,28 @@
+﻿.summaryCard {
+  background: #faf9f8;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.summaryCard table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.summaryCard th,
+.summaryCard td {
+  padding: 3px 8px 3px 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+.summaryCard th {
+  font-weight: 600;
+  color: #323130;
+}
+
+.summaryCard td {
+  color: #605e5c;
+}
