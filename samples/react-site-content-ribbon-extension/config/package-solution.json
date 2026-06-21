@@ -25,6 +25,12 @@
       "videoUrl": "",
       "categories": []
     },
+     "webApiPermissionRequests": [
+      {
+        "scope": "Sites.Read.All",
+        "resource": "Microsoft Graph"
+      }
+    ],
     "features": [
       {
         "title": "Application Extension - Deployment of custom action",
