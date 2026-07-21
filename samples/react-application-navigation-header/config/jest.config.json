@@ -1,0 +1,33 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "testMatch": ["**/src/**/*.test.{ts,tsx}"],
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
+  "rootDir": "..",
+  "roots": ["<rootDir>/src"],
+  "transform": {
+    "^.+\\.tsx?$": ["ts-jest", {
+      "tsconfig": {
+        "esModuleInterop": true,
+        "jsx": "react",
+        "lib": ["dom", "es2020"],
+        "target": "es2019",
+        "module": "commonjs",
+        "strict": false
+      }
+    }]
+  },
+  "moduleNameMapper": {
+    "\\.(scss|css)$": "<rootDir>/config/styleMock.ts",
+    "\\.(png|jpg|jpeg|gif|svg)$": "<rootDir>/config/fileMock.ts",
+    "^@msinternal/ecs-flight$": "<rootDir>/config/mocks/empty.ts",
+    "^@microsoft/sp-core-library$": "<rootDir>/config/mocks/sp-core-library.ts",
+    "^@microsoft/sp-application-base$": "<rootDir>/config/mocks/sp-application-base.ts",
+    "^@microsoft/sp-component-base$": "<rootDir>/config/mocks/sp-component-base.ts",
+    "^@microsoft/sp-http$": "<rootDir>/config/mocks/sp-http.ts",
+    "^@microsoft/decorators$": "<rootDir>/config/mocks/sp-decorators.ts",
+    "^@pnp/sp$": "<rootDir>/config/mocks/pnp-sp.ts",
+    "^@fluentui/react$": "<rootDir>/config/mocks/fluentui-react.ts"
+  },
+  "setupFiles": ["<rootDir>/config/jest.setup.ts"]
+}

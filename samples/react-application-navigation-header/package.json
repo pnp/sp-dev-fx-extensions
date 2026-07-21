@@ -1,0 +1,62 @@
+{
+  "name": "spfx-global-navigation-header",
+  "version": "2.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.14.0 < 23.0.0"
+  },
+  "scripts": {
+    "build": "heft build --clean --production && heft package-solution --production",
+    "start": "heft start --clean",
+    "clean": "heft clean",
+    "eject-webpack": "heft eject-webpack",
+    "lint": "eslint src --ext .ts,.tsx --max-warnings 0",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "test": "heft test --clean",
+    "test:watch": "heft test --watch"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.74.3",
+    "@fluentui/react-icons": "^2.0.331",
+    "@microsoft/decorators": "1.23.2",
+    "@microsoft/sp-application-base": "1.23.2",
+    "@microsoft/sp-core-library": "1.23.2",
+    "@microsoft/sp-http": "1.23.2",
+    "@pnp/sp": "^4.20.0",
+    "dompurify": "^3.4.11",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tslib": "2.3.1"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-config-spfx": "1.23.2",
+    "@microsoft/eslint-plugin-spfx": "1.23.2",
+    "@microsoft/sp-module-interfaces": "1.23.2",
+    "@microsoft/spfx-heft-plugins": "1.23.2",
+    "@microsoft/spfx-web-build-rig": "1.23.2",
+    "@rushstack/eslint-config": "4.5.2",
+    "@rushstack/heft": "1.1.2",
+    "@rushstack/heft-jest-plugin": "0.16.4",
+    "@types/jest": "^29.5.0",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0",
+    "@types/webpack-env": "~1.15.2",
+    "@typescript-eslint/parser": "8.46.2",
+    "css-loader": "~7.1.2",
+    "eslint": "8.57.1",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.4.11",
+    "typescript": "~5.8.0"
+  },
+  "overrides": {
+    "@rushstack/heft": "1.1.2",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0"
+  },
+  "resolutions": {
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0"
+  }
+}

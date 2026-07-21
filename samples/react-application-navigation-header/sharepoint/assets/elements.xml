@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="HeaderApp"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="128e0ead-98e9-417b-be18-7687044f88b2"
+        ClientSideComponentProperties="{&quot;homeUrl&quot;:&quot;{homeUrl}&quot;,&quot;logoUrl&quot;:&quot;{logoUrl}&quot;,&quot;logoAltText&quot;:&quot;{logoAltText}&quot;,&quot;navigationSource&quot;:&quot;jsonFile&quot;,&quot;features&quot;:{&quot;adminSettingsEnabled&quot;:true}}"
+        Scope="Tenant">
+    </CustomAction>
+</Elements>

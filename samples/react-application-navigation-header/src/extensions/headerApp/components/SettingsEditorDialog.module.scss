@@ -1,0 +1,742 @@
+// Fluent 2 type ramp (consistent across the panel):
+//   caption1   12px / 16px  — hints, badges, meta, dropdown titles
+//   body1      14px / 20px  — labels, toggle labels, node labels, descriptions
+//   subtitle2  16px / 22px  — section titles, card titles
+//   title2     20px / 28px  — panel title
+//   title1     24px / 32px  — reserved for header (not used here)
+
+.editorPanel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--header-surface, #ffffff);
+}
+
+// ─── Panel header (M365 style: icon monogram + title + close) ───────────────
+
+.editorHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 24px 20px 24px;
+  border-bottom: 1px solid var(--header-border, #edebe9);
+  background: var(--header-surface, #ffffff);
+  flex-shrink: 0;
+}
+
+.editorHeaderIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--header-accent-subtle, rgba(15, 108, 189, 0.1));
+  color: var(--header-accent, #0f6cbd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.editorHeaderTitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.editorTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--header-body-text, #243242);
+  margin: 0;
+  line-height: 28px;
+}
+
+.editorSubtitle {
+  font-size: 14px;
+  color: var(--header-subtext, #616161);
+  margin: 0;
+  line-height: 20px;
+}
+
+.editorClose {
+  flex-shrink: 0;
+}
+
+// ─── Tabs (M365 large tab format) ───────────────────────────────────────────
+
+.editorTabs {
+  padding: 0 24px;
+  border-bottom: 1px solid var(--header-border, #edebe9);
+  background: var(--header-surface, #ffffff);
+  flex-shrink: 0;
+}
+
+// ─── Body ────────────────────────────────────────────────────────────────────
+
+.editorBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  min-height: 0;
+  background: var(--header-surface-hover, #faf9f8);
+}
+
+// ─── Footer (M365 elevated footer with shadow) ──────────────────────────────
+
+.editorFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 24px;
+  border-top: 1px solid var(--header-border, #edebe9);
+  background: var(--header-surface, #ffffff);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+  min-height: 60px;
+}
+
+.footerError {
+  font-size: 14px;
+  color: #a4262c;
+  padding: 6px 12px;
+  background: rgba(164, 38, 44, 0.06);
+  border-radius: 4px;
+  margin-inline-end: auto;
+  max-width: 60%;
+}
+
+// ─── Sections ────────────────────────────────────────────────────────────────
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 8px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 4px;
+}
+
+.sectionHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--header-body-text, #243242);
+  margin: 0;
+  line-height: 22px;
+}
+
+.sectionDescription {
+  font-size: 14px;
+  color: var(--header-subtext, #616161);
+  margin: 0;
+  line-height: 20px;
+}
+
+.sectionDivider {
+  height: 1px;
+  background: var(--header-border, #edebe9);
+  margin: 4px 0;
+  border: none;
+}
+
+// ─── Fields ──────────────────────────────────────────────────────────────────
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.fieldRowSingle {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--header-body-text, #243242);
+  margin-bottom: 4px;
+  display: block;
+  line-height: 20px;
+}
+
+.fieldHint {
+  font-size: 12px;
+  color: var(--header-subtext, #616161);
+  margin-top: 4px;
+  line-height: 16px;
+}
+
+// ─── Feature cards (M365 settings card pattern) ─────────────────────────────
+
+.featureSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featureSectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--header-subtext, #616161);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  line-height: 20px;
+  padding: 4px 0;
+}
+
+.featureCardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.featureCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--header-border, #e1dfdd);
+  border-radius: 8px;
+  background: var(--header-surface, #ffffff);
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.featureCard:hover {
+  border-color: var(--header-border-strong, #c7c7c7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.featureCardOn {
+  border-color: var(--header-accent, #0f6cbd);
+  background: var(--header-accent-subtle, rgba(15, 108, 189, 0.03));
+}
+
+.featureCardDisabled {
+  opacity: 0.55;
+}
+
+.featureCardLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  flex: 1;
+}
+
+.featureCardIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: var(--header-hover-background, #f3f2f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--header-subtext, #616161);
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.featureCardOn .featureCardIcon {
+  background: var(--header-accent-subtle, rgba(15, 108, 189, 0.12));
+  color: var(--header-accent, #0f6cbd);
+}
+
+.featureCardText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.featureCardLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--header-body-text, #243242);
+  line-height: 20px;
+}
+
+.featureCardDesc {
+  font-size: 12px;
+  color: var(--header-subtext, #616161);
+  line-height: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.featureCountBadge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--header-accent, #0f6cbd);
+  background: var(--header-accent-subtle, rgba(15, 108, 189, 0.1));
+  padding: 4px 10px;
+  border-radius: 12px;
+  line-height: 16px;
+  flex-shrink: 0;
+}
+
+// ─── Color row ───────────────────────────────────────────────────────────────
+
+.colorRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+}
+
+// ─── Source cards ────────────────────────────────────────────────────────────
+
+.sourceCardGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.sourceCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border: 2px solid var(--header-border, #edebe9);
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--header-surface, #ffffff);
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sourceCard:hover {
+  border-color: var(--header-accent, #0f6cbd);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sourceCard:focus-visible {
+  outline: 2px solid var(--header-accent, #0f6cbd);
+  outline-offset: 2px;
+}
+
+.sourceCardSelected {
+  border-color: var(--header-accent, #0f6cbd);
+  background: var(--header-accent-subtle, rgba(15, 108, 189, 0.06));
+}
+
+.sourceCardIcon {
+  font-size: 24px;
+  color: var(--header-accent, #0f6cbd);
+}
+
+.sourceCardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--header-body-text, #243242);
+  line-height: 20px;
+}
+
+.sourceCardDesc {
+  font-size: 12px;
+  color: var(--header-subtext, #616161);
+  line-height: 16px;
+}
+
+// ─── Loading ─────────────────────────────────────────────────────────────────
+
+.loadingWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+}
+
+// ─── Navigation tree (card-style rows like MobilePanel) ─────────────────────
+
+.navTreeContainer {
+  border: 1px solid var(--header-border, #e1dfdd);
+  border-radius: 8px;
+  background: var(--header-surface, #ffffff);
+  overflow: hidden;
+}
+
+.navTreeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--header-border, #e1dfdd);
+  background: var(--header-surface-hover, #faf9f8);
+}
+
+.navTreeTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--header-body-text, #243242);
+  line-height: 20px;
+}
+
+.navTreeCount {
+  font-size: 12px;
+  color: var(--header-subtext, #616161);
+  background: var(--header-hover-background, #f3f2f1);
+  padding: 2px 8px;
+  border-radius: 10px;
+  line-height: 16px;
+}
+
+.navTreeBody {
+  max-height: 48vh;
+  overflow-x: auto;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.navRoot {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navNode {
+  list-style: none;
+  margin: 0;
+}
+
+.navNodeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: background 0.12s ease, border-color 0.12s ease;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.navNodeRow:hover,
+.navNodeRow:focus-within {
+  background: var(--header-hover-background, #f3f2f1);
+  border-color: var(--header-border, #e1dfdd);
+}
+
+.navNodeRowDragging {
+  opacity: 0.4;
+  border: 1px dashed var(--header-accent, #0f6cbd) !important;
+}
+
+.dragOverBefore {
+  border-top: 2px solid var(--header-accent, #0f6cbd) !important;
+}
+
+.dragOverAfter {
+  border-bottom: 2px solid var(--header-accent, #0f6cbd) !important;
+}
+
+.dragOverInside {
+  background: var(--header-accent-subtle, rgba(15, 108, 189, 0.08)) !important;
+  border-color: var(--header-accent, #0f6cbd) !important;
+}
+
+.dragDisabled {
+  cursor: not-allowed !important;
+  border-color: var(--header-border-strong, #ca5010) !important;
+  background: rgba(250, 240, 240, 0.4) !important;
+}
+
+.navExpandButton {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--header-subtext, #616161);
+  border-radius: 4px;
+  flex-shrink: 0;
+
+  &:hover {
+    background: var(--header-border, #edebe9);
+    color: var(--header-body-text, #243242);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+.navNodeIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--header-hover-background, #f3f2f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--header-subtext, #616161);
+  flex-shrink: 0;
+}
+
+.navNodeLabel {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--header-body-text, #243242);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+}
+
+.navNodeMeta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.navNodeUrl {
+  font-size: 12px;
+  color: var(--header-subtext, #616161);
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+  line-height: 16px;
+}
+
+.navNodeBadge {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--header-accent-subtle, rgba(15, 108, 189, 0.1));
+  color: var(--header-accent, #0f6cbd);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 16px;
+}
+
+.navNodeBadgeFeatured {
+  background: rgba(255, 170, 68, 0.15);
+  color: #ca5010;
+}
+
+.navNodeBadgeGroup {
+  background: var(--header-hover-background, #f3f2f1);
+  color: var(--header-subtext, #616161);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.navNodeActions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  opacity: 1;
+  transition: opacity 0.12s ease;
+}
+
+@media (hover: hover) {
+  .navNodeActions {
+    opacity: 0;
+  }
+
+  .navNodeRow:hover .navNodeActions,
+  .navNodeRow:focus-within .navNodeActions {
+    opacity: 1;
+  }
+}
+
+.navChildren {
+  list-style: none;
+  margin: 0;
+  padding-inline-start: 24px;
+  border-inline-start: 2px solid var(--header-border, #edebe9);
+  margin-inline-start: 18px;
+}
+
+// ─── Empty state ─────────────────────────────────────────────────────────────
+
+.navEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  gap: 12px;
+  text-align: center;
+}
+
+.navEmptyIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--header-hover-background, #f3f2f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--header-subtext, #a19fa9);
+}
+
+.navEmptyText {
+  font-size: 14px;
+  color: var(--header-subtext, #616161);
+  line-height: 20px;
+}
+
+.navEmptyHint {
+  font-size: 12px;
+  color: var(--header-subtext, #a19fa9);
+  line-height: 16px;
+}
+
+.navAddButton {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.navSearchBox {
+  flex: 1;
+}
+
+.navImportExportBar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.navImportStatus {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ─── Item dialog form ────────────────────────────────────────────────────────
+
+.itemPanelForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.itemPanelSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.itemPanelSectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--header-body-text, #243242);
+  margin: 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--header-border, #edebe9);
+  line-height: 20px;
+}
+
+.itemPanelField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemPanelRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+// ─── Responsive ──────────────────────────────────────────────────────────────
+
+@media (max-width: 640px) {
+  .fieldRow,
+  .colorRow,
+  .sourceCardGroup,
+  .itemPanelRow {
+    grid-template-columns: 1fr;
+  }
+
+  .editorHeader,
+  .editorTabs,
+  .editorBody,
+  .editorFooter {
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+  }
+
+  .featureCard {
+    padding: 12px 14px;
+  }
+}
+
+// ─── High contrast ───────────────────────────────────────────────────────────
+
+@media (forced-colors: active) {
+  .sourceCard {
+    border: 2px solid ButtonText;
+  }
+  .sourceCardSelected {
+    border-color: Highlight;
+  }
+  .navNodeRow:hover,
+  .navNodeRow:focus-within {
+    background: Highlight;
+    color: HighlightText;
+  }
+  .featureCard {
+    border: 1px solid ButtonText;
+  }
+  .featureCardOn {
+    border-color: Highlight;
+  }
+}
+
+// ─── Reduced motion ──────────────────────────────────────────────────────────
+
+@media (prefers-reduced-motion: reduce) {
+  .sourceCard,
+  .navNodeRow,
+  .navNodeActions,
+  .featureCard,
+  .featureCardIcon {
+    transition: none;
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "header-client-side-solution",
+    "id": "f22b86bd-bfd8-4fa3-9c74-d15efc925bc6",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Nicolas Kheirallah",
+      "websiteUrl": "https://www.Yourmodernworkplace.com/",
+      "privacyUrl": "https://www.Yourmodernworkplace.com/privacy",
+      "termsOfUseUrl": "https://www.Yourmodernworkplace.com/terms-of-use",
+      "mpnId": ""
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Modern Fluent header and navigation for SharePoint Online."
+      },
+      "longDescription": {
+        "default": "Adds a Fluent-aligned global header with navigation from SharePoint Term Store via REST API. Deploy via tenant-wide extension to automatically appear on all SharePoint sites."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action",
+        "description": "Deploys a custom action with ClientSideComponentId association and tenant-wide registration",
+        "id": "35481450-2426-4a87-9dde-48c0902d4138",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/header.sppkg"
+  }
+}

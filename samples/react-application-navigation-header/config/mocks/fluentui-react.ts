@@ -1,0 +1,1 @@
+export const createTheme = (options: unknown): unknown => options;

@@ -1,0 +1,497 @@
+.mobilePanelContent {
+  // The tool components rendered below (Search, Notifications, Help,
+  // Bookmarks, etc.) are shared with the desktop header, where they sit on
+  // the dark --header-chrome-background bar and use --header-chrome-*
+  // variables tuned for contrast against it (typically white icons/text).
+  // This whole panel is a light --header-surface sheet, so left as-is those
+  // same white-on-dark colors render as white-on-white — invisible icons,
+  // invisible search input text, an invisible notification badge fill.
+  // Redefining the variables here (the panel root) lets every descendant
+  // tool pick up light-surface-appropriate colors through the normal CSS
+  // custom-property cascade, with no changes needed in the tool components.
+  --header-chrome-text: var(--header-body-text, #323130);
+  --header-chrome-background: var(--header-surface, #ffffff);
+  --header-chrome-hover-background: var(--header-border, #edebe9);
+  --header-chrome-hover-background-strong: var(--header-hover-background, #f3f2f1);
+  --header-chrome-active-background-strong: var(--header-active-background, #edebe9);
+  --header-chrome-indicator: var(--header-accent, #0f6cbd);
+  --header-search-bg: var(--header-surface-hover, #faf9f8);
+  --header-search-bg-hover: var(--header-hover-background, #f3f2f1);
+  --header-search-border: var(--header-border, #edebe9);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+  padding: 8px 16px max(16px, env(safe-area-inset-bottom));
+  padding-top: 4px;
+}
+
+.mobileSearchSection {
+  width: 100%;
+}
+
+.mobilePanelHeader {
+  background: var(--header-panel-header-background, var(--header-surface, #ffffff));
+  border-bottom: 1px solid var(--header-border, #edebe9);
+  border-radius: 6px;
+  box-shadow: var(--header-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.mobileHeaderActions {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.mobileHeaderPrimaryActions {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+}
+
+.mobileCloseButton {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--header-link, #0f548c);
+  min-height: 44px;
+  min-width: 44px;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.mobileCloseButton :global(.ms-Button-icon),
+.mobileCloseButton :global(.ms-Button-label) {
+  color: inherit;
+}
+
+.mobileCloseButton:hover,
+.mobileCloseButton:focus-visible {
+  background: var(--header-hover-background, #f3f2f1);
+  color: var(--header-link-hover, #115ea3);
+  outline: 2px solid var(--header-focus-ring, rgba(15, 108, 189, 0.75));
+  outline-offset: 2px;
+}
+
+.mobileLiveRegion {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.mobileBackButton {
+  align-items: center;
+  align-self: flex-start;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: var(--header-link, #0f548c);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 700;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 12px;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.mobileBackButton:hover,
+.mobileBackButton:focus-visible {
+  background: var(--header-hover-background, #f3f2f1);
+  color: var(--header-link-hover, #115ea3);
+}
+
+.mobileBreadcrumbButton {
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: var(--header-link, #0f548c);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--header-font-size-subtext, 14px);
+  font-weight: 700;
+  min-height: 44px;
+  padding: 8px 12px;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.mobileBreadcrumbButton:hover,
+.mobileBreadcrumbButton:focus-visible {
+  background: var(--header-hover-background, #f3f2f1);
+  color: var(--header-link-hover, #115ea3);
+}
+
+.mobileBreadcrumbs {
+  align-items: center;
+  color: var(--header-subtext, #605e5c);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: var(--header-font-size-caption, 12px);
+}
+
+.mobileBreadcrumbSeparator,
+.mobileBreadcrumbCurrent {
+  color: var(--header-subtext, #605e5c);
+}
+
+.mobileCurrentContext {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.mobileCurrentTitle {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-title-large, 28px);
+  font-weight: 700;
+  margin: 0;
+}
+
+.mobileCurrentTitle:focus {
+  outline: none;
+}
+
+.mobileCurrentTitle:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid var(--header-focus-ring, rgba(15, 108, 189, 0.75));
+  outline-offset: 4px;
+}
+
+.mobileCurrentDescription {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-body, 14px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mobileViewAllLink {
+  color: var(--header-link, #0f548c);
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mobileLoading {
+  padding-top: 16px;
+}
+
+.mobileEmpty {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-body, 14px);
+  margin: 0;
+  padding: 16px 4px;
+}
+
+.mobileLevel {
+  animation-duration: 180ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobileList {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 8px;
+}
+
+.mobileLevelForward {
+  animation-name: mobileLevelForward;
+}
+
+.mobileLevelBack {
+  animation-name: mobileLevelBack;
+}
+
+.mobileListItem + .mobileListItem {
+  margin-top: 12px;
+}
+
+.mobileItemButton,
+.mobileItemLink {
+  align-items: center;
+  background: var(--header-surface, #ffffff);
+  border: 1px solid var(--header-border, #edebe9);
+  border-radius: 6px;
+  color: inherit;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  min-height: 60px;
+  padding: 16px 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+  width: 100%;
+}
+
+.mobileItemButton {
+  cursor: pointer;
+  font: inherit;
+}
+
+.mobileItemButton:hover,
+.mobileItemLink:hover {
+  background: var(--header-surface-hover, #faf9f8);
+  border-color: var(--header-border-strong, #d2d0ce);
+  box-shadow: var(--header-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+.mobileItemButton:active,
+.mobileItemLink:active {
+  box-shadow: var(--header-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+.mobileItemMeta {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.mobileItemLabel {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mobileItemDescription {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-subtext, 14px);
+  line-height: 1.5;
+}
+
+.mobileItemChevron {
+  color: var(--header-subtext, #605e5c);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobileItemButton:hover .mobileItemChevron,
+.mobileItemButton:focus-visible .mobileItemChevron {
+  transform: translateX(3px);
+}
+
+.mobileItemExternalIcon {
+  font-size: var(--header-font-size-caption, 12px);
+  transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mobileItemLink:hover .mobileItemExternalIcon,
+.mobileItemLink:focus-visible .mobileItemExternalIcon {
+  transform: translate(2px, -2px);
+}
+
+:global(.header-constrained) .mobileLevel {
+  animation-duration: 220ms;
+}
+
+:global(.header-constrained) .mobileItemButton:hover,
+:global(.header-constrained) .mobileItemLink:hover {
+  box-shadow: var(--header-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+  transform: translateY(-1px) translateX(1px);
+}
+
+@media (max-width: 1024px) {
+  .mobilePanelContent {
+    gap: 16px;
+    padding: 8px 16px max(16px, env(safe-area-inset-bottom));
+  }
+
+  .mobileItemButton,
+  .mobileItemLink {
+    min-height: 52px;
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+
+  .mobilePanelHeader {
+    padding: 12px 14px 16px;
+    gap: 12px;
+  }
+
+  .mobileToolsPanel {
+    padding: 16px 14px max(16px, env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 767px) {
+  .mobilePanelContent {
+    gap: 14px;
+    padding: 6px 14px max(14px, env(safe-area-inset-bottom));
+  }
+
+  .mobileItemButton,
+  .mobileItemLink {
+    border-radius: 8px;
+    min-height: 48px;
+    padding: 10px 14px;
+  }
+
+  .mobileListItem + .mobileListItem {
+    margin-top: 10px;
+  }
+
+  .mobilePanelHeader {
+    border-radius: 8px;
+    padding: 10px 12px 14px;
+    gap: 10px;
+  }
+
+  .mobileCurrentTitle {
+    font-size: var(--header-font-size-title, 20px);
+  }
+
+  .mobileToolsPanel {
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+    gap: 8px;
+    padding: 14px 12px max(14px, env(safe-area-inset-bottom));
+  }
+
+  // A deep trail (3+ levels) would otherwise wrap onto multiple lines and eat
+  // into the sticky header's vertical space before the user reaches the
+  // current level's list. Scrolling horizontally keeps the header a fixed
+  // height regardless of trail depth. Applied from 767px down (not just
+  // ≤480px) since wrapping is exactly as disruptive on a mid-size phone.
+  .mobileBreadcrumbs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .mobileBreadcrumbs::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobilePanelContent {
+    gap: 12px;
+    padding: 4px 12px max(12px, env(safe-area-inset-bottom));
+  }
+
+  .mobileItemButton,
+  .mobileItemLink {
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
+
+  .mobileItemLabel {
+    font-size: var(--header-font-size-body, 15px);
+  }
+
+  .mobileCurrentTitle {
+    font-size: var(--header-font-size-title, 18px);
+  }
+
+  .mobileCurrentDescription {
+    font-size: var(--header-font-size-body, 15px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobilePanelHeader,
+  .mobileItemButton,
+  .mobileItemLink,
+  .mobileItemChevron,
+  .mobileItemExternalIcon,
+  .mobileLevel {
+    animation: none;
+    transform: none;
+    transition: none;
+  }
+}
+
+@keyframes mobileLevelForward {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobileLevelBack {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobileToolsPanel {
+  // Light-surface color overrides for --header-chrome-* live on
+  // .mobilePanelContent (the panel root) so they also reach .mobileSearchSection.
+  background: var(--header-panel-footer-background, var(--header-surface, #ffffff));
+  border-top: 1px solid var(--header-border, #edebe9);
+  border-radius: 6px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  padding: 20px 16px max(16px, env(safe-area-inset-bottom));
+}
+
+.mobileToolItem {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+@media (forced-colors: active) {
+  .mobilePanelHeader {
+    border-bottom: 1px solid ButtonText;
+  }
+
+  .mobileItemButton,
+  .mobileItemLink {
+    border: 1px solid ButtonText;
+  }
+
+  .mobileItemButton:hover,
+  .mobileItemLink:hover {
+    background: Highlight;
+    border-color: HighlightText;
+    color: HighlightText;
+  }
+
+  .mobileBackButton:hover,
+  .mobileBackButton:focus-visible,
+  .mobileBreadcrumbButton:hover,
+  .mobileBreadcrumbButton:focus-visible {
+    background: Highlight;
+    color: HighlightText;
+  }
+
+  .mobileToolsPanel {
+    border-top: 1px solid ButtonText;
+  }
+}

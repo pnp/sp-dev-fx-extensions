@@ -1,0 +1,542 @@
+// Fluent 2 type ramp (consistent across the panel):
+//   caption1   12px / 16px  — hints, badges, meta, dropdown titles
+//   body1      14px / 20px  — labels, toggle labels, node labels, descriptions
+//   subtitle2  16px / 22px  — section titles, card titles
+//   title2     20px / 28px  — panel title
+//   title1     24px / 32px  — reserved for header (not used here)
+
+.headerHost {
+  // No container-type — using @media queries for breakpoints.
+  // The data-nav-fits attribute drives the collapse decision.
+}
+
+// ─── Measuring strips (off-screen, always at intrinsic width) ──────────────
+
+.measuringStrip {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  left: -9999px;
+  pointer-events: none;
+  position: absolute;
+  top: -9999px;
+  visibility: hidden;
+  white-space: nowrap;
+  z-index: -1;
+}
+
+.measuringStripTrigger {
+  align-items: center;
+  display: inline-flex;
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 600;
+  gap: 6px;
+  min-height: 42px;
+  // Must match .topLevelTrigger in DesktopNavigation.module.scss exactly —
+  // this off-screen strip exists purely to measure the real trigger's width.
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+// ─── Collapse via data attribute (no JS state, no position:absolute) ──────
+//
+// The host element gets data-nav-fits="true" or "false".
+// CSS handles all show/hide with display: flex / none.
+// Phone-sized screens always collapse via @media query, regardless of JS.
+
+// Phone fallback: always hamburger, no JS needed.
+@media (max-width: 640px) {
+  // The base 4-column template (mobile-menu | brand | nav | tools) still
+  // declares tracks for the nav/tools columns even after they're hidden
+  // below — an empty `auto`/`minmax(0,1fr)` track doesn't collapse to 0,
+  // it still absorbs its share of the row's free space (per the CSS Grid
+  // "maximize tracks" step, which runs independent of content). Left as a
+  // 4-column template, the collapsed header renders as hamburger + logo
+  // pinned to the left with a large dead gap where nav/tools used to be.
+  // Re-declaring the template with only the two surviving columns fixes
+  // this: the brand column is free to fill the remaining width naturally.
+  .mainContent {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .desktopNavSlot {
+    display: none !important;
+  }
+
+  .mobileMenuSlot {
+    display: flex !important;
+  }
+
+  .headerTools {
+    display: none !important;
+  }
+}
+
+// JS-driven collapse for tablet/desktop.
+.headerHost[data-nav-fits='false'] {
+  // Same fix as the phone media query above — see comment there.
+  grid-template-columns: auto minmax(0, 1fr);
+
+  .desktopNavSlot {
+    display: none;
+  }
+
+  .mobileMenuSlot {
+    display: flex;
+  }
+
+  .headerTools {
+    display: none;
+  }
+}
+
+.headerHost[data-nav-fits='true'] {
+  grid-template-columns: auto minmax(160px, auto) minmax(0, 1fr) auto;
+
+  .desktopNavSlot {
+    display: block;
+  }
+
+  .mobileMenuSlot {
+    display: none;
+  }
+
+  .headerTools {
+    display: flex;
+  }
+}
+
+// ─── Skip link ──────────────────────────────────────────────────────────────
+
+.skipLink {
+  background: var(--header-surface, #ffffff);
+  border: 1px solid var(--header-border-strong, #d2d0ce);
+  border-radius: 0 0 4px 4px;
+  box-shadow: var(--header-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+  box-sizing: border-box;
+  color: var(--header-link, #0f548c);
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 600;
+  inset-inline-start: 50%;
+  max-width: calc(100vw - 16px);
+  padding: 8px 20px;
+  position: absolute;
+  text-decoration: none;
+  top: -100%;
+  transform: translateX(-50%);
+  transition: top 180ms ease;
+  z-index: 130;
+
+  &:focus {
+    top: 4px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--header-link, #0f548c);
+    outline-offset: 2px;
+  }
+}
+
+// ─── Root / main bar ────────────────────────────────────────────────────────
+
+.root {
+  --header-logo-shift-x: 0px;
+  --header-logo-shift-y: 0px;
+  background: var(--header-background, #ffffff);
+  border-bottom: 1px solid var(--header-border, #edebe9);
+  color: var(--header-body-text, #323130);
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  transform: none;
+  transform-origin: top center;
+  transition: box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+  z-index: 120;
+}
+
+:global(.header-ready) {
+  animation: headerReveal 560ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+:global(.header-constrained) {
+  --header-logo-shift-x: 0px;
+  --header-logo-shift-y: 0px;
+  animation-duration: 360ms;
+}
+
+.rootCondensed {
+  box-shadow: var(--header-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.mainBar {
+  background: var(--header-chrome-background, var(--header-background, #ffffff));
+  color: var(--header-chrome-text, #ffffff);
+  isolation: isolate;
+  overflow: visible;
+  position: relative;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.mainBar :global(.ms-Button-icon),
+.mainBar :global(.ms-Button-menuIcon) {
+  color: var(--header-chrome-text, #ffffff);
+}
+
+// ─── Desktop nav slot (wraps DesktopNavigation) ─────────────────────────────
+//
+// Show/hide is controlled by the data-nav-fits attribute selectors above.
+// This wrapper is a grid child (column 3) — when display:none, the grid
+// removes it from flow entirely.
+
+.desktopNavSlot {
+  // Deliberately left at the grid default (justify-self: stretch): this is
+  // the position:relative ancestor the mega-menu (.megaMenuSurface) is
+  // absolutely positioned against, and its width:min(1120px, calc(100% -
+  // 16px)) is computed relative to THIS element's box. If this stretched to
+  // start-align/shrink to its content's width instead, the mega-menu would
+  // size itself off the (much narrower) nav content width rather than the
+  // full available column — do not add justify-self: start here the way
+  // .brandLink/.mobileMenuSlot/.headerTools do.
+  min-width: 0;
+  overflow: visible;
+  position: relative;
+}
+
+// ─── Main content grid ──────────────────────────────────────────────────────
+//
+// 4 columns: mobile-menu-slot | brand | nav | tools
+// When data-nav-fits='true': mobile-menu-slot is display:none (removed from
+// grid), nav is visible, tools are visible.
+// When data-nav-fits='false': nav is display:none (removed from grid),
+// mobile-menu-slot is visible, tools are display:none.
+// display:none removes the element from the grid flow entirely — no need
+// for grid-template-columns switching.
+
+.mainContent {
+  align-items: center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: auto minmax(160px, auto) minmax(0, 1fr) auto;
+  min-height: 78px;
+  overflow: visible;
+  padding: 12px 0;
+  position: relative;
+  transition: min-height 180ms ease, padding 180ms ease, gap 180ms ease;
+  z-index: 1;
+}
+
+.rootCondensed .mainContent {
+  gap: 16px;
+  min-height: 62px;
+  padding: 8px 0;
+}
+
+// ─── Mobile menu slot (hamburger) ───────────────────────────────────────────
+
+.mobileMenuSlot {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  justify-self: start;
+  min-width: 0;
+}
+
+.menuButton {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--header-chrome-text, #ffffff) !important;
+  flex: 0 0 auto;
+  box-shadow: inset 0 0 0 0 var(--header-chrome-hover-background, rgba(255, 255, 255, 0.12));
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menuButton :global(.ms-Button-icon) {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menuButton:hover,
+.menuButton:focus-visible {
+  background: var(--header-chrome-hover-background-strong, rgba(255, 255, 255, 0.18));
+  border-color: var(--header-chrome-hover-background, rgba(255, 255, 255, 0.12));
+  color: var(--header-chrome-text, #ffffff) !important;
+}
+
+.menuButton:active {
+  background: var(--header-chrome-active-background-strong, rgba(255, 255, 255, 0.24));
+}
+
+.menuButtonOpen {
+  background: var(--header-chrome-active-background-strong, rgba(255, 255, 255, 0.24));
+  border-color: var(--header-chrome-hover-background, rgba(255, 255, 255, 0.12));
+  box-shadow: inset 0 0 0 1px var(--header-chrome-hover-background, rgba(255, 255, 255, 0.12));
+}
+
+// ─── Brand ──────────────────────────────────────────────────────────────────
+
+.brandLink {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  flex: 0 0 auto;
+  // Grid items stretch to fill their track by default (justify-self:
+  // stretch) unless told otherwise. `flex: 0 0 auto` here only governs how
+  // this element's own (flex) children are sized — it does nothing to stop
+  // the grid from stretching the element itself. When this lands alone in
+  // a flexible `minmax(0, 1fr)` track (the collapsed 2-column header state),
+  // an empty brand link with no logo configured would otherwise stretch to
+  // fill nearly the entire remaining header width, inflating the measured
+  // brand width used by the nav-fit calculation and permanently pinning it
+  // to the collapsed state regardless of viewport width.
+  justify-self: start;
+  min-width: 0;
+  transform: none;
+}
+
+:global(.header-ready) .brandLink {
+  animation: headerItemIn 440ms cubic-bezier(0.22, 1, 0.36, 1) 110ms both;
+}
+
+:global(.header-constrained) .brandLink,
+:global(.header-constrained) .headerTools {
+  animation-duration: 320ms;
+}
+
+:global(.header-constrained) .brandImage {
+  transform: none;
+}
+
+:global(.header-constrained) .mainBar::after {
+  display: none;
+}
+
+.brandImage {
+  display: block;
+  height: 40px;
+  max-width: 144px;
+  object-fit: contain;
+  transform: translate3d(var(--header-logo-shift-x, 0px), var(--header-logo-shift-y, 0px), 0);
+  transition: height 180ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 220ms ease;
+  width: auto;
+}
+
+.brandLink:hover .brandImage,
+.brandLink:focus-visible .brandImage {
+  filter: drop-shadow(0 4px 8px var(--header-shadow-color, rgba(0, 0, 0, 0.12)));
+  transform: translate3d(var(--header-logo-shift-x, 0px), var(--header-logo-shift-y, 0px), 0);
+}
+
+.rootCondensed .brandImage {
+  height: 34px;
+  transform: translate3d(var(--header-logo-shift-x, 0px), calc(var(--header-logo-shift-y, 0px) - 1px), 0);
+}
+
+// ─── Header tools ───────────────────────────────────────────────────────────
+
+.headerTools {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: flex-end;
+  justify-self: end;
+  min-width: 0;
+  overflow: visible;
+  transform: none;
+}
+
+:global(.header-ready) .headerTools {
+  animation: headerItemIn 440ms cubic-bezier(0.22, 1, 0.36, 1) 320ms both;
+}
+
+.fallbackSummary {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.fallbackNotice {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 400;
+  white-space: normal;
+}
+
+// ─── Responsive ────────────────────────────────────────────────────────────
+//
+// Use @media (not @container) for breakpoints because .mainContent IS the
+// container — container queries can only target descendants, not the
+// container element itself.
+
+// Bridges the gap between the spacious default (24px gap, used on genuinely
+// wide/4K screens with room to spare) and the @media (max-width: 1024px)
+// tier below. Without this, a very common real-world case — a 1920px-wide
+// monitor at 125-150% OS/browser zoom, which reports an effective CSS
+// viewport around 1280-1536px — got the WIDEST spacing tier despite being
+// exactly the range where every pixel of nav-fit budget matters.
+@media (max-width: 1400px) {
+  .mainContent {
+    gap: 16px;
+  }
+
+  .headerTools {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .mainContent {
+    gap: 16px;
+    min-height: 64px;
+    padding: 8px 0;
+  }
+
+  .brandImage {
+    height: 32px;
+    max-width: 120px;
+  }
+
+  .headerTools {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .mainContent {
+    gap: 10px;
+    min-height: 56px;
+    padding: 8px 0;
+  }
+
+  .brandImage {
+    height: 28px;
+    max-width: 100px;
+  }
+
+  .menuButton {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 8px;
+  }
+
+  .mainContent {
+    gap: 8px;
+    min-height: 52px;
+    padding: 6px 0;
+  }
+
+  .brandImage {
+    height: 24px;
+    max-width: 80px;
+  }
+}
+
+// ─── Reduced motion ─────────────────────────────────────────────────────────
+
+@media (prefers-reduced-motion: reduce) {
+  .root,
+  .mainContent,
+  .mobileMenuSlot,
+  .brandLink,
+  .brandImage,
+  .headerTools,
+  .menuButton {
+    animation: none;
+    transition: none;
+  }
+
+  .menuButton :global(.ms-Button-icon) {
+    transition: none;
+  }
+
+  .root,
+  .mobileMenuSlot,
+  .brandLink,
+  .headerTools {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes headerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes headerItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ─── High contrast ──────────────────────────────────────────────────────────
+
+@media (forced-colors: active) {
+  .root {
+    border-bottom: 1px solid ButtonText;
+  }
+
+  .mainBar {
+    background: ButtonFace;
+    color: ButtonText;
+  }
+
+  .brandLink:focus-visible,
+  .skipLink:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  .brandLink:hover .brandImage,
+  .brandLink:focus-visible .brandImage {
+    filter: none;
+  }
+
+  .menuButton:hover,
+  .menuButton:focus-visible {
+    background: Highlight;
+    border-color: HighlightText;
+    color: HighlightText;
+  }
+}

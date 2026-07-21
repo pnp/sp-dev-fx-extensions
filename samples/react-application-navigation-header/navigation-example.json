@@ -1,0 +1,843 @@
+{
+  "version": 1,
+  "general": {
+    "homeUrl": "https://contoso.sharepoint.com",
+    "logoUrl": "https://contoso.sharepoint.com/SiteAssets/brand/contoso-logo-white.svg",
+    "logoAltText": "Contoso Global",
+    "navigationSource": "jsonFile",
+    "navigationFileName": "navigation.json",
+    "navigationFileFolder": "SiteAssets",
+    "footerHtml": "<footer style='text-align:center;padding:8px 16px;font-size:12px;color:#a19f9d'>© 2026 Contoso Corporation. All rights reserved. <a href='https://contoso.sharepoint.com/sites/legal/SitePages/Privacy.aspx' style='color:inherit;text-decoration:underline'>Privacy</a> · <a href='https://contoso.sharepoint.com/sites/legal/SitePages/Terms.aspx' style='color:inherit;text-decoration:underline'>Terms</a> · <a href='https://contoso.sharepoint.com/sites/legal/SitePages/Accessibility.aspx' style='color:inherit;text-decoration:underline'>Accessibility</a></footer>",
+    "footerHeight": 48
+  },
+  "features": {
+    "searchEnabled": true,
+    "searchSuggestionsEnabled": true,
+    "userProfileEnabled": true,
+    "notificationsEnabled": true,
+    "appLauncherEnabled": true,
+    "quickActionsEnabled": true,
+    "languageSwitcherEnabled": true,
+    "bookmarksEnabled": true,
+    "adminSettingsEnabled": true,
+    "helpEnabled": true,
+    "feedbackEnabled": true,
+    "printShareEnabled": true,
+    "backToTopEnabled": true,
+    "accessibilityToolsEnabled": true,
+    "breadcrumbsEnabled": true,
+    "footerEnabled": true,
+    "seoMetaEnabled": true,
+    "analyticsEnabled": true,
+    "megaMenuRailEnabled": true,
+    "megaMenuOverviewEnabled": true,
+    "themeSwitcherEnabled": true,
+    "searchPlaceholder": "Search Contoso Intranet…",
+    "searchScope": "https://contoso.sharepoint.com",
+    "helpUrl": "https://contoso.sharepoint.com/sites/itsupport/SitePages/Self-Service-Portal.aspx",
+    "feedbackUrl": "https://forms.office.com/r/contosoFeedback",
+    "supportedLanguagesJson": "[\"en-us\",\"sv-se\",\"de-de\",\"fr-fr\",\"es-es\",\"pt-br\",\"zh-cn\",\"ja-jp\"]",
+    "quickActionsJson": "[{\"id\":\"qa-1\",\"label\":\"Outlook\",\"url\":\"https://outlook.office.com\",\"iconName\":\"Mail\"},{\"id\":\"qa-2\",\"label\":\"Teams\",\"url\":\"https://teams.microsoft.com\",\"iconName\":\"TeamsLogo\"},{\"id\":\"qa-3\",\"label\":\"Viva Engage\",\"url\":\"https://engage.microsoft.com\",\"iconName\":\"YammerLogo\"},{\"id\":\"qa-4\",\"label\":\"Planner\",\"url\":\"https://tasks.office.com\",\"iconName\":\"PlannerLogo\"},{\"id\":\"qa-5\",\"label\":\"Power BI\",\"url\":\"https://app.powerbi.com\",\"iconName\":\"PowerBILogo\"}]",
+    "appLauncherJson": "[{\"id\":\"al-1\",\"label\":\"SharePoint\",\"url\":\"https://contoso.sharepoint.com\",\"iconName\":\"SharePointLogo\"},{\"id\":\"al-2\",\"label\":\"OneDrive\",\"url\":\"https://contoso-my.sharepoint.com\",\"iconName\":\"OneDrive\"},{\"id\":\"al-3\",\"label\":\"Dynamics 365\",\"url\":\"https://contoso.crm.dynamics.com\",\"iconName\":\"Dynamics365Logo\"},{\"id\":\"al-4\",\"label\":\"ServiceNow\",\"url\":\"https://contoso.service-now.com\",\"iconName\":\"OEM\"},{\"id\":\"al-5\",\"label\":\"SAP SuccessFactors\",\"url\":\"https://contoso.successfactors.com\",\"iconName\":\"People\"},{\"id\":\"al-6\",\"label\":\"Workday\",\"url\":\"https://contoso.workday.com\",\"iconName\":\"Money\"}]"
+  },
+  "colors": {
+    "chromeBackground": "#1b3a5c",
+    "chromeText": "#ffffff",
+    "surface": "#ffffff",
+    "surfaceHover": "#f3f2f1",
+    "border": "#edebe9",
+    "borderStrong": "#d2d0ce",
+    "link": "#0f6cbd",
+    "linkHover": "#115ea3",
+    "accent": "#1b3a5c",
+    "accentHover": "#143050",
+    "bodyText": "#242424",
+    "subtext": "#616161",
+    "hoverBackground": "#f5f5f5",
+    "activeBackground": "rgba(27, 58, 92, 0.08)"
+  },
+  "fontSizes": {
+    "body": "14px",
+    "caption": "12px",
+    "subtext": "14px",
+    "title": "20px",
+    "titleLarge": "28px"
+  },
+  "navigation": [
+    {
+      "id": "nav-home",
+      "label": "Home",
+      "url": "https://contoso.sharepoint.com",
+      "iconName": "Home",
+      "order": 10,
+      "children": []
+    },
+    {
+      "id": "nav-about",
+      "label": "About Contoso",
+      "url": "https://contoso.sharepoint.com/sites/about",
+      "iconName": "Info",
+      "order": 20,
+      "overviewTitle": "About Contoso",
+      "overviewDescription": "Discover who we are, what we stand for, and where we're headed. Learn about our mission, leadership, global footprint, and corporate strategy.",
+      "groupOrder": ["Who We Are", "Corporate Governance", "Global Presence"],
+      "children": [
+        {
+          "id": "nav-about-mission",
+          "label": "Mission & Values",
+          "url": "https://contoso.sharepoint.com/sites/about/SitePages/Mission.aspx",
+          "description": "Our purpose, vision, and the core values that guide 200,000 employees worldwide",
+          "group": "Who We Are",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-about-history",
+          "label": "Company History",
+          "url": "https://contoso.sharepoint.com/sites/about/SitePages/History.aspx",
+          "description": "From a small startup to a Fortune 100 — our journey through 75 years of innovation",
+          "group": "Who We Are",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-about-brands",
+          "label": "Our Brands & Subsidiaries",
+          "url": "https://contoso.sharepoint.com/sites/about/SitePages/Brands.aspx",
+          "description": "Explore our family of brands across industrial, consumer, and enterprise markets",
+          "group": "Who We Are",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-about-ceo",
+          "label": "CEO & Executive Leadership",
+          "url": "https://contoso.sharepoint.com/sites/about/SitePages/Leadership.aspx",
+          "description": "Meet the executive committee and board of directors driving our global strategy",
+          "group": "Corporate Governance",
+          "order": 10,
+          "featured": true,
+          "featuredRank": 1,
+          "children": []
+        },
+        {
+          "id": "nav-about-board",
+          "label": "Board of Directors",
+          "url": "https://contoso.sharepoint.com/sites/about/SitePages/Board.aspx",
+          "group": "Corporate Governance",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-about-ethics",
+          "label": "Ethics & Compliance",
+          "url": "https://contoso.sharepoint.com/sites/compliance",
+          "description": "Code of conduct, anti-corruption policies, and whistleblower hotline",
+          "group": "Corporate Governance",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-about-locations",
+          "label": "Global Offices & Locations",
+          "url": "https://contoso.sharepoint.com/sites/about/SitePages/Locations.aspx",
+          "description": "450+ offices across 80 countries — find your local hub",
+          "group": "Global Presence",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-about-regions",
+          "label": "Regional Portals",
+          "url": "https://contoso.sharepoint.com/sites/about/SitePages/Regions.aspx",
+          "group": "Global Presence",
+          "order": 20,
+          "children": [
+            {
+              "id": "nav-about-regions-americas",
+              "label": "Americas",
+              "url": "https://contoso.sharepoint.com/sites/region-americas",
+              "order": 10,
+              "children": []
+            },
+            {
+              "id": "nav-about-regions-emea",
+              "label": "Europe, Middle East & Africa",
+              "url": "https://contoso.sharepoint.com/sites/region-emea",
+              "order": 20,
+              "children": []
+            },
+            {
+              "id": "nav-about-regions-apac",
+              "label": "Asia-Pacific",
+              "url": "https://contoso.sharepoint.com/sites/region-apac",
+              "order": 30,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nav-news",
+      "label": "News & Communications",
+      "url": "https://contoso.sharepoint.com/sites/communications",
+      "iconName": "News",
+      "order": 30,
+      "overviewTitle": "News & Communications",
+      "overviewDescription": "Stay informed with the latest company updates, CEO messages, press releases, and internal communications across all regions.",
+      "groupOrder": ["Internal News", "Media & External"],
+      "children": [
+        {
+          "id": "nav-news-latest",
+          "label": "Latest News",
+          "url": "https://contoso.sharepoint.com/sites/communications/SitePages/News.aspx",
+          "description": "Breaking updates, featured stories, and company-wide announcements",
+          "group": "Internal News",
+          "order": 10,
+          "featured": true,
+          "featuredRank": 1,
+          "children": []
+        },
+        {
+          "id": "nav-news-ceo",
+          "label": "CEO Blog & Town Halls",
+          "url": "https://contoso.sharepoint.com/sites/communications/SitePages/CEO-Blog.aspx",
+          "description": "Direct messages, quarterly updates, and recorded all-hands sessions from our CEO",
+          "group": "Internal News",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-news-regional",
+          "label": "Regional Newsletters",
+          "url": "https://contoso.sharepoint.com/sites/communications/SitePages/Newsletters.aspx",
+          "group": "Internal News",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-news-events",
+          "label": "Company Events & Calendar",
+          "url": "https://contoso.sharepoint.com/sites/communications/SitePages/Events.aspx",
+          "description": "Global events, town halls, hackathons, social activities, and volunteering days",
+          "group": "Internal News",
+          "order": 40,
+          "children": []
+        },
+        {
+          "id": "nav-news-press",
+          "label": "Press Releases",
+          "url": "https://contoso.sharepoint.com/sites/communications/SitePages/Press.aspx",
+          "group": "Media & External",
+          "order": 10,
+          "isExternal": true,
+          "children": []
+        },
+        {
+          "id": "nav-news-media",
+          "label": "Media Kit & Brand Assets",
+          "url": "https://contoso.sharepoint.com/sites/brand/SitePages/MediaKit.aspx",
+          "description": "Logos, templates, photography guidelines, and approved messaging",
+          "group": "Media & External",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-news-social",
+          "label": "Social Media Channels",
+          "url": "https://contoso.sharepoint.com/sites/communications/SitePages/Social.aspx",
+          "group": "Media & External",
+          "order": 30,
+          "isExternal": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "nav-hr",
+      "label": "People & Culture",
+      "url": "https://contoso.sharepoint.com/sites/hr",
+      "iconName": "People",
+      "order": 40,
+      "overviewTitle": "People & Culture",
+      "overviewDescription": "Everything you need for your career, benefits, learning, well-being, and day-to-day workplace services. Your hub for all things HR.",
+      "groupOrder": ["My Career", "Benefits & Wellbeing", "Workplace & Policies", "Learning & Growth"],
+      "children": [
+        {
+          "id": "nav-hr-onboarding",
+          "label": "New Employee Onboarding",
+          "url": "https://contoso.sharepoint.com/sites/hr/SitePages/Onboarding.aspx",
+          "description": "Welcome aboard! Your first-day checklist, buddy program, and 90-day roadmap",
+          "group": "My Career",
+          "order": 10,
+          "featured": true,
+          "featuredRank": 1,
+          "children": []
+        },
+        {
+          "id": "nav-hr-directory",
+          "label": "People Directory",
+          "url": "https://contoso.sharepoint.com/sites/hr/SitePages/Directory.aspx",
+          "description": "Search for colleagues across all 80 countries by name, role, or expertise",
+          "group": "My Career",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-hr-jobs",
+          "label": "Internal Job Postings",
+          "url": "https://contoso.sharepoint.com/sites/hr/SitePages/InternalJobs.aspx",
+          "description": "Open positions, lateral moves, international rotations, and executive tracks",
+          "group": "My Career",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-hr-performance",
+          "label": "Performance & Goals",
+          "url": "https://contoso.successfactors.com/sf/home",
+          "description": "OKR setting, continuous feedback, mid-year and annual reviews via SuccessFactors",
+          "group": "My Career",
+          "order": 40,
+          "isExternal": true,
+          "children": []
+        },
+        {
+          "id": "nav-hr-benefits",
+          "label": "Benefits & Insurance",
+          "url": "https://contoso.sharepoint.com/sites/hr/SitePages/Benefits.aspx",
+          "description": "Health, dental, vision, life insurance, retirement plans, and stock programs",
+          "group": "Benefits & Wellbeing",
+          "order": 10,
+          "children": [
+            {
+              "id": "nav-hr-benefits-health",
+              "label": "Health & Medical",
+              "url": "https://contoso.sharepoint.com/sites/hr/SitePages/HealthInsurance.aspx",
+              "order": 10,
+              "children": []
+            },
+            {
+              "id": "nav-hr-benefits-retirement",
+              "label": "Retirement & Pension",
+              "url": "https://contoso.sharepoint.com/sites/hr/SitePages/Retirement.aspx",
+              "order": 20,
+              "children": []
+            },
+            {
+              "id": "nav-hr-benefits-stock",
+              "label": "Stock Purchase Plan (ESPP)",
+              "url": "https://contoso.sharepoint.com/sites/hr/SitePages/StockPlan.aspx",
+              "order": 30,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "nav-hr-wellbeing",
+          "label": "Wellbeing & EAP",
+          "url": "https://contoso.sharepoint.com/sites/hr/SitePages/Wellbeing.aspx",
+          "description": "Employee assistance, mental health resources, fitness subsidies, and ergonomic programs",
+          "group": "Benefits & Wellbeing",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-hr-compensation",
+          "label": "Pay & Compensation",
+          "url": "https://contoso.sharepoint.com/sites/hr/SitePages/Compensation.aspx",
+          "description": "Payslips, salary bands, bonus structure, and global mobility allowances",
+          "group": "Benefits & Wellbeing",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-hr-leave",
+          "label": "Time Off & Leave",
+          "url": "https://contoso.sharepoint.com/sites/hr/SitePages/Leave.aspx",
+          "description": "Vacation, sick leave, parental leave, sabbaticals, and public holidays by country",
+          "group": "Workplace & Policies",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-hr-policies",
+          "label": "HR Policies & Handbook",
+          "url": "https://contoso.sharepoint.com/sites/hr/SitePages/Policies.aspx",
+          "description": "Code of conduct, remote work policy, travel policy, and expense guidelines",
+          "group": "Workplace & Policies",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-hr-dei",
+          "label": "Diversity, Equity & Inclusion",
+          "url": "https://contoso.sharepoint.com/sites/dei",
+          "description": "ERGs, inclusive leadership programs, accessibility champions, and DEI metrics",
+          "group": "Workplace & Policies",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-hr-learning",
+          "label": "Learning Hub",
+          "url": "https://contoso.sharepoint.com/sites/learning",
+          "description": "LinkedIn Learning, internal academies, certifications, and tuition reimbursement",
+          "group": "Learning & Growth",
+          "order": 10,
+          "featured": true,
+          "featuredRank": 2,
+          "children": [
+            {
+              "id": "nav-hr-learning-linkedin",
+              "label": "LinkedIn Learning",
+              "url": "https://www.linkedin.com/learning",
+              "order": 10,
+              "isExternal": true,
+              "children": []
+            },
+            {
+              "id": "nav-hr-learning-academy",
+              "label": "Contoso Leadership Academy",
+              "url": "https://contoso.sharepoint.com/sites/learning/SitePages/LeadershipAcademy.aspx",
+              "order": 20,
+              "children": []
+            },
+            {
+              "id": "nav-hr-learning-certs",
+              "label": "Certifications & Tuition",
+              "url": "https://contoso.sharepoint.com/sites/learning/SitePages/Certifications.aspx",
+              "order": 30,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "nav-hr-mentoring",
+          "label": "Mentoring & Coaching",
+          "url": "https://contoso.sharepoint.com/sites/learning/SitePages/Mentoring.aspx",
+          "description": "Find a mentor, join peer coaching circles, or sign up as a coach",
+          "group": "Learning & Growth",
+          "order": 20,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "nav-it",
+      "label": "IT & Digital",
+      "url": "https://contoso.sharepoint.com/sites/it",
+      "iconName": "Settings",
+      "order": 50,
+      "overviewTitle": "IT & Digital Workplace",
+      "overviewDescription": "Get help, request services, and access all the tools and platforms you need to work productively and securely from anywhere in the world.",
+      "groupOrder": ["Get Help", "Devices & Access", "Platforms & Tools", "Security & Compliance"],
+      "children": [
+        {
+          "id": "nav-it-servicedesk",
+          "label": "IT Service Desk",
+          "url": "https://contoso.service-now.com",
+          "description": "Submit a ticket, check status, or chat with an IT support agent 24/7",
+          "group": "Get Help",
+          "order": 10,
+          "isExternal": true,
+          "featured": true,
+          "featuredRank": 1,
+          "children": []
+        },
+        {
+          "id": "nav-it-kb",
+          "label": "Knowledge Base & FAQs",
+          "url": "https://contoso.sharepoint.com/sites/it/SitePages/KnowledgeBase.aspx",
+          "description": "Self-service troubleshooting guides, how-tos, and video walkthroughs",
+          "group": "Get Help",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-it-status",
+          "label": "System Status & Outages",
+          "url": "https://contoso.sharepoint.com/sites/it/SitePages/SystemStatus.aspx",
+          "description": "Real-time service health dashboard for all enterprise applications",
+          "group": "Get Help",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-it-hardware",
+          "label": "Hardware Catalog & Ordering",
+          "url": "https://contoso.sharepoint.com/sites/it/SitePages/HardwareCatalog.aspx",
+          "description": "Laptops, monitors, peripherals — order your equipment through the IT shop",
+          "group": "Devices & Access",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-it-software",
+          "label": "Software Request & Licensing",
+          "url": "https://contoso.sharepoint.com/sites/it/SitePages/SoftwareRequest.aspx",
+          "description": "Request licensed software, SaaS subscriptions, or developer tools",
+          "group": "Devices & Access",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-it-access",
+          "label": "Access & Permissions",
+          "url": "https://contoso.sharepoint.com/sites/it/SitePages/AccessManagement.aspx",
+          "description": "Request access to SharePoint sites, Teams, file shares, VPN, or enterprise apps",
+          "group": "Devices & Access",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-it-m365",
+          "label": "Microsoft 365 Hub",
+          "url": "https://contoso.sharepoint.com/sites/it/SitePages/M365.aspx",
+          "description": "Tips, adoption guides, and best practices for Teams, SharePoint, and Copilot",
+          "group": "Platforms & Tools",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-it-powerplatform",
+          "label": "Power Platform Center of Excellence",
+          "url": "https://contoso.sharepoint.com/sites/powerplatform",
+          "description": "Power Apps, Power Automate, and Power BI governance, templates, and community",
+          "group": "Platforms & Tools",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-it-ai",
+          "label": "AI & Copilot Hub",
+          "url": "https://contoso.sharepoint.com/sites/ai",
+          "description": "Copilot rollout, responsible AI guidelines, prompt engineering, and AI use cases",
+          "group": "Platforms & Tools",
+          "order": 30,
+          "featured": true,
+          "featuredRank": 2,
+          "children": []
+        },
+        {
+          "id": "nav-it-security",
+          "label": "Cybersecurity Awareness",
+          "url": "https://contoso.sharepoint.com/sites/security",
+          "description": "Phishing simulations, security training, password best practices, and incident reporting",
+          "group": "Security & Compliance",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-it-dataprivacy",
+          "label": "Data Privacy & GDPR",
+          "url": "https://contoso.sharepoint.com/sites/security/SitePages/DataPrivacy.aspx",
+          "description": "Data classification, GDPR policies, records retention, and privacy impact assessments",
+          "group": "Security & Compliance",
+          "order": 20,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "nav-operations",
+      "label": "Operations & Finance",
+      "url": "https://contoso.sharepoint.com/sites/operations",
+      "iconName": "Money",
+      "order": 60,
+      "overviewTitle": "Operations & Finance",
+      "overviewDescription": "Financial planning, procurement, facilities management, and operational excellence. Access tools and processes that keep our global business running.",
+      "groupOrder": ["Finance", "Procurement & Supply Chain", "Facilities & Real Estate"],
+      "children": [
+        {
+          "id": "nav-ops-finance-reporting",
+          "label": "Financial Reporting & Dashboards",
+          "url": "https://contoso.sharepoint.com/sites/finance/SitePages/Dashboards.aspx",
+          "description": "Quarterly earnings, P&L, and KPI dashboards across all business units",
+          "group": "Finance",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-ops-expense",
+          "label": "Expense Reporting",
+          "url": "https://contoso.sharepoint.com/sites/finance/SitePages/Expenses.aspx",
+          "description": "Submit expense claims, review policies, and track reimbursement status",
+          "group": "Finance",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-ops-budget",
+          "label": "Budget Planning & Forecasting",
+          "url": "https://contoso.sharepoint.com/sites/finance/SitePages/Budget.aspx",
+          "group": "Finance",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-ops-travel",
+          "label": "Corporate Travel & Booking",
+          "url": "https://contoso.sharepoint.com/sites/travel",
+          "description": "Book flights, hotels, and ground transport through our approved travel portal",
+          "group": "Finance",
+          "order": 40,
+          "children": []
+        },
+        {
+          "id": "nav-ops-procurement",
+          "label": "Procurement Portal",
+          "url": "https://contoso.sharepoint.com/sites/procurement",
+          "description": "Purchase orders, vendor onboarding, and approved supplier directory",
+          "group": "Procurement & Supply Chain",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-ops-vendors",
+          "label": "Vendor & Supplier Management",
+          "url": "https://contoso.sharepoint.com/sites/procurement/SitePages/Vendors.aspx",
+          "group": "Procurement & Supply Chain",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-ops-contracts",
+          "label": "Contract Management",
+          "url": "https://contoso.sharepoint.com/sites/legal/SitePages/Contracts.aspx",
+          "description": "NDA templates, contract lifecycle management, and legal review requests",
+          "group": "Procurement & Supply Chain",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-ops-facilities",
+          "label": "Facilities & Workplace Services",
+          "url": "https://contoso.sharepoint.com/sites/facilities",
+          "description": "Office maps, desk booking, parking, cafeteria menus, and maintenance requests",
+          "group": "Facilities & Real Estate",
+          "order": 10,
+          "children": [
+            {
+              "id": "nav-ops-facilities-booking",
+              "label": "Room & Desk Booking",
+              "url": "https://contoso.sharepoint.com/sites/facilities/SitePages/DeskBooking.aspx",
+              "order": 10,
+              "children": []
+            },
+            {
+              "id": "nav-ops-facilities-maintenance",
+              "label": "Maintenance Requests",
+              "url": "https://contoso.sharepoint.com/sites/facilities/SitePages/Maintenance.aspx",
+              "order": 20,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "nav-ops-sustainability",
+          "label": "Sustainability & ESG",
+          "url": "https://contoso.sharepoint.com/sites/sustainability",
+          "description": "Carbon footprint tracking, net-zero roadmap, and sustainability reporting",
+          "group": "Facilities & Real Estate",
+          "order": 20,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "nav-divisions",
+      "label": "Business Divisions",
+      "url": "https://contoso.sharepoint.com/sites/divisions",
+      "iconName": "Org",
+      "order": 70,
+      "overviewTitle": "Our Business Divisions",
+      "overviewDescription": "Explore the four global business divisions that drive Contoso's $85B in annual revenue across industrial automation, energy, healthcare technology, and digital services.",
+      "groupOrder": ["Divisions", "Cross-Functional"],
+      "children": [
+        {
+          "id": "nav-div-industrial",
+          "label": "Industrial Automation",
+          "url": "https://contoso.sharepoint.com/sites/div-industrial",
+          "description": "Factory automation, robotics, PLCs, SCADA systems, and Industry 4.0 solutions",
+          "group": "Divisions",
+          "order": 10,
+          "children": [
+            {
+              "id": "nav-div-industrial-products",
+              "label": "Product Portfolio",
+              "url": "https://contoso.sharepoint.com/sites/div-industrial/SitePages/Products.aspx",
+              "order": 10,
+              "children": []
+            },
+            {
+              "id": "nav-div-industrial-rd",
+              "label": "R&D & Innovation",
+              "url": "https://contoso.sharepoint.com/sites/div-industrial/SitePages/RD.aspx",
+              "order": 20,
+              "children": []
+            },
+            {
+              "id": "nav-div-industrial-customers",
+              "label": "Customer Success Stories",
+              "url": "https://contoso.sharepoint.com/sites/div-industrial/SitePages/CaseStudies.aspx",
+              "order": 30,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "nav-div-energy",
+          "label": "Energy & Infrastructure",
+          "url": "https://contoso.sharepoint.com/sites/div-energy",
+          "description": "Power grids, renewable energy, EV charging infrastructure, and smart city solutions",
+          "group": "Divisions",
+          "order": 20,
+          "children": [
+            {
+              "id": "nav-div-energy-renewables",
+              "label": "Renewables & Grid Solutions",
+              "url": "https://contoso.sharepoint.com/sites/div-energy/SitePages/Renewables.aspx",
+              "order": 10,
+              "children": []
+            },
+            {
+              "id": "nav-div-energy-ev",
+              "label": "E-Mobility & EV Charging",
+              "url": "https://contoso.sharepoint.com/sites/div-energy/SitePages/EMobility.aspx",
+              "order": 20,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "nav-div-healthcare",
+          "label": "Healthcare Technology",
+          "url": "https://contoso.sharepoint.com/sites/div-healthcare",
+          "description": "Medical imaging, diagnostics, hospital information systems, and telehealth platforms",
+          "group": "Divisions",
+          "order": 30,
+          "children": []
+        },
+        {
+          "id": "nav-div-digital",
+          "label": "Digital Services & Cloud",
+          "url": "https://contoso.sharepoint.com/sites/div-digital",
+          "description": "SaaS products, managed services, IoT platforms, and enterprise consulting",
+          "group": "Divisions",
+          "order": 40,
+          "children": []
+        },
+        {
+          "id": "nav-div-strategy",
+          "label": "Corporate Strategy & M&A",
+          "url": "https://contoso.sharepoint.com/sites/strategy",
+          "description": "Long-term roadmap, partnerships, acquisitions pipeline, and market intelligence",
+          "group": "Cross-Functional",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-div-innovation",
+          "label": "Innovation Lab & Ventures",
+          "url": "https://contoso.sharepoint.com/sites/innovation",
+          "description": "Internal incubator, patent submissions, ideation pipeline, and venture fund",
+          "group": "Cross-Functional",
+          "order": 20,
+          "featured": true,
+          "featuredRank": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "nav-tools",
+      "label": "Tools & Resources",
+      "url": "https://contoso.sharepoint.com/sites/resources",
+      "iconName": "Toolbox",
+      "order": 80,
+      "overviewTitle": "Tools & Resources",
+      "overviewDescription": "Quick links to the most frequently used enterprise applications, templates, and project management platforms. Your daily productivity toolkit.",
+      "groupOrder": ["Everyday Tools", "Project Management", "Templates & Standards"],
+      "children": [
+        {
+          "id": "nav-tools-m365",
+          "label": "Microsoft 365 Apps",
+          "url": "https://www.office.com",
+          "description": "Access Word, Excel, PowerPoint, OneNote, and all Microsoft 365 apps",
+          "group": "Everyday Tools",
+          "order": 10,
+          "isExternal": true,
+          "children": []
+        },
+        {
+          "id": "nav-tools-crm",
+          "label": "CRM (Dynamics 365)",
+          "url": "https://contoso.crm.dynamics.com",
+          "description": "Customer relationships, pipeline management, and sales analytics",
+          "group": "Everyday Tools",
+          "order": 20,
+          "isExternal": true,
+          "children": []
+        },
+        {
+          "id": "nav-tools-erp",
+          "label": "ERP (SAP S/4HANA)",
+          "url": "https://contoso-erp.sap.com",
+          "description": "Financial accounting, materials management, and production planning",
+          "group": "Everyday Tools",
+          "order": 30,
+          "isExternal": true,
+          "children": []
+        },
+        {
+          "id": "nav-tools-pmo",
+          "label": "Project Management Office",
+          "url": "https://contoso.sharepoint.com/sites/pmo",
+          "description": "Project portfolio dashboard, stage-gate processes, and governance framework",
+          "group": "Project Management",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-tools-devops",
+          "label": "Azure DevOps",
+          "url": "https://dev.azure.com/contoso",
+          "description": "Source control, CI/CD pipelines, boards, and artifact management",
+          "group": "Project Management",
+          "order": 20,
+          "isExternal": true,
+          "children": []
+        },
+        {
+          "id": "nav-tools-templates",
+          "label": "Document Templates",
+          "url": "https://contoso.sharepoint.com/sites/resources/SitePages/Templates.aspx",
+          "description": "Branded PowerPoint decks, Word templates, email signatures, and letterheads",
+          "group": "Templates & Standards",
+          "order": 10,
+          "children": []
+        },
+        {
+          "id": "nav-tools-brand",
+          "label": "Brand Guidelines & Identity",
+          "url": "https://contoso.sharepoint.com/sites/brand",
+          "description": "Visual identity standards, logo usage, color palettes, and typography guidelines",
+          "group": "Templates & Standards",
+          "order": 20,
+          "children": []
+        },
+        {
+          "id": "nav-tools-forms",
+          "label": "Forms & Approvals Library",
+          "url": "https://contoso.sharepoint.com/sites/resources/SitePages/Forms.aspx",
+          "description": "Commonly used approval forms, sign-off sheets, and request templates",
+          "group": "Templates & Standards",
+          "order": 30,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,620 @@
+.headerTool {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+}
+
+.headerToolButton {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--header-chrome-text, #ffffff);
+  transition: background 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.headerToolButton :global(.ms-Button-icon) {
+  transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.headerToolButton:hover,
+.headerToolButton:focus-visible {
+  background: var(--header-chrome-hover-background-strong, rgba(255, 255, 255, 0.18));
+  border-color: var(--header-chrome-hover-background, rgba(255, 255, 255, 0.12));
+}
+
+.notificationBadge {
+  align-items: center;
+  animation: badgePop 360ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: var(--header-chrome-indicator, rgba(255, 255, 255, 0.96));
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px var(--header-chrome-background, #323130);
+  color: var(--header-chrome-background, #323130);
+  display: inline-flex;
+  font-size: 10px;
+  font-weight: 700;
+  height: 16px;
+  justify-content: center;
+  line-height: 1;
+  min-width: 16px;
+  padding: 0 4px;
+  position: absolute;
+  inset-inline-end: 2px;
+  top: 2px;
+}
+
+@keyframes badgePop {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.18);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.languageShortLabel {
+  font-size: var(--header-font-size-caption, 12px);
+  font-weight: 700;
+  margin-inline-start: 4px;
+}
+
+.userProfileButton {
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--header-chrome-text, #ffffff);
+  cursor: pointer;
+  display: inline-flex;
+  padding: 2px;
+  transition: background 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.userProfileButton:hover,
+.userProfileButton:focus-visible {
+  background: var(--header-chrome-hover-background-strong, rgba(255, 255, 255, 0.18));
+  border-color: var(--header-chrome-hover-background, rgba(255, 255, 255, 0.12));
+}
+
+.searchCallout,
+.userCallout,
+.notificationsCallout,
+.appLauncherCallout,
+.quickActionsCallout,
+.languageCallout,
+.bookmarksCallout,
+.moreToolsCallout {
+  min-width: 280px;
+  max-width: 360px;
+}
+
+.moreToolsList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.moreToolsRow {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.moreToolsRow + .moreToolsRow {
+  border-top: 1px solid var(--header-border, #edebe9);
+  padding-top: 8px;
+}
+
+.moreToolsLabel {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 600;
+}
+
+.userCalloutContent,
+.notificationsContent,
+.appLauncherContent,
+.quickActionsContent,
+.languageContent,
+.bookmarksContent {
+  animation: calloutIn 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 16px;
+  transform-origin: top center;
+}
+
+@keyframes calloutIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.calloutTitle {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-title, 24px);
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.searchInput {
+  width: 200px;
+  transition: width 0.2s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s ease, border-color 0.15s ease;
+  border-radius: 6px;
+  background-color: var(--header-search-bg, rgba(255, 255, 255, 0.12));
+  border: 1px solid var(--header-search-border, rgba(255, 255, 255, 0.08));
+
+  :global(.fui-Input__input) {
+    color: var(--header-chrome-text, #ffffff) !important;
+    &::placeholder {
+      color: color-mix(in srgb, var(--header-chrome-text, #ffffff) 65%, transparent) !important;
+    }
+  }
+
+  :global(.fui-Input__icon) {
+    color: var(--header-chrome-text, #ffffff) !important;
+  }
+
+  &:hover {
+    background-color: var(--header-search-bg-hover, rgba(255, 255, 255, 0.18));
+  }
+
+  &:focus-within,
+  &.searchFocused {
+    width: 280px;
+    background-color: var(--header-surface, #ffffff);
+    border-color: var(--header-accent, #0f6cbd);
+    box-shadow: 0 0 0 1px var(--header-accent, #0f6cbd);
+
+    :global(.fui-Input__input) {
+      color: var(--header-body-text, #323130) !important;
+      &::placeholder {
+        color: var(--header-subtext, #605e5c) !important;
+      }
+    }
+
+    :global(.fui-Input__icon) {
+      color: var(--header-subtext, #605e5c) !important;
+    }
+  }
+}
+
+.searchCallout {
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: var(--header-shadow, 0 8px 16px rgba(0, 0, 0, 0.14));
+  border: 1px solid var(--header-border, #edebe9);
+  background: var(--header-surface, #ffffff);
+  width: 280px;
+  overflow: hidden;
+}
+
+.searchResultsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.searchResults {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.searchSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.searchSectionTitle {
+  color: var(--header-subtext, #605e5c);
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 4px 8px;
+  text-transform: uppercase;
+}
+
+.searchResultItem {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: var(--header-body-text, #323130);
+  cursor: pointer;
+  display: flex;
+  padding: 8px;
+  text-align: left;
+  text-decoration: none;
+  transition: background 120ms ease;
+  width: 100%;
+}
+
+.searchResultItem:hover,
+.searchResultItem:focus-visible,
+.activeSuggestion {
+  background: var(--header-hover-background, #f3f2f1);
+  outline: none;
+}
+
+.searchResultItemContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  width: 100%;
+}
+
+.searchResultIcon {
+  color: var(--header-subtext, #605e5c);
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.searchResultTexts {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.searchResultTitle {
+  font-size: var(--header-font-size-subtext, 14px);
+  font-weight: 500;
+  color: var(--header-body-text, #323130);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchResultDescription {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-caption, 12px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1px;
+}
+
+.mobileSearchContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  .searchInput {
+    width: 100% !important;
+    &:focus-within {
+      width: 100% !important;
+    }
+  }
+
+  .searchResultsContainer {
+    border: 1px solid var(--header-border, #edebe9);
+    border-radius: 6px;
+    background: var(--header-surface, #ffffff);
+  }
+}
+
+.userActions {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--header-border, #edebe9);
+}
+
+.userActionLink {
+  color: var(--header-link, #0f548c);
+  font-size: var(--header-font-size-body, 14px);
+  text-decoration: none;
+}
+
+.userActionLink:hover {
+  text-decoration: underline;
+}
+
+.emptyState {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-body, 14px);
+  margin: 0;
+}
+
+.notificationItem,
+.bookmarkItem,
+.quickActionItem {
+  align-items: center;
+  background: transparent;
+  border-radius: 4px;
+  color: var(--header-link, #0f548c);
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  text-decoration: none;
+  transition: background 160ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.notificationItem:hover,
+.notificationItem:focus-visible,
+.bookmarkItem:hover,
+.bookmarkItem:focus-visible,
+.quickActionItem:hover,
+.quickActionItem:focus-visible {
+  background: var(--header-hover-background, #f3f2f1);
+}
+
+.notificationTitle,
+.bookmarkItem > span,
+.quickActionItem > span {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-body, 14px);
+}
+
+.notificationTime {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-caption, 12px);
+  margin-inline-start: auto;
+}
+
+.bookmarkIcon,
+.quickActionIcon,
+.appLauncherIcon {
+  color: var(--header-link, #0f548c);
+  font-size: var(--header-font-size-body, 18px);
+  transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.appLauncherGrid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.appLauncherItem {
+  align-items: center;
+  background: transparent;
+  border-radius: 4px;
+  color: var(--header-body-text, #323130);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: background 160ms ease, transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.appLauncherItem:hover,
+.appLauncherItem:focus-visible {
+  background: var(--header-hover-background, #f3f2f1);
+}
+
+.appLauncherGroupTitle {
+  color: var(--header-subtext, #605e5c);
+  display: block;
+  font-size: var(--header-font-size-caption, 12px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 12px 0 4px;
+  text-transform: uppercase;
+}
+
+.languageOption {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  text-align: left;
+  transition: background 160ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  width: 100%;
+}
+
+.languageOption:hover,
+.languageOption:focus-visible,
+.languageOption[aria-current="true"] {
+  background: var(--header-hover-background, #f3f2f1);
+}
+
+.languageOptionLabel {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-body, 14px);
+}
+
+.languageOptionCode {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-caption, 12px);
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .headerToolButton {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .userProfileButton {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 6px;
+  }
+
+  .notificationBadge {
+    pointer-events: none;
+  }
+
+  .searchCallout,
+  .userCallout,
+  .notificationsCallout,
+  .appLauncherCallout,
+  .quickActionsCallout,
+  .languageCallout,
+  .bookmarksCallout,
+  .moreToolsCallout {
+    min-width: 260px;
+    max-width: 320px;
+  }
+
+  .searchResultItem,
+  .notificationItem,
+  .bookmarkItem,
+  .quickActionItem,
+  .languageOption {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchCallout,
+  .userCallout,
+  .notificationsCallout,
+  .appLauncherCallout,
+  .quickActionsCallout,
+  .languageCallout,
+  .bookmarksCallout,
+  .moreToolsCallout {
+    min-width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+  }
+
+  .appLauncherGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .userCalloutContent,
+  .notificationsContent,
+  .appLauncherContent,
+  .quickActionsContent,
+  .languageContent,
+  .bookmarksContent {
+    padding: 12px;
+  }
+}
+
+.accessibilityLabel {
+  color: var(--header-body-text, #323130);
+  display: block;
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.accessibilityValue {
+  color: var(--header-subtext, #605e5c);
+  display: block;
+  font-size: var(--header-font-size-caption, 12px);
+  margin-top: 4px;
+}
+
+.searchResultItem:focus-visible,
+.activeSuggestion,
+.notificationItem:focus-visible,
+.bookmarkItem:focus-visible,
+.quickActionItem:focus-visible,
+.languageOption:focus-visible,
+.appLauncherItem:focus-visible {
+  outline: 2px solid var(--header-focus-ring, #0f6cbd);
+  outline-offset: -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .headerToolButton,
+  .headerToolButton :global(.ms-Button-icon),
+  .userProfileButton,
+  .notificationBadge,
+  .searchResultItem,
+  .notificationItem,
+  .bookmarkItem,
+  .quickActionItem,
+  .bookmarkIcon,
+  .quickActionIcon,
+  .appLauncherIcon,
+  .appLauncherItem,
+  .languageOption,
+  .userCalloutContent,
+  .notificationsContent,
+  .appLauncherContent,
+  .quickActionsContent,
+  .languageContent,
+  .bookmarksContent {
+    animation: none;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .headerToolButton,
+  .userProfileButton {
+    border: 1px solid ButtonText;
+  }
+
+  .headerToolButton:hover,
+  .headerToolButton:focus-visible,
+  .userProfileButton:hover,
+  .userProfileButton:focus-visible {
+    border-color: Highlight;
+    outline: 2px solid Highlight;
+  }
+
+  .searchResultItem:focus-visible,
+  .activeSuggestion,
+  .notificationItem:focus-visible,
+  .bookmarkItem:focus-visible,
+  .quickActionItem:focus-visible,
+  .languageOption:focus-visible,
+  .appLauncherItem:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: -2px;
+  }
+
+  .languageOption[aria-current="true"] {
+    border: 1px solid Highlight;
+  }
+
+  .notificationBadge {
+    border: 1.5px solid ButtonText;
+    background: Canvas;
+    color: ButtonText;
+  }
+
+  .bookmarkIcon,
+  .quickActionIcon,
+  .appLauncherIcon {
+    color: LinkText;
+  }
+}

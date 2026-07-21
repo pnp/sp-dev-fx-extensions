@@ -1,0 +1,120 @@
+.backToTop {
+  align-items: center;
+  background: var(--header-chrome-background, #323130);
+  border: 0;
+  border-radius: 50%;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  box-shadow: var(--header-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+  color: var(--header-chrome-text, #ffffff);
+  cursor: pointer;
+  display: inline-flex;
+  height: 44px;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  position: fixed;
+  inset-inline-end: max(24px, env(safe-area-inset-right));
+  width: 44px;
+  z-index: 900;
+}
+
+.backToTop:hover,
+.backToTop:focus-visible {
+  background: var(--header-link-hover, #115ea3);
+}
+
+.breadcrumbs {
+  background: var(--header-surface, #ffffff);
+  border-bottom: 1px solid var(--header-border, #edebe9);
+  padding: 8px 0;
+}
+
+.breadcrumbsList {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 0 24px;
+}
+
+.breadcrumbsItem {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.breadcrumbsLink {
+  color: var(--header-link, #0f548c);
+  font-size: var(--header-font-size-body, 18px);
+  text-decoration: none;
+}
+
+.breadcrumbsLink:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbsCurrent {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-body, 18px);
+  font-weight: 600;
+}
+
+.breadcrumbsSeparator {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-caption, 15px);
+}
+
+@media (max-width: 1024px) {
+  .breadcrumbsList {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .breadcrumbsList {
+    padding: 0 12px;
+    gap: 4px 6px;
+    // A deep trail (3+ levels — plausible for real content, e.g. a mega-menu
+    // group item nested another level) would otherwise wrap onto multiple
+    // lines and grow this bar's height unpredictably right under the sticky
+    // header. Scrolling horizontally keeps it a fixed single line regardless
+    // of trail depth. Applied from 767px down (not just ≤480px — wrapping is
+    // exactly as disruptive on a mid-size phone as on a small one).
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .breadcrumbsList::-webkit-scrollbar {
+    display: none;
+  }
+
+  .breadcrumbsLink,
+  .breadcrumbsCurrent {
+    font-size: var(--header-font-size-subtext, 15px);
+  }
+
+  .backToTop {
+    bottom: max(16px, env(safe-area-inset-bottom));
+    inset-inline-end: max(16px, env(safe-area-inset-right));
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumbsList {
+    padding: 0 8px;
+  }
+
+  .backToTop {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    inset-inline-end: max(12px, env(safe-area-inset-right));
+  }
+}

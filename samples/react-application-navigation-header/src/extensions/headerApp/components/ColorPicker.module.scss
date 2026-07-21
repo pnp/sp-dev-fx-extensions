@@ -1,0 +1,296 @@
+// Fluent 2 type ramp:
+//   caption1   12px / 16px  — labels, values, hints
+//   body1      14px / 20px  — (not used here; ColorPicker is compact)
+
+.colorField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.colorLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--header-body-text, #243242);
+  line-height: 20px;
+}
+
+.colorDescription {
+  font-size: 12px;
+  color: var(--header-subtext, #616161);
+  line-height: 16px;
+}
+
+.colorTriggerWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.colorTrigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 36px;
+  padding: 4px 8px 4px 4px;
+  border: 1px solid var(--header-border-strong, #c7c7c7);
+  border-radius: 4px;
+  background: var(--header-surface, #ffffff);
+  cursor: pointer;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+
+  &:hover {
+    border-color: var(--header-body-text, #243242);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: var(--header-accent, #0f6cbd);
+    box-shadow: inset 0 0 0 1px var(--header-accent, #0f6cbd);
+  }
+}
+
+.colorTriggerWithClear {
+  padding-right: 36px;
+}
+
+.colorSwatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.colorSwatchEmpty {
+  background-image:
+    linear-gradient(45deg, #f3f2f1 25%, transparent 25%),
+    linear-gradient(-45deg, #f3f2f1 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f3f2f1 75%),
+    linear-gradient(-45deg, transparent 75%, #f3f2f1 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0;
+}
+
+.colorValue {
+  font-size: 14px;
+  color: var(--header-body-text, #424242);
+  font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+}
+
+.colorValueEmpty {
+  color: var(--header-subtext, #616161);
+  font-style: italic;
+}
+
+.colorClear {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--header-subtext, #616161);
+  font-size: 14px;
+  padding: 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+
+  &:hover {
+    background: var(--header-hover-background, #f3f2f1);
+    color: var(--header-body-text, #243242);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid var(--header-accent, #0f6cbd);
+    outline-offset: 1px;
+  }
+}
+
+.colorDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  inset-inline-start: 0;
+  z-index: 10000;
+  min-width: 280px;
+  background: var(--header-surface, #ffffff);
+  border: 1px solid var(--header-border, #e1dfdd);
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14), 0 0 2px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  animation: slideDown 0.18s ease-out;
+}
+
+.dropdownSection {
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.dropdownTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--header-subtext, #616161);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  line-height: 16px;
+}
+
+.presetGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+}
+
+.presetSwatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    border-color: var(--header-accent, #0f6cbd);
+    z-index: 1;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: var(--header-accent, #0f6cbd);
+    box-shadow: 0 0 0 2px rgba(15, 108, 189, 0.3);
+  }
+}
+
+.presetSelected {
+  border-color: var(--header-accent, #0f6cbd);
+  box-shadow: 0 0 0 2px rgba(15, 108, 189, 0.35);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.customRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nativePicker {
+  width: 40px;
+  height: 36px;
+  border: 1px solid var(--header-border, #e1dfdd);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px;
+  background: var(--header-surface, #ffffff);
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: none;
+    border-radius: 3px;
+  }
+
+  &::-moz-color-swatch {
+    border: none;
+    border-radius: 3px;
+  }
+}
+
+.hexInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 36px;
+  padding: 8px 10px;
+  border: 1px solid var(--header-border, #e1dfdd);
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+  background: var(--header-surface-hover, #faf9f8);
+  line-height: 20px;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: var(--header-accent, #0f6cbd);
+    box-shadow: 0 0 0 1px rgba(15, 108, 189, 0.2);
+    background: var(--header-surface, #ffffff);
+  }
+}
+
+.hexInputInvalid {
+  border-color: #a4262c;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .colorDropdown {
+    animation: none;
+  }
+  .presetSwatch,
+  .colorTrigger,
+  .colorClear {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .colorTrigger {
+    border: 1px solid ButtonText;
+  }
+  .colorSwatch {
+    border: 1px solid ButtonText;
+  }
+  .presetSwatch {
+    border: 2px solid ButtonText;
+
+    &.presetSelected {
+      border-color: Highlight;
+    }
+  }
+  .hexInput {
+    border: 1px solid ButtonText;
+  }
+}

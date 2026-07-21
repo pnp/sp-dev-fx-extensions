@@ -1,0 +1,924 @@
+.desktopNavShell {
+  min-width: 0;
+  opacity: 1;
+  overflow: visible;
+  position: relative;
+  transform: translateX(0) scale(1);
+  transition: opacity 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0s;
+  visibility: visible;
+  z-index: 8;
+}
+
+// Collapsed state is now handled by the parent's data-nav-fits='false'
+// attribute which sets display:none on .desktopNavShell. No position:absolute,
+// no visibility:hidden, no width:max-content — just display:none.
+
+.desktopNav {
+  min-width: 0;
+  overflow-y: visible;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.desktopNav::-webkit-scrollbar {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+.desktopNavList {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.topLevelItem {
+  position: relative;
+  transform: none;
+}
+
+:global(.header-ready) .desktopNavList > .topLevelItem {
+  animation: headerItemIn 440ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@for $i from 1 through 20 {
+  :global(.header-ready) .desktopNavList > .topLevelItem:nth-child(#{$i}) {
+    animation-delay: #{100 + $i * 50}ms;
+  }
+}
+
+.topLevelTrigger {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: var(--header-chrome-text, #ffffff);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 600;
+  gap: 6px;
+  min-height: 42px;
+  // Tightened from 0 14px: with several top-level items, per-item padding
+  // is one of the largest levers on whether the desktop nav fits inline
+  // before falling back to the hamburger. Must stay in sync with
+  // .measuringStripTrigger in HeaderShell.module.scss (the off-screen twin
+  // used to measure required nav width) — mismatched padding there would
+  // make the fit calculation wrong in either direction.
+  padding: 0 10px;
+  position: relative;
+  text-decoration: none;
+  transition: background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.topLevelTrigger::after {
+  background: var(--header-chrome-indicator, rgba(255, 255, 255, 0.96));
+  border-radius: 2px;
+  bottom: -4px;
+  content: '';
+  height: 3px;
+  inset-inline-start: 14px;
+  opacity: 0;
+  position: absolute;
+  inset-inline-end: 14px;
+  transform: scaleX(0.4);
+  transform-origin: center;
+  transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.topLevelTrigger:hover {
+  background: var(--header-chrome-hover-background-strong, rgba(255, 255, 255, 0.18));
+  color: var(--header-chrome-text, #ffffff);
+  transform: translate3d(0, -1px, 0) scale(1.01);
+}
+
+.topLevelTrigger:hover::after {
+  opacity: 0.5;
+  transform: scaleX(0.5);
+}
+
+.topLevelTrigger:focus-visible {
+  background: var(--header-chrome-hover-background-strong, rgba(255, 255, 255, 0.18));
+  color: var(--header-chrome-text, #ffffff);
+  outline: 2px solid var(--header-focus-ring, rgba(15, 108, 189, 0.75));
+  outline-offset: 2px;
+  transform: translate3d(0, -1px, 0) scale(1.01);
+}
+
+.topLevelTriggerActive {
+  color: var(--header-chrome-text, #ffffff);
+}
+
+.topLevelTriggerActive::after,
+.topLevelTriggerOpen::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.topLevelTriggerOpen {
+  background: var(--header-chrome-active-background-strong, rgba(255, 255, 255, 0.24));
+  color: var(--header-chrome-text, #ffffff);
+  transform: translate3d(0, 0, 0) scale(0.99);
+}
+
+.topLevelTrigger:active {
+  background: var(--header-chrome-active-background-strong, rgba(255, 255, 255, 0.24));
+  transform: translate3d(0, 1px, 0) scale(0.99);
+}
+
+.topLevelChevron {
+  font-size: var(--header-font-size-caption, 12px);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.topLevelTriggerOpen .topLevelChevron {
+  transform: rotate(180deg);
+}
+
+.desktopLoading {
+  display: flex;
+  gap: 10px;
+}
+
+.megaMenuSurface {
+  animation: megaMenuEnter 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  inset-inline-start: 0;
+  max-height: calc(100dvh - 90px);
+  max-width: min(1120px, calc(100% - 16px));
+  overflow: visible;
+  padding-top: 12px;
+  position: absolute;
+  inset-inline-end: auto;
+  top: calc(100% - 4px);
+  transform-origin: top left;
+  width: min(1120px, calc(100% - 16px));
+  z-index: 1000;
+}
+
+.megaMenuInner {
+  background: var(--header-surface, #ffffff);
+  border: 1px solid var(--header-border, #edebe9);
+  border-radius: 8px;
+  box-shadow: var(--header-menu-shadow, 0 8px 16px rgba(0, 0, 0, 0.14));
+  max-height: calc(100dvh - 90px);
+  overflow: hidden;
+  position: relative;
+}
+
+.megaMenuHeader {
+  border-bottom: 1px solid var(--header-border, #edebe9);
+  padding: 24px 28px 18px;
+  position: relative;
+}
+
+.megaMenuHeader::after {
+  background: linear-gradient(90deg, var(--header-accent, #0f6cbd), transparent 72%);
+  bottom: -1px;
+  content: '';
+  height: 1px;
+  inset-inline-start: 28px;
+  opacity: 0.32;
+  position: absolute;
+  inset-inline-end: 28px;
+}
+
+.megaMenuTitleBlock {
+  max-width: 620px;
+}
+
+.megaMenuOverviewEyebrow {
+  color: var(--header-subtext, #605e5c);
+  display: block;
+  font-size: var(--header-font-size-caption, 12px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.megaMenuTitle {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-title-large, 28px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.megaMenuDescription {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-body, 14px);
+  line-height: 1.6;
+  margin: 10px 0 0;
+}
+
+.megaMenuContent {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
+  padding: 28px;
+}
+
+.megaMenuContentNoRail {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.megaMenuRail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.megaMenuOverviewCard {
+  background: linear-gradient(
+    180deg,
+    var(--header-accent-subtle, rgba(15, 108, 189, 0.08)),
+    var(--header-surface, #ffffff)
+  );
+  border: 1px solid var(--header-border, #edebe9);
+  border-radius: 8px;
+  box-shadow: inset 0 1px 0 var(--header-chrome-hover-background, rgba(255, 255, 255, 0.12));
+  padding: 20px;
+}
+
+.megaMenuOverviewTitle {
+  color: var(--header-body-text, #323130);
+  display: block;
+  font-size: var(--header-font-size-title, 24px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 10px 0 0;
+}
+
+.megaMenuOverviewDescription {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-body, 14px);
+  line-height: 1.6;
+  margin: 10px 0 18px;
+}
+
+.megaMenuOverviewMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+}
+
+.megaMenuMetaBadge,
+.megaMenuCurrentBadge {
+  align-items: center;
+  background: var(--header-hover-background, #f3f2f1);
+  border-radius: 999px;
+  color: var(--header-subtext, #605e5c);
+  display: inline-flex;
+  font-size: var(--header-font-size-caption, 12px);
+  font-weight: 700;
+  gap: 6px;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  min-height: 24px;
+  padding: 0 10px;
+}
+
+.megaMenuMetaBadgeActive,
+.megaMenuCurrentBadgeCurrent {
+  background: var(--header-accent-subtle, rgba(15, 108, 189, 0.08));
+  color: var(--header-link, #0f548c);
+}
+
+.megaMenuOverviewLink {
+  color: var(--header-link, #0f548c);
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.megaMenuOverviewLink:hover,
+.megaMenuOverviewLink:focus-visible {
+  color: var(--header-link-hover, #115ea3);
+  text-decoration: underline;
+}
+
+.megaMenuSections {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.megaMenuLoading {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 180px;
+}
+
+.megaMenuSection {
+  background: var(--header-surface, #ffffff);
+  border: 1px solid var(--header-border, #edebe9);
+  border-radius: 12px;
+  min-width: 0;
+  padding: 20px 22px 22px;
+  transform: none;
+}
+
+.megaMenuOverviewCard,
+.featuredCard {
+  animation: megaMenuCardIn 340ms cubic-bezier(0.22, 1, 0.36, 1) 70ms both;
+}
+
+.megaMenuSections .megaMenuSection {
+  animation: megaMenuCardIn 340ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@for $i from 1 through 12 {
+  .megaMenuSections .megaMenuSection:nth-child(#{$i}) {
+    animation-delay: #{90 + $i * 40}ms;
+  }
+}
+
+.megaMenuSectionsArea {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: calc(100dvh - 180px);
+  min-width: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.megaMenuSectionsArea::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.megaMenuSectionTitle {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-caption, 12px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.megaMenuSectionHeading {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.megaMenuLinkList {
+  display: grid;
+  gap: 26px 28px;
+  // auto-fit (not auto-fill): a section with fewer links than fit the row's
+  // width should have its existing links stretch to fill it. auto-fill keeps
+  // the extra empty tracks around, which on a wide mega-menu leaves visible
+  // dead grid cells trailing a short section instead of the links filling
+  // the row — the same reasoning already applied to .megaMenuSections above.
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.megaMenuSubList {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  padding-inline-start: 0;
+}
+
+.megaMenuLinkItem {
+  animation: megaMenuColumnIn 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  min-width: 0;
+}
+
+@for $i from 1 through 8 {
+  .megaMenuLinkItem:nth-child(#{$i}) {
+    animation-delay: #{120 + $i * 45}ms;
+  }
+}
+
+@keyframes megaMenuColumnIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.megaMenuLinkBlock {
+  min-width: 0;
+}
+
+.megaMenuLink,
+.megaMenuLinkStatic {
+  border-radius: 4px;
+  color: inherit;
+  display: block;
+  min-width: 0;
+  padding: 6px 8px;
+  margin: -6px -8px;
+  text-decoration: none;
+  transition: background 160ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.megaMenuLink:hover,
+.megaMenuLink:focus-visible {
+  background: var(--header-hover-background, #f3f2f1);
+  transform: translateX(3px);
+}
+
+.megaMenuLinkActive,
+.megaMenuLinkActive:hover,
+.megaMenuLinkActive:focus-visible {
+  background: var(--header-accent-subtle, rgba(15, 108, 189, 0.08));
+}
+
+.megaMenuLinkCurrent,
+.megaMenuLinkCurrent:hover,
+.megaMenuLinkCurrent:focus-visible {
+  background: color-mix(in srgb, var(--header-accent-subtle, rgba(15, 108, 189, 0.08)) 84%, var(--header-surface, #ffffff));
+}
+
+.megaMenuLink:hover .megaMenuLinkLabel {
+  color: var(--header-link-hover, #115ea3);
+}
+
+.megaMenuLinkActive .megaMenuLinkLabel,
+.megaMenuLinkCurrent .megaMenuLinkLabel {
+  color: var(--header-link, #0f548c);
+}
+
+.megaMenuLinkRow {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.megaMenuLinkRowMain {
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+  min-width: 0;
+}
+
+.megaMenuLinkLabel {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-body, 14px);
+  // 600 by default so bolding stays a meaningful signal reserved for the
+  // active/current states below — every link at 700 flattened that
+  // hierarchy and competed with the "Current page"/"Current section" badge.
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.megaMenuLinkActive .megaMenuLinkLabel,
+.megaMenuLinkCurrent .megaMenuLinkLabel {
+  font-weight: 700;
+}
+
+.megaMenuLinkDescription {
+  color: var(--header-subtext, #605e5c);
+  display: block;
+  font-size: var(--header-font-size-subtext, 14px);
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+.megaMenuSubItem + .megaMenuSubItem {
+  margin-top: 2px;
+}
+
+.megaMenuSubLink {
+  align-items: center;
+  border-radius: 6px;
+  color: var(--header-body-text, #323130);
+  display: flex;
+  gap: 8px;
+  font-size: var(--header-font-size-subtext, 14px);
+  justify-content: space-between;
+  line-height: 1.4;
+  margin: 0 -10px;
+  padding: 7px 10px;
+  position: relative;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease,
+    padding-left 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.megaMenuSubLink::before {
+  background: var(--header-accent, #0f6cbd);
+  border-radius: 0 2px 2px 0;
+  bottom: 7px;
+  content: '';
+  inset-inline-start: 0;
+  opacity: 0;
+  position: absolute;
+  top: 7px;
+  transition: opacity 160ms ease;
+  width: 3px;
+}
+
+.megaMenuSubLink:hover,
+.megaMenuSubLink:focus-visible {
+  background: var(--header-accent-subtle, var(--header-hover-background, #f3f2f1));
+  color: var(--header-accent-hover, var(--header-link-hover, #115ea3));
+  padding-inline-start: 16px;
+}
+
+.megaMenuSubLink:hover::before,
+.megaMenuSubLink:focus-visible::before {
+  opacity: 1;
+}
+
+.megaMenuSubLinkMeta {
+  align-items: center;
+  color: var(--header-subtext, #605e5c);
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.megaMenuSubLinkActive,
+.megaMenuSubLinkCurrent {
+  color: var(--header-accent-hover, var(--header-link, #0f548c));
+  font-weight: 600;
+}
+
+.megaMenuSubLinkActive::before,
+.megaMenuSubLinkCurrent::before {
+  opacity: 1;
+}
+
+.currentPageCard {
+  border-top: 1px solid var(--header-border, #edebe9);
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+.currentPageEyebrow {
+  color: var(--header-subtext, #605e5c);
+  display: block;
+  font-size: var(--header-font-size-caption, 12px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.currentPageTitle {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-body, 14px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.currentPageTrail {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-subtext, 14px);
+  line-height: 1.5;
+  margin: 8px 0 0;
+}
+
+.featuredCard {
+  background: linear-gradient(
+    180deg,
+    var(--header-surface-hover, #faf9f8),
+    var(--header-accent-subtle, rgba(15, 108, 189, 0.08))
+  );
+  border: 1px solid var(--header-border, #edebe9);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 var(--header-chrome-hover-background, rgba(255, 255, 255, 0.12));
+  color: inherit;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.featuredCard:hover {
+  border-color: var(--header-border-strong, #d2d0ce);
+  box-shadow: var(--header-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+.featuredEyebrow {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-caption, 12px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.featuredTitleRow {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.featuredTitle {
+  color: var(--header-body-text, #323130);
+  font-size: var(--header-font-size-title, 24px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.featuredDescription {
+  color: var(--header-subtext, #605e5c);
+  font-size: var(--header-font-size-body, 14px);
+  line-height: 1.6;
+  margin: 12px 0 18px;
+}
+
+.featuredCta {
+  color: var(--header-link, #0f548c);
+  font-size: var(--header-font-size-subtext, 14px);
+  font-weight: 700;
+  transition: color 160ms ease;
+}
+
+.featuredCta:hover {
+  color: var(--header-link-hover, #115ea3);
+  text-decoration: underline;
+}
+
+.externalIcon {
+  font-size: var(--header-font-size-caption, 12px);
+  opacity: 0.35;
+  transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 160ms ease;
+}
+
+.megaMenuLink:hover .externalIcon,
+.megaMenuSubLink:hover .externalIcon,
+.featuredCard:hover .externalIcon {
+  opacity: 0.85;
+  transform: translate(2px, -2px);
+}
+
+:global(.header-constrained) .topLevelItem {
+  animation-duration: 320ms;
+}
+
+:global(.header-constrained) .megaMenuSurface {
+  animation-duration: 190ms;
+}
+
+:global(.header-constrained) .megaMenuOverviewCard,
+:global(.header-constrained) .featuredCard,
+:global(.header-constrained) .megaMenuSections .megaMenuSection {
+  animation-duration: 220ms;
+}
+
+:global(.header-constrained) .featuredCard:hover {
+  box-shadow: var(--header-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+  transform: translateY(-1px);
+}
+
+:global(.header-constrained) .topLevelTrigger:hover,
+:global(.header-constrained) .topLevelTrigger:focus-visible,
+:global(.header-constrained) .topLevelTriggerOpen {
+  box-shadow: none;
+}
+
+:global(.header-constrained) .topLevelTriggerActive,
+:global(.header-constrained) .topLevelTriggerOpen {
+  transform: none;
+}
+
+@media (max-width: 1024px) {
+  .megaMenuSurface {
+    max-width: calc(100% - 16px);
+    width: calc(100% - 16px);
+  }
+
+  .megaMenuContent {
+    grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .megaMenuSections {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .megaMenuSurface {
+    max-width: calc(100% - 8px);
+    width: calc(100% - 8px);
+    max-height: calc(100dvh - 60px);
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+  }
+
+  .megaMenuInner {
+    max-height: calc(100dvh - 60px);
+  }
+
+  .megaMenuContent {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .megaMenuContentNoRail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .megaMenuRail {
+    display: none;
+  }
+
+  .megaMenuSections {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .megaMenuHeader {
+    padding: 16px 16px 12px;
+  }
+
+  .megaMenuTitle {
+    font-size: var(--header-font-size-title, 20px);
+  }
+
+  .megaMenuDescription {
+    font-size: var(--header-font-size-body, 16px);
+  }
+
+  .megaMenuOverviewTitle {
+    font-size: var(--header-font-size-title, 20px);
+  }
+
+  .featuredTitle {
+    font-size: var(--header-font-size-title, 20px);
+  }
+
+  .topLevelTrigger {
+    padding: 0 10px;
+    min-height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .megaMenuSurface {
+    max-width: calc(100% - 4px);
+    width: calc(100% - 4px);
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desktopNavShell,
+  .topLevelItem,
+  .topLevelTrigger,
+  .topLevelTrigger::after,
+  .topLevelChevron,
+  .megaMenuSection,
+  .megaMenuOverviewCard,
+  .featuredCard,
+  .megaMenuSurface,
+  .megaMenuLink,
+  .megaMenuLinkItem,
+  .megaMenuSubLink,
+  .megaMenuSubLink::before,
+  .externalIcon {
+    animation: none;
+    transition: none;
+  }
+
+  .topLevelItem,
+  .megaMenuSection,
+  .megaMenuLinkItem,
+  .megaMenuLink,
+  .megaMenuSubLink,
+  .externalIcon {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes megaMenuEnter {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes megaMenuCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (forced-colors: active) {
+  .topLevelTrigger {
+    color: ButtonText;
+
+    &::after {
+      background: Highlight;
+    }
+  }
+
+  .megaMenuSurface {
+    overflow: auto;
+  }
+
+  .megaMenuInner {
+    border: 1px solid ButtonText;
+    max-height: calc(100dvh - 90px);
+    overflow: auto;
+  }
+
+  .megaMenuSectionsArea {
+    max-height: calc(100dvh - 180px);
+    overflow-y: auto;
+  }
+
+  .topLevelTrigger:hover,
+  .topLevelTrigger:focus-visible {
+    background: Highlight;
+    color: HighlightText;
+  }
+
+  .topLevelTrigger:hover::after,
+  .topLevelTrigger:focus-visible::after {
+    background: HighlightText;
+  }
+
+  .megaMenuLink:hover .megaMenuLinkLabel,
+  .megaMenuLink:focus-visible .megaMenuLinkLabel {
+    color: LinkText;
+  }
+}
+
+.shimmerContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.shimmerBlock {
+  height: 40px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--header-hover-background, #f3f2f1) 25%, var(--header-border, #edebe9) 37%, var(--header-hover-background, #f3f2f1) 63%);
+  background-size: 400% 100%;
+  animation: desktopShimmer 1.4s ease infinite;
+}
+
+@keyframes desktopShimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.desktopNavMenuBar {
+  display: block;
+}
+
+.megaMenuFocusArea {
+  display: block;
+}
+
+

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/heft/v0/heft.config.json",
+  "heftPlugins": [
+    "@rushstack/heft-jest-plugin"
+  ]
+}
