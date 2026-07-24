@@ -27,7 +27,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "del": "^8.0.0",
-    "dompurify": "^3.4.1",
+    "dompurify": "^3.4.12",
     "gulp-cli": "^3.1.0",
     "marked": "^16.1.2",
     "react": "v17.0.0",
