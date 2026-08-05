@@ -49,6 +49,11 @@ When you submit a new sample, please follow these guidelines:
 * For security reasons, we do not accept pull requests containing `.sppkg` files. We only accept source code files for applications. 
 * Make sure to place the root of your solution's source code in sample folder
 
+
+### AI-assisted contributions
+
+AI-assisted development is welcome -- and encouraged. However, contributors are responsible for ensuring that every sample is accurate, complete, well-tested, and does what it claims to do. Pull requests containing unreviewed AI-generated code, hallucinated implementations, placeholder content, or samples that do not function as described will be rejected.
+
 ### README.md
 
 * You will need to have a `README.md` file for your contribution, which is based on [the provided template](../main/samples/README-template.md) under the `samples` folder. Please copy this template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
