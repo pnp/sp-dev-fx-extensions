@@ -2,9 +2,9 @@
 
 ## Summary
 
-This sample shows how to surface a **SharePoint HTML Live Dashboard created using Copilot** in the context of a SharePoint list or library, using a SharePoint Framework **ListView Command Set** extension. It adds a "Show Dashboard" command to the command bar; clicking it opens the Copilot-generated dashboard's embed page in a modal iframe popup, without leaving the list view.
+This solution deploys an SPFx Command Set Extensionto surface a **SharePoint HTML Live Dashboard created using Copilot** in the context of a SharePoint list or library. It adds a "Show Dashboard" command to the command bar; clicking it opens the Copilot-generated dashboard's embed page in a modal iframe popup, without leaving the list view.
 
-The dashboard URL is not hard-coded: it's configured per list and stored in that list's property bag, so the same extension can be deployed to multiple lists/libraries across a tenant, each pointing at its own Copilot-created dashboard.
+The dashboard URL is not hard-coded: it's configured per list and stored in that list's property bag, so the same extension can be deployed to multiple lists/libraries across a tenant, each pointing at its own Copilot-created dashboard. 
 
 
 ![extensin in action](/assets/1.png)
@@ -87,10 +87,6 @@ This extension illustrates the following concepts:
 - **In-dialog "Edit URL" for admins**: when the current user has `Manage Lists` permission, the dashboard popup
   shows an "Edit URL" button that lets them update the stored URL at any time, without leaving the list view.
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
-
 ## References
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
@@ -99,3 +95,5 @@ This extension illustrates the following concepts:
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Heft Documentation](https://heft.rushstack.io/)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-live-dashboard-sharepoint" />
