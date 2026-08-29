@@ -6,7 +6,6 @@ This sample shows how to surface a **SharePoint HTML Live Dashboard created usin
 
 The dashboard URL is not hard-coded: it's configured per list and stored in that list's property bag, so the same extension can be deployed to multiple lists/libraries across a tenant, each pointing at its own Copilot-created dashboard.
 
-[picture of the solution in action, if possible]
 
 ![extensin in action](/assets/1.png)
 
