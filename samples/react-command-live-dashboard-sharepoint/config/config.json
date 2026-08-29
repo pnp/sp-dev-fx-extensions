@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "live-dashboard-extension-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/liveDashboardExtension/LiveDashboardExtensionCommandSet.js",
+          "manifest": "./src/extensions/liveDashboardExtension/LiveDashboardExtensionCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "LiveDashboardExtensionCommandSetStrings": "lib/extensions/liveDashboardExtension/loc/{locale}.js"
+  }
+}

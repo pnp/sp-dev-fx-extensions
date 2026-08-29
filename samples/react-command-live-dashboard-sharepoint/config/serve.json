@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
+      "customActions": {
+        "3216ba22-1bcb-4796-ae0d-4cb4368fdd22": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible.",
+            "dashboardUrl": "https://binaryrootstest.sharepoint.com/sites/EmployeeDB/_layouts/15/embed.aspx?UniqueId=07c068f2-20f4-4fe9-967b-d415e7b8c5e1"
+          }
+        }
+      }
+    },
+    "liveDashboardExtension": {
+      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
+      "customActions": {
+        "3216ba22-1bcb-4796-ae0d-4cb4368fdd22": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible.",
+            "dashboardUrl": "https://binaryrootstest.sharepoint.com/sites/EmployeeDB/_layouts/15/embed.aspx?UniqueId=07c068f2-20f4-4fe9-967b-d415e7b8c5e1"
+          }
+        }
+      }
+    }
+  }
+}
