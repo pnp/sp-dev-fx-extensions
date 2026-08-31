@@ -1,0 +1,20 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "useGulp": false,
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.21.1",
+    "sdksVersions": {},
+    "version": "1.24.0-beta.2",
+    "libraryName": "react-command-live-dashboard-sharepoint",
+    "libraryId": "56538bc0-cbfe-440a-ae1b-f0e1342d5343",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "react-command-live-dashboard-sharepoint",
+    "solutionShortDescription": "react-command-live-dashboard-sharepoint description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}
