@@ -2,12 +2,11 @@
 
 ## Summary
 
-This solution deploys an SPFx Command Set Extensionto surface a **SharePoint HTML Live Dashboard created using Copilot** in the context of a SharePoint list or library. It adds a "Show Dashboard" command to the command bar; clicking it opens the Copilot-generated dashboard's embed page in a modal iframe popup, without leaving the list view.
+This solution deploys an SPFx Command Set Extension to surface a **SharePoint HTML Live Dashboard created using Copilot** in the context of a SharePoint list or library. It adds a "Show Dashboard" command to the command bar; clicking it opens the Copilot-generated dashboard's embed page in a modal iframe popup, without leaving the list view.
 
-The dashboard URL is not hard-coded: it's configured per list and stored in that list's property bag, so the same extension can be deployed to multiple lists/libraries across a tenant, each pointing at its own Copilot-created dashboard. 
+The dashboard URL is not hard-coded: it's configured per list and stored in that list's property bag, so the same extension can be deployed to multiple lists/libraries across a tenant, each pointing at its own Copilot-created dashboard.
 
-
-![extensin in action](/assets/1.png)
+![extension in action](/assets/1.png)
 
 ![url configuration](/assets/2.png)
 
@@ -29,11 +28,9 @@ The dashboard URL is not hard-coded: it's configured per list and stored in that
 - A SharePoint list or library view to attach the command bar extension to, and where you'll paste that embed URL when prompted.
 - To configure or change the dashboard URL, the signed-in user needs **Manage Lists** permission on the target list. Users without that permission see the dashboard once it's configured, and a friendly "ask your site owner" message if it isn't configured yet.
 
-## Solution
+## Contributors
 
-| Solution                     | Author(s)                                               |
-| ----------------------------- | ------------------------------------------------------- |
-| react-command-live-dashboard-sharepoint |  [Siddharth Vaghasia](https://github.com/siddharth-vaghasia) |
+- [Siddharth Vaghasia](https://github.com/siddharth-vaghasia)
 
 ## Version history
 
@@ -41,11 +38,6 @@ The dashboard URL is not hard-coded: it's configured per list and stored in that
 | ------- | ----------------- | -------------------------------------------------------------------------- |
 | 1.0     | August 29, 2026    | Initial release|
 
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
 
 ## Minimal Path to Awesome
 
@@ -86,6 +78,11 @@ This extension illustrates the following concepts:
   permission instead see a message pointing them to a site owner/list administrator.
 - **In-dialog "Edit URL" for admins**: when the current user has `Manage Lists` permission, the dashboard popup
   shows an "Edit URL" button that lets them update the stored URL at any time, without leaving the list view.
+
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 ## References
 
