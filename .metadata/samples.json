@@ -2561,6 +2561,70 @@
         ]
     },
     {
+        "name": "pnp-sp-dev-spfx-extensions-react-command-live-dashboard-sharepoint",
+        "source": "pnp",
+        "title": "react-command-live-dashboard-sharepoint",
+        "shortDescription": "This solution deploys an SPFx Command Set Extension to surface a SharePoint HTML Live Dashboard created using Copilot in the context of a SharePoint list or library. It adds a \"Show Dashboard\" command to the command bar; clicking it opens the Copilot-generated dashboard's embed page in a modal iframe popup, without leaving the list view.",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-live-dashboard-sharepoint",
+        "longDescription": [
+            "This solution deploys an SPFx Command Set Extension to surface a SharePoint HTML Live Dashboard created using Copilot in the context of a SharePoint list or library. It adds a \"Show Dashboard\" command to the command bar; clicking it opens the Copilot-generated dashboard's embed page in a modal iframe popup, without leaving the list view."
+        ],
+        "creationDateTime": "2026-08-29",
+        "updateDateTime": "2026-08-29",
+        "products": [
+            "SharePoint"
+        ],
+        "metadata": [
+            {
+                "key": "CLIENT-SIDE-DEV",
+                "value": "React"
+            },
+            {
+                "key": "SPFX-VERSION",
+                "value": "1.24.0-beta.2"
+            }
+        ],
+        "tags": [],
+        "categories": [
+            "SPFX-APPLICATION-EXTENSION"
+        ],
+        "thumbnails": [
+            {
+                "name": "1.png",
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-live-dashboard-sharepoint/assets/1.png",
+                "alt": "Web Part Preview"
+            },
+            {
+                "name": "2.png",
+                "type": "image",
+                "order": 101,
+                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-live-dashboard-sharepoint/assets/2.png",
+                "alt": "Web Part Preview"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "siddharth-vaghasia",
+                "pictureUrl": "https://github.com/siddharth-vaghasia.png",
+                "name": "Siddharth Vaghasia"
+            }
+        ],
+        "references": [
+            {
+                "name": "Overview of SharePoint Framework Extensions",
+                "description": "You can use SharePoint Framework (SPFx) Extensions to extend the SharePoint user experience. With SPFx Extensions, you can customize more facets of the SharePoint experience, including notification areas, toolbars, and list data views. SPFx Extensions are available in all Microsoft 365 subscriptions for production usage.",
+                "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions?WT.mc_id=m365-15741-cxa"
+            },
+            {
+                "name": "Use page placeholders from Application Customizer",
+                "description": "Application Customizers provide access to well-known locations on SharePoint pages that you can modify based on your business and functional requirements. For example, you can create dynamic header and footer experiences that render across all the pages in SharePoint Online.",
+                "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions?WT.mc_id=m365-15741-cxa"
+            }
+        ]
+    },
+    {
         "name": "pnp-sp-dev-spfx-extensions-react-site-content-ribbon-extension",
         "source": "pnp",
         "title": "Site Content Ribbon Extension",
