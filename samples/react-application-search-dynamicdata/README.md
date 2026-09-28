@@ -59,3 +59,4 @@ Web parts in this solution illustrate the following concepts on top of the Share
 * subscribing to dynamic data source notifications from a web part
 * persisting dynamic data subscription information in web part properties
 
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-search-dynamicdata" />

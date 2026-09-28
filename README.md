@@ -84,6 +84,12 @@ These samples are direct from the feature teams, SharePoint PnP core team (http:
 
 Please have a look on our [Contribution Guidance](./CONTRIBUTING.md) before submitting your pull requests, so that we can get your contribution processed as fast as possible.
 
+## Join the community calls
+
+Stay up to date with the latest Copilot, Microsoft 365, and Power Platform topics by joining our weekly community calls. Everyone is welcome. Come to learn, ask questions, and connect with the community.
+
+[View the call schedule and download the recurring invites](https://aka.ms/community/calls) so you don't miss an upcoming call.
+
 ## Code of Conduct
 
 This repository has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

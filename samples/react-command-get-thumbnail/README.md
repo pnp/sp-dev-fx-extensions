@@ -65,3 +65,5 @@ Here's a debug URL for testing around this sample.
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"46fe1f48-0c8d-4236-b8c0-e70f2a5eeb08":{"location":"ClientSideExtension.ListViewCommandSet","properties":{}}}
 ```
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-get-thumbnail" />

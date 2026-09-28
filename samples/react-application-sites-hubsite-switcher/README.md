@@ -55,3 +55,5 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * Using the Hub Api that is out of SharePoint (_{locaiton}-sphomep.svc.ms/api/v1/sites/hub_)
 * Using async / await for the async calls
 * Office UI fabric ActionLinks
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-sites-hubsite-switcher" />

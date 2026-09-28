@@ -123,3 +123,5 @@ Version|Date|Comments
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 - [OpenAI Platform Assistants Overview](https://platform.openai.com/docs/assistants/overview)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-ai-document-assistant" />

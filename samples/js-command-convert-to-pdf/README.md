@@ -106,4 +106,6 @@ Here's a debug querystring for testing this sample:
 Your URL will look similar to the following (replace with your domain and site address):
 ```
 https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5aacbfec-2af5-4f4c-9e14-f0d8e11fd2de":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"confirmButtonColor":"#000000"}}}
-  
+```
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-command-convert-to-pdf" />

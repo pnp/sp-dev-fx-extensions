@@ -31,8 +31,9 @@ When you submit a new sample, please follow these guidelines:
 * Each sample must be placed in a folder under the `samples` folder
 * Your sample folder must include the following content:
     - Your solution's source code
-    - An `assets` folder, containing screenshots
-    - A `README.md` file
+    - An `.nvmrc` file declaring the required Node.js version
+    - An `assets` folder containing screenshots and an `assets/sample.json` metadata file
+    - A `README.md` file at the root of the sample folder
 * You must only submit samples for which you have the rights to share. Make sure that you asked for permission from your employer and/or clients before committing the code to an open-source repository, because once you submit a pull request, the information is public and _cannot be removed_.
 
 ### Sample Folder
@@ -44,11 +45,15 @@ When you submit a new sample, please follow these guidelines:
 * If your solution is demonstrating multiple technologies, please use functional terms as the name for the solution folder
 * Do not use period/dot in the folder name of the provided sample
 
-### Source Code
+### Source Code Only
 
-* For security reasons, we do not accept pull requests containing `.sppkg` files. We only accept source code files for applications. 
-* Make sure to place the root of your solution's source code in sample folder
+* For security reasons, we do not accept pull requests containing `.sppkg` files. We only accept source code files for applications.
+* Make sure to place the root of your solution's source code in the sample folder.
+* Do not commit generated or dependency files such as `node_modules`, `lib`, or `upgrade-report.md`.
 
+### .nvmrc
+
+* Include an `.nvmrc` file at the root of the sample folder so contributors can use the Node.js version required by the sample.
 
 ### AI-assisted contributions
 
@@ -56,11 +61,9 @@ AI-assisted development is welcome -- and encouraged. However, contributors are 
 
 ### README.md
 
-* You will need to have a `README.md` file for your contribution, which is based on [the provided template](../main/samples/README-template.md) under the `samples` folder. Please copy this template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
+* You will need to have a `README.md` file for your contribution, which is based on [the provided template](./templates/README-template.md). Please copy this template to the root of your sample folder and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 * You will need to have a screenshot picture of your sample in action in the `README.md` file ("pics or it didn't happen"). The preview image must be located in the `assets` folder in the root of your sample folder.
     * All screen shots must be located in the `assets` folder. Do not point to your own repository or any other external source
-* The README template contains a specific tracking image at the end of the file with an `img` element pointing to `https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/readme-template`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
-  * Update the image `src` attribute according with repository name and folder information. For example, if your sample is named `react-todo` in the `samples` folder, update the `src` attribute to `https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-todo`
 * If you find an existing sample which is similar to yours, please extend the existing one rather than submitting a new similar sample
   * When you update existing samples, please update also `README.md` file accordingly with information on provided changes and with your author details
 * Make sure to document each function in the `README.md`
@@ -77,6 +80,20 @@ AI-assisted development is welcome -- and encouraged. However, contributors are 
 * For multiple authors, please provide one line per author
 * If you prefer to not use social media or disclose your name, we'll still accept your sample, but we'll assume that you don't want us to promote your contribution on social media.
 
+#### Visitor stats image
+
+Every sample-root `README.md` must use the following visitor stats image as its final non-empty line:
+
+```html
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/{sample-path}" />
+```
+
+Replace `{sample-path}` with the path to the sample folder relative to the repository root, using forward slashes and no leading or trailing slash. For example, `samples/react-todo` produces:
+
+```html
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-todo" />
+```
+
 ### Assets
 
 * To help people make sense of your sample, make sure to always include at least one screenshot of your solution in action. People are more likely to click on a sample if they can preview it before installing it.
@@ -85,6 +102,11 @@ AI-assisted development is welcome -- and encouraged. However, contributors are 
 * You can add as many screen shots as you'd like to help users understand your sample without having to download it and install it.
 * You can include animated images (such as `.gif` files), but you must provide at least one static `.png` file
 
+### Sample metadata
+
+* Include `assets/sample.json` for every sample and keep its title, description, products, technologies, thumbnails, authors, and repository URLs consistent with the sample-root `README.md`.
+* Metadata URLs and thumbnail paths must point to this repository and the sample's repository-relative path.
+
 ## Submitting Pull Requests
 
 > If you aren't familiar with how to contribute to open-source repositories using GitHub, or if you find the instructions on this page confusing, [sign up](https://forms.office.com/Pages/ResponsePage.aspx?id=KtIy2vgLW0SOgZbwvQuRaXDXyCl9DkBHq4A2OG7uLpdUREZVRDVYUUJLT1VNRDM4SjhGMlpUNzBORy4u) for one of our [Sharing is Caring](https://pnp.github.io/sharing-is-caring/#pnp-sic-events) events. It's completely free, and we'll guide you through the process.
@@ -92,43 +114,42 @@ AI-assisted development is welcome -- and encouraged. However, contributors are 
 Here's a high-level process for submitting new samples or updates to existing ones.
 
 1. Sign the Contributor License Agreement (see below)
-2. Fork this repository [SharePoint/sp-dev-fx-extensions](https://github.com/SharePoint/sp-dev-fx-extensions) to your GitHub account
+2. Fork this repository [pnp/sp-dev-fx-extensions](https://github.com/pnp/sp-dev-fx-extensions) to your GitHub account
 3. Create a new branch from the `main` branch for your fork for the contribution
 4. Include your changes to your branch
-5. Commit your changes using descriptive commit message * These are used to track changes on the repositories for monthly communications
-6. Create a pull request in your own fork and target `main` branch
-7. Fill up the provided PR template with the requested details
+5. Commit your changes using a descriptive commit message. These are used to track changes for monthly communications
+6. Push the branch to your fork and create a pull request targeting the `main` branch of `pnp/sp-dev-fx-extensions`
+7. Fill out the provided PR template with the requested details
 
 Before you submit your pull request consider the following guidelines:
 
-* Search [GitHub](https://github.com/SharePoint/sp-dev-fx-extensions/pulls) for an open or closed Pull Request
+* Search [GitHub](https://github.com/pnp/sp-dev-fx-extensions/pulls) for an open or closed pull request
   that relates to your submission. You don't want to duplicate effort.
-* Make sure you have a link in your local cloned fork to the [SharePoint/sp-dev-fx-extensions](https://github.com/SharePoint/sp-dev-fx-extensions):
+* Make sure you have a link in your local cloned fork to the [pnp/sp-dev-fx-extensions](https://github.com/pnp/sp-dev-fx-extensions):
 
   ```shell
   # check if you have a remote pointing to the Microsoft repo:
   git remote -v
 
-  # if you see a pair of remotes (fetch & pull) that point to https://github.com/SharePoint/sp-dev-fx-extensions, you're ok... otherwise you need to add one
+  # if you see a pair of remotes (fetch and push) that point to https://github.com/pnp/sp-dev-fx-extensions, you're set; otherwise add one
 
   # add a new remote named "upstream" and point to the Microsoft repo
-  git remote add upstream https://github.com/SharePoint/sp-dev-fx-extensions.git
+  git remote add upstream https://github.com/pnp/sp-dev-fx-extensions.git
   ```
 
 * Make your changes in a new git branch:
 
   ```shell
-  git checkout -b react-field-slider main
+  git switch -c react-field-slider main
   ```
 
 * Ensure your fork is updated and not behind the upstream **sp-dev-fx-extensions** repo. Refer to these resources for more information on syncing your repo:
-  * [GitHub Help: Syncing a Fork](https://help.github.com/articles/syncing-a-fork/)
-  * [Keep Your Forked Git Repo Updated with Changes from the Original Upstream Repo](http://www.andrewconnell.com/blog/keep-your-forked-git-repo-updated-with-changes-from-the-original-upstream-repo)
+  * [GitHub Docs: Syncing a fork](https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)
   * For a quick cheat sheet:
 
     ```shell
     # assuming you are in the folder of your locally cloned fork....
-    git checkout main
+    git switch main
 
     # assuming you have a remote named `upstream` pointing official **sp-dev-fx-extensions** repo
     git fetch upstream
@@ -137,7 +158,7 @@ Before you submit your pull request consider the following guidelines:
     git pull --rebase upstream main
 
     # switch to your branch where you are working, say "react-field-slider"
-    git checkout react-field-slider
+    git switch react-field-slider
 
     # update your branch to update it's fork point to the current tip of main & put your changes on top of it
     git rebase main
@@ -146,7 +167,7 @@ Before you submit your pull request consider the following guidelines:
 * Push your branch to GitHub:
 
   ```shell
-  git push origin react-field-slider
+  git push -u origin react-field-slider
   ```
 
 ## Merging your Existing GitHub Projects with this Repository
@@ -178,7 +199,7 @@ If the sample you wish to contribute is stored in your own GitHub repository, yo
 * Push the changes up to your forked repository
 
     ```shell
-    git push origin dev
+    git push -u origin react-field-slider
     ```
 
 ## Signing the CLA

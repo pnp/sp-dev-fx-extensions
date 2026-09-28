@@ -53,3 +53,4 @@ Add-PnPCustomAction `
     -RegistrationId "101" `
     -ClientSideComponentProperties "{}"
 
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-item-History" />

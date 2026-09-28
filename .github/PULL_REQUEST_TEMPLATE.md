@@ -24,5 +24,7 @@
 > 
 > *Please target your PR to `main` branch.*
 >
+> *For sample contributions, confirm that the sample root contains an accurate `assets/sample.json`, that its `README.md` is based on `templates/README-template.md`, and that the README's final line is `<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/{sample-path}" />` using the repository-relative sample folder path.*
+>
 > *Remember that this repository is maintained by community members who volunteer their time to help. Be courteous and patient.*
 > _(DELETE THIS SECTION AFTER READING)_

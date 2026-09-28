@@ -78,3 +78,5 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 ## Roadmap
 * refactoring in more small components
 * for demo purposes, currently is calling the API when the page is loaded. Future versions will call the API only when the button is pressed
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-page-related-bing-news" />

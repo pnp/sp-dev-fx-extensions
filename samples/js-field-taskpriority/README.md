@@ -126,11 +126,4 @@ This is what the code looks like in the VSCode editor:
 
 ![](assets/CSS.jpg)
 
-
-
-
-
-
-
-
-
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-field-taskpriority" />

@@ -283,3 +283,5 @@ This sample is provided as-is without warranty. Test thoroughly in your environm
 - [SharePoint Framework Documentation](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
 - [Azure Functions Documentation](https://learn.microsoft.com/en-us/azure/azure-functions/)
 - [PnP Core SDK](https://pnp.github.io/pnpcore/)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-document-translation" />
