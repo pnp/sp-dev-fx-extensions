@@ -93,3 +93,5 @@ For questions regarding this sample, [create a new question](https://github.com/
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=react-application-my-flows-list&authors=@Adam-it&title=react-application-my-flows-list%20-%20).
 
 react-application-my-flows-list
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-my-flows-list" />

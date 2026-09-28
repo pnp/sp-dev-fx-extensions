@@ -64,3 +64,5 @@ Your URL will look similar to the following (replace with your domain and site a
 ```
 https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"57ecbfd1-fb14-4bc8-b4d6-fa2701ba532f":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"showToastr":"no"}}}
 ```
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-command-copy-classic-link" />

@@ -82,3 +82,4 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * using async / await for the async calls
 * how to take advantage of existing react npm packages
 
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-qna-chat" />

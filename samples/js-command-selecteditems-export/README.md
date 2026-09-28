@@ -94,3 +94,5 @@ https://yourtenant.sharepoint.com/sites/yoursite?loadSpfx=true&debugManifestsFil
 
 * Export previous view columns, even after the view is changed
 * Its using legacyContext viewID property, which is not updated even after the view changed. Let's hope SPFX will be providing these options in future.
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-command-selecteditems-export" />

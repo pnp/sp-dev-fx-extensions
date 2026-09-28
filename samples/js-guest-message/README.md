@@ -71,3 +71,5 @@ Here's a debug URL for testing around this sample. **Updated based on your manif
 ```
 ?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B"3efa9b55-2736-4c81-af4a-b713c956451b"%3A%7B"location"%3A"ClientSideExtension.ApplicationCustomizer"%2C"properties"%3A%7B"textColor"%3A"%23000000"%2C"textmessage"%3A"Welcome+to+Contoso+Intranet"%2C"backgroundColor"%3A"%23ff0000"%7D%7D%7D
 ```
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-guest-message" />

@@ -71,3 +71,5 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 
 * using the Bot Framework webchat React component as some kind of flyout web part in modern pages
 * adding a bot to modern pages and let users interact with a bot hosted in the Azure Bot Service
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-botframework-chat" />

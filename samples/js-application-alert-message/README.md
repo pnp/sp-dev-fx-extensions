@@ -72,3 +72,5 @@ Version|Date|Comments
 
 #### Local Mode
 This solution doesn't work on local mode.
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-application-alert-message" />

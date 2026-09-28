@@ -222,7 +222,7 @@ Or:
 @hugoabernier%20@VesaJuvonen%20@PopWarner
 -->
 
-We do not support samples, but we this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
 You can try looking at [issues related to this sample](https://github.com/pnp/sp-dev-fx-extensions/issues?q=label%3AYOUR-SOLUTION-NAME) to see if anybody else is having the same issues.
 
@@ -234,4 +234,8 @@ For questions regarding this sample, [create a new question](https://github.com/
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-extensions/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected&template=suggestion.yml&sample=YOUR-SOLUTION-NAME&authors=@YOURGITHUBUSERNAME&title=YOUR-SOLUTION-NAME%20-%20).
 
+<!--
+Keep the visitor stats image below as the final line of this sample-root README.
+Replace samples/YOUR-SOLUTION-NAME with the sample folder path relative to the repository root, using forward slashes.
+-->
 <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/YOUR-SOLUTION-NAME" />

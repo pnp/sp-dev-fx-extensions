@@ -65,3 +65,5 @@ This sample illustrates the following concepts on top of the SharePoint Framewor
 * using PNPJs
 * using React
 * using async calls
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-field-user-permission" />

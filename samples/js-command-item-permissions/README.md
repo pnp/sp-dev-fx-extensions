@@ -65,3 +65,5 @@ On your SharePoint tenant:
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"fc875dc3-2180-4f1b-bc1c-a20d8ece961b":{"location":"ClientSideExtension.ListViewCommandSet"}}
 ```
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/js-command-item-permissions" />

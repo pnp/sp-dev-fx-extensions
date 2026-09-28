@@ -69,3 +69,5 @@ Your URL will look similar to the following (replace with your domain and site a
 ```url
 https://yourtenant.sharepoint.com/sites/yoursite?debugManifestsFile=https://localhost:4321/temp/manifests.js&loadSPFX=true&customActions={"038b9697-9b22-4e42-8078-66ec93f546d0":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar","properties":{"sampleTextOne":"One+item+is+selected+in+the+list","sampleTextTwo":"This+command+is+always+visible."}}}
 ```
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-manage-list-subscriptions" />

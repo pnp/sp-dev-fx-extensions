@@ -76,3 +76,5 @@ On your SharePoint tenant:
 ```
 ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"42b231f6-931e-43e1-9391-6bac1ee4dcb6":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
 ```
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-application-office-groups-nav" />

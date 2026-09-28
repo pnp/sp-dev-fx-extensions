@@ -61,3 +61,5 @@ Your URL will look similar to the following (replace with your domain and site a
 ```
 https://yourtenant.sharepoint.com/sites/yoursite?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"7259f167-9c45-4829-be24-34ef6b0c896b":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{}}}
 ```
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/samples/react-command-mail-view-as-image" />
