@@ -84,9 +84,11 @@ These samples are direct from the feature teams, SharePoint PnP core team (http:
 
 Please have a look on our [Contribution Guidance](./CONTRIBUTING.md) before submitting your pull requests, so that we can get your contribution processed as fast as possible.
 
-## Community calls and demos
+## Join the community calls
 
-Everyone is welcome at the weekly [Copilot, Microsoft 365, and Power Platform community calls](https://aka.ms/community/calls). To share your learnings, a solution, or input with the community, [sign up for a demo](https://aka.ms/community/request/demo).
+Stay up to date with the latest Copilot, Microsoft 365, and Power Platform topics by joining our weekly community calls. Everyone is welcome—come to learn, ask questions, and connect with the community.
+
+[View the call schedule and download the recurring invites](https://aka.ms/community/calls) so you don't miss an upcoming call.
 
 ## Code of Conduct
 
