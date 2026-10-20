@@ -17,7 +17,7 @@
         "@pnp/graph": "3.5.1",
         "@pnp/logging": "3.5.1",
         "@pnp/sp": "3.5.1",
-        "@pnp/spfx-controls-react": "3.9.0",
+        "@pnp/spfx-controls-react": "3.21.0",
         "lodash": "4.18.1",
         "office-ui-fabric-react": "7.174.1",
         "react": "16.13.1",
