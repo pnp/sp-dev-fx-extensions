@@ -3,7 +3,7 @@
     "name": "pnp-sp-dev-spfx-extensions-react-field-unique-permissions",
     "source": "pnp",
     "title": "Unique permissions on list items",
-    "shortDescription": "This sample demonstrates how to use field customizer to handle unique permissions on list items. ",
+    "shortDescription": "This sample demonstrates how to use field customizer to handle unique permissions on list items.",
     "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-field-unique-permissions",
     "longDescription": [
       "This sample demonstrates how to use field customizer to handle unique permissions on list items."

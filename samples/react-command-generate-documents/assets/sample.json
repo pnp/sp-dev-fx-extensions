@@ -1,0 +1,54 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-command-generate-documents",
+    "source": "pnp",
+    "title": "react-command-generate-documents",
+    "shortDescription": "Generate Word and PDF documents from SharePoint templates using a list command and an Azure Function.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-generate-documents",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-generate-documents",
+    "longDescription": [
+      "A SharePoint Framework ListView Command Set that calls an Azure Function to populate a Word template with text, images, checkboxes and tables. The function saves generated Word or PDF documents to SharePoint using the caller's permissions."
+    ],
+    "creationDateTime": "2019-10-09",
+    "updateDateTime": "2023-03-26",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.9.1"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-COMMAND-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-generate-documents/misc/GenerateDocs.png",
+        "alt": "Generate documents command and generated document"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "russgove",
+        "pictureUrl": "https://github.com/russgove.png",
+        "name": "Russell Gove"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "Documentation for extending the SharePoint user experience with SharePoint Framework extensions.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions"
+      }
+    ]
+  }
+]

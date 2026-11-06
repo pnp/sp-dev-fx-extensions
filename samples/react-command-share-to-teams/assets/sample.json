@@ -21,7 +21,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.15.2"
+        "value": "1.14.0"
       }
     ],
     "thumbnails": [
@@ -34,34 +34,34 @@
       {
         "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/fileNative.png",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/fileNative.PNG",
         "alt": "File Native"
       },
       {
         "type": "image",
         "order": 300,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/LibraryNative.png",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/LibraryNative.PNG",
         "alt": "Library Native"
       }
       ,
       {
         "type": "image",
         "order": 400,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/LIbraryPage.png",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/LIbraryPage.PNG",
         "alt": "LIbrary Page"
       }
       ,
       {
         "type": "image",
         "order": 500,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/noPermissions.png",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/noPermissions.PNG",
         "alt": "No Permissions"
       }
       ,
       {
         "type": "image",
         "order": 600,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/filePage.png",
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-share-to-teams/assets/filePage.PNG",
         "alt": "File Page"
       }
     ],
