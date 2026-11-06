@@ -4,7 +4,7 @@
     "source": "pnp",
     "title": "Search driven navigation",
     "shortDescription": "SPFx application search driven navigation and permission side panel.",
-    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-qna-chat",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-application-nav-search-driven",
     "longDescription": [
       "SPFx application extension acting as top level search driven navigation and permission checker on the right within a panel."
     ],

@@ -1,0 +1,54 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-adal-bot",
+    "source": "pnp",
+    "title": "SPFx ADAL Bot Extension",
+    "shortDescription": "Integrate an authenticated bot into SharePoint using ADAL and the Bot Framework Web Chat control.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-adal-bot",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-adal-bot",
+    "longDescription": [
+      "A SharePoint Framework application customizer that hosts a React bot chat control and demonstrates authentication to Azure AD-protected APIs using the OAuth2 authorization code flow. The sample includes a separate Node.js bot project."
+    ],
+    "creationDateTime": "2018-08-04",
+    "updateDateTime": "2026-04-02",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.5.1"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-adal-bot/images/adal_bot_demo.gif",
+        "alt": "Authenticated bot chat within a SharePoint page"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "FranckyC",
+        "pictureUrl": "https://github.com/FranckyC.png",
+        "name": "Franck Cornu"
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "Documentation for extending the SharePoint user experience with SharePoint Framework extensions.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions"
+      }
+    ]
+  }
+]

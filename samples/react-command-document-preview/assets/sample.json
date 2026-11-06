@@ -1,0 +1,54 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-command-document-preview",
+    "source": "pnp",
+    "title": "Document Preview ListView Command Set",
+    "shortDescription": "Preview images, videos and documents in a side panel with the Smart View list command.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-document-preview",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-document-preview",
+    "longDescription": [
+      "A SharePoint Framework ListView Command Set that adds a Smart View command for previewing supported images, videos and documents without navigating away from the library."
+    ],
+    "creationDateTime": "2020-03-08",
+    "updateDateTime": "2026-04-22",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.10.0"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-COMMAND-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-command-document-preview/assets/Document-Preview.gif",
+        "alt": "Smart View document preview in a library side panel"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "sudharsank",
+        "pictureUrl": "https://github.com/sudharsank.png",
+        "name": "Sudharsan K."
+      }
+    ],
+    "references": [
+      {
+        "name": "Overview of SharePoint Framework Extensions",
+        "description": "Documentation for extending the SharePoint user experience with SharePoint Framework extensions.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/overview-extensions"
+      }
+    ]
+  }
+]
