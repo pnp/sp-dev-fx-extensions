@@ -27,12 +27,14 @@
     "categories": [
       "SPFX-APPLICATION-EXTENSION"
     ],
-    "thumbnails":             {
-                "type": "image",
-                "order": 100,
-                "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-chatbubble-copilot/assets/Chatbot.png",
-                "alt": "Extension Preview"
-            },
+    "thumbnails":             [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-application-chatbubble-copilot/assets/Chatbot.png",
+        "alt": "Chatbot Integration for SharePoint Online"
+      }
+    ],
     "authors": [
       {
         "gitHubAccount": "NicolasKheirallah",
