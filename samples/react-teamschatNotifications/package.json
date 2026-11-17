@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@microsoft/rush-stack-compiler-3.5": "~0.1.x",
-    "@microsoft/sp-build-web": "1.22.1",
+    "@microsoft/sp-build-web": "1.24.1",
     "@microsoft/sp-module-interfaces": "1.9.1",
     "@microsoft/sp-tslint-rules": "1.9.1",
     "@microsoft/sp-webpart-workbench": "1.12.0",
@@ -54,7 +54,7 @@
     "@types/mocha": "2.2.38",
     "@types/react": "^16.7.22",
     "ajv": "~6.14.0",
-    "gulp": "~3.9.1",
+    "gulp": "~5.0.1",
     "gulp-sequence": "1.0.0",
     "spfx-uifabric-themes": "^0.9.0",
     "typescript": "~3.5.x",
