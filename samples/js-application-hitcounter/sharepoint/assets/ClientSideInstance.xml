@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="HitCounterTracker"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="8bbdfbf9-5b59-4175-8dbd-808b48d8a374"
+        Properties="{&quot;centralSiteUrl&quot;:&quot;&quot;,&quot;debug&quot;:false}">
+    </ClientSideComponentInstance>
+</Elements>

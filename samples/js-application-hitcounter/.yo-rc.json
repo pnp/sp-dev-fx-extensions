@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "hitcounter",
+    "environment": "spo",
+    "packageManager": "npm",
+    "skipFeatureDeployment": true,
+    "componentType": "webpart",
+    "componentName": "HitCounterDashboard",
+    "componentDescription": "HitCounter dashboard and setup",
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "22.23.2",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "hitcounter",
+    "libraryId": "122234c4-c3be-4cdd-935b-cd5e1812c0c2",
+    "solutionShortDescription": "hitcounter description",
+    "isDomainIsolated": false,
+    "template": "none"
+  }
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-js-application-hitcounter",
+    "source": "pnp",
+    "title": "HitCounter - page views and visitors with unlimited history",
+    "shortDescription": "Counts page views and unique visitors on modern SharePoint pages and keeps daily, monthly and yearly totals for as long as you want, in SharePoint lists in your own tenant. No Azure, no scheduler.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/js-application-hitcounter",
+    "longDescription": [
+      "An Application Customizer records each view of a modern SharePoint page, including in-page (SPA) navigation, as a row in a SharePoint list on a central site. A dashboard web part on that site turns the rows into stored daily, monthly and yearly totals per site and for all sites, and shows them with KPI tiles, a 30-day trend, 12 months, share by site, top pages and a sortable sites table, plus live figures for rows not yet totalled. Unlike the built-in site usage page (7, 30 or 90 days), totals are kept indefinitely. Install it on one site, on chosen sites, or on every site through Tenant Wide Extensions; a tenant property tells every tracker where the central site is. Site owners see only their own sites. Totals are updated in a central admin's browser, when they open the dashboard or in the background while they browse, so there is no scheduled job. Monthly lists are reused year after year, with a size warning, an archive action and archive retention. Everything is stored in hidden lists with a custom permission level: users can add rows and read only their own."
+    ],
+    "creationDateTime": "2026-11-18",
+    "updateDateTime": "2026-11-18",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "TypeScript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.21.1"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION",
+      "SPFX-WEB-PART"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-application-hitcounter/assets/hitcounter-dashboard.png",
+        "alt": "HitCounter dashboard with KPI tiles, 30-day trend, monthly chart, share by site and top pages"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/js-application-hitcounter/assets/hitcounter-sites.png",
+        "alt": "HitCounter sites table with today, this month and this year for every tracked site"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "gvijaikumar9",
+        "name": "Vijay Kumar G",
+        "pictureUrl": "https://github.com/gvijaikumar9.png"
+      }
+    ],
+    "references": [
+      {
+        "name": "Build your first SharePoint Framework Extension",
+        "description": "Application Customizers add scripts to every page of a site and react to page navigation.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension"
+      },
+      {
+        "name": "Tenant-wide deployment of extensions",
+        "description": "Make an extension available on every site through the Tenant Wide Extensions list in the app catalog.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/extensions/basics/tenant-wide-deployment-extensions"
+      },
+      {
+        "name": "Use tenant properties",
+        "description": "Store tenant-wide settings in the app catalog and read them from any site.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/tenant-properties"
+      }
+    ]
+  }
+]
