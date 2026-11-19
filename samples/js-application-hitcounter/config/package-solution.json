@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "HitCounter",
+    "id": "122234c4-c3be-4cdd-935b-cd5e1812c0c2",
+    "version": "1.2.3.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "G Vijai Kumar",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.21.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Page views and unique visitors for SharePoint sites."
+      },
+      "longDescription": {
+        "default": "HitCounter records page views on modern SharePoint pages, including in-page navigation, and keeps long-term totals in SharePoint lists the tenant owns."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "HitCounter tracker",
+        "description": "Adds the HitCounter tracker: to a site when the app is added there (elements.xml), or to every site when the app is made available to all sites (ClientSideInstance.xml, which registers it in Tenant Wide Extensions).",
+        "id": "cbb28d1e-8612-43bc-8b70-ea3bbfb7e2e5",
+        "version": "1.2.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/hitcounter.sppkg"
+  }
+}

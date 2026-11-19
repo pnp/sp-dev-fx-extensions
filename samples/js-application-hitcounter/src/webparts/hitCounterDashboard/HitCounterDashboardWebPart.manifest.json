@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "cc397d40-d0de-4cda-8e9b-6fd80bbc3b90",
+  "alias": "HitCounterDashboardWebPart",
+  "componentType": "WebPart",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
+    "group": { "default": "Advanced" },
+    "title": { "default": "HitCounter" },
+    "description": { "default": "Set up HitCounter and see page views and unique visitors." },
+    "officeFabricIconFontName": "BarChart4",
+    "properties": {}
+  }]
+}

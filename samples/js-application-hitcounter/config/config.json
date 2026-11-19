@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "hit-counter-tracker-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/hitCounterTracker/HitCounterTrackerApplicationCustomizer.js",
+          "manifest": "./src/extensions/hitCounterTracker/HitCounterTrackerApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "hit-counter-dashboard-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/hitCounterDashboard/HitCounterDashboardWebPart.js",
+          "manifest": "./src/webparts/hitCounterDashboard/HitCounterDashboardWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HitCounterTrackerApplicationCustomizerStrings": "lib/extensions/hitCounterTracker/loc/{locale}.js",
+    "HitCounterDashboardWebPartStrings": "lib/webparts/hitCounterDashboard/loc/{locale}.js"
+  }
+}
