@@ -20,5 +20,8 @@
     "types": ["webpack-env"],
     "lib": ["es2020", "dom"]
   },
+  "watchOptions": {
+    "excludeDirectories": ["**/teams", "**/temp/copilot"]
+  },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
