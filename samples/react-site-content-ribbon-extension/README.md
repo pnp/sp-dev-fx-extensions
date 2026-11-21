@@ -18,7 +18,7 @@ It helps users quickly discover and navigate lists, document libraries, and othe
 
 This sample is optimally compatible with the following environment configuration:
 
-![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![SPFx 1.24.1](https://img.shields.io/badge/SPFx-1.24.1-green.svg)
 ![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
 ![Toolchain Heft](https://img.shields.io/badge/Toolchain-Heft-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
@@ -42,12 +42,13 @@ This sample is optimally compatible with the following environment configuration
 | Version | Date | Comments |
 | ------- | ---- | -------- |
 | 1.0.0 | June 19, 2026 | Initial sample version |
+| 1.0.1 | November 21, 2026 | SPFx version upgrade |
 
 ## Prerequisites
 
 - SharePoint Online tenant
 - Modern SharePoint site
-- Node.js v22 compatible with SPFx 1.23.0
+- Node.js v22 compatible with SPFx 1.24.1
 - Tenant app catalog or site collection app catalog for deployment
 - Permissions to install SharePoint Framework solutions
 - Appropriate permissions to read site content and use Microsoft Graph for document library drive details when available
