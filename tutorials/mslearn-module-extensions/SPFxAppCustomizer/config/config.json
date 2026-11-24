@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "hello-app-customizer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/helloAppCustomizer/HelloAppCustomizerApplicationCustomizer.js",
+          "manifest": "./src/extensions/helloAppCustomizer/HelloAppCustomizerApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HelloAppCustomizerApplicationCustomizerStrings": "lib/extensions/helloAppCustomizer/loc/{locale}.js"
+  }
+}

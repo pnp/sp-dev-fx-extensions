@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://{tenantDomain}/sites/ProductLaunchPlanning/Lists/Work%20Status/AllItems.aspx",
+      "customActions": {
+        "898aef94-5e04-443b-8d3c-3c7d98d9abd3": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "messagePrefix": "[command_set_prefix]"
+          }
+        }
+      }
+    },
+    "commandSetDemo": {
+      "pageUrl": "https://{tenantDomain}/sites/ProductLaunchPlanning/Lists/Work%20Status/AllItems.aspx",
+      "customActions": {
+        "898aef94-5e04-443b-8d3c-3c7d98d9abd3": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "messagePrefix": "[command_set_prefix]"
+          }
+        }
+      }
+    }
+  }
+}

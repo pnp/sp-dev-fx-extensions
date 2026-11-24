@@ -80,4 +80,13 @@ Once the npm packages are installed, run the command to start debugging extensio
 ```
 gulp serve --nobrowser
 ```
+
+## Microsoft Learn module tutorials
+
+Completed exercise code for the SharePoint Framework training modules on Microsoft Learn.
+
+| Tutorial | Microsoft Learn module |
+|---|---|
+| [mslearn-module-extensions](mslearn-module-extensions/README.md) | [Extend the SharePoint user interface with SharePoint Framework extensions](https://learn.microsoft.com/training/modules/sharepoint-spfx-extensions/) |
+
 <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-extensions/tutorials" />
