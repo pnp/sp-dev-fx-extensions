@@ -1,0 +1,74 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-mslearn-module-extensions",
+    "source": "pnp",
+    "title": "Extend the SharePoint user interface with SharePoint Framework extensions",
+    "shortDescription": "SharePoint Framework (SPFx) extensions that customize modern SharePoint pages and lists: an application customizer, a field customizer, and a command set.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/tutorials/mslearn-module-extensions",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-extensions/tree/main/tutorials/mslearn-module-extensions",
+    "longDescription": [
+      "SharePoint Framework (SPFx) extensions that customize modern SharePoint pages and lists: an application customizer, a field customizer, and a command set.",
+      "This tutorial contains the completed code for the exercises in the Microsoft Learn module Extend the SharePoint user interface with SharePoint Framework extensions."
+    ],
+    "creationDateTime": "2026-11-25",
+    "updateDateTime": "2026-11-25",
+    "products": [
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "Javascript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.24.1"
+      }
+    ],
+    "tags": [],
+    "categories": [
+      "SPFX-APPLICATION-EXTENSION",
+      "SPFX-FIELD-EXTENSION",
+      "SPFX-COMMAND-EXTENSION"
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/tutorials/mslearn-module-extensions/assets/preview-spfxappcustomizer.png",
+        "alt": "Modern SharePoint page with the header and footer added by the application customizer"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/tutorials/mslearn-module-extensions/assets/preview-spfxfieldcustomizer.png",
+        "alt": "Work Status list with PercentComplete values shown as colored bars"
+      },
+      {
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/tutorials/mslearn-module-extensions/assets/preview-spfxcommandset.png",
+        "alt": "Work Status list command bar with the command set buttons"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "andrewconnell",
+        "pictureUrl": "https://github.com/andrewconnell.png",
+        "name": "Andrew Connell"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Learn: Extend the SharePoint user interface with SharePoint Framework extensions",
+        "description": "The Microsoft Learn training module whose exercises build the code in this tutorial.",
+        "url": "https://learn.microsoft.com/training/modules/sharepoint-spfx-extensions/"
+      },
+      {
+        "name": "Overview of the SharePoint Framework",
+        "description": "The SharePoint Framework (SPFx) is a page and web part model that provides full support for client-side SharePoint development, easy integration with SharePoint data, and extending Microsoft Teams, Microsoft Viva, Outlook, and Microsoft 365.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview"
+      }
+    ]
+  }
+]
