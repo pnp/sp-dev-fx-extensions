@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
+
+  "id": "898aef94-5e04-443b-8d3c-3c7d98d9abd3",
+  "alias": "CommandSetDemoCommandSet",
+  "componentType": "Extension",
+  "extensionType": "ListViewCommandSet",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "items": {
+    "ONE_ITEM_SELECTED": {
+      "title": { "default": "One Item Selected" },
+      "type": "command"
+    },
+    "TWO_ITEM_SELECTED": {
+      "title": { "default": "Two Items Selected" },
+      "type": "command"
+    },
+    "ALWAYS_ON": {
+      "title": { "default": "Always On" },
+      "type": "command"
+    }
+  }
+}

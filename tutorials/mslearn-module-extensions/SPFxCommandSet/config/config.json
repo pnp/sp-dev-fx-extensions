@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "command-set-demo-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/commandSetDemo/CommandSetDemoCommandSet.js",
+          "manifest": "./src/extensions/commandSetDemo/CommandSetDemoCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CommandSetDemoCommandSetStrings": "lib/extensions/commandSetDemo/loc/{locale}.js"
+  }
+}
