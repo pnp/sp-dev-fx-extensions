@@ -1,0 +1,37 @@
+[
+  {
+    "name": "pnp-sp-dev-spfx-extensions-react-site-notifications",
+    "source": "pnp",
+    "title": "Site notification banners",
+    "shortDescription": "Display notifications across modern SharePoint sites.",
+    "url": "https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-site-notifications",
+    "longDescription": [
+      "An Application Customizer displays notifications from a SharePoint list. An administration web part provides guided setup and previews."
+    ],
+    "creationDateTime": "2026-11-26",
+    "updateDateTime": "2026-11-26",
+    "products": ["SharePoint"],
+    "metadata": [
+      { "key": "CLIENT-SIDE-DEV", "value": "React" },
+      { "key": "SPFX-VERSION", "value": "1.24.2" }
+    ],
+    "tags": [],
+    "categories": ["SPFX-APPLICATION-EXTENSION"],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-site-notifications/assets/preview.png",
+        "alt": "Sample site notification banners"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "viikrampatil",
+        "pictureUrl": "https://github.com/viikrampatil.png",
+        "name": "Vikram Patil"
+      }
+    ],
+    "references": []
+  }
+]
