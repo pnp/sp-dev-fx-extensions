@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "site-banner-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/siteBanner/SiteBannerApplicationCustomizer.js",
+          "manifest": "./src/extensions/siteBanner/SiteBannerApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "notification-admin-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/notificationAdmin/NotificationAdminWebPart.js",
+          "manifest": "./src/webparts/notificationAdmin/NotificationAdminWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SiteBannerApplicationCustomizerStrings": "lib/extensions/siteBanner/loc/{locale}.js",
+    "NotificationAdminWebPartStrings": "lib/webparts/notificationAdmin/loc/{locale}.js"
+  }
+}

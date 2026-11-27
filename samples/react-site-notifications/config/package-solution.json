@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-site-banner-client-side-solution",
+    "id": "d1afb435-e654-42f4-a9c4-de867949d5b7",
+    "version": "2.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "developer": {
+      "name": "Vikram Patil",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.24.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Let site admins post targeted notifications across modern SharePoint pages."
+      },
+      "longDescription": {
+        "default": "Site administrators can use a notification list to post notifications, warnings, and errors without editing individual pages. Target a site and optionally its subsites, schedule messages, and choose modal and dismissal settings. An administration web part provides guided setup, status checks, and previews; an application customizer displays eligible messages on supported modern pages. Visitors need read access to the list."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    }
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-site-banner.sppkg"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "spfx-site-banner",
+    "environment": "spo",
+    "packageManager": "npm",
+    "skipFeatureDeployment": true,
+    "useGulp": false,
+    "componentType": "webpart",
+    "componentName": "NotificationAdmin",
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "26.13.1",
+    "sdksVersions": {},
+    "version": "1.24.2",
+    "libraryName": "spfx-site-banner",
+    "libraryId": "d1afb435-e654-42f4-a9c4-de867949d5b7",
+    "solutionShortDescription": "Let site admins post targeted notifications across modern SharePoint pages.",
+    "template": "react"
+  }
+}
