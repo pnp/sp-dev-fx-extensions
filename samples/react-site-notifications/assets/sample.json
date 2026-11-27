@@ -21,7 +21,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-extensions/raw/main/samples/react-site-notifications/assets/preview.png",
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-extensions/e16c5563c8d377ad015e5a57241c9262c4d6289d/samples/react-site-notifications/assets/preview.png",
         "alt": "Sample site notification banners"
       }
     ],
