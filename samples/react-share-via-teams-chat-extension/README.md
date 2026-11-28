@@ -14,8 +14,8 @@ The solution is designed to make it easy to share contextual SharePoint content 
 
 This sample is compatible with the following environment configuration:
 
-![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
-![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
+![SPFx 1.24.1](https://img.shields.io/badge/SPFx-1.24.1-green.svg)
+![Node.js >=22.14.0 <23.0.0 || >=24.0.0 <25.0.0 || >=26.0.0 <27.0.0](https://img.shields.io/badge/Node.js-%3E%3D22.14.0%20%3C23.0.0%20%7C%7C%20%3E%3D24.0.0%20%3C25.0.0%20%7C%7C%20%3E%3D26.0.0%20%3C27.0.0-green.svg)
 ![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 
 ## Applies to
@@ -35,12 +35,12 @@ This sample is compatible with the following environment configuration:
 | Version | Date | Comments |
 | ------- | ---- | -------- |
 | 1.0.0 | July 2, 2026 | Initial sample version |
+| 1.0.1 | November 21, 2026 | SPFx version upgrade |
 
 ## Prerequisites
 
 - SharePoint Online tenant
 - SharePoint site with a list or document library
-- Node.js v22 compatible with SPFx 1.23.0
 - Tenant app catalog or site collection app catalog for deployment
 - Permissions to install SharePoint Framework solutions
 - Microsoft Graph permissions approved by a tenant administrator

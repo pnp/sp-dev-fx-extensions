@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { createRoot, Root } from 'react-dom/client';
 import { BaseDialog, IDialogConfiguration } from '@microsoft/sp-dialog';
 import {
   FluentProvider,
@@ -34,6 +34,8 @@ export class ShareDialog extends BaseDialog {
   private readonly _items: IShareItem[];
   private readonly _toastContainer: HTMLDivElement;
   private readonly _toastHostId: string;
+  private readonly _toastRoot: Root;
+  private readonly _dialogRoot: Root;
   private _dispatchToast?: (content: React.ReactNode, options?: { intent?: ToastIntent }) => void;
   private readonly _pendingToasts: Array<{ content: React.ReactNode; options?: { intent?: ToastIntent } }> = [];
 
@@ -43,6 +45,8 @@ export class ShareDialog extends BaseDialog {
     this._toastContainer = document.createElement('div');
     this._toastHostId = `${ID_PREFIX}toaster`;
     document.body.appendChild(this._toastContainer);
+    this._toastRoot = createRoot(this._toastContainer);
+    this._dialogRoot = createRoot(this.domElement);
   }
 
   private flushPendingToasts(): void {
@@ -71,7 +75,7 @@ export class ShareDialog extends BaseDialog {
       this._pendingToasts.push({ content, options });
     };
 
-    ReactDOM.render(
+    this._toastRoot.render(
       React.createElement(
         IdPrefixProvider,
         { value: ID_PREFIX },
@@ -86,11 +90,10 @@ export class ShareDialog extends BaseDialog {
             }
           })
         )
-      ),
-      this._toastContainer
+      )
     );
 
-    ReactDOM.render(
+    this._dialogRoot.render(
       React.createElement(
         IdPrefixProvider,
         { value: ID_PREFIX },
@@ -103,14 +106,15 @@ export class ShareDialog extends BaseDialog {
             onShowToast: handleShowToast
           })
         )
-      ),
-      this.domElement
+      )
     );
   }
 
   protected onAfterClose(): void {
     super.onAfterClose();
-    ReactDOM.unmountComponentAtNode(this.domElement);
+    this._dialogRoot.unmount();
+    this._toastRoot.unmount();
+    this._toastContainer.remove();
   }
 
   public getConfig(): IDialogConfiguration {
